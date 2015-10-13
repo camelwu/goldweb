@@ -1,0 +1,1104 @@
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'camelwu'
+
+update cg_user set login_num=login_num+1,login_ip='114.113.222.66',time2='2015-04-24 11:13:38' where id=3
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=3
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_guide where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_branch  where types=0  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=3
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where types=0  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_product_route where id=419
+
+select * from cg_product_route_stroke where id=419 order by num asc
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '苏州,杭州')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '杭州,杭州')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '杭州,杭州')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '杭州,杭州')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '杭州,苏州')>0  order by cg_scenic.hots
+
+select * from cg_config
+
+select * from cg_class where pid=112   order by hots
+
+select * from cg_config
+
+select * from cg_class where pid=112   order by hots
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where types=0  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=3
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where types=0  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_config
+
+select * from cg_class where pid=113   order by hots
+
+select * from cg_config
+
+select * from cg_branch  where types=0  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=3
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_branch  where types=0  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where types=0  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_product_route where id=419
+
+select * from cg_product_route_stroke where id=419 order by num asc
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '苏州,杭州')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '杭州,杭州')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '杭州,杭州')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '杭州,杭州')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '杭州,苏州')>0  order by cg_scenic.hots
+
+select * from cg_config
+
+select * from cg_class where pid=112   order by hots
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_cost_tra_car where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_guide where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where types=0  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_product_route where id=419
+
+select * from cg_product_route_stroke where id=419 order by num asc
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '苏州,杭州')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '杭州,杭州')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '杭州,杭州')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '杭州,杭州')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '杭州,苏州')>0  order by cg_scenic.hots
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_cost_tra_car where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=3
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'camelwu'
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'camelwu'
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'camelwu'
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'camelwu'
+
+update cg_user set login_num=login_num+1,login_ip='114.113.222.66',time2='2015-04-24 11:42:28' where id=3
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=3
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='114.113.222.66',time2='2015-04-24 11:43:33' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select count(*)  from cg_daily where 1=1
+
+select *  from cg_daily where 1=1 order by addtime desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='182.149.168.1',time2='2015-04-24 15:58:55' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config where id=1
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=0 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=112 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=113 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=117 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=118 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=96 and classtype=1 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=1 and id=25  order by id 
+
+select count(*)  from cg_user where 1 
+
+select *  from cg_user where 1  order by id limit 0,15
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=1 and id=25  order by id 
+
+select * from cg_user where id=4
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=1 and id=25  order by id 
+
+select parentid from con_menuitems where classid='2'
+
+select parentid from con_menuitems where classid='3'
+
+select parentid from con_menuitems where classid='4'
+
+select parentid from con_menuitems where classid='5'
+
+select parentid from con_menuitems where classid='6'
+
+select parentid from con_menuitems where classid='7'
+
+select parentid from con_menuitems where classid='8'
+
+select parentid from con_menuitems where classid='9'
+
+select parentid from con_menuitems where classid='10'
+
+UPDATE cg_user SET username='zywing313', name='C18-PEG12reserved102', bid='25', position='manage', qq='', email='', tel='', fax='', mobile='', uid='3', allowstr='2,3,4,5,6,7,8,9,10', note='' WHERE id='4'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_user', '修改了1条人员数据,ID为：4', '1', 'admin', '182.149.168.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=1 and id=25  order by id 
+
+select * from cg_user where id=4
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_branch  where 1  and types=1 and id=25  order by id 
+
+select count(*)  from cg_banner where 1 
+
+select *  from cg_banner where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_branch  where 1  and types=1 and id=25  order by id 
+
+select * from cg_banner where id=16
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_branch  where 1  and types=1 and id=25  order by id 
+
+select count(*)  from cg_link where 1 
+
+select *  from cg_link where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_branch  where 1  and types=1 and id=25  order by id 
+
+select * from cg_link where id=2
+
+select * from cg_config
+
+select count(*)  from cg_attached where 1=1
+
+select *  from cg_attached where 1=1 order by addtime desc limit 0,15
+
+select * from cg_config
+
+select count(*)  from cg_daily where 1=1
+
+select *  from cg_daily where 1=1 order by addtime desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_branch  where 1  and types=2 and id=25  order by id 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=null   order by hots
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_branch  where 1  and types=2 and id=25  order by id 
+
+select count(*)  from cg_scenic where types=0
+
+select *  from cg_scenic where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=78   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=96   order by hots
+

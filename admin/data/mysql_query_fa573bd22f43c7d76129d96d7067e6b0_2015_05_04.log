@@ -1,0 +1,162 @@
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'camelwu'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.94',time2='2015-05-04 15:31:07' where id=3
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=3
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=0 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config where id=1
+
+select * from cg_config
+
+update cg_config set name='金桥官网',weburl='http://www.cgbt.net/',qq='1212',email='xiaohua@xiaohua.net',pswd='test123456',tel='12',fax='12',mobile='12',address='12',zip='12',keyes='北京旅游,北京地接,金桥旅游网',contents='准特许经营大陆居民赴台旅游业务,中国金桥旅游有限公司以其经营实力先后加入中国旅游协会、中国旅行协会、北京市旅游行业协会等国内外知名行业协会，并从首届起成为中国旅行社协会常务理事成员单位至今。中国金桥旅游有限公司1995年跻身体于中国一、二类旅行社百强行列；1997年进入全国百强国际旅行社排行榜；2000年成为北京市国际旅行社二十强；2007年北京市旅游局授予公司“诚信旅行社”荣誉称号；2008年公司荣获北京市旅游局授予的4A级国际旅行社称号。中国金桥旅游有限公司以“中国金桥旅游”为品牌，全面落实科学发展观，坚持走规模化、集团化、品牌化、网络化、连锁化经营发展之路。成立二十多年来，以“为人们认识世界，加深理解，增进友情而架设金桥”为企业的崇高使命，全方位开拓入境旅游、国内旅游、出境旅游及商务旅游、各种国际交流、国际会议、国际展览、奖励旅游等专项特色旅游市场，从招徕到接待，为旅游者提供全面的优质服务。公司长期拥有一支训练有素、业务精通、经验丰富的外联、销售队伍和多语种的翻译、导游队伍。公司“以人为本”，精心策划编制适合不同年龄、不同职业、不同兴趣人群的特色旅游产品供旅游消费者选择。除传统旅游线路外，公司还推出了国内外的文物古迹、宗教文化、民俗风情、自驾车旅游等各具特色、精彩纷呈的旅游线路，赢得海内外宾客的青睐。 随着公司自身建设不断加强，品牌扩张不断加快，经营理念和管理机制不断创新，一个以中国金桥旅游有限公司为龙头，多元化的跨国、跨地区、跨行业的旅游销售、接待、服务网络已经形成并得到不断完善。    中国金桥旅游有限公司全体同仁，以“游客至上、质量第一、诚信为本”为宗旨，自尊自强，敬业尽职，勇于开拓，竭诚服务；为旅游事业的发展做出项献。' , picserver='http://test.cgbt.net/', uploadir='C:\\soft\\test' where id=1
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_config', '修改了网站配置', '3', 'camelwu', '223.72.84.94', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_config where id=1
+
+select * from cg_config
+
+select count(*)  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=3
+
+select *  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=3 order by hid desc limit 0,15
+
+select * from cg_config
+
+select * from cg_product_route where id=418
+
+select title from cg_branch where id=6
+
+select title from cg_class where id=113
+
+select title from cg_class where id=121
+
+select * from cg_config
+
+select * from cg_branch  where 1  and id=1  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where 1 and (userid=3 or bid=1)  
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where 1 and (userid=3 or bid=1)   order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select count(*)  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=3
+
+select *  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=3 order by hid desc limit 0,15
+
+select * from cg_config
+
+select * from cg_branch  where 1  and id=1  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where 1 and (userid=3 or bid=1)  
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where 1 and (userid=3 or bid=1)   order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1  and id=1  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_product_route where id=419
+
+select * from cg_product_route_stroke where routeid=419 order by num asc
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '苏州,杭州')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '杭州,杭州')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '杭州,杭州')>0  order by cg_scenic.hots
+
+select * from cg_config
+
+select * from cg_class where pid=112   order by hots
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=211
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+

@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><{$cnname}>_旅行社_<{$ktitle}>_金桥</title>
+<link href="<{$siteurl}>/css/global.css" rel="stylesheet" type="text/css">
+<link href="<{$siteurl}>/css/index.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="<{$siteurl}>/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="<{$siteurl}>/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="<{$siteurl}>/js/index.js"></script>
+<script type="text/javascript">
+function search_visa(){
+	linkstr = "/visa/"+encodeURI($("#country").val())+"-"+$("#vtype").val();
+	window.location = linkstr;
+}
+</script>
+</head>
+<body>
+
+<{include_php file="./include/header.php"}>
+<div class="wrapper now_position"><!--当前位置-->
+    <a href="./">首页</a>&gt;<a href="./<{$enname}>/"><{$cnname}></a>
+</div>
+<div class="wrapper"><!--top-img-->
+    <a href="#" class="overseas_top"><img src="/images/domestic_top.jpg" width="1200" height="160"/></a>
+</div>
+
+<div class="wrapper clrfix visa_wapper"><!--出发地目的地筛选-->
+  <div class="visa_left">  	
+  	 <div class="visal_box">
+          <form name="search_frm" method="post" action="/visa"><h6>签证办理查询</h6>
+          <div class="visa_guo">
+              <span>签证国家</span>
+              <input type="text" name="country" id="country"/>
+          </div>
+          <div class="visa_guo">
+              <span>签证类型</span>
+              <select name="vtype" id="vtype"><{html_options options=$vtype selected=$go_type}></select>
+          </div>
+          <input type="submit" class="visa_search" name="submit" value="搜索"/></form>
+      </div>
+      <div class="visal_box">
+          <h6>最新公告</h6>
+          <ul class="visa_gg">
+          	<{foreach name=news item=news from=$news}><li>&nbsp;&nbsp;&nbsp;<{$news.title}></li><{/foreach}>
+          </ul>
+      </div>
+      <div class="visal_box">
+          <h6>金桥更有优势</h6>
+          <ul class="visa_ys">
+          	<li><span>性价比高 更实惠</span>享最周全的服务</li>
+            <li class="visa_ys2"><span>专业服务 更快捷</span>更高的出签率</li>
+            <li class="visa_ys3"><span>产品丰富 覆盖广</span>支持5大领区办理</li>
+          </ul>
+      </div>
+      <div class="visal_box">
+          <h6>签证办理常见问题</h6>
+          <ul class="visa_gg">
+          	<{foreach name=faq item=faq from=faqs}><li><a href="/details/<{$faq.id}>"><{$faq.title}></a></li><{/foreach}>
+          </ul>
+      </div>
+  </div>
+  <div class="visa_right">
+     <div class="address_select visar_note clrfix visad_img">
+     	<div class="fl"><img src="<{$info.pic}>" width="100%" height="100%"></div>
+        <div class="fr">
+        	<h3>&lt;<{$info.stock}>&gt;<{$info.title}><{$info.material}></h3>
+            <span>办理费用：￥<{$info.price1}></span><br/>
+            <span>最长停留时间：<{$info.size}></span><br/>
+            <span>办理时长：<{$info.brand}>工作日</span><span>有效期：<{$info.item}></span><br/>
+            <a href="#" class="visad_btn">立即预定</a>
+        </div>
+     </div>
+     <div class="address_select visar_note visad_box">
+         <h6>所需材料</h6>
+         <div><{$info.word}></div>
+    </div>
+    <{if $info.url neq ''}><div class="address_select visar_note visad_box">
+         <h6>资料文档</h6>
+         <p><a href="<{$info.url}>">点击下载签证资料表</a></p>
+	</div><{/if}>
+    <div class="address_select visar_note visad_box">
+         <h6>预定须知</h6>
+         <div><{$info.info}></div>
+    </div>
+    
+</div>
+</div>
+
+<{include file="./include/footer.html"}>
+
+<{include_php file="./include/right.php"}>
+</body>
+</html>

@@ -1,0 +1,192 @@
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'camelwu'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.47',time2='2015-05-14 07:00:14' where id=3
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=3
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_branch  where 1  and types=1 and id=1  order by id 
+
+select count(*)  from cg_banner where 1  and bid=1 
+
+select *  from cg_banner where 1  and bid=1  order by hots limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select count(*)  from cg_banner where 1 
+
+select *  from cg_banner where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select count(*)  from cg_banner where 1 
+
+select *  from cg_banner where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select count(*)  from cg_banner where 1 
+
+select *  from cg_banner where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select count(*)  from cg_banner where 1 
+
+select *  from cg_banner where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select count(*)  from cg_banner where 1 
+
+select *  from cg_banner where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_banner where id=11
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+UPDATE cg_banner SET id='11', title='东京街头一景', status='1', mid='1', mypath='', mywidth='1920', myheight='430', url='/1/banner2.jpg', hots='1', content='街头行色匆匆的人们。。。', op_user='camelwu' WHERE id='11'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_cg_banner', '修改了', '3', 'camelwu', '223.72.84.47', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select count(*)  from cg_banner where 1 
+
+select *  from cg_banner where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_banner where id=11
+
+select * from cg_config
+
+select * from cg_branch  where 1  and id=1  order by id 
+
+select count(*)  from cg_user where 1  and (uid=3 )
+
+select *  from cg_user where 1  and (uid=3 ) order by id limit 0,15
+
+select * from cg_config
+
+select * from cg_branch  where 1  and id=1  order by id 
+
+select * from cg_user where id=4
+
+select * from cg_user  where id=3   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select count(*)  from cg_banner where 1 
+
+select *  from cg_banner where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_banner where id=11
+
+select * from cg_branch  where 1  and id=1  order by id 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=0 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+

@@ -1,0 +1,1898 @@
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='123.118.69.147',time2='2015-07-22 01:11:51' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=138   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=138   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='123.118.69.147',time2='2015-07-22 06:07:10' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=138   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=235
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+UPDATE cg_area SET id='235', types='1', title='兹拉提波尔州', classid='3', pid='225', classid1='0', word='<div id=\"card-container\" class=\"mod-top\">
+	<div class=\"card-summary nslog-area clearfix\">
+		<div class=\"card-summary-content\">
+			<div class=\"para\">
+				<span style=\"font-size:14px;\">【兹拉提波尔州<span style=\"font-family:宋体;font-size:14px;\">】</span>（Златиборски округ, Zlatiborski okrug）是塞尔维亚的一个州，位于该国西部，西邻波黑和黑山。面积6,140平方公里，2002年人口313,396人。首府乌日策。</span> 
+			</div>
+		</div>
+	</div>
+</div>', attention='', info='', url='', status='1', region='zilatiboerzhou', userid='1', op_user='admin' WHERE id='235'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '修改了1条地域数据,ID为：235', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=235
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+UPDATE cg_area SET id='235', types='1', title='兹拉蒂博尔', classid='3', pid='225', classid1='0', word='<div id=\"card-container\" class=\"mod-top\">
+	<div class=\"card-summary nslog-area clearfix\">
+		<div class=\"card-summary-content\">
+			<div class=\"para\">
+				<span style=\"font-size:14px;\"><span style=\"font-family:SimSun;font-size:14px;\">【兹拉提波尔州</span><span style=\"font-family:SimSun;font-size:14px;\">】</span><span style=\"font-family:SimSun;font-size:14px;\">（Златиборски округ, Zlatiborski okrug）是塞尔维亚的一个州，位于该国</span><span style=\"font-family:SimSun;font-size:14px;\">西部，西邻波黑和黑山。面积6,140平方公里，2002年人口313,396人。首府乌日策。</span></span> 
+			</div>
+			<div class=\"para\">
+				<span style=\"font-size:14px;\"><span style=\"font-family:SimSun;font-size:14px;\">【</span><span><span style=\"font-family:SimSun;font-size:14px;\">兹拉蒂博尔</span></span><span style=\"font-family:SimSun;font-size:14px;\">】</span></span><span style=\"font-family:SimSun;font-size:14px;\">由兹拉提波尔州负责管辖，位于该塞尔维亚</span><span style=\"font-family:SimSun;font-size:14px;\">西部，毗邻与波斯尼亚和黑塞哥维那接壤的边境，海拔高度约1,010米，每年平均降雨量900毫米，2002年人口2,344。</span>
+			</div>
+			<div class=\"para\">
+				&nbsp;
+			</div>
+		</div>
+	</div>
+</div>', attention='', info='', url='', status='1', region='ziladiboer', userid='1', op_user='admin' WHERE id='235'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '修改了1条地域数据,ID为：235', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=155   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=2 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=99 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=225 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+INSERT INTO cg_scenic (types, title, ctype, info_id, cid, aid, city, url, brand, item, price2, price, price1, address, pos, keyword, word, info, op_type, op_user, userid, bid) VALUES ('3', '木头村', '155', '', '3', '225', '235', '', '', '', '', '', '', '', '', '', '【<span style=\"font-family:宋体;font-size:14px;font-weight:bold;\">木头村</span><span style=\"font-family:宋体;font-size:14px;\">】是塞尔维亚著名导演Emir Kusturica为了拍摄电影《生命是个奇迹》所建造的村落。木头城从地面到房屋，全部用木头建成并以色彩缤纷的油画粉饰，村里奇形怪状的雕塑，还有屋内的家具都是用鲜花点缀，整个环境都是充满童真。</span><br />', '', '1', 'admin', '1', '0') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '添加了1条景点数据,ID为：1662', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+INSERT INTO cg_area (types, title, classid, pid, classid1, word, attention, info, url, status, region, userid, op_user) VALUES ('1', '贝尔格莱德', '1', '2', '0', '【<span style=\"font-family:宋体;font-size:14px;font-weight:bold;\">贝尔格莱德Belgrade</span><span style=\"font-family:宋体;font-size:14px;\">】（车程约3.5小时），地处巴尔干半岛核心位置，坐落在多瑙河与萨瓦河的交汇处，居多瑙河和巴尔干半岛的水陆交通要道，是欧洲和近东的重要联络点，有很重要的战略意义，被称为巴尔干之钥。</span>', '', '', '', '1', 'beiergelaide', '1', 'admin') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '添加了1条地域数据,ID为：236', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=236
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+INSERT INTO cg_attached (filepath, ext, sizes, userid, name) VALUES ('/1/1437546584807.jpg', 'image/pjpeg', '153.103515625', '1', 'admin') 
+
+UPDATE cg_area SET id='236', types='1', title='贝尔格莱德', classid='1', pid='2', classid1='0', word='【<span style=\"font-family:宋体;font-size:14px;font-weight:bold;\">贝尔格莱德Belgrade</span><span style=\"font-family:宋体;font-size:14px;\">】（车程约3.5小时），地处巴尔干半岛核心位置，坐落在多瑙河与萨瓦河的交汇处，居多瑙河和巴尔干半岛的水陆交通要道，是欧洲和近东的重要联络点，有很重要的战略意义，被称为巴尔干之钥。</span>', attention='', info='', url='/1/1437546584807.jpg', status='1', region='beiergelaide', userid='1', op_user='admin' WHERE id='236'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '修改了1条地域数据,ID为：236', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=155   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=2 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=99 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=225 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+INSERT INTO cg_scenic (types, title, ctype, info_id, cid, aid, city, url, brand, item, price2, price, price1, address, pos, keyword, word, info, op_type, op_user, userid, bid) VALUES ('3', '卡莱梅格丹公园', '155', '', '3', '225', '235', '', '', '', '', '', '', '', '', '', '【<span style=\"font-family:宋体;font-size:14px;font-weight:bold;\">卡莱梅格丹公园</span><span style=\"font-family:宋体;font-size:14px;\">】位于贝尔格莱德老城西北角最高点，面对萨瓦河与多瑙河交汇处，分上、下两城。上城顶部和下城底层都有宽阔敞亮的绿地，独特古朴的石头建筑与自然风光浑然一体，是贝尔格莱德最大和最美丽的公园。也是见证贝尔格莱德的沧桑兴衰、曲折历史的重要文化遗产。</span>', '', '1', 'admin', '1', '0') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '添加了1条景点数据,ID为：1663', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=236
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+UPDATE cg_area SET id='236', types='1', title='贝尔格莱德', classid='3', pid='225', classid1='0', word='【<span style=\"font-family:宋体;font-size:14px;font-weight:bold;\">贝尔格莱德Belgrade</span><span style=\"font-family:宋体;font-size:14px;\">】（车程约3.5小时），地处巴尔干半岛核心位置，坐落在多瑙河与萨瓦河的交汇处，居多瑙河和巴尔干半岛的水陆交通要道，是欧洲和近东的重要联络点，有很重要的战略意义，被称为巴尔干之钥。</span>', attention='', info='', url='/1/1437546584807.jpg', status='1', region='beiergelaide', userid='1', op_user='admin' WHERE id='236'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '修改了1条地域数据,ID为：236', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=235
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+INSERT INTO cg_attached (filepath, ext, sizes, userid, name) VALUES ('/1/1437546765977.jpg', 'image/pjpeg', '104.775390625', '1', 'admin') 
+
+UPDATE cg_area SET id='235', types='1', title='兹拉蒂博尔', classid='3', pid='225', classid1='0', word='<div id=\"card-container\" class=\"mod-top\">
+	<div class=\"card-summary nslog-area clearfix\">
+		<div class=\"card-summary-content\">
+			<div class=\"para\">
+				<span style=\"font-size:14px;\"><span style=\"font-family:SimSun;font-size:14px;\">【兹拉提波尔州</span><span style=\"font-family:SimSun;font-size:14px;\">】</span><span style=\"font-family:SimSun;font-size:14px;\">（Златиборски округ, Zlatiborski okrug）是塞尔维亚的一个州，位于该国</span><span style=\"font-family:SimSun;font-size:14px;\">西部，西邻波黑和黑山。面积6,140平方公里，2002年人口313,396人。首府乌日策。</span></span> 
+			</div>
+			<div class=\"para\">
+				<span style=\"font-size:14px;\"><span style=\"font-family:SimSun;font-size:14px;\">【</span><span><span style=\"font-family:SimSun;font-size:14px;\">兹拉蒂博尔</span></span><span style=\"font-family:SimSun;font-size:14px;\">】</span></span><span style=\"font-family:SimSun;font-size:14px;\">由兹拉提波尔州负责管辖，位于该塞尔维亚</span><span style=\"font-family:SimSun;font-size:14px;\">西部，毗邻与波斯尼亚和黑塞哥维那接壤的边境，海拔高度约1,010米，每年平均降雨量900毫米，2002年人口2,344。</span> 
+			</div>
+			<div class=\"para\">
+				&nbsp;
+			</div>
+		</div>
+	</div>
+</div>', attention='', info='', url='/1/1437546765977.jpg', status='1', region='ziladiboer', userid='1', op_user='admin' WHERE id='235'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '修改了1条地域数据,ID为：235', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=234
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+INSERT INTO cg_area (region, url, userid, op_user) VALUES ('', '', '', '') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '添加了1条地域数据,ID为：237', '', '', '101.226.66.172', 'Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; GT-I9500 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 QQ-Manager Mobile Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=0
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+INSERT INTO cg_attached (filepath, ext, sizes, userid, name) VALUES ('/1/1437546842111.jpg', 'image/pjpeg', '168.40625', '1', 'admin') 
+
+UPDATE cg_area SET id='234', types='1', title='布德瓦', classid='3', pid='224', classid1='0', word='【<span style=\"font-family:宋体;font-size:14px;font-weight:bold;\">布德瓦Budva</span><span style=\"font-family:宋体;font-size:14px;\">】是以美丽的沙滩、丰富的夜生活和独具特色的地中海式建筑而闻名于世。同时因其2500年的悠久历史而成为亚得里亚海岸边最古老的定居点。</span>', attention='', info='', url='/1/1437546842111.jpg', status='1', region='budewa', userid='1', op_user='admin' WHERE id='234'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '修改了1条地域数据,ID为：234', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=231
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+INSERT INTO cg_scenic (url, op_user, types, op_type, userid, bid) VALUES ('', '', '0', '', '', '') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '添加了1条酒店数据,ID为：1664', '', '', '180.153.206.16', 'Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; GT-I9500 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 QQ-Manager Mobile Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=0
+
+select *  from cg_scenic where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=236
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=1650
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=1650
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=155   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=221 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+INSERT INTO cg_attached (filepath, ext, sizes, userid, name) VALUES ('/1/1437547706310.jpg', 'image/pjpeg', '148.852539062', '1', 'admin') 
+
+UPDATE cg_scenic SET id='1650', types='3', title='波希涅湖', ctype='155', info_id='', cid='3', aid='221', city='226', url='/1/1437547706310.jpg', brand='', item='0', price2='0', price='0', price1='0', address='', pos='', keyword='', word='<span style=\"font-family:宋体;font-size:10.5pt;\">【<b>波希涅湖<span>bohinj Lake</span></b>】，明镜般的湖水波光粼粼，周边自然景色很美，可以看到远处的雪山，比布莱德湖商业气息淡些。</span>', info='', op_type='1', op_user='admin' WHERE id='1650'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1650', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=1648
+
+select * from cg_config
+
+select * from cg_class where pid=155   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=221 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+INSERT INTO cg_attached (filepath, ext, sizes, userid, name) VALUES ('/1/1437547745242.jpg', 'image/pjpeg', '124.576171875', '1', 'admin') 
+
+UPDATE cg_scenic SET id='1648', types='3', title='布莱德湖', ctype='155', info_id='', cid='3', aid='221', city='226', url='/1/1437547745242.jpg', brand='', item='0', price2='0', price='0', price1='0', address='', pos='', keyword='', word='<span style=\"font-family:宋体;\"><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp; 布莱德湖是斯洛维尼亚西北部的冰川湖。宽为</span><span><span style=\"font-size:14px;\">500-180</span><span style=\"font-size:14px;\"><span style=\"font-size:14px;\">米</span></span><span><span style=\"font-size:14px;\">，最深处为30</span><span style=\"font-size:14px;\"><span style=\"font-size:14px;\">米</span></span><span style=\"font-size:14px;\">。</span></span></span><span style=\"font-size:14px;\">“三头山”顶部积雪的融水不断注入湖中，故有“冰湖”之称。是尤利安</span><span style=\"font-size:14px;\">(Julian)</span><span style=\"font-size:14px;\">山脚避暑、度假和冬季运动胜地。</span><span></span></span>', info='', op_type='1', op_user='admin' WHERE id='1648'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1648', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_scenic  where id=1650
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_hotel where types=3 and ctype=1 and id=1650
+
+select *  from cg_hotel where types=3 and ctype=1 and id=1650 order by hid 
+
+select * from cg_config
+
+select * from cg_scenic  where id=1650
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_hotel where types=3 and ctype=1 and id=1650
+
+select *  from cg_hotel where types=3 and ctype=1 and id=1650 order by hid 
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_scenic  where id=1650
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_hotel where hid=0
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=226
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+INSERT INTO cg_attached (filepath, ext, sizes, userid, name) VALUES ('/1/1437547833586.jpg', 'image/pjpeg', '113.521484375', '1', 'admin') 
+
+UPDATE cg_area SET id='226', types='1', title='卢布尔雅那', classid='3', pid='221', classid1='0', word='<span style=\"font-family:宋体;font-size:10.5pt;\">卢布尔雅那<span>Ljubljana</span>是斯洛文尼亚共和国的首都和政治、文化中心。位于西北部萨瓦河上游，群山环抱的盆地之中，和谐的混合了古典建筑、新艺术建筑和现代巴洛克风格建筑，散发出专属的美丽风情。</span>', attention='', info='', url='/1/1437547833586.jpg', status='1', region='lubueryana', userid='1', op_user='admin' WHERE id='226'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '修改了1条地域数据,ID为：226', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=1652
+
+select * from cg_config
+
+select * from cg_class where pid=155   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=222 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=231
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+INSERT INTO cg_attached (filepath, ext, sizes, userid, name) VALUES ('/1/1437548004863.jpg', 'image/pjpeg', '156.580078125', '1', 'admin') 
+
+UPDATE cg_scenic SET id='1652', types='3', title='普利特维采湖群国家公园', ctype='155', info_id='', cid='3', aid='222', city='227', url='/1/1437548004863.jpg', brand='', item='0', price2='0', price='0', price1='0', address='', pos='', keyword='', word='【<span style=\"font-family:宋体;font-size:14px;font-weight:bold;\">普利特维采湖群国家公园Plitvice National Park</span><span style=\"font-family:宋体;font-size:14px;\">】位于克罗地亚西部山脉峡谷中，由16个天然湖泊和周围区域组成，总面积19462公顷。湖泊根据地形不同分为高低两组，是数千年来流经石灰石和白垩上的水，逐渐沉积为石灰华屏障，构成自然的堤坝，后者又创造了一系列美丽的湖泊、洞穴和瀑布。</span>', info='', op_type='1', op_user='admin' WHERE id='1652'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1652', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=1653
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=155   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=222 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+INSERT INTO cg_attached (filepath, ext, sizes, userid, name) VALUES ('/1/1437548126510.jpg', 'image/pjpeg', '155.670898438', '1', 'admin') 
+
+UPDATE cg_scenic SET id='1653', types='3', title='特罗吉尔', ctype='155', info_id='', cid='3', aid='222', city='228', url='/1/1437548126510.jpg', brand='', item='0', price2='0', price='0', price1='0', address='', pos='', keyword='', word='【<span style=\"font-family:宋体;font-size:14px;font-weight:bold;\">特罗吉尔Trogir</span><span style=\"font-family:宋体;font-size:14px;\">】建立于公元前3世纪，位于达尔马提亚的中心，是一个商业城市及港口。特罗吉尔是城市历史连续性的著名范例。岛上直角街道的模式可追溯到希腊时期，后来的统治者们又用许多精美的公共场所以及住宅和防御工事对其进行了修饰，使得精巧的罗马式教堂与威尼斯时期杰出的文艺复兴式和巴洛克式建筑相得益彰。</span>', info='', op_type='1', op_user='admin' WHERE id='1653'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1653', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=229
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+INSERT INTO cg_attached (filepath, ext, sizes, userid, name) VALUES ('/1/1437548417160.jpg', 'image/pjpeg', '138.643554688', '1', 'admin') 
+
+UPDATE cg_area SET id='229', types='1', title='斯普利特', classid='3', pid='222', classid1='0', word='<span style=\"font-family:宋体;font-size:10.5pt;\">【<b>斯普利特<span>Split</span></b>】是克罗地亚共和国历史名城，第二大城市，达尔马提亚地区第一大海港，坐落在亚得里亚海的达尔马提亚海岸中心，由一个中央半岛及周围海岸组成，而城市区域也包括海岸边的许多小城镇。</span>', attention='', info='', url='/1/1437548417160.jpg', status='1', region='sipulite', userid='1', op_user='admin' WHERE id='229'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '修改了1条地域数据,ID为：229', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_scenic  where id=1650
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_hotel where hid=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=231
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+INSERT INTO cg_attached (filepath, ext, sizes, userid, name) VALUES ('/1/1437548622121.jpg', 'image/pjpeg', '144.6328125', '1', 'admin') 
+
+UPDATE cg_area SET id='231', types='1', title='萨拉热窝', classid='3', pid='223', classid1='0', word='<span style=\"font-family:宋体;font-size:10.5pt;\">【<b>萨拉热窝<span>Sarajevo</span></b>】，萨拉热窝是波黑的首都，曾因第一次世界大战的爆发闻名于世。位于萨瓦河支流博亚纳河上游附近，是一座风景秀丽、市貌独特，建筑风格迥异的古城。由于历史上它曾几次易主，所以不同的统治者为这座城市带来了形形色色的民族习俗和宗教，使之成为东方和西方经济文化的交汇处，并逐渐发展成为一个东西合璧的城市。市内既有１９世纪奥地利式的黄褐色建筑，又有东方风格的楼阁和土耳其式手工艺作坊。</span>', attention='', info='', url='/1/1437548622121.jpg', status='1', region='salarewo', userid='1', op_user='admin' WHERE id='231'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '修改了1条地域数据,ID为：231', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=230
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+INSERT INTO cg_attached (filepath, ext, sizes, userid, name) VALUES ('/1/1437548668138.jpg', 'image/pjpeg', '144.6328125', '1', 'admin') 
+
+UPDATE cg_area SET id='230', types='1', title='莫斯塔尔', classid='3', pid='223', classid1='0', word='<span style=\"font-family:宋体;\"><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp; 【</span><b><span style=\"font-size:14px;\">莫斯塔尔</span><span style=\"font-size:14px;\">Mostar</span></b><span style=\"font-size:14px;\">】</span><span style=\"font-size:14px;\">，莫斯塔尔位于波黑的南部，</span><span style=\"font-size:14px;\">城市</span><span style=\"font-size:14px;\">于</span><span style=\"font-size:14px;\">15</span><span style=\"font-size:14px;\">世纪时由鄂图曼土耳其建造，</span><span style=\"font-size:14px;\">1878</span><span style=\"font-size:14px;\">年成为奥匈帝国领土，第一次世界大战之后成为南斯拉夫王国的领土。</span><span></span></span>', attention='', info='', url='/1/1437548668138.jpg', status='1', region='mositaer', userid='1', op_user='admin' WHERE id='230'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '修改了1条地域数据,ID为：230', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=1652
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=1653
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=1658
+
+select * from cg_config
+
+select * from cg_class where pid=155   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=224 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+INSERT INTO cg_attached (filepath, ext, sizes, userid, name) VALUES ('/1/1437548926400.jpg', 'image/pjpeg', '95.751953125', '1', 'admin') 
+
+UPDATE cg_scenic SET id='1658', types='3', title='圣斯泰凡小岛', ctype='155', info_id='', cid='3', aid='224', city='234', url='/1/1437548926400.jpg', brand='', item='0', price2='0', price='0', price1='0', address='', pos='', keyword='', word='【<span style=\"font-family:宋体;font-size:14px;font-weight:bold;\">圣斯泰凡小岛Sveti Stefan</span><span style=\"font-family:宋体;font-size:14px;\">】，无疑是黑山海滨的一颗最耀眼的明珠，小岛15世纪时是一个小渔村，为了防止海盗入侵，渔民在岛上筑起高高的围墙，又修建一条长长的堤连接岸边。晚餐后入住酒店休息。</span>', info='', op_type='1', op_user='admin' WHERE id='1658'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1658', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=1660
+
+select * from cg_config
+
+select * from cg_class where pid=155   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=224 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+INSERT INTO cg_attached (filepath, ext, sizes, userid, name) VALUES ('/1/1437548993808.jpg', 'image/pjpeg', '140.874023438', '1', 'admin') 
+
+UPDATE cg_scenic SET id='1660', types='3', title='佩拉斯特古镇', ctype='155', info_id='', cid='3', aid='224', city='234', url='/1/1437548993808.jpg', brand='', item='0', price2='0', price='0', price1='0', address='', pos='', keyword='', word='【<span style=\"font-family:宋体;font-size:14px;font-weight:bold;\">佩拉斯特古镇 Perast</span><span style=\"font-family:宋体;font-size:14px;\">】，古镇在科托尔海湾北岸面对出海口，镇上现有完好的建筑最早有500多年的历史。这个城镇历史有17个家族的豪华宅邸建筑，16座教堂，很多是文艺复兴时期的建筑。</span>', info='', op_type='1', op_user='admin' WHERE id='1660'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1660', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=231
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=230
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=230
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=155   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=2 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=155   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=2 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=99 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=225 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+INSERT INTO cg_scenic (types, title, ctype, info_id, cid, aid, city, url, brand, item, price2, price, price1, address, pos, keyword, word, info, op_type, op_user, userid, bid) VALUES ('3', 'Sveti Sava大教堂', '155', '', '3', '225', '236', '', '', '', '', '', '', '', '', '', '【<span style=\"font-family:宋体;font-size:14px;font-weight:bold;\">Sveti Sava大教堂</span><span style=\"font-family:宋体;font-size:14px;\">】是世界上迄今为止最大的东正教教堂，至今仍未完全建成。教堂始建于1935年，于希特勒统治时期中断，共产党执政时期也未能继续建造。</span>', '', '1', 'admin', '1', '0') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '添加了1条景点数据,ID为：1665', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=1654
+
+select * from cg_config
+
+select * from cg_class where pid=155   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=224 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+INSERT INTO cg_attached (filepath, ext, sizes, userid, name) VALUES ('/1/1437549422991.jpg', 'image/pjpeg', '122.58984375', '1', 'admin') 
+
+UPDATE cg_scenic SET id='1654', types='3', title='杜米托尔国家公园', ctype='155', info_id='', cid='3', aid='224', city='232', url='/1/1437549422991.jpg', brand='', item='0', price2='0', price='0', price1='0', address='', pos='', keyword='', word='【<span style=\"font-family:宋体;font-size:14px;font-weight:bold;\">杜米托尔国家公园<span>Durmitor National Park</span></span><span style=\"font-family:宋体;font-size:14px;\">】美丽绝伦，是一个被冰川和河流切割出来的非常美丽的自然公园，地上河和地下河流经该公园。公园内有欧洲最著名的塔拉河峡谷，有古老的松木林，松林中点缀着清澈的湖水，有大片茂密的土生植物群以及珍贵的动物品种。公园内最大的冰川湖叫黑湖，它滋润着塔拉河和皮万河。山谷内洞穴、溶洞、岩洞、峡谷比比皆是。</span>', info='', op_type='1', op_user='admin' WHERE id='1654'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1654', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=1655
+
+select * from cg_config
+
+select * from cg_class where pid=155   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=224 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+INSERT INTO cg_attached (filepath, ext, sizes, userid, name) VALUES ('/1/1437549689503.jpg', 'image/pjpeg', '137.513671875', '1', 'admin') 
+
+UPDATE cg_scenic SET id='1655', types='3', title='塔拉河谷大桥', ctype='155', info_id='', cid='3', aid='224', city='232', url='/1/1437549689503.jpg', brand='', item='0', price2='0', price='0', price1='0', address='', pos='', keyword='', word='<span style=\"font-size:14px;\">【</span><span style=\"font-size:14px;font-weight:bold;\">塔拉河谷大桥Tara Rivar Bridge</span><span style=\"font-size:14px;\">】，位于黑山北部塔拉河谷地区，前南斯拉夫著名影片《桥》的拍摄地。大桥建于1937年至1940年间，是一座混凝土拱桥，横跨塔拉河，长365米，主桥拱114米，桥距塔拉河河面172米，有5个拱。在其完工之时，为欧洲最大的公路混凝土拱桥。1942年被游击队炸毁，1946年修复，至今仍在使用。</span>', info='', op_type='1', op_user='admin' WHERE id='1655'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1655', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=1660
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=0
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=224
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select count(*)  from cg_scenic where types=2
+
+select *  from cg_scenic where types=2 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=150   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=2 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=152   order by hots
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+INSERT INTO cg_scenic (types, title, ctype, info_id, cid, aid, brand, item, size, stock, price, price1, word, info, url, op_user, op_type, userid, bid) VALUES ('2', '黑山共和国', '152', '', '1', '2', '', '', '', '', '', '', '<div class=\"para\">
+	根据中黑两国达成的谅解备忘录，黑山继续遵守原“塞尔维亚和黑山”与中国关于持外交护照、公务护照和因公普通护照互免签证的协议。
+</div>
+<div class=\"para\">
+	持因私护照赴黑山可向塞尔维亚驻华使领馆申办黑山签证。
+</div>
+<div class=\"para\">
+	依照黑山政府公布的签证申办暂行条例，
+</div>
+<div class=\"para\">
+	落地签证申办程序如下：
+</div>
+<div class=\"para\">
+	（一）准备申签材料：签证申请表（可在塞尔维亚驻华使领馆领取），申请人所持护照资料页的复印件，经黑山相关部门认证的邀请函；
+</div>
+<div class=\"para\">
+	（二）传真申签材料至黑山外交部领事司；
+</div>
+<div class=\"para\">
+	（三）申请人在获得黑山外交部领事司传真或邮件形式的肯定回复后，方可出发前往黑山。在黑山口岸向签证机关出示以下材料即可获签：有效护照，邀请函原件，返程机、车、船票，财力证明（银行存款单等）。落地签证办理费用为55欧元。
+</div>
+<div class=\"para\">
+	因私护照持有人若具有欧盟国家、美国、加拿大、澳大利亚、克罗地亚、波黑、塞尔维亚等国的合法居留或以上国家的有效签证，亦可在黑山口岸申办落地签证。
+</div>
+<div class=\"para\">
+	黑山致力于加入<a href=\"http://baike.baidu.com/view/19788.htm\" target=\"_blank\">欧盟</a>，其海关规定逐步与欧盟标准一致。入境时贵重的专业和技术设备需申报。每次出入境最多可携带2000欧元现金，个人行李可带1升葡萄酒或1升烈性酒、不超过50克或250毫升的香水、不超过250克的烟草制品（200支香烟或50支雪茄）。 外国公民在黑山购物一般不享受退税待遇。
+</div>
+<div class=\"para\">
+	持因私普通护照前往黑山还可在黑山口岸签证机关获颁落地签证。
+</div>
+<div class=\"para\">
+	黑山在华尚未开设使馆，持因私普通护照前往黑山可向塞尔维亚驻华使领馆（原塞黑驻华使领馆）申办黑山签证。
+</div>
+<h3 class=\"headline-2\">
+	<a name=\"12_3\"></a><a name=\"sub254296_12_3\"></a><a name=\"旅游_入境须知\"></a><span class=\"headline-content\">入境须知</span>
+</h3>
+<div class=\"para\">
+	持有效外交、公务及因公普通护照或办妥黑山签证的因私护照者即可入境。开车进入黑山还需车辆国际保险卡、相关行车证或办理临时保险单。
+</div>', '', '', 'admin', '', '1', '0') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '添加了1条签证数据,ID为：1666', '1', 'admin', '123.118.69.147', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select count(*)  from cg_scenic where types=2
+
+select *  from cg_scenic where types=2 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=0
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=224
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.17',time2='2015-07-22 14:25:03' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.17',time2='2015-07-22 14:26:14' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.17',time2='2015-07-22 14:26:23' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.17',time2='2015-07-22 14:44:31' where id=1
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.17',time2='2015-07-22 14:44:50' where id=1
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.17',time2='2015-07-22 14:45:08' where id=1
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.17',time2='2015-07-22 14:45:57' where id=1
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.17',time2='2015-07-22 14:46:50' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=138   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.17',time2='2015-07-22 14:58:12' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'camelwu'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.17',time2='2015-07-22 15:00:39' where id=3
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=138   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=138   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'camelwu'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.17',time2='2015-07-22 15:14:48' where id=3
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=138   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=138   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=138   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=138   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=138   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=138   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+

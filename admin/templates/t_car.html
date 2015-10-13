@@ -1,0 +1,102 @@
+<{include file="admin_tpl_head.html"}>
+		<{if $action eq 'list'}>
+		<table cellspacing=1 cellpadding=4 class=table>
+			<form name=sel_form action='?action=delete' method=post>
+				<tr>
+					<th>ID</th>
+					<th>出发城市</th>
+					<th>目的城市/地点</th>
+					<th>人等</th>
+					<th>报价</th>
+					<th>公里数</th>
+					<th>管理</th>
+				</tr>
+				<{foreach from=$comments item=web}>
+				<tr align=center>
+					<td><{$web.id}></td>
+					<td><{$web.scity}></td>
+					<td><{$web.ecity}></td>
+					<td><{$web.num}></td>
+					<td>￥<{$web.price}>元</td>
+					<td><{$web.distance}></td>
+					<td><a href='?action=edit&id=<{$web.id}>'>编辑</a> <a
+						href="?action=delete&types=<{$contact.types}>&id=<{$web.id}>"
+						onclick="javascript:return del_nsort();">删除</a></td>
+				</tr>
+				<{/foreach}>
+				<tr class=tr1>
+					<td colspan=8><{$multipage}></td>
+				</tr>
+			</form>
+		</table>
+		<table width='90%' height=2>
+			<tr class=bg>
+				<td></td>
+			</tr>
+		</table>
+		<{else}>
+		<table cellspacing=1 cellpadding=4 class=table>
+			<tr>
+				<td class=td colspan=2>添加<{$tit}></td>
+			</tr>
+			<form name=add_frm action='?action=handle' method=post
+				enctype="multipart/form-data">
+				<input type=hidden name=id value='<{$info.id}>'>
+				<tr>
+					<td width="14%" align="right">标题名称：</td>
+					<td width="86%"><input name="title" type="text" class="INPUT"
+						id="title" value="<{$info.title}>" size="20" maxlength="20"></td>
+				</tr>
+				<tr>
+					<td align="right">出发城市：</td>
+					<td><input name="scity" type="text" class="INPUT"
+						id="departure" value="<{$info.scity}>" size="20" maxlength="20"></td>
+				</tr>
+				<tr>
+					<td align="right">到达城市：</td>
+					<td><input name="ecity" type="text" class="INPUT" id="arrived"
+						value="<{$info.ecity}>" size="20" maxlength="20"></td>
+				</tr>
+				<tr>
+					<td align="right">途中时间：</td>
+					<td><input name="times" type="text" class="INPUT" id="times"
+						value="<{$info.times}>" size="20" maxlength="20"></td>
+				</tr>
+				<tr>
+					<td align="right">公 里 数：</td>
+					<td><input name="distance" type="text" class="INPUT"
+						id="distance" value="<{$info.distance}>" size="20" maxlength="20">
+						<span class="title3">km</span></td>
+				</tr>
+				<tr>
+					<td align="right">人数/价格：</td>
+					<td><input name="price1" type="text" class="INPUT"
+						value="<{$info.price1}>" size="10" maxlength="10"> <span
+						class="title3">1人/元</span><input name="price2_5" type="text" class="INPUT"
+						value="<{$info.price2_5}>" size="10" maxlength="10"><span class="title3">2-5人/元</span><input name="price6_9" type="text" class="INPUT"
+						value="<{$info.price6_9}>" size="10" maxlength="10"><span class="title3">6-9人/元</span><input name="price10" type="text" class="INPUT"
+						value="<{$info.price10}>" size="10" maxlength="10"><span class="title3">10人/元</span></td>
+				</tr>
+				<tr>
+					<td align="right">备注说明：</td>
+					<td><textarea name="content" cols="60" rows="4" class="INPUT"
+							id="content"><{$info.content}></textarea></td>
+				</tr>
+			<tr>
+				<td></td>
+				<td height=30><input type=submit value='提交添加'> <input
+					type=reset value='重新填写'> <input type=button name=go_back
+					value='返回上一页' onClick="javascript:location.href='?c_id=0';"></td>
+			</tr>
+			</form>
+		</table>
+
+		<{/if}>
+
+		<script language=javascript>
+			function del_nsort() {
+				var cf = window.confirm("是否确定该操作？");
+				return cf;
+			}
+		</script>
+<{include file="admin_tpl_foot.html"}>

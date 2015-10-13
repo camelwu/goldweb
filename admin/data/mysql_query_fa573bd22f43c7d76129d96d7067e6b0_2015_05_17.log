@@ -1,0 +1,1539 @@
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'camelwu'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.53',time2='2015-05-17 02:06:50' where id=3
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=3
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3 and (userid=3 or bid=1)  
+
+select *  from cg_scenic where types=3 and (userid=3 or bid=1)   order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=0 and (userid=3 or bid=1)  
+
+select *  from cg_scenic where types=0 and (userid=3 or bid=1)   order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1522 and (userid=3 or bid=1)  
+
+select * from cg_config
+
+select * from cg_class where pid=83   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0 and (userid=3 or bid=1)  
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select * from cg_scenic where id=0 and (userid=3 or bid=1)  
+
+select * from cg_config
+
+select * from cg_class where pid=96   order by hots
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=98   order by hots
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0 and (userid=3 or bid=1)  
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.53',time2='2015-05-17 06:04:52' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1517
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+UPDATE cg_scenic SET id='1517', types='3', title='南靖云水谣景区', info_id='', cid='9', aid='62', city='190', url='/1/20140318112376167616.jpg', item='', price2='0', price='90', price1='90', word='<div id=\"card-container\" class=\"mod-top\">
+	<div class=\"card-summary nslog-area clearfix\">
+		<div class=\"card-summary-content\">
+			<div class=\"para\">
+				“南靖云水谣”原名长教，那里山川秀美、人文丰富。村中幽长古道、百年老榕、神奇土楼，还有那灵山碧水，无不给人以超然的感觉。 2005年底，由张克辉以自己和几位台胞的生活阅历为原型创作的电影文学剧本《寻找》改编的电影《云水谣》，曾经在此拍摄取景。在福建土楼“申遗”成功后，让游客在观赏奇楼美景，领略古道悠悠、碧水青青的同时，感受闽台交流的深远渊源。在福建土楼“申遗”成功后，当地政府将村中这条长10余公里，全部用鹅卵石铺成的古道正式命名为“云水谣古栈道”，将长教命名为“云水谣”古镇。
+			</div>
+		</div>
+	</div>
+</div>', info='那灵山碧水，无不给人以超然的感觉', op_type='Array', op_user='admin' WHERE id='1517'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1517', '1', 'admin', '223.72.84.53', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1517
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1518
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1517
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+UPDATE cg_scenic SET id='1517', types='3', title='南靖云水谣景区', info_id='', cid='9', aid='62', city='190', url='/1/20140318112376167616.jpg', item='', price2='0', price='90', price1='90', word='<div id=\"card-container\" class=\"mod-top\">
+	<div class=\"card-summary nslog-area clearfix\">
+		<div class=\"card-summary-content\">
+			<div class=\"para\">
+				“南靖云水谣”原名长教，那里山川秀美、人文丰富。村中幽长古道、百年老榕、神奇土楼，还有那灵山碧水，无不给人以超然的感觉。 2005年底，由张克辉以自己和几位台胞的生活阅历为原型创作的电影文学剧本《寻找》改编的电影《云水谣》，曾经在此拍摄取景。在福建土楼“申遗”成功后，让游客在观赏奇楼美景，领略古道悠悠、碧水青青的同时，感受闽台交流的深远渊源。在福建土楼“申遗”成功后，当地政府将村中这条长10余公里，全部用鹅卵石铺成的古道正式命名为“云水谣古栈道”，将长教命名为“云水谣”古镇。
+			</div>
+		</div>
+	</div>
+</div>', info='那灵山碧水，无不给人以超然的感觉', op_type='1,2', op_user='admin' WHERE id='1517'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1517', '1', 'admin', '223.72.84.53', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1517
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+UPDATE cg_scenic SET id='1517', types='3', title='南靖云水谣景区', info_id='', cid='9', aid='62', city='190', url='/1/20140318112376167616.jpg', item='', price2='0', price='90', price1='90', word='<div id=\"card-container\" class=\"mod-top\">
+	<div class=\"card-summary nslog-area clearfix\">
+		<div class=\"card-summary-content\">
+			<div class=\"para\">
+				“南靖云水谣”原名长教，那里山川秀美、人文丰富。村中幽长古道、百年老榕、神奇土楼，还有那灵山碧水，无不给人以超然的感觉。 2005年底，由张克辉以自己和几位台胞的生活阅历为原型创作的电影文学剧本《寻找》改编的电影《云水谣》，曾经在此拍摄取景。在福建土楼“申遗”成功后，让游客在观赏奇楼美景，领略古道悠悠、碧水青青的同时，感受闽台交流的深远渊源。在福建土楼“申遗”成功后，当地政府将村中这条长10余公里，全部用鹅卵石铺成的古道正式命名为“云水谣古栈道”，将长教命名为“云水谣”古镇。
+			</div>
+		</div>
+	</div>
+</div>', info='那灵山碧水，无不给人以超然的感觉', op_type='0,1,2', op_user='admin' WHERE id='1517'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1517', '1', 'admin', '223.72.84.53', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1517
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1517
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+UPDATE cg_scenic SET id='1517', types='3', title='南靖云水谣景区', info_id='', cid='9', aid='62', city='190', url='/1/20140318112376167616.jpg', item='', price2='0', price='90', price1='90', word='<div id=\"card-container\" class=\"mod-top\">
+	<div class=\"card-summary nslog-area clearfix\">
+		<div class=\"card-summary-content\">
+			<div class=\"para\">
+				“南靖云水谣”原名长教，那里山川秀美、人文丰富。村中幽长古道、百年老榕、神奇土楼，还有那灵山碧水，无不给人以超然的感觉。 2005年底，由张克辉以自己和几位台胞的生活阅历为原型创作的电影文学剧本《寻找》改编的电影《云水谣》，曾经在此拍摄取景。在福建土楼“申遗”成功后，让游客在观赏奇楼美景，领略古道悠悠、碧水青青的同时，感受闽台交流的深远渊源。在福建土楼“申遗”成功后，当地政府将村中这条长10余公里，全部用鹅卵石铺成的古道正式命名为“云水谣古栈道”，将长教命名为“云水谣”古镇。
+			</div>
+		</div>
+	</div>
+</div>', info='那灵山碧水，无不给人以超然的感觉', op_type='1', op_user='admin' WHERE id='1517'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1517', '1', 'admin', '223.72.84.53', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1517
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+UPDATE cg_scenic SET id='1517', types='3', title='南靖云水谣景区', info_id='', cid='9', aid='62', city='190', url='/1/20140318112376167616.jpg', item='', price2='0', price='90', price1='90', word='<div id=\"card-container\" class=\"mod-top\">
+	<div class=\"card-summary nslog-area clearfix\">
+		<div class=\"card-summary-content\">
+			<div class=\"para\">
+				“南靖云水谣”原名长教，那里山川秀美、人文丰富。村中幽长古道、百年老榕、神奇土楼，还有那灵山碧水，无不给人以超然的感觉。 2005年底，由张克辉以自己和几位台胞的生活阅历为原型创作的电影文学剧本《寻找》改编的电影《云水谣》，曾经在此拍摄取景。在福建土楼“申遗”成功后，让游客在观赏奇楼美景，领略古道悠悠、碧水青青的同时，感受闽台交流的深远渊源。在福建土楼“申遗”成功后，当地政府将村中这条长10余公里，全部用鹅卵石铺成的古道正式命名为“云水谣古栈道”，将长教命名为“云水谣”古镇。
+			</div>
+		</div>
+	</div>
+</div>', info='那灵山碧水，无不给人以超然的感觉', op_type='1,2', op_user='admin' WHERE id='1517'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1517', '1', 'admin', '223.72.84.53', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1517
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+UPDATE cg_scenic SET id='1517', types='3', title='南靖云水谣景区', info_id='', cid='9', aid='62', city='190', url='/1/20140318112376167616.jpg', item='', price2='0', price='90', price1='90', word='<div id=\"card-container\" class=\"mod-top\">
+	<div class=\"card-summary nslog-area clearfix\">
+		<div class=\"card-summary-content\">
+			<div class=\"para\">
+				“南靖云水谣”原名长教，那里山川秀美、人文丰富。村中幽长古道、百年老榕、神奇土楼，还有那灵山碧水，无不给人以超然的感觉。 2005年底，由张克辉以自己和几位台胞的生活阅历为原型创作的电影文学剧本《寻找》改编的电影《云水谣》，曾经在此拍摄取景。在福建土楼“申遗”成功后，让游客在观赏奇楼美景，领略古道悠悠、碧水青青的同时，感受闽台交流的深远渊源。在福建土楼“申遗”成功后，当地政府将村中这条长10余公里，全部用鹅卵石铺成的古道正式命名为“云水谣古栈道”，将长教命名为“云水谣”古镇。
+			</div>
+		</div>
+	</div>
+</div>', info='那灵山碧水，无不给人以超然的感觉', op_type='1,3', op_user='admin' WHERE id='1517'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1517', '1', 'admin', '223.72.84.53', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1517
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+UPDATE cg_scenic SET id='1517', types='3', title='南靖云水谣景区', info_id='', cid='9', aid='62', city='190', url='/1/20140318112376167616.jpg', item='', price2='0', price='90', price1='90', word='<div id=\"card-container\" class=\"mod-top\">
+	<div class=\"card-summary nslog-area clearfix\">
+		<div class=\"card-summary-content\">
+			<div class=\"para\">
+				“南靖云水谣”原名长教，那里山川秀美、人文丰富。村中幽长古道、百年老榕、神奇土楼，还有那灵山碧水，无不给人以超然的感觉。 2005年底，由张克辉以自己和几位台胞的生活阅历为原型创作的电影文学剧本《寻找》改编的电影《云水谣》，曾经在此拍摄取景。在福建土楼“申遗”成功后，让游客在观赏奇楼美景，领略古道悠悠、碧水青青的同时，感受闽台交流的深远渊源。在福建土楼“申遗”成功后，当地政府将村中这条长10余公里，全部用鹅卵石铺成的古道正式命名为“云水谣古栈道”，将长教命名为“云水谣”古镇。
+			</div>
+		</div>
+	</div>
+</div>', info='那灵山碧水，无不给人以超然的感觉', op_type='1', op_user='admin' WHERE id='1517'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1517', '1', 'admin', '223.72.84.53', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1517
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+UPDATE cg_scenic SET id='1517', types='3', title='南靖云水谣景区', info_id='', cid='9', aid='62', city='190', url='/1/20140318112376167616.jpg', item='', price2='0', price='90', price1='90', word='<div id=\"card-container\" class=\"mod-top\">
+	<div class=\"card-summary nslog-area clearfix\">
+		<div class=\"card-summary-content\">
+			<div class=\"para\">
+				“南靖云水谣”原名长教，那里山川秀美、人文丰富。村中幽长古道、百年老榕、神奇土楼，还有那灵山碧水，无不给人以超然的感觉。 2005年底，由张克辉以自己和几位台胞的生活阅历为原型创作的电影文学剧本《寻找》改编的电影《云水谣》，曾经在此拍摄取景。在福建土楼“申遗”成功后，让游客在观赏奇楼美景，领略古道悠悠、碧水青青的同时，感受闽台交流的深远渊源。在福建土楼“申遗”成功后，当地政府将村中这条长10余公里，全部用鹅卵石铺成的古道正式命名为“云水谣古栈道”，将长教命名为“云水谣”古镇。
+			</div>
+		</div>
+	</div>
+</div>', info='那灵山碧水，无不给人以超然的感觉', op_type='1,3,4', op_user='admin' WHERE id='1517'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1517', '1', 'admin', '223.72.84.53', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1517
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1517
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+UPDATE cg_scenic SET id='1517', types='3', title='南靖云水谣景区', info_id='', cid='9', aid='62', city='190', url='/1/20140318112376167616.jpg', item='', price2='0', price='90', price1='90', word='<div id=\"card-container\" class=\"mod-top\">
+	<div class=\"card-summary nslog-area clearfix\">
+		<div class=\"card-summary-content\">
+			<div class=\"para\">
+				“南靖云水谣”原名长教，那里山川秀美、人文丰富。村中幽长古道、百年老榕、神奇土楼，还有那灵山碧水，无不给人以超然的感觉。 2005年底，由张克辉以自己和几位台胞的生活阅历为原型创作的电影文学剧本《寻找》改编的电影《云水谣》，曾经在此拍摄取景。在福建土楼“申遗”成功后，让游客在观赏奇楼美景，领略古道悠悠、碧水青青的同时，感受闽台交流的深远渊源。在福建土楼“申遗”成功后，当地政府将村中这条长10余公里，全部用鹅卵石铺成的古道正式命名为“云水谣古栈道”，将长教命名为“云水谣”古镇。
+			</div>
+		</div>
+	</div>
+</div>', info='那灵山碧水，无不给人以超然的感觉', op_type='1,2,3,4', op_user='admin' WHERE id='1517'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1517', '1', 'admin', '223.72.84.53', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1517
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1517
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=0
+
+select *  from cg_scenic where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1516
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+UPDATE cg_scenic SET id='1516', types='3', title='南靖土楼田螺坑景区', info_id='', cid='9', aid='62', city='190', url='/1/20140318111466976697.jpg', item='', price2='0', price='118', price1='118', word='<div class=\"para\">
+	      田螺坑土楼群位于福建省漳州地区南靖县书洋镇，建县已有六百多年历史。与隶属龙岩地区的永定交接的书洋、梅林两镇，大多数是客家人，其它乡镇则以闽南人居多。四座圆楼簇拥着一座方楼，像是一朵怒放的梅花，美妙绝伦，璀璨夺目，又像是一支气势磅礴的五重奏交响曲，在青山秀水间激越地奏响。公路随着山势蜿蜒而下。随着观看角度的变化，田螺坑景观魔术般地不断变幻，圆楼时而在前时而退后，方楼时而隐蔽时而暴露。来到坡底公路上，抬头往上一看，田螺坑土楼群犹如布达拉宫横空出世，巍峨耸立，庄严肃穆，在阳光下一派金碧辉煌。这四座圆楼的建造者以顺地势增减一层屋柱高度的方法，成功地在第二层取得了平面，大大方便了居住。
+</div>', info='', op_type='1,2', op_user='admin' WHERE id='1516'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1516', '1', 'admin', '223.72.84.53', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1509
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+UPDATE cg_scenic SET id='1509', types='3', title='大轮山', info_id='', cid='9', aid='62', city='190', url='/1/20140317115293509350.jpg', item='', price2='0', price='0', price1='0', word='<b>大轮山简介：</b><span style=\"background-color:#ffffff;color:#555555;\">    大轮山位于同安城东1公里，因山体层峦起伏，横亘数公里，从应城山奔跃而来，状如车轮滚滚，故名。</span><br />
+<span style=\"background-color:#ffffff;color:#555555;\">    目前大轮山的景点主要有：梵天寺、婆罗门佛塔、大轮山山门、文公书院等。婆罗门佛塔乃省级文物保护单位。大轮山山门的\"大轮山\"三字为宋代理学家朱熹手书。文公书院，又名紫阳书院，乃官办的书院，院内有朱熹石刻画像和《文公书舍建亭记》石碑。此外，还有国姓寨遗址，是民族英雄郑成功建于大轮山山颠的瞭望哨所。</span><br />
+<br />
+<span style=\"background-color:#ffffff;color:#555555;\">    大轮山风光旖旎，胜景甚多，其中最著名的有“轮山八景”：轮峰叠翠、浔海归航、绿沼荷香、东溪塔影、幽岩月色、梵寺钟声、圣迹泉浏、瞻亭石倒。</span><br />
+<span style=\"background-color:#ffffff;color:#555555;\">    此外还有依山、石、泉、林自然景观命名的十八景：如寒竹风松、曲水流觞、孩儿吸乳、弥勒敞肚、麒麟吐书、丹凤朝阳、蟾蜍吐烟、金龟拜印、云龙吐雾、天鹅孵蛋、倒插金花、五马拖车、莲花参天、观音独坐、麟凤龟龙等。     历代诗人墨客、名人雅士、显宦名儒到此披襟行吟，留下许多诗词墨宝和摩崖石刻。其中有宋朱熹首任同安县主簿时赋的《游梵天寺》、《梵天观雨》等诗作，在大轮山留下“寒竹风松”、“战龙松”、“瞻亭”、“圭石”等摩崖石刻。</span>', info='', op_type='1,3', op_user='admin' WHERE id='1509'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1509', '1', 'admin', '223.72.84.53', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1508
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+UPDATE cg_scenic SET id='1508', types='3', title='园博园', info_id='', cid='9', aid='62', city='190', url='/1/20140306161390669066.jpg', item='', price2='0', price='40', price1='60', word='<div class=\"para\">
+	      厦门园博苑面积6.76平方公里，其中水域面积占了全园面积的一半以上，是世界上独一无二的水上大观园。园博园以广阔的杏林湾水域为背景，由5个展园岛、4个生态景观岛和两个半岛组成，自然形成多岛结构、众星拱月的园在水上、水在园中的景观特点。
+	<div class=\"text_pic layoutright\">
+		<a class=\"lemmapic-mask\" href=\"http://baike.baidu.com/picview/5111365/5133336/0/960a304e251f95cac3840293c8177f3e670952a5.html\" target=\"_blank\"></a>      厦门园博园的大门像两只展翅的白鹭腾空而起，又像两片白色的花瓣，盛开在园博园。作为园博园的标志性建筑之一，园博园大门――花之门将厦门的市鸟白鹭与洁白的花瓣结合在一起，突显了厦门园博园的地域特色，让人进园时就眼前一亮。
+	</div>
+</div>
+<div class=\"para\">
+	建在主展馆东面内湖中的音乐喷泉，是华南片区规模最大、技术含量最高、视觉效果最华丽的大型音乐喷泉。音乐喷泉配合激光表演、特色灯光和艺术喷火等高科技效果，为观众奉上大型视觉、听觉盛宴。
+</div>
+<div class=\"para\">
+	2100米长的园博大道从大门向大海深处延伸。说是大道，其实是一个带状景观公园，按照金木水火土的理念设计建造。园博大道把9个岛屿串成了一条独具南国特色的珍珠岛链，各地园区星罗棋布分散在园博大道两侧，游人置身其中就能领略到园博园别样的风情。
+</div>
+<div class=\"para\">
+	      园博园按中国古典园林流派，结合现代园林风格建造了北方园、江南园、岭南园、民族风情园、国际园、闽台园等10大园区，每个园区都有各自非常鲜明的特色。
+</div>', info='', op_type='1,3', op_user='admin' WHERE id='1508'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1508', '1', 'admin', '223.72.84.53', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1518
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+UPDATE cg_scenic SET id='1518', types='3', title='龙岩龙崆洞', info_id='', cid='9', aid='62', city='190', url='/1/20140318154943494349.jpg', item='', price2='0', price='60', price1='55', word='<div id=\"card-container\" class=\"mod-top\">
+	<div class=\"card-summary nslog-area clearfix\">
+		<div class=\"card-summary-content\">
+			<div class=\"para\">
+				      龙崆洞也叫龙硿洞，位于龙岩市新罗区雁石镇龙康村，距市区48公里，龙崆洞流水淙淙，景色秀丽，风物宜人，有着丰富的山林景观和复杂独特的喀斯特地貌，形成于三亿年前的古生代，经海洋三次地壳运动和间歇演变而成。龙硿洞风景区地处武夷山脉南段，是国家4A级风景名胜区，也是龙岩国家森林公园的主景区，素有‘洞中桂林’、‘华东第一洞’的美誉。它四周群山环抱，苍松挺拔，修竹成林，云海飘渺，是原野型溶洞山林风景区。
+			</div>
+		</div>
+	</div>
+</div>', info='', op_type='1,3', op_user='admin' WHERE id='1518'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1518', '1', 'admin', '223.72.84.53', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1518
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=0
+
+select *  from cg_scenic where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=78   order by hots
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=1509
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+UPDATE cg_scenic SET id='1509', types='3', title='大轮山', info_id='', cid='9', url='/1/20140317115293509350.jpg', item='', price2='0', price='0', price1='0', word='<b>大轮山简介：</b><span style=\"background-color:#ffffff;color:#555555;\">    大轮山位于同安城东1公里，因山体层峦起伏，横亘数公里，从应城山奔跃而来，状如车轮滚滚，故名。</span><br />
+<span style=\"background-color:#ffffff;color:#555555;\">    目前大轮山的景点主要有：梵天寺、婆罗门佛塔、大轮山山门、文公书院等。婆罗门佛塔乃省级文物保护单位。大轮山山门的\"大轮山\"三字为宋代理学家朱熹手书。文公书院，又名紫阳书院，乃官办的书院，院内有朱熹石刻画像和《文公书舍建亭记》石碑。此外，还有国姓寨遗址，是民族英雄郑成功建于大轮山山颠的瞭望哨所。</span><br />
+<br />
+<span style=\"background-color:#ffffff;color:#555555;\">    大轮山风光旖旎，胜景甚多，其中最著名的有“轮山八景”：轮峰叠翠、浔海归航、绿沼荷香、东溪塔影、幽岩月色、梵寺钟声、圣迹泉浏、瞻亭石倒。</span><br />
+<span style=\"background-color:#ffffff;color:#555555;\">    此外还有依山、石、泉、林自然景观命名的十八景：如寒竹风松、曲水流觞、孩儿吸乳、弥勒敞肚、麒麟吐书、丹凤朝阳、蟾蜍吐烟、金龟拜印、云龙吐雾、天鹅孵蛋、倒插金花、五马拖车、莲花参天、观音独坐、麟凤龟龙等。     历代诗人墨客、名人雅士、显宦名儒到此披襟行吟，留下许多诗词墨宝和摩崖石刻。其中有宋朱熹首任同安县主簿时赋的《游梵天寺》、《梵天观雨》等诗作，在大轮山留下“寒竹风松”、“战龙松”、“瞻亭”、“圭石”等摩崖石刻。</span>', info='', op_type='1', op_user='admin' WHERE id='1509'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条景点数据,ID为：1509', '1', 'admin', '223.72.84.53', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=62 order by region
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.53',time2='2015-05-17 08:22:11' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select count(*)  from cg_scenic where types=5
+
+select *  from cg_scenic where types=5 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select count(*)  from cg_scenic where types=5
+
+select *  from cg_scenic where types=5 order by id desc limit 15,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select count(*)  from cg_scenic where types=5
+
+select *  from cg_scenic where types=5 order by id desc limit 30,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select * from cg_scenic where id=1539
+
+select * from cg_config
+
+select * from cg_class where pid=98   order by hots
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+UPDATE cg_scenic SET id='1539', types='5', title='吃喝老挝', ctype='98', info_id='', url='/1/201362610487826.jpg', keyword='', word='<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\">从老挝回来，心里对老挝食物的记忆有几个非常清晰的名目：糯米饭，老挝啤酒，老挝咖啡，长棒法国面包，老挝菜。</SPAN></P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px\" lang=EN-US><FONT face=\"Times New Roman\"></FONT></SPAN> </P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\">走过不少国家，还是见到第一个以糯米为主食的，在老挝的很多餐厅，不分南方北方，都会有糯米饭这个选择，而一般情况下，只要待了两天以上的游客，都会放弃大米饭而选糯米饭，因为实在好吃。</SPAN></P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px\" lang=EN-US><FONT face=\"Times New Roman\"></FONT></SPAN> </P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\">第一餐在万荣的糯米饭还是作为主食的选择之一，但不是很成功，大概不是当餐蒸的，或放了一段时间而干硬了，不太好吃，第一映象不大好，好在没有完全放弃，第二次吃到新鲜蒸熟的糯米，可口香甜，在往后就一发不可收拾，越来越多地选用糯米饭直至后面基本不吃大米饭了。</SPAN></P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px\" lang=EN-US><FONT face=\"Times New Roman\"></FONT></SPAN> </P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\">老挝餐厅的大米饭是同其他地方一样作为主食盛在盘子里或同菜形成一份套餐，但糯米饭就完全是另外的一份，用本地特产的编织精致的带盖竹笼装着，应是用竹箩蒸好后装入的。</SPAN></P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px\" lang=EN-US><FONT face=\"Times New Roman\"></FONT></SPAN> </P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\">大家都吃着开心，但后来才想到在东南亚潮湿的季节里，编织竹笼没有清洗反复盛装糯米饭端上桌，在卫生上会有问题吗？但在香气扑鼻的糯米饭拿上来时，大家都会同本地人一样用手抓着来吃，而对是否洗手干净暂放一边。</SPAN></P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px\" lang=EN-US><FONT face=\"Times New Roman\"></FONT></SPAN> </P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\">老挝不止一种啤酒，除老挝啤酒外还有一种湄公河啤酒，但百分之九十以上的游客都会受到</SPAN><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px\" lang=EN-US><FONT face=\"Times New Roman\">LP</FONT></SPAN><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\">的影响而选用书里宣称的“可能是东南亚最好的啤酒”的</SPAN><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px\" lang=EN-US><FONT face=\"Times New Roman\">BEER LAO</FONT></SPAN><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\">。显然它没有掺杂什么水分，喝起来虽没有斐济啤酒那么浓郁的麦香，但味道依然纯正，带着点黑啤的微苦，加上五度的酒精度，很容易让来到老挝放松的客人们找到</SPAN><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px\" lang=EN-US><FONT face=\"Times New Roman\">HIGH</FONT></SPAN><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\">的感觉。</SPAN></P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px\" lang=EN-US><FONT face=\"Times New Roman\"></FONT></SPAN> </P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\">不管在不多的城市，还是普遍的乡村，最多的餐厅招牌就是一个</SPAN><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px\" lang=EN-US><FONT face=\"Times New Roman\">BEER LAO</FONT></SPAN><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\">的灯箱，向着它走去，就会找到吃的喝的，没有比这更好的理由让人们信赖老挝啤酒了。</SPAN></P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px\" lang=EN-US><FONT face=\"Times New Roman\"></FONT></SPAN> </P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\">在来老挝之前还真的对其咖啡茫然无知，但在老挝境内除了</SPAN><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px\" lang=EN-US><FONT face=\"Times New Roman\">BEER LAO</FONT></SPAN><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\">的灯箱，起码在城市里，最多见的就是</SPAN><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px\" lang=EN-US><FONT face=\"Times New Roman\">DAO COFFEE</FONT></SPAN><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\">的招牌了，喝过后唯一的想法就是一定要多带点回去。</SPAN></P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px\" lang=EN-US><FONT face=\"Times New Roman\"></FONT></SPAN> </P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\">老挝南方的波罗芬高原占巴赛省是种植咖啡的主要产区，以前的法国殖民者带来了种植的技术和传统，但在经历了上世纪五十年代美越战争，美军轰炸机把胡志明小道经过的波罗芬高原丛林变成世界上承受轰炸最密集的地区，并留下大量未爆炸弹后，法国人离开便再没回来，于是给本地种植农留下一片片咖啡林，这现在是他们主要的生计。</SPAN></P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px\" lang=EN-US><FONT face=\"Times New Roman\"></FONT></SPAN> </P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\">很多餐厅会提供冰咖啡，香甜的卡布奇诺风味，容易让人上瘾，基本上不用什么过程就会轻易地爱上它。而老挝咖啡的袋装销售版就有冷水冲泡的冰咖啡，在炎热的东南亚，没有比啤酒更能压过冰咖啡的美味了。</SPAN></P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px\" lang=EN-US><FONT face=\"Times New Roman\"></FONT></SPAN> </P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\">品尝本地菜是出门的一大乐趣，而老挝的本地菜在试过几次后发觉都是一样的碎肉炒小菜，不管牛肉猪肉鸡肉羊肉都切成碎碎小块，同国内餐厅的农家小炒差不多。奇怪的是老挝的西方食物做得出奇地好。</SPAN></P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px\" lang=EN-US><FONT face=\"Times New Roman\"></FONT></SPAN> </P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\">最常见的是街头到处在散卖着的法国长棒面包，但还是有档次区别的。做得一般的面包外皮硬而厚，于是在很多以长棒面包为主食的户外一日游团队停留的餐台上可以看到许多长棒面包被淘心挖肉，剩下难以下咽的厚硬外壳。但是在好的长棒面包提供的餐厅内，才发现原来法式面包的外壳可以做得酥脆而薄的，很是好吃。</SPAN></P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px\" lang=EN-US><FONT face=\"Times New Roman\"></FONT></SPAN> </P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\">每次跟随一日游户外队伍出门，游客们都习惯了三部曲：加油，打气，法式面包。这里的汽车出门，包括户外出队的车辆，一驶出城区第一步肯定是前往加油站，然后大多会在打气处停一下，好像他们的车都是在车库里停放了半年刚开出来，而法式面包更是户外出队不二之选。</SPAN></P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px\" lang=EN-US><FONT face=\"Times New Roman\"></FONT></SPAN> </P><FONT style=\"WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); FONT-VARIANT: normal; FONT-STYLE: normal; TEXT-INDENT: 0px; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\" size=3 face=宋体></FONT>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\">户外活动出队时的法式面包里包裹的大多数是烧烤的肉串加瓜果粒，味道远不如餐厅里塞的肉碎或炒鸡蛋。包肉碎或鸡蛋的三文治一样非常美味，比一般麦当劳的汉堡包更合胃口。还有一样西式主食——披萨，在老挝也是四处可见，而且水准颇高，奶酪厚而香，面饼也不会过硬，在大部分的餐厅里如果不知点什么由把握时拿一份披萨通常不会失望。</SPAN></P>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\"></SPAN> </P>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\"></SPAN> </P>
+<P style=\"PADDING-BOTTOM: 0px; WIDOWS: 2; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 21.75pt; MARGIN: 0cm 0cm 0pt; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/22px Tahoma; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px\"><SPAN style=\"PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; PADDING-TOP: 0px\">游记链接：<FONT face=Verdana><A href=\"http://935164057.qzone.qq.com/blog/1330336726?#!app=2&via=QZ.HashRefresh&pos=1330336726\">http://935164057.qzone.qq.com/blog/1330336726?#!app=2&via=QZ.HashRefresh&pos=1330336726</A></FONT></SPAN></P>', info='', op_name='', op_url='', op_user='admin', op_type='1,2,3' WHERE id='1539'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条信息数据,ID为：1539', '1', 'admin', '223.72.84.53', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select count(*)  from cg_scenic where types=5
+
+select *  from cg_scenic where types=5 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select count(*)  from cg_scenic where types=5
+
+select *  from cg_scenic where types=5 order by id desc limit 15,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select count(*)  from cg_scenic where types=5
+
+select *  from cg_scenic where types=5 order by id desc limit 30,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select * from cg_scenic where id=1539
+
+select * from cg_config
+
+select * from cg_class where pid=98   order by hots
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.53',time2='2015-05-17 13:50:02' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.53',time2='2015-05-17 17:15:38' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+

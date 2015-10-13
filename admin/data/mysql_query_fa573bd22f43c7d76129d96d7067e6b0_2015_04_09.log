@@ -1,0 +1,1910 @@
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'camelwu'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.101',time2='2015-04-09 05:54:15' where id=3
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=3
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config where id=1
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=0 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config where id=1
+
+select * from cg_config
+
+select * from cg_config where id=1
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=0 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where types=0  order by id 
+
+select count(*)  from cg_user where 1 
+
+select *  from cg_user where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select count(*)  from cg_branch where 1 
+
+select *  from cg_branch where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select count(*)  from cg_banner where 1 
+
+select *  from cg_banner where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select count(*)  from cg_link where 1 
+
+select *  from cg_link where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select count(*)  from cg_attached where 1=1
+
+select *  from cg_attached where 1=1 order by addtime desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select * from cg_scenic where id=1527
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select * from cg_scenic where id=1527
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select count(*)  from cg_link where 1 
+
+select *  from cg_link where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select count(*)  from cg_link where 1 
+
+select *  from cg_link where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_branch  where types=0  order by id 
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_branch  where types=0  order by id 
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'camelwu'
+
+update cg_user set login_num=login_num+1,login_ip='114.113.222.66',time2='2015-04-09 07:11:32' where id=3
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=3
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where types=0  order by id 
+
+select count(*)  from cg_user where 1 
+
+select *  from cg_user where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_branch  where types=0  order by id 
+
+select * from cg_user where id=3
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_branch  where types=0  order by id 
+
+select * from cg_user where id=3
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where types=0  order by id 
+
+select parentid from con_menuitems where classid='2'
+
+select parentid from con_menuitems where classid='3'
+
+select parentid from con_menuitems where classid='4'
+
+select parentid from con_menuitems where classid='5'
+
+select parentid from con_menuitems where classid='6'
+
+select parentid from con_menuitems where classid='7'
+
+select parentid from con_menuitems where classid='8'
+
+select parentid from con_menuitems where classid='9'
+
+select parentid from con_menuitems where classid='10'
+
+select parentid from con_menuitems where classid='11'
+
+select parentid from con_menuitems where classid='12'
+
+select parentid from con_menuitems where classid='13'
+
+select parentid from con_menuitems where classid='14'
+
+select parentid from con_menuitems where classid='15'
+
+select parentid from con_menuitems where classid='16'
+
+select parentid from con_menuitems where classid='17'
+
+select parentid from con_menuitems where classid='18'
+
+select parentid from con_menuitems where classid='19'
+
+select parentid from con_menuitems where classid='20'
+
+select parentid from con_menuitems where classid='21'
+
+select parentid from con_menuitems where classid='22'
+
+select parentid from con_menuitems where classid='23'
+
+select parentid from con_menuitems where classid='24'
+
+select parentid from con_menuitems where classid='25'
+
+select parentid from con_menuitems where classid='26'
+
+select parentid from con_menuitems where classid='27'
+
+select parentid from con_menuitems where classid='28'
+
+select parentid from con_menuitems where classid='29'
+
+select parentid from con_menuitems where classid='30'
+
+select parentid from con_menuitems where classid='31'
+
+select parentid from con_menuitems where classid='32'
+
+select parentid from con_menuitems where classid='33'
+
+select parentid from con_menuitems where classid='34'
+
+select parentid from con_menuitems where classid='35'
+
+select parentid from con_menuitems where classid='36'
+
+select parentid from con_menuitems where classid='37'
+
+select parentid from con_menuitems where classid='38'
+
+select parentid from con_menuitems where classid='39'
+
+select parentid from con_menuitems where classid='40'
+
+select parentid from con_menuitems where classid='41'
+
+select parentid from con_menuitems where classid='42'
+
+select parentid from con_menuitems where classid='43'
+
+select parentid from con_menuitems where classid='44'
+
+select parentid from con_menuitems where classid='45'
+
+select parentid from con_menuitems where classid='46'
+
+select parentid from con_menuitems where classid='47'
+
+select parentid from con_menuitems where classid='48'
+
+select parentid from con_menuitems where classid='49'
+
+select parentid from con_menuitems where classid='50'
+
+select parentid from con_menuitems where classid='51'
+
+select parentid from con_menuitems where classid='52'
+
+select parentid from con_menuitems where classid='53'
+
+select parentid from con_menuitems where classid='54'
+
+select parentid from con_menuitems where classid='55'
+
+select parentid from con_menuitems where classid='57'
+
+select parentid from con_menuitems where classid='58'
+
+select parentid from con_menuitems where classid='59'
+
+select parentid from con_menuitems where classid='60'
+
+select parentid from con_menuitems where classid='61'
+
+select parentid from con_menuitems where classid='62'
+
+select parentid from con_menuitems where classid='63'
+
+select parentid from con_menuitems where classid='64'
+
+select parentid from con_menuitems where classid='65'
+
+select parentid from con_menuitems where classid='66'
+
+select parentid from con_menuitems where classid='67'
+
+UPDATE cg_user SET username='camelwu', name='武松波', bid='6', position='admins', qq='', email='camelwu963@126.com', tel='', fax='', mobile='18910763350', uid='1', allowstr='2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,57,58,59,60,61,62,63,64,65,66,67', note='网站程序' WHERE id='3'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_user', '修改了1条人员数据,ID为：3', '3', 'camelwu', '114.113.222.66', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_branch  where types=0  order by id 
+
+select * from cg_user where id=3
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=3
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_guide where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select count(*)  from cg_guide where types=0
+
+select *  from cg_guide where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select count(*)  from cg_guide where types=1
+
+select *  from cg_guide where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_guide where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_branch  where types=0  order by id 
+
+select count(*)  from cg_product_route where userid=3
+
+select *  from cg_product_route where userid=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_branch  where types=0  order by id 
+
+select count(*)  from cg_product_route where userid=3
+
+select *  from cg_product_route where userid=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select count(*)  from cg_guide where types=1
+
+select *  from cg_guide where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select count(*)  from cg_guide where types=0
+
+select *  from cg_guide where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_guide where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_branch  where types=0  order by id 
+
+select count(*)  from cg_user where 1 
+
+select *  from cg_user where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_branch  where types=0  order by id 
+
+select * from cg_user where id=3
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_branch  where types=0  order by id 
+
+select count(*)  from cg_user where 1 
+
+select *  from cg_user where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=3
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where types=0  order by id 
+
+select count(*)  from cg_user where 1 
+
+select *  from cg_user where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config where id=1
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=0 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select count(*)  from cg_branch where 1 
+
+select *  from cg_branch where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=0 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area where types=0
+
+select *  from cg_area where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area where types=1
+
+select *  from cg_area where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select count(*)  from cg_air where types=1
+
+select *  from cg_air where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select count(*)  from cg_cost_tra_train where 1 
+
+select *  from cg_cost_tra_train where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select count(*)  from cg_cost_tra_ship where 1 
+
+select *  from cg_cost_tra_ship where 1  order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select count(*)  from cg_guide where types=0
+
+select *  from cg_guide where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select count(*)  from cg_guide where types=1
+
+select *  from cg_guide where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_branch  where types=0  order by id 
+
+select count(*)  from cg_product_route where userid=3
+
+select *  from cg_product_route where userid=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=0
+
+select *  from cg_scenic where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=2
+
+select *  from cg_scenic where types=2 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=2
+
+select *  from cg_scenic where types=2 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=78   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=78   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=78   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=0
+
+select *  from cg_scenic where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=78   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=78   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=78   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_branch  where types=0  order by id 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=6   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=93   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=93   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=91   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=2  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=2  and pid=12 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=2  and pid=13 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=2  and pid=12 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=4
+
+select *  from cg_scenic where types=4 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select count(*)  from cg_scenic where types=1
+
+select *  from cg_scenic where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=91   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=93   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_branch  where types=0  order by id 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=6   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_branch  where types=0  order by id 
+
+select count(*)  from cg_scenic where types=6
+
+select *  from cg_scenic where types=6 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select count(*)  from cg_scenic where types=5
+
+select *  from cg_scenic where types=5 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=96   order by hots
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=96   order by hots
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=97   order by hots
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select count(*)  from cg_scenic where types=5
+
+select *  from cg_scenic where types=5 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select * from cg_scenic where id=1527
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select * from cg_scenic where id=1527
+
+select * from cg_config
+
+select * from cg_class where pid=97   order by hots
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+UPDATE cg_scenic SET id='1527', types='5', title='铁通项目OTV-DS业务数据对接', ctype='97', ctype1='104', url='/3/142700890953.jpg', keyword='12', word='123', info='132', op_name='132', op_url='132', op_user='camelwu', userid='3' WHERE id='1527'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条信息数据,ID为：1527', '3', 'camelwu', '114.113.222.66', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select count(*)  from cg_scenic where types=5
+
+select *  from cg_scenic where types=5 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=96   order by hots
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select count(*)  from cg_scenic where types=5
+
+select *  from cg_scenic where types=5 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=78   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=2 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=2  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=2  and pid=12 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=2  and pid=142 order by region
+
+select * from cg_config
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=2 order by region
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=3
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area where types=0
+
+select *  from cg_area where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=0 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_guide where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=9 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=2  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=2  and pid=12 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=2  and pid=13 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=2  and pid=154 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=14 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=9 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=69 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=9  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+

@@ -1,0 +1,22 @@
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='111.132.245.222',time2='2015-04-22 11:41:34' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+

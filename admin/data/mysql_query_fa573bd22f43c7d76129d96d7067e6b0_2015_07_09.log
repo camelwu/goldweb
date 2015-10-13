@@ -1,0 +1,128 @@
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'camelwu'
+
+update cg_user set login_num=login_num+1,login_ip='175.10.4.162',time2='2015-07-09 16:39:11' where id=3
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=3
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=138   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=0 and id=3  order by id 
+
+select * from cg_branch  where 1  and types=2 and id=3  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=3
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=0 and id=3  order by id 
+
+select * from cg_branch  where 1  and types=2 and id=3  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_product_route where id=449
+
+select * from cg_config
+
+select * from cg_class where pid=113   order by hots
+
+select * from cg_config
+
+select * from cg_product_route where id=446
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select count(*)  from cg_product_route_do where types=0 and ctype=0 and id=446
+
+select *  from cg_product_route_do where types=0 and ctype=0 and id=446 order by hid 
+
+select * from cg_config
+
+select * from cg_product_route where id=446
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_product_route_do where hid=0
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=0 and id=3  order by id 
+
+select * from cg_branch  where 1  and types=2 and id=3  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_product_route where id=448
+
+select * from cg_config
+
+select * from cg_class where pid=112   order by hots
+
+select * from cg_config
+
+select * from cg_product_route where id=447
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select count(*)  from cg_product_route_do where types=0 and ctype=0 and id=447
+
+select *  from cg_product_route_do where types=0 and ctype=0 and id=447 order by hid 
+
+select * from cg_config
+
+select * from cg_product_route where id=447
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_product_route_do where hid=0
+

@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><{$cnname}>_旅行社_<{$ktitle}>_金桥</title>
+</head>
+<body>
+<{include_php file="./include/header.php"}>
+<div class="wrapper now_position"><!--当前位置-->
+    <a href="./">首页</a>&gt;<a href="./<{$enname}>/"><{$cnname}></a>
+</div>
+<div class="wrapper"><!--top-img-->
+    <ul class="domestic_top">
+        <li class="dom_t1"><a href="#"><img src="images/recom_bd3.jpg" width="240" height="160"/></a></li>
+        <li class="dom_t2"><a href="#"><img src="images/banner3.jpg" width="444" height="160"/></a></li>
+        <li class="dom_t3"><a href="#"><img src="images/recom_bd5.jpg" width="240" height="160"/></a></li>
+        <li class="dom_t4"><a href="#"><img src="images/recom_bd4.jpg" width="240" height="330"/></a></li>
+        <li class="dom_t5"><a href="#"><img src="images/recom_bd5.jpg" width="240" height="160"/></a></li>
+        <li class="dom_t6"><a href="#"><img src="images/recom_bd1.jpg" width="240" height="160"/></a></li>
+        <li class="dom_t7"><a href="#"><img src="images/banner1.jpg"width="444" height="160"/></a></li>
+    </ul>
+</div>
+
+<div class="wrapper"><!--出发地目的地筛选-->
+  <div class="address_select clrfix">
+        <ul class="set_out_box clrfix"><!--出发地-->
+            <li>出发地：</li>
+            <li><span>全部</span></li>
+            <li><span>当地</span></li>
+            <li><span>西安</span></li>
+            <li><span>成都</span></li>
+            <li><span>广东</span></li>
+            <li><span>其他</span></li>
+        </ul>
+        <ul class="dest_zhou_box clrfix"><!--目的地-洲-->
+            <div class="dest_hd">目的地：</div>
+            <li class="dest_zhou_on">西安</li>
+            <li>宝鸡</li>
+            <li>渭南</li>
+            <li>广元</li>
+            <li>延安</li>
+            <li>榆林</li>
+        </ul>
+        <ul class="dest_guo_box"><!--目的地-国家-->
+            <li class="clrfix dest_guo_on"><!--西安-->
+                <span>兵马俑</span>
+                <span>华清池</span>
+                <span>华山</span>
+                <span>翠华山</span>
+                <span>城墙</span>                     
+            </li>
+            <li class="clrfix"><!--宝鸡-->              
+                <span>法国</span>
+                <span>巴黎</span>
+                <span>意大利</span>
+                <span>马尔代夫</span>
+                <span>西班牙</span>
+                <span>毛里求斯</span>
+            </li>
+            <li class="clrfix"><!--渭南-->
+                <span>爱尔兰</span>
+                <span>波兰</span>
+                <span>瑞典</span>
+                <span>以色列</span>
+                <span>塞班</span>             
+                <span>波兰</span>
+                <span>巴黎</span>
+                <span>瑞典</span>
+                <span>以色列</span>
+            </li>
+            <li class="clrfix"><!--广元-->
+                <span>印度尼西亚</span>
+                <span>巴黎岛</span>
+                <span>普极岛</span>
+                <span>澳大利亚</span>
+                <span>塞班</span>
+                <span>马来西亚</span>
+                <span>新加坡</span>
+                <span>法国</span>
+                <span>巴黎</span>
+                <span>意大利</span>
+                <span>香港</span>
+                <span>印度</span>
+                <span>希腊</span>
+            </li>
+            <li class="clrfix"><!--延安-->
+                <span>希腊</span>
+                <span>巴西</span>
+                <span>加拿大</span>
+                <span>芬兰</span>
+                <span>阿根廷</span>
+                <span>丹麦</span>
+                <span>爱尔兰</span>
+                <span>波兰</span>
+                <span>瑞典</span>
+                <span>以色列</span>
+                <span>塞班</span>
+                <span>美国</span>                
+            </li>
+            <li class="clrfix"><!--榆林-->
+                <span>印度</span>
+                <span>希腊</span>
+                <span>印度尼西亚</span>         
+                <span>土耳其</span>
+                <span>希腊</span>
+                <span>巴西</span>
+                <span>加拿大</span>
+                <span>芬兰</span>
+                <span>阿根廷</span>
+                <span>爱尔兰</span>
+                <span>丹麦</span>
+                <span>波兰</span>
+                <span>巴黎</span>
+                <span>瑞典</span>
+            </li>
+        </ul>
+        <ul class="service_mold clrfix"><!--服务类型-->
+            <li>服务类型：</li>
+            <li><span>全部</span></li>
+            <li><span>跟团游</span></li>
+            <li><span>自助游</span></li>
+            <li><span>景点门票</span></li>
+            <li><span>酒店</span></li>
+        </ul>
+        <ul class="number_days clrfix"><!--行程天数-->
+            <li>行程天数：</li>
+            <li><span>全部</span></li>
+            <li><span>1天</span></li>
+            <li><span>4天</span></li>
+            <li><span>5天</span></li>
+            <li><span>6天</span></li>
+            <li><span>7天</span></li>
+            <li><span>8天</span></li>
+        </ul>
+        <ul class="travel_time clrfix"><!--出游时间-->
+            <li class="tt_hd">出游时间：</li>
+            <li class="tt_input"><input type="text" id="j_Date1" placeholder="yyyy-mm-dd"/></li>            
+            <li class="tt_input"><input type="text"id="j_Date2" placeholder="yyyy-mm-dd"/></li>
+        </ul>
+        <ul class="sob_box clrfix"><!--预算花费-->
+            <li>预算花费：</li>
+            <li><span>全部</span></li>
+            <li><span>2000以内</span></li>
+            <li><span>2000-3000</span></li>
+            <li><span>3000-4000</span></li>
+            <li><span>4000-5000</span></li>
+            <li><span>5000-6000</span></li>
+            <li><span>6000以上</span></li>
+        </ul>
+    </div>
+    <ul class="recom_select clrfix"><!--强力推荐-->
+        <li>强力推荐</li>
+        <li>销量&nbsp;↓</li>
+        <li>销量<span class="rs_icon"></span></li>
+    </ul>
+    <div class="dm_box">
+        <ul class="domestic_main clrfix"><!--内容区-->
+			<{foreach item=tour name=tour from=$comments}><li>
+                <a class="dm_img" href="tours/<{$tour.id}>"><img src="<{$tour.url}>" width="374" height="230"/></a>
+                <div class="dm_bd"><a href="tours/<{$tour.id}>"><{$tour.name}></a><{$tour.title}></div>
+                <a href="tours/<{$tour.id}>" class="dm_more">更多团期</a>
+                <div class="dm_price">￥<span><{$tour.price_2}></span></div>
+            </li><{/foreach}>
+        </ul>
+    </div>
+</div>
+<div class="wrapper clrfix"><!--页码-->
+    <ul class="page_box clrfix"><{$multipage}></ul>
+</div>
+
+<{include file="./include/footer.html"}>
+
+<{include_php file="./include/right.php"}>
+</body>
+</html>

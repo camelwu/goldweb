@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><{$ktitle}></title>
+<meta name="Keywords" content="<{$keywords}>" />
+<meta name="Description" content="<{$description}>" />
+<link href="<{$siteurl}>/css/global.css" rel="stylesheet" type="text/css">
+<link href="<{$siteurl}>/css/index.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="<{$siteurl}>/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="<{$siteurl}>/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".scenic_area>li").mouseenter(function(){
+		$(this).find(".sa_mask").stop(false).animate({bottom:0},300);
+	});
+	$(".scenic_area>li").mouseleave(function(){
+		$(this).find(".sa_mask").stop(false).animate({bottom:-138},200);
+	});
+	$(".slideBox").slide({mainCell:".bd ul",effect:"fold",autoPlay:true,easing:"easeOutCirc",delayTime:800});
+});
+</script>
+<script type="text/javascript" src="<{$siteurl}>/js/index.js"></script>
+</head>
+<body>
+	<{include_php file="./include/head.php"}>
+
+	<div class="slideBox">
+		<!--焦点图-->
+		<div class="wrapper slide_search"></div>
+		<div class="bd">
+			<ul>
+				<{foreach item=banneritem from=$banner}>
+				<li style="display: none;"><a href="<{$banneritem.mypath}>"
+					target="_blank"><img src="<{$banneritem.url}>" /></a></li><{/foreach}>
+			</ul>
+		</div>
+		<a class="prev" href="javascript:void(0)"></a> <a class="next" href="javascript:void(0)"></a>
+	</div>
+
+	<div class="wrapper recom_box">
+		<!--推荐旅游-->
+		<div class="recom_title">大家都喜欢<ul class="clrfix"><li class="recom_on">最受欢迎</li><li class="">欢迎来美丽的俄罗斯</li></ul></div>
+		<div class="recom_main">
+			<{foreach name=outer01 item=contact from=$received}>
+			<ul class="recom_bd<{$smarty.foreach.outer01.index+1}>">
+				<li class="rbd_img"><a href="<{$contact.mypath}>"><img src="<{$contact.url}>"
+						border="0" width="372"<{if $smarty.foreach.outer01.index eq
+						1}>height="515"<{else}>height="210"<{/if}>></a></li>
+				<li class="rbd_txt">
+					<div class="rbd_l_bg">
+						<div class="fl_rbd_title">
+							<a href="<{$contact.mypath}>"><{$contact.title}></a>
+						</div>
+						<div class="fl_rbd_hd">
+							<a href="<{$contact.mypath}>"><{$contact.content}></a>
+						</div>
+						<div class="rbd_r_bg"><{$contact.price2}></div>
+					</div>
+				</li>
+			</ul>
+			<{/foreach}>
+
+		</div>
+	</div>
+	<{if $cjroute|@count gt 7}><div class="wrapper hot_org clrfix">
+		<!--热门跟团游-->
+		<div class="index_main_title">
+			<div class="hot_title">热门推荐</div>
+		</div>
+		<div id="gt_tours" class="div_option">
+			<span>
+				<ul class="scenic_area fl">
+					<{foreach name=gtgn item=xl from=$cjroute}>
+					<li><a href="./tours/<{$xl.id}>" class="sa_img"> <img
+							src="<{$xl.url}>" width="230" height="138" />
+						<div class="sa_price">￥<{$xl.price_2}>起</div>
+							<div class="sa_mask">
+								<span><{$xl.name}><br><{$xl.word}>
+								</span>
+							</div>
+					</a> <a href="./tours/<{$xl.id}>" class="sa_txt"><{$xl.name}></a></li><{/foreach}>
+				</ul>
+				<div class="scenic_recom fl">
+					<a href="./tours/<{$cjline.id}>"><img src="<{$cjline.url}>" width="230" height="361" /></a>
+					<a href="./tours/<{$cjline.id}>" class="sr_txt"><{$cjline.name}></a>
+				</div>
+			</span>
+		</div>
+	</div><{/if}>
+
+	<div class="wrapper hotel_box clrfix">
+		<!--景点门票-->
+		<div class="index_main_title">
+			<div class="hotel_title">景点门票</div>
+		</div>
+		<a href="./detail/<{$sight.id}>" class="city_box fl"
+			title="<{$sight.title}>"><img src="<{$sight.url}>" width="230"
+			height="394" alt="<{$sight.title}>" /></a>
+		<ul class="scenic_area fl clrfix">
+			<ul class="cvh_title clrfix">
+				<div class="fl">精选景点门票：</div>
+				<{foreach name=jd item=jd from=$menpiao}>
+				<li><a href="./detail/<{$jd.id}>"><{$jd.title}></a></li><{/foreach}>
+				<li><a href="./scenic">更多&gt;</a></li>
+			</ul>
+			<{foreach name=scenic item=scenic from=$scenic}>
+			<li><a href="./detail/<{$scenic.id}>" class="sa_img"> <img
+					src="<{$scenic.url}>" width="230" height="138" />
+				<!--div class="sa_price">￥<{$scenic.price1}>起</div-->
+					<div class="sa_mask">
+						<span><{$scenic.title}><br><{$scenic.word}>
+						</span>
+					</div>
+			</a> <a href="<{$scenic.id}>" class="sa_txt"><{$scenic.title}></a></li><{/foreach}>
+		</ul>
+	</div>
+
+	<div class="wrapper cruise_visa clrfix">
+		<!--签证-->
+		<div class="index_main_title">
+			<div class="traveling_title">签证</div>
+		</div>
+		<div id="cv_tours" class="div_option">
+			<span>
+            	<a href="#" class="city_box fl"><img src="images/city_box1.jpg" width="230" height="210" /></a>
+				<ul class="scenic_area fl">
+					<ul class="cvh_title clrfix">
+						<div class="fl">签证须知：每个签证有领区之分，请各位仔细注意！！</div>
+					</ul>
+					<{foreach name=qz item=qz from=$visa}>
+					<li><a href="./detail/<{$qz.id}>" class="sa_img"> <img
+							src="<{$qz.url}>" width="230" height="138" />
+						<div class="sa_price">￥<{$qz.price1}></div>
+							<div class="sa_mask">
+								<span><{$qz.title}><br><{$qz.word}>
+								</span>
+							</div>
+					</a> <a href="<{$qz.id}>" class="sa_txt"><{$qz.title}></a></li><{/foreach}>
+				</ul>
+			</span>
+			<!--签-->
+		</div>
+	</div>
+	<div class="wrapper">
+		<!--旅行攻略-->
+		<div class="index_main_title">
+			<div class="traveling_title">旅行攻略</div>
+		</div>
+		<ul class="traveling_box clrfix">
+			<!--热门攻略-->
+			<li class="tra_recom"><a href="./read/<{$newl.id}>"
+				target="_blank"><img src="<{$newl.url}>" width="230"
+					height="360" /></a>
+				<div class="tra_recom_txt">
+					<a href="./read/<{$newl.id}>" target="_blank"><{$newl.title}></a>
+					<span><{$newl.info}></span>
+				</div></li>
+			<!--推荐攻略-->
+			<li class="tra_bd">
+				<ul class="scenic_area fl clrfix">
+					<{foreach name=yj item=yj from=$news}>
+					<li><a href="./read/<{$yj.id}>" class="sa_img"
+						target="_blank"> <img src="<{$yj.url}>" width="230"
+							height="138" />
+							<div class="sa_mask">
+								<span><{$yj.title}>/<{$yj.word}></span>
+							</div>
+					</a> <a href="./read/<{$yj.id}>" class="sa_txt" target="_blank"><{$yj.title}></a></li>
+					<{/foreach}>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="mg20_box"></div>
+	<div class="commitment_box">
+		<!--金桥五大承诺-->
+		<ul class="wrapper clrfix">
+			<li class="comm_title">金桥五大承诺&nbsp;&nbsp;让你旅游放心</li>
+			<li class="comm_cq">产品优质</li>
+			<li class="comm_jg">价格最新</li>
+			<li class="comm_bz">预约价格保证</li>
+			<li class="comm_qy">维护权益</li>
+			<li class="comm_pf">先行赔付</li>
+		</ul>
+	</div>
+	<{include file='./include/footer.html'}>
+</body>
+</html>
+

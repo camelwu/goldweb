@@ -1,0 +1,1016 @@
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'camelwu'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.47',time2='2015-05-16 01:49:09' where id=3
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=3
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=0 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select count(*)  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=3
+
+select *  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=3 order by hid desc limit 0,15
+
+select * from cg_config
+
+select count(*)  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=1 and uid=3
+
+select *  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=1 and uid=3 order by hid desc limit 0,15
+
+select * from cg_config
+
+select * from cg_product_route where id=449
+
+select * from cg_product_route_sale where hid=9
+
+select * from cg_config
+
+select * from cg_branch  where 1  and id=1  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where 1 and (userid=3 or bid=1)  
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where 1 and (userid=3 or bid=1)   order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1  and id=1  order by id 
+
+select count(*)  from cg_user where 1  and (uid=3 )
+
+select *  from cg_user where 1  and (uid=3 ) order by id limit 0,15
+
+select * from cg_config
+
+select * from cg_branch  where 1  and id=1  order by id 
+
+select * from cg_user where id=4
+
+select * from cg_user  where id=3   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_branch  where 1  and id=1  order by id 
+
+select parentid from con_menuitems where classid='2'
+
+select parentid from con_menuitems where classid='3'
+
+select parentid from con_menuitems where classid='4'
+
+select parentid from con_menuitems where classid='5'
+
+select parentid from con_menuitems where classid='6'
+
+select parentid from con_menuitems where classid='7'
+
+select parentid from con_menuitems where classid='8'
+
+select parentid from con_menuitems where classid='9'
+
+select parentid from con_menuitems where classid='10'
+
+select parentid from con_menuitems where classid='39'
+
+select parentid from con_menuitems where classid='40'
+
+select parentid from con_menuitems where classid='41'
+
+select parentid from con_menuitems where classid='42'
+
+select parentid from con_menuitems where classid='43'
+
+select parentid from con_menuitems where classid='44'
+
+select parentid from con_menuitems where classid='45'
+
+select parentid from con_menuitems where classid='46'
+
+select parentid from con_menuitems where classid='47'
+
+select parentid from con_menuitems where classid='48'
+
+select parentid from con_menuitems where classid='49'
+
+select parentid from con_menuitems where classid='50'
+
+select parentid from con_menuitems where classid='51'
+
+select parentid from con_menuitems where classid='52'
+
+select parentid from con_menuitems where classid='53'
+
+select parentid from con_menuitems where classid='54'
+
+select parentid from con_menuitems where classid='55'
+
+select parentid from con_menuitems where classid='57'
+
+select parentid from con_menuitems where classid='58'
+
+UPDATE cg_user SET username='zywing313', name='耿小刚', bid='0', position='manage', qq='', email='', tel='', fax='', mobile='18910953350', uid='3', allowstr='2,3,4,5,6,7,8,9,10,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,57,58', note='暂时的测试帐号' WHERE id='4'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_user', '修改了1条人员数据,ID为：4', '3', 'camelwu', '223.72.84.47', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_branch  where 1  and id=1  order by id 
+
+select * from cg_user where id=4
+
+select * from cg_user  where id=3   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'camelwu'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.47',time2='2015-05-16 13:17:21' where id=3
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=3
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=0 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=117 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=96 and classtype=1 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=97 and classtype=1 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=98 and classtype=1 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=99 and classtype=1 order by hots asc
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=117 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=114 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=113 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=112 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=148 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=0 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where id=148
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_config
+
+select * from cg_class where html='privatecustom' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=0 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=0 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=117 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=117 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1  and id=1  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where 1 and (userid=3 or bid=1)  
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where 1 and (userid=3 or bid=1)   order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1  and id=1  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_config
+
+select * from cg_class where pid=112   order by hots
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=3
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=0 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=0 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=117 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where id=148
+
+select * from cg_class where pid=0  and classtype=117   order by hots 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_config
+
+select * from cg_class where html='cjlx' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+UPDATE cg_class SET title='出境', html='cjlx', classtype='0', hots='0', pid='117', userid='3' WHERE id='148'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_class', '修改了1条分类数据,ID为：148', '3', 'camelwu', '223.72.84.47', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=117 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='hmki' limit 1
+
+select * from cg_class where pid=0  and classtype=117   order by hots 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_config
+
+select * from cg_class where html='hmki' limit 1
+
+select * from cg_config
+
+select max(hots)+1 from cg_class where classtype=0  and pid=117
+
+select * from cg_config
+
+select * from cg_class where html='gnlx' limit 1
+
+select * from cg_config
+
+INSERT INTO cg_class (title, html, classtype, hots, pid, userid) VALUES ('国内', 'gnlx', '0', '1', '117', '3') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_class', '添加了1条分类数据,ID为：149', '3', 'camelwu', '223.72.84.47', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=117 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0 and (userid=3 or bid=1)  
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=3 and (userid=3 or bid=1)  
+
+select *  from cg_scenic where types=3 and (userid=3 or bid=1)   order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_branch  where 1  and types=2 and id=1  order by id 
+
+select count(*)  from cg_scenic where types=0
+
+select *  from cg_scenic where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_branch  where 1  and types=2 and id=1  order by id 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=null   order by hots
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_branch  where 1  and types=2 and id=1  order by id 
+
+select count(*)  from cg_scenic where types=0
+
+select *  from cg_scenic where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0 and (userid=3 or bid=1)  
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_scenic where id=0 and (userid=3 or bid=1)  
+
+select * from cg_config
+
+select * from cg_class where pid=78   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=1 order by region
+

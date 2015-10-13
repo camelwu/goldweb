@@ -1,0 +1,178 @@
+<{include file="admin_tpl_head.html"}> <{if $action=='list'}>
+<table cellspacing=1 cellpadding=4 class=table>
+	<form name=sel_form action='?action=delete' method=post>
+		<tr>
+			<th>ID</th>
+			<th>USERID</th>
+			<th>人员姓名</th>
+			<th>级别</th>
+			<th>所属机构</th>
+			<th>登录次数</th>
+			<th>上次登录时间</th>
+			<th>上次登录IP</th>
+			<th>状态</th>
+			<th>管理</th>
+		</tr>
+		<{if $totalnum==0}>
+		<tr>
+			<td colspan=9>没有数据</td>
+		</tr>
+		<{else}> <{section name=web loop=$comments}>
+		<tr align=center>
+			<td><{$comments[web].id}></td>
+			<td><{$comments[web].username}></td>
+			<td><{$comments[web].name}></td>
+			<td><{$comments[web].position}></td>
+			<td><{$comments[web].bid}></td>
+			<td><{$comments[web].login_num}></td>
+			<td><{$comments[web].time2}></td>
+			<td><{$comments[web].login_ip}></td>
+			<td><{$comments[web].state}></td>
+			<td><a href='?action=edit&id=<{$comments[web].id}>'>编辑</a> <{if
+				$comments[web].id ne $adminid && $comments[web].id ne '1'}><a
+				href="?action=delete&types=<{$contact.types}>&id=<{$comments[web].id}>"
+				onclick="javascript:return del_nsort();">删除</a><{/if}></td>
+		</tr>
+		<{/section}> <{/if}>
+		<tr class=tr1>
+			<td colspan=10><{$multipage}></td>
+
+		</tr>
+</table>
+<{else if $action=='add'}>
+<table cellspacing=1 cellpadding=4 class=table>
+	<tr>
+		<td class=td colspan=2><{if $info.id>0}>编辑<{else}>添加<{/if}>人员</td>
+	</tr>
+	<form name="section" action='?action=handle' method=post>
+		<input type=hidden name=id value='<{$info.id}>'>
+		<tr>
+			<td>用户名：</td>
+			<td><input type=text name=username size=20
+				value='<{$info.username}>'<{if
+				$info.id>0}>readonly<{/if}>>&nbsp;<font class=red id="tishi">*</font></td>
+		</tr>
+		<tr>
+			<td>人员姓名：</td>
+			<td><input type=text name=name size=20 value='<{$info.name}>'>&nbsp;<font
+				class=red>*</font></td>
+		</tr>
+		<tr>
+			<td>所属机构：</td>
+			<td><select name=bid>
+					<option value='0'>无</option> <{html_options options=$cg_branch
+					selected=$info.bid}>
+			</select></td>
+		</tr>
+		<tr>
+			<td>登陆密码：</td>
+			<td><input type=password name=password size=20>&nbsp;<font
+				class=red><{if $info.id==''}>*<{/if}></font></td>
+		</tr>
+		<tr>
+			<td>确认密码：</td>
+			<td><input type=password name=topassword size=20>&nbsp;<font
+				class=red><{if $info.id==''}>*<{else}>不修改密码可留空<{/if}></font></td>
+		</tr>
+		<tr>
+			<td>人员职位：</td>
+			<td><input type=text name=position size=40
+				value='<{$info.position}>'></td>
+		</tr>
+		<tr>
+			<td>联系方式：</td>
+			<td>Q&nbsp;Q：<input type=text name=qq size=20
+				value='<{$info.qq}>'>&nbsp;邮箱：<input type=text name=email
+				size=20 value='<{$info.email}>'><br /> 电话：<input type=text
+				name=tel size=20 value='<{$info.tel}>'>&nbsp;传真：<input
+				type=text name=fax size=20 value='<{$info.fax}>'>&nbsp;手机：<input
+				type=text name=mobile size=20 value='<{$info.mobile}>'>&nbsp;<font
+				class=red>*</font></td>
+		</tr>
+		<tr>
+			<td>人员负责人：</td>
+			<td><select name=uid> <{html_options options=$data
+					selected=$info.uid}>
+			</select>&nbsp;<font class=red>*</font></td>
+		</tr>
+		<tr>
+			<td>人员权限：</td>
+			<td><{$menu}></td>
+		</tr>
+		<tr>
+			<td valign=top>备注说明：</td>
+			<td><textarea name=note style='width: 670px; height: 220px;'><{$info.note}></textarea></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td height=30><input id="submit_query" type=button
+				onclick="sub_frm();" value='提交添加'> <input type=reset
+				value='重新填写'> <input type=button name=go_back value='返回上一页'
+				onclick="javascript:history.go(-1);"></td>
+		</tr>
+	</form>
+</table>
+
+<script type="text/javascript">
+var username_id=$("input[name='username']");
+$(function(){
+	<{if $info.id eq ''}>
+		checkform();
+		username_id.blur(checkform);
+	<{/if}>
+})
+
+function checkform() {
+	var username = username_id.val();
+	$("#submit_query").attr('disabled',true).css('background','#d4d0c8');
+	var url='getajax.php?q=checkusername&username='+encodeURI(username);
+	$.getJSON(url,function(data){
+		if(data.status=='1'){
+			$("#tishi").html(data.desc);
+			return false;
+		}else{
+			$("#tishi").empty();
+			$("#submit_query").attr('disabled',false).css('background','');
+		}
+	});
+
+	
+}
+
+function sub_frm(){
+	if(document.section.username.value == ''){
+		 alert("请输入用户名");
+	     document.section.username.focus();
+	  	 return false;
+	}
+	else if(document.section.name.value == ''){
+		 alert("请输入人员姓名");
+	     document.section.name.focus();
+	  	 return false;
+	}
+<{if $info.id eq ''}>
+	else if(document.section.password.value == ''){
+		 alert("请输入登录密码");
+	     document.section.password.focus();
+	  	 return false;
+	}
+<{/if}>
+	else if(document.section.password.value != document.section.topassword.value){
+		 alert("两次输入密码不一样，请重新输入");
+	     document.section.topassword.focus();
+	  	 return false;
+	}else{
+		document.section.submit();
+	}
+	
+}
+</script>
+<{/if}>
+
+<script language=javascript>
+			function del_nsort() {
+				var cf = window.confirm("是否确定该操作？");
+				return cf;
+			}
+		</script>
+<{include file="admin_tpl_foot.html"}>

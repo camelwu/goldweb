@@ -1,0 +1,418 @@
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='111.162.128.115',time2='2015-06-05 02:15:38' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select count(*)  from cg_scenic where types=2
+
+select *  from cg_scenic where types=2 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select count(*)  from cg_scenic where types=2 and title like '%英国%'
+
+select *  from cg_scenic where types=2 and title like '%英国%' order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_scenic where id=1600
+
+select * from cg_config
+
+select * from cg_class where pid=150   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=130 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=152   order by hots
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=0
+
+select *  from cg_scenic where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='111.162.128.115',time2='2015-06-05 08:08:37' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select count(*)  from cg_scenic where types=2
+
+select *  from cg_scenic where types=2 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select count(*)  from cg_scenic where types=2 and title like '%英国%'
+
+select *  from cg_scenic where types=2 and title like '%英国%' order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_scenic where id=1600
+
+select * from cg_config
+
+select * from cg_class where pid=150   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=130 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+UPDATE cg_scenic SET id='1600', types='2', title='英国旅游签证', ctype='150', info_id='', cid='3', aid='130', brand='12', item='180天有效', size='以使馆签发为准', stock='北京领区', price='0', price1='1200', word='<p class=\"MsoNormal\">
+	<span style=\"font-size:7.5pt;\"></span>
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">个人身份证明</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">身份证</span><span style=\"font-size:7.5pt;\"> </span>
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">1. </span><span style=\"font-family:宋体;font-size:16px;\">如果是旧版身份证请用</span><span style=\"font-size:16px;\">A4</span><span style=\"font-family:宋体;font-size:16px;\">纸复印</span><span style=\"font-size:16px;\">2</span><span style=\"font-family:宋体;font-size:16px;\">份</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">2. </span><span style=\"font-family:宋体;font-size:16px;\">如果是新版身份证请用</span><span style=\"font-size:16px;\">A4</span><span style=\"font-family:宋体;font-size:16px;\">纸复印正反两面各</span><span style=\"font-size:16px;\">2</span><span style=\"font-family:宋体;font-size:16px;\">份</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">户口本</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">1</span><span style=\"font-family:宋体;font-size:16px;\">、全家户口本复印件（请用</span><span style=\"font-size:16px;\">A4</span><span style=\"font-family:宋体;font-size:16px;\">纸复印）</span><span style=\"font-size:16px;\">, </span><span style=\"font-family:宋体;font-size:16px;\">如夫妻不在同一户口本上，需提供配偶的完整户口本复印件，且需提供结婚证复印件</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">2</span><span style=\"font-family:宋体;font-size:16px;\">、请清晰的复印包含户口本首页、户主页、本人页、配偶页、子女页，不可缺页或断页。</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">注意：如果是集体户口，请提供集体户口本户主首页及本人信息页复印件</span><span style=\"font-size:7.5pt;\"> </span>
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">结婚证</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">已婚人士需提供结婚证复印件，如丢失，请提供结婚证件丢失说明（派出所或街道开具）</span><span style=\"font-size:7.5pt;\"> </span>
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">护照</span><span style=\"font-size:16px;\"> 1.</span><span style=\"font-family:宋体;font-size:16px;\">有效期在</span><span style=\"font-size:16px;\">6</span><span style=\"font-family:宋体;font-size:16px;\">个月以上的因私护照（自回国之日开始算，为</span><span style=\"font-size:16px;\">6</span><span style=\"font-family:宋体;font-size:16px;\">个月以上）</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">NOTE:</span><span style=\"font-family:宋体;font-size:16px;\">英国大使馆、领事馆要求护照至少连续正反两页的空白页，两面不能有任何使用记录</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">2.</span><span style=\"font-family:宋体;font-size:16px;\">请在护照最后一页签名，中文姓名</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">3.</span><span style=\"font-family:宋体;font-size:16px;\">持换发护照者，必需同时提供所有旧护照原件（如旧护照丢失，需要当地派出所开出的证明原件）</span><span style=\"font-size:7.5pt;\"> </span>
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">照片</span><span style=\"font-size:7.5pt;\"> </span>
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">1.</span><span style=\"font-family:宋体;font-size:16px;\">白色或浅灰色背景的近照</span><span style=\"font-size:16px;\">2</span><span style=\"font-family:宋体;font-size:16px;\">张（照片尺寸为</span><span style=\"font-size:16px;\">3.5cm</span><span style=\"font-family:宋体;font-size:16px;\">宽</span><span style=\"font-size:16px;\">x4.5cm</span><span style=\"font-family:宋体;font-size:16px;\">高，并且能显示清晰的容貌，照片必须是最近</span><span style=\"font-size:16px;\">6</span><span style=\"font-family:宋体;font-size:16px;\">个月拍摄的）</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">2.</span><span style=\"font-family:宋体;font-size:16px;\">请在照片背面用铅笔写上自己的姓名</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\"><span style=\"font-size:16px;\">&nbsp;</span></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">资产证明</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">资产证明</span><span style=\"font-size:16px;\">(</span><span style=\"font-family:宋体;font-size:16px;\">银行存款证明原件及复印件，每人金额在五万元人民币以上</span><span style=\"font-size:16px;\">)</span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">1.</span><span style=\"font-family:宋体;font-size:16px;\">如是提供配偶财产，而户口本又无法体现其夫妻关系的，需提供结婚证的原件及复印件</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">2.</span><span style=\"font-family:宋体;font-size:16px;\">存款证明需为银行标准格式（金额不少于</span><span style=\"font-size:16px;\">5</span><span style=\"font-family:宋体;font-size:16px;\">万人民币</span><span style=\"font-size:16px;\">/</span><span style=\"font-family:宋体;font-size:16px;\">人），有正确的英文译文，不可手写（历史记录至少在</span><span style=\"font-size:16px;\">6</span><span style=\"font-family:宋体;font-size:16px;\">个月以上的）对应的存折或者存单的原件和复印件</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">3.</span><span style=\"font-family:宋体;font-size:16px;\">需提供申请人半年前开户的存折（有存取记录的）或存单原件，账户号最好与存款证明一致；如果提供的是配偶的，则需要提供结婚证原件及复印件</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">4.</span><span style=\"font-family:宋体;font-size:16px;\">充裕的资金证明将有助于签证的申请</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">5.</span><span style=\"font-family:宋体;font-size:16px;\">如果收入或存款仅仅能够负担旅行费用，则大额凭证式国债、股票和有价证券均可用于辅助资金证明；房产、车证也可起到上述目的</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">6.</span><span style=\"font-family:宋体;font-size:16px;\">近六个月的银行对帐单，并加盖银行红章</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">7.</span><span style=\"font-family:宋体;font-size:16px;\">近六个月的工资存折原件，工资卡银行对帐单明细（加盖单位红章），或每月领取工资的工资条原件（有本人签名）</span><span style=\"font-size:7.5pt;\"> </span>
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\"></span>&nbsp;
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">工作证明</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">营业执照或组织机构代码证</span><span style=\"font-size:7.5pt;\"> </span>
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">1</span><span style=\"font-family:宋体;font-size:16px;\">、所在单位为企业单位的申请者，请提供营业执照副本的清晰复印件，用</span><span style=\"font-size:16px;\">A4</span><span style=\"font-family:宋体;font-size:16px;\">纸复印，有年检记录，并在复印件上加盖单位公章</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">2</span><span style=\"font-family:宋体;font-size:16px;\">、所在单位为事业单位的申请者，请提供组织机构代码证的清晰复印件，用</span><span style=\"font-size:16px;\">A4</span><span style=\"font-family:宋体;font-size:16px;\">纸复印，有年检记录，并在复印件上加盖单位公章</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">中方公司营业执照复印件</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">如果是外领区的客人，但长期工作地是在北京领区，可以在北京申请签证，需要提供有效期为六个月以上的暂住证或者居住证复印件</span><span style=\"font-size:7.5pt;\"> </span>
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">在职证明</span><span style=\"font-size:7.5pt;\"> </span>
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">1.</span><span style=\"font-family:宋体;font-size:16px;\">使用公司正规抬头纸打印，并加盖公司红章</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">2.</span><span style=\"font-family:宋体;font-size:16px;\">在职证明内容需包括：单位名称、本人出生日期、护照号、职务及收入，工作年限，</span><span style=\"font-size:7.5pt;\"> </span><span style=\"font-family:宋体;font-size:16px;\">费用谁付，具体的旅游起止时间、负责人职务、签字以及电话、传真，和单位的地址。并需要注明担保申请人按期回国（此在职证明一式两份，中英文对照）</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\"></span>&nbsp;
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">学生及儿童</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">学校准假信</span><span style=\"font-size:7.5pt;\"> </span>
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">1.</span><span style=\"font-family:宋体;font-size:16px;\">使用学校正规抬头纸打印，内容全部为英文</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">2.</span><span style=\"font-family:宋体;font-size:16px;\">准假信内容需包括：学校名称、学生所在系或班级、具体的旅游起止时间、系领导或校长的签字以及电话，传真等</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">3.</span><span style=\"font-family:宋体;font-size:16px;\">如果</span><span style=\"font-size:16px;\">18</span><span style=\"font-family:宋体;font-size:16px;\">岁以上学生单独出行或与非直系亲属出行，需提供父母一方的在职证明</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">4.</span><span style=\"font-family:宋体;font-size:16px;\">若申请人是毕业生，暂无工作请提供学校的毕业证复印件；若申请人处于升学期间，请提供录取通知书复印件。上述这两种情况还需提供父母亲单位的在职证明，以及加盖公章的营业执照或组织机构代码证。</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">公证书（适用于所有在校学生）</span><span style=\"font-size:7.5pt;\"> </span>
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">1.</span><span style=\"font-family:宋体;font-size:16px;\">与父母双方同行，需提供：</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:7.5pt;\"><span style=\"font-size:16px;\">&nbsp;&nbsp; </span><span style=\"font-size:16px;\">A. </span></span><span style=\"font-family:宋体;font-size:16px;\">提供全家亲属关系公证书，注明父亲</span><span style=\"font-size:16px;\">/</span><span style=\"font-family:宋体;font-size:16px;\">母亲姓名，出生日期，家庭住址，公</span><span style=\"font-size:7.5pt;\"> </span><span style=\"font-family:宋体;font-size:16px;\">证书以孩子为主申请人</span><span style=\"font-size:7.5pt;\"> </span><span style=\"font-family:宋体;font-size:16px;\">（中英文对照）</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">2.</span><span style=\"font-family:宋体;font-size:16px;\">与父或母一方同行，需提供：</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:7.5pt;\"><span style=\"font-size:16px;\">&nbsp;&nbsp; </span><span style=\"font-size:16px;\">A. </span></span><span style=\"font-family:宋体;font-size:16px;\">提供全家亲属关系公证书，注明父亲</span><span style=\"font-size:16px;\">/</span><span style=\"font-family:宋体;font-size:16px;\">母亲姓名，出生日期，家庭住址，公证书以孩子为主申请人</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:7.5pt;\"><span style=\"font-size:16px;\">&nbsp;&nbsp; </span><span style=\"font-size:16px;\">B. </span></span><span style=\"font-family:宋体;font-size:16px;\">不能同行的父亲或母亲开具委托公证书（中英文对照）</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">3.</span><span style=\"font-family:宋体;font-size:16px;\">与父母以外的非直系亲属同行，需提供：</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:7.5pt;\"><span style=\"font-size:16px;\">&nbsp;&nbsp; </span><span style=\"font-size:16px;\">A. </span></span><span style=\"font-family:宋体;font-size:16px;\">提供全家亲属关系公证书，注明父亲</span><span style=\"font-size:16px;\">/</span><span style=\"font-family:宋体;font-size:16px;\">母亲姓名，出生日期，家庭住址</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:7.5pt;\"><span style=\"font-size:16px;\">&nbsp;&nbsp; </span><span style=\"font-size:16px;\">B. </span></span><span style=\"font-family:宋体;font-size:16px;\">不能同行的父亲</span><span style=\"font-size:16px;\">/</span><span style=\"font-family:宋体;font-size:16px;\">母亲双方开具委托他人带孩子出境的委托公证书。（中英文对照）</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">4.</span><span style=\"font-family:宋体;font-size:16px;\">对于单独成行者，使馆不予受理</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">资产证明</span><span style=\"font-size:7.5pt;\"> </span>
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">银行存款证明原件及复印件，每人金额在五万元人民币以上</span><span style=\"font-size:7.5pt;\"> </span><span style=\"font-family:宋体;font-size:16px;\">以下存款证明、存折或存单、车产、房产，以及其他资金证明可以用父母的，但如果户口本不能体现父母与子女的关系，请提供亲属关系公证书（不需认证）</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">1.</span><span style=\"font-family:宋体;font-size:16px;\">存款证明需为银行标准格式（金额不少于</span><span style=\"font-size:16px;\">5</span><span style=\"font-family:宋体;font-size:16px;\">万人民币</span><span style=\"font-size:16px;\">/</span><span style=\"font-family:宋体;font-size:16px;\">人），有正确的英文译文，不可手写（历史记录至少在</span><span style=\"font-size:16px;\">6</span><span style=\"font-family:宋体;font-size:16px;\">个月以上的）对应的存折或者存单的原件和复印件</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">2.</span><span style=\"font-family:宋体;font-size:16px;\">需提供半年前开户的存折（有存取证明的）或存单原件，账户号最好与存款证明一致；如果提供的是配偶的，则需要提供结婚证原件及复印件</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">3.</span><span style=\"font-family:宋体;font-size:16px;\">充裕的资金证明将有助于签证的申请</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">4.</span><span style=\"font-family:宋体;font-size:16px;\">如果收入或存款仅仅能够负担旅行费用，则大额凭证式国债、股票和有价证券均可用于辅助资金证明；房产、车证也可起到上述目的</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">5.</span><span style=\"font-family:宋体;font-size:16px;\">如</span><span style=\"font-size:16px;\">18</span><span style=\"font-family:宋体;font-size:16px;\">岁以下可直接提供父母财产或本人名下财产，户口本如不能体现父母的亲属关系，需要提供未成年人亲属关系公证或出生证明公证（不需要认证）</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">6.</span><span style=\"font-family:宋体;font-size:16px;\">如</span><span style=\"font-size:16px;\">18</span><span style=\"font-family:宋体;font-size:16px;\">岁以上无个人财产的在校生，可提供父母财产，户口本如不能体现父母的亲属关系，需要提供成年人出生证明公证或亲属关系公证</span><span style=\"font-size:7.5pt;\"> </span><span style=\"font-family:宋体;font-size:16px;\">（如果旅行费用是由父母亲支付，请提供父母单位的在职证明、营业执照或组织机构代码证）</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\"></span>&nbsp;
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">老人</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">退休证</span><span style=\"font-size:7.5pt;\"> </span>
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">1.</span><span style=\"font-family:宋体;font-size:16px;\">申请人为退休人员请提供退休证原件及复印件。（用</span><span style=\"font-size:16px;\">A4</span><span style=\"font-family:宋体;font-size:16px;\">纸复印）</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">2.</span><span style=\"font-family:宋体;font-size:16px;\">如申请人目前正处于退休证办理中，请提供所在单位出具的退休证办理证明，其单位领导签字并加盖公章。</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">3.</span><span style=\"font-family:宋体;font-size:16px;\">如申请人是外领区签发的护照，但居住在北京，请提供暂住证原件和复印件（用</span><span style=\"font-size:16px;\">A4</span><span style=\"font-family:宋体;font-size:16px;\">纸复印）</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">其他</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">其他补充材料</span><span style=\"font-size:7.5pt;\"> </span>
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">居住证明：无业人员或家庭主妇需提供街道或物业开具的居住证明</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">要求：</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">1</span><span style=\"font-family:宋体;font-size:16px;\">．使用街道或物业正规抬头纸打印，加盖红章</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">2</span><span style=\"font-family:宋体;font-size:16px;\">．街道或物业负责人的签字，职务和电话</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\"></span>&nbsp;
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-family:宋体;font-size:16px;\">其他补充材料</span><span style=\"font-size:7.5pt;\"> </span>
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">1.</span><span style=\"font-family:宋体;font-size:16px;\">无业人员或家庭主妇需要提供出资人（一般是指配偶或父母）的在职证明</span><span style=\"font-size:7.5pt;\"> </span><span style=\"font-family:宋体;font-size:16px;\">（用公司正规抬头纸打印，列明出资人与申请人的关系，出资人的职务，薪水，以及承担申请人此次的出行费用），以及加盖公章的营业执照或组织机构代码证</span><span style=\"font-size:7.5pt;\"></span> 
+</p>
+<p class=\"MsoNormal\">
+	<span style=\"font-size:16px;\">2.</span><span style=\"font-family:宋体;font-size:16px;\">并提供关系证明材料</span><span style=\"font-size:7.5pt;\"></span> 
+</p>', info='', op_type='1,2', url='', op_user='admin' WHERE id='1600'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '修改了1条签证数据,ID为：1600', '1', 'admin', '111.162.128.115', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select count(*)  from cg_scenic where types=2
+
+select *  from cg_scenic where types=2 order by id desc limit 0,15
+

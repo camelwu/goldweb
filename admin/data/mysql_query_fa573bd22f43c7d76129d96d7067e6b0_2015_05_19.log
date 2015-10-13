@@ -1,0 +1,1910 @@
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.32',time2='2015-05-19 02:57:55' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where 1
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where 1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where 1
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where 1 order by id desc limit 180,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_product_route where id=164
+
+select * from cg_product_route_stroke where routeid=164 order by num asc
+
+select * from cg_config
+
+select * from cg_class where pid=112   order by hots
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where 1
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where 1 order by id desc limit 165,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where 1
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where 1 order by id desc limit 150,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_product_route where id=206
+
+select * from cg_product_route_stroke where routeid=206 order by num asc
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '香港,德里')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '德里,阿格拉')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '阿格拉,杰普尔')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '杰普尔,孟买')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '孟买,约翰内斯堡、开普敦')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '开普敦,开普敦')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '开普敦,约翰内斯堡')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '约翰内斯堡,比勒陀利亚/约翰内斯堡')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '约翰内斯堡,孟买')>0  order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '孟买,香港')>0  order by cg_scenic.hots
+
+select * from cg_config
+
+select * from cg_class where pid=112   order by hots
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where 1
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where 1 order by id desc limit 135,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select count(*)  from cg_user where 1 
+
+select *  from cg_user where 1  order by id limit 0,15
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_user where id=4
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select parentid from con_menuitems where classid='2'
+
+select parentid from con_menuitems where classid='3'
+
+select parentid from con_menuitems where classid='4'
+
+select parentid from con_menuitems where classid='5'
+
+select parentid from con_menuitems where classid='6'
+
+select parentid from con_menuitems where classid='7'
+
+select parentid from con_menuitems where classid='8'
+
+select parentid from con_menuitems where classid='9'
+
+select parentid from con_menuitems where classid='10'
+
+select parentid from con_menuitems where classid='39'
+
+select parentid from con_menuitems where classid='40'
+
+select parentid from con_menuitems where classid='41'
+
+select parentid from con_menuitems where classid='42'
+
+select parentid from con_menuitems where classid='43'
+
+select parentid from con_menuitems where classid='44'
+
+select parentid from con_menuitems where classid='45'
+
+select parentid from con_menuitems where classid='46'
+
+select parentid from con_menuitems where classid='47'
+
+select parentid from con_menuitems where classid='48'
+
+select parentid from con_menuitems where classid='49'
+
+select parentid from con_menuitems where classid='50'
+
+select parentid from con_menuitems where classid='51'
+
+select parentid from con_menuitems where classid='52'
+
+select parentid from con_menuitems where classid='53'
+
+select parentid from con_menuitems where classid='54'
+
+select parentid from con_menuitems where classid='55'
+
+select parentid from con_menuitems where classid='57'
+
+select parentid from con_menuitems where classid='58'
+
+UPDATE cg_user SET username='zywing313', name='小张', bid='22', position='manage', qq='', email='', tel='', fax='', mobile='18910953350', uid='3', allowstr='2,3,4,5,6,7,8,9,10,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,57,58', note='暂时的测试帐号' WHERE id='4'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_user', '修改了1条人员数据,ID为：4', '1', 'admin', '223.72.84.32', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_user where id=4
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_user where id=0
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+ select count(*) from cg_user where username = 'robin'
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_user where id=4
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_user where id=4
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select parentid from con_menuitems where classid='2'
+
+select parentid from con_menuitems where classid='3'
+
+select parentid from con_menuitems where classid='4'
+
+select parentid from con_menuitems where classid='5'
+
+select parentid from con_menuitems where classid='6'
+
+select parentid from con_menuitems where classid='7'
+
+select parentid from con_menuitems where classid='8'
+
+select parentid from con_menuitems where classid='9'
+
+select parentid from con_menuitems where classid='10'
+
+select parentid from con_menuitems where classid='11'
+
+select parentid from con_menuitems where classid='12'
+
+select parentid from con_menuitems where classid='13'
+
+select parentid from con_menuitems where classid='14'
+
+select parentid from con_menuitems where classid='15'
+
+select parentid from con_menuitems where classid='16'
+
+select parentid from con_menuitems where classid='17'
+
+select parentid from con_menuitems where classid='18'
+
+select parentid from con_menuitems where classid='19'
+
+select parentid from con_menuitems where classid='20'
+
+select parentid from con_menuitems where classid='21'
+
+select parentid from con_menuitems where classid='22'
+
+select parentid from con_menuitems where classid='23'
+
+select parentid from con_menuitems where classid='24'
+
+select parentid from con_menuitems where classid='67'
+
+select parentid from con_menuitems where classid='91'
+
+select parentid from con_menuitems where classid='26'
+
+select parentid from con_menuitems where classid='27'
+
+select parentid from con_menuitems where classid='28'
+
+select parentid from con_menuitems where classid='29'
+
+select parentid from con_menuitems where classid='30'
+
+select parentid from con_menuitems where classid='31'
+
+select parentid from con_menuitems where classid='32'
+
+select parentid from con_menuitems where classid='33'
+
+select parentid from con_menuitems where classid='34'
+
+select parentid from con_menuitems where classid='35'
+
+select parentid from con_menuitems where classid='36'
+
+select parentid from con_menuitems where classid='37'
+
+select parentid from con_menuitems where classid='38'
+
+select parentid from con_menuitems where classid='39'
+
+select parentid from con_menuitems where classid='40'
+
+select parentid from con_menuitems where classid='41'
+
+select parentid from con_menuitems where classid='42'
+
+select parentid from con_menuitems where classid='43'
+
+select parentid from con_menuitems where classid='44'
+
+select parentid from con_menuitems where classid='45'
+
+select parentid from con_menuitems where classid='46'
+
+select parentid from con_menuitems where classid='47'
+
+select parentid from con_menuitems where classid='48'
+
+select parentid from con_menuitems where classid='49'
+
+select parentid from con_menuitems where classid='50'
+
+select parentid from con_menuitems where classid='51'
+
+select parentid from con_menuitems where classid='52'
+
+select parentid from con_menuitems where classid='53'
+
+select parentid from con_menuitems where classid='54'
+
+select parentid from con_menuitems where classid='55'
+
+select parentid from con_menuitems where classid='57'
+
+select parentid from con_menuitems where classid='58'
+
+select parentid from con_menuitems where classid='59'
+
+select parentid from con_menuitems where classid='60'
+
+select parentid from con_menuitems where classid='61'
+
+select parentid from con_menuitems where classid='62'
+
+select parentid from con_menuitems where classid='63'
+
+select parentid from con_menuitems where classid='64'
+
+select parentid from con_menuitems where classid='65'
+
+select parentid from con_menuitems where classid='66'
+
+INSERT INTO cg_user (username, name, bid, password, position, qq, email, tel, fax, mobile, uid, allowstr, note) VALUES ('robin', '耿小刚', '25', 'e10adc3949ba59abbe56e057f20f883e', '签证、出境办理', '', '', '', '', '', '1', '2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,67,91,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,57,58,59,60,61,62,63,64,65,66', '测试帐号-2') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_user', '添加了1条人员数据,ID为：5', '1', 'admin', '223.72.84.32', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_user where id=5
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select count(*)  from cg_user where 1 
+
+select *  from cg_user where 1  order by id limit 0,15
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_user where id=4
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_user where id=4
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_user where id=5
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_user where id=3
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select parentid from con_menuitems where classid='2'
+
+select parentid from con_menuitems where classid='3'
+
+select parentid from con_menuitems where classid='4'
+
+select parentid from con_menuitems where classid='5'
+
+select parentid from con_menuitems where classid='6'
+
+select parentid from con_menuitems where classid='7'
+
+select parentid from con_menuitems where classid='8'
+
+select parentid from con_menuitems where classid='9'
+
+select parentid from con_menuitems where classid='10'
+
+select parentid from con_menuitems where classid='11'
+
+select parentid from con_menuitems where classid='12'
+
+select parentid from con_menuitems where classid='13'
+
+select parentid from con_menuitems where classid='14'
+
+select parentid from con_menuitems where classid='15'
+
+select parentid from con_menuitems where classid='16'
+
+select parentid from con_menuitems where classid='17'
+
+select parentid from con_menuitems where classid='18'
+
+select parentid from con_menuitems where classid='19'
+
+select parentid from con_menuitems where classid='20'
+
+select parentid from con_menuitems where classid='21'
+
+select parentid from con_menuitems where classid='22'
+
+select parentid from con_menuitems where classid='23'
+
+select parentid from con_menuitems where classid='24'
+
+select parentid from con_menuitems where classid='67'
+
+select parentid from con_menuitems where classid='91'
+
+select parentid from con_menuitems where classid='26'
+
+select parentid from con_menuitems where classid='27'
+
+select parentid from con_menuitems where classid='28'
+
+select parentid from con_menuitems where classid='29'
+
+select parentid from con_menuitems where classid='30'
+
+select parentid from con_menuitems where classid='31'
+
+select parentid from con_menuitems where classid='32'
+
+select parentid from con_menuitems where classid='33'
+
+select parentid from con_menuitems where classid='34'
+
+select parentid from con_menuitems where classid='35'
+
+select parentid from con_menuitems where classid='36'
+
+select parentid from con_menuitems where classid='37'
+
+select parentid from con_menuitems where classid='38'
+
+select parentid from con_menuitems where classid='39'
+
+select parentid from con_menuitems where classid='40'
+
+select parentid from con_menuitems where classid='41'
+
+select parentid from con_menuitems where classid='42'
+
+select parentid from con_menuitems where classid='43'
+
+select parentid from con_menuitems where classid='44'
+
+select parentid from con_menuitems where classid='45'
+
+select parentid from con_menuitems where classid='46'
+
+select parentid from con_menuitems where classid='47'
+
+select parentid from con_menuitems where classid='48'
+
+select parentid from con_menuitems where classid='49'
+
+select parentid from con_menuitems where classid='50'
+
+select parentid from con_menuitems where classid='51'
+
+select parentid from con_menuitems where classid='52'
+
+select parentid from con_menuitems where classid='53'
+
+select parentid from con_menuitems where classid='54'
+
+select parentid from con_menuitems where classid='55'
+
+select parentid from con_menuitems where classid='57'
+
+select parentid from con_menuitems where classid='58'
+
+select parentid from con_menuitems where classid='59'
+
+select parentid from con_menuitems where classid='60'
+
+select parentid from con_menuitems where classid='61'
+
+select parentid from con_menuitems where classid='62'
+
+select parentid from con_menuitems where classid='63'
+
+select parentid from con_menuitems where classid='64'
+
+select parentid from con_menuitems where classid='65'
+
+select parentid from con_menuitems where classid='66'
+
+UPDATE cg_user SET username='camelwu', name='武松波', bid='3', position='admins', qq='', email='camelwu963@126.com', tel='', fax='', mobile='18910763350', uid='1', allowstr='2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,67,91,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,57,58,59,60,61,62,63,64,65,66', note='网站程序' WHERE id='3'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_user', '修改了1条人员数据,ID为：3', '1', 'admin', '223.72.84.32', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_user where id=3
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select count(*)  from cg_user where 1 
+
+select *  from cg_user where 1  order by id limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_product_route where id=362
+
+select * from cg_config
+
+select * from cg_class where pid=112   order by hots
+
+select * from cg_config
+
+select * from cg_product_route where find_in_set('1',op_type)
+
+select * from cg_config
+
+select * from cg_product_route where find_in_set('1',op_type)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('台湾香港九日（香港转机）', 164,'三亚','10:00','','',0,0,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('澳凯9日游', 175,'北京','10:00','','',0,17500,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('澳大利亚新西兰凯恩斯12日游', 177,'北京','10:00','','',0,21100,0,0,'1,2,3',1,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('新西兰南岛北岛8日游', 178,'北京','10:00','','',0,0,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('韩国精华五日游', 180,'北京','10:00','','',0,0,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('济州休闲4日游', 181,'北京','10:00','','',0,0,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('韩国邮轮七日游', 182,'北京','10:00','','',0,0,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('加拿大文化语言学习之旅—2012年冬令营', 183,'北京','10:00','','',0,35000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('台湾环岛8天品质团', 184,'北京','10:00','','',0,6280,0,0,'1,2,3',1,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('台湾环岛8天常规团', 185,'北京','10:00','','',0,6480,0,0,'1,2,3',4,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('台湾8日嘉庆君游', 186,'北京','10:00','','',0,6280,0,0,'1,2,3',4,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('怀念邓丽君台湾8日游', 187,'北京','10:00','','',0,6280,0,0,'1,2,3',4,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('台湾8日赏樱花游', 188,'北京','10:00','','',0,5280,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('台湾之美8日环岛摄影之旅', 192,'北京','10:00','','',0,8200,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('南非经典8天', 193,'北京','10:00','','',0,9900,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('南非豪华8天', 194,'北京','10:00','','',0,11600,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('迪拜5日', 195,'北京','10:00','','',0,6800,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('迪拜6日', 196,'北京','10:00','','',0,6600,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('土耳其8日', 197,'北京','10:00','','',0,10600,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('土耳其10日', 198,'北京','10:00','','',0,12200,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('埃及全景8天', 199,'北京','10:00','','',0,7900,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('埃及游轮10日', 200,'北京','10:00','','',0,8900,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('埃及土耳其10日', 201,'北京','10:00','','',0,12800,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('埃及迪拜10日', 202,'北京','10:00','','',0,14500,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('南非埃及迪拜12日', 203,'北京','10:00','','',0,24500,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('肯尼亚迪拜9日', 204,'北京','10:00','','',0,17880,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('肯尼亚南非11日', 205,'北京','10:00','','',0,21300,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('印度南非10天', 206,'香港','10:00','','',0,17500,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('印度迪拜9天', 207,'香港','10:00','','',0,15300,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('毛里求斯4晚6天自由行', 208,'香港','10:00','','',0,11370,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('毛里求斯6晚8天自由行', 209,'香港','10:00','','',0,16300,0,0,'1,2,3',4,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('迪拜豪华版5日', 210,'广州','10:00','','',0,9500,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('迪拜帆船版5日', 211,'广州','10:00','','',0,12200,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('埃及经典8日', 212,'广州','10:00','','',0,8500,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('埃及土耳其10天', 213,'广州','10:00','','',0,11900,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('经典迪拜6日游', 217,'北京','10:00','','',0,7800,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('澳大利亚新西兰12日', 221,'北京','10:00','','',0,20000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('经典山水----峡谷奇观、壮美云台云台山周末专列深度品质四日游', 224,'北京','10:00','','',0,920,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('广州、深圳、香港、澳门、海南、桂林专列', 228,'北京','10:00','','',0,2980,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('“候鸟式”广州、海南、桂林老年休闲旅游专列', 229,'北京','10:00','','',0,3380,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('歌诗达经典号豪华邮轮浪漫港台之旅', 235,'北京','10:00','','',0,2399,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('江阴、张家港、常熟四日（北京高铁往返纯玩团）', 236,'北京','10:00','','',0,2130,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('江阴、张家港、常熟四日游（纯玩团）', 237,'江阴','10:00','','',0,950,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('长三角中金三角  沙家浜里看水乡 （自驾车纯游团）', 238,'北京','10:00','','',0,2380,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('雁栖湖领略湖光山色  百里画廊植树还林（北京周边自驾游）', 240,'北京','10:00','','',0,280,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('西宁双飞品质团', 241,'北京','10:00','','',0,4300,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('南非、迪拜10日行程', 242,'北京','10:00','','',0,15580,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('土耳其10日蓝色梦之旅', 243,'北京','10:00','','',0,15300,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('肯尼亚阿联酋9日', 244,'北京','10:00','','',0,19300,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('襄阳古城、古隆中 成都 九寨沟 黄龙 都江堰 青城山 三苏祠 乐山 峨眉山专列11日', 245,'北京','10:00','','',0,3580,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('庐山、景德镇、婺源、三清山、龙虎山  专列双卧往返七日深度游（北京客人，A线）', 246,'北京','10:00','','',0,1780,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('五岳奇秀揽一山 太行群峰唯苍岩 最险桥楼殿 最奇石头村', 247,'北京','10:00','','',0,380,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('山势巍巍狼牙险 风雨萧萧易水寒', 249,'北京','10:00','','',0,380,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('长城外  古道边  赏“坝头百里画卷”---张北草原避暑二日自驾游', 251,'北京','10:00','','',0,390,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('内蒙古首届自驾车旅游那达慕暨乌和尔沁敖包祭祀那达慕', 252,'北京','10:00','','',0,100,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('酷游水上长城九门口,亲近碧海绿波止锚湾', 256,'北京','10:00','','',0,380,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('观山戏海、山东精选旅游胜地5日自驾游', 257,'北京','10:00','','',0,1190,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('台湾8天环岛游（长荣晚班）', 259,'北京','10:00','','',0,4080,0,0,'1,2,3',1,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('台湾8天游（长荣中班）', 260,'北京','10:00','','',0,6480,0,0,'1,2,3',4,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('台湾8天（海航早对晚）', 261,'北京','10:00','','',0,6580,0,0,'1,2,3',4,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('台湾8天游环岛（华航晚班）', 263,'北京','10:00','','',0,6680,0,0,'1,2,3',1,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('登怀来空中草原 游葡萄美酒之乡', 264,'北京','10:00','','',0,380,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('观山戏海、山东精选避署5日自驾游8月10日出发！', 265,'北京','10:00','','',0,1190,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('探幽访古的胜地、休闲度假的乐园 迁西自驾二日游', 266,'北京','10:00','','',0,380,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('畅游四季花海，醉享画里乡村  品尝豆腐盛宴  近观野生动物 延庆自驾二日游', 267,'北京','10:00','','',0,0,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('畅游四季花海，醉享画里乡村 品尝豆腐盛宴  近观野生动物 延庆自驾二日游', 268,'北京','10:00','','',0,380,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('红色西柏坡 休闲腾龙山 西柏坡 腾龙山自驾二日游产品', 269,'北京','10:00','','',0,330,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('长城外  古道边  赏“坝头百里画卷”张北草原避暑休闲二日自驾游', 270,'北京','10:00','','',0,480,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('长城外  古道边  赏“坝头百里画卷” 张北草原避暑休闲二日自驾游', 271,'北京','10:00','','',0,400,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('长城外  古道边  赏“坝头百里画卷”张北草原休闲二日自驾游', 272,'北京','10:00','','',0,580,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('自驾迁西 闻香之旅', 273,'北京','10:00','','',0,0,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('2012年12月22日云顶“激情末日”滑雪', 282,'北京','10:00','','',0,450,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('2012年12月22日长城岭滑雪', 285,'北京','10:00','','',0,590,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('捷克 奥地利 德国 法国 瑞士 意大利 6国13日游', 288,'北京','10:00','','',0,9600,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('捷克 奥地利 德国 法国 瑞士 意大利 6国13日', 289,'北京','10:00','','',0,9600,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('捷克 德国 法国 比利时 奥地利 瑞士 意大利 梵蒂冈 8国14日游', 290,'北京','10:00','','',0,9600,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('迪斯尼过大年 法国 瑞士 意大利 优享品质3国11日', 291,'北京','10:00','','',0,18300,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('盗墓迷情 埃及8日之旅', 292,'北京','10:00','','',0,14300,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('银幕记忆 埃及尼罗河游轮10日', 293,'北京','10:00','','',0,16300,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('踏浪巡航 阿联酋富吉拉6日', 294,'北京','10:00','','',0,9500,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('童话海岛-沙巴6天5晚深度游', 297,'北京','10:00','','',0,7699,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('斐济浪漫之旅 8天6晚（主岛五星+外岛五星）', 305,'北京','10:00','','',0,24000,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('法意瑞三国12天', 308,'北京','10:00','','',0,12000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('宝岛台湾8天非凡体验之旅', 309,'北京','10:00','','',0,5800,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('台湾8日环岛体验汽车旅馆+健康检查+2日香港自由行', 310,'各地','10:00','','',0,16100,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('秘境佛国-老挝2日游(万象市内2天1晚游)', 315,'×××','10:00','','',0,800,0,0,'1,2,3',1,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('万象—南俄湖大水库3天2夜游', 316,'当地','10:00','','',0,850,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('肯尼亚一地10日行程（摄影团）', 318,'北京','10:00','','',0,23500,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('肯尼亚一地8日行程（2013年7月-8月共发5团）', 319,'北京','10:00','','',0,20000,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('肯尼亚+阿联酋9日行程（2013年8月1日、18日）', 320,'北京','10:00','','',0,20600,0,0,'1,2,3',1,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('肯尼亚一地8日行程（2013年7月28日）', 321,'北京','10:00','','',0,20600,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('肯尼亚+阿联酋9日行程（2013年8月12日）', 322,'北京','10:00','','',0,20800,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('肯尼亚+南非11日行程（2013年8月7日）', 323,'北京','10:00','','',0,23800,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('肯尼亚+南非11日行程（2013年8月15日）', 324,'北京','10:00','','',0,23600,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('河北首届汽车文化节京冀车友太行“爱心之旅”自驾活动', 325,'北京','10:00','','',0,288,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('秘境佛国-老挝4日游(万象—万荣县)', 328,'万象','10:00','','',0,1180,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('秘境佛国-老挝4日游 （万象—琅勃拉邦）', 329,'','10:00','','',0,2600,0,0,'1,2,3',1,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('秘境佛国---老挝6日游  （万象—万荣—琅勃拉邦）', 330,'北京','10:00','','',0,8800,0,0,'1,2,3',1,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('琅勃拉邦3天2夜游', 331,'暹粒','10:00','','',0,0,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('秘境佛国-老挝4日游（琅勃拉邦—万象）', 332,'','10:00','','',0,2600,0,0,'1,2,3',1,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('马来风情 兰卡威之恋 蜜月浪漫自由行', 333,'北京','10:00','','',0,8500,0,0,'1,2,3',1,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('秘境佛国-老挝5日游(万象-朗勃拉邦-川圹)', 334,'万象','10:00','','',0,3600,0,0,'1,2,3',1,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('秘境佛国-老挝4日游(万象—占巴色省)', 335,'万象','10:00','','',0,2260,0,0,'1,2,3',1,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('秘境佛国--老挝4日游（万象—沙湾拿吉省）', 336,'万象','10:00','','',0,1700,0,0,'1,2,3',1,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('秘境佛国-老挝5日游(万象-沙湾拿吉省-占巴色省)', 337,'万象','10:00','','',0,3500,0,0,'1,2,3',1,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('宝岛台湾 北台湾四日温泉之旅', 348,'北京','10:00','','',0,5680,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('宝岛台湾 台湾6日自由行', 349,'北京','10:00','','',0,7680,0,0,'1,2,3',4,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('宝岛台湾 台湾八日自由行', 350,'北京','10:00','','',0,9680,0,0,'1,2,3',4,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('宝岛台湾 台湾六日逍遥游', 351,'北京','10:00','','',0,7680,0,0,'1,2,3',4,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('宝岛台湾 台湾七日自由行', 352,'北京','10:00','','',0,8680,0,0,'1,2,3',4,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('宝岛台湾  台湾暑期亲子游8日之旅', 353,'北京','10:00','','',0,6580,0,0,'1,2,3',4,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('宝岛台湾 台湾四日之旅', 354,'北京','10:00','','',0,6680,0,0,'1,2,3',4,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('宝岛台湾 台湾五日逍遥游', 355,'北京','10:00','','',0,6680,0,0,'1,2,3',4,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('宝岛台湾 台湾五日自由行', 356,'北京','10:00','','',0,6680,0,0,'1,2,3',4,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('台湾自驾之旅日志—2013年大陆赴台自驾首发团', 358,'北京','10:00','','',0,12800,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('千面诱惑  吴哥窟豪华五星4晚5日', 362,'北京','10:00','','',0,5880,0,0,'1,2,3',1,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('迪拜美食精选五天（国际五星）', 366,'北京','10:00','','',0,0,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('北京品质一日游', 372,'北京','10:00','','',0,1330,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('盛夏赏花元上都  自驾草原正蓝旗2日游', 373,'北京','10:00','','',0,428,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('经典美国塞班岛之旅5日游', 375,'北京','10:00','','',0,0,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('青岛/崂山二日游（常规）', 379,'青岛','10:00','','',0,240,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('青岛/威海/蓬莱三日游', 380,'青岛','10:00','','',0,310,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('青岛/崂山/威海/蓬莱四日游（常规）', 381,'青岛','10:00','','',0,520,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('慢游记——新、马深度7日游', 384,'北京','10:00','','',0,7960,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('青岛出发 海南6日游', 385,'青岛','10:00','','',0,2300,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('宋庆龄故居-郭沫若纪念馆-什刹海一日游（自由行）', 390,'北京','10:00','','',0,0,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('上海崇明岛一日游', 391,'','10:00','','',0,1000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('[纯玩无自费]广州一天游', 392,'','10:00','','',0,1000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('广州出发到桂林旅游，桂林旅游特价，阳朔漓江，西街三天纯玩游', 393,'','10:00','','',0,1000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('天池吐鲁番魔鬼城喀纳斯双卧十日游', 394,'','10:00','','',0,1000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('宜昌、神农架双卧五日游', 395,'','10:00','','',0,1000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('浙江千岛湖2日团队游', 396,'','10:00','','',0,1000,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('韶关丹霞二日游', 397,'','10:00','','',0,1000,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('大连、旅顺、星海广场、棒棰岛、老虎滩、海洋公园双卧四日纯玩游', 398,'','10:00','','',0,1000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('【朝圣之旅】·山水之旅·泰山、曲阜三孔、济南趵突泉卧高四日游', 399,'','10:00','','',0,1000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('【休闲山东】·烟台 威海 蓬莱 长岛 双卧五日游', 400,'','10:00','','',0,1000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('拉萨-纳木错-藏北大草原-日喀则五晚六日游', 401,'','10:00','','',0,2000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('厦门双飞3日小资之旅', 402,'','10:00','','',0,4000,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('寨沟 牟尼 都江堰 武侯祠 乐山 峨眉 “夕阳红”四川全景 8日游', 403,'','10:00','','',0,6000,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('福州霞浦厦门金门双飞+动车六日游', 404,'北京','10:00','','',0,5350,0,0,'1,2,3',4,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('啤酒生肖乐园、泰山、太阳部落 （双动三日）', 405,'','10:00','','',0,2000,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('青岛、崂山、烟台、蓬莱、威海(动卧六日)', 406,'','10:00','','',0,4000,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('<武夷山-厦门三飞5日>连线游', 407,'','10:00','','',0,4000,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('昆明-大理-丽江双飞6日', 409,'','10:00','','',0,3000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('丽江-香格里拉双飞5日 直飞丽江 两小无猜缘定今生 特别赠送翡翠挂件', 410,'','10:00','','',0,6000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('香格里拉-版纳-昆明-大理-丽江三飞八日', 411,'','10:00','','',0,5000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('苏沪杭双飞5日游', 412,'','10:00','','',0,8000,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('福州霞浦厦门金门双飞+动车六日游', 413,'北京','10:00','','',0,5350,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('苏沪杭双飞5日游', 414,'','10:00','','',0,8000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('苏沪杭双飞5日游', 415,'','10:00','','',0,8000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('苏沪杭双飞5日游', 416,'','10:00','','',0,8000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('[纯玩无自费]广州一天游', 417,'广州','10:00','广州番禹区','09:00',0,1000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('苏沪杭双飞5日游', 418,'苏州','10:00','苏州飞机场,杭州飞机场','12:00,11:00',0,8000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('苏沪杭双飞3日游', 419,'北京','10:00','苏州飞机场','10:00',0,8000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('苏沪杭双飞2日游', 420,'','10:00','','',0,8000,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('厦门+金门4晚5日游', 423,'北京','10:00','','',0,4800,0,0,'1,2,3',4,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('厦门+金门三晚四天观光游', 424,'北京','10:00','','',0,4400,0,0,'1,2,3',4,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('土耳其一地9日历史与文化之旅乌鲁木齐起止（内陆加飞）', 425,'乌鲁木齐','10:00','','',0,11300,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('土耳其一地9日蓝色之旅（内陆加飞）', 426,'乌鲁木齐','10:00','','',0,11800,0,0,'1,2,3',5,25)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('仰光、丁因、勃固5日行程', 428,'北京','10:00','','',0,100000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('仰光、茵莱湖5日行程', 429,'北京','10:00','','',0,100000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('仰光、丁因、勃固5日行程', 431,'北京','10:00','','',0,100000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('仰光、丁因、勃固5日行程', 432,'北京','10:00','','',0,100000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('仰光、茵莱湖5日行程', 433,'北京','10:00','','',0,100000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('仰光、蒲甘、茵莱湖5晚6天行程', 434,'北京','10:00','','',0,100000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('东欧风情游', 441,'北京','10:00','','',0,15100,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('大连三日游', 442,'','10:00','','',0,400,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('俄罗斯8天旅游行程', 443,'','10:00','','',0,100000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('欧洲亲子游', 444,'北京','10:00','','',0,100000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('电影之旅', 445,'北京','10:00','','',0,100000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('瑞典+双峡湾', 446,'北京','10:00','','',0,100000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('冰岛环岛自驾游', 447,'北京','10:00','','',0,100000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('大西洋之路十一日', 448,'北京','10:00','','',0,100000,0,0,'1,2,3',3,3)
+
+insert into cg_product_route_sale(title, id, departure, time, addr, tim, price1, price2, types, ctype,op_type,userid,bid) VALUES ('测试线路', 449,'123','10:00','','',0,0,0,0,'1,2,3',3,3)
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select count(*)  from cg_user where 1 
+
+select *  from cg_user where 1  order by id limit 0,15
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_product_route where id=337
+
+select * from cg_config
+
+select * from cg_class where pid=112   order by hots
+
+select * from cg_config
+
+select * from cg_class where pid=114   order by hots
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='118.186.220.207',time2='2015-05-19 15:12:59' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config where id=1
+
+select * from cg_config
+
+select * from cg_config where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config where id=1
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=0 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_class where pid=0  and classtype=7   order by hots 
+
+select * from cg_class where pid=0 and classtype=0 order by hots asc
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config where id=1
+
+select * from cg_config
+
+select * from cg_config where id=1
+
+select * from cg_config
+
+select * from cg_config where id=1
+
+select * from cg_config
+
+select * from cg_config where id=1
+
+select * from cg_config
+
+select * from cg_config where id=1
+
+select * from cg_config
+
+select * from cg_config where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select count(*)  from cg_search where 1 
+
+select *  from cg_search where 1  order by ctype,csearch,display limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select count(*)  from cg_search where 1 
+
+select *  from cg_search where 1  order by ctype,csearch,display limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_search where ckey='uscy'
+
+select * from cg_config
+
+select * from cg_search where ckey='uscy' limit 1
+
+select * from cg_search where ckey='jnzc' limit 1
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+UPDATE cg_search SET ckey='uscy', ctitle='搜索', ctype='112', csearch='0', display='1', cmin='1,2', cselected='0' WHERE ckey='uscy'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_search', '修改了1条搜索数据,ID为：uscy', '1', 'admin', '118.186.220.207', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select count(*)  from cg_search where 1 
+
+select *  from cg_search where 1  order by ctype,csearch,display limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select count(*)  from cg_search where 1 
+
+select *  from cg_search where 1  order by ctype,csearch,display limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_search where ckey='uscy'
+
+select * from cg_config
+
+select * from cg_search where ckey='uscy' limit 1
+
+select * from cg_search where ckey='chga' limit 1
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+UPDATE cg_search SET ckey='uscy', ctitle='搜索', ctype='112', csearch='0', display='1', cmin='1,2,3', cselected='0' WHERE ckey='uscy'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_search', '修改了1条搜索数据,ID为：uscy', '1', 'admin', '118.186.220.207', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select count(*)  from cg_search where 1 
+
+select *  from cg_search where 1  order by ctype,csearch,display limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_search where ckey='uscy'
+
+select * from cg_config
+
+select * from cg_search where ckey='uscy' limit 1
+
+select * from cg_search where ckey='rvus' limit 1
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+UPDATE cg_search SET ckey='uscy', ctitle='搜索', ctype='112', csearch='0', display='1', cmin='1,2,3', cselected='0' WHERE ckey='uscy'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_search', '修改了1条搜索数据,ID为：uscy', '1', 'admin', '118.186.220.207', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select count(*)  from cg_search where 1 
+
+select *  from cg_search where 1  order by ctype,csearch,display limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_search where ckey='uscy'
+
+select * from cg_config
+
+select * from cg_search where ckey='uscy' limit 1
+
+select * from cg_search where ckey='dzyn' limit 1
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+UPDATE cg_search SET ckey='uscy', ctitle='搜索', ctype='113', csearch='2', display='1', cmin='1,2,3', cselected='0' WHERE ckey='uscy'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_search', '修改了1条搜索数据,ID为：uscy', '1', 'admin', '118.186.220.207', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select count(*)  from cg_search where 1 
+
+select *  from cg_search where 1  order by ctype,csearch,display limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where html='undefined' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_search where ckey='uscy'
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_search where ckey='uscy' limit 1
+
+select * from cg_search where ckey='ljin' limit 1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select count(*)  from cg_search where 1 
+
+select *  from cg_search where 1  order by ctype,csearch,display limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1 order by id desc limit 15,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_config
+
+select * from cg_class where pid=112   order by hots
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=112   order by hots
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select count(*)  from cg_scenic where types=5
+
+select *  from cg_scenic where types=5 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select count(*)  from cg_scenic where types=5
+
+select *  from cg_scenic where types=5 order by id desc limit 30,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select count(*)  from cg_scenic where types=5
+
+select *  from cg_scenic where types=5 order by id desc limit 30,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select * from cg_scenic where id=1532
+
+select * from cg_config
+
+select * from cg_class where pid=98   order by hots
+
+select * from cg_config
+
+select * from cg_config
+
+select count(*)  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=1
+
+select *  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=1 order by hid desc limit 0,15
+
+select * from cg_config
+
+select count(*)  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=1
+
+select *  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=1 order by hid desc limit 0,15
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_config
+
+select * from cg_class where pid=112   order by hots
+
+select * from cg_config
+
+select count(*)  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=1
+
+select *  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=1 order by hid desc limit 0,15
+
+select * from cg_config
+
+select count(*)  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid!=1
+
+select *  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid!=1 order by hid desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select count(*)  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=1 and uid=1
+
+select *  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=1 and uid=1 order by hid desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_product_route where id=419
+
+select * from cg_product_route_sale where hid=5
+
+select * from cg_config
+
+select * from cg_product_route where id=419
+
+select * from cg_product_route_sale where hid=5
+
+select * from cg_config
+
+select * from cg_config
+
+select count(*)  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=1 and uid=1
+
+select *  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=1 and uid=1 order by hid desc limit 0,15
+
+select * from cg_config
+
+select count(*)  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=1 and uid=1
+
+select *  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=1 and uid=1 order by hid desc limit 0,15
+
+select * from cg_config
+
+select count(*)  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid!=1
+
+select *  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid!=1 order by hid desc limit 0,15
+
+select * from cg_config
+
+select * from cg_product_route where id=448
+
+select * from cg_config
+
+select count(*)  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=1
+
+select *  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=1 order by hid desc limit 0,15
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select count(*)  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=1
+
+select *  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=1 order by hid desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select count(*)  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=1
+
+select *  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=1 order by hid desc limit 0,15
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=98   order by hots
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select count(*)  from cg_scenic where types=5
+
+select *  from cg_scenic where types=5 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=1   order by hots 
+
+select * from cg_class where 1  and classtype=1 and pid!=0  order by hots 
+
+select * from cg_scenic where id=1532
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_product_route where id=448
+
+select * from cg_config
+

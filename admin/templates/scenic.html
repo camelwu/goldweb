@@ -1,0 +1,485 @@
+<{include file="admin_tpl_head.html"}> <{if $action eq 'list'}>
+<table cellspacing=1 cellpadding=4 class=table>
+	<tr>
+		<th>ID</th>
+		<th><{if $types eq '6'}>车牌号：座位数<{else}><{$tit}>名称<{/if}></th> <{if
+		$types eq '2'}>
+		<th>签证国家</th><{elseif $types eq '5'}>
+		<th><{$tit}>类别</th><{else}>
+		<th>图片</th><{/if}> <{if $types ne '5'}>
+		<th>报价&信息</th>
+		<th>所在地区</th> <{else}>
+		<th>编辑</th> <{/if}>
+		<th>管理</th>
+	</tr>
+	<{foreach from=$comments item=web}>
+	<tr align=center>
+		<td><{$web.id}></td>
+		<td align="left"><{$web.title}><{if $types eq
+			'6'}>:<{$Config.vehicle[$web.vehicle]}><{/if}><{$web.tips}></td> <{if
+		$types eq '2'}>
+		<td><{$web.stock}></td><{elseif $types eq '5'}>
+		<td><{$hotel[$web.ctype]}> -> <{$Allclass[$web.ctype1]}></td> <{else}>
+		<td><img src="<{$picserver}><{$web.url}>" width=150 height="150"></td><{/if}>
+		<{if $types ne '5'}>
+		<td><{if $types eq '6'}> 包车底价：￥<{$web.price}>元<br />
+			包车门市：￥<{$web.price1}>元<br /> 接送底价：￥<{$web.price2}>元<br />
+			接送门市：￥<{$web.price3}>元<br /> <{elseif $types eq '1' || $types eq '2'
+			|| $types eq '3'}> 底价：￥<{$web.price}>元<br />门市：￥<{$web.price1}>元<br />
+			<{else}> <a href="hotel.php?id=<{$web.id}>&types=<{$types}>&ctype=0"><{if
+				$types eq '4'}>餐费<{else}>客房<{/if}></a><span class="title3">(<{$web.num}>)</span>
+			<{/if}> <{if $types ne '2' && $types ne '6'}> &nbsp; <a
+			href="hotel.php?id=<{$web.id}>&types=<{$types}>&ctype=1">图片</a><span
+			class="title3">(<{$web.num1}>)</span> <{/if}>
+		</td>
+		<td><{$area[$web.cid]}>-<{$areatt[$web.aid]}><{if $types ne
+			'2'}>-<{$areatt[$web.city]}><{/if}></td> <{else}>
+		<td><{$web.op_user}></td> <{/if}>
+		<td><a href='?action=edit&id=<{$web.id}>&types=<{$web.types}>'>编辑</a>
+			<{if $web.userid eq $adminid || $adminid eq ""}><a
+			href="?action=delete&types=<{$web.types}>&id=<{$web.id}>"
+			onclick="javascript:return del_nsort();">删除</a><{/if}></td>
+	</tr>
+	<{/foreach}>
+	<tr class=tr1>
+		<td colspan=8><{$multipage}></td>
+	</tr>
+</table>
+<table width='90%' height=2>
+	<tr class=bg>
+		<td></td>
+	</tr>
+</table>
+<{else}>
+<table cellspacing=1 cellpadding=4 class=table>
+	<tr>
+		<td class=td colspan=2>添加<{$tit}></td>
+	</tr>
+	<form name=add_frm action='?action=handle' method=post
+		enctype="multipart/form-data">
+		<input type=hidden name=id value='<{$info.id}>'> <input
+			type=hidden name=types value='<{$types}>'>
+		<tr>
+			<td align="right"><{$tit}><{if $types eq
+				'6'}>牌号<{else}>名称<{/if}>：</td>
+			<td><input type=text name=title size=30 value='<{$info.title}>'>&nbsp;&nbsp;&nbsp;&nbsp;<{$hotname}>:<select
+				name='ctype' id='ctype'><{html_options options=$hotel
+					selected=$info.ctype}>
+			</select><{if $types eq '5' }>&nbsp;&nbsp;<select name='ctype1' id='ctype1'></select><{/if}><font
+				class=red>*</font></td>
+		</tr>
+		<tr>
+			<td align="right">产品编号：</td>
+			<td><input name="info_id" type="text" class="INPUT" id="info_id"
+				value="<{$info.info_id}>" size="30" maxlength="30"></td>
+		</tr>
+		<{if $types ne '5'}>
+		<tr>
+			<td align="right">所在地区：</td>
+			<td><select name='cid' id='cid'><{html_options
+					options=$area selected=$info.cid}>
+			</select>&nbsp;&nbsp;&nbsp;&nbsp;<select name=aid>
+			</select>&nbsp;&nbsp;&nbsp;&nbsp;<{if $types ne '2'}><select name=city></select><{/if}></td>
+		</tr>
+		<{/if}> <{if $types ne '2'}>
+		<tr>
+			<td align="right">图片上传：</td>
+			<td><input type=file name=pic size=40><{if $info.id eq
+				''}><input type="hidden" name="url" value="<{$info.url}>"><{else}>图片：<input
+				type="text" name="url" value="<{$info.url}>"><{/if}></td>
+		</tr>
+		<{/if}> <{if $types eq '0'}>
+		<!-- 酒店 -->
+		<tr>
+			<td align="right">特殊早餐：</td>
+			<td>中早:<input name="price" type="text" class="INPUT" id="price"
+				value="<{$info.price}>" size="12" maxlength="10"
+				onKeyUp='this.value=this.value.replace(/\D/gi,"")'> <span
+				class="title3">元</span> 美早:<input name="price1" type="text"
+				class="INPUT" id="price1" value="<{$info.price1}>" size="12"
+				maxlength="10" onKeyUp='this.value=this.value.replace(/\D/gi,"")'>
+				<span class="title3">元</span> 日早:<input name="price2" type="text"
+				class="INPUT" id="price2" value="<{$info.price2}>" size="12"
+				maxlength="10" onKeyUp='this.value=this.value.replace(/\D/gi,"")'>
+				<span class="title3">元</span> 它早:<input name="price3" type="text"
+				class="INPUT" id="price3" value="<{$info.price3}>" size="12"
+				maxlength="10" onKeyUp='this.value=this.value.replace(/\D/gi,"")'>
+				<span class="title3">元</span>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">酒店地址：</td>
+			<td><input name="address" type="text" class="INPUT" id="address"
+				value="<{$info.address}>" size="15">&nbsp;&nbsp;所在方位：<input
+				name="pos" type="text" class="INPUT" id="pos" value="<{$info.pos}>"
+				size="15" /></td>
+		</tr>
+		<tr>
+			<td align="right">联系电话：</td>
+			<td><input name="tel" type="text" class="INPUT" id="tel"
+				value="<{$info.tel}>" size="15">&nbsp;&nbsp;传真号码：<input
+				name="fax" type="text" class="INPUT" id="fax" value="<{$info.fax}>"
+				size="15"></td>
+		</tr>
+		<tr>
+			<td align="right">联 系 人：</td>
+			<td><input name="names" type="text" class="INPUT" id="names"
+				value="<{$info.names}>" size="15" />&nbsp;&nbsp;手机号码：<input
+				name="mobile" type="text" class="INPUT" id="mobile"
+				value="<{$info.mobile}>" size="15"></td>
+		</tr>
+		<{elseif $types eq '1'}>
+		<!-- 商品 -->
+		<tr>
+			<td align="right">商品编号：</td>
+			<td><input name="serial" type="text" class="INPUT" id="serial"
+				onKeyUp='this.value=this.value.replace(/\D/gi,"")'
+				value="<{$info.serial}>" size="15"> &nbsp;&nbsp;条形码： <input
+				name="codes" type="text" class="INPUT" id="codes"
+				onKeyUp='this.value=this.value.replace(/\D/gi,"")'
+				value="<{$info.codes}>" size="15"></td>
+		</tr>
+		<tr>
+			<td width="14%" align="right">商品材质：</td>
+			<td><input name="material" type="text" class="INPUT"
+				id="material" value="<{$info.material}>" size="15"></td>
+		</tr>
+		<tr>
+			<td align="right">所属品牌：</td>
+			<td><input name="brand" type="text" class="INPUT" id="brand"
+				value="<{$info.brand}>" size="15"></td>
+		</tr>
+		<tr>
+			<td align="right">商品特色：</td>
+			<td><input name="item" type="text" class="INPUT" id="item"
+				value="<{$info.item}>" size="15" /></td>
+		</tr>
+		<tr>
+			<td align="right">规格参数：</td>
+			<td><input name="size" type="text" class="INPUT" id="size"
+				value="<{$info.size}>" size="15"></td>
+		</tr>
+		<tr>
+			<td align="right">销售底价：</td>
+			<td><input name="price" type="text" class="INPUT" id="price"
+				value="<{$info.price}>" size="10" maxlength="8"
+				onKeyUp='this.value=this.value.replace(/\D/gi,"")'> <span
+				class="title3">元</span>&nbsp;门市价格： <input name="price1" type="text"
+				class="INPUT" id="price1" value="<{$info.price1}>" size="10"
+				maxlength="8" onKeyUp='this.value=this.value.replace(/\D/gi,"")'>
+				<span class="title3">元</span></td>
+		</tr>
+		<tr>
+			<td align="right">库存：</td>
+			<td><input name="stock" type="text" class="INPUT" id="stock"
+				value="<{$info.stock}>" size="15"> <label for="stock">有货/紧张/缺货</label></td>
+		</tr>
+		<{elseif $types eq '2'}>
+		<!-- 签证 -->
+		<tr>
+			<td align="right">受理时间：</td>
+			<td><input name="brand" type="text" class="INPUT" id="brand"
+				value="<{$info.brand}>" size="15"
+				onKeyUp='this.value=this.value.replace(/\D/gi,"")' /> <span
+				class="title3">个工作日</span></td>
+		</tr>
+		<tr>
+			<td align="right">有 效 期：</td>
+			<td><input name="item" type="text" class="INPUT" id="item"
+				value="<{$info.item}>" size="15"></td>
+		</tr>
+		<tr>
+			<td align="right">停 留 期：</td>
+			<td><input name="size" type="text" class="INPUT" id="size"
+				value="<{$info.size}>" size="15"></td>
+		</tr>
+		<tr>
+			<td align="right">领区名称：</td>
+			<td><input name="stock" type="text" class="INPUT" id="stock"
+				value="<{$info.stock}>" size="15"></td>
+		</tr>
+		<tr>
+			<td align="right">资料文档：</td>
+			<td><input type=file name=pic size=40><{if $info.id eq
+				''}><input type="hidden" name="url" value="<{$info.url}>"><{else}>图片：<input
+				type="text" name="url" value="<{$info.url}>"><{/if}></td>
+		</tr>
+		<tr>
+			<td align="right">销售底价：</td>
+			<td><input name="price" type="text" class="INPUT" id="price"
+				onKeyUp='this.value=this.value.replace(/\D/gi,"")'
+				value="<{$info.price}>" size="15"><span class="title3">
+					元(￥)</span></td>
+		</tr>
+		<tr>
+			<td align="right">门市价格：</td>
+			<td><input name="price1" type="text" class="INPUT" id="price1"
+				onKeyUp='this.value=this.value.replace(/\D/gi,"")'
+				value="<{$info.price1}>" size="15"> <span class="title3">
+					元(￥)</span></td>
+		</tr>
+		<{elseif $types eq '3'}>
+		<!-- 景点 -->
+		<tr>
+			<td align="right">主题类型：</td>
+			<td><input name="brand" type="text" class="INPUT" id="brand"
+				value="<{$info.brand}>" size="60">亲子、滑雪等</td>
+		</tr>
+		<tr>
+			<td align="right">游览时间：</td>
+			<td><input name="item" type="text" class="INPUT" id="item"
+				value="<{$info.item}>" size="15"></td>
+		</tr>
+		<tr>
+			<td align="right">江湖索道：</td>
+			<td><input name="price2" type="text" class="INPUT" id="price2"
+				onKeyUp='this.value=this.value.replace(/\D/gi,"")'
+				value="<{$info.price2}>" size="15"> <span class="title3">元(￥)</span></td>
+		</tr>
+
+		<tr>
+			<td align="right">销售底价：</td>
+			<td><input name="price" type="text" class="INPUT" id="price"
+				onKeyUp='this.value=this.value.replace(/\D/gi,"")'
+				value="<{$info.price}>" size="15"><span class="title3">
+					元(￥)</span></td>
+		</tr>
+		<tr>
+			<td align="right">门市价格：</td>
+			<td><input name="price1" type="text" class="INPUT" id="price1"
+				onKeyUp='this.value=this.value.replace(/\D/gi,"")'
+				value="<{$info.price1}>" size="15"> <span class="title3">
+					元(￥)</span></td>
+		</tr>
+		<tr>
+			<td align="right">特色亮点：</td>
+			<td><textarea name="keyword" cols="70" rows="12"><{$info.keyword}></textarea></td>
+		</tr>
+		<!-- <tr>
+			<td align="right">所在地址：</td>
+			<td><input name="address" type="text" class="INPUT" id="address"
+				value="<{$info.address}>" size="80"></td>
+		</tr> -->
+		<tr>
+			<td align="right">交通信息：</td>
+			<td><textarea name="pos" cols="70" rows="12" class="INPUT"
+					id="pos"><{$info.pos}></textarea></td>
+		</tr>
+
+		<{elseif $types eq '4'}>
+		<!-- 餐厅 -->
+	<tr>
+		<td align="right">餐厅地址：</td>
+		<td><input name="address" type="text" class="INPUT" id="address"
+			value="<{$info.address}>" size="15">&nbsp;&nbsp;所在方位：<input
+			name="pos" type="text" class="INPUT" id="pos" value="<{$info.pos}>"
+			size="15" />&nbsp;&nbsp;营业时间：<input name="times" type="text"
+			class="INPUT" id="times" value="<{$info.times}>" size="15"></td>
+	</tr>
+	<tr>
+		<td align="right">联系电话：</td>
+		<td><input name="tel" type="text" class="INPUT" id="tel"
+			value="<{$info.tel}>" size="15">&nbsp;&nbsp;传真号码：<input
+			name="fax" type="text" class="INPUT" id="fax" value="<{$info.fax}>"
+			size="15"></td>
+	</tr>
+	<tr>
+		<td align="right">联 系 人：</td>
+		<td><input name="names" type="text" class="INPUT" id="names"
+			value="<{$info.names}>" size="15" />&nbsp;&nbsp;手机号码：<input
+			name="mobile" type="text" class="INPUT" id="mobile"
+			value="<{$info.mobile}>" size="15"></td>
+	</tr>
+	<tr>
+		<td align="right">停 车 位：</td>
+		<td><input name="post" type="text" class="INPUT" id="post"
+			value="<{$info.post}>" size="15"
+			onKeyUp="this.value=this.value.replace(/\D/gi,&quot;&quot;)" />个</td>
+	</tr>
+	<{elseif $types eq '5'}>
+	<tr>
+		<td height="25" align="right">关 键 字：</td>
+		<td><input name="keyword" type="text" class="INPUT" id="keyword"
+			value="<{$info.keyword}>" size="90" maxlength="60"> <span
+			class="title3">注：多个用“|”分开
+				</th>
+	</tr>
+
+	<{elseif $types eq '6'}>
+	<tr>
+		<td align="right">租车规格：</td>
+		<td><{html_radios name="vehicle" options=$Config.vehicle
+			checked=$info.vehicle separator="&nbsp;"}></td>
+	</tr>
+	<tr>
+		<td align="right">联系电话：</td>
+		<td><input name="tel" type="text" class="INPUT" id="tel"
+			value="<{$info.tel}>" size="15"></td>
+	</tr>
+	<tr>
+		<td align="right">接送底价：</td>
+		<td><input name="price" type="text" class="INPUT" id="price"
+			onKeyUp='this.value=this.value.replace(/\D/gi,"")'
+			value="<{$info.price}>" size="8" maxlength="8"> <span
+			class="title3">元/次</span>&nbsp;&nbsp;&nbsp;&nbsp;门市价格： <input
+			name="price1" type="text" class="INPUT" id="price1"
+			value="<{$info.price1}>" size="8" maxlength="8"
+			onKeyUp='this.value=this.value.replace(/\D/gi,"")'> <span
+			class="title3">元/次</span></td>
+	</tr>
+	<tr>
+		<td align="right">包车底价：</td>
+		<td><input name="price2" type="text" class="INPUT" id="price2"
+			onKeyUp='this.value=this.value.replace(/\D/gi,"")'
+			value="<{$info.price2}>" size="8" maxlength="8"> <span
+			class="title3">元/天</span>&nbsp;&nbsp;&nbsp;&nbsp;门市价格： <input
+			name="price3" type="text" class="INPUT" id="price3"
+			value="<{$info.price3}>" size="8" maxlength="8"
+			onKeyUp='this.value=this.value.replace(/\D/gi,"")'> <span
+			class="title3"> 元/天</span></td>
+	</tr>
+
+	<{/if}>
+	<tr>
+		<td align="right"><{$tit}>介绍：</td>
+		<td><textarea name=word style='width: 670px; height: 220px;'><{$info.word}></textarea></td>
+	</tr>
+	<tr>
+		<td align="right"><{if $types eq '0'}>服务项目<{else}>备注<{/if}>：</td>
+		<td><textarea name=info style='width: 670px; height: 220px;'><{$info.info}></textarea></td>
+	</tr>
+	<{if $types eq '5'}>
+	<tr>
+		<td height="12" align="right">文章来源：</td>
+		<td>网站名称： <input name="op_name" type="text" class="INPUT"
+			id="op_name" size="20" maxlength="25" value="<{$info.op_name}>">
+			&nbsp;&nbsp;&nbsp; 网站地址： <input name="op_url" type="text"
+			class="INPUT" id="op_url" size="35" maxlength="60"
+			value="<{$info.op_url}>"></td>
+	</tr>
+	<tr>
+		<td height="12" align="right">编辑人员：</td>
+		<td><input name="op_user" type="text" class="INPUT" id="op_user"
+			size="18" maxlength="30" value="<{$info.op_user}>"></td>
+	</tr>
+	<{/if}>
+	<tr>
+		<td align="right">信息控制：</td>
+		<td><{html_checkboxes name='op_type' options=$op_type
+			checked=$info.op_type separator=""}></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td height=30><input type=submit value='提交添加'> <input
+			type=reset value='重新填写'> <input type=button name=go_back
+			value='返回上一页' onClick="javascript:location.href='?c_id=0';"></td>
+	</tr>
+	</form>
+</table>
+
+<script language=javascript>
+			var cid = $("select[name='cid']");
+			var aid = $("select[name='aid']");
+			var city = $("select[name='city']");
+			var ctype = $("select[name='ctype']");
+			var ctype1 = $("select[name='ctype1']");
+			
+			function ctype_init() {
+				ctype1.empty();
+				$.ajax({
+							type : "GET",
+							dataType : "json",
+							url : "getajax.php?q=getclass",
+							data : "pid=" + ctype.val(),
+							complete : function() {
+							},
+							success : function(data, textStatus) {
+								var pid_select = "<{$info.ctype1}>";
+								$.each(data,function(index, item) {
+													if (pid_select == index) {
+														ctype1.append("<option value='"+index+"'  selected=\"selected\">"
+																		+ item
+																		+ "</option>");
+													} else {
+														ctype1.append("<option value='"+index+"'>"
+																		+ item
+																		+ "</option>");
+													}
+												});
+							}
+						});
+			}
+			ctype_init();
+			ctype.change(function() {
+				ctype_init();
+			});
+			
+			function cid_init() {
+				aid.empty();
+				$.ajax({
+							type : "GET",
+							dataType : "json",
+							url : "getajax.php?q=getarea",
+							data : "classid=" + cid.val(),
+							complete : function() {
+							},
+							success : function(data, textStatus) {
+								var pid_select = "<{$info.aid}>";
+								$.each(data,function(index, item) {
+													if (pid_select == index) {
+														aid.append("<option value='"+index+"'  selected=\"selected\">"
+																		+ item
+																		+ "</option>");
+													} else {
+														aid.append("<option value='"+index+"'>"
+																		+ item
+																		+ "</option>");
+													}
+												});
+								aid_init();
+							}
+						});
+			}
+			cid_init();
+			cid.change(function() {
+				cid_init();
+			});
+			aid.change(function() {
+				aid_init();
+			});
+			function aid_init() {
+				city.empty();
+				$.ajax({
+							type : "GET",
+							dataType : "json",
+							url : "getajax.php?q=getarea&types=1",
+							data : "classid=" + cid.val() + "&pid=" + aid.val(),
+							complete : function() {
+							},
+							success : function(data, textStatus) {
+								var pid_select = "<{$info.city}>";
+								$.each(data,function(index, item) {
+													if (pid_select == index) {
+														city.append("<option value='"+index+"'  selected=\"selected\">"
+																		+ item
+																		+ "</option>");
+													} else {
+														city.append("<option value='"+index+"'>"
+																		+ item
+																		+ "</option>");
+													}
+												});
+							}
+						});
+			}
+		</script>
+
+<{/if}>
+
+<script language=javascript>
+			function del_nsort() {
+				var cf = window.confirm("是否确定该操作？");
+				return cf;
+			}
+		</script>
+<{include file="admin_tpl_foot.html"}>

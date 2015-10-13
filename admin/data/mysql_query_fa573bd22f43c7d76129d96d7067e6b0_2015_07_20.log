@@ -1,0 +1,1082 @@
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='111.132.12.117',time2='2015-07-20 12:27:22' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=138   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=138   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=0  order by id 
+
+select * from cg_branch  where 1  and types=2  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='111.132.12.117',time2='2015-07-20 12:55:22' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=138   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='111.132.12.117',time2='2015-07-20 12:55:59' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=138   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=0  order by id 
+
+select * from cg_branch  where 1  and types=2  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=0  order by id 
+
+select * from cg_branch  where 1  and types=2  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_config
+
+select * from cg_class where pid=112   order by hots
+
+select * from cg_config
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, '����')>0 
+																																																											 order by cg_scenic.hots
+
+Select cg_scenic.id,cg_scenic.title from cg_scenic Left JOIN cg_area ON (cg_scenic.aid = cg_area.id or cg_scenic.city = cg_area.id) where cg_scenic.types=3 and locate(cg_area.title, 'Ľ���')>0 
+																																																											 order by cg_scenic.hots
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=155   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=2 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select count(*)  from cg_scenic where types=2
+
+select *  from cg_scenic where types=2 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select count(*)  from cg_scenic where types=2 and title like '%斯洛文尼亚%'
+
+select *  from cg_scenic where types=2 and title like '%斯洛文尼亚%' order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=0
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=0 and title like '%斯洛文尼亚%'
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=0 and title like '%斯洛文尼亚%' order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=0  order by id 
+
+select * from cg_branch  where 1  and types=2  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=0  order by id 
+
+select * from cg_branch  where 1  and types=2  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+INSERT INTO cg_area (types, title, classid, word, attention, info, url, status, region, userid, op_user) VALUES ('0', '斯洛文尼亚', '3', '<div class=\"para\">
+	<b><span style=\"font-size:10.5pt;\">&nbsp;&nbsp;&nbsp; 【斯洛文尼亚】</span></b><span style=\"font-size:10.5pt;\">位于原南斯拉夫的西北部，西邻意大利，西南通往亚得里亚海，东部和南部被克罗地亚包围，东北有匈牙利，北接奥地利，面积为<span>20273</span>平方公里。是一个位于中欧南部，比邻阿尔卑斯山的小国。境内森林、海滨、湖泊、高山、溶洞，各种地形兼备，自然景色非常迷人。一片片翠绿的牧场交织着一条条弯弯曲曲的乡间小路，恬静的村庄里教堂的尖塔让人联想起风景如画的奥地利。墨绿的森林环绕着高耸入云的灰白色山峰，布莱德湖绿如翡翠，悬崖下明镜般的湖面以及湖中阿尔卑斯山雪白的倒影，构成了梦幻般的冰玉奇景。<span></span></span>
+</div>', '', '', '', '1', 'siluowenniya', '1', 'admin') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '添加了1条地域数据,ID为：221', '1', 'admin', '111.132.12.117', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=0
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=0 and title like '%克罗地亚%'
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=0 and title like '%克罗地亚%' order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+INSERT INTO cg_area (types, title, classid, word, attention, info, url, status, region, userid, op_user) VALUES ('0', '克罗地亚', '3', '<b><span style=\"font-family:宋体;font-size:10.5pt;\">&nbsp;&nbsp;&nbsp; 【克罗地亚】</span></b><span style=\"font-family:宋体;font-size:10.5pt;\">位于欧洲东南部的共和国，处于地中海及巴尔干半岛潘诺尼亚平原的交界处。克罗地亚在</span><span style=\"font-family:\'Times New Roman\';font-size:10.5pt;\">1991</span><span style=\"font-family:宋体;font-size:10.5pt;\">年从南斯拉夫社会主义联邦共和国独立，经济以第三产业为主，第二产业为副，旅游业是国家经济的重要组成部分。克罗地亚是原南地区经济较为发达的国家，经济基础良好，旅游、建筑、造船和制药等产业发展水平较高。</span>', '', '', '', '1', 'keluodiya', '1', 'admin') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '添加了1条地域数据,ID为：222', '1', 'admin', '111.132.12.117', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=0
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=0 and title like '%波黑%'
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=0 and title like '%波黑%' order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+INSERT INTO cg_area (types, title, classid, word, attention, info, url, status, region, userid, op_user) VALUES ('0', '波黑', '3', '<span style=\"font-family:宋体;font-size:10.5pt;\">&nbsp;&nbsp; 【<b>波黑</b>】位于原南斯拉夫中部，介于克罗地亚和塞尔维亚两共和国之间。</span><span style=\"font-family:\'Times New Roman\';font-size:10.5pt;\">1945</span><span style=\"font-family:宋体;font-size:10.5pt;\">年，南斯拉夫各族人民取得反法西斯战争胜利，波黑成为南斯拉夫联邦的一个共和国。在南斯拉夫时期便是联邦内较贫穷的地区之一，独立后又发生了内战，经济受到严重损害。目前波黑经济正在渐渐复苏，同时还要进行从计划经济到市场经济的转型。</span>', '', '', '', '1', 'bohei', '1', 'admin') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '添加了1条地域数据,ID为：223', '1', 'admin', '111.132.12.117', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=0
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+INSERT INTO cg_area (types, title, classid, word, attention, info, url, status, region, userid, op_user) VALUES ('0', '黑山共和国', '3', '<span style=\"font-family:宋体;font-size:10.5pt;\">【<b>黑山共和国</b>】是位于巴尔干半岛西南部，亚得里亚海东岸上的一个多山小国。其东北为塞尔维亚，东为科索沃，东南为阿尔巴尼亚，西北为波斯尼亚和黑塞哥维那以及克罗地亚，西南则为地中海的一部分亚得里亚海。</span><span style=\"font-family:\'Times New Roman\';font-size:10.5pt;\">2006</span><span style=\"font-family:宋体;font-size:10.5pt;\">年</span><span style=\"font-family:\'Times New Roman\';font-size:10.5pt;\">6</span><span style=\"font-family:宋体;font-size:10.5pt;\">月</span><span style=\"font-family:\'Times New Roman\';font-size:10.5pt;\">3</span><span style=\"font-family:宋体;font-size:10.5pt;\">日</span><span style=\"font-family:宋体;font-size:10.5pt;\">，黑山国会正式宣布独立，黑山因而成为欧洲最新的独立国家，并且恢复其在第一次世界大战之前的独立地位。黑山自然条件独特，面临亚德里亚海，拥有</span><span style=\"font-family:\'Times New Roman\';font-size:10.5pt;\">73</span><span style=\"font-family:宋体;font-size:10.5pt;\">公里长的阳光海滩，被亚德里亚海清澈的海浪拍打着，清新的空气吹拂着。背依杜尔米尔黑色山脉，最高山峰海拨</span><span style=\"font-family:\'Times New Roman\';font-size:10.5pt;\">2522</span><span style=\"font-family:宋体;font-size:10.5pt;\">米</span><span style=\"font-family:宋体;font-size:10.5pt;\">，终年冰雪覆盖。喀斯特溶岩地貌也为其风光增色不少，塔拉河谷最深处达</span><span style=\"font-family:\'Times New Roman\';font-size:10.5pt;\">1300</span><span style=\"font-family:宋体;font-size:10.5pt;\">米</span><span style=\"font-family:宋体;font-size:10.5pt;\">。</span>', '', '', '', '1', 'heishangongheguo', '1', 'admin') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '添加了1条地域数据,ID为：224', '1', 'admin', '111.132.12.117', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=0
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=0 and title like '%塞尔维亚%'
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=0 and title like '%塞尔维亚%' order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+INSERT INTO cg_area (types, title, classid, word, attention, info, url, status, region, userid, op_user) VALUES ('0', '塞尔维亚', '3', '<span style=\"font-family:宋体;font-size:10.5pt;\">&nbsp;&nbsp;&nbsp; 【<b>塞尔维亚</b>】是位于欧洲东南部，巴尔干半岛中部的内陆国，面积为</span><span style=\"font-family:\'Times New Roman\';font-size:10.5pt;\">88361</span><span style=\"font-family:宋体;font-size:10.5pt;\">万平方公里。历史上的塞尔维亚王国由斯拉夫人建立。一战后成为南斯拉夫的主体部分。</span><span style=\"font-family:\'Times New Roman\';font-size:10.5pt;\">1992</span><span style=\"font-family:宋体;font-size:10.5pt;\">年塞尔维亚与黑山组成南联盟（后改名为塞黑）。</span><span style=\"font-family:\'Times New Roman\';font-size:10.5pt;\">2006</span><span style=\"font-family:宋体;font-size:10.5pt;\">年</span><span style=\"font-family:\'Times New Roman\';font-size:10.5pt;\">6</span><span style=\"font-family:宋体;font-size:10.5pt;\">月</span><span style=\"font-family:\'Times New Roman\';font-size:10.5pt;\">5</span><span style=\"font-family:宋体;font-size:10.5pt;\">日</span><span style=\"font-family:宋体;font-size:10.5pt;\">正式独立。拥有很好的旅游基础，有各式各样风景秀丽的旅游景点，大量文化历史遗迹，还有温泉，猎场等等大大小小的旅游设施。塞尔维亚在过去是不同文明的十字路口，有着不同的精神，艺术，建筑和文化的影响。塞尔维亚是一个有独特历史，文化，自然，种族反差的地方。</span>', '', '', '', '1', 'saierweiya', '1', 'admin') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '添加了1条地域数据,ID为：225', '1', 'admin', '111.132.12.117', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=0
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select count(*)  from cg_scenic where types=2
+
+select *  from cg_scenic where types=2 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=2   order by hots 
+
+select count(*)  from cg_scenic where types=2 and title like '%??��?��?????��??o?%'
+
+select *  from cg_scenic where types=2 and title like '%??��?��?????��??o?%' order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=0
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+INSERT INTO cg_area (types, title, classid, pid, classid1, word, attention, info, url, region, userid, op_user) VALUES ('1', '卢布尔雅那', '3', '221', '0', '<span style=\"font-family:宋体;font-size:10.5pt;\">卢布尔雅那<span>Ljubljana</span>是斯洛文尼亚共和国的首都和政治、文化中心。位于西北部萨瓦河上游，群山环抱的盆地之中，和谐的混合了古典建筑、新艺术建筑和现代巴洛克风格建筑，散发出专属的美丽风情。</span>', '', '', '', 'lubueryana', '1', 'admin') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '添加了1条地域数据,ID为：226', '1', 'admin', '111.132.12.117', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=155   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=2 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=155   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=2 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=99 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=221 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+INSERT INTO cg_scenic (types, title, ctype, info_id, cid, aid, city, url, brand, item, price2, price, price1, address, pos, keyword, word, info, op_type, op_user, userid, bid) VALUES ('3', '布莱德湖', '155', '', '3', '221', '226', '', '', '', '', '', '', '', '', '', '<span style=\"font-family:宋体;\"><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp; 布莱德湖是斯洛维尼亚西北部的冰川湖。宽为</span><span><span style=\"font-size:14px;\">500-180</span><span style=\"font-size:14px;\"><span style=\"font-size:14px;\">米</span></span><span><span style=\"font-size:14px;\">，最深处为30</span><span style=\"font-size:14px;\"><span style=\"font-size:14px;\">米</span></span><span style=\"font-size:14px;\">。</span></span></span><span style=\"font-size:14px;\">“三头山”顶部积雪的融水不断注入湖中，故有“冰湖”之称。是尤利安</span><span style=\"font-size:14px;\">(Julian)</span><span style=\"font-size:14px;\">山脚避暑、度假和冬季运动胜地。</span><span></span></span>', '', '1', 'admin', '1', '0') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '添加了1条景点数据,ID为：1648', '1', 'admin', '111.132.12.117', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=155   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=2 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=99 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=221 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+INSERT INTO cg_scenic (types, title, ctype, info_id, cid, aid, city, url, brand, item, price2, price, price1, address, pos, keyword, word, info, op_type, op_user, userid, bid) VALUES ('3', '特里格拉夫国家公园', '155', '', '3', '221', '226', '', '', '', '', '', '', '', '', '', '&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"font-family:宋体;\"><span style=\"font-size:14px;\">【</span><b><span style=\"font-size:14px;\">特里格拉夫国家公园</span><span style=\"font-size:14px;\"> Triglav National Park</span></b><span style=\"font-size:14px;\">】，是斯洛文尼亚唯一的国家公园，覆盖了</span><span style=\"font-size:14px;\">838</span><span style=\"font-size:14px;\">平方公里的土地，与意大利和奥地利交界，占据了斯洛文尼亚四分之一的领土，为欧洲最古老的公园之一。它是斯洛文尼亚最大的保护区，具有特殊的保护区地位，在变化多端的克斯特山貌地形周围有着无数的自然和文化特色，还有着风景如画的山峰和河谷。</span><span></span></span>', '', '1', 'admin', '1', '0') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '添加了1条景点数据,ID为：1649', '1', 'admin', '111.132.12.117', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=155   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=2 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=99 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=221 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+INSERT INTO cg_scenic (types, title, ctype, info_id, cid, aid, city, url, brand, item, price2, price, price1, address, pos, keyword, word, info, op_type, op_user, userid, bid) VALUES ('3', '波希涅湖', '155', '', '3', '221', '226', '', '', '', '', '', '', '', '', '', '<span style=\"font-family:宋体;font-size:10.5pt;\">【<b>波希涅湖<span>bohinj Lake</span></b>】，明镜般的湖水波光粼粼，周边自然景色很美，可以看到远处的雪山，比布莱德湖商业气息淡些。</span>', '', '1', 'admin', '1', '0') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '添加了1条景点数据,ID为：1650', '1', 'admin', '111.132.12.117', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select count(*)  from cg_scenic where types=3
+
+select *  from cg_scenic where types=3 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_class where pid=155   order by hots
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=2 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=99 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=222 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=0 and title like '%????��???��?o?%'
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=0 and title like '%????��???��?o?%' order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=3   order by hots 
+
+select * from cg_scenic where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+INSERT INTO cg_scenic (url, op_user, types, op_type, userid, bid) VALUES ('', '', '0', '', '', '') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_scenic', '添加了1条酒店数据,ID为：1651', '', '', '180.153.201.214', 'Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; GT-I9500 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 QQ-Manager Mobile Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_area   order by id 
+
+select * from cg_class where pid=0  and classtype=4   order by hots 
+
+select count(*)  from cg_scenic where types=0
+
+select *  from cg_scenic where types=0 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1 and title like '%萨格勒布%'
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 and title like '%萨格勒布%' order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+INSERT INTO cg_area (types, title, classid, pid, classid1, word, attention, info, url, status, region, userid, op_user) VALUES ('1', '萨格勒布', '3', '222', '0', '<span style=\"font-family:宋体;\"><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp; 【</span><b><span style=\"font-size:14px;\">萨格勒布</span><span style=\"font-size:14px;\">Zagreb</span></b><span style=\"font-size:14px;\">】是克罗地亚的政治、经济、文化中心。也是中欧历史名城，整个城市由三部分组成：由教堂、市政厅等古建筑组成的老城；由广场、商业区、歌剧院组成的新区；二战后发展起来的现代化市区。市中心为耶拉西奇广场，这里设有许多政府机构、银行及商业办公中心。萨格勒布还是座有着抵抗侵略者传统的城市，铁托早期进行的革命活动主要是在萨格勒布。</span><span></span></span>', '', '', '', '1', 'sagelebu', '1', 'admin') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '添加了1条地域数据,ID为：227', '1', 'admin', '111.132.12.117', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+INSERT INTO cg_area (types, title, classid, pid, classid1, word, attention, info, url, status, region, userid, op_user) VALUES ('1', '扎达尔', '3', '222', '0', '<span style=\"font-family:宋体;font-size:10.5pt;\">【<b>扎达尔<span>Zadar</span></b>】是克罗地亚西部港口、历史名城。西临亚得里亚海，是扎达尔县和北达尔马提亚地区的行政中心。同时也是克罗地亚第五大城市，东南欧著名的旅游胜地之一。拥有很多中世纪教堂和罗马建筑遗迹。</span>', '', '', '', '1', 'zhadaer', '1', 'admin') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '添加了1条地域数据,ID为：228', '1', 'admin', '111.132.12.117', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1 and title like '%��?��?????????%'
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 and title like '%��?��?????????%' order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+INSERT INTO cg_area (types, title, classid, pid, classid1, word, attention, info, url, status, region, userid, op_user) VALUES ('1', '斯普利特', '3', '222', '0', '<span style=\"font-family:宋体;font-size:10.5pt;\">【<b>斯普利特<span>Split</span></b>】是克罗地亚共和国历史名城，第二大城市，达尔马提亚地区第一大海港，坐落在亚得里亚海的达尔马提亚海岸中心，由一个中央半岛及周围海岸组成，而城市区域也包括海岸边的许多小城镇。</span>', '', '', '', '1', 'sipulite', '1', 'admin') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '添加了1条地域数据,ID为：229', '1', 'admin', '111.132.12.117', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+INSERT INTO cg_area (types, title, classid, pid, classid1, word, attention, info, url, status, region, userid, op_user) VALUES ('1', '莫斯塔尔', '3', '223', '0', '<span style=\"font-family:宋体;\"><span style=\"font-size:14px;\">&nbsp;&nbsp;&nbsp; 【</span><b><span style=\"font-size:14px;\">莫斯塔尔</span><span style=\"font-size:14px;\">Mostar</span></b><span style=\"font-size:14px;\">】</span><span style=\"font-size:14px;\">，莫斯塔尔位于波黑的南部，</span><span style=\"font-size:14px;\">城市</span><span style=\"font-size:14px;\">于</span><span style=\"font-size:14px;\">15</span><span style=\"font-size:14px;\">世纪时由鄂图曼土耳其建造，</span><span style=\"font-size:14px;\">1878</span><span style=\"font-size:14px;\">年成为奥匈帝国领土，第一次世界大战之后成为南斯拉夫王国的领土。</span><span></span></span>', '', '', '', '1', 'mositaer', '1', 'admin') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '添加了1条地域数据,ID为：230', '1', 'admin', '111.132.12.117', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select * from cg_area where id=0
+
+select * from cg_config
+
+select * from cg_area where classid=1  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_area where classid=3  and pid=0 order by region
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+INSERT INTO cg_area (types, title, classid, pid, classid1, word, attention, info, url, status, region, userid, op_user) VALUES ('1', '萨拉热窝', '3', '223', '0', '<span style=\"font-family:宋体;font-size:10.5pt;\">【<b>萨拉热窝<span>Sarajevo</span></b>】，萨拉热窝是波黑的首都，曾因第一次世界大战的爆发闻名于世。位于萨瓦河支流博亚纳河上游附近，是一座风景秀丽、市貌独特，建筑风格迥异的古城。由于历史上它曾几次易主，所以不同的统治者为这座城市带来了形形色色的民族习俗和宗教，使之成为东方和西方经济文化的交汇处，并逐渐发展成为一个东西合璧的城市。市内既有１９世纪奥地利式的黄褐色建筑，又有东方风格的楼阁和土耳其式手工艺作坊。</span>', '', '', '', '1', 'salarewo', '1', 'admin') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_area', '添加了1条地域数据,ID为：231', '1', 'admin', '111.132.12.117', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_class where pid=0  and classtype=5   order by hots 
+
+select * from cg_class where pid=0  and classtype=6   order by hots 
+
+select count(*)  from cg_area t  where types=1
+
+select *,(select title from cg_area where id=t.pid) as pidname  from cg_area t  where types=1 order by id desc limit 0,15
+

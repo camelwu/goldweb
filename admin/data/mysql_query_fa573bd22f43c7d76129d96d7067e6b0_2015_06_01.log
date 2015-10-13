@@ -1,0 +1,772 @@
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='123.115.132.100',time2='2015-06-01 02:56:21' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='123.115.132.100',time2='2015-06-01 02:56:42' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='123.115.132.100',time2='2015-06-01 02:57:02' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='123.115.132.100',time2='2015-06-01 03:01:11' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='123.115.132.100',time2='2015-06-01 03:01:26' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='123.115.132.100',time2='2015-06-01 03:02:56' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=0  order by id 
+
+select * from cg_branch  where 1  and types=2  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=0  order by id 
+
+select * from cg_branch  where 1  and types=2  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1 and keyword like '%土%'
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=1 and keyword like '%土%' order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='123.115.132.100',time2='2015-06-01 06:11:02' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select count(*)  from cg_user where 1 
+
+select *  from cg_user where 1  order by id limit 0,15
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_user where id=0
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+ select count(*) from cg_user where username = 'fei'
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select parentid from con_menuitems where classid='2'
+
+select parentid from con_menuitems where classid='42'
+
+select parentid from con_menuitems where classid='43'
+
+select parentid from con_menuitems where classid='44'
+
+select parentid from con_menuitems where classid='45'
+
+select parentid from con_menuitems where classid='46'
+
+select parentid from con_menuitems where classid='47'
+
+select parentid from con_menuitems where classid='48'
+
+select parentid from con_menuitems where classid='49'
+
+select parentid from con_menuitems where classid='50'
+
+select parentid from con_menuitems where classid='51'
+
+select parentid from con_menuitems where classid='52'
+
+select parentid from con_menuitems where classid='53'
+
+select parentid from con_menuitems where classid='54'
+
+INSERT INTO cg_user (username, name, bid, password, position, qq, email, tel, fax, mobile, uid, allowstr, note) VALUES ('fei', '飞鹰', '25', '69bb97c69ba174af16e1b244163522b4', '录入员', '1587034097', '1587034097@qq.com', '', '', '', '1', '2,42,43,44,45,46,47,48,49,50,51,52,53,54', '飞鹰静宏录入工作室') 
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_user', '添加了1条人员数据,ID为：6', '1', 'admin', '123.115.132.100', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_user where id=6
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select count(*)  from cg_user where 1 
+
+select *  from cg_user where 1  order by id limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'fei'
+
+update cg_user set login_num=login_num+1,login_ip='123.115.132.100',time2='2015-06-01 06:34:50' where id=6
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'fei'
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_user where id=6
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select parentid from con_menuitems where classid='2'
+
+select parentid from con_menuitems where classid='42'
+
+select parentid from con_menuitems where classid='43'
+
+select parentid from con_menuitems where classid='44'
+
+select parentid from con_menuitems where classid='45'
+
+select parentid from con_menuitems where classid='46'
+
+select parentid from con_menuitems where classid='47'
+
+select parentid from con_menuitems where classid='48'
+
+select parentid from con_menuitems where classid='49'
+
+select parentid from con_menuitems where classid='50'
+
+select parentid from con_menuitems where classid='51'
+
+select parentid from con_menuitems where classid='52'
+
+select parentid from con_menuitems where classid='53'
+
+select parentid from con_menuitems where classid='54'
+
+UPDATE cg_user SET username='fei', name='飞鹰', bid='25', password='69bb97c69ba174af16e1b244163522b4', position='录入员', qq='1587034097', email='1587034097@qq.com', tel='', fax='', mobile='', uid='1', allowstr='2,42,43,44,45,46,47,48,49,50,51,52,53,54', note='飞鹰静宏录入工作室' WHERE id='6'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_user', '修改了1条人员数据,ID为：6', '1', 'admin', '123.115.132.100', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_user where id=6
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select count(*)  from cg_user where 1 
+
+select *  from cg_user where 1  order by id limit 0,15
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'fei'
+
+update cg_user set login_num=login_num+1,login_ip='123.115.132.100',time2='2015-06-01 06:36:05' where id=6
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'fei'
+
+update cg_user set login_num=login_num+1,login_ip='123.115.132.100',time2='2015-06-01 06:36:17' where id=6
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'fei'
+
+update cg_user set login_num=login_num+1,login_ip='123.115.132.100',time2='2015-06-01 06:40:19' where id=6
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=6
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'admin'
+
+update cg_user set login_num=login_num+1,login_ip='123.115.132.100',time2='2015-06-01 06:41:23' where id=1
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=1
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select count(*)  from cg_user where 1 
+
+select *  from cg_user where 1  order by id limit 0,15
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_user where id=6
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select parentid from con_menuitems where classid='2'
+
+select parentid from con_menuitems where classid='39'
+
+select parentid from con_menuitems where classid='40'
+
+select parentid from con_menuitems where classid='42'
+
+select parentid from con_menuitems where classid='43'
+
+select parentid from con_menuitems where classid='44'
+
+select parentid from con_menuitems where classid='45'
+
+select parentid from con_menuitems where classid='46'
+
+select parentid from con_menuitems where classid='47'
+
+select parentid from con_menuitems where classid='48'
+
+select parentid from con_menuitems where classid='49'
+
+select parentid from con_menuitems where classid='50'
+
+select parentid from con_menuitems where classid='51'
+
+select parentid from con_menuitems where classid='52'
+
+select parentid from con_menuitems where classid='53'
+
+select parentid from con_menuitems where classid='54'
+
+UPDATE cg_user SET username='fei', name='飞鹰', bid='25', position='录入员', qq='1587034097', email='1587034097@qq.com', tel='', fax='', mobile='', uid='1', allowstr='2,39,40,42,43,44,45,46,47,48,49,50,51,52,53,54', note='飞鹰静宏录入工作室' WHERE id='6'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_user', '修改了1条人员数据,ID为：6', '1', 'admin', '123.115.132.100', 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727)') 
+
+select * from cg_config
+
+select * from cg_branch  where 1   order by id 
+
+select * from cg_user where id=6
+
+select * from cg_user   order by id 
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'fei'
+
+update cg_user set login_num=login_num+1,login_ip='123.115.132.100',time2='2015-06-01 06:42:26' where id=6
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=6
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=0 and id=25  order by id 
+
+select * from cg_branch  where 1  and types=2 and id=25  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=6
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=6 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=0 and id=25  order by id 
+
+select * from cg_branch  where 1  and types=2 and id=25  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_config
+
+select * from cg_class where pid=112   order by hots
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'fei'
+
+update cg_user set login_num=login_num+1,login_ip='118.207.179.132',time2='2015-06-01 06:44:13' where id=6
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=6
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'FEI'
+
+update cg_user set login_num=login_num+1,login_ip='123.115.132.100',time2='2015-06-01 06:44:31' where id=6
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=6
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=0 and id=25  order by id 
+
+select * from cg_branch  where 1  and types=2 and id=25  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=6
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=6 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=0 and id=25  order by id 
+
+select * from cg_branch  where 1  and types=2 and id=25  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=6
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=6 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=0 and id=25  order by id 
+
+select * from cg_branch  where 1  and types=2 and id=25  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_config
+
+select * from cg_class where pid=112   order by hots
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=0 and id=25  order by id 
+
+select * from cg_branch  where 1  and types=2 and id=25  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select * from cg_config
+
+select * from cg_class where pid=112   order by hots
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=0 and id=25  order by id 
+
+select * from cg_branch  where 1  and types=2 and id=25  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=6
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=6 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=0 and id=25  order by id 
+
+select * from cg_branch  where 1  and types=2 and id=25  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=6
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=6 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=0 and id=25  order by id 
+
+select * from cg_branch  where 1  and types=2 and id=25  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=6
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=6 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=0 and id=25  order by id 
+
+select * from cg_branch  where 1  and types=2 and id=25  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=6
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=6 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_branch  where 1  and types=0 and id=25  order by id 
+
+select * from cg_branch  where 1  and types=2 and id=25  order by id 
+
+select * from cg_class where pid=0  and classtype=0   order by hots 
+
+select * from cg_class where 1  and classtype=0 and pid!=0  order by hots 
+
+select count(*) from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=6
+
+select * from (select *, concat_ws(',',title,IFNULL(keywords,' '),IFNULL(remark,' '),op_user) keyword from cg_product_route) result where userid=6 order by id desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+SELECT * FROM cg_user WHERE username = 'camelwu'
+
+update cg_user set login_num=login_num+1,login_ip='223.72.84.83',time2='2015-06-01 17:49:54' where id=3
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_user where id=3
+
+SELECT lft, rgt FROM con_menuitems WHERE classid='1' 
+
+SELECT * FROM con_menuitems WHERE lft>=1 AND lft<=134   ORDER BY lft ASC
+
+select * from cg_config
+
+select * from cg_config
+
+select * from cg_config
+
+select count(*)  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=3
+
+select *  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=3 order by hid desc limit 0,15
+
+select * from cg_config
+
+select * from cg_product_route where id=449
+
+select * from cg_product_route_sale where hid=183
+
+select * from cg_config
+
+UPDATE cg_product_route_sale SET id='449', hid='183', ctype='1', departure='123', time='10:00', traffic='null', tname='0', title='测试线路', addr='', tim='', price1='0', price2='0', userid='3', op_user='camelwu', op_type='' WHERE hid='183'
+
+INSERT INTO cg_daily (title, remark, userid, name, ip, sys) VALUES ('cg_line', '修改了1条线路调度数据,ID为：183', '3', 'camelwu', '223.72.84.83', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36') 
+
+select * from cg_config
+
+select * from cg_product_route_sale where hid=183
+
+select * from cg_config
+
+select count(*)  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=3
+
+select *  from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.id) result where ctype=0 and uid=3 order by hid desc limit 0,15
+
+select * from cg_config
+
+select * from cg_config
+

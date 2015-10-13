@@ -1,0 +1,136 @@
+<{include file="admin_tpl_head.html"}>
+<table width="100%" border="0" cellpadding="2" cellspacing="1"
+	class="table">
+	<tr>
+		<th colspan="2"><{$tit1}>管理</th>
+	</tr>
+	<tr>
+		<td width="13%" align="right"><{$tit}>名称：</td>
+		<td width="87%"><{$scenicinfo.title}>&nbsp;|&nbsp;<a
+			href="admin_plan.php?types=<{$types}>&ctype=<{$ctype}>">返回列表</a></td>
+	</tr>
+	<tr>
+		<td align="right">管理操作：</td>
+		<td>&nbsp;<a href="?routeid=<{$routeid}>&action=add">添加<{$tit1}></a>&nbsp;|&nbsp;<a
+			href="?routeid=<{$routeid}>"><{$tit1}>管理</a></td>
+	</tr>
+</table>
+<{if $action eq 'list'}>
+<table width="100%" border="0" cellpadding="2" cellspacing="1"
+	class="table">
+	<{foreach item=web name=list from=$comments}>
+
+	<tr>
+		<td width="13%" align="right" class="style101">(<{$smarty.foreach.list.index+1}>)</td>
+		<td>第：<{$web.num}>天</td>
+	</tr>
+	<tr>
+		<td align="right">显示图片:</td>
+		<td><img src="<{$picserver}><{$web.url}>"></td>
+	</tr>
+	<tr>
+		<td align="right">详细内容：</td>
+		<td><div id="d1">
+				<strong>离城市：</strong><{$web.departure}> <strong>时间：</strong><{$web.timd}>
+				<br> <strong>抵城市：</strong><{$web.arrived}> <strong>时间：</strong><{$web.tima}>
+				<br> <strong>行：</strong><{$Config.traffic[$web.traffic]}> : <{$web.tname}> <br> <strong>食</strong>：<{$web.eats}>
+				<br> <strong>住：</strong><{$web.hotel}>
+				<br> <strong>娱：</strong><{$web.scenic}> <br>
+				<{$web.content|nl2br}><br>
+				温馨提示：<{$web.tips|nl2br}>
+			</div></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><input type="button" name="button"
+			onClick="javascript:window.location='?sid=<{$web.sid}>&routeid=<{$routeid}>&action=add'"
+			value="修 改"> <input name="delete" type="button" id="delete2"
+			value="删 除"
+			onClick="window.location='?sid=<{$web.sid}>&routeid=<{$routeid}>&action=delete';"></td>
+
+	</tr>
+	<{/foreach}>
+</table>
+<{else}>
+<form name="myform_1" method="post" action="?action=handle"
+	enctype="multipart/form-data">
+	<input type=hidden name="routeid" value="<{$routeid}>"> <input
+		type="hidden" name="sid" value="<{$info.sid}>">
+	<table width="100%" border="0" cellpadding="2" cellspacing="1"
+		class="table">
+		<tr>
+			<td width="13%" align="right" class="style101">第：</td>
+			<td><input name="num" type="text" class="INPUT"
+				value="<{$info.num}>" size="2">天</td>
+		</tr>
+		<tr>
+			<td align="right">图片上传：</td>
+			<td><input type=file name=pic size=40><input type=hidden
+				name=url value="<{$info.url}>"></td>
+		</tr>
+		<tr>
+			<td align="right">详细行程：</td>
+			<td>离城市：<input name="departure" type="text" class="INPUT"
+				id="departure" maxlength="10" value="<{$info.departure}>">
+				时间：<input name="timd" type="text" class="INPUT"
+				value="<{$info.timd}>"><br> 抵城市：<input name="arrived"
+				type="text" id="arrived01" maxlength="60" value="<{$info.arrived}>">
+				时间：<input name="tima" type="text" class="INPUT"
+				value="<{$info.tima}>"> 注：可多个抵达城市，用|分隔<br> <strong>行</strong>：
+				<select name=traffic>
+					<option value="">无</option> <{html_options options=$Config.traffic
+					selected=$info.traffic}>
+			</select> <input name="tnames" type="text"><input type="button"
+				value="search" onclick="javascript:trasearch();" />
+				参考航班、火车等交通信息，如无可不填写。
+				<div id="tname"></div>
+				<input type="hidden" name="tnamesh" value="<{$info.tname}>" />
+				<strong>食</strong>：<{html_checkboxes options=$Config.eats
+				checked=$info.eats name="eats"}> <br> <strong>住</strong>：<input
+				type="text" name="hotel"  value="<{$info.hotel}>"><br> 
+				<strong>娱：</strong>
+				<input type="button" id="s0" value="search" onclick="searchscenic();">
+				<div id="scenic"></div>
+				<input type="hidden" name="scenicsh" value="<{$info.scenic}>" />
+				
+				<br> <textarea name="content" id="cont1"
+					style="width: 500px; height: 120px;"><{$info.content}></textarea></td>
+		</tr>
+		<tr>
+			<td align="right">温馨提示：</td>
+			<td><textarea name="tips" id="tips" style="width: 500px; height: 120px;"><{$info.tips}></textarea></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" value="提  交"></td>
+		</tr>
+	</table>
+</form>
+<script language=javascript>
+	trasearch();
+	function trasearch() {
+		var traffic = $("select[name='traffic']").val();
+		var tnames = $("input[name='tnames']").val();
+		var tnamesh = $("input[name='tnamesh']").val();
+		$("#tname").load(
+				"getajax.php?q=gettrasearch&traffic=" + traffic + "&tnames="
+						+ tnames + "&tnamesh=" + tnamesh);
+	}
+	
+	searchscenic();
+	function searchscenic() {
+		var departure = $("input[name='departure']").val();
+		var arrived = $("input[name='arrived']").val();
+		var scenicsh = $("input[name='scenicsh']").val();
+		$("#scenic").load(
+				"getajax.php?q=searchscenic&departure="
+						+ departure + "&scenicsh=" + scenicsh+ "&arrived=" + arrived);
+	}
+	
+	
+	function del_nsort() {
+		var cf = window.confirm("是否确定该操作？");
+		return cf;
+	}
+</script>
+<{/if}> <{include file="admin_tpl_foot.html"}>

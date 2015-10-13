@@ -1,0 +1,75 @@
+<body topmargin=0 leftmargin=0>
+	<center>
+		<{if $action eq 'list'}>
+		<table cellspacing=1 cellpadding=4 class=table>
+			<form name=sel_form action='?action=delete' method=post>
+				<tr>
+					<th>ID</th>
+					<th>航空公司</th>
+					<th>英文名称</th>
+					<th>三位码</th>
+					<th>管理</th>
+				</tr>
+				<{foreach from=$comments item=web}>
+				<tr align=center>
+					<td><{$web.id}></td>
+					<td><{$web.title}></td>
+					<td><{$web.names}></td>
+					<td><{$web.code}></td>
+					<td><a href='?action=edit&id=<{$web.id}>'>编辑</a> <a
+						href="?action=delete&types=<{$contact.types}>&id=<{$web.id}>"
+						onclick="javascript:return del_nsort();">删除</a></td>
+				</tr>
+				<{/foreach}>
+				<tr class=tr1>
+					<td colspan=8><{$multipage}></td>
+				</tr>
+			</form>
+		</table>
+		<table width='90%' height=2>
+			<tr class=bg>
+				<td></td>
+			</tr>
+		</table>
+		<{else}>
+		<table cellspacing=1 cellpadding=4 class=table>
+			<tr>
+				<td class=td colspan=2>添加<{$tit}></td>
+			</tr>
+			<form name=add_frm action='?action=handle' method=post
+				enctype="multipart/form-data">
+				<input type=hidden name=id value='<{$info.id}>'>
+				<tr>
+					<td>航空公司：</td>
+					<td><input type=text name=title size=60
+						value='<{$info.title}>'>&nbsp;<font class=red>*</font></td>
+				</tr>
+				<tr>
+					<td>英文名称：</td>
+					<td><input type=text name=names size=60
+						value='<{$info.names}>'>&nbsp;<font class=red>*</font></td>
+				</tr>
+				<tr>
+					<td>三位码：</td>
+					<td><input type=text name=code size=60
+						value='<{$info.code}>'>&nbsp;<font class=red>*</font></td>
+				</tr>
+			<tr>
+				<td></td>
+				<td height=30><input type=submit value='提交添加'> <input
+					type=reset value='重新填写'> <input type=button name=go_back
+					value='返回上一页' onclick="javascript:location.href='?c_id=0';"></td>
+			</tr>
+			</form>
+		</table>
+
+		<{/if}>
+
+		<script language=javascript>
+			function del_nsort() {
+				var cf = window.confirm("是否确定该操作？");
+				return cf;
+			}
+		</script>
+	</center>
+</body>

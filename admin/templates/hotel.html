@@ -1,0 +1,235 @@
+<{include file="admin_tpl_log.html"}>
+		<table width="100%" border="0" cellpadding="2" cellspacing="1" class="table">
+			<tr>
+				<th colspan="2"><{$tit1}>管理</th>
+			</tr>
+			<tr>
+				<td width="13%" align="right"><{$tit}>名称：</td>
+				<td width="87%"><{$scenicinfo.title}>&nbsp;|&nbsp;<a
+					href="scenic.php?types=<{$types}>&ctype=<{$ctype}>">返回列表</a></td>
+			</tr>
+			<tr>
+				<td align="right">管理操作：</td>
+				<td>&nbsp;<a href="?id=<{$id}>&types=<{$types}>&ctype=<{$ctype}>&action=add">添加<{$tit1}></a>&nbsp;|&nbsp;<a
+					href="?id=<{$id}>&types=<{$types}>&ctype=<{$ctype}>"><{$tit1}>管理</a></td>
+			</tr>
+		</table>
+		<{if $action eq 'list'}>
+				<table width="100%" border="0" cellpadding="2" cellspacing="1"
+				class="table">
+			<{foreach item=web name=hotel from=$comments}>
+	
+				<tr>
+					<td align="right" class="style101">(<{$smarty.foreach.hotel.index+1}>)<{$tit1}><{if $types eq '4' && $ctype eq '0'}>人等<{else}>名称<{/if}>：</td>
+					<td ><{$web.title}></td>
+					<{if $ctype eq '1'}>
+					<td colspan=2><img src="<{$picserver}><{$web.url}>"></td>
+					<{elseif $types eq '0'}>
+					<td align="right" class="style100">显示:</td>
+					<td><{$Config.pass[$web.pass]}></td>
+					<{/if}>
+				</tr>
+				<{if $ctype eq '0'}>
+				<{if $types eq '4'}>
+    <td align="right"><span class="style100">一 等 餐： </span> </td>
+    <td>旺午：
+      <{$web.ywn}>
+      &nbsp;&nbsp;旺晚：
+      <{$web.ywd}>
+      &nbsp;&nbsp;淡午：
+      <{$web.ydn}>
+      &nbsp;&nbsp;淡晚：
+      <{$web.ydd}></td>
+  </tr>
+  <tr>
+    <td align="right" class="style100">二 等 餐：</td>
+    <td>旺午：
+      <{$web.ewn}>
+      &nbsp;&nbsp;旺晚：
+     <{$web.ewd}>
+      &nbsp;&nbsp;淡午：
+      <{$web.edn}>
+      &nbsp;&nbsp;淡晚：
+     <{$web.edd}></td>
+  </tr>
+  <tr>
+    <td align="right" class="style100">三 等 餐：</td>
+    <td>旺午：
+      <{$web.swn}>
+      &nbsp;&nbsp;旺晚：
+      <{$web.swd}>
+      &nbsp;&nbsp;淡午：
+      <{$web.sdn}>
+      &nbsp;&nbsp;淡晚：
+      <{$web.sdd}></td>
+  </tr>
+				<{/if}>
+				<{if $web.url neq ''&&$web.url neq null}><tr>
+					<td align="right">图片：</td><td colspan="3"><img src="<{$picserver}><{$web.url}>"></td>
+				</tr><{/if}>
+				<tr>
+					<td align="right" class="style100">团队报价：</td>
+					<td >旺季： <{$web.tw}> &nbsp;&nbsp;平季：<{$web.tp}> &nbsp;&nbsp;淡季：<{$web.td}></td>
+					<td align="right" class="style100">宽带：</td>
+					<td><{$Config.net[$web.net]}></td>
+				</tr>
+				<tr>
+					<td width="13%" align="right" class="style100">散客报价：</td>
+					<td height="25">旺季： <{$web.sw}> &nbsp;&nbsp;平季： <{$web.sp}> &nbsp;&nbsp;淡季： <{$web.sd}></td>
+					<td align="right"><span class="style100">早餐：</span></td>
+					<td><{$Config.zao[$web.zao]}></td>
+				</tr>
+				<tr>
+					<td align="right" class="style100">客房介绍：</td>
+					<td> <{$web.info}></td>
+					<td align="right" class="style100">温馨提示：</td>
+					<td> <{$web.info1}></td>
+				</tr>
+				<{/if}>
+				<tr>
+					<td></td>
+					<td><input type="button" name="button" onClick="javascript:window.location='?hid=<{$web.hid}>&id=<{$id}>&types=<{$types}>&ctype=<{$ctype}>&action=add'" value="修 改"> <input
+						name="delete" type="button" id="delete2" value="删 除"
+						onClick="window.location='?hid=<{$web.hid}>&id=<{$id}>&types=<{$types}>&ctype=<{$ctype}>&action=delete';"></td>
+					<{if $types ne '4'}>
+					<td align="right">&nbsp;</td>
+					<td>&nbsp;</td>
+					<{/if}>
+				</tr>
+			
+		<{/foreach}>
+		</table>
+		<{else}>
+		<form name="myform_1" method="post"
+			action="?action=handle" enctype="multipart/form-data">
+			<input type=hidden name="types" value="<{$types}>"> 
+			<input type=hidden name="ctype" value="<{$ctype}>"> 
+			<input type=hidden name="id" value="<{$id}>">
+			<input type=hidden name="hid" value="<{$info.hid}>">
+
+			<table width="100%" border="0" cellpadding="2" cellspacing="1" class="table">
+				<tr>
+					<td align="right" class="style101"><{$tit1}><{if $types eq '4' && $ctype eq '0'}>人等<{else}>名称<{/if}>：</td>
+					<td ><input name="title" type="text" class="INPUT"
+						 value="<{$info.title}>" size="20"><{if $types eq '4'}>例如：1或者2~5<{/if}></td>
+						<{if $ctype eq '0' && $types ne '4'}>
+					<td  align="right" class="style100">显示:</td>
+					<td ><select name="pass" class="input" id="pass"
+						style="width: 92px;">
+							<{html_options
+							options=$Config.pass selected=$info.pass}>
+					</select></td>
+					<{/if}>
+					
+				</tr>
+				<tr>
+					<td align="right">图片上传：</td>
+					<td colspan="3"><input type=file name=pic size=40><input
+						type=hidden name=url value="<{$info.url}>"></td>
+				</tr>
+				
+				<{if $ctype eq '0'}>
+				<{if $types eq '4'}>
+				  <tr>
+    <td align="right"><span class="style100">一 等 餐： </span> </td>
+    <td>旺午：
+      <input name="ywn" type="text" class="INPUT" id="ywn" size="15" value="<{$info.ywn}>">
+      &nbsp;&nbsp;旺晚：
+      <input name="ywd" type="text" class="INPUT" id="ywd" size="15" value="<{$info.ywd}>">
+      &nbsp;&nbsp;淡午：
+      <input name="ydn" type="text" class="INPUT" id="ydn" size="15" value="<{$info.ydn}>">
+      &nbsp;&nbsp;淡晚：
+      <input name="ydd" type="text" class="INPUT" id="ydd" size="15" value="<{$info.ydd}>"></td>
+  </tr>
+  <tr>
+    <td align="right" class="style100">二 等 餐：</td>
+    <td>旺午：
+      <input name="ewn" type="text" class="INPUT" id="ewn" size="15" value="<{$info.ewn}>">
+      &nbsp;&nbsp;旺晚：
+      <input name="ewd" type="text" class="INPUT" id="ewd" size="15" value="<{$info.ewd}>">
+      &nbsp;&nbsp;淡午：
+      <input name="edn" type="text" class="INPUT" id="edn" size="15" value="<{$info.edn}>">
+      &nbsp;&nbsp;淡晚：
+      <input name="edd" type="text" class="INPUT" id="edd" size="15" value="<{$info.edd}>"></td>
+  </tr>
+  <tr>
+    <td align="right" class="style100">三 等 餐：</td>
+    <td>旺午：
+      <input name="swn" type="text" class="INPUT" id="swn" size="15" value="<{$info.swn}>">
+      &nbsp;&nbsp;旺晚：
+      <input name="swd" type="text" class="INPUT" id="swd" size="15" value="<{$info.swd}>">
+      &nbsp;&nbsp;淡午：
+      <input name="sdn" type="text" class="INPUT" id="sdn" size="15" value="<{$info.sdn}>">
+      &nbsp;&nbsp;淡晚：
+      <input name="sdd" type="text" class="INPUT" id="sdd" size="15" value="<{$info.sdd}>"></td>
+  </tr>
+				
+				<{else}>
+				<tr>
+					<td width="13%" align="right" class="style100">团队报价：</td>
+					<td height="25">旺季： <input name="tw" type="text" class="INPUT"
+						id="tw" onKeyUp='this.value=this.value.replace(/\D/gi,"")'
+						value="<{$info.tw}>" size="15"> &nbsp;&nbsp;平季： <input name="tp"
+						type="text" class="INPUT" id="tp"
+						onKeyUp='this.value=this.value.replace(/\D/gi,"")' value="<{$info.tp}>"
+						size="15"> &nbsp;&nbsp;淡季： <input name="td" type="text"
+						class="INPUT" id="td"
+						onKeyUp='this.value=this.value.replace(/\D/gi,"")' value="<{$info.td}>"
+						size="15"></td>
+					<td align="right" class="style100">宽带：</td>
+					<td><select name="net" class="input" id="net"
+						style="width: 92px;">
+								<{html_options
+							options=$Config.net selected=$info.net}>
+					</select></td>
+				</tr>
+				<tr>
+					<td width="13%" align="right" class="style100">散客报价：</td>
+					<td height="25">旺季： <input name="sw" type="text" class="INPUT"
+						id="sw" onKeyUp='this.value=this.value.replace(/\D/gi,"")'
+						value="<{$info.sw}>" size="15"> &nbsp;&nbsp;平季： <input name="sp"
+						type="text" class="INPUT" id="sp"
+						onKeyUp='this.value=this.value.replace(/\D/gi,"")' value="<{$info.sw}>"
+						size="15"> &nbsp;&nbsp;淡季： <input name="sd" type="text"
+						class="INPUT" id="sd"
+						onKeyUp='this.value=this.value.replace(/\D/gi,"")' value="<{$info.sd}>"
+						size="15"></td>
+					<td align="right"><span class="style100">早餐：</span></td>
+					<td><select name="zao" class="input" id="zao"
+						style="width: 92">
+					<{html_options
+							options=$Config.zao selected=$info.zao}>
+					</select></td>
+				</tr>
+				<tr>
+					<td align="right" class="style100">客房介绍：</td>
+					<td><textarea name="info" cols="65" rows="3" class="INPUT"
+							id="info"><{$info.info}></textarea></td>
+					<td align="right" class="style100">温馨提示：</td>
+					<td><textarea name="info1" cols="50" rows="3" class="INPUT"
+							id="info1"><{$info.info1}></textarea></td>
+				</tr>
+				<{/if}>
+				<{/if}>
+				<tr>
+					<td></td>
+					<td><input type="submit"  value="提  交"> </td>
+					<{if $ctype eq '0' && $types ne '4'}>
+					<td align="right">&nbsp;</td>
+					<td>&nbsp;</td>
+					<{/if}>
+				</tr>
+			</table>
+		</form>
+
+		
+
+		<{/if}>
+
+		<script language=javascript>
+			function del_nsort() {
+				var cf = window.confirm("是否确定该操作？");
+				return cf;
+			}
+		</script>
+<{include file="admin_tpl_foot.html"}>

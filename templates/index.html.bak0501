@@ -1,0 +1,459 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><{$ktitle}></title>
+<meta name="Keywords" content="<{$keywords}>" />
+<meta name="Description" content="<{$description}>" />
+</head>
+<body>
+	<{include_php file="./include/header.php"}>
+
+	<div class="slideBox">
+		<!--焦点图-->
+		<div class="wrapper slide_search">
+			<div class="banner_search">
+				<input type="text" placeholder="我要去..." /><a href="#"></a>
+			</div>
+		</div>
+		<div class="bd">
+			<ul>
+				<{foreach item=banneritem from=$banner}>
+				<li style="display: none;"><a href="<{$banneritem.mypath}>"
+					target="_blank"><img src="<{$banneritem.url}>" /></a></li><{/foreach}>
+			</ul>
+		</div>
+		<a class="prev" href="javascript:void(0)"></a> <a class="next"
+			href="javascript:void(0)"></a>
+	</div>
+
+	<div class="wrapper recom_box">
+		<!--推荐旅游-->
+		<div class="recom_title">
+			人生苦短，多走走没遗憾
+			<ul class="clrfix">
+				<li class="recom_on">当季最热</li>
+				<li>国内</li>
+				<li>新马泰</li>
+				<li>欧美</li>
+			</ul>
+		</div>
+		<div class="recom_main">
+			<{foreach name=outer01 item=contact from=$hots}><ul class="recom_bd<{$smarty.foreach.outer01.index+1}>">
+            <li class="rbd_img"><a href="#"><img src="<{$contact.url}>" width="372" height="<{if $smarty.foreach.outer01.index+1 eq 2}>515<{else}>210<{/if}>" border="0"></a></li>
+			<li class="rbd_txt">
+				<div class="rbd_l_bg"><div class="fl_rbd_title"><a href="#"><{$contact.name}></a></div><div class="fl_rbd_hd"><a href="#"><{$contact.departure}></a>•<a href="#"><{$contact.city2}></a></div><div class="rbd_r_bg"><{$contact.price_2}></div></div>
+			</li>
+			</ul><{/foreach}>
+            
+		</div>
+	</div>
+	<div class="wrapper hot_org clrfix">
+		<!--热门跟团游-->
+		<div class="index_main_title">
+			<div class="hot_title">热门跟团游</div>
+			<ul class="index_option hot_option">
+				<li class="index_option_on">国内游</li>
+				<li>出境游</li>
+				<li>周边游</li>
+			</ul>
+		</div>
+		<ul class="city_box clrfix fl">
+			<li class="city_li_on">西安</li>
+			<li>云南</li>
+			<li>桂林</li>
+			<li>厦门</li>
+			<li>丽江</li>
+			<li>华东</li>
+			<li>张家界</li>
+			<li>九寨沟</li>
+			<li>三亚</li>
+			<li>泰山</li>
+			<li>西藏</li>
+			<li>云台山</li>
+			<li>内蒙古</li>
+			<li>长白山</li>
+			<li>新疆</li>
+		</ul>
+
+		<ul class="scenic_area fl">
+			<ul class="sa_title clrfix">
+				<div class="fl">热门目的地：</div>
+				<li class="sa_title_on">云南</li>
+				<li>桂林</li>
+				<li>厦门</li>
+				<li>华东</li>
+				<li>西安</li>
+				<li>西藏</li>
+				<a href="#">更多&gt;</a>
+			</ul>
+			<li><a href="#" class="sa_img"> <img
+					src="images/sa_img1.jpg" width="230" height="138" />
+					<div class="sa_price">￥230起</div>
+					<div class="sa_mask">
+						<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+					</div>
+			</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+			<li><a href="#" class="sa_img"> <img
+					src="images/sa_img2.jpg" width="230" height="138" />
+					<div class="sa_price">￥230起</div>
+					<div class="sa_mask">
+						<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+					</div>
+			</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+			<li><a href="#" class="sa_img"> <img
+					src="images/sa_img3.jpg" width="230" height="138" />
+					<div class="sa_price">￥230起</div>
+					<div class="sa_mask">
+						<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+					</div>
+			</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+			<li><a href="#" class="sa_img"> <img
+					src="images/sa_img4.jpg" width="230" height="138" />
+					<div class="sa_price">￥230起</div>
+					<div class="sa_mask">
+						<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+					</div>
+			</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+			<li><a href="#" class="sa_img"> <img
+					src="images/sa_img5.jpg" width="230" height="138" />
+					<div class="sa_price">￥230起</div>
+					<div class="sa_mask">
+						<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+					</div>
+			</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+			<li><a href="#" class="sa_img"> <img
+					src="images/sa_img6.jpg" width="230" height="138" />
+					<div class="sa_price">￥230起</div>
+					<div class="sa_mask">
+						<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+					</div>
+			</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+		</ul>
+		<div class="scenic_recom fl">
+			<a href="#"><img src="images/scenic_recom1.jpg" width="230"
+				height="361" /></a><a href="#" class="sr_txt">广西精品游</a>
+		</div>
+	</div>
+	<div class="wrapper free_box clrfix">
+		<!--人气自由行-->
+		<div class="index_main_title">
+			<div class="free_title">人气自由行</div>
+			<ul class="index_option free_travel">
+				<li class="index_option_on">出境自由行</li>
+				<li>国内自由行</li>
+			</ul>
+		</div>
+		<ul class="city_box clrfix fl">
+			<li class="city_li_on">香港</li>
+			<li>马尔代夫</li>
+			<li>韩国</li>
+			<li>澳门</li>
+			<li>毛里求斯</li>
+			<li>塞舌尔</li>
+			<li>斯里兰卡</li>
+			<li>长滩岛</li>
+			<li>斐济</li>
+			<li>日本</li>
+			<li>泰国</li>
+			<li>沙巴</li>
+			<li>新加坡</li>
+			<li>清迈</li>
+			<li>普吉岛</li>
+		</ul>
+
+		<ul class="scenic_area fl">
+			<ul class="sa_title clrfix">
+				<div class="fl">热门目的地：</div>
+				<li class="sa_title_on">马尔代夫</li>
+				<li>毛里求斯</li>
+				<li>塞舌尔</li>
+				<li>泰国</li>
+				<li>夏威夷</li>
+				<li>日韩</li>
+				<li>香港</li>
+				<a href="#">更多&gt;</a>
+			</ul>
+			<li><a href="#" class="sa_img"> <img
+					src="images/sa_img7.jpg" width="230" height="138" />
+					<div class="sa_price">￥230起</div>
+					<div class="sa_mask">
+						<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+					</div>
+			</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+			<li><a href="#" class="sa_img"> <img
+					src="images/sa_img8.jpg" width="230" height="138" />
+					<div class="sa_price">￥230起</div>
+					<div class="sa_mask">
+						<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+					</div>
+			</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+			<li><a href="#" class="sa_img"> <img
+					src="images/sa_img1.jpg" width="230" height="138" />
+					<div class="sa_price">￥230起</div>
+					<div class="sa_mask">
+						<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+					</div>
+			</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+			<li><a href="#" class="sa_img"> <img
+					src="images/sa_img2.jpg" width="230" height="138" />
+					<div class="sa_price">￥230起</div>
+					<div class="sa_mask">
+						<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+					</div>
+			</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+			<li><a href="#" class="sa_img"> <img
+					src="images/sa_img3.jpg" width="230" height="138" />
+					<div class="sa_price">￥230起</div>
+					<div class="sa_mask">
+						<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+					</div>
+			</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+			<li><a href="#" class="sa_img"> <img
+					src="images/sa_img4.jpg" width="230" height="138" />
+					<div class="sa_price">￥230起</div>
+					<div class="sa_mask">
+						<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+					</div>
+			</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+		</ul>
+		<div class="scenic_recom fl">
+			<a href="#"><img src="images/scenic_recom2.jpg" width="230"
+				height="361" /></a><a href="#" class="sr_txt">马尔代夫<span>开启浪漫旅程</span></a>
+		</div>
+	</div>
+
+	<div class="wrapper cruise_visa clrfix">
+		<!--游轮签证-->
+		<div class="index_main_title">
+			<div class="cv_title">游轮签证</div>
+			<ul class="index_option cv_option">
+				<li class="index_option_on">游轮</li>
+				<li>签证</li>
+			</ul>
+		</div>
+		<a href="#" class="city_box fl"><img src="images/city_box1.jpg"
+			width="230" height="210" /></a>
+
+		<ul class="scenic_area fl">
+			<ul class="cvh_title clrfix">
+				<div class="fl">精选航次：</div>
+				<li><a href="#">东南亚</a></li>
+				<li><a href="#">济州岛</a></li>
+				<li><a href="#">日本</a></li>
+				<li><a href="#">韩国</a></li>
+				<li><a href="#">更多&gt;</a></li>
+			</ul>
+			<li><a href="#" class="sa_img"> <img
+					src="images/sa_img5.jpg" width="230" height="138" />
+					<div class="sa_price">￥230起</div>
+					<div class="sa_mask">
+						<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+					</div>
+			</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+			<li><a href="#" class="sa_img"> <img
+					src="images/sa_img6.jpg" width="230" height="138" />
+					<div class="sa_price">￥230起</div>
+					<div class="sa_mask">
+						<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+					</div>
+			</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+			<li><a href="#" class="sa_img"> <img
+					src="images/sa_img7.jpg" width="230" height="138" />
+					<div class="sa_price">￥230起</div>
+					<div class="sa_mask">
+						<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+					</div>
+			</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+			<li><a href="#" class="sa_img"> <img
+					src="images/sa_img8.jpg" width="230" height="138" />
+					<div class="sa_price">￥230起</div>
+					<div class="sa_mask">
+						<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+					</div>
+			</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+		</ul>
+	</div>
+	<div class="wrapper hotel_box clrfix">
+		<!--酒店门票-->
+		<div class="index_main_title">
+			<div class="hotel_title">酒店门票</div>
+			<ul class="index_option hotel_option">
+				<li class="index_option_on">门票</li>
+				<li>酒店</li>
+			</ul>
+		</div>
+		<a href="#" class="city_box fl"><img src="images/city_box2.jpg"
+			width="230" height="210" /></a>
+		<ul class="scenic_area fl clrfix">
+			<ul class="cvh_title clrfix">
+				<div class="fl">精选景点门票：</div>
+				<li><a href="#">翠华山</a></li>
+				<li><a href="#">温泉</a></li>
+				<li><a href="#">太白山</a></li>
+				<li><a href="#">更多&gt;</a></li>
+			</ul>
+			<li><a href="#" class="sa_img"> <img
+					src="images/sa_img1.jpg" width="230" height="138" />
+					<div class="sa_price">￥230起</div>
+					<div class="sa_mask">
+						<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+					</div>
+			</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+			<li><a href="#" class="sa_img"> <img
+					src="images/sa_img2.jpg" width="230" height="138" />
+					<div class="sa_price">￥230起</div>
+					<div class="sa_mask">
+						<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+					</div>
+			</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+			<li><a href="#" class="sa_img"> <img
+					src="images/sa_img3.jpg" width="230" height="138" />
+					<div class="sa_price">￥230起</div>
+					<div class="sa_mask">
+						<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+					</div>
+			</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+			<li><a href="#" class="sa_img"> <img
+					src="images/sa_img4.jpg" width="230" height="138" />
+					<div class="sa_price">￥230起</div>
+					<div class="sa_mask">
+						<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+					</div>
+			</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+		</ul>
+	</div>
+	<div class="wrapper">
+		<!--旅行攻略-->
+		<div class="index_main_title">
+			<div class="traveling_title">旅行攻略</div>
+		</div>
+		<ul class="traveling_box clrfix">
+			<li class="tra_recom"><a href="#"><img src="images/tra_recom.jpg" width="230" height="360" /></a>
+				<div class="tra_recom_txt">
+					<a href="#">【Honeymoom】我们去马尔代夫吧!</a> <span>两个人，手牵手去这个世界上更多的地方~</span>
+				</div></li>
+			<li class="tra_bd">
+				<ul class="scenic_area fl clrfix">
+					<{foreach name=news item=yj from=$news}>
+                    <li><a href="/<{$yj.id}>" class="sa_img"> <img
+							src="<{$yj.utl}>" width="230" height="138" />
+							<div class="sa_mask">
+								<span><{$yj.title}>/<{$yj.content|}></span>
+							</div>
+					</a> <a href="/<{$yj.id}>" class="sa_txt"><{$yj.title}></a></li>
+					<li><a href="#" class="sa_img"> <img
+							src="images/sa_img6.jpg" width="230" height="138" />
+							<div class="sa_mask">
+								<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+							</div>
+					</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+					<li><a href="#" class="sa_img"> <img
+							src="images/sa_img7.jpg" width="230" height="138" />
+							<div class="sa_mask">
+								<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+							</div>
+					</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+					<li><a href="#" class="sa_img"> <img
+							src="images/sa_img8.jpg" width="230" height="138" />
+							<div class="sa_mask">
+								<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+							</div>
+					</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+					<li><a href="#" class="sa_img"> <img
+							src="images/sa_img3.jpg" width="230" height="138" />
+							<div class="sa_mask">
+								<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+							</div>
+					</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+					<li><a href="#" class="sa_img"> <img
+							src="images/sa_img4.jpg" width="230" height="138" />
+							<div class="sa_mask">
+								<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+							</div>
+					</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+					<li><a href="#" class="sa_img"> <img
+							src="images/sa_img5.jpg" width="230" height="138" />
+							<div class="sa_mask">
+								<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+							</div>
+					</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li>
+					<li><a href="#" class="sa_img"> <img
+							src="images/sa_img1.jpg" width="230" height="138" />
+							<div class="sa_mask">
+								<span>【南邵仙境】云南昆明、大理、丽江、海南</span>
+							</div>
+					</a> <a href="#" class="sa_txt">【南邵仙境】云南昆明、大理、丽江、海南</a></li><{/foreach}>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="wrapper">
+		<!--合作商家-->
+		<div class="coop_title">合作商家</div>
+		<ul class="coop_img clrfix">
+			<{foreach from=$link item=linkitem}>
+			<li><a href="<{$linkitem.web_url}>"
+				title="<{$linkitem.web_key}>" target="_blank"><img
+					src="<{$linkitem.url}>" width="100%" /></a></li> <{/foreach}>
+
+		</ul>
+	</div>
+	<div class="commitment_box">
+		<!--金桥五大承诺-->
+		<ul class="wrapper clrfix">
+			<li class="comm_title">金桥五大承诺&nbsp;&nbsp;让你旅游放心</li>
+			<li class="comm_cq">产品优质</li>
+			<li class="comm_jg">价格最新</li>
+			<li class="comm_bz">预约价格保证</li>
+			<li class="comm_qy">维护权益</li>
+			<li class="comm_pf">先行赔付</li>
+		</ul>
+	</div>
+	<{include file='./include/footer.html'}>
+
+	<ul class="sidebar_box">
+		<!--热门推荐-->
+		<li class="last_sidebar"><a href="#"><img
+				src="images/sa_img1.jpg" height="100%" /></a>
+			<ul class="sidebar_bg">
+				<li class="sid_img"><a href="#"><img
+						src="images/sa_img1.jpg" height="100%" /></a></li>
+				<li class="sid_txt"><a href="#">日本</a>▪<a href="#">京都</a></li>
+			</ul></li>
+		<li><a href="#"><img src="images/recom_bd3.jpg" height="100%" /></a>
+			<ul class="sidebar_bg">
+				<li class="sid_img"><a href="#"><img
+						src="images/recom_bd3.jpg" height="100%" /></a></li>
+				<li class="sid_txt"><a href="#">日本</a>▪<a href="#">京都</a></li>
+			</ul></li>
+		<li><a href="#"><img src="images/recom_bd4.jpg" height="100%" /></a>
+			<ul class="sidebar_bg">
+				<li class="sid_img"><a href="#"><img
+						src="images/recom_bd4.jpg" height="100%" /></a></li>
+				<li class="sid_txt"><a href="#">日本</a>▪<a href="#">京都</a></li>
+			</ul></li>
+		<li><a href="#"><img src="images/recom_bd2.jpg" height="100%" /></a>
+			<ul class="sidebar_bg">
+				<li class="sid_img"><a href="#"><img
+						src="images/recom_bd2.jpg" height="100%" /></a></li>
+				<li class="sid_txt"><a href="#">日本</a>▪<a href="#">京都</a></li>
+			</ul></li>
+		<li><a href="#"><img src="images/recom_bd1.jpg" height="100%" /></a>
+			<ul class="sidebar_bg">
+				<li class="sid_img"><a href="#"><img
+						src="images/recom_bd1.jpg" height="100%" /></a></li>
+				<li class="sid_txt"><a href="#">日本</a>▪<a href="#">京都</a></li>
+			</ul></li>
+		<li><a href="#"><img src="images/recom_bd3.jpg" height="100%" /></a>
+			<ul class="sidebar_bg">
+				<li class="sid_img"><a href="#"><img
+						src="images/recom_bd3.jpg" height="100%" /></a></li>
+				<li class="sid_txt"><a href="#">日本</a>▪<a href="#">京都</a></li>
+			</ul></li>
+
+		<div class="hui_top"></div>
+	</ul>
+</body>
+</html>
+

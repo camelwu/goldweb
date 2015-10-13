@@ -1,0 +1,62 @@
+<?php
+include_once('./common/inc/main.inc.php');
+include_once('./common/inc/class.ip.php');
+//ip定位
+if (!isset($_COOKIE['sp'])) {//first
+	$ips = new ip();
+	$addr = $ips -> ip2addr($ip);
+	$province=$addr['country'];
+	$sp=$addr['area'];
+	setcookie("sp",$sp);
+	setcookie("province",$province);
+}else{
+	$sp = $_COOKIE["sp"];$province = $_COOKIE["province"];
+}
+$smarty->assign('ipfrom',$province);
+$smarty->assign('sp',$sp);
+//首页新闻广告位
+$smarty->assign('banner',selectdatabanner(1,3));
+
+/*首页推荐:1,3*/
+//当季最热
+$smarty->assign('hots',selectdataroute(5,"2"));
+//出境
+$smarty->assign('cjroute',selectdataroute(6,"3",112));
+$smarty->assign('cjline',selectdataroute(1,"2",112));
+//国内
+$smarty->assign('gnroute',selectdataroute(6,"3",113));
+$smarty->assign('gnline',selectdataroute(1,"2",113));
+//周边
+$smarty->assign('zbroute',selectdataroute(6,"3",114));
+$smarty->assign('zbline',selectdataroute(1,"2",114));
+//出境自由行
+$smarty->assign('cjfree',selectdataroute(6,"3",117,148));
+$smarty->assign('cfree',selectdataroute(1,"2",117,148));
+//国内自由行
+$smarty->assign('gnfree',selectdataroute(6,"3",117,149));
+$smarty->assign('gfree',selectdataroute(1,"2",117,149));
+//邮轮
+$smarty->assign('ylroute',selectdataroute(4,"3",118));
+$smarty->assign('ylline',selectdataroute(1,"2",118));
+/*线路外其它产品
+*param[1]:"3"&&"2"
+*param[2]:@types 0：酒店,1:商品,2:签证,3:门票,4:餐厅,5:新闻
+*/
+
+$smarty->assign('hotel',sel_product(8,"3",0));
+//签证
+//$smarty->assign('visa',sel_product(1,"2",2));
+$smarty->assign('visa',sel_product(4,"3",2));
+#精选景点：1，3，热门1,2+随机一个图
+$smarty->assign('menpiao',sel_product(6,"4",3));
+$smarty->assign('scenic',sel_product(8,"3",3));
+$smarty->assign('sight',sel_product(1,"2",3));
+//游记
+$smarty->assign('news',sel_product(8,"3",5,98));
+$smarty->assign('newl',sel_product(1,"2",5,98));
+//首页新闻广告位
+$smarty->assign('link',selectdatalink(15));
+//热门目的地,热门线路的目的地？
+$sql="";
+$smarty->display(V_ROOT.'./templates/index.html',$cache_id);
+?>
