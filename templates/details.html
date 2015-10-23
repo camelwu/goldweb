@@ -40,7 +40,7 @@
 	<div class="wrapper">
 		<div class="clrfix cc_top_box">
 			<ul class="comm_ctR">
-				<li class="jq_price">金桥价：<span>￥<{$info.price_2}></span>
+				<li class="jq_price">价格：<span>￥<{$info.price_2}></span>
 					<div class="price_exp">
 						<!-- 	起价说明
 						<div>
@@ -139,21 +139,19 @@
 						<{foreach name=day item=web from=$stroke}>
 						<ul class="frt_ul">
 							<li class="frtul_first">第<{$smarty.foreach.day.index+1}>天</li>
-							<li class="frtul_chufa frtucf1"><{$web.departure}><span></span><{$web.arrived}>
-							</li>
-							<li>景点:</li>
+							<li><{$web.departure}><{if $web.traffic eq 'plane'}>/<{else}>-<{/if}><{$web.arrived}></li>
+							<{if $web.tname neq ''}><li><{$web.tname}></li><{/if}>
+							<li><{$web.content|nl2br}></li><{if $web.tips neq ''}>
+							<li style="border-top: 1px dashed #ccc;">温馨提示：<{$web.tips|nl2br}></li><{/if}>
 							<li><{section name=a loop=$web.scenics}><span><img
 									src="<{$picserver}>/<{$web.scenics[a].url}>" width="230"
 									height="170" alt="<{$web.scenics[a].title}>"
 									title="<{$web.scenics[a].title}>" /></span>&nbsp;<{/section}>
 							</li>
-							<li><{$web.content|nl2br}></li> <{if $web.tips neq ''}>
-							<li style="border-top: 1px dashed #ccc;">温馨提示：<{$web.tips|nl2br}></li><{/if}>
-							<li>用餐：<{$web.eats}></li>
-							<li>住宿:<{$web.hotel}></li>
 							<li><{if $web.url neq ''}><span><img
 									src="<{$picserver}>/<{$web.url}>" width="230" height="170" /></span><{/if}>
 							</li>
+							<li>用餐：<{$web.eats}> 住宿:<{$web.hotel}></li>
 						</ul>
 						<{/foreach}>
 					</div>

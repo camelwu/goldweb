@@ -9,10 +9,10 @@ $templates = '';
 $perpage = 15;
 $page =postget('page')===""?1:(int)postget('page');
 $start = ($page -1) * $perpage;
-//$tablb = DBFIX."product_route";
+$tablb = DBFIX."product_route";
 if($types==0){
 	$tit = "线路产品";
-	$table = DBFIX."product_route";
+	$table = DBFIX."product_route_sale";
 }else{
 	$tit = "旅游产品";
 	$table = DBFIX."scenic";
@@ -26,7 +26,7 @@ switch ($action) {
 		$sel_ids=postget('id');
 		$ids=is_array($sel_ids)?implode(',',$sel_ids):$sel_ids;
 		$op =postget("op_type");
-		if($op=="pass"){//pass:通过验证，可在weixin.cgbt.net显示
+		if($op=="pass"){
 			$db->query("update $table set status=1 where id in($ids)");
 			echo "<script>alert('成功通过，线路可在主站访问！');location.href='?types=".$types."&page=".$page."';</script>";
 		}else{
@@ -65,6 +65,10 @@ switch ($action) {
 		
 		$data = $comments = array ();
 		while ($data = $db->fetch_array($query)) {
+			if($types===0){
+				$myurl = $db->getOne("select url from $tablb where id=".$data['id']." limit 0,1");
+				$data['url']=$myurl;
+			}
 			$comments[] = $data;
 		}
 		$multipage = multi($totalnum, $perpage, $page, '?types=' . $types);

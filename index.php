@@ -1,10 +1,9 @@
 <?php
-include_once('./common/inc/main.inc.php');
-include_once('./common/weixin/wechat.php');
-//if($_SERVER['QUERY_STRING']!=""){
-	$wechatObj = new wechatCallbackapiTest();
-	//$wechatObj->valid();
-traceHttp();
+
+	session_start(); 
+	echo session_id();
+	// 输出 dqr58dnuqj2gufvg4o3tmjb9v4
+
 exit;
 
 //$sql = "SELECT * FROM config ";

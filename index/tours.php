@@ -97,7 +97,8 @@ $smarty->assign('cinfo', $classinfo[$info['classid']]);
 $smarty->assign('traffic', $traffics);
 
 $smarty->assign('info', $info);
-$smarty->display(V_ROOT . './templates/details.html', $cache_id);
+#var_dump($info);exit;
+$smarty->display(V_ROOT.'./templates/details.html',$cache_id);
 /*
  *获取每日餐饮
 */
@@ -109,17 +110,17 @@ function go_eat($v) {
 		if (strpos($v, '1') > -1) {
 			$go_eat .= '含早餐 ';
 		} else {
-			$go_eat .= '早餐请自理 ';
+			$go_eat .= 'X ';
 		}
 		if (strpos($v, '2')) {
 			$go_eat .= '含午餐 ';
 		} else {
-			$go_eat .= '午餐请自理 ';
+			$go_eat .= 'X ';
 		}
 		if (strpos($v, '3')) {
 			$go_eat .= '含晚餐 ';
 		} else {
-			$go_eat .= '晚餐请自理 ';
+			$go_eat .= 'X ';
 		}
 		return $go_eat;
 	}
