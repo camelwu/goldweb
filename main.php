@@ -19,7 +19,7 @@ $orderbyarr = array (
 );
 $order = $_GET['order'];
 if (empty ($order) || !in_array($order, $orderarr)) {
-	$order = 'hid';
+	$order = 'id';
 }
 $orderby = $_GET['orderby'];
 if (empty ($orderby) || !in_array($orderby, $orderbyarr)) {
@@ -101,7 +101,7 @@ elseif (in_array($enname, $shtml)) {
 			$cnname=$cnname=='线路'?$cnname:$cid['title'];
 			$smarty->assign('cnname', $cnname);
 			//出发地
-			$smarty->assign('chufa', cg_search($cid['id'], 0));
+			$smarty->assign('chufa', cg_search($cid['id'], 0));//cg_selbox
 			//目的
 			$smarty->assign('mudi', cg_search($cid['id'], 1));
 			//行程天数

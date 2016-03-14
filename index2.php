@@ -6,6 +6,7 @@ $smarty->assign('banner', selectdatabanner(1, 3));
 /*首页推荐广告位*/
 $smarty->assign('received', selectdatabanner(4, 5));
 //当季最热
+//var_dump(selectdataroute(5, "2"));exit;
 $smarty->assign('hots', selectdataroute(5, "2"));
 //出境
 $smarty->assign('cjroute', selectdataroute(6, "3", 112));
@@ -35,7 +36,7 @@ $smarty->assign('ylroute', selectdataroute(4, "3", 118));
 
 /*精选景点：1，3，热门1,2+随机一个图*/
 //$smarty->assign('menpiao',sel_product(6,"4",3));
-
+#var_dump(sel_product(8, "3", 3));
 $smarty->assign('scenic', sel_product(8, "3", 3));
 $smarty->assign('sight', sel_product(1, "2", 3));
 /*签证*/
@@ -60,12 +61,6 @@ $smarty->assign('newl', sel_product(1, "2", 5, 98));
 $smarty->assign('link', selectdatalink(15));
 //热门目的地,热门线路的目的地？
 $sql = "";
-//;
-//if('elsi.cgbt.net'==$_SERVER['HTTP_HOST']||'eluosi.cgbt.net'==$_SERVER['HTTP_HOST']){
-//	$smarty->display(V_ROOT.'./'.$template.'/branch.html',$cache_id);
-//}else{
-//	
-//	$smarty->display(V_ROOT.'./'.$template.'/index.html',$cache_id);
-//}
+
 $smarty->display(V_ROOT . './templates/' . $template . '.html', $cache_id);
 ?>

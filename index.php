@@ -1,5 +1,4 @@
 <?php
-
 	session_start(); 
 	echo session_id();
 	// 输出 dqr58dnuqj2gufvg4o3tmjb9v4
