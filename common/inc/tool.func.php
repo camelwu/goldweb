@@ -653,10 +653,30 @@ function getSubtractTime($lastTime) {
 }
 
 /*过滤不健康的字*/
-function replace_bad_word($str, $new) {
-	return $str;
-}
-
+function Filter_word( $str, $fileName )     
+{     
+    if ( !($words = file_get_contents( $fileName )) ){     
+        die('file read error!');     
+    }     
+    $str = strtolower($str);  
+ //var_dump($words);  
+ $word = preg_replace("/[1,2,3]\r\n|\r\n/i", '', $words);  
+ //$wor = substr($word,0,-1);  
+ //$w = preg_replace("|/|i", '\/', $word);  
+ //echo "<pre>";  
+ //var_dump($w);  
+ //$words = "赌博机|卖血|出售肾|出售器官|眼角膜";  
+    $matched = preg_replace('/'.$word.'/i', '***', $string);  
+ return $matched;   
+}     
+    
+$content = "<a href='#'>我要卖血fsdf卖血d 赌博机wo眼口交膜</a>";     
+if ($result = Filter_word($content, './words.txt') ){  
+ echo $result;  
+    echo "替换成功 ";     
+}else{     
+    echo "替换失败! ";     
+}   
 /*过滤二维数组中的html代码*/
 function replace_array_word($arr) {
 	if (is_array($arr)) {
