@@ -1,4 +1,11 @@
 <?php
+/**
+ * @Copyright 2008 be-member Inc
+ * 基本操作工具函数：session，cookie，smarty模板，数据库连接，UID处理
+ * 
+ * Creater: WuSongBo
+ * Date: 2008-9-10
+ */
 
 /*********************************************************
  函数功能：写文件
@@ -9,9 +16,9 @@
  exit>>如果写文件失败,是否显示报错信息,默认是显示
  **********************************************************/
 function writefile($filename, $writetext, $filemod = 'text', $openmod = 'w', $exit = 1) {
-	if (!@ $fp = fopen($filename, $openmod)) {
+	if (!@$fp = fopen($filename, $openmod)) {
 		if ($exit) {
-			exit ('File :<br>' . vrealpath($filename) . '<br>Have no access to write!');
+			exit('File :<br>' . vrealpath($filename) . '<br>Have no access to write!');
 		} else {
 			return false;
 		}
@@ -39,8 +46,7 @@ function vrealpath($path) {
 	$path = str_replace('./', '', $path);
 	if (DIRECTORY_SEPARATOR == '\\') {
 		$path = str_replace('/', '\\', $path);
-	}
-	elseif (DIRECTORY_SEPARATOR == '/') {
+	} elseif (DIRECTORY_SEPARATOR == '/') {
 		$path = str_replace('\\', '/', $path);
 	}
 	return $path;
@@ -60,16 +66,9 @@ function vmd5($str) {
  参    数: message>>需要替换的内容字符串
  ***************************************/
 function vnl2br($message) {
-	return nl2br(str_replace(array (
-		"\t",
-		'   ',
-		'  '
-	), array (
-		'&nbsp; &nbsp; &nbsp; &nbsp; ',
-		'&nbsp; &nbsp;',
-		'&nbsp;&nbsp;'
-	), $message));
+	return nl2br(str_replace(array("\t", '   ', '  '), array('&nbsp; &nbsp; &nbsp; &nbsp; ', '&nbsp; &nbsp;', '&nbsp;&nbsp;'), $message));
 }
+
 /**************************************
  函数功能: 全角转半角
  参    数: message>>需要替换的内容字符串
@@ -78,6 +77,7 @@ function vq2b($message) {
 	//TODO
 	return $message;
 }
+
 /**************************************
  函数功能：字符串截取
  参    数：string>>源字串
@@ -106,28 +106,23 @@ function cutstr($string, $length, $havedot = 0) {
 				$tn = 1;
 				$n++;
 				$noc++;
-			}
-			elseif (194 <= $t && $t <= 223) {
+			} elseif (194 <= $t && $t <= 223) {
 				$tn = 2;
 				$n += 2;
 				$noc += 2;
-			}
-			elseif (224 <= $t && $t < 239) {
+			} elseif (224 <= $t && $t < 239) {
 				$tn = 3;
 				$n += 3;
 				$noc += 2;
-			}
-			elseif (240 <= $t && $t <= 247) {
+			} elseif (240 <= $t && $t <= 247) {
 				$tn = 4;
 				$n += 4;
 				$noc += 2;
-			}
-			elseif (248 <= $t && $t <= 251) {
+			} elseif (248 <= $t && $t <= 251) {
 				$tn = 5;
 				$n += 5;
 				$noc += 2;
-			}
-			elseif ($t == 252 || $t == 253) {
+			} elseif ($t == 252 || $t == 253) {
 				$tn = 6;
 				$n += 6;
 				$noc += 2;
@@ -143,9 +138,9 @@ function cutstr($string, $length, $havedot = 0) {
 		}
 		$wordscut = substr($string, 0, $n);
 	} else {
-		for ($i = 0; $i < $length -3; $i++) {
+		for ($i = 0; $i < $length - 3; $i++) {
 			if (ord($string[$i]) > 127) {
-				$wordscut .= $string[$i] . $string[$i +1];
+				$wordscut .= $string[$i] . $string[$i + 1];
 				$i++;
 			} else {
 				$wordscut .= $string[$i];
@@ -159,6 +154,7 @@ function cutstr($string, $length, $havedot = 0) {
 		return $wordscut . '.';
 	}
 }
+
 function cutChineseStr($string, $sublen, $enddot, $start = 0, $code = 'UTF-8') {
 	if ($code == 'UTF-8') {
 		$pa = "/[\x01-\x7f]|[\xc2-\xdf][\x80-\xbf]|\xe0[\xa0-\xbf][\x80-\xbf]|[\xe1-\xef][\x80-\xbf][\x80-\xbf]|\xf0[\x90-\xbf][\x80-\xbf][\x80-\xbf]|[\xf1-\xf7][\x80-\xbf][\x80-\xbf][\x80-\xbf]/";
@@ -186,6 +182,7 @@ function cutChineseStr($string, $sublen, $enddot, $start = 0, $code = 'UTF-8') {
 		return $tmpstr;
 	}
 }
+
 /**
  * 截取UTF-8字符
  * 汉字,大写字母,全角标点等长度为1
@@ -194,8 +191,8 @@ function cutChineseStr($string, $sublen, $enddot, $start = 0, $code = 'UTF-8') {
  * @author XuehuiHe
  * @param $sourceStr
  * @param $cutLen   要截取的长度
- * @param $endStr	
- * @return 
+ * @param $endStr
+ * @return
  */
 function cut_utf8($sourceStr, $cutLen, $endStr = '..') {
 	$sourceStrLen = strlen_utf8($sourceStr);
@@ -211,22 +208,19 @@ function cut_utf8($sourceStr, $cutLen, $endStr = '..') {
 	while ($tmpCutLen <> $cutLen) {
 		$tmpCutLen = $cutLen;
 		$ascFirst = ord(substr($sourceStr, $i, 1));
-		if ($ascFirst >= 224 && $cutLen >= 1) { //3个字节
+		if ($ascFirst >= 224 && $cutLen >= 1) {//3个字节
 			$returnStr .= substr($sourceStr, $i, 3);
 			$i += 3;
 			$cutLen -= 1;
-		}
-		elseif ($ascFirst >= 192 && $cutLen >= 1) { //2个字节
+		} elseif ($ascFirst >= 192 && $cutLen >= 1) {//2个字节
 			$returnStr .= substr($sourceStr, $i, 2);
 			$i += 2;
 			$cutLen -= 1;
-		}
-		elseif ($ascFirst >= 65 && $ascFirst <= 90 && $cutLen >= 1) { //大写字母,一个字节
+		} elseif ($ascFirst >= 65 && $ascFirst <= 90 && $cutLen >= 1) {//大写字母,一个字节
 			$returnStr .= substr($sourceStr, $i, 1);
 			$i += 1;
 			$cutLen -= 1;
-		}
-		elseif ($ascFirst <= 127 && $cutLen >= 0.5) { //其他半个字符长度,一个字节
+		} elseif ($ascFirst <= 127 && $cutLen >= 0.5) {//其他半个字符长度,一个字节
 			$returnStr .= substr($sourceStr, $i, 1);
 			$i += 1;
 			$cutLen -= 0.5;
@@ -234,6 +228,7 @@ function cut_utf8($sourceStr, $cutLen, $endStr = '..') {
 	}
 	return $returnStr . $endStr;
 }
+
 /**
  * 获得utf8编码的字符长度
  * 汉字,大写字母,全角标点等长度为1
@@ -248,21 +243,19 @@ function strlen_utf8($str) {
 	$sourceBytes = strlen($str);
 	while ($i < $sourceBytes) {
 		$ascFirst = ord(substr($str, $i, 1));
-		if ($ascFirst >= 224) { //3个字节
+		if ($ascFirst >= 224) {//3个字节
 			$returnStr .= substr($str, $i, 3);
 			$i += 3;
 			$tempLen++;
-		}
-		elseif ($ascFirst >= 192) { //2个字节
+		} elseif ($ascFirst >= 192) {//2个字节
 			$returnStr .= substr($str, $i, 2);
 			$i += 2;
 			$tempLen++;
-		}
-		elseif ($ascFirst >= 65 && $ascFirst <= 90) { //大写字母,一个字节
+		} elseif ($ascFirst >= 65 && $ascFirst <= 90) {//大写字母,一个字节
 			$returnStr .= substr($str, $i, 1);
 			$i += 1;
 			$tempLen++;
-		} else { //其他半个字符长度,一个字节
+		} else {//其他半个字符长度,一个字节
 			$returnStr .= substr($str, $i, 1);
 			$i += 1;
 			$tempLen += 0.5;
@@ -299,17 +292,7 @@ function vhtmlspecialchars($string) {
 			$string[$key] = vhtmlspecialchars($val);
 		}
 	} else {
-		$string = preg_replace('/&amp;((#(\d{3,5}|x[a-fA-F0-9]{4})|[a-zA-Z][a-z0-9]{2,5});)/', '&\\1', str_replace(array (
-			'&',
-			'"',
-			'<',
-			'>'
-		), array (
-			'&amp;',
-			'&quot;',
-			'&lt;',
-			'&gt;'
-		), $string));
+		$string = preg_replace('/&amp;((#(\d{3,5}|x[a-fA-F0-9]{4})|[a-zA-Z][a-z0-9]{2,5});)/', '&\\1', str_replace(array('&', '"', '<', '>'), array('&amp;', '&quot;', '&lt;', '&gt;'), $string));
 	}
 	return $string;
 }
@@ -322,7 +305,7 @@ function vhtmlspecialchars($string) {
 function vheader($url) {
 	header("HTTP/1.1 301 Moved Permanently");
 	header("Location: $url");
-	exit ();
+	exit();
 }
 
 /**************************
@@ -340,7 +323,7 @@ function fileext($filename) {
 function getmessagepic($message) {
 	$pic = '';
 	preg_match("/src\=[\"\']*([^\>\s]{25,105})\.(jpg|gif|png)/i", $message, $mathes);
-	if (!empty ($mathes[1]) || !empty ($mathes[2])) {
+	if (!empty($mathes[1]) || !empty($mathes[2])) {
 		$pic = "{$mathes[1]}.{$mathes[2]}";
 	}
 	return $pic;
@@ -353,16 +336,6 @@ function getmessagepic($message) {
 function isemail($email) {
 	return strlen($email) > 6 && preg_match("/^[\w\-\.]+@[\w\-\.]+(\.\w+)+$/", $email);
 }
-
-function i_isEmail($email) ///判断是否email
-{
-	if (ereg("^[_\.0-9a-z-]+@([0-9a-z][0-9a-z-]+\.)+[a-z]{2,4}$", $email)) {
-		return 1;
-	} else {
-		return 0;
-	}
-}
-
 /************************************
  函数功能：把数组的键值对转变为字符串,
  以'/'字符连接.
@@ -391,7 +364,7 @@ function vimplode($varr, $comma = ',') {
 }
 
 function replaceSeps($str) {
-	if (!empty ($str)) {
+	if (!empty($str)) {
 		$firstStr = substr($str, 0, 1);
 		if ($firstStr == "/" || $firstStr == "\\") {
 			return $str;
@@ -402,6 +375,7 @@ function replaceSeps($str) {
 		return "";
 	}
 }
+
 /*********************************
  函数功能：屏蔽内容中的危险htm代码
  参    数：html>>要被屏蔽的内容
@@ -418,7 +392,7 @@ function checkhtml($html) {
  ***************************/
 function getdomain($url) {
 	$urlarr = parse_url($url);
-	$domain = empty ($urlarr['host']) ? '' : $urlarr['host'];
+	$domain = empty($urlarr['host']) ? '' : $urlarr['host'];
 	return $domain;
 }
 
@@ -432,7 +406,7 @@ function mkdirs($path, $ismk = true) {
 	$mkdir = false;
 	if (!is_dir($path)) {
 		if ($ismk) {
-			$mkdir = mkdir(iconv("UTF-8", "GBK", $path),0777,true);
+			$mkdir = mkdir(iconv("UTF-8", "GBK", $path), 0777, true);
 		}
 	} else {
 		$mkdir = true;
@@ -464,53 +438,50 @@ function writelog($file, $log) {
 		$maxid = $id = 0;
 		while ($entry = readdir($dir)) {
 			if (strexists($entry, $yearmonth . '_' . $file)) {
-				$id = intval(substr($entry, $length +8, -4));
+				$id = intval(substr($entry, $length + 8, -4));
 				$id > $maxid && $maxid = $id;
 			}
 		}
 		closedir($dir);
 
-		$logfilebak = $logdir . $yearmonth . '_' . $file . '_' . ($maxid +1) . '.php';
+		$logfilebak = $logdir . $yearmonth . '_' . $file . '_' . ($maxid + 1) . '.php';
 		@ rename($logfile, $logfilebak);
 	}
 	if ($fp = @ fopen($logfile, 'a')) {
 		@ flock($fp, 2);
-		$log = is_array($log) ? $log : array (
-			$log
-		);
+		$log = is_array($log) ? $log : array($log);
 		foreach ($log as $tmp) {
-			fwrite($fp, "<?PHP exit;?>\t" . str_replace(array (
-				'<?',
-				'?>'
-			), '', $tmp) . "\n");
+			fwrite($fp, "<?PHP exit;?>\t" . str_replace(array('<?', '?>'), '', $tmp) . "\n");
 		}
 		fclose($fp);
 	}
 }
+
 /**
  * 获取用户真实 IP
  */
-function getIP(){
-    static $realip;
-    if (isset($_SERVER)){
-        if (isset($_SERVER["HTTP_X_FORWARDED_FOR"])){
-            $realip = $_SERVER["HTTP_X_FORWARDED_FOR"];
-        } else if (isset($_SERVER["HTTP_CLIENT_IP"])) {
-            $realip = $_SERVER["HTTP_CLIENT_IP"];
-        } else {
-            $realip = $_SERVER["REMOTE_ADDR"];
-        }
-    } else {
-        if (getenv("HTTP_X_FORWARDED_FOR")){
-            $realip = getenv("HTTP_X_FORWARDED_FOR");
-        } else if (getenv("HTTP_CLIENT_IP")) {
-            $realip = getenv("HTTP_CLIENT_IP");
-        } else {
-            $realip = getenv("REMOTE_ADDR");
-        }
-    }
-    return $realip;
+function getIP() {
+	static $realip;
+	if (isset($_SERVER)) {
+		if (isset($_SERVER["HTTP_X_FORWARDED_FOR"])) {
+			$realip = $_SERVER["HTTP_X_FORWARDED_FOR"];
+		} else if (isset($_SERVER["HTTP_CLIENT_IP"])) {
+			$realip = $_SERVER["HTTP_CLIENT_IP"];
+		} else {
+			$realip = $_SERVER["REMOTE_ADDR"];
+		}
+	} else {
+		if (getenv("HTTP_X_FORWARDED_FOR")) {
+			$realip = getenv("HTTP_X_FORWARDED_FOR");
+		} else if (getenv("HTTP_CLIENT_IP")) {
+			$realip = getenv("HTTP_CLIENT_IP");
+		} else {
+			$realip = getenv("REMOTE_ADDR");
+		}
+	}
+	return $realip;
 }
+
 /*
  函数功能：返回指定日期的秒数
  参    数: days>>距离指定时间的天数
@@ -533,11 +504,11 @@ function changetime($days, $method = '+', $time = "time()") {
 	}
 
 }
+
 /*
  函数功能:分割字符串,字符串类型 5:演员1 | 6:演员2 | 7：演员3
  返回一维数组
  参    数:要被分割的字符串
- author  :fanbo
  */
 function splitstr($str, $sign = '|') {
 	$tmp = explode($sign, $str);
@@ -560,11 +531,9 @@ function othersplitstr($str, $sign = '|') {
 		$value = trim($value);
 		$totallen = strlen($value);
 		$sublen = strlen(strstr($value, ':'));
-		$substr = substr($value, - ($sublen -1));
+		$substr = substr($value, -($sublen - 1));
 		$subkey = intval(substr($value, 0, $totallen - $sublen));
-		$returnarr[] = array (
-			$subkey => $substr
-		);
+		$returnarr[] = array($subkey => $substr);
 	}
 	return $returnarr;
 }
@@ -577,7 +546,7 @@ function othersplitstr($str, $sign = '|') {
  名称
  */
 function checkitem($totalitemarr, $checkedarr, $checkarrname) {
-	if (empty ($totalitemarr) || empty ($checkarrname) || !is_array($totalitemarr) || !is_string($checkarrname))
+	if (empty($totalitemarr) || empty($checkarrname) || !is_array($totalitemarr) || !is_string($checkarrname))
 		return false;
 
 	foreach ($totalitemarr as $value) {
@@ -594,7 +563,7 @@ function checkitem($totalitemarr, $checkedarr, $checkarrname) {
  返 回 值：如果subarr是arr的子集返回真,否则返回假
  */
 function arraysubclass($subarr, $arr) {
-	if (!is_array($subarr) || !is_array($arr) || empty ($subarr) || empty ($arr)) {
+	if (!is_array($subarr) || !is_array($arr) || empty($subarr) || empty($arr)) {
 		return false;
 	}
 	foreach ($subarr as $value) {
@@ -617,10 +586,9 @@ function arraysubclass($subarr, $arr) {
 
 function postget($var) {
 	$value = '';
-	if (isset ($_POST[$var])) {
+	if (isset($_POST[$var])) {
 		$value = $_POST[$var];
-	}
-	elseif (isset ($_GET[$var])) {
+	} elseif (isset($_GET[$var])) {
 		$value = $_GET[$var];
 	}
 	return $value;
@@ -634,12 +602,14 @@ function getRandNumber($fMin, $fMax) {
 	$fLen = "%0" . strlen($fMax) . "d";
 	Return sprintf($fLen, rand($fMin, $fMax));
 }
+
 /*
  * 获得流水号
  */
 function getFlowNum() {
 	return date('YmdHms', time()) . getRandNumber(100000, 999999);
 }
+
 /*
  *函数功能: 获得给定时间截的当天的开始时间截和结束时间截
  */
@@ -650,12 +620,10 @@ function gettodayverge($time) {
 	$todaystarttime = $time - $startoffset;
 	$todayendtime = $time + (86400 - $startoffset);
 
-	$todaytime = array (
-		'starttime' => $todaystarttime,
-		'endtime' => $todayendtime
-	);
+	$todaytime = array('starttime' => $todaystarttime, 'endtime' => $todayendtime);
 	return $todaytime;
 }
+
 /*
  * 获得时间差
  */
@@ -665,8 +633,8 @@ function getSubtractTime($lastTime) {
 	$disDays = floor($dis / (24 * 60 * 60));
 	if ($disDays < 1) {
 		$disHour = floor($dis / 3600);
-		$disMin = floor(($dis -3600 * $disHour) / 60);
-		$disSec = $dis -3600 * $disHour - $disMin * 60;
+		$disMin = floor(($dis - 3600 * $disHour) / 60);
+		$disSec = $dis - 3600 * $disHour - $disMin * 60;
 		if ($disHour < 10) {
 			$disHour = '0' . $disHour;
 		}
@@ -677,8 +645,7 @@ function getSubtractTime($lastTime) {
 			$disSec = '0' . $disSec;
 		}
 		return "$disHour:$disMin:{$disSec}前";
-	}
-	elseif ($disDays < 7) {
+	} elseif ($disDays < 7) {
 		return $disDays . '天前';
 	} else {
 		return '一星期前';
@@ -689,6 +656,7 @@ function getSubtractTime($lastTime) {
 function replace_bad_word($str, $new) {
 	return $str;
 }
+
 /*过滤二维数组中的html代码*/
 function replace_array_word($arr) {
 	if (is_array($arr)) {
@@ -698,6 +666,7 @@ function replace_array_word($arr) {
 	}
 	return $arr;
 }
+
 //字符串替换，只替换一次
 function str_replace_once($needle, $replace, $haystack) {
 	// Looks for the first occurence of $needle in $haystack
@@ -710,26 +679,76 @@ function str_replace_once($needle, $replace, $haystack) {
 	return substr_replace($haystack, $replace, $pos, strlen($needle));
 }
 
- /**
-  * @Copyright 2017 be-member Inc
-  * IP转换城市类
-  * 通过淘宝IP库进行，如API发生变化需重写
-  * Creater: WuSongBo  
-  * Date: 2017-02-20
-  */
-function getCity($ip = ''){
+/**
+ * @Copyright 2017 be-member Inc
+ * IP转换城市类
+ * 通过淘宝IP库进行，如API发生变化需重写
+ * Creater: WuSongBo
+ * Date: 2017-02-20
+ */
+function getCity($ip = '') {
 	static $json;
-	if ($ip == ''||$ip == '::1'||$ip == '127.0.0.1'||!preg_match("^(10|172\.16|192\.168)\.", $ip)) {
-	// if(){
-        $json=json_decode(file_get_contents("http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json"),true);
-        $data = $json;
-    }else{
-        $json=json_decode(file_get_contents("http://ip.taobao.com/service/getIpInfo.php?ip=".$ip),true);
-        if((string)$json->code=='1'){
-           return false;
-        }
-        $data = (array)$json->data;
-    }
+	if ($ip == '' || $ip == '::1' || $ip == '127.0.0.1' || !preg_match("^(10|172\.16|192\.168)\.", $ip)) {
+		// if(){
+		$json = json_decode(file_get_contents("http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json"), true);
+		$data = $json;
+	} else {
+		$json = json_decode(file_get_contents("http://ip.taobao.com/service/getIpInfo.php?ip=" . $ip), true);
+		if ((string)$json -> code == '1') {
+			return false;
+		}
+		$data = (array)$json -> data;
+	}
 	return $data;
+}
+
+//判断奇数，是返回TRUE，否返回FALSE
+function is_odd($num) {
+	return (is_numeric($num) & ($num & 1));
+}
+
+//判断偶数，是返回TRUE，否返回FALSE
+function is_even($num) {
+	return (is_numeric($num) & (!($num & 1)));
+}
+
+//重写strpos函数，如果不成功则返回1
+function myStrpos($str, $patt, $offset) {
+	if (strpos($str, $patt, $offset)) {
+		return strpos($str, $patt, $offset);
+	} else
+		return 1;
+}
+
+function vaddslashes($string) {
+	if (is_array($string)) {
+		foreach ($string as $key => $val) {
+			$string[$key] = vaddslashes($val);
+		}
+	} else {
+		$string = addslashes($string);
+	}
+	return $string;
+}
+
+function escapeStr($string) {
+	if (is_array($string)) {
+		foreach ($string as $key => $val) {
+			$string[$key] = escapeStr($val);
+		}
+	} else {
+		$string = mysql_escape_string(htmlspecialchars(trim($string)));
+	}
+	return $string;
+}
+function saddslashes($string) {
+	if (is_array($string)) {
+		foreach ($string as $key => $val) {
+			$string[$key] = saddslashes($val);
+		}
+	} else {
+		$string = addslashes($string);
+	}
+	return $string;
 }
 ?>
