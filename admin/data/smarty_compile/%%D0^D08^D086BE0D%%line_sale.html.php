@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.20, created on 2015-08-04 11:00:15
+<?php /* Smarty version 2.6.20, created on 2015-10-20 16:33:16
          compiled from line_sale.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('modifier', 'nl2br', 'line_sale.html', 124, false),array('function', 'html_options', 'line_sale.html', 217, false),array('function', 'html_checkboxes', 'line_sale.html', 230, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'nl2br', 'line_sale.html', 124, false),array('function', 'html_options', 'line_sale.html', 219, false),array('function', 'html_checkboxes', 'line_sale.html', 232, false),)), $this); ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "admin_tpl_log.html", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
@@ -64,7 +64,8 @@ unset($_smarty_tpl_vars);
 <?php else: ?><img src="<?php echo $this->_tpl_vars['picserver']; ?>
 <?php echo $this->_tpl_vars['web']['url']; ?>
 " width="210" height="120" border="0"><?php endif; ?></td>
-					<td><?php echo $this->_tpl_vars['web']['title']; ?>
+					<td>计划名称：<?php echo $this->_tpl_vars['web']['title']; ?>
+<br>销售名称：<?php echo $this->_tpl_vars['web']['name']; ?>
 </td>
 					<td>计划底价：<?php echo $this->_tpl_vars['web']['price1']; ?>
 <br>计划售价：<?php echo $this->_tpl_vars['web']['price2']; ?>
@@ -292,8 +293,11 @@ if ($this->_foreach['hotel']['total'] > 0):
 <?php else: ?>
 <form name="myform_1" method="post" action="?action=handle" onsubmit="return checkfrm(this);">
 <input type=hidden name="id" value="<?php echo $this->_tpl_vars['route']['id']; ?>
-"><input type=hidden name="hid" value="<?php echo $this->_tpl_vars['info']['hid']; ?>
-"><input name="ctype" type=hidden id="ctype" value="1">
+">
+<input type=hidden name="hid" value="<?php echo $this->_tpl_vars['info']['hid']; ?>
+">
+<input name="ctype" type=hidden id="ctype" value="<?php echo $this->_tpl_vars['ctype']; ?>
+">
 <table width="100%" border="0" cellpadding="2" cellspacing="1" class="table">
   <tbody><tr>
     <th colspan="2"><?php echo $this->_tpl_vars['route']['title']; ?>

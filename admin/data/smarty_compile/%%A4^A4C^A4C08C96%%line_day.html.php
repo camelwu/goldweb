@@ -1,14 +1,13 @@
-<?php /* Smarty version 2.6.20, created on 2015-08-12 17:02:30
+<?php /* Smarty version 2.6.20, created on 2015-11-04 21:32:07
          compiled from line_day.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'html_options', 'line_day.html', 80, false),array('function', 'html_checkboxes', 'line_day.html', 87, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'nl2br', 'line_day.html', 107, false),array('function', 'html_options', 'line_day.html', 144, false),array('function', 'html_checkboxes', 'line_day.html', 151, false),)), $this); ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "admin_tpl_head.html", 'smarty_include_vars' => array()));
+$this->_smarty_include(array('smarty_include_tpl_file' => "admin_tpl_log.html", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
-<table width="100%" border="0" cellpadding="2" cellspacing="1"
-	class="table">
+<table width="100%" border="0" cellpadding="2" cellspacing="1" class="table">
 	<tr>
 		<th colspan="2"><?php echo $this->_tpl_vars['tit1']; ?>
 管理</th>
@@ -31,16 +30,86 @@ unset($_smarty_tpl_vars);
 "><?php echo $this->_tpl_vars['tit1']; ?>
 管理</a></td>
 	</tr>
+	<tr>
+		<td align="right">添加其他线路的行程：</td>
+		<td>搜索（线路列表） 关键字：<input type="text" id="keyword" value="" size="15" maxlength="20"> <input id="search" type="button" value="查询"></td>
+	</tr>
 </table>
+<script language=javascript>
+	var keys = $('#keyword');
+	
+	KindEditor.ready(function(K) {
+		K('#search').click(function() {
+			$.ajax({
+		        type: "GET",
+		        url: "getajax.php?q=getsale&ctype=1&keys="+keys.val(),
+		        data: {},
+		        dataType: "json",
+		        async: false,
+		        success: function (data) {
+		          get_req(data);
+		        },error:function(xhr){alert(xhr.responseText)}//增加error回调看输出什么内容
+			});
+		});
+		function get_req(data) {
+			if(data!=''&&data!=null){
+			var cstr = '';
+			$.each(data, function(i,item){
+				cstr += '<input type="radio" name="rid" value="'+item.id+'" id="'+item.id+'" data-url="'+item.url+'"><label for="'+item.id+'">'+item.title+' </label><br>';
+			});//alert('search_bak'+cstr);
+			var dialog = K.dialog({
+				width : 500,
+				title : '选择内容',
+				body : '<div style="margin:10px;">'+cstr+'</div>',
+				closeBtn : {
+					name : '关闭',
+					click : function(e) {
+						dialog.remove();
+					}
+				},
+				yesBtn : {
+					name : '确定',
+					click : function(e) {
+						var checkboxs = document.getElementsByName("rid");
+						for(var i=0;i<checkboxs.length;i++){
+							if(checkboxs[i].checked){
+								insert_day(checkboxs[i].getAttribute("id"));
+								break;
+							}
+						}dialog.remove();
+					}
+				},
+				noBtn : {
+					name : '取消',
+					click : function(e) {
+						dialog.remove();
+					}
+				}
+			});
+			}else{
+				alert('未能查询到'+keys.val()+'的内容，请更换内容再试！');
+			}
+		}
+	});
+
+	function insert_day(id) {
+		var cf = window.confirm("确定插入到最前面，取消插入到最后面.");
+		if(cf){
+			types = 1;
+		}else{
+			types = 0;
+		}
+		location.href = "?action=adds&types="+types+"&routeid=<?php echo $this->_tpl_vars['routeid']; ?>
+&oldid="+id;
+	}
+</script>
 <?php if ($this->_tpl_vars['action'] == 'list'): ?>
-<table width="100%" border="0" cellpadding="2" cellspacing="1"
-	class="table">
+<table width="100%" border="0" cellpadding="2" cellspacing="1" class="table">
 	<?php $_from = $this->_tpl_vars['comments']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }$this->_foreach['list'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['list']['total'] > 0):
     foreach ($_from as $this->_tpl_vars['web']):
         $this->_foreach['list']['iteration']++;
 ?>
-
 	<tr>
 		<td width="13%" align="right" class="style101">(<?php echo ($this->_foreach['list']['iteration']-1)+1; ?>
 )</td>
@@ -70,7 +139,9 @@ if ($this->_foreach['list']['total'] > 0):
 
 				<br> <strong>娱：</strong><?php echo $this->_tpl_vars['web']['scenic']; ?>
  <br>
-				<?php echo $this->_tpl_vars['web']['content']; ?>
+				<?php echo ((is_array($_tmp=$this->_tpl_vars['web']['content'])) ? $this->_run_mod_handler('nl2br', true, $_tmp) : smarty_modifier_nl2br($_tmp)); ?>
+<br>
+				温馨提示：<?php echo ((is_array($_tmp=$this->_tpl_vars['web']['tips'])) ? $this->_run_mod_handler('nl2br', true, $_tmp) : smarty_modifier_nl2br($_tmp)); ?>
 
 			</div></td>
 	</tr>
@@ -82,38 +153,33 @@ if ($this->_foreach['list']['total'] > 0):
 &action=add'"
 			value="修 改"> <input name="delete" type="button" id="delete2"
 			value="删 除"
-			onClick="window.location='?sid=<?php echo $this->_tpl_vars['web']['sid']; ?>
+			onClick="if(del_nsort()){window.location='?sid=<?php echo $this->_tpl_vars['web']['sid']; ?>
 &routeid=<?php echo $this->_tpl_vars['routeid']; ?>
-&action=delete';"></td>
+&action=delete';}"></td>
 
 	</tr>
 	<?php endforeach; endif; unset($_from); ?>
 </table>
 <?php else: ?>
-<form name="myform_1" method="post" action="?action=handle"
-	enctype="multipart/form-data">
+<form name="myform_1" method="post" action="?action=handle" enctype="multipart/form-data">
 	<input type=hidden name="routeid" value="<?php echo $this->_tpl_vars['routeid']; ?>
-"> <input
-		type="hidden" name="sid" value="<?php echo $this->_tpl_vars['info']['sid']; ?>
+"> <input type="hidden" name="sid" value="<?php echo $this->_tpl_vars['info']['sid']; ?>
 ">
-	<table width="100%" border="0" cellpadding="2" cellspacing="1"
-		class="table">
+	<table width="100%" border="0" cellpadding="2" cellspacing="1" class="table">
 		<tr>
 			<td width="13%" align="right" class="style101">第：</td>
-			<td><input name="num" type="text" class="INPUT"
-				value="<?php echo $this->_tpl_vars['info']['num']; ?>
+			<td><input name="num" type="text" class="INPUT" value="<?php echo $this->_tpl_vars['info']['num']; ?>
 " size="2">天</td>
 		</tr>
 		<tr>
 			<td align="right">图片上传：</td>
-			<td><input type=file name=pic size=40><input type=hidden
-				name=url value="<?php echo $this->_tpl_vars['info']['url']; ?>
+			<td><input type=file name=pic size=40><input type=hidden name=url value="<?php echo $this->_tpl_vars['info']['url']; ?>
 "></td>
 		</tr>
 		<tr>
 			<td align="right">详细行程：</td>
 			<td>离城市：<input name="departure" type="text" class="INPUT"
-				id="departure01" maxlength="10" value="<?php echo $this->_tpl_vars['info']['departure']; ?>
+				id="departure" maxlength="10" value="<?php echo $this->_tpl_vars['info']['departure']; ?>
 ">
 				时间：<input name="timd" type="text" class="INPUT"
 				value="<?php echo $this->_tpl_vars['info']['timd']; ?>
@@ -122,7 +188,7 @@ if ($this->_foreach['list']['total'] > 0):
 ">
 				时间：<input name="tima" type="text" class="INPUT"
 				value="<?php echo $this->_tpl_vars['info']['tima']; ?>
-"> 注：可多个抵达城市，用|分隔<br> <strong>行</strong>：
+"> 注：可多个抵达城市，用-分隔<br> <strong>行</strong>：
 				<select name=traffic>
 					<option value="">无</option> <?php echo smarty_function_html_options(array('options' => $this->_tpl_vars['Config']['traffic'],'selected' => $this->_tpl_vars['info']['traffic']), $this);?>
 
@@ -137,13 +203,18 @@ if ($this->_foreach['list']['total'] > 0):
 				type="text" name="hotel"  value="<?php echo $this->_tpl_vars['info']['hotel']; ?>
 "><br> 
 				<strong>娱：</strong>
-				<input name="scenics" type="text"> <input type="button" id="s0" value="search" onclick="searchscenic();">
+				<input type="button" id="s0" value="search" onclick="searchscenic();">
 				<div id="scenic"></div>
 				<input type="hidden" name="scenicsh" value="<?php echo $this->_tpl_vars['info']['scenic']; ?>
 " />
 				
 				<br> <textarea name="content" id="cont1"
 					style="width: 500px; height: 120px;"><?php echo $this->_tpl_vars['info']['content']; ?>
+</textarea></td>
+		</tr>
+		<tr>
+			<td align="right">温馨提示：</td>
+			<td><textarea name="tips" id="tips" style="width: 500px; height: 120px;"><?php echo $this->_tpl_vars['info']['tips']; ?>
 </textarea></td>
 		</tr>
 		<tr>
@@ -165,17 +236,12 @@ if ($this->_foreach['list']['total'] > 0):
 	
 	searchscenic();
 	function searchscenic() {
-		var scenics = $("input[name='scenics']").val();
+		var departure = $("input[name='departure']").val();
+		var arrived = $("input[name='arrived']").val();
 		var scenicsh = $("input[name='scenicsh']").val();
 		$("#scenic").load(
-				"getajax.php?q=searchscenic&scenics="
-						+ scenics + "&scenicsh=" + scenicsh);
-	}
-	
-	
-	function del_nsort() {
-		var cf = window.confirm("是否确定该操作？");
-		return cf;
+				"getajax.php?q=searchscenic&departure="
+						+ departure + "&scenicsh=" + scenicsh+ "&arrived=" + arrived);
 	}
 </script>
 <?php endif; ?> <?php $_smarty_tpl_vars = $this->_tpl_vars;

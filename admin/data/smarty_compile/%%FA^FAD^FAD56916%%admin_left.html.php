@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.20, created on 2015-05-19 15:13:00
+<?php /* Smarty version 2.6.20, created on 2015-10-11 07:16:56
          compiled from ./admin_left.html */ ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -122,7 +122,8 @@ a:hover {
 			<!-- <li><a href="admin_info.php">修改个人信息</a></li> -->
 			<?php if ($this->_tpl_vars['info']['id'] == '1'): ?>
 			<li><a href="config.php" target="right">网站配置</a></li>
-			<li><a href="data.php">数据备份</a></li> <?php endif; ?>
+			<li><a href="data.php" target="right">数据备份</a></li>
+			<li><a href="admin_allow.php" target="right">主站审核</a></li> <?php endif; ?>
 			<li title="上次登陆时间"><?php echo $this->_tpl_vars['info']['time2']; ?>
 </li>
 		</ul>

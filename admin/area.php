@@ -29,8 +29,6 @@ switch ($action) {
 		vheader("?types=" . $_POST['types']);
 		break;
 	case "handle" :
-		$_POST['status'] = isset($_POST['status'])?$_POST['status']:0;
-		$_POST['hits'] = isset($_POST['hits'])?$_POST['hits']:0;
 		require_once('includes/class.py.php');
 		$py = new PinYin();
 		$_POST['region'] = $py->getAllPY($_POST['title']);
@@ -53,15 +51,17 @@ switch ($action) {
 		vheader("?types=" . $_POST['types']);
 		break;
 	case "list" :
-
+		
 		$sqladd = ' where types=' . $types;
 
 		if (!empty ($_GET['keyword'])) { //keywords
-			if ($sqladd == "") {
-				$sqladd .= " and title like '%" . $_GET['keyword'] . "%'";
+			$isaid = $db->getOne("select id from cg_area where title='". $_GET['keyword'] ."'");
+			if ($isaid) {
+				$types==1?$sqladd .= " and pid=" . $isaid:$sqladd .= " and title like '%" . $_GET['keyword'] . "%'";
 			} else {
 				$sqladd .= " and title like '%" . $_GET['keyword'] . "%'";
 			}
+			$smarty->assign('keyword', $_GET['keyword']);
 		}
 		$sqlfrom = " from " . $table ." t ". $sqladd;
 		$totalnum = $db->result($db->query("select count(*) " . $sqlfrom), 0); //总数;

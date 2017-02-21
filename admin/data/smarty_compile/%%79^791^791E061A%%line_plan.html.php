@@ -1,16 +1,55 @@
-<?php /* Smarty version 2.6.20, created on 2015-09-04 04:52:14
+<?php /* Smarty version 2.6.20, created on 2016-01-20 16:49:25
          compiled from line_plan.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'html_checkboxes', 'line_plan.html', 52, false),array('function', 'html_options', 'line_plan.html', 58, false),array('function', 'html_radios', 'line_plan.html', 123, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'nl2br', 'line_plan.html', 130, false),array('function', 'html_checkboxes', 'line_plan.html', 176, false),array('function', 'html_options', 'line_plan.html', 182, false),array('function', 'html_radios', 'line_plan.html', 252, false),)), $this); ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "admin_tpl_head.html", 'smarty_include_vars' => array()));
+$this->_smarty_include(array('smarty_include_tpl_file' => "admin_tpl_log.html", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
- ?> <?php if ($this->_tpl_vars['action'] == 'list'): ?>
-<table cellspacing=1 cellpadding=4 class=table>
-	<form name=sel_form action='?action=delete' method=post>
+ ?>
+<script charset="utf-8" src="includes/func_area2js.php?act=outjs"></script>
+	<table cellspacing=1 cellpadding=4 class=table>
 		<tr>
-			<th>ID</th>
+			<th colspan=2><?php echo $this->_tpl_vars['tit']; ?>
+管理</th>
+		</tr>
+		<tr>
+			<td align=center colspan=2 height=30>
+				<?php if ($this->_tpl_vars['types'] == 1): ?><?php else: ?><span style="margin-right: 10px;"><a href='?types=<?php echo $this->_tpl_vars['types']; ?>
+&ctype=<?php echo $this->_tpl_vars['ctype']; ?>
+'><?php echo $this->_tpl_vars['tit']; ?>
+列表</a></span>
+				<span><a href='?action=add&types=<?php echo $this->_tpl_vars['types']; ?>
+&ctype=<?php echo $this->_tpl_vars['ctype']; ?>
+'>添加<?php echo $this->_tpl_vars['tit']; ?>
+<?php endif; ?></span>
+			</td>
+		</tr>
+		<tr>
+			<td align=center>
+				<table border=0 cellspacing=0 cellpadding=2>
+					<form action='?action=list' method=get>
+						<input type=hidden name=types value='<?php echo $this->_tpl_vars['types']; ?>
+'> <input type=hidden name=ctype value='<?php echo $this->_tpl_vars['ctype']; ?>
+'>
+						<tr>
+							<td>搜索（<?php echo $this->_tpl_vars['tit']; ?>
+）</td>
+							<td>目的地：<?php echo $this->_tpl_vars['sel_area']; ?>
+</td>
+							<td><input type=text name=keyword value='<?php echo $this->_tpl_vars['keyword']; ?>
+' size=15 maxlength=20> 关键字</td>
+							<td><input type=submit value='搜索'></td>
+						</tr>
+					</form>
+				</table>
+			</td>
+		</tr>
+	</table><?php if ($this->_tpl_vars['action'] == 'list'): ?>
+<table cellspacing=1 cellpadding=4 class=table>
+	<form name=sel_form action='?action=operate' method=post>
+		<tr>
+			<th><input type="checkbox" onclick="select_all(this,'id[]');"></th>
 			<th><?php echo $this->_tpl_vars['tit']; ?>
 图片</th>
 			<th><?php echo $this->_tpl_vars['tit']; ?>
@@ -19,20 +58,20 @@ unset($_smarty_tpl_vars);
 			<th>价格浮动</th>
 			<th>团期</th>
 			<th>离抵城市</th>
-			<th>浏览|报名</th>
+			<th><?php if ($this->_tpl_vars['types'] == 1): ?>发布人<?php else: ?>浏览|报名<?php endif; ?></th>
 			<th>管理</th>
 		</tr>
 		<?php $_from = $this->_tpl_vars['comments']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
     foreach ($_from as $this->_tpl_vars['web']):
 ?>
 		<tr align=center>
-			<td><?php echo $this->_tpl_vars['web']['id']; ?>
-</td>
-			<td><img src="<?php echo $this->_tpl_vars['picserver']; ?>
-/<?php echo $this->_tpl_vars['web']['url']; ?>
+			<td><input type="checkbox" name="id[]" value="<?php echo $this->_tpl_vars['web']['id']; ?>
+" style="border:0"></td>
+			<td><img src="<?php echo $this->_tpl_vars['web']['url']; ?>
 " width="210"
 				height="120" border="0"></td>
 			<td><?php echo $this->_tpl_vars['web']['title']; ?>
+<?php echo $this->_tpl_vars['web']['tips']; ?>
 </td>
 			<td>内部底价：<?php echo $this->_tpl_vars['web']['price1']; ?>
 <br>网上售价：<?php echo $this->_tpl_vars['web']['price2']; ?>
@@ -40,45 +79,184 @@ unset($_smarty_tpl_vars);
 <br>同行分销：<?php echo $this->_tpl_vars['web']['price4']; ?>
 
 			</td>
-			<td><a href="line_do.php?id=<?php echo $this->_tpl_vars['web']['id']; ?>
+			<td><?php if ($this->_tpl_vars['types'] == 1): ?>浮动：<?php echo $this->_tpl_vars['web']['num']; ?>
+图片：<?php echo $this->_tpl_vars['web']['num1']; ?>
+行程：<?php echo $this->_tpl_vars['web']['num2']; ?>
+<?php else: ?><a href="line_do.php?id=<?php echo $this->_tpl_vars['web']['id']; ?>
 &types=0&ctype=0">浮动</a><?php echo $this->_tpl_vars['web']['num']; ?>
 &nbsp;<a
 				href="line_do.php?id=<?php echo $this->_tpl_vars['web']['id']; ?>
 &types=0&ctype=1">图片</a><?php echo $this->_tpl_vars['web']['num1']; ?>
 &nbsp;<a
-				href="admin_plan_stroke.php?routeid=<?php echo $this->_tpl_vars['web']['id']; ?>
-">日程(<?php echo $this->_tpl_vars['web']['num2']; ?>
-)</a></td>
+				href="admin_plan_stroke.php?action=add&routeid=<?php echo $this->_tpl_vars['web']['id']; ?>
+">行程(<?php echo $this->_tpl_vars['web']['num2']; ?>
+)</a><?php endif; ?></td>
 			<td><?php echo $this->_tpl_vars['web']['go_time']; ?>
 </td>
 			<td><?php echo $this->_tpl_vars['web']['city1']; ?>
 -<?php echo $this->_tpl_vars['web']['city2']; ?>
 </td>
-			<td><?php echo $this->_tpl_vars['web']['hits']; ?>
+			<td><?php if ($this->_tpl_vars['types'] == 1): ?><?php echo $this->_tpl_vars['web']['op_user']; ?>
+<?php else: ?><?php echo $this->_tpl_vars['web']['hits']; ?>
 |<?php echo $this->_tpl_vars['web']['hots']; ?>
-</td>
-			<td><a href='?action=edit&id=<?php echo $this->_tpl_vars['web']['id']; ?>
-'>编辑</a> <a
-				href="?action=delete&types=<?php echo $this->_tpl_vars['contact']['types']; ?>
+<?php endif; ?></td>
+			<td><?php if ($this->_tpl_vars['types'] == 1): ?><a href='?action=view&id=<?php echo $this->_tpl_vars['web']['id']; ?>
+'>查看</a><?php else: ?><a href='?action=edit&id=<?php echo $this->_tpl_vars['web']['id']; ?>
+'>编辑</a> <a href="?action=delete&types=<?php echo $this->_tpl_vars['contact']['types']; ?>
 &id=<?php echo $this->_tpl_vars['web']['id']; ?>
-"
-				onclick="javascript:return del_nsort();">删除</a></td>
+" onclick="javascript:return del_nsort();">删除</a><?php endif; ?></td>
 		</tr>
 		<?php endforeach; endif; unset($_from); ?>
-		<tr class=tr1>
-			<td colspan=9><?php echo $this->_tpl_vars['multipage']; ?>
+		<tr>
+			<td colspan=2>&nbsp;操作：<select name="op_type" id="op_type"><?php if ($this->_tpl_vars['types'] == 1): ?><option value="copy">代销</option><?php else: ?><option value="copy">复制</option><option value="into">组合</option><?php endif; ?></select> <input type="submit" value="提交"></td>
+    		<td colspan=7 align="right"><?php echo $this->_tpl_vars['multipage']; ?>
 </td>
 		</tr>
 	</form>
 </table>
+<?php elseif ($this->_tpl_vars['action'] == 'view'): ?>
+	<table width="100%" border="0" cellpadding="2" cellspacing="1" class="table">
+  <tbody><tr>
+    <th colspan="2">信息浏览</th>
+  </tr>
+  <tr>
+    <td align="right">线路类型：</td>
+    <td><?php echo $this->_tpl_vars['info']['ro_type']; ?>
+</td>
+  </tr>
+  <tr>
+    <td align="right">线路类别：</td>
+    <td><?php echo $this->_tpl_vars['class1']; ?>
+-<?php echo $this->_tpl_vars['class2']; ?>
+</td>
+  </tr>
+  <tr>
+    <td align="right">标识字段：</td>
+    <td><?php echo $this->_tpl_vars['info']['keywords']; ?>
+</td>
+  </tr>
+  <tr>
+    <td width="14%" align="right">线路名称：</td>
+    <td width="86%"><?php echo $this->_tpl_vars['info']['title']; ?>
+</td>
+  </tr>
+  <tr>
+    <td align="right">旅游天数：</td>
+    <td><?php echo $this->_tpl_vars['info']['go_day']; ?>
+<span class="title3">天</span>&nbsp;成团人数<?php echo $this->_tpl_vars['info']['go_num']; ?>
+ <span class="title3">人</span>，儿童占座：<?php if ($this->_tpl_vars['info']['kid'] == '1'): ?>是<?php else: ?>否<?php endif; ?>
+      </td>
+  </tr>
+  <tr>
+    <td align="right">出发城市：</td>
+    <td><?php echo $this->_tpl_vars['info']['city1']; ?>
+</td>
+  </tr>
+  <tr>
+    <td align="right">目的城市：</td>
+    <td><?php echo $this->_tpl_vars['info']['city2']; ?>
+</td>
+  </tr>
+  <tr>
+    <td align="right">所需签证：</td>
+    <td><?php echo $this->_tpl_vars['info']['visa']; ?>
+</td>
+  </tr>
+  <tr>
+    <td align="right">出团日期：</td>
+    <td><?php echo $this->_tpl_vars['info']['go_time']; ?>
+</td>
+  </tr>
+  <tr>
+    <td align="right">报名截止：</td>
+    <td>团期前<?php echo $this->_tpl_vars['info']['go_reg']; ?>
+天</td>
+  </tr>
+  <tr>
+    <td align="right">集合地点：</td>
+    <td><ul id="location"></ul></td>
+  </tr>
+  <tr>
+    <td align="right">主图上传：</td>
+    <td><img src="<?php echo $this->_tpl_vars['picserver']; ?>
+<?php echo $this->_tpl_vars['info']['url']; ?>
+"></td>
+  </tr>
+  <tr valign="top">
+    <td align="right">行程内容：</td>
+    <td><?php if ($this->_tpl_vars['info']['d_type'] == '1'): ?><?php echo $this->_tpl_vars['info']['file']; ?>
+<?php else: ?><fieldset name="stroke_chk">
+<legend> 行程明细</legend>
+	<?php $_from = $this->_tpl_vars['stroke']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }$this->_foreach['stroke'] = array('total' => count($_from), 'iteration' => 0);
+if ($this->_foreach['stroke']['total'] > 0):
+    foreach ($_from as $this->_tpl_vars['web']):
+        $this->_foreach['stroke']['iteration']++;
+?>
+    第 <?php echo $this->_tpl_vars['web']['num']; ?>
+ 天<br>
+	<strong>行</strong>：<?php echo $this->_tpl_vars['web']['timd']; ?>
+离<?php echo $this->_tpl_vars['web']['departure']; ?>
+ -<?php echo $this->_tpl_vars['web']['traffic']; ?>
+- <?php echo $this->_tpl_vars['web']['tima']; ?>
+抵<?php echo $this->_tpl_vars['web']['arrived']; ?>
+<br>
+      <strong>食</strong>：
+      <?php echo $this->_tpl_vars['web']['eats']; ?>
+<br>
+	  <strong>住</strong>：<?php echo $this->_tpl_vars['web']['hotel']; ?>
+<br>
+      <strong>娱：</strong><?php echo $this->_tpl_vars['web']['scenic']; ?>
+<br>
+    <strong>行程：</strong><?php echo ((is_array($_tmp=$this->_tpl_vars['web']['content'])) ? $this->_run_mod_handler('nl2br', true, $_tmp) : smarty_modifier_nl2br($_tmp)); ?>
+<hr>
+	<?php endforeach; endif; unset($_from); ?>
+    </fieldset><?php endif; ?></td>
+  </tr>
+  <tr>
+    <td align="right">是否地接：</td>
+    <td><?php echo $this->_tpl_vars['info']['dj']; ?>
+</td>
+  </tr>
+  <tr>
+    <td align="right">线路说明：</td>
+    <td><?php echo ((is_array($_tmp=$this->_tpl_vars['info']['remark'])) ? $this->_run_mod_handler('nl2br', true, $_tmp) : smarty_modifier_nl2br($_tmp)); ?>
+</td>
+  </tr>
+  <tr>
+    <td align="right">行程特色：</td>
+    <td><?php echo ((is_array($_tmp=$this->_tpl_vars['info']['feature'])) ? $this->_run_mod_handler('nl2br', true, $_tmp) : smarty_modifier_nl2br($_tmp)); ?>
+</td>
+  </tr>
+  <tr>
+    <td align="right">团体包价：</td>
+    <td><?php echo ((is_array($_tmp=$this->_tpl_vars['info']['info'])) ? $this->_run_mod_handler('nl2br', true, $_tmp) : smarty_modifier_nl2br($_tmp)); ?>
+</td>
+  </tr>
+  <tr>
+    <td align="right">信息控制：</td>
+    <td><?php echo $this->_tpl_vars['info']['op_type']; ?>
+</td>
+  </tr>
+  <tr>
+    <td align="right">销售价格：</td>
+    <td>本网：<?php echo $this->_tpl_vars['info']['price2']; ?>
+<br>门市：<?php echo $this->_tpl_vars['info']['price3']; ?>
+<br>分销：<?php echo $this->_tpl_vars['info']['price4']; ?>
+<br></td>
+  </tr>
+  <tr>
+    <td align="right">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</tbody>
+</table>
 <?php else: ?>
 <script type="text/javascript">var ary = [];</script>
-<form name="add_frm" method="post" action="?action=handle"
-	enctype="multipart/form-data">
+<script charset="utf-8" src="includes/func_area2js.php?act=outjs"></script>
+<form name="add_frm" method="post" action="?action=handle" enctype="multipart/form-data">
 	<input type=hidden name="id" value="<?php echo $this->_tpl_vars['id']; ?>
 ">
-	<table width="100%" border="0" cellpadding="2" cellspacing="1"
-		class="table">
+	<table width="100%" border="0" cellpadding="2" cellspacing="1" class="table">
 		<tbody>
 			<tr>
 				<th colspan="2">信息操作</th>
@@ -107,7 +285,14 @@ unset($_smarty_tpl_vars);
 				</select></td>
 			</tr>
 			<tr>
-				<td align="right">标识字段：</td>
+				<td align="right">小标题：</td>
+				<td><input name="biaoti" type="text" class="INPUT" id="price"
+					value="<?php echo $this->_tpl_vars['info']['biaoti']; ?>
+" size="30" maxlength="60">
+					如：北京-西安-甘肃</td>
+			</tr>
+			<tr>
+				<td align="right">标识关键字：</td>
 				<td><input name="keywords" type="text" class="INPUT" id="price"
 					value="<?php echo $this->_tpl_vars['info']['keywords']; ?>
 " size="30" maxlength="60">
@@ -126,12 +311,17 @@ unset($_smarty_tpl_vars);
 " size="80" maxlength="60"></td>
 			</tr>
 			<tr>
+				<td align="right">主图上传：</td>
+				<td><input type="file" name="pic" size="40"><?php if ($this->_tpl_vars['info']['id'] == ''): ?><input type="hidden" name="url"
+					value="<?php echo $this->_tpl_vars['info']['url']; ?>
+"><?php else: ?>图片：<input type="text"
+					name="url" value="<?php echo $this->_tpl_vars['info']['url']; ?>
+"><?php endif; ?></td>
+			</tr>
+			<tr>
 				<td align="right">出发城市：</td>
-				<td><input name="citys1" type="text" class="INPUT" size="10"
-					maxlength="10"><input type=button value="search"
-					onclick="javascript:searcharea('citys1','city1');" /> <br>
-					<div id="citys1"><?php echo $this->_tpl_vars['info']['city1']; ?>
-</div></td>
+				<td><?php echo $this->_tpl_vars['sel_area1']; ?>
+</td>
 			</tr>
 			<tr>
 				<td align="right">时间：</td>
@@ -141,17 +331,12 @@ unset($_smarty_tpl_vars);
 			</tr>
 			<tr>
 				<td align="right">目的城市：</td>
-				<td><input name="citys2" type="text" class="INPUT" size="10"
-					maxlength="10"><input type=button value="search"
-					onclick="javascript:searcharea('citys2','city2');" /> <br>
-					<div id="citys2"><?php echo $this->_tpl_vars['info']['city2']; ?>
-</div></td>
+				<td><?php echo $this->_tpl_vars['sel_area2']; ?>
+</td>
 			</tr>
 			<tr>
 				<td align="right">所需签证：</td>
-				<td><input type="button" class="bt" onClick="get4visa();"
-					value="点击查询"><select name='visa' id='visa'><option
-							value="0">不需要</option></select></td>
+				<td><select name='visa' id='visa'><option value="0">不需要</option></select></td>
 			</tr>
 			<tr>
 				<td align="right">旅游天数：</td>
@@ -195,31 +380,25 @@ unset($_smarty_tpl_vars);
 					name="del" type="button" value="减少" id="del">
 					<ul id="location"></ul></td>
 			</tr>-->
-			<tr>
-				<td align="right">主图上传：</td>
-				<td><input type="file" name="pic" size="40"><?php if ($this->_tpl_vars['info']['id'] == ''): ?><input type="hidden" name="url"
-					value="<?php echo $this->_tpl_vars['info']['url']; ?>
-"><?php else: ?>图片：<input type="text"
-					name="url" value="<?php echo $this->_tpl_vars['info']['url']; ?>
-"><?php endif; ?></td>
-			</tr>
-
-			<tr>
+			<!--tr>
 				<td align="right">是否地接：</td>
 				<td><select name="dj"><option value="0" selected="">暂无地接</option><?php echo smarty_function_html_options(array('options' => $this->_tpl_vars['cg_dj'],'selected' => $this->_tpl_vars['info']['dj']), $this);?>
 
 				</select></td>
-			</tr>
+			</tr-->
 			<tr>
-				<td align="right">线路说明：</td>
-				<td><textarea name="remark" id="remark"
-						style="width: 700px; height: 100px;"><?php echo $this->_tpl_vars['info']['remark']; ?>
+				<td align="right">报名须知：</td>
+				<td><textarea name="content" id="content" style="width: 700px; height: 100px;"><?php echo $this->_tpl_vars['info']['content']; ?>
 </textarea></td>
 			</tr>
 			<tr>
 				<td align="right">行程特色：</td>
-				<td><textarea name="feature" id="feature"
-						style="width: 700px; height: 100px;"><?php echo $this->_tpl_vars['info']['feature']; ?>
+				<td><textarea name="feature" id="feature" style="width: 700px; height: 100px;"><?php echo $this->_tpl_vars['info']['feature']; ?>
+</textarea></td>
+			</tr>
+			<tr>
+				<td align="right">报价说明：</td>
+				<td><textarea name="remark" id="remark" style="width: 700px; height: 100px;"><?php echo $this->_tpl_vars['info']['remark']; ?>
 </textarea></td>
 			</tr>
 			<tr id="ttbj" style="display:;">
@@ -282,9 +461,30 @@ unset($_smarty_tpl_vars);
 
 
 
-<?php endif; ?>
-
 <script type="text/javascript">
+//ajax插入visa
+function get4visa(){
+	visa2.empty();
+	$.ajax({
+		type : "GET",
+		dataType : "json",
+		url : "getajax.php?q=getvisa&types=2",
+		data : "aid=" + aid2.val(),
+		complete : function() {
+		},
+		success : function(data, textStatus) {
+				var pid_select = "<?php echo $this->_tpl_vars['info']['visa']; ?>
+";
+				$.each(data,function(index, item) {
+					if (pid_select == index) {
+						visa2.append("<option value='"+index+"' selected='selected'>"+item+"</option>");
+					} else {
+						visa2.append("<option value='"+index+"'>" + item + "</option>");
+					}
+				});
+		}
+	});
+}
 
 function searcharea(_id,_iname){
 	var s1 = $("input[name='"+_id+"']").val();
@@ -466,35 +666,7 @@ function get4day(){
 		$("#go_day").focus();
 	}
 }
-//ajax插入visa
-function get4visa(){
-	var city2 = $("#city2").val();
-	var visa2 = $("#visa");
-	$.ajax({
-		type : "GET",
-		dataType : "json",
-		url : "getajax.php?q=getvisa&types=2",
-		data : "city2=" + city2,
-		complete : function() {
-		},
-		success : function(data, textStatus) {
-			if(data!=null){
-				var pid_select = "<?php echo $this->_tpl_vars['info']['visa']; ?>
-";
-				visa2.empty();
-				$.each(data,function(index, item) {
-					if (pid_select == index) {
-						visa2.append("<option value='"+index+"' selected='selected'>"+item+"</option>");
-					} else {
-						visa2.append("<option value='"+index+"'>" + item + "</option>");
-					}
-				});
-			}else{
-				visa2.html('<option value="0">未查询到'+city2+'相关签证</option>');
-			}
-		}
-	});
-}
+
 //ajax插入scenic&hotel
 function get4city(n,t){
 	var hotel = $("#star0"+n);
@@ -635,6 +807,7 @@ var isEmptyValue = function(obj){
 	}
 }
 </script>
+<?php endif; ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "admin_tpl_foot.html", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;

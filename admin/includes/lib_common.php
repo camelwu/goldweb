@@ -226,7 +226,18 @@ function IsEmail($email)
 	if(preg_match("/^[a-z]([a-z0-9]*[-_\.]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2})?$/", $email)){ return TRUE; } else{ return FALSE; }
 }
 
-
+function replaceSeps($str) {
+	if (!empty ($str)) {
+		$firstStr = substr($str, 0, 1);
+		if ($firstStr == "/" || $firstStr == "\\") {
+			return $str;
+		} else
+			return $str = "/" . $str;
+		;
+	} else {
+		return "";
+	}
+}
 //兼容有前导零的ip，如058.99.011.1 http://blog.csdn.net/hjue/archive/2009/09/24/4587209.aspx
 function myip2long($ip){   
    $ip_arr = split('\.',$ip);   
@@ -836,8 +847,8 @@ function get_filter($param_str = '')
  * 判断管理员权限。
  * @return true/false
  */
-function admin_priv()
-{
+function admin_priv(){
+	global $smarty;
 	if (!isset ($_SESSION["admin"]) || empty($_SESSION["admin"])) {
 		$_SESSION["admin"] = false;
 		$_SESSION["username"] = "";
@@ -845,7 +856,7 @@ function admin_priv()
 		return false;
 	} else {
 		//权限
-		if ($_SESSION["id"] != 1) {
+		if ($_SESSION["id"] != 1||$_SESSION["id"] != 3) {
 			$adminid = $_SESSION["id"];
 			$adminbid = $_SESSION["bid"];
 		} else {
@@ -880,7 +891,7 @@ function isLocalIP(){
  * @param   string  input_name  输入框名称
  * @param   string  input_value 输入框值
  */
-function create_html_editor($input_name, $input_value = 'testttt')
+function create_html_editor($input_name, $input_value = 'content')
 {
 	global $smarty;
 	$sBasePath = "/includes/fckeditor/";

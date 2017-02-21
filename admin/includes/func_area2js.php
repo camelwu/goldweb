@@ -3,7 +3,6 @@ $act= isset($_GET['act'])?$_GET['act']:"";
 if("outjs"==$act){
 	require_once('./init.php');
 	header('Content-type: application/x-javascript; charset=utf-8');
-	$continent = cg_class(5);
 	$sqladd = ' where 1';
 	$table=DBFIX."area";
 	$sqlfrom = " from " . $table . $sqladd;
@@ -65,11 +64,11 @@ function getFirstCharter($str){
     if($asc>=-11055&&$asc<=-10247) return 'Z';
     return null;
 }
-$continent = cg_class(5);
-var_dump($continent);exit;
+//echo getFirstCharter('张');
 /*生成select菜单*/
 function sel_area($str,$n=''){
-	global $continent,$db;
+	global $db;
+	$continent = cg_class(5);
 	$selstr="";
 	
 	if($str==""){
@@ -81,17 +80,16 @@ function sel_area($str,$n=''){
 		$arg = $str;
 	}
 	//输出洲际
-	$selstr = "<select name='c_id$n' id='c_id$n' onChange='changecid(this.options[this.selectedIndex].value,$n);'>";
+	$selstr = "<select name='cid$n' id='cid$n' onChange='changecid(this);'><option value='0'>洲际</option>";
 	while (list($key,$value) = each($continent)) {
-		$sel = intval($arg[0])==intval($key+1)?" selected":"";
-		$selstr .= "<option value='".intval($key+1)."'$sel>$value</option>";
+		$sel = intval($arg[0])==intval($key)?" selected":"";
+		$selstr .= "<option value='".$key."'$sel>$value</option>";
 	}
-	$selstr .= "</select>";
+	$selstr .= "</select>&nbsp;&nbsp;&nbsp;";
 	if(is_array($arg)&&count($arg)>1){
-		$selstr .= "<select name='aid$n' id='aid$n' onChange='changeaid(this.options[this.selectedIndex].value,$n);'><option value='0'>一级地区</option>";
+		$selstr .= "<select name='aid$n' id='aid$n' onChange='changeaid(this);'><option value='0'>一级地区</option>";
 		if($arg[0]!=""){
 			$query="select id,title,classid,pid,region from ".DBFIX."area where classid=$arg[0] and pid=0 order by region asc";
-			#return $query;
 			$result=$db->query_select($query);
 			if($db->num_rows($result)>0){
 				while($data=mysql_fetch_array($result)){
@@ -101,7 +99,7 @@ function sel_area($str,$n=''){
 				}
 			}
 		}
-		$selstr .= "</select>";
+		$selstr .= "</select>&nbsp;&nbsp;&nbsp;";
 	//
 	if(count($arg)>2){
 		$selstr .= "<select name='city$n' id='city$n'><option value='0'>二级地区</option>";
@@ -110,7 +108,7 @@ function sel_area($str,$n=''){
 			$result=$db->query_select($query);
 			if($db->num_rows($result)>0){
 				while($data=mysql_fetch_array($result)){
-					$sel = intval($arg[1])==intval($data[0])?" selected":"";
+					$sel = intval($arg[2])==intval($data[0])?" selected":"";
 					
 					$selstr .= "<option value='".$data[0]."'$sel>".strtoupper(substr($data[4],0,1)).$data[1]."</option>";
 				}

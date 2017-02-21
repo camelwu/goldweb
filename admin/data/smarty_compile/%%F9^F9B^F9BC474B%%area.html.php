@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.20, created on 2015-07-22 23:53:42
+<?php /* Smarty version 2.6.20, created on 2015-10-08 12:56:57
          compiled from ./area.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'html_options', './area.html', 53, false),)), $this); ?>

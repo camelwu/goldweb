@@ -1,6 +1,5 @@
-<{include file="admin_tpl_head.html"}>
-<table width="100%" border="0" cellpadding="2" cellspacing="1"
-	class="table">
+<{include file="admin_tpl_log.html"}>
+<table width="100%" border="0" cellpadding="2" cellspacing="1" class="table">
 	<tr>
 		<th colspan="2"><{$tit1}>管理</th>
 	</tr>
@@ -14,12 +13,81 @@
 		<td>&nbsp;<a href="?routeid=<{$routeid}>&action=add">添加<{$tit1}></a>&nbsp;|&nbsp;<a
 			href="?routeid=<{$routeid}>"><{$tit1}>管理</a></td>
 	</tr>
+	<tr>
+		<td align="right">添加其他线路的行程：</td>
+		<td>搜索（线路列表） 关键字：<input type="text" id="keyword" value="" size="15" maxlength="20"> <input id="search" type="button" value="查询"></td>
+	</tr>
 </table>
-<{if $action eq 'list'}>
-<table width="100%" border="0" cellpadding="2" cellspacing="1"
-	class="table">
-	<{foreach item=web name=list from=$comments}>
+<script language=javascript>
+	var keys = $('#keyword');
+	
+	KindEditor.ready(function(K) {
+		K('#search').click(function() {
+			$.ajax({
+		        type: "GET",
+		        url: "getajax.php?q=getsale&ctype=1&keys="+keys.val(),
+		        data: {},
+		        dataType: "json",
+		        async: false,
+		        success: function (data) {
+		          get_req(data);
+		        },error:function(xhr){alert(xhr.responseText)}//增加error回调看输出什么内容
+			});
+		});
+		function get_req(data) {
+			if(data!=''&&data!=null){
+			var cstr = '';
+			$.each(data, function(i,item){
+				cstr += '<input type="radio" name="rid" value="'+item.id+'" id="'+item.id+'" data-url="'+item.url+'"><label for="'+item.id+'">'+item.title+' </label><br>';
+			});//alert('search_bak'+cstr);
+			var dialog = K.dialog({
+				width : 500,
+				title : '选择内容',
+				body : '<div style="margin:10px;">'+cstr+'</div>',
+				closeBtn : {
+					name : '关闭',
+					click : function(e) {
+						dialog.remove();
+					}
+				},
+				yesBtn : {
+					name : '确定',
+					click : function(e) {
+						var checkboxs = document.getElementsByName("rid");
+						for(var i=0;i<checkboxs.length;i++){
+							if(checkboxs[i].checked){
+								insert_day(checkboxs[i].getAttribute("id"));
+								break;
+							}
+						}dialog.remove();
+					}
+				},
+				noBtn : {
+					name : '取消',
+					click : function(e) {
+						dialog.remove();
+					}
+				}
+			});
+			}else{
+				alert('未能查询到'+keys.val()+'的内容，请更换内容再试！');
+			}
+		}
+	});
 
+	function insert_day(id) {
+		var cf = window.confirm("确定插入到最前面，取消插入到最后面.");
+		if(cf){
+			types = 1;
+		}else{
+			types = 0;
+		}
+		location.href = "?action=adds&types="+types+"&routeid=<{$routeid}>&oldid="+id;
+	}
+</script>
+<{if $action eq 'list'}>
+<table width="100%" border="0" cellpadding="2" cellspacing="1" class="table">
+	<{foreach item=web name=list from=$comments}>
 	<tr>
 		<td width="13%" align="right" class="style101">(<{$smarty.foreach.list.index+1}>)</td>
 		<td>第：<{$web.num}>天</td>
@@ -46,27 +114,22 @@
 			onClick="javascript:window.location='?sid=<{$web.sid}>&routeid=<{$routeid}>&action=add'"
 			value="修 改"> <input name="delete" type="button" id="delete2"
 			value="删 除"
-			onClick="window.location='?sid=<{$web.sid}>&routeid=<{$routeid}>&action=delete';"></td>
+			onClick="if(del_nsort()){window.location='?sid=<{$web.sid}>&routeid=<{$routeid}>&action=delete';}"></td>
 
 	</tr>
 	<{/foreach}>
 </table>
 <{else}>
-<form name="myform_1" method="post" action="?action=handle"
-	enctype="multipart/form-data">
-	<input type=hidden name="routeid" value="<{$routeid}>"> <input
-		type="hidden" name="sid" value="<{$info.sid}>">
-	<table width="100%" border="0" cellpadding="2" cellspacing="1"
-		class="table">
+<form name="myform_1" method="post" action="?action=handle" enctype="multipart/form-data">
+	<input type=hidden name="routeid" value="<{$routeid}>"> <input type="hidden" name="sid" value="<{$info.sid}>">
+	<table width="100%" border="0" cellpadding="2" cellspacing="1" class="table">
 		<tr>
 			<td width="13%" align="right" class="style101">第：</td>
-			<td><input name="num" type="text" class="INPUT"
-				value="<{$info.num}>" size="2">天</td>
+			<td><input name="num" type="text" class="INPUT" value="<{$info.num}>" size="2">天</td>
 		</tr>
 		<tr>
 			<td align="right">图片上传：</td>
-			<td><input type=file name=pic size=40><input type=hidden
-				name=url value="<{$info.url}>"></td>
+			<td><input type=file name=pic size=40><input type=hidden name=url value="<{$info.url}>"></td>
 		</tr>
 		<tr>
 			<td align="right">详细行程：</td>
@@ -76,7 +139,7 @@
 				value="<{$info.timd}>"><br> 抵城市：<input name="arrived"
 				type="text" id="arrived01" maxlength="60" value="<{$info.arrived}>">
 				时间：<input name="tima" type="text" class="INPUT"
-				value="<{$info.tima}>"> 注：可多个抵达城市，用|分隔<br> <strong>行</strong>：
+				value="<{$info.tima}>"> 注：可多个抵达城市，用-分隔<br> <strong>行</strong>：
 				<select name=traffic>
 					<option value="">无</option> <{html_options options=$Config.traffic
 					selected=$info.traffic}>
@@ -125,12 +188,6 @@
 		$("#scenic").load(
 				"getajax.php?q=searchscenic&departure="
 						+ departure + "&scenicsh=" + scenicsh+ "&arrived=" + arrived);
-	}
-	
-	
-	function del_nsort() {
-		var cf = window.confirm("是否确定该操作？");
-		return cf;
 	}
 </script>
 <{/if}> <{include file="admin_tpl_foot.html"}>

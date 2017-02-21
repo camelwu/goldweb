@@ -1,12 +1,56 @@
-<?php /* Smarty version 2.6.20, created on 2015-08-27 22:21:58
+<?php /* Smarty version 2.6.20, created on 2015-10-28 13:43:40
          compiled from scenic.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'html_options', 'scenic.html', 66, false),array('function', 'html_radios', 'scenic.html', 305, false),array('function', 'html_checkboxes', 'scenic.html', 362, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'html_options', 'scenic.html', 99, false),array('function', 'html_radios', 'scenic.html', 340, false),array('function', 'html_checkboxes', 'scenic.html', 397, false),)), $this); ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "admin_tpl_head.html", 'smarty_include_vars' => array()));
+$this->_smarty_include(array('smarty_include_tpl_file' => "admin_tpl_log.html", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
- ?> <?php if ($this->_tpl_vars['action'] == 'list'): ?>
+ ?>
+	<script charset="utf-8" src="includes/func_area2js.php?act=outjs"></script>
+	<table cellspacing=1 cellpadding=4 class=table>
+		<tr>
+			<th colspan=2><?php echo $this->_tpl_vars['tit']; ?>
+管理</th>
+		</tr>
+		<tr>
+			<td align=center colspan=2 height=30>
+				<table border=0>
+					<tr>
+						<td><a href='?types=<?php echo $this->_tpl_vars['types']; ?>
+'><?php echo $this->_tpl_vars['tit']; ?>
+列表</a></td>
+						<td width=10></td>
+						<td><a href='?action=add&types=<?php echo $this->_tpl_vars['types']; ?>
+&ctype=<?php echo $this->_tpl_vars['ctype']; ?>
+'>添加<?php echo $this->_tpl_vars['tit']; ?>
+</a></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td align=center>
+				<table border=0 cellspacing=0 cellpadding=2>
+					<form action='?action=list' method=get>
+						<input type=hidden name=types value='<?php echo $this->_tpl_vars['types']; ?>
+'> <input type=hidden name=ctype value='<?php echo $this->_tpl_vars['ctype']; ?>
+'>
+						<tr>
+							<td>搜索（<?php echo $this->_tpl_vars['tit']; ?>
+列表）</td>
+							<td><?php echo $this->_tpl_vars['sel_area']; ?>
+</td>
+							<td><input type=text name=keyword value='<?php echo $this->_tpl_vars['keyword']; ?>
+' size=15 maxlength=20> 关键字</td>
+							<td><input type=submit value='搜索'></td>
+						</tr>
+					</form>
+				</table>
+			</td>
+		</tr>
+	</table>
+<?php if ($this->_tpl_vars['action'] == 'list'): ?>
 <table cellspacing=1 cellpadding=4 class=table>
 	<tr>
 		<th>ID</th>
@@ -240,16 +284,12 @@ unset($_smarty_tpl_vars);
 		<!-- 签证 -->
 		<tr>
 			<td align="right">受理时间：</td>
-			<td><input name="brand" type="text" class="INPUT" id="brand"
-				value="<?php echo $this->_tpl_vars['info']['brand']; ?>
-" size="15"
-				onKeyUp='this.value=this.value.replace(/\D/gi,"")' /> <span
-				class="title3">个工作日</span></td>
+			<td><input name="brand" type="text" class="INPUT" id="brand" value="<?php echo $this->_tpl_vars['info']['brand']; ?>
+" size="15"> <span class="title3">个工作日</span></td>
 		</tr>
 		<tr>
 			<td align="right">有 效 期：</td>
-			<td><input name="item" type="text" class="INPUT" id="item"
-				value="<?php echo $this->_tpl_vars['info']['item']; ?>
+			<td><input name="item" type="text" class="INPUT" id="item" value="<?php echo $this->_tpl_vars['info']['item']; ?>
 " size="15"></td>
 		</tr>
 		<tr>
@@ -263,6 +303,13 @@ unset($_smarty_tpl_vars);
 			<td><input name="stock" type="text" class="INPUT" id="stock"
 				value="<?php echo $this->_tpl_vars['info']['stock']; ?>
 " size="15"></td>
+		</tr>
+		<tr>
+			<td align="right">资料文档：</td>
+			<td><input type=file name=pic size=40><?php if ($this->_tpl_vars['info']['id'] == ''): ?><input type="hidden" name="url" value="<?php echo $this->_tpl_vars['info']['url']; ?>
+"><?php else: ?>资料地址：<input
+				type="text" name="url" value="<?php echo $this->_tpl_vars['info']['url']; ?>
+"><?php endif; ?></td>
 		</tr>
 		<tr>
 			<td align="right">销售底价：</td>
@@ -301,14 +348,15 @@ unset($_smarty_tpl_vars);
 				value="<?php echo $this->_tpl_vars['info']['price2']; ?>
 " size="15"> <span class="title3">元(￥)</span></td>
 		</tr>
-
+		<tr>
+			<td align="right">货币类型：</td>
+			<td><input name="material" type="text" class="INPUT" id="material" value="<?php echo $this->_tpl_vars['info']['material']; ?>
+" size="15"><span class="title3">(美元、欧元、人民币等)</span></td>
+		</tr>
 		<tr>
 			<td align="right">销售底价：</td>
-			<td><input name="price" type="text" class="INPUT" id="price"
-				onKeyUp='this.value=this.value.replace(/\D/gi,"")'
-				value="<?php echo $this->_tpl_vars['info']['price']; ?>
-" size="15"><span class="title3">
-					元(￥)</span></td>
+			<td><input name="price" type="text" class="INPUT" id="price" onKeyUp='this.value=this.value.replace(/\D/gi,"")' value="<?php echo $this->_tpl_vars['info']['price']; ?>
+" size="15"><span class="title3">元</span></td>
 		</tr>
 		<tr>
 			<td align="right">门市价格：</td>
@@ -462,7 +510,8 @@ unset($_smarty_tpl_vars);
 		<td></td>
 		<td height=30><input type=submit value='提交添加'> <input
 			type=reset value='重新填写'> <input type=button name=go_back
-			value='返回上一页' onClick="javascript:location.href='?c_id=0';"></td>
+			value='返回上一页' onClick="javascript:location.href='?action=list&types=<?php echo $this->_tpl_vars['types']; ?>
+';"></td>
 	</tr>
 	</form>
 </table>
@@ -568,13 +617,6 @@ unset($_smarty_tpl_vars);
 		</script>
 
 <?php endif; ?>
-
-<script language=javascript>
-			function del_nsort() {
-				var cf = window.confirm("是否确定该操作？");
-				return cf;
-			}
-		</script>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "admin_tpl_foot.html", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;

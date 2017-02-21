@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.20, created on 2015-09-05 13:31:51
+<?php /* Smarty version 2.6.20, created on 2015-10-19 21:08:14
          compiled from config_banner.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'html_options', 'config_banner.html', 56, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'html_options', 'config_banner.html', 58, false),)), $this); ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "admin_tpl_head.html", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
@@ -21,6 +21,7 @@ unset($_smarty_tpl_vars);
 			<th>尺寸</th>
 			<th>排序</th>
 			<th>状态</th>
+			<th>发布人</th>
 			<th>管理</th>
 		</tr>
 		<?php $_from = $this->_tpl_vars['comments']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
@@ -46,6 +47,8 @@ unset($_smarty_tpl_vars);
 </td>
 			<td><?php echo $this->_tpl_vars['web']['status']; ?>
 </td>
+			<td><?php echo $this->_tpl_vars['web']['op_user']; ?>
+</td>
 			<td><a href='?action=edit&id=<?php echo $this->_tpl_vars['web']['id']; ?>
 '>编辑</a> <a
 				href="?action=delete&types=<?php echo $this->_tpl_vars['contact']['types']; ?>
@@ -55,7 +58,7 @@ unset($_smarty_tpl_vars);
 		</tr>
 		<?php endforeach; endif; unset($_from); ?>
 		<tr>
-			<td colspan=9><?php echo $this->_tpl_vars['multipage']; ?>
+			<td colspan=11><?php echo $this->_tpl_vars['multipage']; ?>
 </td>
 		</tr>
 	</form>
@@ -99,23 +102,28 @@ unset($_smarty_tpl_vars);
 			<td align="right"><?php echo $this->_tpl_vars['tit']; ?>
 位置：</td>
 			<td><select name="mid" id="mid"><<?php echo smarty_function_html_options(array('options' => $this->_tpl_vars['Config']['mid'],'selected' => $this->_tpl_vars['info']['mid']), $this);?>
-
-			</select></td>
+</select></td>
 		</tr>
 		<tr>
 			<td align="right"><?php echo $this->_tpl_vars['tit']; ?>
 网址：</td>
-			<td><input name="mypath" type="text" class="INPUT" id="mypath"
-				value="<?php echo $this->_tpl_vars['info']['mypath']; ?>
+			<td><select id="ctype"><?php echo smarty_function_html_options(array('options' => $this->_tpl_vars['ctype']), $this);?>
+</select><input id="search" type="button" value="查询"> <input name="mypath" type="text" id="mypath" value="<?php echo $this->_tpl_vars['info']['mypath']; ?>
 " size="40" maxlength="40"></td>
 		</tr>
+		<tr>
+		  <td align="right"><?php echo $this->_tpl_vars['tit']; ?>
+价格：</td>
+		  <td><input name="price2" type="text" id="price2" value="<?php echo $this->_tpl_vars['info']['price2']; ?>
+" size="40" maxlength="8"></td>
+      </tr>
 		<tr>
 			<td align="right"><?php echo $this->_tpl_vars['tit']; ?>
 尺寸：</td>
 			<td>宽：<input name="mywidth" type="text" class="INPUT"
 				id="mywidth" value="<?php echo $this->_tpl_vars['info']['mywidth']; ?>
 " size="20" maxlength="20">×高：<input
-				name="myheight" type="text" class="INPUT" id="myheight"
+				name="myheight" type="text" id="myheight"
 				value="<?php echo $this->_tpl_vars['info']['myheight']; ?>
 " size="20" maxlength="20"></td>
 		</tr>
@@ -127,7 +135,7 @@ unset($_smarty_tpl_vars);
 		</tr>
 		<tr>
 			<td align="right">位置控制：</td>
-			<td><input name="hots" type="text" class="INPUT" id="hots"
+			<td><input name="hots" type="text" id="hots"
 				value="<?php echo $this->_tpl_vars['info']['hots']; ?>
 " size="20" maxlength="10"
 				onKeyUp='this.value=this.value.replace(/\D/gi,"")'></td>
@@ -150,11 +158,70 @@ unset($_smarty_tpl_vars);
 <?php endif; ?>
 
 <script language=javascript>
+	var keys = $('#title');
+	var ctype = $('#ctype');
+	KindEditor.ready(function(K) {
+		K('#search').click(function() {
+			//$.getJSON("getajax.php?q=getsale&ctype="+ctype.val()+"&keys="+keys.val(), function(data){alert(data);get_req(data);},,error:function(xhr){alert(xhr.responseText)});
+			$.ajax({
+		        type: "GET",
+		        url: "getajax.php?q=getsale&ctype="+ctype.val()+"&keys="+keys.val(),
+		        data: {},
+		        dataType: "json",
+		        async: false,
+		        success: function (data) {
+		          alert(data);
+		        },error:function(xhr){alert(xhr.responseText)}//增加error回调看输出什么内容
+			});
+		});
+		function get_req(data) {
+			if(data!=''&&data!=null){
+			var cstr = '';
+			$.each(data, function(i,item){
+				cstr += '<input type="radio" name="rid" value="'+item.id+'" id="'+item.id+'" data-url="'+item.url+'"><label for="'+item.id+'">'+item.title+' </label><br>';
+			});alert('search_bak'+cstr);
+			var dialog = K.dialog({
+				width : 500,
+				title : '选择内容',
+				body : '<div style="margin:10px;">'+cstr+'</div>',
+				closeBtn : {
+					name : '关闭',
+					click : function(e) {
+						dialog.remove();
+					}
+				},
+				yesBtn : {
+					name : '确定',
+					click : function(e) {
+						var checkboxs = document.getElementsByName("rid");
+						for(var i=0;i<checkboxs.length;i++){
+							if(checkboxs[i].checked){
+								document.getElementById("mypath").value = checkboxs[i].getAttribute("data-url");
+								//$("#mypath").html(checkboxs[i].getAttribute("data-url"));
+								break;
+							}
+						}dialog.remove();
+					}
+				},
+				noBtn : {
+					name : '取消',
+					click : function(e) {
+						dialog.remove();
+					}
+				}
+			});
+			}else{
+				alert('未能查询到'+keys.val()+'的内容，请更换广告名称，如“北京”添加链接后，再改回！');
+			}
+		}
+	});
+
 	function del_nsort() {
 		var cf = window.confirm("是否确定该操作？");
 		return cf;
 	}
 </script>
+<script type=“text/javascript" src="js/dialog.js"></script>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "admin_tpl_foot.html", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;

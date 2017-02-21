@@ -8,12 +8,13 @@ switch ($action) {
 	case "handle" :
 		$oldpwd = md5(killbad($_POST["oldpwd"]));
 		$newpwd = md5(killbad($_POST["newpwd"]));
-		if ($oldpwd != $_SESSION["password"]) {
+		$pass = $db->getOne("select password from cg_user where username='" . $_SESSION["username"] . "'");
+		if ($oldpwd != $pass) {
 			echo "<script language=javascript>alert('旧密码输入错误，请重新输入！');location.href='admin_pws.php';</script>";
 		} else {
 			$sqlstr = "update cg_user set password='" . $newpwd . "' where username='" . $_SESSION["username"] . "'";
 			$db->query($sqlstr);
-			$_SESSION["password"] = $newpwd;
+			//$_SESSION["password"] = $newpwd;
 			echo "<script language=javascript>alert('修改成功！');location.href='admin_pws.php';</script>";
 		}
 		break;

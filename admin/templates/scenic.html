@@ -1,4 +1,37 @@
-<{include file="admin_tpl_head.html"}> <{if $action eq 'list'}>
+<{include file="admin_tpl_log.html"}>
+	<script charset="utf-8" src="includes/func_area2js.php?act=outjs"></script>
+	<table cellspacing=1 cellpadding=4 class=table>
+		<tr>
+			<th colspan=2><{$tit}>管理</th>
+		</tr>
+		<tr>
+			<td align=center colspan=2 height=30>
+				<table border=0>
+					<tr>
+						<td><a href='?types=<{$types}>'><{$tit}>列表</a></td>
+						<td width=10></td>
+						<td><a href='?action=add&types=<{$types}>&ctype=<{$ctype}>'>添加<{$tit}></a></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td align=center>
+				<table border=0 cellspacing=0 cellpadding=2>
+					<form action='?action=list' method=get>
+						<input type=hidden name=types value='<{$types}>'> <input type=hidden name=ctype value='<{$ctype}>'>
+						<tr>
+							<td>搜索（<{$tit}>列表）</td>
+							<td><{$sel_area}></td>
+							<td><input type=text name=keyword value='<{$keyword}>' size=15 maxlength=20> 关键字</td>
+							<td><input type=submit value='搜索'></td>
+						</tr>
+					</form>
+				</table>
+			</td>
+		</tr>
+	</table>
+<{if $action eq 'list'}>
 <table cellspacing=1 cellpadding=4 class=table>
 	<tr>
 		<th>ID</th>
@@ -178,15 +211,11 @@
 		<!-- 签证 -->
 		<tr>
 			<td align="right">受理时间：</td>
-			<td><input name="brand" type="text" class="INPUT" id="brand"
-				value="<{$info.brand}>" size="15"
-				onKeyUp='this.value=this.value.replace(/\D/gi,"")' /> <span
-				class="title3">个工作日</span></td>
+			<td><input name="brand" type="text" class="INPUT" id="brand" value="<{$info.brand}>" size="15"> <span class="title3">个工作日</span></td>
 		</tr>
 		<tr>
 			<td align="right">有 效 期：</td>
-			<td><input name="item" type="text" class="INPUT" id="item"
-				value="<{$info.item}>" size="15"></td>
+			<td><input name="item" type="text" class="INPUT" id="item" value="<{$info.item}>" size="15"></td>
 		</tr>
 		<tr>
 			<td align="right">停 留 期：</td>
@@ -201,7 +230,7 @@
 		<tr>
 			<td align="right">资料文档：</td>
 			<td><input type=file name=pic size=40><{if $info.id eq
-				''}><input type="hidden" name="url" value="<{$info.url}>"><{else}>图片：<input
+				''}><input type="hidden" name="url" value="<{$info.url}>"><{else}>资料地址：<input
 				type="text" name="url" value="<{$info.url}>"><{/if}></td>
 		</tr>
 		<tr>
@@ -236,13 +265,13 @@
 				onKeyUp='this.value=this.value.replace(/\D/gi,"")'
 				value="<{$info.price2}>" size="15"> <span class="title3">元(￥)</span></td>
 		</tr>
-
+		<tr>
+			<td align="right">货币类型：</td>
+			<td><input name="material" type="text" class="INPUT" id="material" value="<{$info.material}>" size="15"><span class="title3">(美元、欧元、人民币等)</span></td>
+		</tr>
 		<tr>
 			<td align="right">销售底价：</td>
-			<td><input name="price" type="text" class="INPUT" id="price"
-				onKeyUp='this.value=this.value.replace(/\D/gi,"")'
-				value="<{$info.price}>" size="15"><span class="title3">
-					元(￥)</span></td>
+			<td><input name="price" type="text" class="INPUT" id="price" onKeyUp='this.value=this.value.replace(/\D/gi,"")' value="<{$info.price}>" size="15"><span class="title3">元</span></td>
 		</tr>
 		<tr>
 			<td align="right">门市价格：</td>
@@ -372,7 +401,7 @@
 		<td></td>
 		<td height=30><input type=submit value='提交添加'> <input
 			type=reset value='重新填写'> <input type=button name=go_back
-			value='返回上一页' onClick="javascript:location.href='?c_id=0';"></td>
+			value='返回上一页' onClick="javascript:location.href='?action=list&types=<{$types}>';"></td>
 	</tr>
 	</form>
 </table>
@@ -475,11 +504,4 @@
 		</script>
 
 <{/if}>
-
-<script language=javascript>
-			function del_nsort() {
-				var cf = window.confirm("是否确定该操作？");
-				return cf;
-			}
-		</script>
 <{include file="admin_tpl_foot.html"}>

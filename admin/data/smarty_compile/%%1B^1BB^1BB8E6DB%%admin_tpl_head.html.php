@@ -1,10 +1,10 @@
-<?php /* Smarty version 2.6.20, created on 2015-08-31 09:51:26
+<?php /* Smarty version 2.6.20, created on 2015-10-19 21:08:14
          compiled from admin_tpl_head.html */ ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="text/javascript" src="js/jquery-1.4.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="js/check.js"></script>
 <link href="css/admin.css" rel="stylesheet" type="text/css" />
 <?php if ($this->_tpl_vars['action'] == 'add' || $this->_tpl_vars['action'] == 'edit'): ?>

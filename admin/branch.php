@@ -1,7 +1,6 @@
 <?php
 require_once ('includes/init.php');
 require_once ('includes/checklogin.php');
-
 $action = postget('action');
 $action = (empty ($action)) ? "list" : $action;
 $perpage = 15;
@@ -13,9 +12,10 @@ $smarty->assign('tit', $tit);
 
 $area = cg_class(5);
 $smarty->assign('area', $area);
-
 $areatt = cg_area();
 $smarty->assign('areatt', $areatt);
+$stat = cg_stat(0);
+$smarty->assign('stat', $stat);
 $table = DBFIX . "branch";
 
 $adminsql = '';
@@ -37,9 +37,17 @@ switch ($action) {
 		$_POST['url'] = !empty ($url) ? $url : $_POST['url'];
 		$id = $_POST['id'];
 		$do = 0;
+		$array = $_POST["op_stat"];
+		$op_stat =implode(',',$array);
+		$_POST['op_stat'] = $op_stat;
+		/*
+		$array = $_POST["op_area"];
+		$op_area =implode(',',$array);
+		$_POST['op_area'] = $op_area;*/
 		$_POST['userid'] = $_SESSION['id'];
 		$_POST['op_user'] = $_SESSION['username'];
-		$_POST['myurl'] = str_replace("/", "", $_POST['myurl']);
+		$_POST['myurl'] = str_replace("http://", "", $_POST['myurl']);
+		$_POST['myurl'] = str_replace("https://", "", $_POST['myurl']);
 		if (empty ($id)) { //add
 			unset ($_POST['id']);
 			$do = 1;
@@ -84,6 +92,7 @@ switch ($action) {
 		}
 		$sqlstr = "select * from $table where id=" . $id;
 		$info = $db->fetch_array($db->query($sqlstr));
+		$info['op_stat'] = explode(",", $info['op_stat']);
 		$smarty->assign('info', $info);
 		$smarty->display('config_branch.html');
 		break;

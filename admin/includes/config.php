@@ -104,15 +104,11 @@ $Config = array (
 		'touraround' => '周边游banner(365 X 205)',
 		'freeline' => '自由行banner(365 X 205)',
 		'cruises' => '游轮banner(1920 X 330)',
-		'scenic' => '景点门票banner(1920 X 330)',
-
-		
+		'scenic' => '景点门票banner(1920 X 330)'
 	),
 	'status' => array (
 		'0' => '未启用',
-		'1' => '启用',
-
-		
+		'1' => '启用'
 	),
 	'csearch' => array (
 		'0' => '出发地',
@@ -120,9 +116,7 @@ $Config = array (
 		'2' => '服务类型',
 		'3' => '行程天数',
 		'4' => '预算花费',
-		'5' => '游轮品牌',
-
-		
+		'5' => '游轮品牌'
 	),
 	'cselected' => array (
 		'1' => '国家/城市',
@@ -133,9 +127,7 @@ $Config = array (
 	'eats' => array (
 		'早' => '早',
 		'中' => '中',
-		'晚' => '晚',
-
-		
+		'晚' => '晚'
 	),
 	'traffic' => array (
 		'plane' => '飞机',
@@ -156,7 +148,8 @@ $Config = array (
 	),
 	'templates' => array (
 		'index' => '默认模板',
-		'branch' => '定制模板1'
+		'branch' => '境外分站',
+		'domestic' => '境内分站'
 	),
 );
 //op_types

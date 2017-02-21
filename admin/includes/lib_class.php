@@ -1,4 +1,25 @@
 <?php
+require_once (ROOT_PATH . './includes/func_area2js.php');
+
+/*根据op_type返回情况*/
+function cg_optype($str = '') {
+	global $op_types;
+	$cg_optype = "";
+	if($str===''){
+		return '';
+	}else{
+		$arr = strpos($str,',')?explode(',',$str):$str;
+		if(is_array($arr)){
+			foreach($arr as $val){
+				$cg_optype .= "<font color=red>[".$op_types[(int)$val]."]</font> ";
+			}
+			return $cg_optype;
+		}else{
+			return "<font color=red>[".$op_types[(int)$arr]."]</font>";
+		}
+		
+	}
+}
 /**
  * 负责人
  * ***/
@@ -51,10 +72,38 @@ function cg_eclass($classtype = 0) {
  */
 function cg_area($classtype = 0) {
 	global $db;
-	$query = $db->query("select * from cg_area   order by id ");
+	$query = $db->query("select * from cg_area order by id ");
 	$shop = array ();
 	while ($row = $db->fetch_array($query)) {
 		$shop[$row['id']] = $row['title'];
+	}
+	return $shop;
+}
+/*
+ 函数功能：国家数组
+ 参    数：$pid>>上级ID
+ */
+function cg_stat($cid = 0) {
+	global $db;
+	$sqladd = $cid?'and classid='.$cid:'and classid!=65';
+	$query = $db->query("select * from cg_area where pid=0 $sqladd order by id ");
+	$shop = array ();
+	while ($row = $db->fetch_array($query)) {
+		$shop[$row['id']] = $row['title'];
+	}
+	return $shop;
+}
+/*
+ 函数功能：地区数组
+ 参    数：$pid>>上级ID
+ */
+function cg_area_pid() {
+	global $db;
+	$query = $db->query("select * from cg_area where pid>0   order by region ");
+	$shop = array ();
+	while ($row = $db->fetch_array($query)) {
+
+		$shop[$row['id']] = strtoupper(getFirstCharter($row['title'])) . $row['title'];
 	}
 	return $shop;
 }
@@ -239,6 +288,24 @@ function createRandomStr($length = 4) {
 	return $str;
 }
 /*
+ 函数功能：生成目录
+ 参    数：dirname>>目录名称
+ ismkindex>>是否创建
+ 静态文件,默认创建
+ */
+function vmkdir($dirname, $ismkindex = 1) {
+	$mkdir = false;
+	if (!is_dir($dirname)) {
+		if (@ mkdir($dirname, 0777)) {
+			$mkdir = true;
+		}
+	} else {
+		$mkdir = true;
+	}
+	return $mkdir;
+}
+
+/*
  函数功能：获取文件名后缀
  参    数：filename>>文件名
  */
@@ -252,7 +319,7 @@ function fileext($filename) {
  * 相对路径 $FilePara post参数
  * **/
 
-function UploadFile($FilePath, $FilePara) {
+function UploadFile($FilePath, $FilePara, $types = 0) {
 	global $uploadir;
 	$pic1File = $_FILES[$FilePara]['name'];
 	if (!empty ($pic1File)) {
@@ -261,8 +328,10 @@ function UploadFile($FilePath, $FilePara) {
 		$file1name = "/$FilePath/" . time() . rand(1, 1000) . '.' . fileext($pic1File);
 		move_uploaded_file($_FILES[$FilePara]['tmp_name'], $uploadir . $file1name);
 		/**生成缩略图***/
-		get_spec_image($uploadir . $file1name, 360, 200, 0, "big");
-		get_spec_image($uploadir . $file1name, 200, 200, 0, "small");
+		if ($types != '2') {
+			get_spec_image($uploadir . $file1name, 360, 200, 0, "big");
+			get_spec_image($uploadir . $file1name, 200, 200, 0, "small");
+		}
 
 		//记录上传日志
 		do_attached($file1name, $_FILES[$FilePara]['type'], $_FILES[$FilePara]['size']);

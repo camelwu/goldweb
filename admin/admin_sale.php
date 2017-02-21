@@ -24,8 +24,18 @@ $smarty->assign('tit', $tit);
 $table = DBFIX . "product_route";
 $taba = DBFIX . "product_route_sale";
 
+//地区
+$area = cg_class(5);
+$smarty->assign('area', $area);
+
 $areatt = cg_area();
 $smarty->assign('areatt', $areatt);
+
+//权限
+$adminsql = '';
+if ($adminid) {
+	$adminsql = " and (userid={$adminid} or bid={$adminbid})  ";
+}
 
 switch ($action) {
 	case "delete" :
@@ -41,6 +51,7 @@ switch ($action) {
 		$id = $_POST['id'];
 		$do = 0;
 		$_POST['userid'] = $_SESSION['id'];
+		$_POST['bid'] = $_SESSION['bid'];
 		$_POST['op_user'] = $_SESSION['username'];
 		$_POST["addr"] = is_array($_POST["addr"]) ? implode(',', $_POST["addr"]) : $_POST["addr"];
 		$_POST["tim"] = is_array($_POST["tim"]) ? implode(',', $_POST["tim"]) : $_POST["tim"];
@@ -62,30 +73,32 @@ switch ($action) {
 		//vheader("?types=$types&ctype=$ctype&id=$id");
 		break;
 	case "list" :
-		$sqladd = ' where ctype=' . $ctype . ''; //第一手销售，非转销
+		//$adminsql = " and (p.userid={$adminid} or p.bid={$adminbid})  ";
+		$sqladd = " and t.ctype=$ctype"; //第一手销售，非转销
 		if ($types == 0) {
-			$sqladd .= " and uid={$_SESSION["id"]}";
+			if ($_SESSION["id"] != '1') {
+				$sqladd .= " and (t.userid={$_SESSION["id"]} or t.bid={$adminbid})";
+			}
 		} else {
-			$sqladd .= " and uid!={$_SESSION["id"]}";
+			if ($_SESSION["id"] != '1') {
+				$sqladd .= " and t.userid!={$_SESSION["id"]}";
+			}
 		}
 
 		if (!empty ($_GET['keyword'])) { //keywords
-			$sqladd .= " and (keyword like '%" . $_GET['keyword'] . "%'";
+			$sqladd .= " and (p.keyword like '%" . $_GET['keyword'] . "%'";
 			if ($types == 1 && $ctype == 0) {
-				$sqladd .= " or opuser like '%" . $_GET['keyword'] . "%')";
+				$sqladd .= " or p.op_user like '%" . $_GET['keyword'] . "%')";
 			} else {
-				$sqladd .= " or op_user like '%" . $_GET['keyword'] . "%')";
+				$sqladd .= " or t.op_user like '%" . $_GET['keyword'] . "%')";
 			}
 		}
-		$sqlfrom = " from (select p.*,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.types,t.ctype,t.userid uid,t.op_type optype,t.op_user opuser,concat_ws(',',p.title,p.info_id,IFNULL(p.keywords,' '),IFNULL(p.remark,' ')) keyword from $taba t,$table p where t.id=p.id and p.id) result" . $sqladd;
+		$sqlfrom = "  from $taba t,$table p where t.id=p.id " . $sqladd;
 		$totalnum = $db->result($db->query("select count(*) " . $sqlfrom), 0); //总数;
-		$query = $db->query("select * " . $sqlfrom . " order by hid desc limit $start,$perpage");
-		//echo("select * " . $sqlfrom . " order by hid desc limit $start,$perpage");
+		$query = $db->query("select t.hid,t.title name,t.price1 price_1,t.price2 price_2,t.departure,p.* " . $sqlfrom . " order by hid desc limit $start,$perpage");
 		$data = $comments = array ();
 		while ($data = $db->fetch_array($query)) {
 			$data['go_time'] = go_tim($data['go_type'], $data['go_time']);
-			$data['city1'] = $areatt[$data['city1']];
-			$data['city2'] = $areatt[$data['city2']];
 			$comments[] = $data;
 		}
 		$multipage = multi($totalnum, $perpage, $page, '?types=' . $types . '?ctype=' . $ctype);
@@ -141,20 +154,20 @@ switch ($action) {
 		$smarty->display('line_sale.html');
 		break;
 	default :
-		$route = $db->getOneInfo("select * from $table where id=" . $id);
-		$smarty->assign('route', $route);
+
 		//
 		$info = $db->getOneInfo("select * from " . $taba . " where hid=" . $hid);
 		if (!empty ($info)) {
 			$info['op_type'] = strpos($info['op_type'], ',') ? explode(',', $info['op_type']) : $info['op_type'];
-			$info['departure'] = "<input type='radio' name='departure' value='{$info['departure']}' checked>" . $areatt[$info['departure']];
 		}
+		if (empty ($id)) {
+			$id = $info['id'];
+		}
+		$route = $db->getOneInfo("select * from $table where id=" . $id);
+		$smarty->assign('route', $route);
+
 		$smarty->assign('info', $info);
-		$smarty->assign('op_type', array (
-			2 => '特色',
-			3 => '推荐',
-			4 => '专题'
-		));
+		$smarty->assign('op_type', $op_types);
 		$smarty->assign('traffic', $traffics);
 		$smarty->display('line_sale.html');
 		break;

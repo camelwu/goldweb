@@ -7,7 +7,7 @@
  * $Date: 2009/06/20 06:16:26 $
 */
 set_time_limit(0);
-if (!isset ($_SESSION) && !isset ($cron)) {
+if (!isset ($_SESSION)) {
 	session_start();
 }
 header('Cache-control: private');
@@ -59,7 +59,6 @@ if (!empty ($dberrno)) {
 }
 /* 常用函数 */
 require_once (ROOT_PATH . 'includes/lib_common.php');
-
 /* 自定义函数 */
 require_once (ROOT_PATH . 'includes/func_class.php');
 require_once (ROOT_PATH . 'includes/lib_class.php');

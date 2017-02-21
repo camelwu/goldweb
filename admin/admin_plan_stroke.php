@@ -27,13 +27,40 @@ $smarty->assign('areatt', $areatt);
 $table = DBFIX . "product_route_stroke";
 
 switch ($action) {
+	case "adds":
+		$id = $routeid;
+		$oldid = postget('oldid');
+		$types = postget('types');
+		if($types){//top
+			$num = $db->getOne("select num from {$table} where routeid={$oldid} order by num desc limit 0,1");
+		}else{//push
+			$num = $db->getOne("select num from {$table} where routeid={$id} order by num desc limit 0,1");
+		}
+		$sql="insert into {$table}(num,departure,timd,arrived,tima,traffic,tname,eats,hotel,url,scenic,content,tips) select num,departure,timd,arrived,tima,traffic,tname,eats,hotel,url,scenic,content,tips from {$table} where routeid=".$oldid;
+		//echo $sql."<br>";
+		$res = $db->query($sql);//copy stroke
+		//var_dump($res);
+		if($res){
+			if($types){
+				$db->query("update {$table} set num=num+{$num} where routeid={$id}");
+			}else{
+				$db->query("update {$table} set num=num+{$num} where routeid=0");
+			}
+			$db->query("update {$table} set routeid={$id}, userid={$_SESSION['id']}, op_user='{$_SESSION['username']}' where routeid=0");
+			$num2 = $db->getOne("select num from {$table} where routeid={$id} order by num desc limit 0,1");
+			$db->query("update cg_product_route set num2={$num2} where id={$id}");
+		}else{
+			exit("线路行程复制失败，请联系程序人员！");
+		}
+		vheader("?action=list&routeid={$id}");
+	break;
 	case "delete" :
-		$hid = $_GET['hid'];
-		$sqlstr = "delete from $table where hid =" . $hid;
+		$sid = $_GET['sid'];
+		$sqlstr = "delete from $table where sid =" . $sid;
 		$db->query($sqlstr);
-		do_daily('line', $hid, 2, 'line', intval($ctype) + 2);
+		do_daily('line', $sid, 2, 'line', intval($ctype) + 2);
 		$db->query("update " . DBFIX . "product_route set num2=(select count(*) from $table where routeid=$routeid) where id=$routeid");
-		vheader("?types=$types&ctype=$ctype&id=$id");
+		vheader("?routeid=$routeid");
 
 		break;
 	case "handle" :

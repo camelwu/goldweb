@@ -117,14 +117,24 @@
 	var ctype = $('#ctype');
 	KindEditor.ready(function(K) {
 		K('#search').click(function() {
-			K.ajax("getajax.php?q=getsale&ctype="+ctype.val()+"&keys="+keys.val(), get_req, "GET", '', 'json');
+			//$.getJSON("getajax.php?q=getsale&ctype="+ctype.val()+"&keys="+keys.val(), function(data){alert(data);get_req(data);},,error:function(xhr){alert(xhr.responseText)});
+			$.ajax({
+		        type: "GET",
+		        url: "getajax.php?q=getsale&ctype="+ctype.val()+"&keys="+keys.val(),
+		        data: {},
+		        dataType: "json",
+		        async: false,
+		        success: function (data) {
+		          alert(data);
+		        },error:function(xhr){alert(xhr.responseText)}//增加error回调看输出什么内容
+			});
 		});
 		function get_req(data) {
-			if(data!=''){
+			if(data!=''&&data!=null){
 			var cstr = '';
 			$.each(data, function(i,item){
 				cstr += '<input type="radio" name="rid" value="'+item.id+'" id="'+item.id+'" data-url="'+item.url+'"><label for="'+item.id+'">'+item.title+' </label><br>';
-			});
+			});alert('search_bak'+cstr);
 			var dialog = K.dialog({
 				width : 500,
 				title : '选择内容',

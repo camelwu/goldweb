@@ -12,25 +12,6 @@ $smarty->assign('action', $action);
 $smarty->assign('types', $types);
 $tit = $Config['scenic'][$types];
 $smarty->assign('tit', $tit);
-/*根据op_type返回情况*/
-function cg_optype($str = '') {
-	global $op_types;
-	$cg_optype = "";
-	if($str===''){
-		return '';
-	}else{
-		$arr = strpos($str,',')?explode(',',$str):$str;
-		if(is_array($arr)){
-			foreach($arr as $val){
-				$cg_optype .= "<font color=red>[".$op_types[(int)$val]."]</font> ";
-			}
-			return $cg_optype;
-		}else{
-			return "<font color=red>[".$op_types[(int)$arr]."]</font>";
-		}
-		
-	}
-}
 //信息控制
 $op_types = array ("关闭","开通","热门","推荐","专题","微信");
 $smarty->assign('op_type', $op_types);
@@ -39,7 +20,10 @@ $area = cg_class(5);
 $smarty->assign('area', $area);
 $areatt = cg_area();
 $smarty->assign('areatt', $areatt);
-
+$cid0 = empty ($_GET['cid0']) ? 0 : intval($_GET['cid0']);
+$aid0 = empty ($_GET['aid0']) ? 0 : intval($_GET['aid0']);
+$city0 = empty ($_GET['city0']) ? 0 : intval($_GET['city0']);
+$smarty->assign('sel_area',sel_area("{$cid0},{$aid0},{$city0}",0));
 //分类
 $Allclass = array ();
 if ($types == '2') {
@@ -81,7 +65,9 @@ $table = DBFIX . "scenic";
 //权限
 $adminsql = '';
 if ($adminid) {
-	$adminsql = " and (userid={$adminid} or bid={$adminbid})  ";
+	if($types==2){
+		$adminsql = " and (userid={$adminid} or bid={$adminbid})  ";
+	}
 }
 
 switch ($action) {
@@ -90,7 +76,7 @@ switch ($action) {
 		$sqlstr = "delete from $table where id =" . $id . $adminsql;
 		$db->query($sqlstr);
 		do_daily('scenic', $id, 2, 'scenic', $types);
-		vheader("?types=" . $_POST['types']);
+		vheader("?types=" . $_GET['types']);
 		break;
 	case "handle" :
 		$url = UploadFile($_SESSION['id'], "pic");
@@ -99,11 +85,11 @@ switch ($action) {
 		$do = 0;
 		$_POST['op_user'] = (empty ($_POST['op_user'])) ? ($_SESSION['username']) : ($_POST['op_user']);
 		$_POST['types'] = $types;
-		$_POST['bid'] = $_SESSION['bid'];
 		$_POST["op_type"] = is_array($_POST["op_type"])?implode(',',$_POST["op_type"]):$_POST["op_type"];//var_dump($_POST);exit;
 		if (empty ($id)) { //add
 			unset ($_POST['id']);
 			$_POST['userid'] = $_SESSION['id'];
+			$_POST['bid'] = $adminbid;
 			$do = 1;
 			$id = $db->inserttable($table, $_POST, 1);
 		} else { //edit
@@ -116,20 +102,27 @@ switch ($action) {
 		break;
 	case "list" :
 		$sqladd = ' where types=' . $types;
-
-		if (!empty ($_GET['keyword'])) { //keywords
-			if ($sqladd == "") {
-				$sqladd .= " and title like '%" . $_GET['keyword'] . "%'";
-			} else {
-				$sqladd .= " and title like '%" . $_GET['keyword'] . "%'";
-			}
+		if(isset($_GET['cid0'])){
+			if($_GET['cid0'])
+				$sqladd .= " and cid=".$_GET['cid0'];
 		}
-		$sqlfrom = " from " . $table . $sqladd . $adminsql;
+		if(isset($_GET['aid0'])){
+			if($_GET['aid0'])
+				$sqladd .= " and aid=".$_GET['aid0'];
+		}
+		if(isset($_GET['city0'])){
+			if($_GET['city0'])
+				$sqladd .= " and city=".$_GET['city0'];
+		}
+		if (!empty ($_GET['keyword'])) {
+			$sqladd .= " and title like '%" . $_GET['keyword'] . "%'";
+		}
+		$sqlfrom = " from " . $table . $sqladd ;
+		//echo $sqlfrom;
 		$totalnum = $db->result($db->query("select count(*) " . $sqlfrom), 0); //总数;
 		$query = $db->query("select * " . $sqlfrom . " order by id desc limit $start,$perpage");
 		$data = $comments = array ();
 		while ($data = $db->fetch_array($query)) {
-			
 			$data['tips'] = cg_optype($data['op_type']);
 			
 			$comments[] = $data;
@@ -150,6 +143,8 @@ switch ($action) {
 		$info = $db->getOneInfo($sqlstr);
 		if (!empty ($info)) {
 			$info['op_type'] = strpos($info['op_type'],',')?explode(',',$info['op_type']):$info['op_type'];
+		}else{
+			#echo"<script>alert('您无权编辑!');history.go(-1);</script>";exit;
 		}
 		$smarty->assign('info', $info);
 		$smarty->display('scenic.html');

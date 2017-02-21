@@ -1,7 +1,6 @@
 <?php
 require_once ('includes/init.php');
 require_once ('includes/checklogin.php');
-require_once ('includes/func_area2js.php');
 $q = postget('q');
 if ('getclasstype' == $q) {
 	$classtype = postget('classtype');
@@ -43,7 +42,7 @@ elseif ('searchscenic' == $q) {
 		$sqlwhere .= " and (a.title like '%{$departure}%' or a.title like '%$arrived%') ";
 	}
 	else{
-		exit('');
+		exit('请输入抵离城市！');
 	}
 
 	$table = "cg_scenic";
@@ -52,7 +51,11 @@ elseif ('searchscenic' == $q) {
 	while ($info = $db->fetch_array($query)) {
 		$htmls .= "<input type='checkbox' name='scenic[]' value='{$info['title']}' " . (in_array($info['title'], $scenicsh) ? "checked" : "") . ">" . $info['title'] . "&nbsp;&nbsp;";
 	}
-	echo $htmls;
+	if(''!==$htmls){
+		echo $htmls;
+	}else{
+		echo('未能查询到'.$departure.'～'.$arrived.'的景点信息！');
+	}
 	exit;
 }
 elseif ('getsearcharea' == $q) {
@@ -239,5 +242,26 @@ elseif ('getvisa' == $q) {
 		$resu[$info['id']] = $info['title'];
 	}
 	echo json_encode($resu);
+}elseif ('getsale' == $q) {
+	$urls=array(1=>'/tours/',2=>'/visa/',3=>'/detail/',5=>'/read/');
+	$keyword = postget('keys');
+	$types = $_GET['ctype'];
+	if(1!=$types)
+		$query = $db->query("select id,title from cg_scenic where types=$types and locate('".$keyword."',title) and locate('1',op_type)");
+	else
+		$query = $db->query("select id,title from cg_product_route where locate('".$keyword."',title) and locate('1',op_type)");
+	while ($info = $db->fetch_array($query)) {
+		$info['url'] = $urls[$types].''.$info["id"];
+		$res[] = $info;
+	}
+	echo json_encode($res);
+}elseif ('instroke' == $q) {
+	$id = postget('id');
+	$oldid = postget('oldid');
+	$types = postget('types');
+	$sql="insert into {$table}_stroke(num,departure,timd,arrived,tima,traffic,tname,eats,hotel,url,scenic,content,tips) select num,departure,timd,arrived,tima,traffic,tname,eats,hotel,url,scenic,content,tips from {$table}_stroke where routeid=".$oldid;
+	$res = $db->query($sql);//copy stroke
+	$db->query("update {$table}_stroke set routeid={$id}, userid={$_SESSION['id']}, op_user='{$_SESSION['username']}' where routeid=0");
+	echo json_encode($res);
 } else {
 }
