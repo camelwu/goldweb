@@ -2,12 +2,12 @@
 define('V_ROOT', substr(dirname(__FILE__), 0, -11));
 define('E_ENG', '1'); //合法应用config文件
 define('D_BUG', '1');
-D_BUG ? error_reporting(0) : error_reporting(E_ERROR);
+D_BUG ? error_reporting(E_ALL&~E_NOTICE) : error_reporting(0);
 //包含公用文件
 include_once (V_ROOT . '/common/config.php');
 include_once (V_ROOT . '/common/inc/tool.func.php');
 include_once (V_ROOT . '/common/inc/main.func.php');
-include_once (V_ROOT . '/common/inc/class.ip.php');
+// include_once (V_ROOT . '/common/inc/class.ip.php');
 include_once (V_ROOT . '/common/inc/SectionData.class.php');
 
 //过滤
@@ -63,15 +63,14 @@ dbconnect();
 $uh_token = getHiddenUIDfromCookie();
 //ip定位
 if (!isset ($_COOKIE['sp'])) { //first
-	$ips = new ip();
-	$addr = $ips->ip2addr($ip);
-	$province = $addr['country'];
-	$sp = $addr['area'];
+	$addr = getCity(getIP());
+	$province = str_replace('市', '',$addr['city']);
+	$sp = $addr['area']?$addr['area']:'';
 	//cookie
-	//save_cookie("sp", $sp);
-	//save_cookie("province", $province);
-	//首次访问跳转本地机构
-	$sql = "SELECT myurl FROM cg_area a,cg_branch t where a.id=t.city and a.title like '%" . str_replace('市', '', $province) . "%' limit 1";
+	save_cookie("sp", $sp);
+	save_cookie("province", $province);
+	//首次访问跳转本地机构，查询并跳转，当前屏蔽
+	$sql = "SELECT myurl FROM cg_area a,cg_branch t where a.id=t.city and a.title like '%" . $province . "%' limit 1";
 	$myurl = $db->result($db->query($sql), 0);
 	if (!empty ($myurl) && strpos($myurl, $siteurl) === false) {
 		//vheader('http://' .$myurl);
