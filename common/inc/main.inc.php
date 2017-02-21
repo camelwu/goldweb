@@ -1,15 +1,22 @@
 <?php
+/**
+ * @Copyright 2008 be-member Inc
+ * 开始获取配置，连接数据库并展示网站前端
+ * 
+ * Creater: Wusongbo
+ * Date: 2008-9-10 
+ */
 define('V_ROOT', substr(dirname(__FILE__), 0, -11));
-define('E_ENG', '1'); //合法应用config文件
+//合法应用config文件
+define('E_ENG', '1');
+//开发模式
 define('D_BUG', '1');
 D_BUG ? error_reporting(E_ALL&~E_NOTICE) : error_reporting(0);
 //包含公用文件
 include_once (V_ROOT . '/common/config.php');
 include_once (V_ROOT . '/common/inc/tool.func.php');
 include_once (V_ROOT . '/common/inc/main.func.php');
-// include_once (V_ROOT . '/common/inc/class.ip.php');
-include_once (V_ROOT . '/common/inc/SectionData.class.php');
-
+include_once (V_ROOT . '/common/inc/sel.func.php');
 //过滤
 if (!(get_magic_quotes_gpc())) {
 	$_GET = vaddslashes($_GET);
@@ -18,7 +25,6 @@ if (!(get_magic_quotes_gpc())) {
 // SQL注入
 $_GET = escapeStr($_GET);
 $_POST = escapeStr($_POST);
-
 //设置字符集
 if (!empty ($headercharset)) {
 	header('Content-Type: text/html; charset=' . $charset);
@@ -29,13 +35,12 @@ if ($gzipcompress && function_exists('ob_gzhandler')) {
 } else {
 	ob_start();
 }
-
+//开始session
 session_start();
-
 //urldecode
 $_SERVER["REQUEST_URI"] = urldecode($_SERVER["REQUEST_URI"]);
 $_SERVER["HTTP_REFERER"] = urldecode($_SERVER["HTTP_REFERER"]);
-/////////////////////////////////////////终端初始化，以下参数若从$_GET获得，则为日志记录请求(/tac)，参数以get请求为准
+//终端初始化，以下参数若从$_GET获得，则为日志记录请求(/tac)，参数以get请求为准
 if (!isset ($_GET['accessurl'])) {
 	$accessurl = $_SERVER['REQUEST_URI'];
 } else {
@@ -47,21 +52,18 @@ if (!isset ($_GET['referurl'])) {
 } else {
 	$referurl = $_GET['referurl'];
 }
-
-//ONLINE IP
-$ip = $_SERVER['REMOTE_ADDR'];
 //当前时间戳
 $timezone = "Asia/Shanghai";
 date_default_timezone_set($timezone);
 $timestamp = time();
 //
 $siteurl = 'http://' . $_SERVER['HTTP_HOST'].'';
-//公用页面函数&&数据库函数
+//数据库
 dbconnect();
-
 //用户身份ID
 $uh_token = getHiddenUIDfromCookie();
 //ip定位
+$ip = getIP();
 if (!isset ($_COOKIE['sp'])) { //first
 	$addr = getCity(getIP());
 	$province = str_replace('市', '',$addr['city']);
@@ -79,7 +81,6 @@ if (!isset ($_COOKIE['sp'])) { //first
 	$sp = $_COOKIE["sp"];
 	$province = $_COOKIE["province"];
 }
-
 //分站地址区分(机构)
 $myurl = $_SERVER['HTTP_HOST'];
 if (!isset ($_COOKIE["myurl"])) {
@@ -102,7 +103,7 @@ $template = (empty ($template)) ? "index" : $template;
 //常量初始化
 init_config();
 //smarty
-startVooleSmarty(true);
+startSmarty(true);
 //定位IP区域
 $smarty->assign('ipfrom', $province);
 $smarty->assign('sp', $sp);
