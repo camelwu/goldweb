@@ -101,7 +101,7 @@ elseif (in_array($enname, $shtml)) {
 			$cnname=$cnname=='线路'?$cnname:$cid['title'];
 			$smarty->assign('cnname', $cnname);
 			//出发地
-			$smarty->assign('chufa', cg_search($cid['id'], 0));//cg_selbox
+			$smarty->assign('chufa', cg_search($cid['id'], 0));
 			//目的
 			$smarty->assign('mudi', cg_search($cid['id'], 1));
 			//行程天数
