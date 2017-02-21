@@ -1,27 +1,24 @@
 <?php
  /**
-  * @Copyright 2008 union voole Inc 
+  * @Copyright 2008 be-member Inc
   * 配置文件
   *
-  * Creater: nemo
+  * Creater: WuSongBo
   * Date: 2008-9-10
   */
 //--------------- 数据库设置 ------------------------------
 if(!defined('E_ENG')){
 	die('This is not a valid link ');
 }
-$dbhost = 'localhost';//60.31.214.235
-//voolesite数据库用户名
+//site数据库
+$dbhost = 'localhost';
 $dbuser = 'root';
-//voolesite数据库密码
 $dbpw = 'mysql*()';
-//voolesite数据库名
-$dbname = 'jinqiao';//
-
+$dbname = 'jinqiao';
+$dbcharset = 'utf8';
 //数据库持久连接 0=关闭, 1=打开
 $pconnect = 0;
 //数据库字符集
-$dbcharset = 'utf8';
 //--------------- COOKIE设置 ------------------------------
 //cookie 作用路径
 $cookiepath = '/';
@@ -33,11 +30,11 @@ $charset = 'utf-8';
 //gzip压缩
 $gzipcompress = 0;   //1压缩,0不压缩
 //图片服务器地址
-$picserver = 'http://www.jingdushishang.com:8089/pic';
+$picserver = 'http://';
 //$picserver = 'http://localhost:8889/pic';
 //网站名称
 $sitename='旅游网站';
 //$sectionid_pex
-$section_pex='cg_';
-$uploaddir = 'D:/dev2/website/WebRoot/pic';
+$prefix='cg_';
+$uploaddir = '/';
 ?>
