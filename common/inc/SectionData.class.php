@@ -30,7 +30,7 @@ function get_sale_top($count = 5) {
 	if ($bid)
 		$sqladd = " where bid=$bid";
 	else
-		$sqladd = " where status=1";
+		$sqladd = " where 1=1";
 	//hits点击，hots销售
 	$orderbysql = ' order by hots desc';
 	$limitsql = ' limit ' . $count;
@@ -156,6 +156,16 @@ function cg_branch() {
 	}
 	return $shop;
 }
+function cg_hotd() {
+	global $db;
+	$query = $db->query("select a.title,b.myurl from cg_branch b left join cg_area a on(a.id=b.city) where b.city>0 and b.myurl<>'' and LOCATE('cgbt.net',b.myurl) order by b.id");
+	$result = array();
+	while ($row = $db->fetch_array($query)) {
+		$row['myurl'] = (stristr($row["myurl"], "http://") == '') ? "http://".$row["myurl"] : $row["myurl"];
+		$result[] = $row;
+	}
+	return $result;
+}
 /**
  * 搜索条件
  * @param $ctype:enname
@@ -241,8 +251,8 @@ function selectdataroute($count, $type = '1', $classid = 0, $classid2 = 0) {
 	if ($bid)
 		$sqladd = " where bid=$bid";
 	else
-		$sqladd = " where status=1";
-	$sqladd .= " and locate('1',optype) and locate('" . $type . "',optype)";
+		$sqladd = " where 1=1";
+	$sqladd .= " and locate('1',op_type) and locate('" . $type . "',op_type)";
 	if ($classid)
 		$sqladd .= " and classid=" . $classid;
 	if ($classid2)
@@ -250,17 +260,20 @@ function selectdataroute($count, $type = '1', $classid = 0, $classid2 = 0) {
 	if ($type == '1,2,3' && $classid == 0 && $classid2 == 0)
 		$orderbysql = ' order by rand()';
 	else
-		$orderbysql = ' order by hid desc';
-	$sql = "select * from (select p.id,p.title,p.info_id,p.classid,p.classid2,p.go_day,p.go_num,p.keywords,p.price2,p.url,p.city2,p.info,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.userid uid,t.op_type optype,t.op_user opuser,t.bid,t.status from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.url is not Null and p.id) result" . $sqladd . $orderbysql . $limitsql;
+		$orderbysql = ' order by id desc';
+	//$sql = "select * from (select p.id,p.title,p.info_id,p.classid,p.classid2,p.go_day,p.go_num,p.keywords,p.price2,p.url,p.city2,p.info,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.userid uid,t.op_type optype,t.op_user opuser,t.bid,t.status from cg_product_route_sale t,cg_product_route p where t.id=p.id and p.url is not Null and p.id) result" . $sqladd . $orderbysql . $limitsql;
+	$sql = "select * from cg_product_route ". $sqladd . $orderbysql . $limitsql;
 	//return $sql;
 	$query = $db->query($sql);
 	while ($value = $db->fetch_array($query)) {
+		if(is_numeric($value['city1'])) $value['li'] = cg_area_tit($value['city1']);
+		if(is_numeric($value['city2'])) $value['di'] = cg_area_tit($value['city2']);
 		if (!empty ($value['url'])) {
 			$value['url'] = (stristr($value["url"], "http://") == '') ? $picserver . replaceSeps($value["url"]) : $value["url"];
 		}
 		$price = $db->getOneInfo("select price from cg_product_route_do where id=" . $value['id'] . " and pass=0 order by price desc limit 0,1");
 		if (!empty ($price)) {
-			$value['price_2'] = (int) $value['price_2'] - (int) $price['price'];
+			$value['price2'] = (int) $value['price2'] - (int) $price['price'];
 		}
 		$re[] = $value;
 	}
@@ -285,18 +298,19 @@ function sel_product($count, $type = "1", $types = 0, $ctype = 0, $ctype1 = 0) {
 		$sqlwhere .= ' and ctype1=' . $ctype1;
 	}
 	if ($type) {
-		$sqlwhere .= " and locate('1',op_type) and locate('" . $type . "',op_type)";
+		$sqlwhere .= " and FIND_IN_SET('1',op_type) and FIND_IN_SET('" . $type . "',op_type)";
 	}
 	if ($bid) {
 		if ($types != 2 and $types != 3)
 			$sqlwhere .= " and bid=" . $bid;
 		//else
 	}else{
-		$sqlwhere.=" and status=1";
+		$sqlwhere.=" and 1=1";
 	}
 	if ($types == 2 || $types == 3) {
-		if ($bid && $bidinfo["cid"] != 9)
-			$sqlwhere .= " and aid=" . (int) $bidinfo['aid'] . "";
+		if ($bid && $bidinfo["cid"] != 9){
+			$sqlwhere .= " and FIND_IN_SET(aid, '{$bidinfo['op_stat']}')";
+		}
 	}
 	if ($count == 1)
 		$orderbysql = ' order by rand()';
@@ -306,11 +320,10 @@ function sel_product($count, $type = "1", $types = 0, $ctype = 0, $ctype1 = 0) {
 		$limitsql = ' limit ' . $count;
 	
 	if ($types == 2) {
-		$sql = "select id,title,info_id,cid,aid,url,price1,price2,word,info,keyword,bid from cg_scenic" . $sqlwhere . $orderbysql . $limitsql;
+		$sql = "select aid,id,title,info_id,cid,url,price1,price2,word,info,keyword,bid from cg_scenic" . $sqlwhere . " group by aid" . $limitsql;
 	}else{
 		$sql = "select id,title,info_id,url,price1,price2,word,info,keyword,bid from cg_scenic" . $sqlwhere . $orderbysql . $limitsql;
 	}
-	//
 	//return $sql;
 	$query = $db->query($sql);
 	while ($row = $db->fetch_array($query)) {
@@ -338,10 +351,10 @@ function sel_product($count, $type = "1", $types = 0, $ctype = 0, $ctype1 = 0) {
  * $go_money 花费 (,隔开)
  * 
  * */
-function selectRoleSale($classid, $count = false, $start = 0, $perpage = 1, $city1, $city2, $go_day, $go_time, $go_time1, $go_money, $title, $order = 'hid', $orderby = 'desc') {
+function selectRoleSale($classid, $count = false, $start = 0, $perpage = 1, $city1, $city2, $go_day, $go_time, $go_time1, $go_money, $title, $order = 'id', $orderby = 'desc') {
 	global $db, $picserver, $siteurl, $bid;
 
-	$sqlfrom = " from cg_product_route_sale t,cg_product_route p where t.id=p.id ";
+	$sqlfrom = " from cg_product_route p where 1=1 ";
 	if ($classid) {
 		$sqlfrom .= " and p.classid=" . $classid;
 	}
@@ -352,10 +365,9 @@ function selectRoleSale($classid, $count = false, $start = 0, $perpage = 1, $cit
 			$city1 = $city;
 		}
 		if (strpos($city1, ',') === false) {
-			$sqlfrom .= " and (t.aid=$city1 or t.departure=$city1 or p.aid1=$city1 or p.city1=$city1)";
-			//$sqlfrom .= " and (t.departure like '%" . $city1 . "%' or p.city1 like '%" . $city1 . "%')";
+			$sqlfrom .= " and (p.aid1=$city1 or p.city1=$city1)";
 		} else {
-			$sqlfrom .= " and (FIND_IN_SET(t.aid,'" . $city1 . "') or FIND_IN_SET(t.departure,'" . $city1 . "') or FIND_IN_SET(p.aid1,'" . $city1 . "') or FIND_IN_SET(p.city1,'" . $city1 . "'))";
+			$sqlfrom .= " and (FIND_IN_SET(p.aid1,'" . $city1 . "') or FIND_IN_SET(p.city1,'" . $city1 . "'))";
 		}
 
 	}
@@ -367,7 +379,6 @@ function selectRoleSale($classid, $count = false, $start = 0, $perpage = 1, $cit
 		}
 		if (strpos($city2, ',') === false) {
 			$sqlfrom .= " and (p.aid2=$city2 or p.city2=$city2) ";
-			//$sqlfrom .= " and p.city2 like '%" . $city2 . "%' ";
 		} else {
 			$sqlfrom .= " and (FIND_IN_SET(p.aid2,'" . $city2 . "') or FIND_IN_SET(p.city2,'" . $city2 . "'))";
 		}
@@ -406,28 +417,29 @@ function selectRoleSale($classid, $count = false, $start = 0, $perpage = 1, $cit
 
 	//标题
 	if ($title) {
-		$sqlfrom .= " and t.title like '%" . $title . "%' ";
+		$sqlfrom .= " and p.title like '%" . $title . "%' ";
 	}
 	if ($bid) {
-		$sqlfrom .= " and t.bid=$bid";
+		$sqlfrom .= " and p.bid=$bid";
 	}else{
-		$sqlfrom .= " and t.status=1";
+		$sqlfrom .= " and 1=1";
 	}
 	$orderbysql = " order by $order $orderby ";
 	if (!$count) {
 		return $db->result($db->query("select count(*) $sqlfrom "), 0);
 	} else {
 		$limitsql = ' limit ' . $start . ',' . $perpage;
-		$sql = "select p.id,p.title,p.info_id,p.classid,p.classid2,p.go_day,p.go_num,p.keywords,p.price2,p.url,p.city2,p.info,t.hid,t.title name,t.departure,t.price1 price_1,t.price2 price_2,t.userid uid,t.op_type optype,t.op_user opuser,t.bid $sqlfrom $orderbysql $limitsql";
+		$sql = "select * $sqlfrom $orderbysql $limitsql";
 		#return $sql;
 		$query = $db->query($sql);
 		while ($value = $db->fetch_array($query)) {
+			
 			if (!empty ($value['url'])) {
 				$value['url'] = (stristr($value["url"], "http://") == '') ? $picserver . replaceSeps($value["url"]) : $value["url"];
 			}
 			$price = $db->getOneInfo("select price from cg_product_route_do where id=" . $value['id'] . " and pass=0 order by price desc limit 0,1");
 			if (!empty ($price)) {
-				$value['price_2'] = (int) $value['price_2'] - (int) $price['price'];
+				$value['price2'] = (int) $value['price2'] - (int) $price['price'];
 			}
 			$re[] = $value;
 		}
@@ -472,8 +484,13 @@ function cg_product($hid) {
 	return $db->getOneInfo($sqlstr);
 }
 
+/*查询 地区名称*/
+function cg_area_tit($id) {
+	global $db;
+	$res = $db->getOneInfo("select title from cg_area where id=" . $id);
+	return $res['title'];
+}
 /*线路明细查询*/
-
 function cg_scenic($id) {
 	global $db;
 	$sqlstr = "select * from cg_scenic where id=" . $id;
