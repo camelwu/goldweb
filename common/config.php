@@ -35,13 +35,9 @@ $gzipcompress = 0;   //1压缩,0不压缩
 //图片服务器地址
 $picserver = 'http://www.jingdushishang.com:8089/pic';
 //$picserver = 'http://localhost:8889/pic';
-
 //网站名称
-$sitename='京都时尚医疗美容医院';
-//tid
-$tid=1;
+$sitename='旅游网站';
 //$sectionid_pex
-$section_pex='jdss_';
-
+$section_pex='cg_';
 $uploaddir = 'D:/dev2/website/WebRoot/pic';
 ?>
