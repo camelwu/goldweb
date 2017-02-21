@@ -7,7 +7,7 @@
  */
 //_2:page,/1 id
 /* 初始化数组参数 */
-$table = "cg_scenic"
+$table = "cg_scenic";
 $op_types = array ("关闭","开通","特色","推荐","专题","微信","销售");
 $ro_types = array('团体包价','特殊旅游','散客拼团','自驾游');
 $go_types = array('每天发团','每周发团','每月发团','输入团期');
