@@ -390,21 +390,6 @@ function vimplode($varr, $comma = ',') {
 	return '\'' . implode('\'' . $comma . '\'', $varr) . '\'';
 }
 
-/********************************
- 函数功能：用post,get方法获得参数
- 参    数：var>>要获得的参数值
- ********************************/
-function postget($var) {
-	$value = '';
-	if (isset ($_POST[$var])) {
-		$value = $_POST[$var];
-	}
-	elseif (isset ($_GET[$var])) {
-		$value = $_GET[$var];
-	}
-	return $value;
-}
-
 function replaceSeps($str) {
 	if (!empty ($str)) {
 		$firstStr = substr($str, 0, 1);
@@ -439,18 +424,15 @@ function getdomain($url) {
 
 /***************************
  函数功能：生成目录
- 参    数：dirname>>目录名称
- ismkindex>>是否创建
- 静态文件,默认创建
+ 参    数：path>>目录名称
+ ismk>>是否创建
+ 默认创建
  ***************************/
-function vmkdir($dirname, $ismkindex = 1) {
+function mkdirs($path, $ismk = true) {
 	$mkdir = false;
-	if (!is_dir($dirname)) {
-		if (@ mkdir($dirname, 0777)) {
-			//	if($ismkindex) {
-			//		@fclose(@fopen($dirname.'/index.htm', 'w'));
-			//	}
-			$mkdir = true;
+	if (!is_dir($path)) {
+		if ($ismk) {
+			$mkdir = mkdir(iconv("UTF-8", "GBK", $path),0777,true);
 		}
 	} else {
 		$mkdir = true;
@@ -505,32 +487,30 @@ function writelog($file, $log) {
 		fclose($fp);
 	}
 }
-
-/*************************
- 函数功能：获得IP
-
- *************************/
-function get_real_ip() {
-	$ip = false;
-	if (!empty ($_SERVER["HTTP_CLIENT_IP"])) {
-		$ip = $_SERVER["HTTP_CLIENT_IP"];
-	}
-	if (!empty ($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-		$ips = explode(", ", $_SERVER['HTTP_X_FORWARDED_FOR']);
-		if ($ip) {
-			array_unshift($ips, $ip);
-			$ip = FALSE;
-		}
-		for ($i = 0; $i < count($ips); $i++) {
-			if (!eregi("^(10|172\.16|192\.168)\.", $ips[$i])) {
-				$ip = $ips[$i];
-				break;
-			}
-		}
-	}
-	return ($ip ? $ip : $_SERVER['REMOTE_ADDR']);
+/**
+ * 获取用户真实 IP
+ */
+function getIP(){
+    static $realip;
+    if (isset($_SERVER)){
+        if (isset($_SERVER["HTTP_X_FORWARDED_FOR"])){
+            $realip = $_SERVER["HTTP_X_FORWARDED_FOR"];
+        } else if (isset($_SERVER["HTTP_CLIENT_IP"])) {
+            $realip = $_SERVER["HTTP_CLIENT_IP"];
+        } else {
+            $realip = $_SERVER["REMOTE_ADDR"];
+        }
+    } else {
+        if (getenv("HTTP_X_FORWARDED_FOR")){
+            $realip = getenv("HTTP_X_FORWARDED_FOR");
+        } else if (getenv("HTTP_CLIENT_IP")) {
+            $realip = getenv("HTTP_CLIENT_IP");
+        } else {
+            $realip = getenv("REMOTE_ADDR");
+        }
+    }
+    return $realip;
 }
-
 /*
  函数功能：返回指定日期的秒数
  参    数: days>>距离指定时间的天数
@@ -538,7 +518,6 @@ function get_real_ip() {
  time>>指定时间,默认当前时间
  可以是时间秒数也可以是
  日期时间形式
- author:  zhuxiangzhen
  */
 function changetime($days, $method = '+', $time = "time()") {
 	$seconds = (!is_int($days) || $days < 0) ? 0 : $days * 86400;
@@ -574,7 +553,6 @@ function splitstr($str, $sign = '|') {
  函数功能:分割字符串,字符串类型 5:演员1 | 6:演员2 | 7：演员3
  返回二维数组
  参    数:要被分割的字符串
- author  :zhuxiangzhen
  */
 function othersplitstr($str, $sign = '|') {
 	$firstsplitarr = explode($sign, $str);
@@ -597,7 +575,6 @@ function othersplitstr($str, $sign = '|') {
  checkedarr>>以前已选择过的checkbox
  checkarrname>>生成的checkbox复选框
  名称
- author : zhuxiangzhen
  */
 function checkitem($totalitemarr, $checkedarr, $checkarrname) {
 	if (empty ($totalitemarr) || empty ($checkarrname) || !is_array($totalitemarr) || !is_string($checkarrname))
@@ -615,7 +592,6 @@ function checkitem($totalitemarr, $checkedarr, $checkarrname) {
  参	  数: subarr>>子集数组
  arr>>子集的父数组
  返 回 值：如果subarr是arr的子集返回真,否则返回假
- author:   zhuxiangzhen
  */
 function arraysubclass($subarr, $arr) {
 	if (!is_array($subarr) || !is_array($arr) || empty ($subarr) || empty ($arr)) {
@@ -631,28 +607,26 @@ function arraysubclass($subarr, $arr) {
 		}
 	}
 }
+
 /*
  函数功能：在不知HTTP请求是POST还是GET方式时，此方法先按POST方式处理，如果为空再按GET方式处理，以确保传递的变量值，
  已知提交方式时，不建议使用此方法
  参	  数: $param>>传递的变量
  返 回 值：string
- author:   joe
  */
-function _POST_GET($param) {
-	$temValue = '';
-	$temValue = $_POST[$param];
-	if (empty ($temValue) || $temValue == '') {
-		$temValue = $_GET[$param];
-		if (empty ($temValue)) {
-			return $temValue;
-		}
-		return $temValue;
-	} else
-		return $temValue;
+
+function postget($var) {
+	$value = '';
+	if (isset ($_POST[$var])) {
+		$value = $_POST[$var];
+	}
+	elseif (isset ($_GET[$var])) {
+		$value = $_GET[$var];
+	}
+	return $value;
 }
 
 /*
- * author:joe
  * 获得最小和最大值之间随机数，位数不足补零
  */
 function getRandNumber($fMin, $fMax) {
@@ -661,7 +635,6 @@ function getRandNumber($fMin, $fMax) {
 	Return sprintf($fLen, rand($fMin, $fMax));
 }
 /*
- * author:joe
  * 获得流水号
  */
 function getFlowNum() {
@@ -669,7 +642,6 @@ function getFlowNum() {
 }
 /*
  *函数功能: 获得给定时间截的当天的开始时间截和结束时间截
- *author :  zhuxiangzhen
  */
 function gettodayverge($time) {
 	$todaytime = localtime($time, 1);
@@ -685,8 +657,6 @@ function gettodayverge($time) {
 	return $todaytime;
 }
 /*
- * author:hexuehui
- *
  * 获得时间差
  */
 function getSubtractTime($lastTime) {
@@ -738,5 +708,28 @@ function str_replace_once($needle, $replace, $haystack) {
 		return $haystack;
 	}
 	return substr_replace($haystack, $replace, $pos, strlen($needle));
+}
+
+ /**
+  * @Copyright 2017 be-member Inc
+  * IP转换城市类
+  * 通过淘宝IP库进行，如API发生变化需重写
+  * Creater: WuSongBo  
+  * Date: 2017-02-20
+  */
+function getCity($ip = ''){
+	static $json;
+	if ($ip == ''||$ip == '::1'||$ip == '127.0.0.1'||!preg_match("^(10|172\.16|192\.168)\.", $ip)) {
+	// if(){
+        $json=json_decode(file_get_contents("http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json"),true);
+        $data = $json;
+    }else{
+        $json=json_decode(file_get_contents("http://ip.taobao.com/service/getIpInfo.php?ip=".$ip),true);
+        if((string)$json->code=='1'){
+           return false;
+        }
+        $data = (array)$json->data;
+    }
+	return $data;
 }
 ?>
