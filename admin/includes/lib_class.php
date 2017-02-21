@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * 负责人
  * ***/
@@ -240,24 +238,6 @@ function createRandomStr($length = 4) {
 	$str = implode('', array_slice($str, 0, $length));
 	return $str;
 }
-/*
- 函数功能：生成目录
- 参    数：dirname>>目录名称
- ismkindex>>是否创建
- 静态文件,默认创建
- */
-function vmkdir($dirname, $ismkindex = 1) {
-	$mkdir = false;
-	if (!is_dir($dirname)) {
-		if (@ mkdir($dirname, 0777)) {
-			$mkdir = true;
-		}
-	} else {
-		$mkdir = true;
-	}
-	return $mkdir;
-}
-
 /*
  函数功能：获取文件名后缀
  参    数：filename>>文件名
