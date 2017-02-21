@@ -1,0 +1,22 @@
+
+/*background:#59c895  主色        #4fb77c  选中色*/
+.login_box{ width:100%;}
+.login_box .login_img{ height:440px; width:65%; position:absolute; top:50px}
+.login_box .login_main{ width:360px; position:absolute; left:66%; height:300px;top:100px; outline: #999 1px solid}
+
+/*金桥五大承诺*/
+.comm_login{ top:650px; width:100%; border:#59c895 2px solid; height:60px;}
+.comm_login li{ float:left; font-size:18px; line-height:60px;}
+
+
+
+.commitment_box{ background:#000}
+.commitment_box li{ height:60px;line-height:60px; text-indent:60px;background:url(../images/index_icon.png) no-repeat; float:left;font-size:18px; color:#FFF; margin-right:1%;}
+.commitment_box .comm_title{ width:20%; background-position:-280px -31px;  text-indent:0;}
+.commitment_box .comm_cq{background-position:-710px -125px;}
+.commitment_box .comm_jg{background-position:-710px -185px;}
+.commitment_box .comm_bz{background-position:-710px -245px;}
+.commitment_box .comm_qy{background-position:-710px -305px;}
+.commitment_box .comm_pf{background-position:-710px -365px; margin-right:0;}
+
+

@@ -1,0 +1,119 @@
+
+/*background:#59c895  主色        #4fb77c  选中色*/
+.login_box{ width:100%;}
+.login_box .login_img{ height:440px; width:65%; position:absolute; top:50px}
+.login_box .login_main{ width:30%; position:absolute; left:66%;top:50px;}
+.login_main .login_title{ color:#eaa003; font-size:24px; font-weight:bold}
+.login_main .login_title a{ float:right; font-size:12px; font-weight:normal; color:#0059ed; text-decoration:underline; margin-top:15px; }
+.login_main input{height:40px; border:1px solid #dfdfdf; text-indent:10px;}
+.login_title,.login_user,.login_pass,.login_vali,.next_login,.cooper_hd{ margin-bottom:16px;}
+.login_btn{ margin:30px auto 40px auto}
+.login_main .login_user input{ width:100%; background:url(../images/log_reg.jpg) no-repeat; text-indent:75px;}
+.login_main .login_pass input{ width:100%; background:url(../images/log_reg.jpg) no-repeat 0 -40px;text-indent:75px;}
+.login_main .login_vali input{ width:100%;}
+.login_main .login_vali{ position:relative; height:40px;}
+.login_main .login_vali .log_txt{ width:45%; position:absolute; left:0; }
+.login_main .login_vali .log_img{ position:absolute; left:53%; margin-left:-20px; width:25%}
+.login_main .login_vali .log_btn{text-align:right; position:absolute; right:0; margin-top:-5px;}
+.login_main .login_vali li img{ width:85%; height:24px;border:1px solid #dfdfdf; display:block; margin:0 auto}
+.login_main .login_vali li a{ font-size:12px; color:#0059ed; text-decoration:underline;}
+.login_main .next_login{ font-size:12px; color:#bababa}
+.login_main .next_login input{ height:auto;vertical-align:middle; margin-right:5px;}
+.login_main .next_login a{ float:right; font-size:12px;color:#0059ed; text-decoration:underline;}
+.login_main .login_btn a{ width:100%; height:60px; display:block; background:#fdcc65;color:#FFF; text-align:center; line-height:60px; font-size:28px}
+.login_main .login_btn a:hover{ background:#f6be48;}
+.login_main .cooper_hd{ border-top:1px solid #dfdfdf;position:relative}
+.login_main .cooper_hd span{ font-size:14px; text-align:center;color:#bababa; width:140px; background:#FFF; top:-12px; position:absolute; left:50%; margin-left:-70px;}
+.login_main .cooper_bd{ width:250px; margin:25px auto;}
+.login_main .cooper_bd li{ width:38px; height:38px; background:url(../images/index_icon.png) no-repeat; float:left; margin:0 4.9%}
+.login_main .cooper_bd li a{ display:block; width:100%; height:100%;}
+.login_main .cooper_bd .coop_qq{ background-position:-286px -416px}
+.login_main .cooper_bd .coop_sina{background-position:-325px -416px}
+.login_main .cooper_bd .coop_wechat{background-position:-364px -416px}
+.login_main .cooper_bd .coop_baidu{background-position:-402px -416px}
+
+/*金桥五大承诺*/
+.comm_login{ top:650px; width:100%; border:#59c895 2px solid; height:56px;}
+.comm_login li{ float:left; font-size:18px; line-height:56px; color:#59c895; background:url(../images/index_icon.png) no-repeat; margin-right:4.6%}
+.comm_login .comm_title{ text-indent:15px; padding-right:35px; background-position: 250px -652px}
+.comm_login .comm_cq{ padding-left:43px; background-position:-61px -651px}
+.comm_login .comm_jg{ padding-left:43px; background-position:-61px -713px}
+.comm_login .comm_bz{ padding-left:43px; background-position:-61px -775px}
+.comm_login .comm_qy{ padding-left:53px; background-position:-61px -836px}
+.comm_login .comm_pf{ padding-left:53px; background-position:-61px -898px; margin-right:0}
+
+/*找回密码*/
+.fp_comm{ top:120px;}
+.fp_main{ height:510px; border:1px solid #dfdfdf; top:40px; box-shadow:1px 1px 10px #ccc}
+.fp_main .fp_title{ height:63px; line-height:63px; width:96%; border-bottom:#dfdfdf 2px dotted; margin:0 auto; color:#59c895; font-size:24px}
+.fp_progress{ width:96%; margin:20px auto}
+.fp_progress li{ height:32px; width:25%; float:left; line-height:32px; color:#FFF; text-align:center; background:#ccc url(../images/progress.jpg) no-repeat; background-position:right 0}
+.fp_progress .prog4{background:#ccc}
+.fp_determine .prog1{ background-color:#fdcc65; background-position:right -32px}
+.fp_verifi .prog1{ background-color:#5cc896; background-position:right -64px}
+.fp_verifi .prog2{ background-color:#fdcc65; background-position:right -32px}
+.fp_modify .prog1{ background-color:#5cc896; background-position:right -96px}
+.fp_modify .prog2{ background-color:#5cc896; background-position:right -64px}
+.fp_modify .prog3{ background-color:#fdcc65; background-position:right -32px}
+.fp_complete .prog1{ background-color:#5cc896; background-position:right -96px}
+.fp_complete .prog2{ background-color:#5cc896; background-position:right -96px}
+.fp_complete .prog3{ background-color:#5cc896; background-position:right -64px}
+.fp_complete .prog4{ background-color:#fdcc65;}
+
+
+.fp_main_box{ width:100%; margin-top:60px;}
+.fp_main_box a,.fp_main_box span,.fp_main_box div{ float:left; line-height:40px;}
+.fp_main_box span{ width:34%; text-align:right; padding-right:10px;}
+.fp_main_box div{ width:30%}
+.fp_main_box div input{height:40px; border:1px solid #dfdfdf; text-indent:10px; width:100%;}
+.fp_main .next_btn{ width:30%; height:60px; line-height:60px; display:inline-block; text-align:center; margin-left:35%; margin-top:60px; color:#fff;  background:#fdcc65;font-size: 28px;}
+.fp_main .back_btn{ font-size:14px; margin-left:15px; display:inline-block; vertical-align:bottom;text-decoration:underline}
+.fp_main .back_btn:hover{ color:#4fb77c}
+.fp_main .next_btn:hover{background:#f6be48;}
+.fp_varifi_box{ margin-top:20px;}
+.fp_varifi_box  div{ width:12%;}
+.fp_varifi_box  .fp_var_img{ width:7%; margin-top:1px; margin-left:2%}
+.fp_varifi_box  .fp_var_img a img{ border:#dfdfdf 1px solid}
+.fp_varifi_box  .fp_change{  font-size:12px; color:#0059ed; text-decoration:underline; line-height:normal; margin-left:2%}
+
+
+.account_txt{ text-align:center; font-size:16px; margin-top:30px;}
+.binding_box{ padding-left:165px; margin:40px auto 0 auto; width:250px; height:100px; background:url(../images/order_form.png) no-repeat -262px -361px; font-size:22px; color:#333; padding-top:30px;}
+.binding_box span{ font-size:14px; color:#999; display:block; margin-top:20px;}
+
+
+.ver_phone{ height:60px; background:url(../images/order_form.png) no-repeat; background-position:-331px -505px; line-height:60px; padding-left:80px; font-size:22px; color:#333; width:400px; margin:40px auto}
+.get_phone_ver{ text-align:center}
+.get_phone_ver a{font-size:14px; color:#0059ed; text-decoration:underline;margin-left:15px;}
+.ver_code{ text-align:center; line-height:40px; margin-top:17px}
+.ver_code input{ border:#dfdfdf 1px solid; margin-left:15px; height:40px; width:210px; text-indent:10px;}
+
+
+.ver_succ{background-position:-331px -581px; width:280px; margin-bottom:10px}
+.create_pass{ margin-top:15px}
+.fp_main .succ_btn{ margin-top:34px;}
+
+.reg_title{ width:100%; height:80px; line-height:80px; border-bottom:2px solid #b0b0b0; color:#b0b0b0; font-size:26px}
+.reg_title li{ float:left; width:250px; text-align:center; cursor:pointer;}
+.phone_mailbox{ padding-left:130px; padding-top:30px; display:none}
+.pm_box1{ display:block}
+.phone_mailbox li{ width:450px; height:40px; margin-top:30px;}
+.phone_mailbox li input{ width:100%; height:40px; border:#dfdfdf 1px solid; background:url(../images/log_reg.jpg) no-repeat; text-indent:75px;}
+
+.phone_mailbox .reg_phone input{ background-position:0 -120px}
+.phone_mailbox .reg_pass input{background-position:0 -40px}
+.phone_mailbox .reg_str span{ display:inline-block; width:120px; height:29px; background:#dfdfdf; color:#b0b0b0; text-align:center; line-height:29px; font-size:14px; margin-left:24px;}
+.phone_mailbox .reg_str{ height:29px; margin-top:20px;}
+.phone_mailbox .reg_var input{ background:none; text-indent:10px; width:250px; float:left}
+.phone_mailbox .reg_var .reg_var_img{ float:left; display:block; width:80px; margin-left:15px;}
+.phone_mailbox .reg_var .reg_var_img img{ border:1px solid #dfdfdf}
+.phone_mailbox .reg_var .reg_next{ float:right; font-size:12px;color:#0059ed; text-decoration:underline;}
+.phone_mailbox .reg_agree{ height:auto; margin-top:50px; padding-left:50px;}
+.phone_mailbox .reg_agree a{width:355px; height:60px; line-height:60px; display:block; text-align:center; color:#fff;  background:#fdcc65;font-size: 28px;}
+.phone_mailbox .reg_agree a:hover{background:#f6be48;}
+.phone_mailbox .rge_protocol{ margin-top:10px; text-align:center; margin-bottom:50px;}
+.phone_mailbox .rge_protocol a{font-size:12px;color:#0059ed; text-decoration:underline;}
+.reg_foot{ text-align:center; padding:30px 0; color:#b0b0b0; font-size:12px}
+
+.phone_mailbox .reg_email input{ background-position:0 -80px}
+.reg_hd_on{ color:#59c895; background:url(../images/reg_hd.png) no-repeat center 78px; height:92px;}
