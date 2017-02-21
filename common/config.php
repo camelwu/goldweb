@@ -6,11 +6,11 @@
   * Creater: WuSongBo
   * Date: 2008-9-10
   */
-//--------------- 数据库设置 ------------------------------
+
 if(!defined('E_ENG')){
 	die('This is not a valid link ');
 }
-//site数据库
+//--------------- 数据库设置 ------------------------------
 $dbhost = 'localhost';
 $dbuser = 'root';
 $dbpw = 'mysql*()';
@@ -18,7 +18,6 @@ $dbname = 'jinqiao';
 $dbcharset = 'utf8';
 //数据库持久连接 0=关闭, 1=打开
 $pconnect = 0;
-//数据库字符集
 //--------------- COOKIE设置 ------------------------------
 //cookie 作用路径
 $cookiepath = '/';
@@ -29,6 +28,7 @@ $headercharset = 1;
 $charset = 'utf-8';
 //gzip压缩
 $gzipcompress = 0;   //1压缩,0不压缩
+//--------------- 网站信息 ------------------------------
 //图片服务器地址
 $picserver = 'http://';
 //$picserver = 'http://localhost:8889/pic';
