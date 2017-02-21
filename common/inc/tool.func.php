@@ -2,7 +2,7 @@
 /**
  * @Copyright 2008 be-member Inc
  * 基本操作工具函数：session，cookie，smarty模板，数据库连接，UID处理
- * 
+ *
  * Creater: WuSongBo
  * Date: 2008-9-10
  */
@@ -336,6 +336,7 @@ function getmessagepic($message) {
 function isemail($email) {
 	return strlen($email) > 6 && preg_match("/^[\w\-\.]+@[\w\-\.]+(\.\w+)+$/", $email);
 }
+
 /************************************
  函数功能：把数组的键值对转变为字符串,
  以'/'字符连接.
@@ -653,30 +654,30 @@ function getSubtractTime($lastTime) {
 }
 
 /*过滤不健康的字*/
-function Filter_word( $str, $fileName )     
-{     
-    if ( !($words = file_get_contents( $fileName )) ){     
-        die('file read error!');     
-    }     
-    $str = strtolower($str);  
- //var_dump($words);  
- $word = preg_replace("/[1,2,3]\r\n|\r\n/i", '', $words);  
- //$wor = substr($word,0,-1);  
- //$w = preg_replace("|/|i", '\/', $word);  
- //echo "<pre>";  
- //var_dump($w);  
- //$words = "赌博机|卖血|出售肾|出售器官|眼角膜";  
-    $matched = preg_replace('/'.$word.'/i', '***', $string);  
- return $matched;   
-}     
-    
-$content = "<a href='#'>我要卖血fsdf卖血d 赌博机wo眼口交膜</a>";     
-if ($result = Filter_word($content, './words.txt') ){  
- echo $result;  
-    echo "替换成功 ";     
-}else{     
-    echo "替换失败! ";     
-}   
+function Filter_word($str, $fileName) {
+	if (!($words = file_get_contents($fileName))) {
+		die('file read error!');
+	}
+	$str = strtolower($str);
+	//var_dump($words);
+	$word = preg_replace("/[1,2,3]\r\n|\r\n/i", '', $words);
+	//$wor = substr($word,0,-1);
+	//$w = preg_replace("|/|i", '\/', $word);
+	//echo "<pre>";
+	//var_dump($w);
+	//$words = "赌博机|卖血|出售肾|出售器官|眼角膜";
+	$matched = preg_replace('/' . $word . '/i', '***', $string);
+	return $matched;
+}
+
+/*
+ $content = "<a href='#'>我要卖血fsdf卖血d 赌博机wo眼口交膜</a>";
+ if ($result = Filter_word($content, './words.txt') ){
+ echo $result;
+ echo "替换成功 ";
+ }else{
+ echo "替换失败! ";
+ }*/
 /*过滤二维数组中的html代码*/
 function replace_array_word($arr) {
 	if (is_array($arr)) {
@@ -761,6 +762,7 @@ function escapeStr($string) {
 	}
 	return $string;
 }
+
 function saddslashes($string) {
 	if (is_array($string)) {
 		foreach ($string as $key => $val) {
