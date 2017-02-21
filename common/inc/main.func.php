@@ -1,30 +1,20 @@
 <?php
-
-//地区对象
-$areaCN=array(
-	'华东'=> array('山东','江苏','安徽','浙江','福建','上海'),
-	'华南'=> array('广东','广西','海南'),
-	'华中'=> array('湖北','湖南','河南','江西'),
-	'华北'=> array('北京','天津','河北','山西','内蒙古'),
-	'西北'=> array('宁夏','新疆','青海','陕西','甘肃'),
-	'西南'=> array('四川','云南','贵州','西藏','重庆'),
-	'东北'=> array('辽宁','吉林','黑龙江'),
-	'港澳台'=> array('香港','澳门','台湾')
-);
-/***************************session处理begin***********************/
-//清除session
-function startVooleSession() {
-	//TODO 伯克利DB存储session
+/**
+ * @Copyright 2008 be-member Inc
+ * 网站前端展示函数
+ * 
+ * Creater: Wusongbo
+ * Date: 2008-9-10 
+ */
+//开始session
+function startSession() {
 	session_start();
 }
 //清除session
-function destroyVooleSession() {
+function destroySession() {
 	session_destroy();
 }
-
-/*
- * cookie存储 $history 0 临时 1 永久
- * */
+//cookie存储 $history 0 临时 1 永久
 function save_cookie($name, $value, $history = 0) {
 	if (empty ($history)) {
 		setcookie($name, $value, 0, '/');
@@ -32,16 +22,21 @@ function save_cookie($name, $value, $history = 0) {
 		setcookie($name, $value, time() + 3600 * 24 * 30, '/');
 	}
 }
-
-/*
- * 清理cookie
- * */
+//清理cookie
 function destroy_cookie() {
 	foreach ($_COOKIE as $key => $value) {
 		setcookie($key, '', time() - 3600 * 24, '/');
 	}
 }
-/***************************session处理end**************************/
+//随机UID获取 
+function getHiddenUIDfromCookie() {
+	//第一次浏览随机一个用户ID 注册后此ID绑定用户
+	if (!isset ($_COOKIE['uh_token'])) {
+		SetCookie('uh_token', time(), time() + 3600 * 24 * 360, "/");
+	}
+	return $_COOKIE['uh_token'];
+}
+//设置页面缓存时间
 function startHttpCacheHeader($s = 1800) {
 	global $timestamp;
 	//TODO
@@ -50,16 +45,8 @@ function startHttpCacheHeader($s = 1800) {
 	header('Expires: ' . gmdate('D, M d Y H:i:s', $timestamp + $s) . ' GMT'); //指定过期时间
 	header('Last-Modified: ' . gmdate('D, M d Y H:i:s', $timestamp) . ' GMT');
 }
-/***************************cookie获取 begin**************************/
-function getHiddenUIDfromCookie() {
-	//第一次浏览随机一个用户ID 注册后此ID绑定用户
-	if (!isset ($_COOKIE['uh_token'])) {
-		SetCookie('uh_token', time(), time() + 3600 * 24 * 360, "/");
-	}
-	return $_COOKIE['uh_token'];
-}
 //启动smarty
-function startVooleSmarty($iscached = true) {
+function startSmarty($iscached = true) {
 	global $channel, $smarty, $siteurl, $picserver, $uploadir, $ktitle, $kname, $keywords, $description;
 
 	if (empty ($smarty)) {
@@ -97,10 +84,7 @@ function startVooleSmarty($iscached = true) {
 		}
 	}
 }
-
-/************************
- 函数功能：建立数据库连接
- ************************/
+//建立数据库连接
 function dbconnect() {
 	global $db, $dbcharset, $dbhost, $dbuser, $dbpw, $dbname, $pconnect;
 
@@ -111,16 +95,6 @@ function dbconnect() {
 		$db->connect($dbhost, $dbuser, $dbpw, $dbname, $pconnect);
 		unset ($dbuser, $dbpw);
 	}
-}
-function saddslashes($string) {
-	if (is_array($string)) {
-		foreach ($string as $key => $val) {
-			$string[$key] = saddslashes($val);
-		}
-	} else {
-		$string = addslashes($string);
-	}
-	return $string;
 }
 /*****************************
  函数功能：生成分页URL地址集合
@@ -219,42 +193,36 @@ function pagecute($maxpage, $pagecount, $viewpage = 1, $pageurl, $pp = 6, $class
 	}
 	return $pagecute;
 }
-//
-//判断奇数，是返回TRUE，否返回FALSE
-function is_odd($num) {
-	return (is_numeric($num) & ($num & 1));
-}
-//判断偶数，是返回TRUE，否返回FALSE
-function is_even($num) {
-	return (is_numeric($num) & (!($num & 1)));
-}
-
-//重写strpos函数，如果不成功则返回1
-function myStrpos($str, $patt, $offset) {
-	if (strpos($str, $patt, $offset)) {
-		return strpos($str, $patt, $offset);
-	} else
-		return 1;
-}
-
-function vaddslashes($string) {
-	if (is_array($string)) {
-		foreach ($string as $key => $val) {
-			$string[$key] = vaddslashes($val);
-		}
+/*
+ * @param
+ * 初始化常量
+ * */
+function init_config() {
+	global $db, $bid, $bidinfo, $picserver, $uploadir, $ktitle, $kname, $keywords, $description;
+	$webconfig = $db->fetch_array($db->query('select * from cg_config'));
+	$picserver = $webconfig['picserver']; //图片服务器
+	$uploadir = $webconfig['uploadir']; //图片目录
+	if (empty ($bidinfo)) {
+		$ktitle = $webconfig['name'];
+		$kname = $webconfig['title'];
+		$keywords = $webconfig['keyes'];
+		$description = $webconfig['contents'];
 	} else {
-		$string = addslashes($string);
+		$ktitle = $bidinfo['ktitle'];
+		$kname = $bidinfo['title'];
+		$keywords = $bidinfo['keywords'];
+		$description = $bidinfo['description'];
 	}
-	return $string;
 }
-function escapeStr($string) {
-	if (is_array($string)) {
-		foreach ($string as $key => $val) {
-			$string[$key] = escapeStr($val);
-		}
-	} else {
-		$string = mysql_escape_string(htmlspecialchars(trim($string)));
-	}
-	return $string;
-}
+//地区对象
+$areaCN=array(
+	'华东'=> array('山东','江苏','安徽','浙江','福建','上海'),
+	'华南'=> array('广东','广西','海南'),
+	'华中'=> array('湖北','湖南','河南','江西'),
+	'华北'=> array('北京','天津','河北','山西','内蒙古'),
+	'西北'=> array('宁夏','新疆','青海','陕西','甘肃'),
+	'西南'=> array('四川','云南','贵州','西藏','重庆'),
+	'东北'=> array('辽宁','吉林','黑龙江'),
+	'港澳台'=> array('香港','澳门','台湾')
+);
 ?>
