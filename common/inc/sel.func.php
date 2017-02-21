@@ -1,6 +1,11 @@
 <?PHP
-
-
+ /**
+  * @Copyright 2008 be-member Inc
+  * 查询、展示本站点的独有函数文件
+  *
+  * Creater: WuSongBo
+  * Date: 2008-9-10
+  */
 /***获取订单号*****/
 function getOrderNum() {
 	return md5(time() . rand(1, 1000));
@@ -73,29 +78,7 @@ function login_user($uid = '', $email = '', $passwd = '') {
 	return $data;
 }
 /*
- * @param
- * 初始化常量
- * */
-function init_config() {
-	global $db, $bid, $bidinfo, $picserver, $uploadir, $ktitle, $kname, $keywords, $description;
-	$webconfig = $db->fetch_array($db->query('select * from cg_config'));
-	$picserver = $webconfig['picserver']; //图片服务器
-	$uploadir = $webconfig['uploadir']; //图片目录
-	if (empty ($bidinfo)) {
-		$ktitle = $webconfig['name'];
-		$kname = $webconfig['title'];
-		$keywords = $webconfig['keyes'];
-		$description = $webconfig['contents'];
-	} else {
-		$ktitle = $bidinfo['ktitle'];
-		$kname = $bidinfo['title'];
-		$keywords = $bidinfo['keywords'];
-		$description = $bidinfo['description'];
-	}
-}
-
-/*
- *@types 0 国家 1 地区
+ * @types 0 国家 1 地区
  *@hits  1 热门
  *@classid1 地区分类
  *@classid 区域分类
