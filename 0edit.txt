@@ -1,3 +1,12 @@
-2015-6-4
-���ɣ�
-main.php 78�п�ʼ������һ�������жϣ�ֱ�ӽ���mobile.php;��ʵ���ֻ���PC�ķ��롣
+﻿
+2015-06-04 /main.php:line78,增加一个域名判断，直接进入mobile.php;以实现手机与PC的分离。
+## 过去日志丢失，从2017年2月15日开始补全
+2017-02-15 /common/inc/main.func.php:line4,增加中国地区对象areaCN。
+2017-02-16 /common/inc/tool.func.php:line431,修改生成目录函数mkdirs。
+2017-02-16 /common/inc/main.func.php:line67,增加smarty模板存放目录判断。
+2017-02-17 /common/inc/tool.func.php:line720,优化获取IP地址函数getIP，增加IP地址通过新浪和淘宝接口函数getCity。 
+2017-02-17 /common/inc/tool.func.php:line,无用函数删除。
+2017-02-18 开启服务器，权限变化沟通与测试中
+2017-02-19 开启服务器，本地目录与旧机器之间版本冲突
+---------------------------------------------------------------------
+2017-02-20 版本冲突测试中，新增bug系统与今后工作方式。
