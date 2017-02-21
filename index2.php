@@ -61,6 +61,12 @@ $smarty->assign('newl', sel_product(1, "2", 5, 98));
 $smarty->assign('link', selectdatalink(15));
 //热门目的地,热门线路的目的地？
 $sql = "";
-
+//;
+//if('elsi.cgbt.net'==$_SERVER['HTTP_HOST']||'eluosi.cgbt.net'==$_SERVER['HTTP_HOST']){
+//	$smarty->display(V_ROOT.'./'.$template.'/branch.html',$cache_id);
+//}else{
+//	
+//	$smarty->display(V_ROOT.'./'.$template.'/index.html',$cache_id);
+//}
 $smarty->display(V_ROOT . './templates/' . $template . '.html', $cache_id);
 ?>
