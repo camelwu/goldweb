@@ -14,8 +14,8 @@ RewriteRule ^([0-9a-zA-Z]+)+(\/)?([0-9a-zA-Z|\-]+)?(\/)?([0-9a-zA-Z]+)?(\/)?([0-
 ##ΩÈ…‹“≥√Ê
 RewriteRule ^([0-9a-zA-Z]+)+(.html)+$ /main.php?enname=$1&id=$3&page=$4
 
-ErrorDocument 401 /error.html
-ErrorDocument 400 /error.html
-ErrorDocument 403 /error.html
-ErrorDocument 500 /error.html
-ErrorDocument 404 /error.html
+ErrorDocument 401 /error.php
+ErrorDocument 400 /error.php
+ErrorDocument 403 /error.php
+ErrorDocument 500 /error.php
+ErrorDocument 404 /error.php
