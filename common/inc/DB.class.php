@@ -1,9 +1,9 @@
 <?php
  /**
-  * @Copyright 2008 union voole Inc
+  * @Copyright 2008 be-member Inc
   * MYSQL数据操作类
   *
-  * Creater: nemo  
+  * Creater: Wusongbo
   * Date: 2008-9-10 
   */
 class DB {
