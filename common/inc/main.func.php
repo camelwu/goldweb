@@ -1,6 +1,16 @@
 <?php
 
-
+//地区对象
+$areaCN=array(
+	'华东'=> array('山东','江苏','安徽','浙江','福建','上海'),
+	'华南'=> array('广东','广西','海南'),
+	'华中'=> array('湖北','湖南','河南','江西'),
+	'华北'=> array('北京','天津','河北','山西','内蒙古'),
+	'西北'=> array('宁夏','新疆','青海','陕西','甘肃'),
+	'西南'=> array('四川','云南','贵州','西藏','重庆'),
+	'东北'=> array('辽宁','吉林','黑龙江'),
+	'港澳台'=> array('香港','澳门','台湾')
+);
 /***************************session处理begin***********************/
 //清除session
 function startVooleSession() {
@@ -56,8 +66,11 @@ function startVooleSmarty($iscached = true) {
 		include_once (V_ROOT . '/common/lib/Smarty/Smarty.class.php');
 		$smarty = new Smarty;
 		$smarty->template_dir = V_ROOT;
+		mkdirs(V_ROOT . '/data/smarty_config');
 		$smarty->config_dir = V_ROOT . '/data/smarty_config';
+		mkdirs(V_ROOT . '/data/smarty_cache');
 		$smarty->cache_dir = V_ROOT . '/data/smarty_cache/';
+		mkdirs(V_ROOT . '/data/smarty_compile');
 		$smarty->compile_dir = V_ROOT . '/data/smarty_compile';
 		$smarty->left_delimiter = '<{';
 		$smarty->right_delimiter = '}>';
