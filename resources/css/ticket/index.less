@@ -1,0 +1,324 @@
+@charset "utf-8";
+/* CSS Document */
+@import '../color';
+//头部banner图
+[ticket_banner]{
+.banner{
+  height: 600px;
+  background: url("../../../resources/images/demo/ticketbanner.png") no-repeat center center;
+  background-size: cover;
+}
+  .banner_bg{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 298px;
+    background: url("../../../resources/images/banner_bg.png") repeat-x top;
+  }
+  .banner_search{
+    position: absolute;
+    width: 1200px;
+    left:50%;
+    top: 0;
+    margin-left: -600px;
+  }
+  //搜索部分
+  .search_centent{
+    position: absolute;
+    top: 477px;
+    left: 15%;
+    z-index: 100;
+  }
+  .search_input{
+    width: 615px;
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+  }
+  input.public{
+    width: 583px;
+    padding:15px 0 15px 30px;
+  }
+  .s_index{
+    width: 170px;
+    height: 51px;
+    line-height: 51px;
+    display: inline-block;
+    float: left;
+    border-radius: 0px 2px 2px 0px;
+  }
+  .search_prompt{
+    width: 552px;
+    background: #fff;
+    padding: 2px 30px 30px 30px;
+    overflow: hidden;
+    border:1px solid @bdc_title_border;
+    border-top:0px;
+  }
+  .search_prompt li{
+    width:562px;
+  }
+  .search_address{
+    margin-top:22px;
+    margin-bottom:4px;
+    color: @bdc_main;
+  }
+  .search_nation span{
+    display: inline-block;
+    margin-right:34px;
+    line-height:26px;
+    cursor: pointer;
+  }
+}
+[ticket_centent]{
+  //海外玩乐部分
+.ticket_ploy{
+  width: 100%;
+  overflow: hidden;
+}
+  .ticket_title{
+    padding: 50px 0 30px;
+    height: 20px;
+  }
+  .ticket_ploy_title{
+    font-size: 20px;
+    float: left;
+  }
+  .ticket_address span{
+    margin-left:20px;
+    color:@cl_gray;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .ticket_address span.cur{
+    color:@bdc_main;
+  }
+  //海外玩乐结束
+  //海外热门城市
+  .ticket_hot_title{
+    padding:10px 0 30px;
+    font-size:20px;
+  }
+  .hot_centent{
+    min-width: 1200px;
+    height: 706px;
+    margin-bottom:92px;
+    overflow: hidden;
+  }
+  .hot_fl{
+    width: 738px;
+    margin-right:17px;
+  }
+  .hot_fl_one{
+    width: 738px;
+    height: 350px;
+    //background: @cl_main;
+    margin-bottom:17px;
+    position: relative;
+  }
+  .hot_fl_one img{
+    width: 100%;
+    height: 100%;
+  }
+  .hot_fl_two{
+    width: 360px;
+    height: 334px;
+    margin-right:17px;
+    //background: @cl_main;
+    position: relative;
+  }
+  .hot_fl_two img{
+    width: 100%;
+    height: 100%;
+  }
+  .fl_three{
+    margin-right:0px;
+  }
+  .hot_fl_bg_img,.hot_fl_bg{
+    width: 100%;
+    height:50px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    background: url('../../../resources/images/hotel_ticket/shadow_img.png') repeat-x;
+    display: block;
+  }
+  .hot_fl_bg_hover{
+    display: none;
+    width:100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    top:0;
+    left:0;
+    cursor: pointer;
+  }
+ .hot_name{
+   padding-left:12px;
+   font-size:22px;
+   color:@cl_white;
+   line-height:50px;
+  }
+  .hot_name_hover{
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    display: block;
+  }
+  .hover_one{
+    margin:20% auto;
+  }
+  .hover_two{
+    margin:38% auto;
+  }
+  .hover_three{
+    margin:18% auto;
+  }
+  .hot_fr{
+    width: 444px;
+  }
+  .hot_fr_one{
+    width: 442px;
+    height: 222px;
+    margin-bottom:17px;
+    position: relative;
+  }
+  .hot_fr_one img{
+    width: 100%;
+    height: 100%;
+    //background: @cl_main;
+  }
+  .fr_three{
+    margin-bottom:0px;
+  }
+}
+@media (max-width:1200px) {
+  [ticket_banner]{
+    .banner{
+      height:438px;
+    }
+    .banner_bg{
+      min-width: 880px;
+    }
+    .banner_search{
+      width: 880px;
+    }
+    .search_centent{
+      top:338px;
+      left: 32%;
+    }
+    .search_input {
+      width: 420px;
+    }
+    .search_prompt{
+      width: 420px;
+    }
+    .search_prompt li{
+      width: 430px;
+    }
+  }
+  [ticket_centent] {
+    .hot_centent {
+      min-width: 880px;
+      height: 540px;
+      margin-bottom:60px;
+    }
+    .hot_fl{
+      width:560px;
+    }
+    .hot_fl_one{
+      width: 560px;
+      height: 302px;
+    }
+    .hot_fl_two{
+      width: 271px;
+      height: 218px;
+    }
+    .hot_fr{
+      width: 302px;
+    }
+    .hot_fr_one{
+      width: 302px;
+      height:168px;
+    }
+  }
+}
+@media all and (orientation:portrait){
+  /*头部样式1页  begin*/
+  [ticket_banner]{
+    .banner{
+      height:380px;
+    }
+    .banner_bg{
+      min-width: 680px;
+    }
+    .banner_search{
+      width: 680px;
+      margin-left: -524px;
+    }
+    .search_input {
+      width: 240px;
+    }
+    .search_centent{
+      left: 50%;
+      top:272px;
+    }
+    .s_index{
+      width: 100px;
+      height: 45px;
+    }
+    input.public {
+      width: 223px;
+      padding: 12px 0 12px 15px;
+    }
+    .search_prompt{
+      width: 223px;
+      padding:2px 16px 10px 16px;
+      font-size:12px;
+    }
+    .search_prompt li{
+      width: 233px;
+    }
+    .search_address{
+      margin-top:16px;
+    }
+    .search_nation span{
+      margin-right:20px;
+    }
+  }
+  [ticket_centent] {
+    .hot_centent {
+      min-width: 680px;
+      height: 444px;
+      margin-bottom:45px;
+    }
+    .hot_fl{
+      width:448px;
+      margin-right:0px;
+    }
+    .hot_fl_one{
+      width: 448px;
+      height: 252px;
+      margin-bottom:10px;
+    }
+    .hot_fl_two{
+      width: 219px;
+      height: 180px;
+      margin-right: 10px;
+    }
+    .fl_three {
+      margin-right: 0px;
+    }
+    .hot_fr{
+      width: 220px;
+    }
+    .hot_fr_one{
+      width: 220px;
+      height:141px;
+      margin-bottom: 10px;
+    }
+  }
+}

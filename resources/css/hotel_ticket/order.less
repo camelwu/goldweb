@@ -1,0 +1,745 @@
+@import "../color.less";
+
+#loading-div {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0 ,0 ,0.15);
+    z-index: 999;
+    text-align: center;
+    img {
+        top: 50%;
+        margin-top: -16px;
+        position: absolute;
+    }
+}
+[nav_boxs] {
+    border-bottom: solid 1px @bdc_gray;
+}
+[step-flow] {
+    padding: 30px 0;
+}
+
+[checkbox-icon] {
+    display: inline-block;
+    position: relative;
+    top: 2px;
+}
+[select-div] {
+    .select_unit {
+        .select_btn {
+            line-height: 39px;
+        }
+        i {
+            top: 18px;
+        }
+    }
+    .select_ul {
+        li {
+            line-height: 39px;
+        }
+    }
+}
+
+/*左侧信息的标题*/
+.info_title {
+    font-size: 14px;
+    line-height: 50px;
+    background: @bg_title;
+    font-weight: bold;
+    padding-left: 20px;
+    border-bottom: solid 1px @bdc_title_border;
+    >span {
+        color: @cl_gray;
+        margin-left: 20px;
+        font-weight: normal;
+    }
+}
+
+
+/*预订信息*/
+[reserve-info] {
+    h2 {
+        font-size: 20px;
+        margin: 20px;
+        line-height: 45px;
+        font-weight: normal;
+    }
+    .info {
+        padding: 20px;
+        border-top: solid 1px @bdc_gray;
+        line-height: 26px;
+        >li {
+            margin: 10px 0;
+            .info_left {
+                float: left;
+                width: 50px;
+                color: @cl_gray;
+            }
+            .info_right {
+                float: left;
+                width: 720px;
+                color: @cl_blockgray;
+            }
+        }
+    }
+}
+
+/*出游人信息*/
+[person_info] {
+
+    /*常旅*/
+    .person_card_list {
+        padding: 30px 20px;
+        border-bottom: solid 1px @bdc_title_border;
+        >p {
+            display: block;
+            float: left;
+            padding-top: 20px;
+        }
+        .card_ul {
+            >li {
+                width: 164px;
+                height: 51px;
+                border: solid 1px @bdc_gray;
+                padding: 8px 11px 0;
+                margin-left: 20px;
+                float: left;
+                cursor: pointer;
+                position: relative;
+                .en_name {
+                    color: @cl_gray;
+                }
+            }
+            >li.selected {
+                border: solid 1px @bdc_main;
+                >i {
+                    background: url(../../../resources/images/icon1.png) no-repeat -33px -176px;
+                    width: 30px;
+                    height: 26px;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+
+    /*添加出游人*/
+    .add_person {
+        padding: 30px 20px;
+        .sub_title {
+            margin-bottom: 30px;
+        }
+        .label {
+            padding: 0 18px;
+            line-height: 41px;
+        }
+        .public {
+            width: 136px;
+        }
+        .person_list {
+            padding-left: 50px;
+            >li {
+                margin-top: 20px;
+                >i {
+                    color: @cl_main;
+                    border: solid 1px @bdc_main;
+                    border-radius: 26px;
+                    width: 26px;
+                    height: 26px;
+                    display: inline-block;
+                    text-align: center;
+                    line-height: 26px;
+                    margin-top: 6px;
+                }
+                .select_unit {
+                    width: 165px;
+                    .select_btn {
+                        span {
+                            width: 150px;
+                            display: block;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+                    }
+                    .select_ul {
+                        li {
+                            line-height: 39px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+                    }
+                }
+                .clear_input {
+                    cursor: pointer;
+                    line-height: 41px;
+                }
+            }
+        }
+    }
+}
+
+/*联系方式*/
+[contact_info] {
+    .contact_ul {
+        margin: 30px 0 10px 0;
+        >li {
+            margin-bottom: 20px;
+            .label {
+                width: 130px;
+                text-align: right;
+                margin-right: 20px;
+                line-height: 41px;
+            }
+            .center_label {
+                width: 50px;
+                text-align: center;
+                line-height: 41px;
+            }
+            input {
+                width: 442px;
+            }
+            .select_unit {
+                width: 462px;
+            }
+            .short_input {
+                width: 185px;
+            }
+            .phone_code {
+                width: 80px;
+            }
+            .phone {
+                width: 340px;
+            }
+        }
+    }
+}
+
+/*航班接送信息*/
+[flight_info] {
+    .flight_ul {
+        margin: 30px 0 10px 0;
+        >li {
+            margin-bottom: 20px;
+            .label {
+                width: 130px;
+                text-align: right;
+                margin-right: 20px;
+                line-height: 41px;
+            }
+            >div {
+                >input {
+                    margin-right: 20px;
+                }
+            }
+            .flight_num {
+                >input {
+                    width: 145px;
+                }
+            }
+            .flight_date {
+                >input {
+                    width: 115px;
+                }
+            }
+            .flight_hour {
+                .select_ul {
+                    height: 200px;;
+                }
+                .select_unit {
+                    width: 90px;
+                }
+            }
+            .flight_minute {
+                .select_ul {
+                    height: 200px;;
+                }
+                .select_unit {
+                    width: 90px;
+                }
+            }
+        }
+        .read_treaty {
+            line-height: 39px;
+        }
+    }
+    .agree{
+        color:@cl_blue;
+    }
+}
+
+.next_btn {
+    margin: 40px 0 100px 270px;
+}
+
+
+/*费用明细*/
+[cost_detail] {
+    .detail_title {
+        font-size: 14px;
+        line-height: 40px;
+        background: @bg_title;
+        font-weight: bold;
+        padding-left: 20px;
+    }
+    .detail_item {
+        margin: 0 20px;
+        padding: 20px 0;
+        border-bottom: solid 1px @bdc_gray;
+        >i {
+            width: 32px;
+            height: 32px;
+            display: block;
+            float: left;
+            margin-right: 10px;
+        }
+        >.hotel_icon {
+            background-image: url("../../../resources/images/icon1.png");
+            background-position: -189px -437px;
+        }
+        >.spot_icon {
+            background-image: url("../../../resources/images/icon1.png");
+            background-position: -233px -437px;
+        }
+        >div {
+            float: left;
+            width: 270px;
+            margin-top: -3px;
+        }
+    }
+    .person_list {
+        margin: 20px;
+        line-height: 2;
+    }
+    .person_type {
+        float: left;
+    }
+    .person_price {
+        float: right;
+    }
+    .pay {
+        margin: 40px 20px 20px 20px;
+    }
+    .money {
+        margin-left: 20px;
+        color: @cl_orange;
+        >span {
+            font-size: 24px;
+        }
+    }
+    .pay_btn {
+        float: right;
+        margin-top: 4px;
+    }
+
+    /*航班接送信息*/
+    [flight_info] {
+        .flight_ul {
+            >li {
+                .label {
+                    width: 40px;
+                }
+                .flight_num {
+                    >input {
+                        width: 105px;
+                        font-size: 12px;
+                    }
+                }
+                .flight_date {
+                    >input {
+                        width: 95px;
+                        font-size: 12px;
+                    }
+                }
+                .flight_hour {
+                    margin-top: 5px;
+                    .select_ul {
+                        height: 200px;;
+                    }
+                    .select_unit {
+                        width: 121px;
+                    }
+                }
+                .flight_minute {
+                    margin-top: 5px;
+                    .select_ul {
+                        height: 200px;;
+                    }
+                    .select_unit {
+                        width: 111px;
+                    }
+                }
+            }
+        }
+    }
+    .next_btn {
+        margin: 40px 0 100px 80px;
+    }
+
+}
+
+//弹窗
+.reg_pop_box{
+    width:100%;
+    height:100%;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 300;
+    display: none;
+}
+
+[reg_pop]{
+    .reg_pop_bg{
+        width:100%;
+        height:100%;
+        position: absolute;
+        top:0;
+        left:0;
+    }
+    .reg_pop{
+        width: 1000px;
+        height:560px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin:-280px 0 0 -500px;
+        background: #fff;
+        -webkit-box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        -moz-box-shadow: 0 10px 30px rgba(0,0,0,0.2)    ;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2)    ;
+    }
+    .reg_tit{
+        padding:13px 23px;
+        border-top:1px solid #edecec;
+        border-bottom:1px solid #edecec;
+        background: #f5f8f9;
+        position: relative;
+    }
+    .reg_tit i{
+        width:40px;
+        height:40px;
+        background: url(../../../resources/images/icon1.png) no-repeat;
+        background-position: -481px -317px;
+        position: absolute;
+        right: 23px;
+        top: 6px;
+        cursor: pointer;
+    }
+    .reg_content{
+        padding:23px 47px;
+    }
+    .reg_content h3{
+        text-align: center;
+    }
+    .reg_font{
+        height: 356px;
+        overflow-y: scroll;
+        margin-top: 37px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width:1200px) {
+    [reg_pop]{
+        .reg_pop{
+            width: 700px;
+            height: 460px;
+            margin: -230px 0 0 -350px;
+        }
+        .reg_font {
+            height: 305px;
+            margin-top: 20px;
+        }
+    }
+    body {
+        font-size: 12px;
+    }
+
+
+
+
+    /*预订信息*/
+    [reserve-info] {
+        font-size: 12px;
+        h2 {
+            font-size: 18px;
+            font-weight: normal;
+        }
+        .info {
+            .info_left {
+                float: left;
+                color: @cl_gray;
+            }
+            >li {
+                .info_right {
+                    width: 530px;
+                }
+            }
+        }
+    }
+
+    /*出游人信息*/
+    [person_info] {
+
+        font-size: 12px;
+        /*常旅*/
+        .person_card_list {
+            .card_ul {
+                >li {
+                    width: 120px;
+                    height: 44px;
+                }
+            }
+        }
+
+        /*添加出游人*/
+        .add_person {
+            .label {
+                padding: 0 8px;
+            }
+            .public {
+                width: 95px;
+                font-size: 12px;
+            }
+            .person_list {
+                padding-left: 10px;
+                >li {
+                    .select_unit {
+                        width: 125px;
+                        margin-right: 5px;
+                        .select_btn {
+                            span {
+                                width: 110px;
+                            }
+                        }
+                     }
+                    .clear_input {
+                        line-height: 35px;
+                    }
+                }
+            }
+        }
+    }
+
+    /*联系方式*/
+    [contact_info] {
+        font-size: 12px;
+        .contact_ul {
+            >li {
+                .label {
+                    width: 70px;
+                }
+                input {
+                    font-size: 12px;
+                }
+                .select_unit {
+                    width: 458px;
+                }
+                .short_input {
+                    width: 187px;
+                }
+                .phone_code {
+                    width: 80px;
+                }
+                .phone {
+                    width: 340px;
+                }
+            }
+        }
+    }
+
+    /*航班接送信息*/
+    [flight_info] {
+        font-size: 12px;
+        .flight_ul {
+            >li {
+                .label {
+                    width: 70px;
+                }
+                .flight_num {
+                    >input {
+                        width: 105px;
+                        font-size: 12px;
+                    }
+                }
+                .flight_date {
+                    >input {
+                        width: 95px;
+                        font-size: 12px;
+                    }
+                }
+                .flight_hour {
+                    .select_unit {
+                        width: 70px;
+                    }
+                }
+                .flight_minute {
+                    .select_unit {
+                        width: 70px;
+                    }
+                }
+            }
+        }
+    }
+
+    .next_btn {
+        margin: 40px 0 100px 170px;
+    }
+
+    /*费用明细*/
+    [cost_detail] {
+        font-size: 12px;
+        .detail_item {
+            >div {
+                width: 205px;
+            }
+        }
+        .money {
+            margin-left: 15px;
+            >span {
+                font-size: 20px;
+            }
+        }
+        .pay_btn {
+            margin-top: 0px;
+            p {
+                width: 100px;
+            }
+        }
+    }
+
+
+    [select-div] {
+        .select_unit {
+            .select_btn {
+                line-height: 35px;
+            }
+            i {
+                top: 15px;
+            }
+        }
+        .select_ul {
+            li {
+                line-height: 35px;
+            }
+        }
+    }
+}
+
+@media all and (orientation:portrait) {
+
+    [reg_pop]{
+        .reg_pop{
+            width: 570px;
+            height: 440px;
+            margin: -220px 0 0 -285px;
+        }
+        .reg_font {
+            height: 285px;
+            margin-top: 20px;
+        }
+    }
+    /*预订信息*/
+    [reserve-info] {
+        h2 {
+            font-size: 16px;
+        }
+        .info {
+            >li {
+                .info_right {
+                    width: 340px;
+                }
+            }
+        }
+    }
+
+    /*出游人信息*/
+    [person_info] {
+        /*常旅*/
+        .person_card_list {
+            padding: 10px 20px;
+            >p {
+                width: 200px;
+                padding-top: 0px;
+            }
+            .card_ul {
+                >li {
+                    width: 120px;
+                    height: 44px;
+                    margin-left: 10px;
+                    margin-top: 10px;
+                }
+            }
+        }
+
+        /*添加出游人*/
+        .add_person {
+            .label {
+                line-height: 36px;
+            }
+            .public {
+                width: 80px;
+            }
+            .person_list {
+                >li {
+                    >i {
+                        display: block;
+                    }
+                    .last_name {
+                        margin-left: 10px;
+                    }
+                    .nationality {
+                        margin-left: 26px;
+                        margin-top: 5px;
+                    }
+                    .select_unit {
+                        width: 222px;
+                        margin-top: 2px;
+                        .select_btn {
+                            span {
+                                width: 210px;
+                            }
+                        }
+                    }
+                    .clear_input {
+                        margin-top: 5px;
+                        line-height: 35px;
+                    }
+                }
+            }
+        }
+    }
+
+    /*联系方式*/
+    [contact_info] {
+        .contact_ul {
+            >li {
+                .label {
+                    width: 40px;
+                }
+                input {
+                    width: 268px;
+                }
+                .select_unit {
+                    width: 284px;
+                }
+                .short_input {
+                    width: 100px;
+                }
+                .phone_code {
+                    width: 80px;
+                }
+                .phone {
+                    width: 166px;
+                }
+            }
+        }
+    }
+
+}

@@ -1,50 +1,29 @@
 <?php
-	session_start(); 
-	echo session_id();
-	// 输出 dqr58dnuqj2gufvg4o3tmjb9v4
-
-exit;
-
-//$sql = "SELECT * FROM config ";
-//$query1 = $db->query($sql);
-//while($row=$db->fetch_array($query1)){
-//	$smarty->assign($row['keyid'],$row['value']);
-//}
-//
-//
-////首页新闻广告位
-//$smarty->assign('indexnews',selectdata('index_news',3));
-////首页京都十大经典项目广告位
-//$smarty->assign('indexdepart',selectdata('index_depart',10));
-//
-////首页视频中心广告位
-//$smarty->assign('indexvideo',selectdata('index_video',2));
-//
-////首页专家团队广告位
-//$smarty->assign('indexzhuanjia',selectdata('index_zhuanjia',11));
-////首页荣誉展示广告位
-//$smarty->assign('indexrongyu',selectdata('index_rongyu',11));
-////首页环境展示广告位
-//$smarty->assign('indexhuanjing',selectdata('index_huanjing',11));
-////首页设备展示广告位
-//$smarty->assign('indexshebei',selectdata('index_shebei',11));
-////首页国际顶尖技术项目广告位
-//$smarty->assign('indexguoji',selectdata('index_guoji',3));
-//
-////首页底部专题广告位
-//$smarty->assign('indexsubject',selectdata('index_subject',5));
-////首页合作伙伴广告位
-//$smarty->assign('indexpartner',selectdata('index_partner',20));
-////首页友情链接广告位
-//$smarty->assign('indexlink',selectdata('index_link',20));
-////首页网站标签广告位
-//$smarty->assign('indextag',selectdata('index_tag',20));
-//
-//
-////媒体报道
-//$smarty->assign('meititop',selectmessage('436','','','',false,0,1,'istop'));
-//$smarty->assign('meitits',selectmessage('436','','','',false,0,5,'ts'));
-
-$template = 'moban';
-$smarty->display(V_ROOT.'./moban/index.html',$cache_id);
+/**
+ *
+ * @package	Code2travel
+ * @author	heluo Dev Team
+ * @copyright	Copyright (c) 2003 - 2017, 河洛, Inc. (http://www.be-member.com/)
+ * @license	http://opensource.org/licenses/MIT	MIT License
+ * @link	http://be-member.com
+ * @since	Version 4.2.1
+ * @filesource
+ */
+//根目录
+define('V_ROOT', dirname(__FILE__));
+//合法应用config文件
+define('B_ENG', '1');
+//debug模式
+define('B_BUG', '1');
+B_BUG ? error_reporting(E_ALL & ~E_NOTICE) : error_reporting(0);
+//模板开启
+define('B_TEMP', '1');
+//路径设置
+$system_path = 'core';
+$source_path = 'resource';
+$view_path = 'view';
+define('BASEPATH', V_ROOT.'/'.$system_path);
+define('VIEWPATH', V_ROOT.'/'.$view_path);
+//设定完毕，开始
+include_once (BASEPATH . '/index.php');
 ?>

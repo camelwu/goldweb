@@ -1,0 +1,167 @@
+@charset "utf-8";
+/* CSS Document */
+/*文字色*/
+/*特殊位置黑色*/
+/*默认文字灰色*/
+/*默认主色调 特别用于强调的字、button和icon*/
+/*用于辅助说明文字、次要文字信息*/
+/*用于次要辅助说明文字*/
+/*用于详情提示文字，引导词*/
+/*用于价格显示、注意事项提醒文字*/
+/* 特殊样式白色字体 */
+/*辅助色*/
+/*用于搜索按钮*/
+/*用于各板块标题背景*/
+/*用于支付页详情背景*/
+/*公共顶部背景色*/
+/*用于背景颜色*/
+/*按钮划过颜色*/
+/*按钮划过颜色*/
+/*支付页首部背景色*/
+/*详情title背景色*/
+/*边线颜色*/
+/*默认主色调 特别用于强调的字、button和icon*/
+/*预订底部边框变色*/
+/* 灰色边框 */
+/*搜索背景色*/
+/*列表页标题底部边框颜色*/
+/*支付页警告边框线*/
+/*input边框线*/
+/*提示边框值*/
+/*提示边框阴影值*/
+/*字号*/
+/*用于航班时刻显示*/
+/*用于价格显示*/
+/*用于板块标题显示*/
+/*用于导航栏标题*/
+/*next  button按钮*/
+/*用于正文标题，重要文字信息*/
+/*用于补充说明文字、次要文字*/
+[order_phone] .order_phone {
+  height: 274px;
+}
+[order_phone] .order_num {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+[order_phone] .order_num i {
+  position: relative;
+  width: 4px;
+  height: 18px;
+  left: 0;
+  background-color: #8ace00;
+  display: inline-block;
+  margin-right: 10px;
+}
+[order_phone] .order_phone dd {
+  margin-bottom: 20px;
+  font-size: 14px;
+  margin-left: 10px;
+}
+[order_phone] .order_phone dd span {
+  margin-right: 20px;
+  cursor: pointer;
+  *display: inline-block;
+  *padding: 10px 0px;
+}
+[order_phone] input.order_phone_num {
+  width: 304px;
+}
+[order_phone] dd.order_warm {
+  display: inline-block;
+  float: left;
+}
+[order_phone] .order_warm input.public {
+  width: 154px;
+  margin-right: 20px;
+}
+[order_phone] dd.order_code {
+  display: inline-block;
+  margin-left: 0px;
+  *float: left;
+}
+[order_phone] dd.order_code .order_code_img {
+  display: inline-block;
+  float: left;
+  margin-left: 0px;
+  width: 130px;
+  height: 40px;
+  background: #ccc;
+  padding: 0px;
+}
+[order_phone] .order_code_img img {
+  width: 100%;
+  height: 100%;
+}
+[order_phone] dd span.order_code_change {
+  margin-left: 0px;
+  color: #53b2fe;
+  *display: inline-block;
+  *padding: 10px 0px;
+  line-height: 40px;
+  *line-height: 24px;
+}
+[order_phone] dd.order_line {
+  *width: 500px;
+  display: block;
+  height: 1px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+[order_phone] dd span.order_code_num {
+  width: 130px;
+  height: 40px;
+  color: #8ace00;
+  border: 1px solid #e5edf0;
+  line-height: 40px;
+  text-align: center;
+  margin-left: 0px;
+  padding: 0px;
+  cursor: pointer;
+  margin-right: 20px;
+  display: inline-block;
+  float: left;
+}
+[input-prompt] .btn {
+  height: 42px;
+  line-height: 42px;
+  display: inline-block;
+  width: 128px;
+}
+[bottom] {
+  margin-top: 90px;
+}
+@media (max-width: 1200px) {
+  .contents {
+    width: 880px;
+  }
+  [order_phone] .order_num {
+    font-size: 14px;
+  }
+  [order_phone] .order_num i {
+    height: 13px;
+  }
+  [order_phone] .order_phone dd span {
+    font-size: 12px;
+    margin-right: 12px;
+  }
+  [order_phone] input.order_phone_num {
+    width: 280px;
+  }
+  [order_phone] .order_warm input.public {
+    width: 140px;
+    margin-right: 11px;
+    padding: 10px 8px;
+  }
+  [order_phone] .order_phone {
+    height: 235px;
+  }
+}
+@media all and (orientation: portrait) {
+  .contents {
+    width: 680px;
+  }
+  [order_phone] .order_num {
+    font-size: 13px;
+  }
+}

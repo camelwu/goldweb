@@ -1,0 +1,226 @@
+/*文字色*/
+/*特殊位置黑色*/
+/*默认文字灰色*/
+/*默认主色调 特别用于强调的字、button和icon*/
+/*用于辅助说明文字、次要文字信息*/
+/*用于次要辅助说明文字*/
+/*用于详情提示文字，引导词*/
+/*用于价格显示、注意事项提醒文字*/
+/* 特殊样式白色字体 */
+/*辅助色*/
+/*用于搜索按钮*/
+/*用于各板块标题背景*/
+/*用于支付页详情背景*/
+/*公共顶部背景色*/
+/*用于背景颜色*/
+/*按钮划过颜色*/
+/*按钮划过颜色*/
+/*支付页首部背景色*/
+/*详情title背景色*/
+/*边线颜色*/
+/*默认主色调 特别用于强调的字、button和icon*/
+/*预订底部边框变色*/
+/* 灰色边框 */
+/*搜索背景色*/
+/*列表页标题底部边框颜色*/
+/*支付页警告边框线*/
+/*input边框线*/
+/*提示边框值*/
+/*提示边框阴影值*/
+/*字号*/
+/*用于航班时刻显示*/
+/*用于价格显示*/
+/*用于板块标题显示*/
+/*用于导航栏标题*/
+/*next  button按钮*/
+/*用于正文标题，重要文字信息*/
+/*用于补充说明文字、次要文字*/
+/*景点板块 tab导航*/
+[nav_sub] {
+  height: 40px;
+  overflow: hidden;
+}
+[nav_sub] .icon {
+  width: 50px;
+  height: 40px;
+  background: #FCF;
+}
+[nav_sub] .tab li,
+[nav_sub] .category p {
+  height: 40px;
+  line-height: 60px;
+}
+[nav_sub] .tab li {
+  padding-right: 14px;
+}
+/*机票   左侧导航+右侧*/
+[container_lr] {
+  /*右侧的内容*/
+}
+[container_lr] .contain_screen_l {
+  width: 240px;
+  left: 0;
+  top: 0;
+}
+[container_lr] .content {
+  width: 940px;
+  position: relative;
+}
+/*机票   右侧导航+左侧*/
+[container_rl] {
+  /*左侧的内容*/
+}
+[container_rl] .contain_screen_r {
+  margin-bottom: 100px;
+  width: 360px;
+  right: 0;
+  top: 0;
+}
+[container_rl] .contain_screen_r .border {
+  border: 1px solid #eaf1f3;
+}
+[container_rl] .contain_screen_r .flight {
+  margin-bottom: 30px;
+}
+[container_rl] .content {
+  width: 820px;
+}
+/*机票   中间三栏等分  首页*/
+/*公共  步骤流程图*/
+[step-flow] .step_flow_img {
+  padding-left: 32px;
+}
+[step-flow] .step_flow_img i {
+  width: 30px;
+  height: 29px;
+  text-align: center;
+  line-height: 29px;
+  color: #fff;
+  font-size: 14px;
+  float: left;
+  background-image: url("../../resources/images/icon1.png");
+  background-repeat: no-repeat;
+  background-position: -85px -20px;
+}
+[step-flow] .step_flow_img i.cur {
+  background-position: -33px -20px;
+}
+[step-flow] .step_flow_img span {
+  height: 3px;
+  float: left;
+  background: #f2eef6;
+  margin: 13px 4px 0 4px;
+}
+[step-flow] .step_flow_img span.cur {
+  background: #8ace00;
+}
+[step-flow] .step_flow_word {
+  padding-top: 10px;
+}
+[step-flow] .step_flow_word p {
+  float: left;
+  width: 96px;
+  font-size: 14px;
+  color: #d3d3d7;
+  text-align: center;
+}
+[step-flow] .step_flow_word p.cur {
+  color: #8ace00;
+}
+/*公共  步骤流程图  3个步骤 加*/
+[step-num3] .step_flow_img span {
+  width: 514px;
+}
+[step-num3] .step_flow_word .pd {
+  padding: 0 455px;
+}
+/*公共  步骤流程图  4个步骤 加*/
+[step-num4] .step_flow_img span {
+  width: 330px;
+}
+[step-num4] .step_flow_word .pd {
+  padding: 0 270px;
+}
+[step-num4] .step_flow_word .pd2 {
+  padding: 0 270px 0 4px;
+}
+/*适配*/
+@media (max-width: 1200px) {
+  /*公共  步骤流程图*/
+  [step-flow] .step_flow_img {
+    padding-left: 25px;
+  }
+  [step-flow] .step_flow_word {
+    padding-top: 8px;
+  }
+  [step-flow] .step_flow_word p {
+    width: 78px;
+  }
+  [step-flow] .step_flow_img i {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    background-position: -398px -172px;
+  }
+  [step-flow] .step_flow_img i.cur {
+    background-position: -350px -172px;
+  }
+  [step-num3] .step_flow_img span {
+    width: 362px;
+  }
+  [step-num3] .step_flow_word .pd {
+    padding: 0 322px;
+  }
+  [step-num4] .step_flow_img span {
+    width: 235px;
+  }
+  [step-num4] .step_flow_word .pd {
+    padding: 0 183px 0 189px;
+  }
+  [step-num4] .step_flow_word .pd2 {
+    padding: 0 188px 0 5px;
+  }
+  /*左右  右侧导航*/
+  [container_rl] .content {
+    width: 575px;
+  }
+  [container_rl] .contain_screen_r {
+    width: 290px;
+  }
+  /*机票   左侧导航+右侧*/
+  [container_lr] .content {
+    width: 624px;
+  }
+}
+@media all and (orientation: portrait) {
+  /*公共  步骤流程图*/
+  [step-flow] .step_flow_img {
+    padding-left: 20px;
+  }
+  [step-flow] .step_flow_word p {
+    width: 68px;
+  }
+  [step-num3] .step_flow_img span {
+    width: 266px;
+  }
+  [step-num3] .step_flow_word .pd {
+    padding: 0 236px;
+  }
+  [step-num4] .step_flow_img span {
+    width: 172px;
+  }
+  [step-num4] .step_flow_word .pd {
+    padding: 0 120px 0 135px;
+  }
+  [step-num4] .step_flow_word .pd2 {
+    padding: 0 134px 0 16px;
+  }
+  /*左右  右侧导航*/
+  [container_rl] .content {
+    width: 375px;
+  }
+  /*机票   左侧导航+右侧*/
+  [container_lr] .content {
+    width: 424px;
+  }
+}

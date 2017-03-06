@@ -1,0 +1,288 @@
+@import "./color";
+.icon_arrow{
+  width: 48px;
+  height: 25px;
+  background: url("../images/icon1.png") no-repeat;
+  background-size:726px 513px;
+  background-position: -668px -10px;
+  *background-position: -725px -10px;
+  position: absolute;
+  top:4px;
+  left: 144px;
+}
+.icon_num{
+  position: absolute;
+  top:28px;
+  left:70px;
+  width: 26px;
+  height: 26px;
+  background: url("../images/icon1.png")no-repeat;
+  background-position: -82px -90px;
+  background-size: 790px 513px;
+  text-align: center;
+  line-height:29px;
+  color:@cl_main;
+}
+[tip]{
+  div.tip_box_back{
+    left:102px;
+  }
+  div.tip_box_bag{
+    left:10px;
+  }
+  .tip_icon1{
+    left:206px;
+  }
+}
+[flight_info]{
+  .info_title{
+    background: @bg_title;
+    height: 42px;
+    line-height:42px;
+    font-size: 14px;
+    padding:0 20px;
+    border-bottom: 1px solid @bdc_title_border;
+  }
+  .info_title a{
+    color:@cl_blue;
+    *float: left;
+  }
+  .info_title span{
+    font-size:12px;
+    color:@cl_gray;
+  }
+  .icon_ai{
+    width: 18px;
+    height: 18px;
+    border:1px solid @bdc_gray;
+    border-radius: 10px;
+    position: absolute;
+    top:8px;
+    left:-4px;
+  }
+  .logo{
+    height: 10px;
+    width: 10px;
+    margin-left:4px;
+    margin-bottom:8px;;
+  }
+  .info_content ul{
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:20px;
+  }
+  .info_content span{
+    display: inline-block;
+  }
+  span.info_first_air{
+    position: relative;
+  }
+  .info_detail_air{
+    display: inline-block;
+    float: right;
+    width: 75%;
+  }
+  .info_direct{
+    font-size:12px;
+    line-height:34px;
+    border-bottom:1px solid @bdc_gray;
+    padding-bottom:10px;
+  }
+  .info_d_t{
+    width: 76px;
+    color:@cl_main;
+    display: inline-block;
+    *float: left;;
+  }
+  .info_d_t span{
+    color:@cl_default;
+  }
+  .info_air{
+    padding-left:20px;
+    *padding-left:20px;
+    //width: 104px;
+    //white-space: nowrap;
+    //text-overflow: ellipsis;
+    //overflow: hidden;
+  }
+  .info_d_num{
+    color:@cl_blue;
+  }
+  .info_day{
+    *width:100%;
+  }
+  .info_day span{
+    color:@cl_gray;
+  }
+  .info_d_g{
+    width: 126px;
+    text-align: right;
+    *float: left;
+  }
+  .info_d_a{
+    width: 118px;
+  }
+  .info_time{
+    position: relative;
+  }
+  .info_airport{
+    color:@cl_gray;
+  }
+  .info_hub{
+    padding-bottom:14px;
+  }
+}
+.info_note {
+  border-bottom:1px solid @bdc_gray;
+  border-left:1px solid @bdc_gray;
+  border-right:1px solid @bdc_gray;
+  margin-bottom:30px;
+  height: 54px;
+  line-height:54px;
+  color:@cl_blue;
+  font-size:14px;
+  position: relative;
+}
+.info_note span{
+  width: 90px;
+  text-align: center;
+  cursor:pointer;
+}
+[cost_detail]{
+  .cost_detail{
+    padding-bottom:20px;
+  }
+  .cost_title{
+    background: @bg_title;
+    height: 42px;
+    line-height: 42px;
+    font-size: 14px;
+    padding: 0 20px;
+    border-bottom: 1px solid @bdc_title_border;
+  }
+  .cost_num{
+    padding:20px 20px 10px 20px;
+    font-size:14px;
+  }
+  .cost_numtitle{
+    line-height:34px;
+  }
+  .cost_sum{
+    font-size:24px;
+    color:@cl_orange;
+    text-align: right;
+    width: 150px;
+    display: inline-block;
+  }
+  .cost_p_sum{
+    display: block;
+    font-size:14px;
+    line-height:20px;
+    text-align: right;
+  }
+  .cost_list{
+    font-size:14px;
+    color:@cl_gray;
+    padding:0 20px;
+    height: 34px;
+    line-height:34px;
+  }
+  .cost_first{
+    line-height:40px;
+    height: 40px;
+    color:@cl_default;
+  }
+}
+
+@media (max-width:1200px){
+  [content_l] {
+    .v_container{
+      padding:6px 10px 14px 16px;
+    }
+    .v_com{
+      padding:10px 10px 10px 16px;
+    }
+  }
+  .icon_arrow{
+    left:118px;
+  }
+  [flight_info]{
+    .info_title{
+      padding:0 10px;
+      font-size:13px;
+    }
+    .icon_ai{
+      left:-2px;
+      top:8px;
+    }
+    .info_title span{
+      font-size:11px;
+    }
+    .info_content{
+      padding:10px 0 8px;
+    }
+    .info_direct{
+      font-size:11px;
+    }
+    .info_content ul{
+      padding-left:10px;
+      padding-right:10px;
+      padding-top:0px;
+    }
+    .info_d_g{
+      width:106px;
+    }
+    .info_d_a{
+      width: 100px;
+    }
+    .info_note span{
+      width: 80px;
+    }
+    .info_hub{
+      padding-bottom:8px;
+    }
+    .info_note{
+      font-size: 12px;
+    }
+    .info_detail_air{
+      width: 70%;
+    }
+    .info_direct{
+      padding-bottom:0px;
+    }
+  }
+  [cost_detail] {
+    .cost_num{
+      padding:10px 10px 8px 10px;
+      font-size:13px;
+    }
+    .cost_sum{
+      width: 120px;
+    }
+    .cost_list{
+      font-size:12px;
+      line-height:28px;
+    }
+    .cost_detail{
+      padding-bottom:10px;
+    }
+  }
+  [tip] {
+    div.tip_box_bag {
+      left: -58px;
+    }
+    div.tip_box_back {
+      left: 33px;
+    }
+  }
+}
+@media all and (orientation:portrait){
+  [content_l] {
+    .v_container{
+      padding:6px 10px 14px 16px;
+    }
+    .v_com{
+      padding:10px 10px 10px 16px;
+    }
+  }
+}

@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><{$cnname}>_旅行社_<{$ktitle}>_金桥</title>
+<link href="<{$siteurl}>/css/global.css" rel="stylesheet" type="text/css">
+<link href="<{$siteurl}>/css/MemberCenter.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="<{$siteurl}>/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="<{$siteurl}>/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="<{$siteurl}>/js/Calendar.js"></script>
+<script type="text/javascript" src="<{$siteurl}>/js/index.js"></script>
+</head>
+<body>
+<{include_php file="./view/common/header.php"}>
+<div class="wrapper about_box mc_box clrfix">
+    <ul class="about_left mc_left">
+        <div class="mc_left_title">会员中心</div>
+        <li class="al_li">我的旅行袋<span></span></li>
+        <li>个人资料<span></span></li>
+        <li>修改密码<span></span></li>
+        <li>常用出行人<span></span></li>
+    </ul>
+    <div class="about_right mc_right">
+        <ul class="mc_cont my_travel al_ul"><!--我的旅行袋-->
+            <li class="abr_title">我的旅行袋</li>
+            <li class="mc_status">
+                <a href="#" class="mc_last mc_on">所有旅行记录</a>
+                <a href="#">未付款</a>
+                <a href="#">已成功</a>
+                <a href="#">已取消</a>
+            </li>
+            <li>
+             <table width="100%" border="0">
+                <tr class="table_hd">
+                    <td align="center">订单号</td>
+                    <td align="center">产品名称</td>
+                    <td align="center">出发时间</td>
+                    <td align="left">已付金额</td>
+                    <td align="center">订单总额</td>
+                    <td align="center">状态</td>
+                    <td align="center">下单时间</td>
+                    <td align="center">操作</td>
+                </tr>
+                <{foreach name=order item=val from=$orders}><tr class="table_bd">               
+                    <td align="center"><{$val.orderid}></td>
+                    <td align="center"><{$val.info_name}></td>
+                    <td align="center"><{$val.go_time}></td>
+                    <td align="left"><{$val.price2}>.0</td>
+                    <td align="center"><{$val.price}>.0</td>
+                    <td align="center"><{$val.status}></td>
+                    <td align="center"><{$val.ordertime}></td>
+                    <td align="center"><a href="#">订单详情</a></td>                    
+                </tr><{/foreach}>
+            </table>
+            </li>
+        </ul>
+        <ul class="change_pass personal_data"><!--个人资料-->
+            <li class="abr_title">个人资料</li>
+            <li class="pd_name"><span>姓名：</span><input type="text" name="name" value="<{$user.name}>"/></li>
+            <li><span>性别：</span><{html_radios name="sex" options=$sexs checked=$user.sex separator=""}></li>
+            <li class="pd_bir"><span>出生日期：</span><input type="text" name="birthday" id="j_Date1" value="<{$user.birthday}>"/></li>
+            <li><span>手机号码：</span><input type="text" name="tel" value="<{$user.tel}>"/></li>
+            <li>
+           	  <span>证件类型：</span>
+                <select name="idtype"><{html_options options=$idtypes selected=$user.idtype}></select>
+          	</li>
+            <li><span>证件号码：</span><input type="text" name="idnumber" value="<{$user.idnumber}>"/></li>
+            <li><a href="#">保存</a></li>
+        </ul>
+        <ul class="change_pass"><!--修改密码-->
+            <li class="abr_title">修改密码</li>
+            <li><span>旧密码：</span><input type="password" name="oldpass"/></li>
+            <li><span>新密码：</span><input type="password" name="password"/></li>
+            <li><span>再次输入：</span><input type="password" name="password2"/></li>
+            <li><a href="#">保存</a></li>
+        </ul>
+        <ul class="mc_cont"><!--常用出行人-->
+            <li class="abr_title">常用出行人</li>
+            <li>
+            <table width="100%" border="0">
+                <tr class="table_hd">
+                    <td align="left">姓名</td>
+                    <td align="center">成人/儿童</td>
+                    <td align="center">证件类型</td>
+                    <td align="center">证件号码</td>
+                    <td align="center">出生日期</td>
+                    <td align="center">性别</td>
+                    <td align="center">操作</td>
+                </tr>
+                <{foreach name=contact item=val from=$contact}><tr class="table_bd">               
+                    <td align="left"><{$val.name}></td>
+                    <td align="center"><{$val.adult}></td>
+                    <td align="center"><{$val.idtype}></td>
+                    <td align="center"><{$val.idtnumber}></td>
+                    <td align="center"><{$val.birthday}></td>
+                    <td align="center"><{$val.sex}></td>
+                    <td align="center">
+                        <a href="#">展开</a>|
+                        <a href="#">编辑</a>|
+                        <a href="#">删除</a>
+                    </td>                    
+                </tr><{/foreach}>
+            </table>                
+		    </li>
+        </ul>
+    </div>
+</div>
+
+
+<{include file="./view/common/footer.html"}>
+<script type="text/javascript">
+$(function(){
+	var about_left_h=$(".about_box").height();
+	$(".about_left").height(about_left_h).css("min-height","600px");
+	$(".about_left li").click(function(){//关于我们左侧单击	    
+		var al_num=$(".about_left li").index(this);
+		$(this).siblings().removeClass("al_li");
+		$(this).addClass("al_li");
+		$(".about_right ul").hide();
+		$(".about_right ul").eq(al_num).show(0);
+		var about_left_h=$(".about_box").height()-2;
+		$(".about_left").height(about_left_h).css("min-height","500px");
+	});	
+})
+</script>
+</body>
+</html>
+

@@ -21,11 +21,28 @@ if ('getend' == $action) {
 	}else{
 		
 	}
-	if (!empty ($end)) {
+	//从查询库里做中转
+	/*if (!empty ($end)) {
 		$cmin = cg_search_cmin($end);
 		if (!empty ($cmin)) {
 			$sqlwhere .= " and FIND_IN_SET(a.id,'{$cmin}') ";
 		}
+	}*/
+	//直接找产品
+	if(empty($end)){
+		$sql = "select aid2 from cg_product_route where aid2!=0 GROUP BY aid2";
+	}else{
+		$sql = "select aid2 from cg_product_route where aid2!=0 and cid2=$end GROUP BY aid2";
+	}
+	$str = '';
+	$my = $db->query($sql);
+	while ($info = $db->fetch_array($my)) {
+		$str .= $info['aid2'].",";
+	}
+	if(strlen($str)>1) $cmin = substr($str, 0, -1);
+
+	if (!empty ($cmin)) {
+		$sqlwhere .= " and FIND_IN_SET(a.id,'{$cmin}') ";
 	}
 	$query = $db->query("SELECT a.id,a.title FROM cg_area a where 1=1 $sqlwhere order by a.region,a.pid");
 	//echo("SELECT a.id,a.title FROM cg_area a,cg_area b where a.pid=b.id $sqlwhere order by a.region,a.pid");

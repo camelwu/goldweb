@@ -1,0 +1,72 @@
+@import "../color";
+[pay_success]{
+  .pay_center{
+    width: 460px;
+    margin:158px auto 200px;
+    padding-left:100px;
+    position: relative;
+  }
+  .icon_success{
+    width: 86px;
+    height: 86px;
+    background: url("../../../resources/images/icon1.png") no-repeat;
+    background-position:-586px -234px;
+    background-size:790px 513px;
+    position: absolute;
+    top:0;
+    left:0;
+  }
+  .icon_fail{
+    width: 86px;
+    height: 86px;
+    background: url("../../../resources/images/icon1.png") no-repeat;
+    background-position:-690px -234px;
+    background-size:790px 513px;
+    position: absolute;
+    top:0;
+    left:0;
+  }
+  .pay_center p{
+    font-size:20px;
+    line-height:48px;
+  }
+  .success{
+    font-size:14px;
+    color:@cl_gray;
+  }
+  .success_one{
+    color:@cl_orange;
+  }
+  .success_two{
+    color:@cl_blue;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .pay_ad{
+    height:180px;
+    margin-bottom:88px;
+  }
+  .pay_ad img{
+    height: 100%;
+    width: 100%;
+  }
+}
+/*适配*/
+@media (max-width:1200px){
+  [pay_success] .pay_ad{
+    height:120px;
+  }
+  [pay_success]{
+    .pay_center {
+      margin:100px auto 120px;
+    }
+    .pay_ad{
+      margin-bottom:50px;
+    }
+  }
+}
+@media all and (orientation:portrait){
+  [pay_success] .pay_ad{
+    height:100px;
+  }
+}

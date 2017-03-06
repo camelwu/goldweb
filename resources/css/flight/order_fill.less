@@ -1,0 +1,497 @@
+@import '../color';
+input{
+  font-family: "microsoft yahei", Arial, sans-serif;
+  font-size: 14px;
+}
+#loading-div {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  text-align: center;
+  padding: 40%;
+}
+input:-webkit-autofill {-webkit-box-shadow: 0 0 0 1000px white inset;}
+[fill]{
+  .next_button{
+    margin:90px auto 90px;
+  }
+  .btnSubmit{
+    width:100%;
+    background: @cl_main;
+    border:0;
+    height:48px;
+    color: @cl_white;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+}
+[order-mess]{
+  font-size: @font14;
+  .message{
+    padding:0 20px;
+    height:47px;
+    line-height: 48px;
+    border-bottom:1px solid @bdc_title_border;
+    background: @bg_Order_detail_title;
+    margin-top:16px;
+  }
+  .message span,.message i{
+    float: left;
+  }
+  .message .adult{
+    padding:0 11px 0 34px;
+  }
+  .message .child{
+    padding:0 5px 0 39px;
+  }
+  .message .help{
+    margin:13px 15px 0 5px;
+  }
+  .change_num{
+    width:120px;
+    height:32px;
+    line-height: 32px;
+    border-bottom: 1px solid #7dc400;
+    background: @cl_main;
+    color: @cl_white;
+    text-align: center;
+    margin-top:8px;
+    border-radius:2px;
+  }
+  .b_loadding{
+    width: 200px;
+    text-align: center;
+    margin: 20px auto 20px;
+    display: none;
+  }
+  .b_loadding .e_load_img {
+    margin-bottom: 10px;
+  }
+  .b_loadding .e_load_msg {
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+}
+[order-fill]{
+  font-size: @font14;
+  .contact{
+    padding:12px 0 0px;
+  }
+  .mes_li{
+    padding-top: 22px;
+  }
+  input.public{
+    width:520px;
+  }
+  //.help_error_block, .help_error_inline, .help_right_block, .help_right_inline {
+  //  clear: both;
+  //  position: absolute;
+  //  text-align: left;
+  //  _margin-left: 3px;
+  //  color: #d80000;
+  //  line-height: 22px;
+  //  padding-left: 16px;
+  //  margin-right: 10px;
+  //  font-size: 12px;
+  //}
+  //.help_right_block, .help_right_inline {
+  //  color: #33cc00;
+  //}
+
+}
+[step-fill]{
+  padding-top: 19px;
+  padding-bottom: 35px;
+}
+[card-id]{
+  border-bottom:1px solid @bdc_input;
+  padding:32px 0 17px;
+  .common_li{
+    margin-left:46px;
+  }
+  .common_li li{
+    margin-bottom: 15px;
+  }
+  .common_li li:hover{
+    cursor: pointer;
+  }
+  .common{
+    padding-left: 20px;
+    line-height: 62px;
+  }
+  .card_font{
+    width:164px;
+    height:51px;
+    border:1px solid @bdc_input;
+    border-radius:2px;
+    margin-left: 20px;
+    padding:8px 11px 0;
+  }
+  .card_font i{
+    width:30px;
+    height:26px;
+    bottom:0;
+    right:0;
+  }
+  .card_font.cur{
+    border:1px solid @cl_main;
+  }
+  .card_font.cur i{
+    background: url(../../../resources/images/icon1.png) no-repeat -33px -176px;
+  }
+}
+[add-people]{
+  padding-top:31px;
+  .pdt10{
+    padding-top:8px;
+  }
+  li{
+    float: left;
+    width:100%;
+  }
+  .word_l{
+    width:107px;
+    text-align: right;
+    padding-right: 21px;
+    line-height: 24px;
+  }
+  .select_unit{
+    width:194px;
+  }
+  .select_btn{
+    line-height: 38px;
+  }
+  [search-index] .type {
+    padding:0;
+    margin-top:0;
+  }
+  [search-index] .radioclass {
+    opacity: 0;
+    cursor: pointer;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+  .name{
+    padding:32px 0 18px 0;
+  }
+  .word_card{
+    width:44px;
+  }
+  .name input.public{
+    width:576px;
+  }
+  input.card_id2{
+    width:294px;
+  }
+  .card_id{
+    padding:18px 0 32px 0;
+  }
+  .button{
+    width:238px;
+    height:38px;
+    line-height: 38px;
+    border:1px solid @cl_main;
+    color: @cl_main;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  .empty{
+    font-size: @font12;
+    color: @cl_gray;
+    margin-right: 19px;
+    line-height: 24px;
+  }
+  .help{
+    margin:9px 0 0 12px;
+  }
+  .passenger ul{
+    padding-bottom:40px;
+  }
+  .button{
+    margin-top:-40px;
+  }
+  .passenger .select_ul{
+    padding-bottom:0;
+  }
+  .nationality_ul{
+    width:596px;
+    position: absolute;
+    background: #fff;
+    display: none;
+    border: 1px solid #e1e1e1;
+    border-top: 0;
+    z-index: 123;
+    max-height: 266px;
+    overflow-y: auto;
+  }
+  .nationality_ul li{
+    line-height: 34px;
+    width: 100%;
+    text-align: left;
+    text-indent: 14px;
+  }
+  .nationality_ul li:hover{
+     background:#8ace00;
+     color:#FFFFFF;
+  }
+
+}
+/*国外机票*/
+[fii-international]{
+  .name input.surname{
+    width:174px;
+  }
+  .word_card_in{
+    width:64px;
+    padding-top:8px;
+  }
+  .ming{position: relative}
+  .ming input.public{
+    width:294px;
+  }
+  .name{
+    padding-bottom: 16px;
+  }
+  .card_id{
+    padding:0 0 16px 0;
+  }
+  .nationality{
+    padding:0 0 16px 0;
+  }
+  .add_arrow{position: relative}
+  .add_arrow i{
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 18px;
+    right: 12px;
+    border-width: 5px;
+    border-style: solid dashed dashed;
+    border-color: #999 transparent transparent transparent;
+  }
+}
+[container_rl] .contain_screen_r .flight {
+  margin-bottom: 0px;
+}
+//[tip] {.tip_box {
+//  left:100px;
+//}
+//  .tip_icon{
+//left:210px;
+//  }
+//}
+/*适配*/
+@media (max-width:1200px){
+  [card-id]{
+    padding: 23px 0 12px;
+    .common{
+      line-height: 48px;
+    }
+    .card_font{
+      width: 146px;
+      padding:8px 6px 0;
+      height: 46px;
+      font-size: 13px;
+      margin-left: 15px;
+    }
+  }
+  [add-people]{
+    padding-top: 24px;
+    .name input.public{
+      width: 370px;
+    }
+    .select_unit{
+      width:119px;
+    }
+    input.card_id2{
+      width: 164px;
+    }
+    .name {
+      padding:23px 0 15px 0;
+    }
+    .card_id {
+      padding:15px 0 23px 0;
+    }
+    .button{
+      width:180px;
+      height:30px;
+      line-height: 30px;
+    }
+    .nationality_ul{
+      width:386px;
+    }
+
+  }
+  [order-fill]{
+    input.public {
+      width: 370px;
+    }
+  }
+  [step-fill] {
+    padding-bottom: 23px;
+  }
+  [order-mess]{
+  }
+  [fill]{
+    .next_button{
+      margin: 90px auto 90px;
+    }
+    .next_button .btnSubmit{
+      border: 0;
+      cursor: pointer;
+      overflow: visible;
+      padding: 0;
+      color: #fff;
+      display: inline-block;
+      text-align: center;
+      border-radius: 2px;
+      outline: 0 none;
+      vertical-align: middle;
+      width: 260px;
+      height: 45px;
+      line-height: 45px;
+      background: #8ace00;
+    }
+  }
+  [fii-international]{
+    .ming input.public{
+      width:164px;
+    }
+    .name input.surname {
+      width: 103px;
+    }
+    .card_id {
+      padding: 0 0 16px 0;
+    }
+    .nationality {
+      padding: 0 0 16px 0;
+    }
+  }
+  [btn-default] .next {
+    width: 260px;
+    height: 45px;
+  }
+}
+@media all and (orientation:portrait){
+  [card-id]{
+    padding: 23px 0;
+    .common{
+      line-height: 48px;
+    }
+    .card_font{
+      width: 130px;
+      height: 44px;
+      font-size:@font12;
+      margin-left:5px;
+    }
+    .card_font i{
+      width: 21px;
+      height: 17px;
+    }
+    .card_font.cur i{
+      background-position: -77px -176px;
+    }
+  }
+  [order-mess] {
+    font-size:@font12;
+    .change_num{
+      width:70px;
+      height:26px;
+      line-height: 26px;
+      margin-top:11px;
+    }
+    .message{
+      height:40px;
+      line-height: 40px;
+      padding:0 10px;
+    }
+    .message .adult {
+      padding: 0 6px 0 15px;
+    }
+    .message .child {
+      padding: 0 5px 0 16px;
+    }
+    .message .help{
+      margin:9px 15px 0 5px;
+    }
+    .change_num{
+      height: 24px;
+      line-height: 24px;
+      margin-top:8px;
+    }
+  }
+  [add-people]{
+    .word_l{
+      width:80px;
+      padding-right:10px;
+    }
+    .name{
+      padding: 13px 0;
+    }
+    .name input.public {
+      width:220px;
+    }
+    input.card_id2 {
+      width:220px;
+    }
+    .card_num{
+      padding-top: 15px;
+    }
+    .ming{
+      padding-top: 15px;
+    }
+    .word_card_in{
+      padding-top: 21px;
+    }
+    .word_lp{
+      padding-top:15px;
+    }
+    .nationality {
+      padding-bottom:0;
+    }
+    .sex_name{
+      padding-top:13px;
+    }
+  }
+  [order-fill]{
+    input.public {
+      width: 220px;
+    }
+  }
+  [card-id]{
+    .card_font{
+      margin-left:15px;
+    }
+  }
+  [fii-international] .card_id {
+    padding:0;
+  }
+  [fill]{
+    .next_button .btnSubmit{
+      width:200px;
+      height:34px;
+      line-height: 34px;
+      font-size: 14px;
+    }
+    .next_button{
+      margin: 65px auto 90px;
+    }
+  }
+  [btn-default] .next {
+    width: 200px;
+    height: 36px;
+  }
+  [add-people] .select_unit{
+    width: 236px;
+  }
+  [add-people] .nationality_ul {
+    width: 236px;
+  }
+}

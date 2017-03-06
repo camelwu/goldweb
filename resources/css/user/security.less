@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+@import "../color";
+/*账户安全*/
+[security]{
+  .security_t{
+    height:39px;
+    line-height: 40px;
+    padding:0 26px;
+    border-bottom:1px solid #ebf1f3;
+    background: #f5f8f9;
+  }
+  .leave span{
+    color: #fd7f54;
+  }
+  .before{
+    font-size: 12px;
+    padding-left:37px;
+  }
+  .before span{
+    color: #999;
+  }
+  /*登录密码  手机验证*/
+  .security_font{
+    padding:0 26px;
+    line-height: 86px;
+    border-bottom:1px solid #f0f0f0;
+  }
+  .security_font .icon{
+    width:24px;
+    height:24px;
+    background: url(../../../resources/images/icon1.png) no-repeat;
+    background-position: -146px -329px;
+    margin-top:31px;
+  }
+  .security_font .word{
+    margin:0 90px 0 60px;
+  }
+  .security_font .href{
+    width:228px;
+  }
+  .security_font .href a{
+    color: #53b2fe;
+  }
+  .ad_sefity{
+    padding:210px 0 85px 0;
+  }
+  .ad_sefity img{
+    width:100%;
+  }
+  .password{
+    color: @cl_gray;
+  }
+  .phone_color{
+    color: @cl_gray;
+  }
+}
+@media (max-width:1200px){
+  [security]{
+    .security_font .word{
+      margin: 0 40px 0 20px;
+    }
+    .security_font .href {
+      width: 88px;
+    }
+  }
+}
+@media all and (orientation:portrait){
+  [password]{
+    .password span{
+      width:50px;
+    }
+  }
+}

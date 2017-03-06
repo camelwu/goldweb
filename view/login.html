@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>登录</title>
+<link href="<{$siteurl}>/css/global.css" rel="stylesheet"
+	type="text/css">
+<link href="<{$siteurl}>/css/login.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<a href="/" class="logo"></a>
+		<!--logo-->
+	</div>
+	<div class="wrapper login_box">
+		<div class="login_img">
+			<img src="images/login_img.jpg" width="100%">
+		</div>
+		<div class="login_main">
+			<div class="login_title clrfix">
+				登录账号<a href="#">忘记账号</a>
+			</div>
+			<form name="log_frm" method="post" action="/login">
+				<div class="login_user">
+					<input type="text" placeholder="请输入邮箱" name="email" />
+				</div>
+				<div class="login_pass">
+					<input type="password" name="password" placeholder="请输入密码" />
+				</div>
+				<ul class="login_vali clrfix">
+					<li class="log_txt"><input type="text" name="code"
+						placeholder="请输入验证码" /></li>
+					<li class="log_img"><img src="./view/common/scode.php"
+						id="findcode" width="85%" height="24" style="cursor: pointer;"
+						onClick="return get_code();" /></li>
+					<li class="log_btn"><a href="javascript:void(0);"
+						onClick="return get_code();">看不清，换一张</a></li>
+				</ul>
+				<div class="next_login clrfix" style="display:none;">
+					<label><input name="login_enable" type="checkbox" value="1">下次自动登录</label><a
+						href="#">忘记密码</a>
+				</div>
+				<div class="login_btn">
+					<a href="javascript:login();">登录</a>
+				</div>
+			</form>
+			<div class="cooper_hd">
+				<span>使用合作账号登录</span>
+			</div>
+			<ul class="cooper_bd clrfix">
+				<li class="coop_qq"><a href="#" title="QQ"></a></li>
+				<li class="coop_sina"><a href="#" title="新浪"></a></li>
+				<li class="coop_wechat"><a href="#" title="微信"></a></li>
+				<li class="coop_baidu"><a href="#" title="百度"></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<ul class="wrapper clrfix comm_login">
+		<!--金桥五大承诺-->
+		<li class="comm_title">金桥五大承诺&nbsp;&nbsp;让你旅游放心</li>
+		<li class="comm_cq">产品优质</li>
+		<li class="comm_jg">价格最新</li>
+		<li class="comm_bz">预约价格保证</li>
+		<li class="comm_qy">维护权益</li>
+		<li class="comm_pf">先行赔付</li>
+	</ul>
+
+</body>
+</html>
+<script language="javascript">
+	var validate = true;
+	function get_code() {
+		if (validate == true) {
+			document.getElementById("findcode").src = "include/scode.php?"
+					+ Math.random();
+			validate = false;
+			return false;
+		} else {
+			document.getElementById("findcode").src = "include/scode.php?"
+					+ Math.random();
+			validate = true;
+			return false;
+		}
+	}
+
+	function login() {
+		var email = $("input[name='email']");
+		var username = $("input[name='username']");
+		var password = $("input[name='password']");
+		var password2 = $("input[name='password2']");
+		var code = $("input[name='code']");
+		var url = "/getajax.php?action=login&email=" + email.val()
+				+ "&password=" + password.val() + "&code=" + code.val();
+		$.getJSON(url, function(json) {
+			if (json.status == '0') {
+				location.href = "/MemberCenter";
+			} else {
+				alert(json.msg);
+			}
+
+		});
+	}
+</script>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>

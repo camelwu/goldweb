@@ -1,0 +1,183 @@
+[order_lists]{
+    .order_ul{
+      position: relative;
+    }
+    .list_top{
+       line-height: 40px;
+       height: 40px;
+       color:#333333;
+       background:#f5f8f9;
+  }
+  .list_top .order_name{
+      margin-left:20px;
+      margin-right:60px;
+      float: left;
+  }
+  .list_top .order_no{
+       color: #999999;
+       float: left;
+  }
+  .list_top .order_no i{
+       color: #333333;
+  }
+  .list_top .order_date{
+    float: right;
+    color: #999999;
+    margin-right: 20px;
+  }
+  .order_out{
+   margin: 0 20px;
+  }
+  .order_out div{
+    padding: 32px 0;
+    text-align: center;
+    float:left;
+    cursor: pointer;
+  }
+  .order_out .order_name{
+        width: 170px;
+        text-align: left;
+  }
+  .order_name span a{
+    width: 170px;
+    //height: 32px;
+    display: block;
+  }
+  .order_out .order_owner{
+        width: 160px;
+  }
+  .order_out .trip_type{
+    width: 180px;
+    text-align: left;
+    color: #999999;
+  }
+  .order_out .trip_type span{
+     color: #333333;
+  }
+  .order_out .order_price{
+    width: 130px;
+    font-weight: 600;
+    color:#fd7f54;
+  }
+  .order_out .order_status{
+    width: 170px;
+    color: #999999;;
+  }
+  .order_out .order_actions a{
+    width: 78px;
+    color:#62b7fe;
+  }
+  .order_actions span{
+
+  }
+  .order_actions span:hover{
+    color:#62b7fe;
+
+  }
+}
+[traveller_lists] .list_top .traveller_name {
+  margin-left: 20px;
+  width: 170px;
+}
+[traveller_lists] .list_top .traveller_age {
+  width: 160px;
+}
+[traveller_lists] .list_top .id_type {
+  width: 180px;
+}
+[traveller_lists] .list_top .id_no {
+  width: 152px;
+}
+[traveller_lists] .list_top .tel_value {
+  width: 170px;
+}
+[traveller_lists] .list_top span {
+  display: block;
+  color: #999999;
+  float: left;}
+[bottom] {
+  margin-top: 90px;
+}
+@media (max-width:1200px){
+  [order_lists]{
+    .list_top{
+      line-height: 30px;
+      height: 30px;
+    }
+    .list_top .order_name{
+      margin-left:14px;
+      margin-right:44px;
+    }
+    .list_top .order_date{
+      margin-right: 14px;
+    }
+    .order_out{
+      margin: 0 16px;
+    }
+    .order_out div{
+      padding: 22px 0;
+    }
+    .order_out .order_name{
+      width: 132px;
+    }
+    .order_out .order_owner{
+      width: 118px;
+    }
+    .order_out .trip_type{
+      width: 130px;
+    }
+    .order_out .order_price{
+      width: 94px;
+    }
+    .order_out .order_status{
+      width: 120px;
+    }
+    .order_out .order_actions{
+      width: 60px;
+    }
+  }
+}
+
+
+@media all and (orientation:portrait) {
+  [order_lists]{
+    .list_top{
+      line-height: 24px;
+      height: 24px;
+      font-size: 12px;
+    }
+    .list_top .order_name{
+      margin-left:12px;
+      margin-right:32px;
+    }
+    .list_top .order_date{
+      margin-right: 12px;
+    }
+    .order_out{
+      margin: 0 12px;
+    }
+    .order_out div{
+      padding: 18px 0;
+      font-size: 12px;
+    }
+    .order_out .order_name{
+      width: 98px;
+    }
+    .order_out .order_owner{
+      width: 90px;
+    }
+    .order_out .trip_type{
+      width: 112px;
+    }
+    .order_out .order_price{
+      width: 74px;
+    }
+    .order_out .order_status{
+      width: 88px;
+    }
+    .order_out .order_actions{
+      width: 52px;
+      color:#62b7fe;
+    }
+  }
+}

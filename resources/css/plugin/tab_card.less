@@ -1,0 +1,86 @@
+@import "../color.less";
+
+
+[tab-card] {
+    width: 390px;
+    //height: 310px;
+    background: @bg_white;
+    padding: 30px 40px;
+
+    .tab_title {
+        >ul {
+            border-bottom: solid 1px @bdc_gray;
+
+            >li {
+                font-size: 16px;
+                color: @cl_gray;
+                margin-right: 25px;
+                display: block;
+                float: left;
+                cursor: pointer;
+            }
+            >.cur {
+                color: @cl_main;
+                border-bottom: solid 3px @bdc_main;
+            }
+        }
+    }
+    .tab_content {
+        >ul {
+            >li {
+                position: relative;
+                display: none;
+                height: 260px;
+            }
+            >.cur {
+                display: block;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    [tab-card] {
+        width: 320px;
+        padding: 20px 30px;
+
+        .tab_title {
+            >ul {
+                >li {
+                    font-size: 14px;
+                    margin-right: 25px;
+                }
+            }
+        }
+        .tab_content {
+            >ul {
+                >li {
+                    height: 200px;
+                }
+            }
+        }
+    }
+}
+
+@media all and (orientation: portrait) {
+    [tab-card] {
+        width: 300px;
+        padding: 20px 30px;
+
+        .tab_title {
+            >ul {
+                >li {
+                    font-size: 14px;
+                    margin-right: 25px;
+                }
+            }
+        }
+        .tab_content {
+            >ul {
+                >li {
+                    height: 170px;
+                }
+            }
+        }
+    }
+}

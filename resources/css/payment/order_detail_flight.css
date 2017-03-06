@@ -1,0 +1,276 @@
+/*文字色*/
+/*特殊位置黑色*/
+/*默认文字灰色*/
+/*默认主色调 特别用于强调的字、button和icon*/
+/*用于辅助说明文字、次要文字信息*/
+/*用于次要辅助说明文字*/
+/*用于详情提示文字，引导词*/
+/*用于价格显示、注意事项提醒文字*/
+/* 特殊样式白色字体 */
+/*辅助色*/
+/*用于搜索按钮*/
+/*用于各板块标题背景*/
+/*用于支付页详情背景*/
+/*公共顶部背景色*/
+/*用于背景颜色*/
+/*按钮划过颜色*/
+/*按钮划过颜色*/
+/*支付页首部背景色*/
+/*详情title背景色*/
+/*边线颜色*/
+/*默认主色调 特别用于强调的字、button和icon*/
+/*预订底部边框变色*/
+/* 灰色边框 */
+/*搜索背景色*/
+/*列表页标题底部边框颜色*/
+/*支付页警告边框线*/
+/*input边框线*/
+/*提示边框值*/
+/*提示边框阴影值*/
+/*字号*/
+/*用于航班时刻显示*/
+/*用于价格显示*/
+/*用于板块标题显示*/
+/*用于导航栏标题*/
+/*next  button按钮*/
+/*用于正文标题，重要文字信息*/
+/*用于补充说明文字、次要文字*/
+.nav_bread {
+  font-size: 12px;
+  line-height: 44px;
+}
+[bottom] {
+  margin-top: 90px;
+}
+.icon_detail {
+  position: absolute;
+  top: 6px;
+  right: -10px;
+  width: 14px;
+  height: 14px;
+  background: url("../../images/icon1.png") no-repeat;
+  background-position: -420px -24px;
+  background-size: 790px 513px;
+}
+.icon_detail_cur {
+  background-position: -402px -24px;
+}
+.icon_time {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: url("../../images/icon1.png") no-repeat;
+  background-position: -395px -90px;
+  background-size: 790px 513px;
+  position: relative;
+  top: 3px;
+  left: -14px;
+  *top: -2px;
+}
+.icon_num {
+  position: absolute;
+  top: 28px;
+  left: 70px;
+  width: 26px;
+  height: 26px;
+  background: url("../../images/icon1.png") no-repeat;
+  background-position: -82px -90px;
+  background-size: 790px 513px;
+  text-align: center;
+  line-height: 26px;
+  color: #8ace00;
+}
+[OrderDetail] .order_title {
+  background: #f9fdf2;
+  font-size: 14px;
+  line-height: 40px;
+  padding-left: 20px;
+  border-bottom: 1px solid #dce6ea;
+}
+[OrderDetail] [FlightInfo] .direct_content {
+  border-bottom: 1px solid #e5edf0;
+  height: 160px;
+  padding: 20px 0 20px;
+}
+[OrderDetail] [FlightInfo] .t_title {
+  padding-left: 20px;
+  width: 100px;
+  line-height: 54px;
+  font-size: 14px;
+  color: #8ace00;
+  text-align: center;
+  margin-top: 20px;
+}
+[OrderDetail] [FlightInfo] .t_direct_title {
+  margin-top: 0px;
+}
+[OrderDetail] [FlightInfo] .t_title span {
+  color: #999;
+  font-size: 12px;
+}
+[OrderDetail] [FlightInfo] .t_detail {
+  height: 156px;
+  padding-left: 20px;
+  line-height: 54px;
+  color: #333;
+  font-size: 14px;
+  position: relative;
+  padding-bottom: 20px;
+}
+[OrderDetail] [FlightInfo] .t_detail p {
+  margin-left: 42px;
+}
+[OrderDetail] [FlightInfo] .t_level {
+  display: inline-block;
+  padding: 10px 0px 10px 0px;
+  line-height: 34px;
+  margin-left: -30px;
+}
+[OrderDetail] [FlightInfo] .img_wrap {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #f5f5f5;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  margin-right: 10px;
+}
+[OrderDetail] [FlightInfo] img.logo {
+  height: 15px;
+  width: 15px;
+  margin-top: 7px;
+  margin-left: 8px;
+}
+[OrderDetail] [FlightInfo] .t_time {
+  margin-left: 200px;
+  display: inline-block;
+  padding: 10px 0px 10px 0px;
+  line-height: 34px;
+}
+[OrderDetail] [FlightInfo] .t_code {
+  color: #53b2fe;
+}
+[OrderDetail] [FlightInfo] .t_port {
+  margin-right: 56px;
+}
+[OrderDetail] [FlightInfo] .t_day {
+  width: 120px;
+  margin-left: 16px;
+}
+[OrderDetail] [FlightInfo] .t_minu {
+  font-weight: 600;
+}
+[OrderDetail] [FlightInfo] .t_right {
+  width: 252px;
+  margin-left: 70px;
+}
+[OrderDetail] [FlightInfo] .t_day1 {
+  width: 120px;
+}
+[OrderDetail] [FlightInfo] .t_terminal {
+  position: relative;
+}
+[OrderDetail] [FlightInfo] .icon_arrow {
+  width: 50px;
+  height: 25px;
+  background: url("../../images/icon1.png") no-repeat;
+  background-size: 738px 513px;
+  background-position: -668px -10px;
+  *background-position: -726px -10px;
+  position: absolute;
+  top: 16px;
+  left: 180px;
+  *left: 183px;
+}
+[OrderDetail] [FlightInfo] .t_go_port {
+  display: inline-block;
+  margin-left: 16px;
+  text-align: right;
+}
+[OrderDetail] [FlightInfo] .t_return_port {
+  margin-left: 70px;
+}
+[OrderDetail] [FlightInfo] .trans_content {
+  height: 396px;
+  border-bottom: 1px solid #e5edf0;
+}
+[OrderDetail] [FlightInfo] .trans_box div:last-child {
+  border-bottom: 0px solid #e5edf0;
+}
+[OrderDetail] [FlightInfo] .t_retun {
+  margin-left: 140px;
+  padding: 20px 0;
+}
+[OrderDetail] [FlightInfo] .t_icon {
+  left: -116px;
+  top: 14px;
+  font-size: 12px;
+}
+[OrderDetail] [FlightInfo] .t_line {
+  border-bottom: 1px solid #e5edf0;
+  margin-top: 20px;
+}
+[OrderDetail] [FlightInfo] .icon_t {
+  top: 38px;
+}
+[OrderDetail] [FlightInfo] .info_note {
+  border-bottom: 0px solid #fff;
+  border-left: 0px solid #fff;
+  border-right: 0px solid #fff;
+  margin-bottom: 0px;
+  height: 50px;
+  line-height: 50px;
+}
+[OrderDetail] [FlightInfo] [tip] .tip_box_back {
+  left: 940px;
+}
+[OrderDetail] [FlightInfo] [tip] .tip_box_bag {
+  left: 850px;
+}
+[OrderDetail] [FlightInfo] [tip] .tip_icon1 {
+  left: 210px;
+}
+@media (max-width: 1200px) {
+  [OrderDetail] [OrderInfo] .content_list {
+    width: 30%;
+  }
+  [OrderDetail] [OrderInfo] .order_content {
+    height: 170px;
+  }
+  [OrderDetail] [OrderInfo] .content_list_child {
+    width: 236px;
+  }
+  [OrderDetail] [OrderInfo] .l_num {
+    width: 200px;
+  }
+  [OrderDetail] [PISInfo] .p_order {
+    width: 266px;
+  }
+}
+@media all and (orientation: portrait) {
+  [OrderDetail] [OrderInfo] .content_list {
+    width: 40%;
+  }
+  [OrderDetail] [OrderInfo] .order_content {
+    height: 210px;
+  }
+  [OrderDetail] [OrderInfo] .content_detail {
+    width: 100%;
+  }
+  [OrderDetail] [FlightInfo] .direct_content {
+    height: 158px;
+  }
+  [OrderDetail] [FlightInfo] .t_title {
+    width: 82px;
+  }
+  [OrderDetail] [FlightInfo] .t_icon {
+    LEFT: -96px;
+  }
+  [OrderDetail] [FlightInfo] .t_detail {
+    padding-left: 0px;
+  }
+  [OrderDetail] [FlightInfo] .t_retun {
+    margin-left: 104px;
+  }
+}

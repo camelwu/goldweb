@@ -1,0 +1,459 @@
+@import "../color.less";
+
+[index_banner] {
+  .banner {
+    height: 600px;
+    background-size: cover;
+    .menu_bg {
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      height: 298px;
+      background: url("../../../resources/images/banner_bg.png") repeat-x top;
+    }
+  }
+  .search_card {
+    position: absolute;
+    width: 1200px;
+    top: 142px;
+    left: 50%;
+    margin-left: -600px;
+    .tab_content {
+      position: relative;
+      .checkin_city {
+        width: 364px;
+      }
+      .search_hotel_btn_wrap {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+    }
+    .search_input {
+      width: 340px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      input {
+        font-size: 12px;
+        width: 100%;
+      }
+    }
+
+    [input-prompt] {
+      padding-top: 22px;
+      margin-bottom: 14px;
+      > input {
+        display: none;
+      }
+      > input.cur {
+        display: block;
+      }
+    }
+
+    #ui-datepicker input:focus {
+      border: 1px solid @cl_main;
+    }
+
+    #startdate {
+      box-sizing: border-box;
+      padding: 10px 0 10px 25px;
+      width: 183px;
+      margin-right: 20px;
+      margin-bottom: 7px;
+    }
+    #enddate {
+      box-sizing: border-box;
+      padding: 10px 0 10px 25px;
+      margin-bottom: 7px;
+      width: 183px;
+    }
+    .checkIn_sumary {
+      padding-top: 10px;
+      .select_unit {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.geo_inp {
+  margin-top: 20px;
+}
+
+[inter_hot_dest] {
+  .inter_one_img {
+    width: 100%;
+    height: 100%;
+  }
+  .dest_mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+    display: none;
+  }
+  span {
+    color: #fff;
+    position: absolute;
+    left: 15px;
+    bottom: 8px;
+    font-size: 32px;
+  }
+  h3 {
+    margin-bottom: 20px;
+  }
+  .inter_one {
+    width: 278px;
+    height: 187px;
+    margin-bottom: 24px;
+    margin-right: 24px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .inter_two {
+    width: 580px;
+    height: 399px;
+    margin-right: 24px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .inter_one:hover .dest_mask, .inter_two:hover .dest_mask {
+    display: block;
+  }
+  .hot_dest_top {
+    .left {
+      width: 278px;
+      margin-right: 24px;
+    }
+    .right {
+      width: 278px;
+    }
+  }
+
+  .hot_dest_bot {
+    *margin-top: 30px;
+    .left.inter_two {
+      margin-right: 0;
+    }
+    .right {
+      width: 612px;
+      .inter_one {
+        margin-right: 0;
+      }
+      .hot_dest_bot_wrap {
+        width: 278px;
+        margin-left: 24px;
+        *margin-bottom: 24px;
+      }
+    }
+  }
+}
+
+[inter_hot_hotel], [package], [inter_hot_dest] {
+  margin-top: 40px;
+  .city_title {
+    padding-right: 20px;
+    h3 {
+      float: left;
+      font-size: 22px;
+    }
+    ul {
+      float: right;
+      li {
+        cursor: pointer;
+        display: block;
+        float: left;
+        margin-left: 25px;
+      }
+      .selected {
+        color: @cl_main;
+        border-bottom: solid 3px @bdc_main;
+      }
+    }
+  }
+  .city_list {
+    height: 645px;
+    &.hotel_oneline{
+      height:330px;
+    }
+    .city {
+      li {
+        float: left;
+        margin-right: 18px;
+        margin-top: 30px;
+        border: solid 1px @bdc_gray;
+        cursor: pointer;
+        .city_img {
+          width: 280px;
+          height: 190px;
+          position: relative;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+          .hover_div {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+          }
+          .hover_div:hover {
+            background: rgba(255, 255, 255, 0.14);
+          }
+        }
+        .city_img_big {
+          width: 580px;
+          height: 276px;
+          .city_img_big_note {
+            position: absolute;
+            color: @cl_white;
+            padding: 10px;
+            bottom: 0px;
+            left: 0px;
+            width: 560px;
+            background-image: url('../../../resources/images/hotel_ticket/shadow_img.png');
+            .note {
+              width: 420px;
+            }
+            .price {
+              color: @cl_orange;
+              margin-top: 20px;
+              > span {
+                font-size: 18px;
+              }
+            }
+          }
+        }
+        .city_note {
+          width: 260px;
+          padding: 10px;
+          height: 66px;
+          .price {
+            color: @cl_orange;
+            > span {
+              font-size: 18px;
+            }
+          }
+          .market_price {
+            text-decoration: line-through;
+            margin-left: 15px;
+            font-size: 12px;
+            color: @cl_gray;
+          }
+        }
+      }
+    }
+  }
+}
+
+[package] {
+  padding-bottom: 90px;
+}
+
+@media (max-width: 1200px) {
+  [index_banner] {
+    .banner {
+      height: 438px;
+      .menu_bg {
+        top: 0px;
+        width: 100%;
+        height: 298px;
+      }
+    }
+    .search_card {
+      width: 880px;
+      margin-left: -440px;
+      top: 100px;
+      .tab_content {
+        .checkin_city {
+          width: 300px;
+        }
+        #ui-datepicker > input {
+          width: 148px;
+        }
+      }
+    }
+  }
+
+  [inter_hot_dest] {
+    max-width: 880px;
+    .inter_two {
+      width: 421px;
+      height: 317px;
+      margin-right: 17px;
+    }
+    .inter_one {
+      width: 202px;
+      height: 150px;
+      margin-right: 17px;
+      margin-bottom: 17px;
+    }
+    .hot_dest_top {
+      .left, .right {
+        width: 202px;
+        margin-right: 17px;
+      }
+    }
+
+    .hot_dest_bot {
+      .left {
+        width: 421px;
+      }
+      .right {
+        width: 438px;
+        .hot_dest_bot_wrap {
+          width: 202px;
+          margin-left: 17px;
+        }
+      }
+    }
+  }
+
+  [inter_hot_hotel], [package] {
+    .city_list {
+      height: 516px;
+      .city {
+        li {
+          font-size: 12px;
+          margin-right: 13px;
+          margin-top: 21px;
+          .city_img {
+            width: 204px;
+            height: 138px;
+          }
+          .city_img_big {
+            width: 423px;
+            height: 224px;
+            .city_img_big_note {
+              padding: 10px;
+              width: 403px;
+              .note {
+                width: 260px;
+              }
+              .price {
+                margin-top: 20px;
+              }
+            }
+          }
+          .city_note {
+            font-size: 12px;
+            width: 184px;
+            height: 66px;
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and  (orientation: portrait) {
+
+  [index_banner] {
+    .banner {
+      height: 380px;
+    }
+    .search_card {
+      width: 680px;
+      margin-left: -340px;
+      .tab_content {
+        .checkin_city {
+          width: 280px;
+        }
+        #ui-datepicker > input {
+          width: 139px;
+        }
+      }
+      .search_card_content {
+        .city_list {
+          ul {
+            width: 240px;
+          }
+        }
+      }
+    }
+  }
+
+  [inter_hot_dest] {
+    max-width: 675px;
+    min-width: 675px;
+
+    .inter_two {
+      width: 330px;
+      height: 232px;
+      margin-right: 12px;
+    }
+    .inter_one {
+      width: 156px;
+      height: 110px;
+      margin-right: 12px;
+      margin-bottom: 12px;
+    }
+    .hot_dest_top .left {
+      width: 156px;
+      margin-right: 12px;
+    }
+
+    .hot_dest_top .right {
+      width: 156px;
+      margin-right: 0;
+    }
+    .hot_dest_top .middle {
+      max-width: 327px;
+      margin-right: 15px;
+    }
+
+    .hot_dest_bot {
+      .left {
+        width: 328px;
+      }
+      .right {
+        width: 342px;
+        .hot_dest_bot_wrap {
+          width: 155px;
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+
+  [inter_hot_hotel], [package] {
+    .city_list {
+      .city {
+        li {
+          margin-right: 8px;
+          margin-top: 21px;
+          .city_img {
+            width: 160px;
+            height: 118px;
+          }
+          .city_img_big {
+            width: 330px;
+            height: 194px;
+            .city_img_big_note {
+              padding: 10px;
+              width: 310px;
+              .note {
+                width: 260px;
+              }
+              .price {
+                margin-top: 20px;
+              }
+            }
+          }
+          .city_note {
+            width: 145px;
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
+}

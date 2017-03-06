@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import "../color";
+.content_l{
+  width: 240px;
+  left:0;
+  top:0;
+}
+.content_r{
+  width: 940px;
+  position: relative;
+}
+[content_left]{
+.list li{
+  font-size:16px;
+  line-height:42px;
+}
+.list_my{
+  color:@cl_main;
+}
+.list li i {
+  display: inline-block;
+  width: 12px;
+  height: 16px;
+  background-image: url(../../../resources/images/icon1.png);
+  background-repeat: no-repeat;
+  background-position: -440px -266px;
+  position: relative;
+  margin-right: 12px;
+  top: 3px;
+}
+  [content_right]{
+
+  }
+}
+[bottom]{
+  margin-top:90px;
+}
+[nav_other] {
+  padding-bottom: 40px;
+}
+@media (max-width:1200px){
+    .content_r{
+      width:686px;
+    }
+  .content_l{
+    width: 176px;
+  }
+  [content_left]{
+    .list li{
+      font-size:14px;
+      line-height:36px;
+    }
+  }
+}
+@media all and (orientation:portrait){
+    .content_r{
+      width:535px;
+    }
+  .content_l{
+    width: 138px;
+  }
+  [content_left]{
+    .list li{
+      font-size:14px;
+      line-height:36px;
+    }
+  }
+  }
+

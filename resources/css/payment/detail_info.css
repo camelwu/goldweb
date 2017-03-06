@@ -1,0 +1,229 @@
+/*文字色*/
+/*特殊位置黑色*/
+/*默认文字灰色*/
+/*默认主色调 特别用于强调的字、button和icon*/
+/*用于辅助说明文字、次要文字信息*/
+/*用于次要辅助说明文字*/
+/*用于详情提示文字，引导词*/
+/*用于价格显示、注意事项提醒文字*/
+/* 特殊样式白色字体 */
+/*辅助色*/
+/*用于搜索按钮*/
+/*用于各板块标题背景*/
+/*用于支付页详情背景*/
+/*公共顶部背景色*/
+/*用于背景颜色*/
+/*按钮划过颜色*/
+/*按钮划过颜色*/
+/*支付页首部背景色*/
+/*详情title背景色*/
+/*边线颜色*/
+/*默认主色调 特别用于强调的字、button和icon*/
+/*预订底部边框变色*/
+/* 灰色边框 */
+/*搜索背景色*/
+/*列表页标题底部边框颜色*/
+/*支付页警告边框线*/
+/*input边框线*/
+/*提示边框值*/
+/*提示边框阴影值*/
+/*字号*/
+/*用于航班时刻显示*/
+/*用于价格显示*/
+/*用于板块标题显示*/
+/*用于导航栏标题*/
+/*next  button按钮*/
+/*用于正文标题，重要文字信息*/
+/*用于补充说明文字、次要文字*/
+.order_title {
+  background: #f9fdf2;
+  font-size: 14px;
+  line-height: 40px;
+  padding-left: 20px;
+  border-bottom: 1px solid #dce6ea;
+}
+[OrderInfo] {
+  margin-top: 10px;
+}
+[OrderInfo] .order_content {
+  height: 80px;
+  padding: 20px;
+  color: #333;
+}
+[OrderInfo] .content_list {
+  width: 50%;
+  font-size: 14px;
+  line-height: 40px;
+  color: #999;
+}
+[OrderInfo] .content_list_child {
+  width: 280px;
+  display: inline-block;
+  text-align: right;
+}
+[OrderInfo] .content_list_child span {
+  color: #333;
+  width: 164px;
+  display: inline-block;
+  text-align: left;
+  margin-left: 10px;
+}
+[OrderInfo] .content_detail {
+  width: 440px;
+  color: #999;
+  font-size: 14px;
+}
+[OrderInfo] .content_cost {
+  display: none;
+  font-size: 14px;
+  padding: 20px 20px 20px 60px;
+  color: #333;
+  text-align: center;
+  border-top: 1px solid #e5edf0;
+}
+[OrderInfo] #voucher_link {
+  font-size: 14px;
+  padding: 20px 20px 20px 60px;
+  color: #333;
+  border-top: 1px solid #e5edf0;
+}
+[OrderInfo] #voucher_link span a {
+  display: block;
+  color: #53b2fe;
+}
+[OrderInfo] .c_cost_type {
+  width: 12%;
+}
+[OrderInfo] .c_cost_type li {
+  height: 34px;
+  line-height: 34px;
+}
+[OrderInfo] .c_cost_typelist {
+  color: #999;
+}
+[OrderInfo] .l_num {
+  text-align: left;
+  width: 220px;
+}
+[OrderInfo] span.num {
+  font-size: 24px;
+  color: #fb7530;
+  margin-left: 0px;
+}
+[OrderInfo] span.num_cur {
+  width: 12px;
+  margin-right: 6px;
+  font-size: 14px;
+  color: #fb7530;
+}
+[OrderInfo] .charges {
+  color: #53b2fe;
+  position: relative;
+  margin-right: 30px;
+  width: 64px;
+  height: 20px;
+  cursor: pointer;
+  display: inline-block;
+}
+[OrderInfo] .charges1 a {
+  width: 64px;
+  height: 20px;
+  cursor: pointer;
+  display: inline-block;
+  color: #53b2fe;
+  margin-right: 0;
+}
+[OrderInfo] .order {
+  margin-bottom: 16px;
+}
+[PISInfo] {
+  *height: 220px;
+}
+[PISInfo] .p_order {
+  width: 314px;
+  display: inline-block;
+  position: relative;
+  *float: left;
+}
+[PISInfo] .p_list {
+  margin: 24px 0px 24px 60px;
+  font-size: 14px;
+  line-height: 34px;
+  text-align: left;
+}
+[PISInfo] .p_title {
+  display: inline-block;
+  width: 74px;
+  text-align: right;
+  margin-right: 18px;
+  color: #999;
+}
+[VouchInfo] .V_list {
+  margin: 24px 0px 24px 80px;
+  font-size: 14px;
+  line-height: 34px;
+  text-align: left;
+}
+[VouchInfo] .V_title {
+  display: inline-block;
+  width: 74px;
+  text-align: right;
+  margin-right: 18px;
+  color: #999;
+}
+[LinkInfo] .l_list {
+  margin: 24px 0px 24px 80px;
+  font-size: 14px;
+  line-height: 34px;
+  text-align: left;
+}
+[LinkInfo] .l_title {
+  display: inline-block;
+  width: 74px;
+  text-align: right;
+  margin-right: 18px;
+  color: #999;
+}
+@media (max-width: 1200px) {
+  [OrderDetail] [OrderInfo] .content_list {
+    width: 30%;
+  }
+  [OrderDetail] [OrderInfo] .order_content {
+    height: 170px;
+  }
+  [OrderDetail] [OrderInfo] .content_list_child {
+    width: 236px;
+  }
+  [OrderDetail] [OrderInfo] .l_num {
+    width: 200px;
+  }
+  [OrderDetail] [PISInfo] .p_order {
+    width: 266px;
+  }
+}
+@media all and (orientation: portrait) {
+  [OrderDetail] [OrderInfo] .content_list {
+    width: 40%;
+  }
+  [OrderDetail] [OrderInfo] .order_content {
+    height: 210px;
+  }
+  [OrderDetail] [OrderInfo] .content_detail {
+    width: 100%;
+  }
+  [OrderDetail] [FlightInfo] .direct_content {
+    height: 158px;
+  }
+  [OrderDetail] [FlightInfo] .t_title {
+    width: 82px;
+  }
+  [OrderDetail] [FlightInfo] .t_icon {
+    LEFT: -96px;
+  }
+  [OrderDetail] [FlightInfo] .t_detail {
+    padding-left: 0px;
+  }
+  [OrderDetail] [FlightInfo] .t_retun {
+    margin-left: 104px;
+  }
+}

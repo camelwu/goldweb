@@ -1,0 +1,209 @@
+@import "../color";
+  .order_title{
+    background: @bg_Order_detail_title;
+    font-size:14px;
+    line-height:40px;
+    padding-left:20px;
+    border-bottom:1px solid @bdc_title_border;}
+[OrderInfo]{
+  margin-top:10px;
+  .order_content{
+    height: 80px;
+    padding:20px;
+    color:@cl_default;
+  }
+  .content_list{
+    width: 50%;
+    font-size:14px;
+    line-height:40px;
+    color:@cl_gray;
+  }
+  .content_list_child{
+    width: 280px;
+    display: inline-block;
+    text-align: right;
+  }
+  .content_list_child span{
+    color:@cl_default;
+    width: 164px;
+    display: inline-block;
+    text-align: left;
+    margin-left:10px;
+  }
+  .content_detail{
+    width: 440px;color:@cl_gray;
+    font-size:14px;
+  }
+  .content_cost{
+    display: none;
+    font-size: 14px;
+    padding:20px 20px 20px 60px;
+    color:@cl_default;
+    text-align: center;
+    border-top:1px solid @bdc_gray;
+  }
+  #voucher_link{
+    font-size: 14px;
+    padding: 20px 20px 20px 60px;
+    color: #333;
+    border-top: 1px solid #e5edf0;
+  }
+  #voucher_link span a{
+       display: block;
+      color:@cl_blue;
+     }
+  .c_cost_type{
+    width: 12%;
+  }
+  .c_cost_type li{
+    height: 34px;
+    line-height:34px;
+  }
+  .c_cost_typelist{
+    color:@cl_gray;
+  }
+  .l_num{
+    text-align: left;
+    width: 220px;
+  }
+  span.num{
+    font-size: 24px;
+    color:@cl_orange;
+    margin-left:0px;
+  }
+  span.num_cur{
+    width: 12px;
+    margin-right:6px;
+    font-size:14px;
+    color:@cl_orange;
+  }
+  .charges{
+    color:@cl_blue;
+    position: relative;
+    margin-right:30px;
+    width: 64px;
+    height: 20px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .changes_cur{
+
+  }
+  .charges1 a{
+    width: 64px;
+    height: 20px;
+    cursor: pointer;
+    display: inline-block;
+    color:@cl_blue;
+    margin-right:0;
+  }
+  .order{
+    margin-bottom:16px;
+  }
+}
+[PISInfo]{
+  *height:220px;
+  .p_order{
+    width:314px;
+    //height:218px;
+    //height:186px;
+    display: inline-block;
+    position: relative;
+    *float: left;
+  }
+  .p_list{
+    margin:24px 0px 24px 60px;
+    font-size:14px;
+    line-height:34px;
+    text-align: left;
+  }
+  .p_title{
+    display: inline-block;
+    width: 74px;
+    text-align: right;
+    margin-right:18px;
+    color:@cl_gray;
+  }
+}
+[VouchInfo]{
+  .V_list{
+    margin:24px 0px 24px 80px;
+    font-size:14px;
+    line-height:34px;
+    text-align: left;
+  }
+  .V_title{
+    display: inline-block;
+    width: 74px;
+    text-align: right;
+    margin-right:18px;
+    color:@cl_gray;
+  }
+}
+[LinkInfo]{
+  .l_list{
+    margin:24px 0px 24px 80px;
+    font-size:14px;
+    line-height:34px;
+    text-align: left;
+  }
+  .l_title{
+    display: inline-block;
+    width: 74px;
+    text-align: right;
+    margin-right:18px;
+    color:@cl_gray;
+  }
+}
+@media (max-width:1200px) {
+  [OrderDetail] [OrderInfo] {
+    .content_list{
+      width: 30%;
+    }
+    .order_content {
+      height: 170px;
+    }
+    .content_list_child {
+      width: 236px;
+    }
+    .l_num{
+      width: 200px;
+    }
+  }
+  [OrderDetail] [PISInfo]{
+    .p_order{
+      width: 266px;
+    }
+  }
+}
+@media all and (orientation:portrait){
+  [OrderDetail] [OrderInfo] {
+    .content_list{
+      width: 40%;
+    }
+    .order_content {
+      height: 210px;
+    }
+    .content_detail{
+      width: 100%;
+    }
+  }
+  [OrderDetail] [FlightInfo]{
+    .direct_content{
+      height: 158px;
+    }
+    .t_title{
+      width: 82px;
+    }
+    .t_icon{
+      LEFT:-96px;
+    }
+    .t_detail{
+      padding-left:0px;
+    }
+    .t_retun{
+      margin-left:104px;
+    }
+  }
+
+}

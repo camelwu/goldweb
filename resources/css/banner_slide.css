@@ -1,0 +1,123 @@
+/*文字色*/
+/*特殊位置黑色*/
+/*默认文字灰色*/
+/*默认主色调 特别用于强调的字、button和icon*/
+/*用于辅助说明文字、次要文字信息*/
+/*用于次要辅助说明文字*/
+/*用于详情提示文字，引导词*/
+/*用于价格显示、注意事项提醒文字*/
+/* 特殊样式白色字体 */
+/*辅助色*/
+/*用于搜索按钮*/
+/*用于各板块标题背景*/
+/*用于支付页详情背景*/
+/*公共顶部背景色*/
+/*用于背景颜色*/
+/*按钮划过颜色*/
+/*按钮划过颜色*/
+/*支付页首部背景色*/
+/*详情title背景色*/
+/*边线颜色*/
+/*默认主色调 特别用于强调的字、button和icon*/
+/*预订底部边框变色*/
+/* 灰色边框 */
+/*搜索背景色*/
+/*列表页标题底部边框颜色*/
+/*支付页警告边框线*/
+/*input边框线*/
+/*提示边框值*/
+/*提示边框阴影值*/
+/*字号*/
+/*用于航班时刻显示*/
+/*用于价格显示*/
+/*用于板块标题显示*/
+/*用于导航栏标题*/
+/*next  button按钮*/
+/*用于正文标题，重要文字信息*/
+/*用于补充说明文字、次要文字*/
+body,
+ul,
+ol,
+li,
+img {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.banner {
+  height: 600px;
+  width: 1920px;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+.banner_box {
+  height: 600px;
+  width: 1920px;
+  overflow: hidden;
+  position: relative;
+}
+.banner_img {
+  height: 100%;
+  width: 7680px;
+  position: absolute;
+  left: 0;
+}
+.banner_img li {
+  width: 1920px;
+  float: left;
+}
+.banner_li img {
+  width: 100%;
+  height: 100%;
+}
+.banner_span {
+  display: none;
+}
+.banner_span span {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 2%;
+  top: 50%;
+  margin-top: -20px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 50px;
+  color: #fff;
+  opacity: 0.3;
+}
+.banner_span .right {
+  right: 3%;
+  left: auto;
+}
+.banner_num {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.banner_num ul {
+  height: 5px;
+  position: absolute;
+  right: 40px;
+  bottom: 32px;
+}
+.banner_num ul li {
+  display: inline-block;
+  width: 30px;
+  height: 5px;
+  float: left;
+  margin-right: 5px;
+  background: #fff;
+}
+.banner_num ul li.cur {
+  background: #8ace00;
+}
+.img_index {
+  font-size: 30px;
+}
+.img_length {
+  font-size: 20px;
+}

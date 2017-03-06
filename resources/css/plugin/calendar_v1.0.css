@@ -1,0 +1,64 @@
+* {margin:0;padding:0;}
+body {font-family: "微软雅黑", Tahoma, Verdana;font-size: 12px;font-weight: normal;}
+span, label, p, input {
+  font-family: "微软雅黑", Tahoma, Verdana;
+  font-size: 12px;
+  font-weight: normal;
+}
+form {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin: 0;
+}
+h1 {
+  font-family: "微软雅黑", Tahoma, Verdana;
+  font-size: 16px;
+  font-weight: bold;
+}
+h2 {
+  font-family: "微软雅黑", Tahoma, Verdana;
+  font-size: 14px;
+  font-weight: bold;
+}
+div.effect {
+  border: 1px dotted #3C78B5;
+  background-color: #D8E4F1;
+  padding: 10px;
+  width: 98%;
+}
+div.source {
+  border: 1px solid #CCC;/*#090*/
+  background-color: #F5F5F5;/*#DFD*/
+  padding: 10px;
+  width: 98%;
+}
+.color_red {
+  color:#FF0000;
+}
+.b {
+  font-weight: bold;
+}
+select {font-size:12px;background-color:#EFEFEF;}
+table {border:0px solid #CCCCCC;background-color:#FFFFFF}
+th {font-size:12px;font-weight:normal;background-color:#FFFFFF;}
+th.theader {font-weight:normal;background-color:#666666;color:#FFFFFF;width:24px;}
+select.year {width:64px;}
+select.month {width:60px;}
+td {font-size:12px;text-align:center;cursor:pointer;}
+td.sat {color:#0000FF;background-color:#EFEFEF;}
+td.sun {color:#FF0000;background-color:#EFEFEF;}
+td.normal {background-color:#EFEFEF;}
+input.l,input.r,input.b {border: 1px solid #CCCCCC;background-color:#EFEFEF;width:20px;height:20px;cursor:pointer;}
+input.b {width:100%;}
+.calendarPanel .bg_out{background:#EFEFEF;}
+.calendarPanel .bg_over{background:#FFCC00;}
+.calendarPanel .bg_cur_day {background:#00CC33;}
+.calendarPanel{
+  background-color: #FFFFFF;
+  z-index: 9999;
+}
+.calendarDiv {float:left;height: 216px;width: 200px;border: 1px solid #666666;}
+.hidden{display:none;}
+.calendarPanel .disabled{color:#DCDCDC;cursor:default;}

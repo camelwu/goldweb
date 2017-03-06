@@ -1,0 +1,42 @@
+[search-div] {
+  padding-top: 10px;
+}
+[search-div] .row {
+  vertical-align: middle;
+  margin-bottom: 30px;
+}
+[search-div] .col {
+  height: 39px;
+  line-height: 34px;
+  padding-left: 15px;
+}
+[search-div] .row2 {
+  margin-right: 6px;
+}
+[search-div] .card_type .public {
+  width: 120px;
+  height: 16px;
+}
+[search-div] .txtpassengerName {
+  width: 345px;
+  height: 16px;
+}
+[search-div] a {
+  color: #62b7fe;
+}
+[search-div] .col_tilte {
+  text-align: right;
+  width: 42px;
+}
+@media (max-width: 1200px) {
+  [search-div] .txtpassengerName {
+    width: 250px;
+    height: 16px;
+  }
+}
+@media (orientation: portrait) {
+  [search-div] .txtpassengerName {
+    width: 196px;
+    height: 16px;
+  }
+}

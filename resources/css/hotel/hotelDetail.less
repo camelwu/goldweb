@@ -1,0 +1,810 @@
+@charset "utf-8";
+@import "../color.less";
+[gloabl] {
+  font-family: "microsoft yahei", Arial, sans-serif;
+  .cat_icon {
+    display: inline-block;
+    width: 34px;
+    height: 21px;
+    margin: 0 4px;
+    background: url(../../../resources/images/hotel/icon.png) no-repeat;
+    background-position: -440px -21px;
+    position: relative;
+    top: 2px;
+  }
+  .star_icons{
+    display: inline-block;
+    width: 72px;
+    height: 16px;
+    background: url(../../../resources/images/hotel/icon.png) no-repeat;
+    background-position: 750px 340px;
+    position: absolute;
+    top:20px;
+    left:125px;
+    z-index: 0;
+  }
+  .star_icon1 {
+    background-position: -195px -68px;
+  }
+  .star_icon2 {
+    background-position: -195px -95px;
+  }
+  .address_icon {
+    display: inline-block;
+    width: 12px;
+    height: 15px;
+    background: url(../../../resources/images/hotel/icon.png) no-repeat;
+    background-position: -16px -21px;
+    position: relative;
+    margin: 0 2px;
+    top: 2px;
+  }
+  .breakfast_icon {
+    display: inline-block;
+    width: 18px;
+    height: 16px;
+    background: url(../../../resources/images/hotel/icon.png) no-repeat;
+    background-position: -325px -22px;
+    position: relative;
+    margin-right: 12px;
+    top: 2px;
+  }
+  .park_icon {
+    display: inline-block;
+    width: 18px;
+    height: 16px;
+    background: url(../../../resources/images/hotel/icon.png) no-repeat;
+    background-position: -366px -21px;
+    position: relative;
+    margin-right: 12px;
+    top: 2px;
+  }
+  .wifi_icon {
+    display: inline-block;
+    width: 18px;
+    height: 16px;
+    background: url(../../../resources/images/hotel/icon.png) no-repeat;
+    background-position: -404px -21px;
+    position: relative;
+    top: 2px;
+  }
+  #map {
+    width: 1116px;
+    height: 492px;
+  }
+  .page_wrap {
+    padding: 88px 0;
+  }
+  .bg_big {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .5);
+    z-index: 9999;
+  }
+  .bg_big img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -16px;
+    margin-right: -16px;
+    z-index: 10000;
+  }
+}
+.service_items {
+  margin: 30px auto;
+  margin-bottom: 88px;
+}
+
+[name_slider]{
+  h2 {
+    font-size: 18px;
+  }
+  h2 span {
+    font-size: 15px;
+    color: @cl_gray;
+    font-weight: normal;
+  }
+  .score {
+    color: @cl_gray;
+    position: relative;
+  }
+  .score strong {
+    font-size: 28px;
+    color: @cl_orange;
+  }
+  .address {
+    font-size: 14px;
+    color: @cl_gray;
+  }
+}
+[service_items] {
+  font-size: 14px;
+  .fixTab {
+    z-index: 18;
+    position: fixed;
+    top: 0;
+  }
+  .hotel_tabs_box {
+    width: 1200px;
+    background: #fff;
+    border-bottom: 1px solid #ededed;
+  }
+  .pos_a {
+    position: relative;
+    top: -72px;
+    display: block;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+  }
+  .nav_ul {
+    position: relative;
+    top: 1px;
+  }
+  .nav_ul li {
+    float: left;
+    border: 1px solid @bdc_gray;
+    margin-right: -1px;
+    border-bottom: 0;
+    background: @bg_title;
+    text-align: center;
+    border-radius: 2px;
+  }
+  .nav_ul li a {
+    display: inline-block;
+    line-height: 60px;
+    width: 248px;
+    height: 60px;
+    color: @cl_blockgray;
+    font-size: 18px;
+  }
+  .nav_ul li.cur {
+    background: @cl_white;
+    border-top: 2px solid @bdc_main;
+    height: 59px;
+  }
+  .nav_ul li.cur a {
+    color: @bdc_main;
+    height: 59px;
+  }
+  .detail_part_wrap {
+    padding: 0 32px;
+    margin-bottom: 90px;
+    border: 1px solid @bdc_gray;
+    border-top: 0;
+  }
+  .detail_part_wrap .detail_part {
+    padding-top: 40px;
+  }
+  .detail_part_wrap .detail_part h3 {
+    font-size: 18px;
+    padding-bottom: 38px;
+    color: @bdc_main;
+  }
+  .detail_part_wrap .detail_part h3.no_pb {
+    padding-bottom: 0 !important;
+  }
+  .detail_part_wrap .detail_part .v_line {
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    margin-right: 14px;
+    background: #8ace00;
+    position: relative;
+    top: 2px;
+  }
+  .data_div{
+    display: inline-block;
+  }
+  .data_div>input{
+    width: 76px;
+    padding: 0 4px;
+    cursor: pointer;
+  }
+  .live_in_time {
+    color: @cl_gray;
+  }
+  .live_in_time .time_info {
+    color: @cl_default;
+    width: 76px;
+    padding:0 4px;
+  }
+  .live_in_time .sub_title {
+    margin-right:0px;
+  }
+  .live_in_time .info_two {
+    margin-left: 20px;
+  }
+  .change_num{
+    margin-left:20px;
+    color:@cl_blue;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .room_num{
+    display: inline-block;
+    cursor: pointer;
+  }
+  .detail_sub_part .hotel_sub_wrap {
+    position: relative;
+    width: 100%;
+    padding: 32px 0;
+    border-bottom: 1px solid @bdc_title_border
+  }
+  #mapInfo {
+    display: none
+  }
+  .detail_sub_part ul.detail_word li {
+    margin: 30px 0;
+  }
+  .detail_sub_part ul.detail_word li h4 {
+    padding-bottom: 24px;
+  }
+  .detail_sub_part ul.detail_word li p {
+    line-height: 30px;
+  }
+  .detail_sub_part .hotel_sub_wrap .hotel_img {
+    position: absolute;
+    width: 168px;
+    height:120px;
+  }
+  .detail_sub_part .hotel_sub_wrap .hotel_img img{
+    width: 100%;
+    height: 100%;
+  }
+  .detail_sub_part .hotel_sub_wrap .rooms_type {
+    margin-left: 194px;
+    font-size: 14px;
+    position: relative;
+    width: 932px;
+  }
+  .detail_sub_part .hotel_sub_wrap .rooms_type .room_items_out {
+    display: none
+  }
+  .detail_sub_part .rooms_type p {
+    color: @cl_gray;
+    margin-bottom: 12px;
+  }
+  .detail_sub_part .rooms_type p .check_room_type {
+    color: @cl_blue;
+    margin-bottom: 12px;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .detail_sub_part .rooms_type p .check_room_type i {
+    display: inline-block;
+    width: 10px;
+    height: 6px;
+    margin-left: 8px;
+    background-image: url(../../../resources/images/icon1.png);
+    background-position: -423px -25px;
+    position: relative;
+    top: -2px;
+  }
+  .detail_sub_part .rooms_type p .check_room_type.open i {
+    background-position: -405px -25px;
+  }
+  .detail_sub_part .rooms_type .room_word {
+    margin-top: 12px;
+    margin-bottom: 0;
+  }
+  .detail_sub_part .rooms_type h2 {
+    font-size: 18px;
+  }
+  .detail_sub_part .rooms_type .discount {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url(../../../resources/images/hotel/icon.png) no-repeat;
+    background-position: -15px -49px;
+    position: relative;
+    margin-right: 12px;
+    top: 6px;
+  }
+  .detail_sub_part .rooms_type .price_num {
+    color: @cl_orange;
+    position: absolute;
+    right: 0;
+    top: 68px;
+  }
+  .detail_sub_part .rooms_type .price_num strong {
+    font-size: 24px;
+  }
+  .detail_sub_part .title_commit {
+    color: @cl_black;
+    padding-bottom: 14px;
+    border-bottom: 2px solid @bdc_main;
+  }
+  .detail_sub_part .title_commit span {
+    color: @bdc_main;
+    font-weight: 500;
+  }
+  .detail_sub_part .title_commit i {
+    margin-left: 26px;
+  }
+  .commit_ul li {
+    position: relative;
+    border-bottom: 1px solid @bdc_input;
+    margin-bottom: -1px;
+    padding-top: 32px;
+  }
+  .commit_ul li .portrait {
+    width: 164px;
+    height: 154px;
+    margin-right: 6px;
+    text-align: center;
+  }
+  .commit_ul li .portrait p {
+    line-height: 20px;
+    color: @cl_gray
+  }
+  .commit_ul li .portrait .name_user {
+    line-height: 20px;
+    color: @cl_default;
+  }
+  .commit_ul li .portrait .img_wrap {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    margin-left: 52px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .commit_ul li .comment_wrap {
+    width: 932px;
+    color: @cl_gray;
+    padding-right: 25px;
+  }
+  .commit_ul li .comment_wrap .score_line {
+    position: relative;
+    padding: 18px 0;
+  }
+  .commit_ul li .comment_wrap .score_line strong {
+    color: @cl_orange;
+    font-size: 28px;
+  }
+  .commit_ul li .comment_wrap .score_line .star_icon {
+    margin-left: 8px;
+    top: 2px
+  }
+  .commit_ul li .comment_wrap .score_line .s_word {
+    color: @cl_black;
+    font-size: 18px;
+  }
+  .commit_ul .commit_content {
+    margin-bottom: 48px
+  }
+  .commit_ul .commit_date {
+    text-align: right;
+    padding-bottom: 16px;
+  }
+  .commit_ul .commit_date .c_date {
+    margin-right: 12px;
+  }
+  .icon_div{
+    width: 72px;display: inline-block;
+    position: relative;
+    margin-right:4px;
+  }
+  .star_c{
+    top: -14px;
+    left: 0px;
+  }
+}
+
+[rooms_type] {
+  .line_div {
+    color: @cl_default;
+    height: 56px;
+    line-height: 56px;
+    border-bottom: 1px solid @bdc_input;
+    text-align: center;
+  }
+  .title_div {
+    height: 40px;
+    line-height: 40px;
+    color: @cl_gray;
+    border: 1px solid @bg_hover2;
+    background: @bg_title;
+  }
+  .line_div div {
+    float: left;
+  }
+  ._type {
+    margin-left: 22px;
+    width: 142px;
+    cursor: pointer;
+  }
+  ._type i {
+    display: inline-block;
+    width: 10px;
+    height: 6px;
+    background: url(../../../resources/images/icon1.png) no-repeat;
+    background-position: -531px -332px;
+    margin-top: 25px;
+  }
+  ._type.ex i {
+    background-position: -531px -332px;
+  }
+  ._type .up {
+    background-position: -555px -332px;
+  }
+  ._bed {
+    width: 190px
+  }
+  ._breakfast {
+    width: 132px
+  }
+  ._change_rule {
+    width: 194px
+  }
+  ._price {
+    color: @cl_orange;
+    width: 132px
+  }
+  .title_div ._price {
+    color: @cl_gray;
+  }
+  ._order {
+    width: 104px
+  }
+  ._order a {
+    padding: 8px 18px;
+    border: 1px solid @bdc_main;
+    color: @bdc_main;;
+    border-radius: 2px;
+  }
+  .room_img {
+    padding: 14px 15px 10px;
+    background: #f5f8f9;
+    border-top: 0;
+    float: none;
+    display: none;
+  }
+  .room_img li {
+    float: left;
+    width: 130px;
+    height: 84px;
+    background: #f4f4f4 url(../../../resources/images/ico_loading.gif) no-repeat center center;
+    margin-right: 14px;
+    display: inline;
+    overflow: hidden;
+  }
+  .room_img li img {
+    display: inline-block;
+    width: 100%;
+  }
+  p {
+    margin-top: 0
+  }
+}
+
+@media (max-width: 1200px) {
+  [gloabl] {
+    #map {
+      width: 814px;
+      height: 360px;
+    }
+    .page_wrap {
+      padding: 46px 0;
+    }
+  }
+
+  [service_items] {
+    .hotel_tabs_box {
+      width: 880px;
+      height: 44px;
+    }
+    .pos_a {
+      top: -54px;
+    }
+    .nav_ul li a {
+      display: inline-block;
+      line-height: 40px;
+      width: 178px;
+      height: 40px;
+      font-size: 16px;
+    }
+    .nav_ul li.cur {
+      height: 40px;
+    }
+    .nav_ul li.cur a {
+      height: 40px;
+    }
+    .detail_part_wrap {
+      padding: 0 22px;
+    }
+    .detail_part_wrap .detail_part {
+      padding-top: 32px;
+    }
+
+    .live_in_time .sub_title {
+      margin-right: 16px;
+    }
+    .live_in_time .info_two {
+      margin-left: 16px;
+    }
+    .detail_sub_part ul.detail_word li {
+      margin: 30px 0;
+    }
+    .detail_sub_part ul.detail_word li h4 {
+      padding-bottom: 20px;
+    }
+    .detail_sub_part ul.detail_word li p {
+      line-height: 30px;
+    }
+    .detail_sub_part .hotel_sub_wrap .hotel_img {
+      width: 122px;
+    }
+    .detail_sub_part .hotel_sub_wrap .rooms_type {
+      margin-left: 146px;
+      width: 492px;
+    }
+    .commit_ul li {
+      position: relative;
+      border-bottom: 1px solid @bdc_input;
+    }
+    .commit_ul li .portrait {
+      width: 164px;
+      height: 154px;
+      margin-right: 6px;
+    }
+    .commit_ul li .comment_wrap {
+      width: 646px;
+      padding-right: 18px;
+    }
+  }
+
+  [rooms_type] {
+    ._type {
+      margin-left: 16px;
+      width: 134px
+    }
+    ._type .room_info {
+      margin-top: 25px;
+    }
+    ._type .up {
+      background-position: -555px -332px;
+    }
+    ._bed {
+      width: 128px
+    }
+    ._breakfast {
+      width: 90px
+    }
+    ._change_rule {
+      width: 128px
+    }
+    ._price {
+      width: 108px
+    }
+    ._order {
+      width: 76px
+    }
+    ._order a {
+      padding: 6px 16px;
+    }
+    .room_img {
+      padding: 12px;
+    }
+    .room_img li {
+      width: 96px;
+      height: 64px;
+      margin-right: 12px;
+    }
+  }
+}
+
+@media all and (orientation: portrait) {
+  [gloabl] {
+    #map {
+      width: 642px;
+      height: 284px;
+    }
+    .page_wrap {
+      padding: 22px 0;
+    }
+  }
+
+  [name_slider] {
+    h2 {
+      font-size: 16px;
+    }
+    h2 span {
+      font-size: 14px;
+    }
+    .score strong {
+      font-size: 16px;
+    }
+    .address {
+      font-size: 12px;
+    }
+  }
+
+  [service_items] {
+    font-size: 12px;
+    .hotel_tabs_box {
+      width: 680px;
+      height: 43px;
+    }
+    .pos_a {
+      top: -42px;
+    }
+    .nav_ul li a {
+      line-height: 40px;
+      width: 140px;
+      height: 40px;
+      font-size: 14px;
+    }
+    .nav_ul li.cur {
+      height: 40px;
+    }
+    .nav_ul li.cur a {
+      height: 40px;
+    }
+    .detail_part_wrap {
+      padding: 0 22px;
+    }
+    .detail_part_wrap .detail_part {
+      padding-top: 32px;
+    }
+    .detail_part_wrap .detail_part h3 {
+      font-size: 16px;
+      padding-bottom: 36px;
+    }
+    .detail_part_wrap .detail_part .v_line {
+      width: 2px;
+      height: 12px;
+      margin-right: 8px;
+      top: 2px;
+    }
+
+    .live_in_time .sub_title {
+      margin-right: 12px;
+    }
+    .live_in_time .info_two {
+      margin-left: 12px;
+    }
+
+    .detail_sub_part ul.detail_word li {
+      margin: 22px 0;
+    }
+    .detail_sub_part ul.detail_word li h4 {
+      padding-bottom: 16px;
+    }
+    .detail_sub_part ul.detail_word li p {
+      line-height: 22px;
+    }
+    .detail_sub_part .hotel_sub_wrap .hotel_img {
+      width: 108px;
+    }
+    .detail_sub_part .hotel_sub_wrap .rooms_type {
+      margin-left: 116px;
+      font-size: 12px;
+      width: 464px;
+    }
+    .detail_sub_part .rooms_type p {
+      margin-bottom: 10px;
+    }
+    .detail_sub_part .rooms_type .room_word {
+      margin-top: 10px;
+    }
+    .detail_sub_part .rooms_type h2 {
+      font-size: 16px;
+    }
+    .detail_sub_part .rooms_type .discount {
+      top: 6px;
+    }
+    .detail_sub_part .rooms_type .price_num {
+      top: 68px;
+    }
+    .detail_sub_part .rooms_type .price_num strong {
+      font-size: 14px;
+    }
+    .detail_sub_part .title_commit {
+      padding-bottom: 8px;
+      border-bottom: 2px solid @bdc_main;
+    }
+
+    .detail_sub_part .title_commit i {
+      margin-left: 22px;
+    }
+    .commit_ul li {
+      padding-top: 24px;
+    }
+    .commit_ul li .portrait {
+      width: 164px;
+      height: 154px;
+      margin-right: 6px;
+    }
+    .commit_ul li .portrait p {
+      line-height: 20px;
+    }
+    .commit_ul li .portrait .name_user {
+      line-height: 20px;
+    }
+    .commit_ul li .comment_wrap {
+      width: 450px;
+      padding-right: 14px;
+    }
+    .commit_ul li .comment_wrap .score_line {
+      padding: 14px 0;
+    }
+    .commit_ul li .comment_wrap .score_line strong {
+      font-size: 16px;
+    }
+    .commit_ul li .comment_wrap .score_line .star_icon {
+      margin-left: 8px;
+      top: 2px
+    }
+    .commit_ul li .comment_wrap .score_line .s_word {
+      font-size: 16px;
+    }
+    .commit_ul .commit_content {
+      margin-bottom: 48px
+    }
+    .commit_ul .commit_date {
+      padding-bottom: 10px;
+    }
+    .commit_ul .commit_date .c_date {
+      margin-right: 12px;
+    }
+  }
+
+  .service_items {
+    margin: 22px auto;
+    margin-bottom: 68px;
+  }
+
+  [rooms_type] {
+    .line_div {
+      height: 56px;
+      line-height: 56px;
+    }
+    .title_div {
+      height: 24px;
+      line-height: 24px;
+    }
+    ._type {
+      margin-left: 12px;
+      width: 130px
+    }
+    ._type .room_info {
+      margin-top: 25px;
+    }
+    ._type .up {
+      background-position: -555px -332px;
+    }
+    ._bed {
+      width: 96px
+    }
+    ._breakfast {
+      width: 72px
+    }
+    ._change_rule {
+      width: 66px
+    }
+    ._price {
+      width: 76px
+    }
+    ._order {
+      width: 60px
+    }
+    ._order a {
+      padding: 6px 14px;
+    }
+    .room_img {
+      padding: 8px;
+    }
+    .room_img li {
+      width: 76px;
+      height: 50px;
+      margin-right: 8px;
+    }
+
+  }
+}

@@ -1,0 +1,86 @@
+[select_person] {
+  position: relative;
+}
+[select_person] .s_index {
+  width: 120px;
+  margin: 18px auto 0;
+}
+[select_person] .select_unit {
+  margin: 0 0 0 12px;
+  width: 148px;
+  float: left;
+  display: inline-block;
+}
+[select_person] .txtoutput {
+  width: 156px;
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid #dce6ea;
+  padding-left: 20px;
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
+  background: #fff;
+}
+[select_person] .vistor_center {
+  display: inline-block;
+  position: relative;
+}
+[select_person] .visitor_info {
+  width: 206px;
+  padding: 16px 20px 16px 20px;
+  background: #fff;
+  border: 1px solid #dce6ea;
+  position: absolute;
+  top: 64px;
+  left: 0px;
+  z-index: 15;
+}
+[select_person] .visitor_li {
+  height: 36px;
+  line-height: 36px;
+  margin-bottom: 16px;
+}
+[select_person] .visitor_li > span {
+  width: 42px;
+  text-align: right;
+  display: inline-block;
+  float: left;
+}
+[select_person2] .pop_font {
+  width: 500px;
+  height: auto;
+}
+[select_person2] .room .row {
+  margin-left: 12px;
+  margin-top: 12px;
+  line-height: 33px;
+}
+[select_person2] .room .col {
+  float: left;
+  width: 200px;
+  margin-bottom: 15px;
+}
+[select_person2] .room .col span {
+  display: block;
+  width: 62px;
+}
+[select_person2] .room .col .select_unit {
+  width: 58%;
+}
+[select_person2] .room li input {
+  width: 110px;
+  margin-left: 8px;
+}
+[select_person2] .btn_div {
+  margin-bottom: 12px;
+}
+[select_person2] .btn_div .btn {
+  margin-right: 5px;
+}
+[select_person2] .room .age {
+  position: absolute;
+  right: -1px;
+  top: 39px;
+  color: red;
+}

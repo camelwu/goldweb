@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><{$ktitle}>-免责声明</title>
+<link href="<{$siteurl}>/css/global.css" rel="stylesheet" type="text/css">
+<link href="<{$siteurl}>/css/about_us.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="<{$siteurl}>/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="<{$siteurl}>/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="<{$siteurl}>/js/index.js"></script>
+</head>
+<body>
+	<{include_php file="./view/common/header.php"}>
+
+	<div class="wrapper about_box clrfix">
+		<ul class="about_left">
+			<li><a href="aboutus.html">关于我们</a><span></span></li>
+            <li><a href="contactus.html">联系我们</a><span></span></li>
+            <li><a href="advise.html">投诉建议</a><span></span></li>
+            <li><a href="advertising.html">广告服务</a><span></span></li>
+            <li><a href="qualifications.html">旅游资质</a><span></span></li>
+            <li><a href="duty.html">免责声明</a><span></span></li>
+            <li><a href="partner.html">合作商家</a><span></span></li>
+            <li><a href="sitemap.html">网站地图</a><span></span></li>
+			<li><a href="insurance.html">旅游保险</a><span></span></li>
+            <li><a href="/help.html">帮助中心</a><span></span></li>
+			<li><a href="instructions.html">使用说明</a><span></span></li>
+			<li><a href="statement.html">法律声明</a><span></span></li>
+			<li><a href="agreement.html">用户协议</a><span></span></li>
+		</ul>
+		<div class="about_right">
+			<ul class="al_ul">
+				<li class="abr_title">用户协议</li><li>
+
+        <p>欢迎您使用“中国金桥旅游有限公司旅游网”，请详细阅读以下相关法律声明，如果您开始游览或使用本系统，既表明您已经阅读、理解并遵守以下相关内容。</p><br><br>
+        <p class="bold mt20">关于知识产权：</p><br><br>
+        <p>本公司/网站独立拥有或与相关内容提供者共同拥有本网站内相关内容（包括但不限于文字、图片、音频、视频资料及页面设计、编排、软件等）的版权和/或其他相关知识产权。</p><br><br>
+        <p>“中国金桥旅游有限公司旅游网”、“http://cgbt.net”为本公司所注册并拥有，受中国法律保护。</p><br><br>
+        <p>除非中国法律另有规定，未经本公司许可，对于本公司公司拥有网站内容、版权和/或其他知识产权的任何内容，任何单位和个人不得复制或在非本公司所属的服务器上做镜像或以其他任何方式进行使用，不得用于商业行为的转载、复制、截取、摘抄；</p><br><br>
+        <p>违反上述声明，本公司/网站定将依法追究其法律责任。</p><br><br>
+        <p class="bold mt20">系统服务和个人隐私条款：</p><br><br>
+        <p>本网站/公司严格保障用户隐私权，对上网用户的个人信息保密，未经上网用户同意不会向他人泄露，但法律另有规定的除外。</p><br><br>
+        <p>用户自愿注册个人信息，用户在注册时提供的所有信息，都是基于自愿。注册个人信息的用户同意本系统/公司对这些信息进行善意利用。</p><br><br>
+        <p>本公司将尽最大努力维护和完善网络使用安全，但用户明确同意其使用本系统在线网络服务，包括系统/公司所采用或采购第三方服务商所存在的风险将完全由其自己承担。</p><br><br>
+        <p>本系统/公司不担保网络服务一定能满足用户的要求，也不担保网络服务不会中断，对网络服务的及时性、安全性、准确性也都不做担保 。</p><br><br>
+        <p>本系统/公司不保证为向用户提供便利而设置的外部链接的准确性和完整性，同时，对于该等外部链接指向的不由本公司/系统实际控制的任何网页上的内容不承担任何责任。</p><br><br>
+        <p>对于第三方提供的服务所不能控制的原因造成的网络服务中断或其他缺陷，本公司/系统不承担任何责任，但将尽力减少因此而给用户造成的损失和影响。</p><br><br>
+        <p>我们保留随时更改上述免责条款以及本系统/网站所的所有相关的内容、说明、规定及其他条款的权利。</p><br><br>
+        <p>本声明适用中华人民共和国法律。</p><br><br>
+</li>
+			</ul>
+		</div>
+	</div>
+<script type="text/javascript">
+//$(document).ready(function(){
+var al_num = <{$al_num[0]}>;
+$(".about_left li").eq(al_num).addClass("al_li");
+//});
+</script>
+	<{include file="./view/common/footer.html"}>
+
+
+</body>
+</html>

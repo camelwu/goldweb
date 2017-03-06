@@ -1,0 +1,459 @@
+/*文字色*/
+/*特殊位置黑色*/
+/*默认文字灰色*/
+/*默认主色调 特别用于强调的字、button和icon*/
+/*用于辅助说明文字、次要文字信息*/
+/*用于次要辅助说明文字*/
+/*用于详情提示文字，引导词*/
+/*用于价格显示、注意事项提醒文字*/
+/* 特殊样式白色字体 */
+/*辅助色*/
+/*用于搜索按钮*/
+/*用于各板块标题背景*/
+/*用于支付页详情背景*/
+/*公共顶部背景色*/
+/*用于背景颜色*/
+/*按钮划过颜色*/
+/*按钮划过颜色*/
+/*支付页首部背景色*/
+/*详情title背景色*/
+/*边线颜色*/
+/*默认主色调 特别用于强调的字、button和icon*/
+/*预订底部边框变色*/
+/* 灰色边框 */
+/*搜索背景色*/
+/*列表页标题底部边框颜色*/
+/*支付页警告边框线*/
+/*input边框线*/
+/*提示边框值*/
+/*提示边框阴影值*/
+/*字号*/
+/*用于航班时刻显示*/
+/*用于价格显示*/
+/*用于板块标题显示*/
+/*用于导航栏标题*/
+/*next  button按钮*/
+/*用于正文标题，重要文字信息*/
+/*用于补充说明文字、次要文字*/
+#loading-div {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  text-align: center;
+  padding: 40%;
+}
+[nav_boxs] {
+  border-bottom: solid 1px #e5edf0;
+}
+[step-flow] {
+  padding: 30px 0;
+}
+[checkbox-icon] {
+  display: inline-block;
+  position: relative;
+  top: 2px;
+}
+[select-div] .select_unit .select_btn {
+  line-height: 39px;
+  height: 100%;
+  overflow: hidden;
+}
+[select-div] .select_ul li {
+  line-height: 39px;
+}
+/*左侧信息的标题*/
+.info_title {
+  font-size: 14px;
+  line-height: 50px;
+  background: #f5f8f9;
+  font-weight: bold;
+  padding-left: 20px;
+  border-bottom: solid 1px #dce6ea;
+}
+/*预订信息*/
+[reserve_info] .info_centent {
+  padding: 12px 0 32px;
+}
+[reserve_info] .scenic_date {
+  float: left;
+  width: 340px;
+  margin-top: 18px;
+}
+[reserve_info] input.date_public {
+  width: 155px;
+  cursor: pointer;
+}
+[reserve_info] .select_unit {
+  border: 0;
+}
+[reserve_info] .vistor_order > span,
+[reserve_info] .scenic_date > span {
+  width: 134px;
+  text-align: right;
+  line-height: 40px;
+  color: #333;
+  display: inline-block;
+  float: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+[reserve_info] .select_unit {
+  width: 175px;
+  display: inline-block;
+  float: left;
+  margin: 0 0 0 20px;
+}
+[reserve_info] .vistor_center {
+  display: inline-block;
+  position: relative;
+}
+[reserve_info] .short_input {
+  width: 142px;
+}
+[reserve_info] .vistor_order {
+  margin: 18px 0 0 0px;
+  display: inline-block;
+  width: 100%;
+}
+[reserve_info] .vistor_order > span {
+  margin-right: 20px;
+}
+[reserve_info] p.public {
+  width: 156px;
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid #dce6ea;
+  padding-left: 20px;
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
+  background: #fff;
+}
+[reserve_info] .visitor_li {
+  height: 36px;
+  line-height: 36px;
+  margin-bottom: 16px;
+}
+[reserve_info] .visitor_li > span {
+  width: 42px;
+  text-align: right;
+  display: inline-block;
+  float: left;
+}
+[reserve_info] .visitor_li .select_unit {
+  width: 140px;
+}
+[reserve_info] .s_index {
+  width: 120px;
+  margin: 18px auto 0;
+}
+[select_person] ul.visitor_info {
+  top: 41px;
+}
+[coach-hotel] .coach_hotel {
+  padding: 32px 0 32px 18px;
+}
+[coach-hotel] .coach_hotel > span {
+  width: 134px;
+  text-align: right;
+  line-height: 36px;
+  color: #333;
+  display: inline-block;
+  float: left;
+}
+[coach-hotel] .select_unit {
+  display: inline-block;
+  width: 320px;
+  height: 40px;
+  margin: 0 18px;
+  float: left;
+}
+[coach-hotel] .coach_hotel .coach_span {
+  color: #999;
+  text-align: left;
+}
+/*取票人*/
+[person_info] {
+  /*常旅*/
+}
+[person_info] [card-id] {
+  border-bottom: 1px solid #eaeaea;
+  padding: 32px 0 17px;
+}
+[person_info] [card-id] .common_li {
+  margin-left: 46px;
+}
+[person_info] [card-id] .common_li li {
+  margin-bottom: 15px;
+}
+[person_info] [card-id] .common_li li.selected {
+  border: solid 1px #8ace00;
+}
+[person_info] [card-id] .common_li li.selected > i {
+  background: url(../../../resources/images/icon1.png) no-repeat -33px -176px;
+  width: 30px;
+  height: 26px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+[person_info] [card-id] .common_li li:hover {
+  cursor: pointer;
+}
+[person_info] [card-id] .common {
+  padding-left: 20px;
+  line-height: 62px;
+}
+[person_info] [card-id] .card_font {
+  width: 164px;
+  height: 51px;
+  border: 1px solid #eaeaea;
+  border-radius: 2px;
+  margin-left: 20px;
+  padding: 8px 11px 0;
+}
+[person_info] [card-id] .card_font i {
+  width: 30px;
+  height: 26px;
+  bottom: 0;
+  right: 0;
+}
+[person_info] [card-id] .card_font.cur {
+  border: 1px solid #8ace00;
+}
+[person_info] [card-id] .card_font.cur i {
+  background: url(../../../resources/images/icon1.png) no-repeat -33px -176px;
+}
+[person_info] [input-prompt] .sub_title {
+  margin: 30px 0 10px 20px;
+}
+[person_info] [input-prompt] .contact_ul {
+  margin: 20px 0 10px 0;
+}
+[person_info] [input-prompt] .contact_ul > li {
+  margin-bottom: 20px;
+}
+[person_info] [input-prompt] .contact_ul > li .label {
+  width: 130px;
+  text-align: right;
+  margin-right: 20px;
+  line-height: 41px;
+}
+[person_info] [input-prompt] .contact_ul > li .center_label {
+  width: 50px;
+  text-align: center;
+  line-height: 41px;
+}
+[person_info] [input-prompt] .contact_ul > li input {
+  width: 442px;
+}
+[person_info] [input-prompt] .contact_ul > li .select_unit {
+  width: 462px;
+}
+[person_info] [input-prompt] .contact_ul > li .short_input {
+  width: 185px;
+}
+[person_info] [input-prompt] .contact_ul .icon {
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  margin-right: 8px;
+}
+[person_info] [input-prompt] .contact_ul .icon_checkbox {
+  width: 14px;
+}
+[person_info] [input-prompt] .contact_lastli {
+  margin-left: 148px;
+}
+.next_btn {
+  margin: 40px 0 100px 270px;
+}
+/*费用明细*/
+[cost_detail] .detail_title {
+  font-size: 14px;
+  line-height: 40px;
+  background: #f5f8f9;
+  font-weight: bold;
+  padding-left: 20px;
+}
+[cost_detail] .person_list {
+  margin: 20px;
+  line-height: 2;
+}
+[cost_detail] .person_type {
+  float: left;
+}
+[cost_detail] .person_price {
+  float: right;
+}
+[cost_detail] .pay {
+  margin: 40px 20px 20px 20px;
+}
+[cost_detail] .money {
+  margin-left: 20px;
+  color: #fb7530;
+}
+[cost_detail] .money > span {
+  font-size: 24px;
+}
+[cost_detail] .pay_btn {
+  float: right;
+  margin-top: 4px;
+}
+@media (max-width: 1200px) {
+  font-size: 12px;
+  /*预订信息*/
+  [reserve_info] {
+    font-size: 12px;
+  }
+  [reserve_info] .info_centent {
+    padding: 8px 0 24px;
+  }
+  [reserve_info] .scenic_date {
+    margin-top: 14px;
+  }
+  [reserve_info] .select_unit {
+    margin: 0 0 0 12px;
+  }
+  [reserve_info] .vistor_order > span {
+    margin-right: 12px;
+  }
+  [reserve_info] .scenic_date {
+    margin-bottom: 16px;
+  }
+  [reserve_info] .vistor_order {
+    margin: 0;
+  }
+  [reserve_info] p.public {
+    width: 152px;
+  }
+  /*取票人信息*/
+  [person_info] {
+    font-size: 12px;
+    /*常旅*/
+  }
+  [person_info] [card-id] {
+    padding: 23px 0 12px;
+  }
+  [person_info] [card-id] .common {
+    line-height: 48px;
+  }
+  [person_info] [card-id] .card_font {
+    width: 146px;
+    padding: 8px 6px 0;
+    height: 46px;
+    font-size: 13px;
+    margin-left: 15px;
+  }
+  [person_info] [input-prompt] .contact_ul > li .label {
+    width: 70px;
+  }
+  [person_info] [input-prompt] .contact_ul > li input {
+    font-size: 12px;
+  }
+  [person_info] [input-prompt] .contact_ul > li .select_unit {
+    width: 458px;
+  }
+  [person_info] [input-prompt] .contact_ul > li .short_input {
+    width: 187px;
+  }
+  [person_info] [input-prompt] .contact_lastli {
+    margin-left: 90px;
+  }
+  [coach-hotel] .coach_hotel {
+    padding: 22px 0 22px 14px;
+  }
+  [coach-hotel] .select_unit {
+    width: 252px;
+  }
+  .next_btn {
+    margin: 40px 0 100px 170px;
+  }
+  /*费用明细*/
+  [cost_detail] {
+    font-size: 12px;
+  }
+  [cost_detail] .detail_item > div {
+    width: 205px;
+  }
+  [cost_detail] .money {
+    margin-left: 15px;
+  }
+  [cost_detail] .money > span {
+    font-size: 20px;
+  }
+  [cost_detail] .pay_btn {
+    margin-top: 0px;
+  }
+  [cost_detail] .pay_btn p {
+    width: 100px;
+  }
+  [select-div] .select_unit .select_btn {
+    line-height: 35px;
+  }
+  [select-div] .select_unit i {
+    top: 15px;
+  }
+  [select-div] .select_ul li {
+    line-height: 35px;
+  }
+}
+@media all and (orientation: portrait) {
+  /*预订信息*/
+  [reserve_info] h2 {
+    font-size: 16px;
+  }
+  /*出游人信息*/
+  [person_info] {
+    /*常旅*/
+  }
+  [person_info] [card-id] {
+    padding: 23px 0;
+  }
+  [person_info] [card-id] .common {
+    line-height: 48px;
+  }
+  [person_info] [card-id] .card_font {
+    width: 130px;
+    height: 44px;
+    font-size: 12px;
+    margin-left: 5px;
+  }
+  [person_info] [card-id] .card_font i {
+    width: 21px;
+    height: 17px;
+  }
+  [person_info] [card-id] .card_font.cur i {
+    background-position: -77px -176px;
+  }
+  [person_info] [input-prompt] .contact_ul > li .label {
+    width: 40px;
+  }
+  [person_info] [input-prompt] .contact_ul > li input {
+    width: 268px;
+  }
+  [person_info] [input-prompt] .contact_ul > li .select_unit {
+    width: 284px;
+  }
+  [person_info] [input-prompt] .contact_ul > li .short_input {
+    width: 100px;
+  }
+  [person_info] [input-prompt] .contact_lastli {
+    margin-left: 90px;
+  }
+  /*联系方式*/
+  [coach-hotel] .select_unit {
+    width: 185px;
+  }
+  [coach-hotel] .coach_hotel .coach_span {
+    margin-left: 8px;
+  }
+  .next_btn {
+    margin: 40px 0 100px 80px;
+  }
+}

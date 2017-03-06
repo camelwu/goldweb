@@ -5,6 +5,7 @@ $match = $_GET['match'];
 $match = (empty($match)) ? '------' : $match;
 $page = intval($_GET['page']);
 $page = (empty($page)) ? 1 : $page;
+
 //静态
 $shtm = array("aboutus", "contactus", "advise", "advertising", "qualifications", "duty", "partner", "sitemap", "insurance", "help", "instructions", "statement", "agreement", "company");
 //导航菜单与产品组合：custom，visa，无法组合
@@ -15,8 +16,8 @@ $spro = array("hotel", "scenic", "guideline", "tours", "ship", "visa");
 /*
  * 域名处理部分
  * */
-if ('m.cgbt.net' != $_SERVER['HTTP_HOST'] || 'm.cgbt.com' != $_SERVER['HTTP_HOST']) {
-	include_once ('/mobile.php');
+if ('m.cgbt.net' == $_SERVER['HTTP_HOST'] || 'm.cgbt.com' == $_SERVER['HTTP_HOST']) {
+	include_once (V_ROOT .'/mobile.php');
 } else {
 	if (in_array($module, $shtm)) {//静态页面
 		$al_num = array_keys($shtm, $module);
@@ -56,8 +57,8 @@ if ('m.cgbt.net' != $_SERVER['HTTP_HOST'] || 'm.cgbt.com' != $_SERVER['HTTP_HOST
 				break;
 		}
 		include_once (V_ROOT . "/view/$module.php");
-	} else {//未知->首页
-		include_once (V_ROOT . "/view/homepage.php");
+	} else {//未知->首页//网站模板
+		include_once ("homepage.php");
 	}
 }
 exit ;

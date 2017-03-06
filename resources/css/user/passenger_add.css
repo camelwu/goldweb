@@ -1,0 +1,491 @@
+.amb {
+  margin-bottom: 254px;
+}
+.apt {
+  padding-top: 26px;
+}
+.right_part .part_title {
+  height: 20px;
+  line-height: 20px;
+  font-size: 20px;
+  margin: 20px 0;
+  position: relative;
+  padding-left: 14px;
+}
+.right_part .part_title i {
+  display: inline-block;
+  height: 18px;
+  width: 4px;
+  position: absolute;
+  top: 50%;
+  margin-top: -9px;
+  left: 0;
+  background: #8ace00;
+}
+.input.error {
+  border: 1px solid red!important;
+}
+label.error {
+  display: block;
+  color: red;
+  line-height: 22px;
+  font-size: 12px;
+  background: url("../../../resources/images/plugin/error.png") no-repeat 0 1px;
+  margin: 0 7px 0 4px;
+  padding-left: 23px;
+}
+[traveller_info] .line_div {
+  line-height: 40px;
+  margin-bottom: 20px;
+}
+[traveller_info] .pre_f {
+  display: inline-block;
+  width: 56px;
+  text-align: right;
+  margin-right: 20px;
+}
+[traveller_info] .traveller_ul {
+  float: left;
+}
+[traveller_info] input[type='text'] {
+  width: 478px;
+  padding: 10px 20px;
+  font-family: "microsoft yahei", Arial, sans-serif;
+  font-size: 14px;
+}
+[traveller_info] .name_tip {
+  color: #fd7f54;
+  font-size: 14px;
+  margin-left: 22px;
+  vertical-align: middle;
+}
+[traveller_info] .id_span {
+  display: block;
+  float: left;
+}
+[traveller_info] .e_f_n {
+  width: 208px!important;
+}
+[traveller_info] .nml {
+  margin-left: 22px;
+}
+[traveller_info] .e_l_n {
+  width: 206px!important;
+}
+[traveller_info] .nationality {
+  width: 286px!important;
+}
+[traveller_info] .nation_div {
+  position: relative;
+}
+[traveller_info] .nation_div i {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 20px;
+  right: 14px;
+  border-width: 5px;
+  border-style: solid dashed dashed;
+  border-color: #999 transparent transparent transparent;
+}
+[traveller_info] input[type='radio'] {
+  display: none;
+  margin: 10px;
+  vertical-align: middle;
+  -webkit-appearance: radio;
+}
+[traveller_info] .six_type label {
+  padding-left: 22px;
+  cursor: pointer;
+  background: url("../../../resources/images/icon1.png") no-repeat;
+  background-position: -300px -176px;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+[traveller_info] .six_type label.checked {
+  background-position: -252px -176px;
+}
+[traveller_info] input.id_type {
+  width: 98px!important;
+}
+[traveller_info] input.id_number {
+  width: 198px!important;
+}
+[traveller_info] input.id_active_time {
+  width: 144px!important;
+}
+[traveller_info] input.id_country {
+  width: 128px!important;
+}
+[traveller_info] .select_ul_id {
+  border: 1px solid #eaeaea;
+  border-top: 0;
+  background: #ffffff;
+  display: none;
+  width: 138px;
+  padding-bottom: 0;
+  position: absolute;
+  z-index: 9999;
+  top: 100%;
+}
+[traveller_info] .select_ul_id li {
+  line-height: 34px;
+  width: 100%;
+  text-align: left;
+  text-indent: 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+[traveller_info] .select_ul_id li:hover {
+  color: #ffffff;
+  background: #8ace00;
+}
+[traveller_info] .select_ul_nation {
+  border: 1px solid #eaeaea;
+  border-top: 0;
+  background: #ffffff;
+  display: none;
+  width: 326px;
+  height: 136px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 0;
+  position: absolute;
+  z-index: 9999;
+  top: 100%;
+}
+[traveller_info] .id_zone {
+  width: 168px;
+}
+[traveller_info] .phone_zone {
+  width: 202px;
+}
+[traveller_info] .select_ul_nation li {
+  line-height: 34px;
+  width: 100%;
+  text-align: left;
+  text-indent: 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+[traveller_info] .select_ul_nation li:hover {
+  color: #ffffff;
+  background: #8ace00;
+}
+[traveller_info] .dle {
+  margin-left: 22px;
+  position: relative;
+  *display: inline;
+  _display: inline;
+}
+[traveller_info] .birthday_y,
+[traveller_info] [user_info] .birthday_m,
+[traveller_info] [user_info] .birthday_d {
+  position: relative;
+}
+[traveller_info] .birthday_y i {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 20px;
+  right: 14px;
+  border-width: 5px;
+  border-style: solid dashed dashed;
+  border-color: #999 transparent transparent transparent;
+}
+[traveller_info] .birthday_m i {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 20px;
+  right: 14px;
+  border-width: 5px;
+  border-style: solid dashed dashed;
+  border-color: #999 transparent transparent transparent;
+}
+[traveller_info] .birthday_d i {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 20px;
+  right: 14px;
+  border-width: 5px;
+  border-style: solid dashed dashed;
+  border-color: #999 transparent transparent transparent;
+}
+[traveller_info] .s_in {
+  width: 104px!important;
+}
+[traveller_info] .s_width {
+  width: 162px !important;
+}
+[traveller_info] .b_d_d .select_ul {
+  width: 144px;
+  height: 152px;
+  background: #fff;
+  position: absolute;
+  border-top: -1px;
+  border: 1px solid #eaeaea;
+  display: none;
+  border-top: 0;
+  z-index: 99999;
+  top: 100%;
+  overflow-y: auto;
+}
+[traveller_info] .b_d_d .select_ul li {
+  height: 38px;
+  line-height: 38px;
+  padding-left: 20px;
+}
+[traveller_info] .b_d_d .select_ul li:hover {
+  background: #8ace00;
+  color: #ffffff;
+}
+[traveller_info] .md {
+  margin: 0 14px;
+}
+[traveller_info] .opa {
+  color: #53b2fe;
+}
+[traveller_info] .add_other {
+  color: #53b2fe;
+}
+[traveller_info] .vh {
+  overflow: hidden;
+}
+[traveller_info] .line_div_sub {
+  margin-bottom: 20px;
+}
+[traveller_info] .add_b {
+  line-height: 20px!important;
+  margin-bottom: 20px!important;
+}
+[traveller_info] .last_no_mb {
+  margin-bottom: 0;
+}
+[traveller_info] input.phone_number_pre {
+  width: 128px!important;
+}
+[traveller_info] input.phone_number {
+  width: 250px!important;
+  margin-left: 22px;
+}
+[traveller_info] .button {
+  margin: 50px 0 0 88px;
+}
+[traveller_info] button {
+  display: inline-block;
+  border: 0;
+  cursor: pointer;
+  font: 14px/48px microsoft yahei;
+  height: 48px;
+  width: 170px;
+  text-align: center;
+  background: #8ace00;
+  color: #fff;
+  border-radius: 2px;
+  outline: 0 none;
+  vertical-align: middle;
+}
+[traveller_info] button.cancel {
+  margin-left: 22px;
+  background: #ffffff;
+  color: #8ace00;
+  border: 1px solid #8ace00;
+}
+[traveller_info] .country_code {
+  position: absolute;
+  right: 44px;
+  top: 1px;
+}
+@media (max-width: 1200px) {
+  .amb {
+    margin-bottom: 254px;
+  }
+  .apt {
+    padding-top: 12px;
+  }
+  .right_part .part_title {
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    margin: 20px 0;
+    position: relative;
+    padding-left: 14px;
+  }
+  .right_part .part_title i {
+    height: 16px;
+    width: 4px;
+    margin-top: -8px;
+  }
+  [traveller_info] .line_div {
+    line-height: 40px;
+    margin-bottom: 20px;
+  }
+  [traveller_info] .pre_f {
+    display: inline-block;
+    width: 66px;
+    text-align: right;
+    margin-right: 20px;
+  }
+  [traveller_info] input[type='text'] {
+    width: 310px;
+  }
+  [traveller_info] .name_tip {
+    margin-left: 18px;
+    font-size: 12px;
+  }
+  [traveller_info] .e_f_n {
+    width: 118px!important;
+  }
+  [traveller_info] .e_l_n {
+    width: 118px!important;
+  }
+  [traveller_info] .nationality {
+    width: 168px!important;
+  }
+  [traveller_info] input.id_type {
+    width: 60px!important;
+  }
+  [traveller_info] input.id_number {
+    width: 148px!important;
+  }
+  [traveller_info] input.id_active_time {
+    width: 94px!important;
+  }
+  [traveller_info] input.id_country {
+    width: 82px!important;
+  }
+  [traveller_info] .mfp {
+    clear: both;
+    margin-top: 20px;
+    margin-left: 0!important;
+  }
+  [traveller_info] .mfa {
+    float: left;
+    margin-top: 20px;
+  }
+  [traveller_info] input.phone_number_pre {
+    width: 68px!important;
+  }
+  [traveller_info] input.phone_number {
+    width: 168px!important;
+    margin-left: 22px;
+  }
+  [traveller_info] .button {
+    margin: 50px 0 0 88px;
+  }
+  [traveller_info] button {
+    font: 14px/34px microsoft yahei;
+    height: 34px;
+    width: 124px;
+  }
+  [traveller_info] button.cancel {
+    margin-left: 18px;
+  }
+}
+@media all and (orientation: portrait) {
+  .amb {
+    margin-bottom: 254px!important;
+  }
+  .apt {
+    padding-top: 6px;
+  }
+  .right_part .part_title {
+    font-size: 16px;
+    margin: 16px 0;
+    padding-left: 10px;
+  }
+  .right_part .part_title i {
+    height: 14px;
+    width: 2px;
+    margin-top: -7px;
+  }
+  [traveller_info] .line_div {
+    line-height: 40px;
+    margin-bottom: 16px;
+    font-size: 12px;
+  }
+  [traveller_info] .pre_f {
+    display: inline-block;
+    width: 66px;
+    text-align: right;
+    margin-right: 20px;
+    font-size: 12px;
+  }
+  [traveller_info] input[type='text'] {
+    width: 254px;
+  }
+  [traveller_info] .name_tip {
+    margin-left: 18px;
+    font-size: 12px;
+  }
+  [traveller_info] .e_f_n {
+    width: 98px!important;
+  }
+  [traveller_info] .nml {
+    margin-left: 12px;
+  }
+  [traveller_info] .e_l_n {
+    width: 102px!important;
+  }
+  [traveller_info] .nationality {
+    width: 154px!important;
+  }
+  [traveller_info] .name_tip_p {
+    display: none;
+  }
+  [traveller_info] input.id_type {
+    width: 50px!important;
+    font-size: 12px;
+  }
+  [traveller_info] input.id_number {
+    width: 118px!important;
+    font-size: 12px;
+  }
+  [traveller_info] input.id_active_time {
+    width: 86px!important;
+    font-size: 12px;
+  }
+  [traveller_info] input.id_country {
+    width: 82px!important;
+    font-size: 12px;
+  }
+  [traveller_info] .mfp {
+    margin-top: 12px;
+  }
+  [traveller_info] .s_in {
+    width: 56px!important;
+  }
+  [traveller_info] .mfa {
+    margin-top: 12px;
+  }
+  [traveller_info] .line_div_sub {
+    margin-bottom: 12px!important;
+  }
+  [traveller_info] .last_li {
+    margin-bottom: 0!important;
+  }
+  [traveller_info] .add_b {
+    line-height: 12px!important;
+    margin-bottom: 12px;
+  }
+  [traveller_info] input.phone_number_pre {
+    width: 74px!important;
+  }
+  [traveller_info] input.phone_number {
+    width: 148px!important;
+    margin-left: 12px;
+  }
+  [traveller_info] .button {
+    margin: 32px 0 0 88px;
+  }
+  [traveller_info] button {
+    font: 14px/34px microsoft yahei;
+    height: 34px;
+    width: 124px;
+  }
+  [traveller_info] button.cancel {
+    margin-left: 14px;
+  }
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><{$ktitle}>-免责声明</title>
+<link href="<{$siteurl}>/css/global.css" rel="stylesheet" type="text/css">
+<link href="<{$siteurl}>/css/about_us.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="<{$siteurl}>/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="<{$siteurl}>/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="<{$siteurl}>/js/index.js"></script>
+</head>
+<body>
+	<{include_php file="./view/common/header.php"}>
+
+	<div class="wrapper about_box clrfix">
+		<ul class="about_left">
+		  <li><a href="aboutus.html">关于我们</a><span></span></li>
+            <li><a href="contactus.html">联系我们</a><span></span></li>
+            <li><a href="advise.html">投诉建议</a><span></span></li>
+            <li><a href="advertising.html">广告服务</a><span></span></li>
+            <li><a href="qualifications.html">旅游资质</a><span></span></li>
+            <li><a href="duty.html">免责声明</a><span></span></li>
+            <li><a href="partner.html">合作商家</a><span></span></li>
+            <li><a href="sitemap.html">网站地图</a><span></span></li>
+			<li><a href="insurance.html">旅游保险</a><span></span></li>
+            <li><a href="/help.html">帮助中心</a><span></span></li>
+			<li><a href="instructions.html">使用说明</a><span></span></li>
+			<li><a href="statement.html">法律声明</a><span></span></li>
+			<li><a href="agreement.html">用户协议</a><span></span></li>
+		</ul>
+		<div class="about_right">
+		  <ul class="al_ul">
+				<li class="abr_title">各公司资质一览</li>
+				<li>
+					<div class="abr_hd">金桥总公司</div> 
+                    <p><br>&nbsp;&nbsp;&nbsp;&nbsp;准特许经营大陆居民赴台旅游业务。<br>
+<br>
+
+					<div class="abr_hd">发展历程</div> 1995年3月，中国金桥旅游有限公司跻身于中国一、二类旅行社百强行列<br />
+					<br /> <br /> 1997年6月，进入全国百强国际旅行社排行榜；<br /> <br /> <br />
+					2000年9月，成为北京市国际旅行社二十强；<br /> <br /> <br />
+					2007年12月，北京市旅游局授予公司“诚信旅行社”荣誉称号；<br /> <br /> <br />
+					2008年4月，公司荣获北京市旅游局授予4A国际旅行社称号
+				</li>
+			</ul>
+		</div>
+	</div>
+<script type="text/javascript">
+var al_num = <{$al_num[0]}>;
+$(".about_left li").eq(al_num).addClass("al_li");
+</script>
+	<{include file="./view/common/footer.html"}>
+
+
+</body>
+</html>

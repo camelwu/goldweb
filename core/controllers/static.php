@@ -1,0 +1,1 @@
+$smarty->display(V_ROOT . "./html/$enname.html", $cache_id);

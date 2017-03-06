@@ -1,0 +1,341 @@
+@charset "utf-8";
+/* CSS Document */
+/*文字色*/
+/*特殊位置黑色*/
+/*默认文字灰色*/
+/*默认主色调 特别用于强调的字、button和icon*/
+/*用于辅助说明文字、次要文字信息*/
+/*用于次要辅助说明文字*/
+/*用于详情提示文字，引导词*/
+/*用于价格显示、注意事项提醒文字*/
+/* 特殊样式白色字体 */
+/*辅助色*/
+/*用于搜索按钮*/
+/*用于各板块标题背景*/
+/*用于支付页详情背景*/
+/*公共顶部背景色*/
+/*用于背景颜色*/
+/*按钮划过颜色*/
+/*按钮划过颜色*/
+/*支付页首部背景色*/
+/*详情title背景色*/
+/*边线颜色*/
+/*默认主色调 特别用于强调的字、button和icon*/
+/*预订底部边框变色*/
+/* 灰色边框 */
+/*搜索背景色*/
+/*列表页标题底部边框颜色*/
+/*支付页警告边框线*/
+/*input边框线*/
+/*提示边框值*/
+/*提示边框阴影值*/
+/*字号*/
+/*用于航班时刻显示*/
+/*用于价格显示*/
+/*用于板块标题显示*/
+/*用于导航栏标题*/
+/*next  button按钮*/
+/*用于正文标题，重要文字信息*/
+/*用于补充说明文字、次要文字*/
+[ticket_banner] .banner {
+  height: 600px;
+  background: url("../../../resources/images/demo/ticketbanner.png") no-repeat center center;
+  background-size: cover;
+}
+[ticket_banner] .banner_bg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  height: 298px;
+  background: url("../../../resources/images/banner_bg.png") repeat-x top;
+}
+[ticket_banner] .banner_search {
+  position: absolute;
+  width: 1200px;
+  left: 50%;
+  top: 0;
+  margin-left: -600px;
+}
+[ticket_banner] .search_centent {
+  position: absolute;
+  top: 477px;
+  left: 15%;
+  z-index: 100;
+}
+[ticket_banner] .search_input {
+  width: 615px;
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+}
+[ticket_banner] input.public {
+  width: 583px;
+  padding: 15px 0 15px 30px;
+}
+[ticket_banner] .s_index {
+  width: 170px;
+  height: 51px;
+  line-height: 51px;
+  display: inline-block;
+  float: left;
+  border-radius: 0px 2px 2px 0px;
+}
+[ticket_banner] .search_prompt {
+  width: 552px;
+  background: #fff;
+  padding: 2px 30px 30px 30px;
+  overflow: hidden;
+  border: 1px solid #dce6ea;
+  border-top: 0px;
+}
+[ticket_banner] .search_prompt li {
+  width: 562px;
+}
+[ticket_banner] .search_address {
+  margin-top: 22px;
+  margin-bottom: 4px;
+  color: #8ace00;
+}
+[ticket_banner] .search_nation span {
+  display: inline-block;
+  margin-right: 34px;
+  line-height: 26px;
+  cursor: pointer;
+}
+[ticket_centent] .ticket_ploy {
+  width: 100%;
+  overflow: hidden;
+}
+[ticket_centent] .ticket_title {
+  padding: 50px 0 30px;
+  height: 20px;
+}
+[ticket_centent] .ticket_ploy_title {
+  font-size: 20px;
+  float: left;
+}
+[ticket_centent] .ticket_address span {
+  margin-left: 20px;
+  color: #999;
+  display: inline-block;
+  cursor: pointer;
+}
+[ticket_centent] .ticket_address span.cur {
+  color: #8ace00;
+}
+[ticket_centent] .ticket_hot_title {
+  padding: 10px 0 30px;
+  font-size: 20px;
+}
+[ticket_centent] .hot_centent {
+  min-width: 1200px;
+  height: 706px;
+  margin-bottom: 92px;
+  overflow: hidden;
+}
+[ticket_centent] .hot_fl {
+  width: 738px;
+  margin-right: 17px;
+}
+[ticket_centent] .hot_fl_one {
+  width: 738px;
+  height: 350px;
+  margin-bottom: 17px;
+  position: relative;
+}
+[ticket_centent] .hot_fl_one img {
+  width: 100%;
+  height: 100%;
+}
+[ticket_centent] .hot_fl_two {
+  width: 360px;
+  height: 334px;
+  margin-right: 17px;
+  position: relative;
+}
+[ticket_centent] .hot_fl_two img {
+  width: 100%;
+  height: 100%;
+}
+[ticket_centent] .fl_three {
+  margin-right: 0px;
+}
+[ticket_centent] .hot_fl_bg_img,
+[ticket_centent] .hot_fl_bg {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background: url('../../../resources/images/hotel_ticket/shadow_img.png') repeat-x;
+  display: block;
+}
+[ticket_centent] .hot_fl_bg_hover {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+[ticket_centent] .hot_name {
+  padding-left: 12px;
+  font-size: 22px;
+  color: #fff;
+  line-height: 50px;
+}
+[ticket_centent] .hot_name_hover {
+  font-size: 22px;
+  color: #fff;
+  text-align: center;
+  display: block;
+}
+[ticket_centent] .hover_one {
+  margin: 20% auto;
+}
+[ticket_centent] .hover_two {
+  margin: 38% auto;
+}
+[ticket_centent] .hover_three {
+  margin: 18% auto;
+}
+[ticket_centent] .hot_fr {
+  width: 444px;
+}
+[ticket_centent] .hot_fr_one {
+  width: 442px;
+  height: 222px;
+  margin-bottom: 17px;
+  position: relative;
+}
+[ticket_centent] .hot_fr_one img {
+  width: 100%;
+  height: 100%;
+}
+[ticket_centent] .fr_three {
+  margin-bottom: 0px;
+}
+@media (max-width: 1200px) {
+  [ticket_banner] .banner {
+    height: 438px;
+  }
+  [ticket_banner] .banner_bg {
+    min-width: 880px;
+  }
+  [ticket_banner] .banner_search {
+    width: 880px;
+  }
+  [ticket_banner] .search_centent {
+    top: 338px;
+    left: 32%;
+  }
+  [ticket_banner] .search_input {
+    width: 420px;
+  }
+  [ticket_banner] .search_prompt {
+    width: 420px;
+  }
+  [ticket_banner] .search_prompt li {
+    width: 430px;
+  }
+  [ticket_centent] .hot_centent {
+    min-width: 880px;
+    height: 540px;
+    margin-bottom: 60px;
+  }
+  [ticket_centent] .hot_fl {
+    width: 560px;
+  }
+  [ticket_centent] .hot_fl_one {
+    width: 560px;
+    height: 302px;
+  }
+  [ticket_centent] .hot_fl_two {
+    width: 271px;
+    height: 218px;
+  }
+  [ticket_centent] .hot_fr {
+    width: 302px;
+  }
+  [ticket_centent] .hot_fr_one {
+    width: 302px;
+    height: 168px;
+  }
+}
+@media all and (orientation: portrait) {
+  /*头部样式1页  begin*/
+  [ticket_banner] .banner {
+    height: 380px;
+  }
+  [ticket_banner] .banner_bg {
+    min-width: 680px;
+  }
+  [ticket_banner] .banner_search {
+    width: 680px;
+    margin-left: -524px;
+  }
+  [ticket_banner] .search_input {
+    width: 240px;
+  }
+  [ticket_banner] .search_centent {
+    left: 50%;
+    top: 272px;
+  }
+  [ticket_banner] .s_index {
+    width: 100px;
+    height: 45px;
+  }
+  [ticket_banner] input.public {
+    width: 223px;
+    padding: 12px 0 12px 15px;
+  }
+  [ticket_banner] .search_prompt {
+    width: 223px;
+    padding: 2px 16px 10px 16px;
+    font-size: 12px;
+  }
+  [ticket_banner] .search_prompt li {
+    width: 233px;
+  }
+  [ticket_banner] .search_address {
+    margin-top: 16px;
+  }
+  [ticket_banner] .search_nation span {
+    margin-right: 20px;
+  }
+  [ticket_centent] .hot_centent {
+    min-width: 680px;
+    height: 444px;
+    margin-bottom: 45px;
+  }
+  [ticket_centent] .hot_fl {
+    width: 448px;
+    margin-right: 0px;
+  }
+  [ticket_centent] .hot_fl_one {
+    width: 448px;
+    height: 252px;
+    margin-bottom: 10px;
+  }
+  [ticket_centent] .hot_fl_two {
+    width: 219px;
+    height: 180px;
+    margin-right: 10px;
+  }
+  [ticket_centent] .fl_three {
+    margin-right: 0px;
+  }
+  [ticket_centent] .hot_fr {
+    width: 220px;
+  }
+  [ticket_centent] .hot_fr_one {
+    width: 220px;
+    height: 141px;
+    margin-bottom: 10px;
+  }
+}

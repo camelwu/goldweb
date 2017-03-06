@@ -2,20 +2,20 @@ RewriteEngine on
 RewriteBase /
 
 ##首页
-RewriteRule ^(\/)?$ /index2.php
-RewriteRule ^index(\/)?.html$ /index2.php
+RewriteRule ^(\/)?$ /index.php
+RewriteRule ^index(\/)?.html$ /index.php
 RewriteRule ^admin(\/)?$ /admin/index.php
 ##搜索
-RewriteRule ^search/([0-9]+)/(.*)?$ /main.php?enname=search&arrvied=$1&id=$2
+RewriteRule ^search/([0-9]+)/(.*)?$ /index.php?enname=search&arrvied=$1&id=$2
 ###详情页
-RewriteRule ^([0-9a-zA-Z]+)+(\/)?([0-9]+)?$ /main.php?enname=$1&id=$3
+RewriteRule ^([0-9a-zA-Z]+)+(\/)?([0-9]+)?$ /index.php?enname=$1&id=$3
 ##一级页面
-RewriteRule ^([0-9a-zA-Z]+)+(\/)?([0-9a-zA-Z|\-]+)?(\/)?([0-9a-zA-Z]+)?(\/)?([0-9a-zA-Z]+)?(\/)?([0-9]+)?$ /main.php?enname=$1&match=$3&order=$5&orderby=$7&page=$9
+RewriteRule ^([0-9a-zA-Z]+)+(\/)?([0-9a-zA-Z|\-]+)?(\/)?([0-9a-zA-Z]+)?(\/)?([0-9a-zA-Z]+)?(\/)?([0-9]+)?$ /index.php?enname=$1&match=$3&order=$5&orderby=$7&page=$9
 ##介绍页面
-RewriteRule ^([0-9a-zA-Z]+)+(.html)+$ /main.php?enname=$1&id=$3&page=$4
+RewriteRule ^([0-9a-zA-Z]+)+(.html)+$ /index.php?enname=$1&id=$3&page=$4
 
-ErrorDocument 401 /error.php
-ErrorDocument 400 /error.php
-ErrorDocument 403 /error.php
-ErrorDocument 500 /error.php
-ErrorDocument 404 /error.php
+ErrorDocument 401 /error.html
+ErrorDocument 400 /error.html
+ErrorDocument 403 /error.html
+ErrorDocument 500 /error.html
+ErrorDocument 404 /error.html

@@ -1,0 +1,63 @@
+@import "../../color";
+
+[price-group] {
+    background: @bg_white;
+    padding: 15px 10px 10px 10px;
+    border: 1px solid @bdc_gray;
+    >.price_input {
+        .unit_input {
+            position: relative;
+            >div {
+                position: absolute;
+                left: 7px;
+                top: 1px;
+                color: @cl_gray;
+            }
+            >input {
+                width: 55px;
+                height: 18px;
+                padding: 6px 10px 6px 25px;
+                border: 1px solid @bdc_gray;
+            }
+        }
+        >i {
+            display: block;
+            width: 8px;
+            height: 1px;
+            background: #cacccd;
+            margin: 15px 8px;
+        }
+    }
+    .price_btn {
+        text-align: right;
+        margin-top: 8px;
+        .clear_price {
+            color: @cl_gray;
+        }
+        .clear_price {
+            cursor: pointer;
+        }
+        .confirm_btn {
+            background: @cl_main;
+            border: none;
+            border-radius: 3px;
+            padding: 5px 15px;
+            color: @cl_white;
+            margin-left: 20px;
+            outline: 0 none;
+            cursor: pointer;
+        }
+        .confirm_btn:hover {
+            background: @bg_hover1;
+        }
+    }
+}
+[price-group].btn_group_hide {
+    background: none!important;
+    padding: 16px 11px 11px 11px!important;
+    border: none!important;
+    .price_btn {
+        display: none!important;
+    }
+}
+

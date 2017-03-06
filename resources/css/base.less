@@ -1,0 +1,793 @@
+@charset "utf-8";
+/* CSS Document */
+@import 'color';
+/*重置*/
+html,body,div,form,th,td,input,button,textarea,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,p{
+  padding:0;margin:0;
+}
+body{
+   font:14px/1.6 "microsoft yahei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+   color: @cl_default;
+}
+i,em{
+  font-style:normal;
+}
+a{
+  text-decoration:none;
+  outline: none;
+  color: @cl_default;
+}
+a:hover{
+  color: @cl_default;
+}
+a:focus {
+  outline: none;
+}
+a img {
+  border: none;
+}
+li{
+  list-style:none;
+}
+input{
+  webkit-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  border-radius:1px;
+  outline: none;
+  border:1px solid @bdc_input;
+  color:#333;
+  -webkit-padding:0;
+}
+input::-webkit-input-placeholder { /* WebKit browsers */
+  color: #999;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #999;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #999;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #999;
+}
+input,button,textarea,select {
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+.clearfix:after {
+  content: '.';
+  display: block; /*加入的这个元素转换为块级元素。*/
+  clear: both; /*清除左右两边浮动。*/
+  visibility: hidden;/*可见度设为隐藏。仍然占据空间，只是看不到；*/
+  line-height: 0;/*行高为0；*/
+  height: 0;
+}
+/*这是针对于IE6的，因为IE6不支持:after伪类，这个神奇的zoom:1让IE6的元素可以清除浮动来包裹内部元素。*/
+.clearfix {
+  zoom: 1;
+}
+/*公共样式*/
+.fl{
+  float:left;
+}
+.fr{
+  float:right;
+}
+.pr{
+  position:relative;
+}
+.pa{
+  position:absolute;
+}
+.pf{
+  position: fixed;
+}
+.all{
+  min-width: 1200px;
+  overflow-x: hidden;
+}
+.contents{
+  max-width:1200px;
+  margin:0 auto;
+}
+.sub_contents{
+  max-width:1200px;
+  height:672px;
+  margin:0 auto;
+}
+.sub_contents p{
+  text-align: center;
+  margin:142px auto;
+}
+.shdow_circle{
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,.3);
+  z-index: 222;
+}
+.shdow_circle img{
+  position: absolute;
+  top:50%;
+  left:50%;
+  margin-left:-16px;
+  margin-top:-16px;
+}
+/*topper  以其他页面为默认样式*/
+[top-box] {
+  width:100%;
+  line-height: 30px;
+  top:0;
+  left:0;
+  z-index: 300;
+  border-bottom:1px solid #e5e5e5;
+  .top_left span.pdr0{
+    padding-right:0;
+  }
+  .bg0{
+    height:30px;
+    background: #f8f8f8;
+  }
+  .topper{
+    width:1200px;
+    margin-left:-600px;
+    position: absolute;
+    top:0;
+    left:50%;
+    z-index: 11;
+    font-size: 12px;
+  }
+  .top_left i,.top_left span,.top_left a{
+    float: left;
+  }
+  .top_left i{
+    height:8px;
+    line-height: 8px;
+    overflow: hidden;
+    margin-top: 11px;
+    padding:0 9px;
+    color: #e5e5e5;
+  }
+  .top_left span{
+    padding-right:15px;
+  }
+  .logo{
+    padding-right: 62px;
+  }
+  /*右侧*/
+  .top_right dl{
+    float: left;
+    width:84px;
+  }
+  .order_center:hover,.top_app:hover{
+    background: #fff;
+    box-shadow: 0px 0px 3px #f1f1f1;
+  }
+  .order_center:hover{
+    padding-bottom:7px;
+  }
+  .top_right dt{
+    height:30px;
+    text-indent: 12px;
+    cursor: pointer;
+    position: relative;
+  }
+  .top_icon{
+    width: 10px;
+    height: 6px;
+    background-image: url(../../resources/images/icon1.png);
+    background-position: -486px -26px;
+    position: absolute;
+    top: 14px;
+    right: 8px;
+    transition: all 0.2s;
+  }
+  .order_center:hover .top_icon,.top_app:hover .top_icon{
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    background-position:~"-474px -26px\9";
+  }
+  .top_right dd{
+    text-align: center;
+    line-height: 24px;
+    display: none;
+  }
+  .top_app dd{
+    width:136px;
+    height:210px;
+    box-shadow: 1px 2px 3px #f1f1f1;
+  }
+  .code_close{
+    width:30px;
+    height:26px;
+    top: 53px;
+    right: 22px;
+    cursor: pointer;
+  }
+  .top_right p:hover{
+    color: @cl_main;
+    cursor: pointer;
+  }
+  .top_right .center_wx{
+    width:84px;
+  }
+}
+/*首页头部 topper*/
+[top-index]{
+  border-bottom:0;
+  color: #fff;
+  .bg0{
+    background: #000;
+    opacity:0.4;
+    filter:alpha(opacity=40);
+  }
+  .cl_green{
+    color: #8ace00;
+  }
+  .topper a{
+    color: #fff;
+  }
+  .top_right dl.order_center:hover,.top_right dl.top_app:hover{
+    color: @cl_default;
+  }
+}
+/*导航 非首页样式为默认*/
+[nav_boxs]{
+  .logo{
+    width:155px;
+    height:48px;
+    margin-right: 60px;
+    background: url(../../resources/images/logo_green.png) no-repeat left top;
+  }
+  .logo_bd{
+    width:100%;
+    height:100%;
+    display: block;
+    text-indent: -100000px;
+  }
+  .nav dd{
+    float: left;
+
+    font-size: 18px;
+    position: relative;
+  }
+  .nav dd a{
+    display: block;
+    width:100%;
+  }
+  .nav dd.cur .a_index,.nav dd:hover .a_index{
+    color: @cl_main;
+  }
+  .a_index i{
+    position: absolute;
+    left: 78px;
+    width:0;
+    height:0;
+    border-width:6px;
+    border-style: solid dashed dashed;
+    border-color: #999999 transparent transparent transparent;
+    transition: all 0.2s;
+  }
+  .a_index .depart{
+    left: 95px;
+  }
+  .nav dd:hover .a_index i{
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    border-color: @cl_main transparent transparent transparent;
+    border-width:7px\9;
+    border-style: dashed dashed  solid\9;
+    border-color: transparent transparent #8ace00 transparent\9;
+  }
+  /*电话*/
+  .photo_top{
+    background: url(../../resources/images/photo_top.gif) no-repeat;
+    padding:18px 0 0 30px;
+    margin:31px 20px 0 0;
+    color: #999;
+  }
+}
+/*导航  other*/
+[nav_other]{
+  padding-bottom: 30px;
+  .logo{
+    margin-top:36px;
+  }
+  .nav{
+    height:84px;
+    padding-top:46px;
+    position: relative;
+    z-index: 20;
+  }
+  .bg{
+    background: @cl_main;
+    position: absolute;
+    top: 131px;
+    left: 0;
+    width: 100%;
+    height: 39px;
+    border-bottom:1px solid #7dc400;
+    z-index: 10;
+  }
+  .drop{
+    width: 210px;
+    height:40px;
+    font-size: @font14;
+    padding-top:24px;
+    margin-left: -14px;
+    display: none;
+    position: absolute;
+    left:0;
+  }
+  .header_drop .drop{
+    display: none;
+  }
+  .cur .drop{
+    display: block;
+  }
+  .drop a{
+    color:@cl_white;
+    line-height: 39px;
+  }
+  .icon{
+    width:0;
+    height:0;
+    position: absolute;
+    top:42px;
+    left:54px;
+    border-width: 6px;
+    border-style:dashed dashed solid ;
+    border-color: transparent transparent @cl_main transparent;
+    display: none;
+  }
+  .nav dd{
+    text-align: center;
+    padding: 0 34px;
+  }
+  .nav li{
+    height:32px;
+    float: left;
+    margin:2px 10px 0;
+  }
+  .nav li:hover{
+    border-bottom: 1px solid #fff;
+  }
+  .a_index i{
+    top:12px;
+    top:13px\9;
+  }
+  .nav dd:hover .a_index i,.nav dd.cur .a_index i{
+    top:7px;
+    top:6px\9;
+  }
+  .nav dd.cur .a_index i{
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    border-color: @cl_main transparent transparent transparent;
+    border-width:7px\9;
+    border-style: dashed dashed  solid\9;
+    border-color: transparent transparent #8ace00 transparent\9;
+  }
+}
+/*导航 首页*/
+[nav_index]{
+  width:100%;
+  top:30px;
+  left:0;
+  z-index: 200;
+  .logo{
+    width:127px;
+    height:42px;
+    background: url(../../resources/images/logo_white.png) no-repeat left top;
+    margin-top:20px;
+  }
+  .nav dd{
+    border-top:3px solid transparent;
+    width:120px;
+  }
+  .nav dd a{
+    text-align: center;
+  }
+  .nav dd a.a_hotel,.nav dd a.a_flight{
+    text-align: left;
+    text-indent: 32px;
+  }
+  .nav dd ol{
+    text-align: center;
+  }
+  .nav{
+    padding-top: 0px;
+  }
+  .nav dd.cur .a_index{
+    color: @cl_white;
+  }
+  .a_index{
+    color: @cl_white;
+    line-height: 62px;
+    position: relative;
+  }
+  .a_index i{
+    top:29px;
+    right:29px;
+    border-color:@cl_white transparent transparent transparent;
+  }
+  .nav dd:hover{
+    background:@cl_white;
+    opacity:0.9;
+    filter:alpha(opacity=90);
+    border-top:3px solid @cl_main;
+  }
+  .nav dd.cur{
+    opacity:0.9;
+    filter:alpha(opacity=90);
+    border-top:3px solid @cl_main;
+  }
+  .nav ol{
+    padding-bottom: 12px;
+    display: none;
+  }
+  .nav li{
+    line-height: 32px;
+    font-size: @font14;
+  }
+  .nav li:hover{
+    background: #e1e1e1;
+  }
+  .nav dd:hover .a_index{
+    color: @cl_main;
+  }
+  .nav dd:hover .a_index i{
+    top:24px;
+    top:22px\9;
+  }
+}
+/*导航 下拉隐藏式*/
+[nav_hide]{
+  box-shadow:0px 0 10px #ebebeb;
+  background: ~"url(../../resources/images/user/nav_bg_shaow.gif) repeat-x left bottom\9";
+  padding-bottom: 0;
+  margin-bottom:40px;
+  .bg{
+    display: none;
+  }
+  .nav{
+    height: 53px;
+    height: ~"60px\9";
+  }
+}
+/*只有logo*/
+[nav_empty]{
+  padding-bottom: 26px;
+  .logo {
+    margin-top: 26px;
+  }
+}
+/*面包屑导航*/
+.nav_bread a,.nav_bread span{
+  color: #999;
+}
+/*底部*/
+[bottom]{
+  height:160px;
+  background: url("../../resources/images/demo/bottom_bg.jpg") no-repeat center bottom;
+  background-size: cover;
+  //margin-top:90px;
+  .bottom_box{
+    padding-top: 38px;
+  }
+  .bottom_logo {
+    width:105px;
+    height:35px;
+    background: url("../../resources/images/demo/logo_white.png") no-repeat;
+    background-size: 105px 35px;
+  }
+  .bottom_logo a{
+    font-size: 0;
+  }
+  .bottom_nav{
+    padding-top:13px;
+  }
+  .bottom_nav{
+    font-size: 14px;
+    color: #e0e0e0;
+  }
+  .bottom_nav a{
+    color: #e0e0e0;
+  }
+  .bottom_nav i{
+    height:8px;
+    line-height: 8px;
+    display: inline-block;
+    overflow: hidden;
+    color: #5c5c5c;
+    margin: 0 10px;
+  }
+  .bottom_copyright{
+    padding-top: 7px;
+    font-size: 12px;
+    color: #838383;
+  }
+  .bottom_phone{
+    font-size: 24px;
+    font-family: Arial;
+    right: 0;
+    top:66px;
+    //overflow: hidden;
+  }
+  .bottom_phone span{
+    display: inline-block;
+    line-height: 32px;
+    color: #e0e0e0;
+  }
+  .bottom_phone i{
+    width:32px;
+    height:32px;
+    background-image:url("../../resources/images/icon1.png");
+    background-position: -141px -16px;
+    margin-right: 8px;
+  }
+}
+/*登录注册  底部*/
+[bottom_login]{
+  background: none;
+  height:auto;
+  .bottom_box {
+    padding-top: 131px;
+    padding-bottom:44px;
+  }
+  .bottom_nav a{
+    color:@cl_default;
+  }
+  .bottom_nav i{
+    color: #ebebeb;
+  }
+  .bottom_phone i{
+    background-position: -356px -329px;
+  }
+  .bottom_phone span{
+    color: #6e6e6e;
+  }
+  .bottom_phone{
+    top:138px;
+  }
+}
+
+
+/*适配*/
+@media (max-width:1200px){
+  .all{
+    min-width: 880px;
+  }
+  .contents{
+    max-width:880px;
+  }
+
+  /*头部 */
+  [top-box] {
+    min-width: 880px;
+    .topper{
+      width: 880px;
+      margin-left: -440px;
+    }
+    .a_index i {
+      right:8px;
+      border-width:3px;
+    }
+  }
+  [top-other]{
+    border-bottom:1px solid #e5e5e5;
+  }
+  [nav_boxs]{
+    .nav dd{
+      font-size:14px;
+    }
+    .a_index i {
+      border-width: 5px;
+    }
+    /*电话*/
+    .photo_top{
+      margin:14px 20px 0 0;
+    }
+    .a_index .depart {
+      left: 70px;
+    }
+  }
+  [nav_index]{
+    min-width: 880px;
+    .logo {
+      width: 100px;
+      height:33px;
+      background-size: 100% 100%;
+      margin-right: 50px;
+    }
+    .a_index i{
+      left:60px;
+    }
+    .nav dd{
+      width:88px;
+    }
+    .nav dd a.a_hotel,.nav dd a.a_flight{
+      text-indent: 25px;
+    }
+  }
+  [nav_other]{
+    padding-top:5px;
+    padding-bottom: 10px;
+    .logo {
+      width: 116px;
+      height: 38px;
+      background-size: 100% 100%;
+      margin-top: 19px;
+    }
+    .bg{
+      min-width: 880px;
+      height:33px;
+      top:103px;
+    }
+    .nav{
+      padding-top: 29px;
+    }
+    .drop{
+      margin-left: -30px;
+      padding-top: 14px;
+    }
+    .icon{
+      left:38px;
+      top: 27px;
+    }
+    .a_index i {
+      top: 9px;
+      left:60px;
+    }
+    .nav dd{
+      padding: 0 26px;
+    }
+    .nav dd.cur .a_index i{
+      top:5px;
+    }
+  }
+  /*没有下拉样式*/
+  [nav_hide]{
+    padding-bottom:0;
+    .nav {
+      height: 37px;
+    }
+    .logo{
+      margin-right: 10px;
+    }
+  }
+  /*底部*/
+  [bottom]{
+    .bottom_logo{
+      height:26px;
+      background-size: 77px 26px;
+    }
+    .bottom_nav i{
+      margin:0px;
+    }
+    .bottom_phone{
+      font-size: 18px;
+    }
+    .bottom_phone i{
+      width:24px;
+      height:24px;
+      background-position: -189px -16px;
+    }
+    .bottom_phone span{
+      line-height: 28px;
+    }
+  }
+}
+@media all and (orientation:portrait){
+  .all{
+    min-width: 680px;
+  }
+  .contents{
+    max-width:680px;
+  }
+  /*头部  begin*/
+  [top-box] {
+    min-width: 680px;
+    .topper{
+      width: 680px;
+      margin-left: -340px;
+    }
+    .top_left i{
+      padding:0 5px;
+    }
+    .top_left span{
+      padding-right:10px;
+    }
+  }
+  [nav_boxs]{
+    .nav dd{
+      font-size:13px;
+    }
+    /*电话*/
+    .photo_top{
+      margin:14px 0 0 0;
+      background-size:80px 20px;
+      font-size: 12px;
+      padding: 15px 0 0 17px;
+    }
+    .a_index .depart {
+      left: 56px;
+    }
+  }
+  [nav_other]{
+    .logo{
+      margin-right: 38px;
+    }
+    .bg{
+      min-width: 680px;
+    }
+    .icon {
+      left:29px;
+    }
+    .nav dd{
+      padding: 0 16px;
+    }
+    .nav dd .a_index i{
+      top:8px;
+      left:46px;
+    }
+    .nav dd.cur .a_index i{
+      top:2px;
+      right:9px;
+    }
+  }
+  [nav_index]{
+    min-width: 680px;
+    .a_index i{
+      left:44px;
+    }
+    .nav dd{
+      width:70px;
+    }
+    .nav dd a.a_hotel,.nav dd a.a_flight{
+      text-indent:16px;
+    }
+  }
+  [nav_hide]{
+    .logo {
+      margin-right: 20px;
+    }
+  }
+  /*底部*/
+  [bottom]{
+    .bottom_logo{
+      height:26px;
+      background-size: 77px 26px;
+    }
+    .bottom_nav{
+      font-size: 11px;
+    }
+    .bottom_copyright{
+      font-size:10px;
+    }
+    .bottom_phone{
+      font-size: 16px;
+    }
+    .bottom_phone i{
+      width:24px;
+      height:24px;
+      background-position: -189px -16px;
+    }
+  }
+}
+
+

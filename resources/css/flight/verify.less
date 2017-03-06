@@ -1,0 +1,96 @@
+@import "../color";
+.con_mar{
+  padding-top: 19px;
+  padding-bottom: 35px;
+}
+[container_rl]{
+  .contain_screen_r .flight{
+      margin-bottom: 0px;
+}
+
+
+}
+
+.btn_default{
+  margin-right:360px;
+  margin-top:-50px;
+}
+
+[content_l]{
+.v_title{
+  font-size:14px;
+  padding: 0 20px;
+  height: 47px;
+  line-height: 48px;
+  background: #f5f8f9;
+  //margin-top: 16px;
+  border-bottom: 1px solid @bdc_title_border;
+}
+  .v_t_title{
+    margin-top:16px;
+  }
+  .v_container{
+    padding:20px;
+    font-size:14px;
+  }
+  .v_first{
+    border-bottom: 1px solid @bdc_gray;
+    padding: 10px 20px 20px 20px;
+  }
+  .v_first1{
+    padding: 10px 20px 20px 20px;
+  }
+  .v_num{
+    padding:16px 0 34px;
+    *padding:16px 0 16px;
+  }
+  .v_content_num {
+    width: 88px;
+    text-align: right;
+    margin-right: 20px;
+    color:@cl_default;
+  }
+  .v_list{
+    color:@cl_default;
+  }
+  .v_name{
+    display: inline-block;
+    width: 88px;
+    text-align: right;
+    color:@cl_gray;
+    margin-right:20px;
+    line-height:30px;
+  }
+  .v_righ{
+    margin-right:16px;
+  }
+  .v_com{
+    padding:20px;
+    font-size:14px;
+  }
+}
+.next{
+  margin:50px auto 76px;
+}
+//适配
+@media (max-width:1200px){
+  [content_l] {
+    .v_container{
+      padding:6px 10px 14px 16px;
+    }
+    .v_com{
+      padding:10px 10px 10px 16px;
+    }
+  }
+
+}
+@media all and (orientation:portrait){
+  [content_l] {
+    .v_container{
+      padding:6px 10px 14px 16px;
+    }
+    .v_com{
+      padding:10px 10px 10px 16px;
+    }
+  }
+}

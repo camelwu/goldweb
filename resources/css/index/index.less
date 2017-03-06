@@ -1,0 +1,568 @@
+@import "../color.less";
+.all{
+  position: relative;
+}
+.sign{
+  position: absolute;
+  top: 12px;
+  left: 75px;
+  display: inline-block;
+  padding: 2px 4px;
+  background: #fb7530;
+  color: #fff;
+  font-size: 10px;
+  line-height: 16px;
+  height: 16px;
+  text-align: center;
+}
+.sign1{
+  top: 80px;
+  left: 47px;
+}
+.sign2{
+  top: 154px;
+  left: 47px;
+}
+.sign3{
+  top: 227px;
+  left: 47px;
+}
+.prompt_buy{
+  display: inline-block;
+  width: 78px;
+  height: 26px;
+  float: right;
+  margin-right: 8px;
+  color:@cl_white;
+  background: @cl_orange;
+  text-align: center;
+  line-height: 26px;
+  border-radius: 2px;
+  margin-top:4px;
+}
+[index_banner] {
+  .search_card {
+    position: absolute;
+    width: 1200px;
+    top: 142px;
+    left: 50%;
+    margin-left: -600px;
+    .tab_content {
+      position: relative;
+      .checkin_city {
+        width: 364px;
+      }
+      .search_hotel_btn_wrap {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+    }
+    .search_input {
+      width: 366px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      input {
+        font-size: 12px;
+        width: 100%;
+      }
+    }
+    [index_card]{
+      width: 112px;
+      height:296px;
+      background-color:rgba(0,0,0,0.4);
+      float: left;
+      >div{
+        border-left:2px;
+        height: 74px;
+        color:@cl_white;
+        line-height: 74px;
+        text-align: center;
+        cursor: pointer;
+      }
+      .span_flight{
+        display: inline-block;
+        width: 100%;
+
+        height: 74px;
+        color: #fff;
+        line-height: 74px;
+        cursor: pointer;
+        text-align: center;
+      }
+      >.cur{
+        background-color: @cl_white;
+        color:@cl_black ;
+        border-left:5px solid @cl_main;
+      }
+    }
+    [tab-card]{
+      display: inline-block;
+      min-height: 236px;
+    }
+    [input-prompt] {
+      padding-top: 22px;
+      margin-bottom: 14px;
+      > input {
+        display: none;
+      }
+      > input.cur {
+        display: block;
+      }
+    }
+
+    #ui-datepicker input:focus {
+      border: 1px solid @cl_main;
+    }
+
+    #startdate {
+      box-sizing: border-box;
+      padding: 10px 0 10px 25px;
+      width: 183px;
+      margin-right: 20px;
+      margin-bottom: 7px;
+    }
+    #enddate {
+      box-sizing: border-box;
+      padding: 10px 0 10px 25px;
+      margin-bottom: 7px;
+      width: 183px;
+    }
+    .checkIn_sumary {
+      padding-top: 10px;
+      .select_unit {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+.ticket_span{
+  margin-right:14px;
+  cursor: pointer;
+  margin-left: 2px;
+}
+//海外酒店
+.left_anchor{
+  width: 40px;
+  height: 1004px;
+  margin-top: 70px;
+  background:@cl_blockgray;
+  position: absolute;
+}
+.variety{
+  margin-top: 300px;
+  position: relative;
+}
+.variety span{
+  display: block;
+  height: 26px;
+  width: 100%;
+  color:@cl_white;
+  text-align: center;
+  position: relative;
+  padding-top:46px;
+  margin:20px 0;
+}
+.left_anchor span.cur{
+  background: @cl_white;
+  color:@cl_blockgray;
+}
+.left_anchor span>i{
+  width: 23px;
+  height: 23px;
+  background: url("../../../resources/images/index_icon.png") no-repeat;
+  background-size:750px 340px;
+  position: absolute;
+  top:16px;
+  left:7px;
+}
+.nav_hotel .icon{
+  background-position: -23px -27px;
+}
+.nav_ticket .icon{
+  background-position: -66px -27px;
+}
+.nav_hotelticket .icon{
+  background-position: -11px -60px;
+
+}
+.nav_hotel .icon_cur{
+  background-position: -64px -61px;
+}
+.nav_ticket .icon_cur{
+  background-position: -105px -61px;
+}
+.nav_hotelticket .icon_cur{
+  background-position: -110px -27px;
+}
+.user_top{
+  position: relative;
+  top:378px;
+  left:0px;
+}
+.user_top span{
+  width:100%;
+  height: 50px;
+  display: block;
+  cursor: pointer;
+}
+.user_top span .icon_user{
+  background-position: -153px -27px;
+}
+.user_top span .icon_back{
+  background-position: -202px -27px;
+  top:63px;
+}
+.span_back{
+  background-color: @cl_default;
+}
+
+[oversea]{
+  padding-top:50px;
+  h1{
+    font-size: 22px;
+    border-bottom: 1px solid @bdc_gray ;
+    padding-bottom:12px;
+  }
+  .sale_title{
+    padding:32px 0 12px 0;
+    font-size: 14px;
+    color:@cl_blockgray;
+    font-weight: 600;
+  }
+  .sale_link{
+    height:30px;
+    line-height: 30px;
+    color:@cl_blockgray;
+  }a{
+     width: 100%;
+     height: 100%;
+     cursor: pointer;
+   }
+  .hot_city{
+    padding:30px 0 0;
+    height: 26px;
+  }
+  .hot_city li{
+    float: left;
+    width: 92px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 2px;
+    color:@cl_default;
+    cursor: pointer;
+  }
+  li.hot_cur{
+    background-color: @cl_main;
+    color:@cl_white;
+  }
+  .hot_content {
+    width: 960px;
+    overflow: hidden;
+  }
+  .hot_content li{
+    width:290px;
+    height: 190px;
+    margin-right:20px;
+    padding: 22px 0 18px 0;
+    position: relative;
+    cursor: pointer;
+    float: left;
+  }
+  .hot_content li img{
+    width: 100%;
+    height: 100%;
+  }
+  .hot_content_info{
+    width: 100%;
+    position: absolute;
+    top: 28%;
+    left: 0;
+  }
+  .gray_bg{
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 290px;
+    height: 190px;
+    position: absolute;
+    top: 10%;
+    left: 0;
+  }
+  .hot_content_info span{
+    display: block;
+    text-align: center;
+    color:@cl_white;
+  }
+  .hot_info_name{
+    font-size: 20px;
+    padding-bottom:8px;
+  }
+  .hot_info_num{
+    font-size:14px;
+    padding-bottom:8px;
+  }
+  .hot_info_price strong{
+    color:@cl_orange;
+    font-size:22px;
+  }
+}
+.ad_img{
+  width:240px;
+  //height: 190px;
+  margin-top:45px;
+}
+.ad_img img{
+  width: 100%;
+  height: 100%;
+}
+[index_banner] {
+  .h_title{
+    line-height: 34px;
+  }
+  .search_card .search_card_content .city_list ul li {
+    display: block;
+    float: left;
+    margin-left: 8px;
+    line-height: 26px;
+  }
+  .title_li{
+    display: inline-block;
+    float: left;
+    margin-right: 20px;
+  }
+}
+.ticket_city>ul>.title{
+  line-height: 34px;
+}
+[ticket_tab]{
+  .city_list{
+    min-height: 174px;
+  }
+  input.ticket_input{
+    width: 366px;
+  }
+}
+.tab_title_div{
+  padding-bottom:6px;
+  border-bottom: 1px solid @bdc_gray;
+  color:@bdc_main;
+  font-size: 16px;
+}
+//热门门票
+[ticket]{
+  .hot_ticket{
+    font-size: 22px;
+    border-bottom: 1px solid #e5edf0;
+    padding:50px 0 12px;
+  }
+  h3{
+    font-size:16px;
+    color:@cl_blockgray;
+    padding:30px 0 12px;
+    font-weight:600;
+  }
+  .ticket_city span{
+    display: inline-block;
+    line-height: 32px;
+    height:32px;
+    margin-right:16px;
+    cursor: pointer;
+  }
+  ul.ticket_ploy_center{
+    display: block;
+    min-width:960px;
+    overflow: hidden;
+  }
+  .ploy_centent{
+    width: 290px;
+    margin-right:20px;
+    cursor: pointer;
+  }
+}
+[hot_theme]{
+  .hot_theme{
+    padding-top:12px;
+  }
+  .hot_theme li{
+    line-height:32px;
+    display: inline-block;
+    margin:0 14px 0 12px;
+  }
+  .hot_city {
+    height: 26px;
+  }
+  .hot_city li {
+    float: left;
+    width: 92px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 2px;
+    color: #333;
+    cursor: pointer;
+  }
+  li.hot_cur {
+    background-color: #8ace00;
+    color: #fff;
+  }
+  ul.ticket_ploy_center{
+    display: block;
+    min-width:960px;
+    overflow: hidden;
+    padding-top:22px;
+  }
+  .ploy_centent{
+    width: 290px;
+    margin-right:20px;
+    cursor: pointer;
+  }
+}
+//海外度假
+[holiday]{
+  margin-bottom:90px;
+  h1 {
+    font-size: 22px;
+    border-bottom: 1px solid #e5edf0;
+    padding: 10px 0 12px;
+  }
+  h3 {
+    font-size: 16px;
+    color: #666;
+    padding: 30px 0 12px;
+    font-weight: 600;
+  }
+  .holiday_city span{
+    display: inline-block;
+    line-height: 32px;
+    height: 32px;
+    margin-right: 16px;
+    cursor: pointer;
+  }
+  .holiday_city li{
+    line-height: 30px;
+    color: #666;
+  }
+  ul.ticket_ploy_center {
+    display: block;
+    min-width: 960px;
+    overflow: hidden;
+    padding-top: 12px;
+  }
+  .ploy_centent{
+    margin-bottom:0px;
+    cursor: pointer;
+    margin-right:20px;
+  }
+  .ht_icons{
+    width: 40px;
+    height: 32px;
+    background: url("../../../resources/images/index_icon.png") no-repeat;
+    background-size:750px 340px;
+    background-position: -381px -20px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+  }
+}
+.tab_list_cur{
+  display: inline-block;
+}
+@media (max-width:1366px){
+  .contents{
+    max-width:1000px;
+  }
+  [container_lr] {
+    .contain_screen_l {
+      width: 200px;
+    }
+    .content {
+      width: 780px;
+    }
+  }
+  [index_banner] {
+    .search_card {
+      width: 1000px;
+      left: 50%;
+      margin-left: -500px;
+    }
+  }
+  .ad_img {
+    width: 200px;
+    margin-top: 45px;
+  }
+  [oversea]{
+    .hot_content {
+      width: 816px;}
+    .hot_content li{
+      width:260px;
+      margin-right: 12px;
+      margin-bottom:-24px;
+    }
+    .gray_bg{
+      width: 260px;
+    }
+  }
+  [ticket]{
+    ul.ticket_ploy_center {
+      width: 816px;
+      margin-bottom: 10px;
+    }
+    .ploy_centent{
+      width:260px;
+      margin-right: 12px;
+      margin-bottom: 12px;
+    }
+    .ploy_theme {
+      width:230px;
+    }
+    .ploy_name{
+      width:230px;
+    }
+  }
+  [hot_theme] {
+    ul.ticket_ploy_center {
+      width: 816px;
+      margin-bottom: 10px;
+    }
+    .ploy_centent{
+      width:260px;
+      margin-right: 12px;
+      margin-bottom: 12px;
+    }
+    .ploy_theme {
+      width:230px;
+    }
+    .ploy_name{
+      width:230px;
+    }
+  }
+  [holiday]{
+    ul.ticket_ploy_center{
+      width: 816px;
+      margin-bottom: 10px;
+    }
+    .ploy_centent{
+      width:260px;
+      margin-right: 12px;
+      margin-bottom: 12px;
+    }
+    .ploy_theme {
+      width:230px;
+    }
+    .ploy_name{
+      width:230px;
+    }
+  }
+  .left_anchor {
+    height:854px;
+  }
+  .user_top{
+    top:226px;
+  }
+  [ticket_centent] {
+    .ploy_price {
+      color: #fb7530;
+      margin-right: 4px;
+    }
+  }
+}

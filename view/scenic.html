@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><{$cnname}>_旅行社_<{$ktitle}>_金桥</title>
+<link href="<{$siteurl}>/css/global.css" rel="stylesheet"
+	type="text/css">
+<link href="<{$siteurl}>/css/index.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="<{$siteurl}>/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="<{$siteurl}>/js/index.js"></script>
+</head>
+<body>
+	<{include_php file="./view/common/header.php"}>
+	<div class="wrapper now_position">
+		<!--当前位置-->
+		<a href="./">首页</a>&gt;<a href="./<{$enname}>/"><{$cnname}></a>
+	</div>
+	<{if $banner neq ''}><div class="wrapper">
+		<!--top-img-->
+		<ul class="domestic_top">
+			<{section name=web loop=$banner}>
+			<li class="dom_t<{$smarty.section.web.index+1}>"><a
+				href="<{$banner[web].mypath}>" target="_blank"><img
+					src="<{$banner[web].url}>"<{if $smarty.section.web.index+1 eq
+					'4'}> width="240" height="330"<{elseif $smarty.section.web.index+1
+					eq '7'}> width="444" height="160" <{else}> width="240"
+					height="160"<{/if}> /></a></li> <{/section}>
+		</ul>
+	</div><{/if}>
+	<div class="wrapper">
+		<{if $jingwai neq '1'}><!--条件筛选-->
+		<div class="address_select clrfix">
+			<ul class="dest_zhou_box clrfix">
+				<!--目的地-洲-->
+				<div class="dest_hd">所在地：</div>
+				<li<{if $go_end eq ''}> class="dest_zhou_on"<{/if}>>全部</li>
+				<{section name=a loop=$stat}>
+				<li<{if $go_end eq $smarty.section.a.index+1}>
+					class="dest_zhou_on"<{/if}>><{$stat[a]}></li><{/section}>
+			</ul>
+			<ul class="dest_guo_box">
+				<!--目的地-国家-->
+				<li class="clrfix<{if $go_end eq ''}> dest_guo_on<{/if}>">
+					<!--全部--> <span<{if $go_end2 eq ''}> class="sob_on"<{/if}>><a
+						href="/<{$enname}>/--<{$go_type}>-<{$go_item}>-<{$go_money}>-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>">全部</a></span>
+					<{section name=i loop=$area}><{section name=j loop=$area[i]}><span<{if
+						$go_end2 eq $area[i][j].id}> class="sob_on"<{/if}>><a
+						href="/<{$enname}>/-<{$area[i][j].id}>-<{$go_type}>-<{$go_item}>-<{$go_money}>-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>"><{$area[i][j].title}></a>
+				</span><{/section}><{/section}>
+				</li> <{section name=i loop=$area}>
+				<li
+					class="clrfix<{if $go_end eq $smarty.section.i.index+1}> dest_guo_on<{/if}>"><{section
+					name=j loop=$area[i]}><span<{if $go_end2 eq $area[i][j].id}>
+						class="sob_on"<{/if}>><a
+						href="/<{$enname}>/<{$smarty.section.i.index+1}>-<{$area[i][j].id}>-<{$go_type}>-<{$go_item}>-<{$go_money}>-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>"><{$area[i][j].title}></a>
+				</span><{/section}>
+				</li><{/section}>
+
+			</ul>
+			<ul class="service_mold clrfix">
+				<li>主题类型：</li>
+				<li><span<{if $go_type eq ''}> class="sob_on"<{/if}>><a
+						href="/<{$enname}>/<{$go_end}>-<{$go_end2}>--<{$go_item}>-<{$go_money}>-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>">全部</a></span></li>
+				<{foreach name=gotype item=types from=$go_types}>
+				<li><span<{if $go_type eq $types.id}>
+						class="sob_on"<{/if}>><a
+						href="/<{$enname}>/<{$go_end}>-<{$go_end2}>-<{$types.id}>-<{$go_item}>-<{$go_money}>-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>"><{$types.title}></a>
+				</span></li><{/foreach}>
+			</ul>
+			<ul class="number_days clrfix">
+				<li>景点级别：</li>
+				<li><span<{if $go_item eq ''}> class="sob_on"<{/if}>><a
+						href="/<{$enname}>/<{$go_end}>-<{$go_end2}>-<{$go_type}>--<{$go_money}>-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>">全部</a></span></li>
+				<{foreach name=goitem item=item from=$vtype}>
+				<li><span<{if $go_item eq $item.id}>
+						class="sob_on"<{/if}>><a
+						href="/<{$enname}>/<{$go_end}>-<{$go_end2}>-<{$go_type}>-<{$item.id}>-<{$go_money}>-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>"><{$item.title}></a>
+				</span></li><{/foreach}>
+			</ul>
+			<ul class="sob_box clrfix">
+				<li>价格区间：</li>
+				<li><span<{if $go_money eq ''}> class="sob_on"<{/if}>>全部</span></li>
+				<li><span<{if $go_money eq '0，50'}>
+						class="sob_on"<{/if}>><a
+						href="/<{$enname}>/<{$go_end}>-<{$go_end2}>-<{$go_type}>-<{$go_item}>-0，50-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>">50以内</a>
+				</span></li>
+				<li><span<{if $go_money eq '50，100'}>
+						class="sob_on"<{/if}>><a
+						href="/<{$enname}>/<{$go_end}>-<{$go_end2}>-<{$go_type}>-<{$go_item}>-50，100-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>">50-100
+				</span></li>
+				<li><span<{if $go_money eq '100'}>
+						class="sob_on"<{/if}>><a
+						href="/<{$enname}>/<{$go_end}>-<{$go_end2}>-<{$go_type}>-<{$go_item}>-100-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>">100以上
+				</span></li>
+			</ul>
+		</div>
+		<ul class="recom_select clrfix">
+			<!--强力推荐-->
+			<li><a
+				href="/<{$enname}>/<{$match}>/hits/<{if $orderby eq 'asc'}>desc<{else}>asc<{/if}>">点击<{if
+					$order eq 'hits'}>&nbsp;<{if $orderby eq
+					'asc'}>↑<{else}>↓<{/if}><{else}><span class="rs_icon"></span><{/if}>
+			</a></li>
+			<li><a
+				href="/<{$enname}>/<{$match}>/hots/<{if $orderby eq 'asc'}>desc<{else}>asc<{/if}>">销量<{if
+					$order eq 'hots'}>&nbsp;<{if $orderby eq
+					'asc'}>↑<{else}>↓<{/if}><{else}><span class="rs_icon"></span><{/if}>
+			</a></li>
+			<li><a
+				href="/<{$enname}>/<{$match}>/price2/<{if $orderby eq 'asc'}>desc<{else}>asc<{/if}>">价格<{if
+					$order eq 'price2'}>&nbsp;<{if $orderby eq
+					'asc'}>↑<{else}>↓<{/if}><{else}><span class="rs_icon"></span><{/if}>
+			</a></li>
+		</ul><{/if}>
+		<div class="dm_box">
+			<ul class="domestic_main clrfix">
+				<!--内容区-->
+				<{foreach item=data name=data from=$comments}>
+				<li><a class="dm_img" href="/detail/<{$data.id}>" target="_blank"><img
+						src="<{$data.url}>" width="374" height="230" /></a>
+					<div class="dm_bd">
+						<a href="/detail/<{$data.id}>" target="_blank"><{$data.title}></a><{$data.word}>
+					</div>
+
+					<{if $jingwai neq '1'}><!--条件筛选--><div class="dm_price">
+						<{if $data.cid eq 57 or $data.cid eq 65}>￥<{else}>$<{/if}><span><{$data.price2}></span>
+					</div><{/if}></li><{/foreach}>
+			</ul>
+		</div>
+	</div>
+	<div class="wrapper clrfix">
+		<!--页码-->
+		<ul class="page_box clrfix"><{$multipage}>
+		</ul>
+	</div>
+
+	<{include file="./view/common/footer.html"}> <{include_php
+	file="./view/common/right.php"}>
+	<script type="text/javascript">
+		$(".dest_zhou_box li").click(function() {//筛选洲/城市
+			var dz_num = $(this).index(".dest_zhou_box li");
+			$(this).siblings().removeClass("dest_zhou_on");
+			$(this).addClass("dest_zhou_on");
+			$(".dest_guo_box li").siblings().removeClass("dest_guo_on");
+			$(".dest_guo_box li").eq(dz_num).addClass("dest_guo_on");
+			$(".dest_guo_box li span").removeClass("dga_on");
+		});
+	</script>
+</body>
+</html>

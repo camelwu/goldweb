@@ -1,0 +1,121 @@
+.carousel_box {
+  width: 625px;
+  position: relative;
+  overflow: hidden;
+}
+.carousel_big {
+  width: 100%;
+  height: 337px;
+}
+.carouselUl {
+  width: 100%;
+  height: 108px;
+  margin-top: 10px;
+  position: relative;
+}
+.carousel_small {
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+}
+.carousel_small li {
+  width: 202px;
+  height: 100%;
+  margin-right: 10px;
+  float: left;
+}
+.carousel_small li:hover {
+  cursor: pointer;
+}
+.carousel_big {
+  position: relative;
+}
+.carousel_big img,
+.carousel_small li img {
+  width: 100%;
+  height: 100%;
+}
+.carousel_big img {
+  background: url(../../../resources/images/hotelDetailerrorpic.png) no-repeat left top;
+  background-size: 100% 100%;
+}
+.carousel_btn {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+.carousel_btn img {
+  position: absolute;
+  bottom: 24px;
+  cursor: pointer;
+}
+.carousel_btn .left {
+  left: 0;
+}
+.carousel_btn .right {
+  right: 0;
+}
+.carousel_pageNo {
+  width: 100px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+}
+.carousel_pageNo,
+.carousel_pageNo p {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.carousel_pageNo p {
+  width: 100%;
+  height: 100%;
+}
+.pageNo_bg {
+  background: #000;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  z-index: 0;
+}
+.carousel_number {
+  color: #fff;
+  font-size: 17px;
+  z-index: 10;
+}
+@media (max-width: 1200px) {
+  .carousel_box {
+    width: 455px;
+  }
+  .carousel_big {
+    height: 245px;
+  }
+  .carouselUl {
+    height: 80px;
+  }
+  .carousel_small li {
+    width: 148px;
+    margin-right: 6px;
+  }
+  .carousel_btn img {
+    width: 22px;
+    bottom: 17px;
+  }
+}
+@media all and (orientation: portrait) {
+  .carousel_box {
+    width: 360px;
+  }
+  .carousel_big {
+    height: 194px;
+  }
+  .carouselUl {
+    height: 63px;
+  }
+  .carousel_small li {
+    width: 118px;
+    margin-right: 3px;
+  }
+}

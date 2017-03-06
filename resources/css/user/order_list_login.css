@@ -1,0 +1,149 @@
+@charset "utf-8";
+/* CSS Document */
+/*文字色*/
+/*特殊位置黑色*/
+/*默认文字灰色*/
+/*默认主色调 特别用于强调的字、button和icon*/
+/*用于辅助说明文字、次要文字信息*/
+/*用于次要辅助说明文字*/
+/*用于详情提示文字，引导词*/
+/*用于价格显示、注意事项提醒文字*/
+/* 特殊样式白色字体 */
+/*辅助色*/
+/*用于搜索按钮*/
+/*用于各板块标题背景*/
+/*用于支付页详情背景*/
+/*公共顶部背景色*/
+/*用于背景颜色*/
+/*按钮划过颜色*/
+/*按钮划过颜色*/
+/*支付页首部背景色*/
+/*详情title背景色*/
+/*边线颜色*/
+/*默认主色调 特别用于强调的字、button和icon*/
+/*预订底部边框变色*/
+/* 灰色边框 */
+/*搜索背景色*/
+/*列表页标题底部边框颜色*/
+/*支付页警告边框线*/
+/*input边框线*/
+/*提示边框值*/
+/*提示边框阴影值*/
+/*字号*/
+/*用于航班时刻显示*/
+/*用于价格显示*/
+/*用于板块标题显示*/
+/*用于导航栏标题*/
+/*next  button按钮*/
+/*用于正文标题，重要文字信息*/
+/*用于补充说明文字、次要文字*/
+[order_title] .login_title {
+  width: 480px;
+  margin: 40px auto 0px;
+}
+[order_title] .login_title a {
+  width: 34%;
+  height: 64px;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 64px;
+  cursor: pointer;
+}
+[order_title] .icon {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-image: url(../../../resources/images/icon1.png);
+  background-repeat: no-repeat;
+  background-position: -281px -91px;
+  position: relative;
+  margin-right: 14px;
+  top: 6px;
+  *top: 0px;
+}
+[order_title] .icon_cur {
+  background-position: -228px -91px;
+}
+[order_title] .span_cur {
+  color: #8ace00;
+}
+[login] {
+  width: 480px;
+  margin: 0px auto;
+  height: 482px;
+}
+[login] .login_list li {
+  margin: 20px 0;
+  font-size: 14px;
+  color: #333;
+}
+[login] .login_list li span {
+  margin-right: 20px;
+  *display: inline-block;
+  *padding: 10px 0px;
+}
+[login] input.public {
+  width: 302px;
+  display: inline-block;
+}
+[login] input.code {
+  width: 156px;
+}
+[login] li.code_title {
+  display: inline-block;
+  width: 254px;
+  *float: left;
+  margin-top: 0px;
+}
+[login] li.code_warn {
+  margin-top: 0px;
+}
+[login] li.code_active {
+  margin-right: 62px;
+}
+[login] li.code_active span {
+  width: 128px;
+  height: 40px;
+  line-height: 40px;
+  *height: 20px;
+  *line-height: 20px;
+  display: inline-block;
+  color: #8ace00;
+  background: #fff;
+  border: 1px solid #e5edf0;
+  text-align: center;
+  cursor: pointer;
+}
+[login] li span.v_code {
+  width: 128px;
+  height: 42px;
+  position: absolute;
+  *padding: 0px 0px;
+}
+[login] span.v_code img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+[login] li span.icon_submit {
+  display: inline-block;
+  color: #53b2fe;
+  font-size: 14px;
+  line-height: 42px;
+  margin-left: 148px;
+  *padding: 0px 0px;
+  cursor: pointer;
+}
+[login] [btn-default] input.btn {
+  width: 180px;
+  height: 48px;
+  color: #fff;
+  line-height: 48px;
+  margin: 30px 0 30px 62px;
+}
+[input-prompt] label.error {
+  margin-left: 60px;
+}
+[bottom] {
+  margin-top: 90px;
+}

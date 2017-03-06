@@ -1,0 +1,117 @@
+/*文字色*/
+/*特殊位置黑色*/
+/*默认文字灰色*/
+/*默认主色调 特别用于强调的字、button和icon*/
+/*用于辅助说明文字、次要文字信息*/
+/*用于次要辅助说明文字*/
+/*用于详情提示文字，引导词*/
+/*用于价格显示、注意事项提醒文字*/
+/* 特殊样式白色字体 */
+/*辅助色*/
+/*用于搜索按钮*/
+/*用于各板块标题背景*/
+/*用于支付页详情背景*/
+/*公共顶部背景色*/
+/*用于背景颜色*/
+/*按钮划过颜色*/
+/*按钮划过颜色*/
+/*支付页首部背景色*/
+/*详情title背景色*/
+/*边线颜色*/
+/*默认主色调 特别用于强调的字、button和icon*/
+/*预订底部边框变色*/
+/* 灰色边框 */
+/*搜索背景色*/
+/*列表页标题底部边框颜色*/
+/*支付页警告边框线*/
+/*input边框线*/
+/*提示边框值*/
+/*提示边框阴影值*/
+/*字号*/
+/*用于航班时刻显示*/
+/*用于价格显示*/
+/*用于板块标题显示*/
+/*用于导航栏标题*/
+/*next  button按钮*/
+/*用于正文标题，重要文字信息*/
+/*用于补充说明文字、次要文字*/
+.con_mar {
+  padding-top: 19px;
+  padding-bottom: 35px;
+}
+[container_rl] .contain_screen_r .flight {
+  margin-bottom: 0px;
+}
+.btn_default {
+  margin-right: 360px;
+  margin-top: -50px;
+}
+[content_l] .v_title {
+  font-size: 14px;
+  padding: 0 20px;
+  height: 47px;
+  line-height: 48px;
+  background: #f5f8f9;
+  border-bottom: 1px solid #dce6ea;
+}
+[content_l] .v_t_title {
+  margin-top: 16px;
+}
+[content_l] .v_container {
+  padding: 20px;
+  font-size: 14px;
+}
+[content_l] .v_first {
+  border-bottom: 1px solid #e5edf0;
+  padding: 10px 20px 20px 20px;
+}
+[content_l] .v_first1 {
+  padding: 10px 20px 20px 20px;
+}
+[content_l] .v_num {
+  padding: 16px 0 34px;
+  *padding: 16px 0 16px;
+}
+[content_l] .v_content_num {
+  width: 88px;
+  text-align: right;
+  margin-right: 20px;
+  color: #333;
+}
+[content_l] .v_list {
+  color: #333;
+}
+[content_l] .v_name {
+  display: inline-block;
+  width: 88px;
+  text-align: right;
+  color: #999;
+  margin-right: 20px;
+  line-height: 30px;
+}
+[content_l] .v_righ {
+  margin-right: 16px;
+}
+[content_l] .v_com {
+  padding: 20px;
+  font-size: 14px;
+}
+.next {
+  margin: 50px auto 76px;
+}
+@media (max-width: 1200px) {
+  [content_l] .v_container {
+    padding: 6px 10px 14px 16px;
+  }
+  [content_l] .v_com {
+    padding: 10px 10px 10px 16px;
+  }
+}
+@media all and (orientation: portrait) {
+  [content_l] .v_container {
+    padding: 6px 10px 14px 16px;
+  }
+  [content_l] .v_com {
+    padding: 10px 10px 10px 16px;
+  }
+}
