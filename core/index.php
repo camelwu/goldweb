@@ -50,8 +50,8 @@ dbconnect();
 $uh_token = getHiddenUIDfromCookie();
 //ip定位
 $ip = getIP();
-if (!isset($_COOKIE['sp'])) {//first
-	$addr = getCity(getIP());
+if (!isset($_COOKIE['province'])) {//first
+	$addr = getCity($ip);
 	$province = str_replace('市', '', $addr['city']);
 	$sp = $addr['area'] ? $addr['area'] : '';
 	//cookie
