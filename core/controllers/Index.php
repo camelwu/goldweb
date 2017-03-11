@@ -43,7 +43,7 @@ if (U_TEMP) {
 	startSmarty(FALSE);
 	//定位IP区域
 	$smarty -> assign('ipfrom', $province);
-	$smarty -> assign('sp', $sp);exit($sp);
+	$smarty -> assign('sp', $sp);
 	//所在地查询（机构）
 	if ('branch' == $template) {
 		$sqlarea = "SELECT title FROM cg_area where id=" . $bidinfo['aid'];
@@ -197,7 +197,7 @@ $smarty->assign('page', $page);
 		if (empty($cid)) {
 			include_once ($module . '.php');
 		} else {
-			include_once ('tours.php');
+			include_once ('list_tours.php');
 		}
 	}
 }
