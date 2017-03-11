@@ -61,7 +61,6 @@ if (U_TEMP) {
 	$smarty -> assign('link', selectdatalink(15));
 	//热门目的地,热门线路的目的地？
 	$sql = "";
-	//;
 	//if('elsi.cgbt.net'==$_SERVER['HTTP_HOST']||'eluosi.cgbt.net'==$_SERVER['HTTP_HOST']){
 	//	$smarty->display(V_ROOT.'./'.$template.'/branch.html',$cache_id);
 	//}else{
