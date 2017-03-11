@@ -5,7 +5,7 @@ $action = postget('action');
 $action = (empty ($action)) ? "list" : $action;
 $perpage = 15;
 $page = empty ($_GET['page']) ? 1 : intval($_GET['page']);
-$start = ($page -1) * $perpage;echo $action;
+$start = ($page -1) * $perpage;
 $smarty->assign('action', $action);
 $tit = "广告";
 $smarty->assign('tit', $tit);
