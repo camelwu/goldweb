@@ -44,15 +44,15 @@
 				<{foreach name=outer01 item=contact from=$hots}>
 				<ul class="recom_bd<{$smarty.foreach.outer01.index+1}>">
 					<li class="rbd_img">
-						<a href="tours/<{$contact.id}>" target="_blank"><img src="<{$contact.url}>" border="0" width="372"<{if $smarty.foreach.outer01.index eq 1}>height="515"<{else}>height="210"<{/if}>></a>
+						<a href="<{$contact.mypath}>" target="_blank"><img src="<{$contact.url}>" border="0" width="372"<{if $smarty.foreach.outer01.index eq 1}>height="515"<{else}>height="210"<{/if}>></a>
 					</li>
 					<li class="rbd_txt">
 						<div class="rbd_l_bg">
 							<div class="fl_rbd_title">
-								<a href="tours/<{$contact.id}>"><{$contact.title}></a>
+								<a href="<{$contact.mypath}>"><{$contact.title}></a>
 							</div>
 							<div class="fl_rbd_hd">
-								<a href="tours/<{$contact.id}>"><{$contact.content}></a><!--<a href="search/<{$contact.departure}>"><{$contact.li}></a>•<a href="search/<{$contact.di}>"><{$contact.city2}></a>-->
+								<a href="<{$contact.mypath}>"><{$contact.content}></a><!--<a href="search/<{$contact.departure}>"><{$contact.li}></a>•<a href="search/<{$contact.di}>"><{$contact.city2}></a>-->
 							</div>
 							<div class="rbd_r_bg">
 								<{$contact.price2}>
@@ -779,11 +779,10 @@
 				</li>
 			</ul>
 		</div>
-		<{include file='/view/common/footer.html'}>
-		<{include_php file="/view/common/right.php"}>
+		<{include file='./view/common/footer.html'}>
+		<{include_php file="./view/common/right.php"}>
 	</body>
-	<script src="<{$siteurl}>/js/jquery-1.9.1.min.js"></script>
-	<script src="<{$siteurl}>/js/jquery.SuperSlide.2.1.1.js"></script>
+	
 	<script>
 		$(function() {
 			$(".scenic_area>li").mouseenter(function() {
@@ -831,6 +830,5 @@
 			});
 		});
 	</script>
-	<script src="<{$siteurl}>/js/index.js"></script>
 </html>
 

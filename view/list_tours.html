@@ -139,7 +139,7 @@
 		<div class="dm_box">
 			<ul class="domestic_main clrfix">
 				<{foreach item=tour name=tour from=$comments}>
-				<li><a class="dm_img" href="/tours/<{$tour.hid}>"
+				<li><a class="dm_img" href="/tours/<{$tour.id}>"
 					target="_blank"><img src="<{$tour.url}>" width="374"
 						height="230" /></a>
 					<div class="dm_bd">
@@ -147,7 +147,7 @@
 					</div> <a href="/tours/<{$tour.hid}>" class="dm_more" target="_blank">更多团期</a>
 					<!--根据栏目改变样式-->
 					<div class="dm_price">
-						￥<span><{$tour.price_2}></span>
+						￥<span><{$tour.price2}></span>
 					</div></li><{/foreach}>
 			</ul>
 		</div>
