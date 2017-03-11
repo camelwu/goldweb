@@ -215,6 +215,10 @@ function selectdatabanner($sectionID, $count) {
 		if (!empty ($value['url'])) {
 			$value['url'] = (stristr($value["url"], "http://") == '') ? $picserver . replaceSeps($value["url"]) : $value["url"];
 		}
+		if (!empty ($value['mypath'])&&$sectionID==4) {//当季最热的广告需要有价格，暂时只考虑线路产品
+			$tid = preg_replace('/\D/','',$value['mypath']);
+			$value['price2'] = cg_tour_price($tid);
+		}
 		$re[] = $value;
 	}
 	return $re;
@@ -478,8 +482,17 @@ function selectScenic($types = 0, $title = "", $count = false, $start = 0, $perp
 	}
 	return $re;
 }
+/*线路计划价格查询*/
+function cg_tour_price($id) {
+	global $db;
+	$query = $db->query("select price2 from cg_product_route where id=$id");
+	if($db->result($query,0)===NULL){
+		return '0';
+	}else{
+		return $db->result($query,0);
+	}
+}
 /*线路明细查询*/
-
 function cg_product($hid) {
 	global $db;
 	$sqlstr = "select * from cg_product_route_sale t,cg_product_route p where t.id=p.id and t.hid=" . $hid;
