@@ -707,19 +707,19 @@ function str_replace_once($needle, $replace, $haystack) {
  * Creater: WuSongBo
  * Date: 2017-02-20
  */
-function getCity($ip = '') {
+function getCity($str) {
 	static $json;
-	if ($ip == '' || $ip == '::1' || $ip == '127.0.0.1' || !preg_match("^(10|172\.16|192\.168)\.", $ip)) {
-		// if(){
+	/*if ($ip == '' || $ip == '::1' || $ip == '127.0.0.1' || !preg_match("^(10|172\.16|192\.168)\.", $ip)) {
+		return;
 		$json = json_decode(file_get_contents("http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json"), true);
 		$data = $json;
-	} else {
-		$json = json_decode(file_get_contents("http://ip.taobao.com/service/getIpInfo.php?ip=" . $ip), true);
-		if ((string)$json -> code == '1') {
+	} else {*/
+		$json = json_decode(file_get_contents("http://ip.taobao.com/service/getIpInfo.php?ip=" . $str), true);
+		if ((string)$json['code'] == '1') {
 			return false;
 		}
-		$data = (array)$json -> data;
-	}
+		$data = (array)$json['data'];
+	//}
 	return $data;
 }
 
@@ -758,7 +758,11 @@ function escapeStr($string) {
 			$string[$key] = escapeStr($val);
 		}
 	} else {
-		$string = mysql_escape_string(htmlspecialchars(trim($string)));
+		if (PHP_VERSION >= '5.3') {
+			$string = htmlspecialchars(trim($string));
+		}else{
+			$string = mysql_escape_string(htmlspecialchars(trim($string)));
+		}
 	}
 	return $string;
 }
