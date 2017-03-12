@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.20, created on 2017-03-05 20:11:58
+<?php /* Smarty version 2.6.20, created on 2017-03-08 17:24:43
          compiled from D:%5Clocal%5Cgoldweb/view/list_tours.html */ ?>
 <!doctype html>
 <html>
@@ -337,7 +337,7 @@ if ($this->_foreach['tour']['total'] > 0):
     foreach ($_from as $this->_tpl_vars['tour']):
         $this->_foreach['tour']['iteration']++;
 ?>
-				<li><a class="dm_img" href="/tours/<?php echo $this->_tpl_vars['tour']['hid']; ?>
+				<li><a class="dm_img" href="/tours/<?php echo $this->_tpl_vars['tour']['id']; ?>
 "
 					target="_blank"><img src="<?php echo $this->_tpl_vars['tour']['url']; ?>
 " width="374"
@@ -351,7 +351,7 @@ if ($this->_foreach['tour']['total'] > 0):
 " class="dm_more" target="_blank">更多团期</a>
 					<!--根据栏目改变样式-->
 					<div class="dm_price">
-						￥<span><?php echo $this->_tpl_vars['tour']['price_2']; ?>
+						￥<span><?php echo $this->_tpl_vars['tour']['price2']; ?>
 </span>
 					</div></li><?php endforeach; endif; unset($_from); ?>
 			</ul>

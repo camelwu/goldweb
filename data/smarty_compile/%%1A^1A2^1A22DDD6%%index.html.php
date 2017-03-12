@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.20, created on 2017-03-06 16:04:13
+<?php /* Smarty version 2.6.20, created on 2017-03-11 22:53:41
          compiled from D:%5Clocal%5Cgoldweb/view/index.html */ ?>
 <!doctype html>
 <html>
@@ -62,19 +62,19 @@ if ($this->_foreach['outer01']['total'] > 0):
 				<ul class="recom_bd<?php echo ($this->_foreach['outer01']['iteration']-1)+1; ?>
 ">
 					<li class="rbd_img">
-						<a href="tours/<?php echo $this->_tpl_vars['contact']['id']; ?>
+						<a href="<?php echo $this->_tpl_vars['contact']['mypath']; ?>
 " target="_blank"><img src="<?php echo $this->_tpl_vars['contact']['url']; ?>
 " border="0" width="372"<?php if (($this->_foreach['outer01']['iteration']-1) == 1): ?>height="515"<?php else: ?>height="210"<?php endif; ?>></a>
 					</li>
 					<li class="rbd_txt">
 						<div class="rbd_l_bg">
 							<div class="fl_rbd_title">
-								<a href="tours/<?php echo $this->_tpl_vars['contact']['id']; ?>
+								<a href="<?php echo $this->_tpl_vars['contact']['mypath']; ?>
 "><?php echo $this->_tpl_vars['contact']['title']; ?>
 </a>
 							</div>
 							<div class="fl_rbd_hd">
-								<a href="tours/<?php echo $this->_tpl_vars['contact']['id']; ?>
+								<a href="<?php echo $this->_tpl_vars['contact']['mypath']; ?>
 "><?php echo $this->_tpl_vars['contact']['content']; ?>
 </a><!--<a href="search/<?php echo $this->_tpl_vars['contact']['departure']; ?>
 "><?php echo $this->_tpl_vars['contact']['li']; ?>
@@ -955,18 +955,15 @@ if ($this->_foreach['yj']['total'] > 0):
 			</ul>
 		</div>
 		<?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => '/view/common/footer.html', 'smarty_include_vars' => array()));
+$this->_smarty_include(array('smarty_include_tpl_file' => './view/common/footer.html', 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
 		<?php require_once(SMARTY_CORE_DIR . 'core.smarty_include_php.php');
-smarty_core_smarty_include_php(array('smarty_file' => "/view/common/right.php", 'smarty_assign' => '', 'smarty_once' => false, 'smarty_include_vars' => array()), $this); ?>
+smarty_core_smarty_include_php(array('smarty_file' => "./view/common/right.php", 'smarty_assign' => '', 'smarty_once' => false, 'smarty_include_vars' => array()), $this); ?>
 
 	</body>
-	<script src="<?php echo $this->_tpl_vars['siteurl']; ?>
-/js/jquery-1.9.1.min.js"></script>
-	<script src="<?php echo $this->_tpl_vars['siteurl']; ?>
-/js/jquery.SuperSlide.2.1.1.js"></script>
+	
 	<script>
 		$(function() {
 			$(".scenic_area>li").mouseenter(function() {
@@ -1014,6 +1011,4 @@ smarty_core_smarty_include_php(array('smarty_file' => "/view/common/right.php", 
 			});
 		});
 	</script>
-	<script src="<?php echo $this->_tpl_vars['siteurl']; ?>
-/js/index.js"></script>
 </html>

@@ -1,5 +1,5 @@
 <?PHP
-include_once ('./common/inc/main.inc.php');
+include_once ('./core/main.inc.php');
 $action = $_GET['action'];
 if ('getend' == $action) {
 	$enname = $_GET['enname'];

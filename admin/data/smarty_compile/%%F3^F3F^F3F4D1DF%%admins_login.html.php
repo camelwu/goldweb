@@ -25,11 +25,11 @@ td {font-size:12px;}
 var validate = true;
 function get_code(){
 	if(validate==true){
-		document.getElementById("findcode").src="include/scode.php?"+Math.random();
+		document.getElementById("findcode").src="image.php?"+Math.random();
 		validate = false;
 		return false;
 	}else{
-		document.getElementById("findcode").src="include/scode.php?"+Math.random();
+		document.getElementById("findcode").src="image.php?"+Math.random();
 		validate = true;
 		return false;
 	}

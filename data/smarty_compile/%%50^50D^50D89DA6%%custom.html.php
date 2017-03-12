@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.20, created on 2017-03-06 10:58:57
+<?php /* Smarty version 2.6.20, created on 2017-03-07 11:44:03
          compiled from D:%5Clocal%5Cgoldweb/view/custom.html */ ?>
 <!doctype html>
 <html>
@@ -52,11 +52,11 @@ smarty_core_smarty_include_php(array('smarty_file' => "./view/common/header.php"
 var validate = true;
 function get_code(){
 	if(validate==true){
-		document.getElementById("findcode").src="include/scode.php?"+Math.random();
+		document.getElementById("findcode").src="image.php?"+Math.random();
 		validate = false;
 		return false;
 	}else{
-		document.getElementById("findcode").src="include/scode.php?"+Math.random();
+		document.getElementById("findcode").src="image.php?"+Math.random();
 		validate = true;
 		return false;
 	}
@@ -112,7 +112,7 @@ function checkfrm(frm){
 				<li><span><b>*</b>手机号码：</span><input type="text" name="mobile" /></li>
 				<li><span>公司名称：</span><input type="text" name="company" /></li>
 				<li><span><b>*</b>验证码：</span><input type="text" name="code" class="w90" />
-					<a href="javascript:void(0);" onClick="return get_code();" class="db_ver_img"><img src="include/scode.php" id="findcode" width="78" height="26" /></a> <a href="javascript:void(0);" onClick="get_code();" class="bd_ver_txt">看不清换一张</a>
+					<a href="javascript:void(0);" onClick="return get_code();" class="db_ver_img"><img src="image.php" id="findcode" width="78" height="26" /></a> <a href="javascript:void(0);" onClick="get_code();" class="bd_ver_txt">看不清换一张</a>
 				</li>
 				<li><a href="#" class="con_sub">确认提交</a></li></form>
 			</ul>

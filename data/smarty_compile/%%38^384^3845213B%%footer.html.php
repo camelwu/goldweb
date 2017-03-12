@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.20, created on 2017-03-05 22:12:40
+<?php /* Smarty version 2.6.20, created on 2017-03-12 02:47:05
          compiled from ./view/common/footer.html */ ?>
 <div class="footer_box">
 	<!--公用底部-->
@@ -51,6 +51,11 @@
 </div>
 <div class="side">
 	<ul>
+		<!-- <li><a href="javascript:window.open('http://bizapp.qq.com/webc.htm?new=0&sid=2355788255&o=b.qq.com&q=7', '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"><div class="sidebox"><img src="/images/side_icon04.png">QQ客服</div></a></li>
+		<li><a href="javascript:window.open('http://bizapp.qq.com/webc.htm?new=0&sid=2355788256&o=b.qq.com&q=7', '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"><div class="sidebox"><img src="/images/side_icon04.png">QQ客服</div></a></li>
+		<li><a href="javascript:window.open('http://bizapp.qq.com/webc.htm?new=0&sid=2355788257&o=b.qq.com&q=7', '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"><div class="sidebox"><img src="/images/side_icon04.png">QQ客服</div></a></li>
+		<li><a href="javascript:window.open('http://bizapp.qq.com/webc.htm?new=0&sid=2355788258&o=b.qq.com&q=7', '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"><div class="sidebox"><img src="/images/side_icon04.png">QQ客服</div></a></li>
+		<li><a href="javascript:window.open('http://bizapp.qq.com/webc.htm?new=0&sid=2355788259&o=b.qq.com&q=7', '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"><div class="sidebox"><img src="/images/side_icon04.png">QQ客服</div></a></li> -->
 		<li><a href="tencent://message/?uin=2355788255&Site=金桥旅游网&Menu=yes" ><div class="sidebox"><img src="http://demo.lanrenzhijia.com/2014/service1108/side_icon04.png">QQ客服</div></a></li>
 		<li><a href="tencent://message/?uin=2355788256&Site=金桥旅游网&Menu=yes" ><div class="sidebox"><img src="http://demo.lanrenzhijia.com/2014/service1108/side_icon04.png">QQ客服</div></a></li>
 		<li><a href="tencent://message/?uin=2355788257&Site=金桥旅游网&Menu=yes" ><div class="sidebox"><img src="http://demo.lanrenzhijia.com/2014/service1108/side_icon04.png">QQ客服</div></a></li>
