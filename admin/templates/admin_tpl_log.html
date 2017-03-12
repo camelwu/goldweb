@@ -7,14 +7,14 @@
 <link href="css/admin.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="kindeditor/themes/default/default.css" />
 <link rel="stylesheet" href="kindeditor/plugins/code/prettify.css" />
-<script charset="utf-8" src="kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="kindeditor/kindeditor-min.js"></script>
 <script charset="utf-8" src="kindeditor/lang/zh_CN.js"></script>
 <script charset="utf-8" src="kindeditor/plugins/code/prettify.js"></script>
 <script>
 	KindEditor.ready(function(K) {
 		var editor1 = K.create('textarea[name="word"]', {
 			cssPath : 'kindeditor/plugins/code/prettify.css',
-			uploadJson : 'kindeditor/php/upload_json.php',
+			uploadJson : 'includes/upload_json.php',
 			fileManagerJson : 'kindeditor/php/file_manager_json.php',
 			allowFileManager : true,
 			afterCreate : function() {
@@ -35,7 +35,7 @@
 		if ($("#info")) {
 			var editor2 = K.create('textarea[name="info"]', {
 				cssPath : 'kindeditor/plugins/code/prettify.css',
-				uploadJson : 'kindeditor/php/upload_json.php',
+				uploadJson : 'includes/upload_json.php',
 				fileManagerJson : 'kindeditor/php/file_manager_json.php',
 				allowFileManager : true,
 				afterCreate : function() {
@@ -57,7 +57,7 @@
 		if ($("#feature")) {
 			var editor3 = K.create('textarea[name="feature"]', {
 				cssPath : 'kindeditor/plugins/code/prettify.css',
-				uploadJson : 'kindeditor/php/upload_json.php',
+				uploadJson : 'includes/upload_json.php',
 				fileManagerJson : 'kindeditor/php/file_manager_json.php',
 				allowFileManager : true,
 				afterCreate : function() {

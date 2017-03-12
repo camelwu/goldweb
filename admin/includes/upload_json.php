@@ -6,16 +6,21 @@
  * 如果您确定直接使用本程序，使用之前请仔细确认相关安全设置。
  *
  */
-
-require_once 'JSON.php';
+if (!isset ($_SESSION)) {
+	session_start();
+}
+if (!isset ($_SESSION["admin"]) || $_SESSION["admin"] != true) {
+	$_SESSION["admin"] = false;
+	$_SESSION["username"] = "";
+	header("location:./admins_login.php");
+}
 
 $php_path = dirname(__FILE__) . '/';
 $php_url = dirname($_SERVER['PHP_SELF']) . '/';
-
 //文件保存目录路径
-$save_path = $php_path . '../attached/';
+$save_path = 'D:\soft\pic\attached\\';//$php_path . '../attached/';
 //文件保存目录URL
-$save_url = $php_url . '../attached/';
+$save_url = 'http://pic.cgbt.net/attached/';//$php_url . '../attached/';
 //定义允许上传的文件扩展名
 $ext_arr = array(
 	'image' => array('gif', 'jpg', 'jpeg', 'png', 'bmp'),
@@ -25,8 +30,7 @@ $ext_arr = array(
 );
 //最大文件大小
 $max_size = 1000000;
-
-$save_path = realpath($save_path) . '/';
+//$save_path = realpath($save_path) . '/';
 
 //PHP上传失败
 if (!empty($_FILES['imgFile']['error'])) {
@@ -126,14 +130,14 @@ if (empty($_FILES) === false) {
 	$file_url = $save_url . $new_file_name;
 
 	header('Content-type: text/html; charset=UTF-8');
-	$json = new Services_JSON();
-	echo $json->encode(array('error' => 0, 'url' => $file_url));
+	#$json = new Services_JSON();
+	echo json_encode(array('error' => 0, 'url' => $file_url));
 	exit;
 }
 
 function alert($msg) {
 	header('Content-type: text/html; charset=UTF-8');
-	$json = new Services_JSON();
-	echo $json->encode(array('error' => 1, 'message' => $msg));
+	#$json = new Services_JSON();
+	echo json_encode(array('error' => 1, 'message' => $msg));
 	exit;
 }
