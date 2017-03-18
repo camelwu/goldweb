@@ -1,5 +1,73 @@
 <?PHP
-include_once ('./core/main.inc.php');
+/**
+ *
+ * @package	Code2travel
+ * @author	heluo Dev Team
+ * @copyright	Copyright (c) 2003 - 2017, 河洛, Inc. (http://www.be-member.com/)
+ * @license	http://opensource.org/licenses/MIT	MIT License
+ * @link	http://be-member.com
+ * @since	Version 4.2.1
+ * @filesource
+ */
+//根目录
+define('V_ROOT', dirname(__FILE__));
+//合法应用config文件
+define('B_ENG', '1');
+//debug模式
+define('B_BUG', '1');
+B_BUG ? error_reporting(E_ALL & ~E_NOTICE) : error_reporting(0);
+//模板开启
+define('B_TEMP', '1');
+//路径设置
+$system_path = 'core';
+$source_path = 'resource';
+$view_path = 'view';
+define('BASEPATH', V_ROOT.'/'.$system_path);
+//包含公用文件
+include_once (BASEPATH . '/config/config.php');
+include_once (BASEPATH . '/config/database.php');
+include_once (BASEPATH . '/helpers/tool_helper.php');
+include_once (BASEPATH . '/func/main.php');
+include_once (BASEPATH . '/func/sels.php');
+//过滤
+if (!(get_magic_quotes_gpc())) {
+	$_GET = vaddslashes($_GET);
+	$_POST = vaddslashes($_POST);
+}
+// SQL注入
+$_GET = escapeStr($_GET);
+$_POST = escapeStr($_POST);
+//设置字符集
+header('Content-Type: text/html; charset=' . $charset);
+
+if ($gzipcompress && function_exists('ob_gzhandler')) {
+	ob_start('ob_gzhandler');
+} else {
+	ob_start();
+}
+//开始session
+session_start();
+//urldecode
+$_SERVER["REQUEST_URI"] = urldecode($_SERVER["REQUEST_URI"]);
+$_SERVER["HTTP_REFERER"] = urldecode($_SERVER["HTTP_REFERER"]);
+//终端初始化，以下参数若从$_GET获得，则为日志记录请求(/tac)，参数以get请求为准
+if (!isset($_GET['accessurl'])) {
+	$accessurl = $_SERVER['REQUEST_URI'];
+} else {
+	$accessurl = $_GET['accessurl'];
+}
+
+if (!isset($_GET['referurl'])) {
+	$referurl = $_SERVER['HTTP_REFERER'];
+} else {
+	$referurl = $_GET['referurl'];
+}
+//当前时间戳
+$timezone = "Asia/Shanghai";
+date_default_timezone_set($timezone);
+$timestamp = time();
+//数据库
+dbconnect();
 $action = $_GET['action'];
 if ('getend' == $action) {
 	$enname = $_GET['enname'];
