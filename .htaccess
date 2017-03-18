@@ -1,17 +1,17 @@
-RewriteEngine on
+ï»¿RewriteEngine on
 RewriteBase /
 
-##Ê×Ò³
+##é¦–é¡µ
 RewriteRule ^(\/)?$ /index.php
 RewriteRule ^index(\/)?.html$ /index.php
 RewriteRule ^admin(\/)?$ /admin/index.php
-##ËÑË÷
+##æœç´¢
 RewriteRule ^search/([0-9]+)/(.*)?$ /index.php?enname=search&arrvied=$1&id=$2
-###ÏêÇéÒ³
+###è¯¦æƒ…é¡µ
 RewriteRule ^([0-9a-zA-Z]+)+(\/)?([0-9]+)?$ /index.php?enname=$1&id=$3
-##Ò»¼¶Ò³Ãæ
+##ä¸€çº§é¡µé¢
 RewriteRule ^([0-9a-zA-Z]+)+(\/)?([0-9a-zA-Z|\-]+)?(\/)?([0-9a-zA-Z]+)?(\/)?([0-9a-zA-Z]+)?(\/)?([0-9]+)?$ /index.php?enname=$1&match=$3&order=$5&orderby=$7&page=$9
-##½éÉÜÒ³Ãæ
+##ä»‹ç»é¡µé¢
 RewriteRule ^([0-9a-zA-Z]+)+(.html)+$ /index.php?enname=$1&id=$3&page=$4
 
 ErrorDocument 401 /error.html
