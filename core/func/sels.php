@@ -129,14 +129,13 @@ function cg_class($classtype = 0) {
 	return $shop;
 }
 /**
- * @uses	CI_Hooks::_run_hook()
+ * @uses	线路出游目
  * @param	int	$type	0:over,1:inner
- * @param	string	$which	Hook name
  * @return	array	TRUE on success or FALSE on failure
  */
-function cg_dest($type = 0, $csearch='') {
+function cg_dest($type = 0) {
 	global $db;
-	$sqlwhere = $type?"and id in('57','65')":"and (id>57 and id<65)";
+	$sqlwhere = $type?"and id=65":"and (id>=57 and id<64)";
 	$query = $db->query("select id,title from cg_class where pid=0 and classtype=5 $sqlwhere order by hots");
 	$shop = array ();
 	while ($row = $db->fetch_array($query)) {

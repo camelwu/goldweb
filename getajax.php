@@ -111,11 +111,13 @@ if ('getend' == $action) {
 
 	if (!empty ($cmin)) {
 		$sqlwhere .= " and FIND_IN_SET(a.id,'{$cmin}') ";
-	}
-	$query = $db->query("SELECT a.id,a.title FROM cg_area a where 1=1 $sqlwhere order by a.region,a.pid");
-	//echo("SELECT a.id,a.title FROM cg_area a,cg_area b where a.pid=b.id $sqlwhere order by a.region,a.pid");
-	while ($info = $db->fetch_array($query)) {
-		$echohtml .= "<span" . ($end2 == $info['id'] ? " class=dga_on" : "") . "><a href=/$enname/$go_start-$end-" . $info['id'] . "-$go_days-$go_starttime-$go_endtime-$go_money-$go_tuijian-$go_sall-$go_hot>" . $info['title'] . '</a></span>';
+		$query = $db->query("SELECT a.id,a.title FROM cg_area a where 1=1 $sqlwhere order by a.region,a.pid");
+		//echo ("SELECT a.id,a.title FROM cg_area a,cg_area b where 1 $sqlwhere order by a.region,a.pid");
+		while ($info = $db->fetch_array($query)) {
+			$echohtml .= "<span" . ($end2 == $info['id'] ? " class=dga_on" : "") . "><a href=/$enname/$go_start-$end-" . $info['id'] . "-$go_days-$go_starttime-$go_endtime-$go_money-$go_tuijian-$go_sall-$go_hot>" . $info['title'] . '</a></span>';
+		}
+	}else{
+		$echohtml = "<span>暂无此洲的线路</span>";
 	}
 	echo $echohtml;
 }

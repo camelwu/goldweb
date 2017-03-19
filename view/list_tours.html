@@ -64,13 +64,13 @@
 					href="/<{$enname}>/<{$go_start}>--<{$go_end2}>-<{$go_days}>-<{$go_starttime}>-<{$go_endtime}>-<{$go_money}>-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>">全部</a></li>
 				<{foreach from=$mudi key=mudikey item=mudiitem}>
 				<li<{if $go_end eq $mudikey}> class="dest_zhou_on"<{/if}>><a
-					href="/<{$enname}>/<{$go_start}>-<{$mudikey}>-<{$go_end2}>-<{$go_days}>-<{$go_starttime}>-<{$go_endtime}>-<{$go_money}>-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>"><{$mudiitem.title}></a></li>
+					href="/<{$enname}>/<{$go_start}>-<{$mudikey}>--<{$go_days}>-<{$go_starttime}>-<{$go_endtime}>-<{$go_money}>-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>"><{$mudiitem.title}></a></li>
 				<{/foreach}>
 			</ul>
 			<ul class="dest_guo_box">
 				<!--目的地-国家-->
 				<li class="clrfix dest_guo_on" id="dest_guo_on"></li>
-				<script language=javascript>
+				<script>
 					loadcontent('<{$enname}>', '<{$go_end}>', '<{$go_end2}>');
 					function loadcontent(_enname, _end, _end2) {
 						var url = '/getajax.php?action=getend&end='
@@ -80,7 +80,7 @@
 								+ '&enname='
 								+ _enname
 								+ "&go_start=<{$go_start}>&go_days=<{$go_days}>&go_starttime=<{$go_starttime}>&go_endtime=<{$go_endtime}>&go_money=<{$go_money}>&go_tuijian=<{$go_tuijian}>&go_sall=<{$go_sall}>&go_hot=<{$go_hot}>";
-						$("#dest_guo_on").load(url)
+						$("#dest_guo_on").load(url);
 					}
 				</script>
 			</ul>
