@@ -762,8 +762,8 @@ a {
 }
 
 .area_box1 .area_bd {
-	/*border-bottom: 1px solid #dfdfdf;
-	 margin-bottom: 10px;*/
+	border-bottom: 1px solid #dfdfdf;
+	/*margin-bottom: 10px;*/
 	padding-bottom: 10px;
 	line-height: 20px;
 }

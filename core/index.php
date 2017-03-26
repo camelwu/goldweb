@@ -69,11 +69,11 @@ if (!isset($_COOKIE['province'])) {//first
 }
 /**
  * 基础数据获取完毕，开始处理
- * 首先判断是否手机端域名
+ * 首先判断是否使用smarty模板
  * */
-if ('m.cgbt.net' == $_SERVER['HTTP_HOST'] || 'm.cgbt.com' == $_SERVER['HTTP_HOST']) {
-	include_once (BASEPATH .'/controllers/mobile.php');
+if (U_TEMP) {
+	include_once (V_ROOT . '/controller/index.php');
 } else {
-	include_once (BASEPATH . '/controllers/index.php');
+	include_once (BASEPATH .'/controllers/mobile.php');
 }
 ?>

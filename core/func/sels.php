@@ -310,7 +310,7 @@ function sel_product($count, $type = "1", $types = 0, $ctype = 0, $ctype1 = 0) {
 			$sqlwhere .= " and bid=" . $bid;
 		//else
 	}else{
-		$sqlwhere.=" and 1=1";
+		//$sqlwhere.=" and 1=1";
 	}
 	if ($types == 2 || $types == 3) {
 		if ($bid && $bidinfo["cid"] != 9){
@@ -322,19 +322,19 @@ function sel_product($count, $type = "1", $types = 0, $ctype = 0, $ctype1 = 0) {
 	else
 		$orderbysql = ' order by id desc';
 	if ($count)
-		$limitsql = ' limit ' . $count;
+		$limitsql = ' limit 0,' . $count;
 	
 	if ($types == 2) {
 		$sql = "select aid,id,title,info_id,cid,url,price1,price2,word,info,keyword,bid from cg_scenic" . $sqlwhere . " group by aid" . $limitsql;
 	}else{
 		$sql = "select id,title,info_id,url,price1,price2,word,info,keyword,bid from cg_scenic" . $sqlwhere . $orderbysql . $limitsql;
 	}
-	//return $sql;
+	
 	$query = $db->query($sql);
 	while ($row = $db->fetch_array($query)) {
 		if($row['aid']&&$types == 2){//签证，并且有国家
-			$vurl = $db->getOneInfo("select url from cg_area where id=".$row['aid']);
-			$row['url'] = $vurl['url'];
+			$vurl = $db->result($db->query("select url from cg_area where id=".$row['aid']), 0);
+			$row['url'] = $vurl;
 		}
 		if (!empty ($row['url'])) {
 			$row['url'] = (stristr($row["url"], "http://") == '') ? $picserver . replaceSeps($row["url"]) : $row["url"];

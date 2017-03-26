@@ -15,8 +15,8 @@
 .login_main .login_vali .log_txt{ width:45%; position:absolute; left:0; }
 .login_main .login_vali .log_img{ position:absolute; left:53%; margin-left:-20px; width:25%}
 .login_main .login_vali .log_btn{text-align:right; position:absolute; right:0; margin-top:-5px;}
-.login_main .login_vali li img{ width:85%; height:24px;border:1px solid #dfdfdf; display:block; margin:0 auto}
-.login_main .login_vali li a{ font-size:12px; color:#0059ed; text-decoration:underline;}
+.login_main .login_vali li img{ width:85%; height:24px;border:1px solid #dfdfdf; display:block; margin:9px auto}
+.login_main .login_vali li a{ font-size:12px; color:#0059ed; text-decoration:underline;margin:9px auto;}
 .login_main .next_login{ font-size:12px; color:#bababa}
 .login_main .next_login input{ height:auto;vertical-align:middle; margin-right:5px;}
 .login_main .next_login a{ float:right; font-size:12px;color:#0059ed; text-decoration:underline;}

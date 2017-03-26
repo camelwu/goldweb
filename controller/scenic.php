@@ -30,16 +30,13 @@ while ($row = $db->fetch_array($query)) {
 $area = array ();
 $query = $db->query("select title,hots from cg_class where classtype=5 and pid=0 order by hots limit 8");
 while ($row = $db->fetch_array($query)) {
-
 	$cid = (int) $row['hots'] + 1;
 	$sql = "select t.aid as id,p.title from cg_area p,cg_scenic t where t.types=$types and t.cid=$cid and p.id=t.aid group by t.aid ";
 	$query1 = $db->query($sql);
 	$res = array ();
-
 	while ($val = $db->fetch_array($query1)) {
 		$res[] = $val;
 	}
-
 	if (count($res)) {
 		$stat[] = $row['title'];
 		$area[] = $res;
@@ -50,12 +47,9 @@ $smarty->assign('area', $area);
 /*
  * 景点列表查询
  */
-
 $type = '1';
 $perpage = 6;
-
 $sqlfrom = "from $table";
-
 $sqladd = " where types=$types";
 $sqladd .= " and find_in_set('" . $type . "',op_type)";
 
