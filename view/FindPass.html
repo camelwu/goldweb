@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>找回密码1</title>
+		<link href="css/global.css" rel="stylesheet" type="text/css">
+		<link href="css/login.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<a href="index.html" class="logo"></a><!--logo-->
+		</div>
+		<div class="wrapper fp_main">
+			<div class="fp_title">
+				找回登录密码
+			</div>
+			<ul class="fp_progress clrfix fp_determine">
+				<li class="prog1">
+					1.确认账号
+				</li>
+				<li class="prog2">
+					2.将新密码发送到您的邮箱
+				</li>
+				<li class="prog4">
+					3.完成
+				</li>
+			</ul>
+			<form name="findpass" method="post" action="./findpass" onsubmit="return find()">
+				<div class="fp_main_box clrfix">
+					<span>金桥账号：</span>
+					<div>
+						<input type="text" name="email" placeholder="请输入邮箱">
+					</div>
+				</div>
+				<div class="fp_main_box clrfix fp_varifi_box">
+					<span>验证码：</span>
+					<div>
+						<input type="text" name="code" placeholder="请输验证码">
+					</div>
+					<div class="fp_var_img"><img src="./include/scode.php" id="findcode" width="100%" height="24" style="cursor: pointer;">
+					</div>
+					<a href="#here" onclick="return get_code();" class="fp_change">看不清，换一张</a>
+				</div>
+				<input type="submit" class="next_btn" value="下一步">
+			</form>
+		</div>
+
+		<ul class="wrapper clrfix comm_login fp_comm">
+			<!--金桥五大承诺-->
+			<li class="comm_title">
+				金桥五大承诺&nbsp;&nbsp;让你旅游放心
+			</li>
+			<li class="comm_cq">
+				产品优质
+			</li>
+			<li class="comm_jg">
+				价格最新
+			</li>
+			<li class="comm_bz">
+				预约价格保证
+			</li>
+			<li class="comm_qy">
+				维护权益
+			</li>
+			<li class="comm_pf">
+				先行赔付
+			</li>
+		</ul>
+
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script>
+	var validate = true;
+	function get_code() {
+		if (validate == true) {
+			document.getElementById("findcode").src = "include/scode.php?" + Math.random();
+			validate = false;
+			return false;
+		} else {
+			document.getElementById("findcode").src = "include/scode.php?" + Math.random();
+			validate = true;
+			return false;
+		}
+	}
+
+	function find() {
+		var email = $("input[name='email']");
+		var code = $("input[name='code']");
+		if(email.val()==""||!chkemail(email.val())) {
+			alert("请输入合法的邮箱！");
+			email.focus();
+			return false;
+		}else
+		if (email.val() == "" || email.val().length < 4) {
+			alert("请输入4位验证码！");
+			code.focus();
+			return false;
+		} else {
+			return true;
+		}
+		function chkemail(email) {
+			var pattern = /^(\w-*_*\.*)+@(\w-?)+(\.\w{2,})+$/;
+			if (pattern.test(email)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+	}
+</script>

@@ -1,0 +1,355 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<title><{$info.name}>_<{$info.title}>_<{$ktitle}>_金桥旅行社</title>
+<link href="<{$siteurl}>/css/global.css" rel="stylesheet"
+	type="text/css">
+<link href="<{$siteurl}>/css/OrderForm.css" rel="stylesheet"
+	type="text/css">
+
+</head>
+<body>
+	<{include_php file="./include/header.php"}>
+	<div class="wrapper now_position">
+		<!--当前位置-->
+		<a href="/">首页</a>&gt;<a href="/<{$cinfo.html}>"><{$cinfo.title}></a>&gt;<{$info.name}>
+	</div>
+	<div class="wrapper">
+		<div class="cd_slideBox">
+			<!--焦点图-->
+			<div class="hd">
+				<ul>
+					<{foreach name=topimg item=tp from=$topimg}>
+					<li<{if $smarty.foreach.topimg.first}> class="sli_on"<{/if}>></li><{/foreach}>
+				</ul>
+			</div>
+			<div class="bd">
+				<ul>
+					<{foreach name=topimgs item=tps from=$topimg}>
+					<li<{if $smarty.foreach.topimgs.first}> style="display:
+						none;"<{/if}>><img src="<{$tps.url}>" />
+						<div class="banner_txt">
+							<p class="bat_hd"><{$tps.title}></p>
+							<p></p>
+						</div>
+					</li> <{/foreach}>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="wrapper">
+		<div class="clrfix cc_top_box">
+			<ul class="comm_ctR">
+				<li class="jq_price">价格：<span>￥<{$info.price_2}></span>
+					<div class="price_exp">
+						<!-- 	起价说明
+						<div>
+							<span></span>起价说明起价说明起价说明起价明起价说明起价说明起价明起价说明起价说明起价明起价说明起价说明起价说明起价说明起价说明起价说明
+						</div> -->
+					</div>
+				</li>
+				<!-- 
+				<li class="jq_pref">优惠促销：<span>减<span
+						class="jq_price_num">200</span></span>新用户购买减200
+				</li>-->
+				<li class="jq_setout">出发地：<{$info.departure}></li>
+				<li class="jq_dest">目的地：<{$info.city2}></li>
+				<li class="jq_num">行程天数：<{$info.go_num}>天</li>
+				<li class="jq_schedul">选择班期： <select name="go_times"><{foreach
+						name=time from=$prices key=time item=data}>
+						<option value="<{$time}>" price="<{$data}>"><{$time}>
+							￥<{$data}>元/人</option><{/foreach}>
+				</select>
+				</li>
+				<li class="jq_rnum">选择人数： <span class="jq_adult clrfix">
+						<span class="jq_subtract fl">-</span> <input type="text" value="1" />
+						<span class="jq_add fr">+</span>
+				</span>成人 <span class="jq_children clrfix"> <span
+						class="jq_subtract fl">-</span> <input type="text" value="1" /> <span
+						class="jq_add fr">+</span>
+				</span>儿童
+				</li>
+				<li class="jq_room">房间数: <span
+					class="jq_children jq_room_num clrfix"> <span
+						class="jq_subtract fl">-</span> <input type="text" value="1" /> <span
+						class="jq_add fr">+</span>
+				</span>
+				</li>
+				<li>
+					<dl class="gaiyao clrfix">
+						<dt>行程概要：</dt>
+						<!--route-day中的每天deprture && arrvied-->
+						<dd>
+							<{foreach name=city item=city from=$stroke}><a href="#">D<{$smarty.foreach.city.index+1}>
+								<{$city.departure}> <{$city.arrived}></a><{/foreach}>
+						</dd>
+					</dl>
+				</li>
+				<li class="jq_reser"><a href="/orderfill/<{$info.hid}>"
+					target="_target">立即预定</a></li>
+				<li class="jq_instr"><a href="#">常见预定说明</a></li>
+			</ul>
+			<div class="comm_bdL">
+				<div id="cd_date"></div>
+				<!--日历-->
+				<{if $info.feature ne ''}>
+				<!-- <ul>
+					<li class="cbct_hd">产品亮点</li>
+					<li><{$info.feature}></li>
+				</ul> -->
+				<{/if}>
+			</div>
+		</div>
+	</div>
+
+	<div class="wrapper clrfix">
+		<!--订单内容-->
+		<div class="fill_left fl">
+			<div class="of_info cd_info">
+				<div class="cd_info_box">
+					<ul class="clrfix cd_info_title">
+
+						<li class="cd_on">行程介绍</li> <{if $info.remark neq ''}>
+						<li>线路说明</li><{/if}> <{if $info.feature neq ''}>
+						<li>产品特色</li><{/if}> <{if $info.info neq ''}>
+						<li>团体包价</li><{/if}>
+						<li>线路推荐</li>
+						<li>当地服务</li>
+						<li class="cd_moeny">￥<{$info.price_2}></li>
+						<li class="cd_preordain"><a href="/orderfill/<{$info.hid}>"
+							target="_blank">我要预定</a></li>
+					</ul>
+				</div>
+				<div class="info_title cd_t1">
+					<span>行程介绍</span>
+				</div>
+				<div class="clrfix trip_box">
+					<div class="fl trip_left">
+						<ul>
+							<{foreach name=num item=day from=$stroke}>
+							<li<{if $smarty.foreach.num.index eq 0}>
+								class="trl_on"<{/if}>>第<{$smarty.foreach.num.index+1}>天<span></span>
+							</li> <{/foreach}>
+						</ul>
+					</div>
+					<div class="fr trip_right">
+						<div class="frt_hd">
+							行程天数：<{$info.go_day}><br /> 适用团期：<{$info.go_tim}>
+						</div>
+						<{foreach name=day item=web from=$stroke}>
+						<ul class="frt_ul">
+							<li class="frtul_first">第<{$smarty.foreach.day.index+1}>天</li>
+							<li class="frtul_chufa frtucf1"><{$web.departure}><{if $web.traffic eq 'plane'}>/<{else if $web.traffic eq 'car'}>-<{else}>|<{/if}><{$web.arrived}></li>
+							<{if $web.tname neq ''}><li><{$web.tname}></li><{/if}><li><{$web.content|nl2br}></li>
+							<{if $web.tips neq ''}><li style="border-top: 1px dashed #ccc;">温馨提示：<{$web.tips|nl2br}></li><{/if}>
+							<li><{if $web.url neq ''}><span><img src="<{$picserver}>/<{$web.url}>" width="230" height="170" /></span><{/if}>
+							</li>
+							<{if $web.scenics}><li>景点:</li>
+							<li><{section name=a loop=$web.scenics}><span><img
+									src="<{$picserver}>/<{$web.scenics[a].url}>" width="230"
+									height="170" alt="<{$web.scenics[a].title}>"
+									title="<{$web.scenics[a].title}>" /></span>&nbsp;<{/section}>
+							</li><{/if}>
+							<li>用餐：<{$web.eats}> <{if $web.hotel neq ''}>住宿:<{$web.hotel}><{/if}></li>
+						</ul>
+						<{/foreach}>
+					</div>
+				</div>
+				<div class="info_title cd_t2">
+					<span>线路说明</span>
+				</div>
+				<{if $info.remark neq ''}>
+				<div class="cdt_txt"><{$info.remark|nl2br}></div>
+				<{/if}>
+				<div class="info_title cd_t3">
+					<span>产品特色</span>
+				</div>
+				<{if $info.feature neq ''}>
+				<div class="cdt_txt"><{$info.feature}></div>
+				<{/if}>
+				<div class="info_title cd_t4">
+					<span>线路推荐</span>
+				</div>
+				<ul class="cd_recom clrfix">
+					<{section name=web loop=$tuijianinfo}>
+					<li>
+						<div class="cdr_img">
+							<a href="/tours/<{$tuijianinfo[web].hid}>" target="_blank"><img
+								src="<{$tuijianinfo[web].url}>" width="218" height="135"></a>
+						</div>
+						<div class="cdr_txt">
+							<a href="/tours/<{$tuijianinfo[web].hid}>" target="_blank"
+								class="cdr_txt_hd"><{$tuijianinfo[web].name}></a>
+							<div class="cdr_txt_bd"><{$tuijianinfo[web].title}></div>
+							<div class="cdr_txt_price">￥<{$tuijianinfo[web].price_2}></div>
+						</div>
+					</li> <{/section}>
+				</ul>
+
+				<!-- <div class="info_title cd_t5">
+					<span>当地服务</span>
+				</div>
+				<ul class="cd_recom clrfix cd_service">
+					<li>
+						<div class="cdr_img">
+							<a href="#"><img src="images/sa_img1.jpg" width="218"
+								height="135" /></a>
+						</div>
+						<div class="cdr_txt">
+							<a href="#" class="cdr_txt_hd">安盛人在旅途白银套餐安盛人在旅途白银套餐安盛人在旅途白银套餐</a>
+							<div class="cdr_txt_price">￥56</div>
+						</div>
+					</li>
+					<li>
+						<div class="cdr_img">
+							<a href="#"><img src="images/sa_img1.jpg" width="218"
+								height="135" /></a>
+						</div>
+						<div class="cdr_txt">
+							<a href="#" class="cdr_txt_hd">巴厘岛——乌布一日游</a>
+							<div class="cdr_txt_price">￥410</div>
+						</div>
+					</li>
+					<li>
+						<div class="cdr_img">
+							<a href="#"><img src="images/sa_img1.jpg" width="218"
+								height="135" /></a>
+						</div>
+						<div class="cdr_txt">
+							<a href="#" class="cdr_txt_hd">安盛人在安盛人在旅途白银套餐</a>
+							<div class="cdr_txt_price">￥87</div>
+						</div>
+					</li>
+					<li>
+						<div class="cdr_img">
+							<a href="#"><img src="images/sa_img1.jpg" width="218"
+								height="135" /></a>
+						</div>
+						<div class="cdr_txt">
+							<a href="#" class="cdr_txt_hd">西安人在安盛豪华钻石套餐</a>
+							<div class="cdr_txt_price">￥45</div>
+						</div>
+					</li>
+				</ul> -->
+			</div>
+		</div>
+		<div class="fill_right fr ranking_box">
+			<!--右侧-->
+			<ul class="pay_info comm_ranking">
+				<li class="ran_name">销售排名</li> <{section name=tour loop=$hots}>
+				<li>
+					<div class="ran_img">
+						<img src="<{$hots[tour].url}>" width="84" height="55" />
+					</div>
+					<div class="ran_txt">
+						<a href="/tours/<{$hots[tour].hid}>" target="_blank">&lt;<{$hots[tour].title}>&gt;<{$hots[tour].departure}>往</a>
+						<span>￥<{$hots[tour].price_2}>起</span>
+					</div>
+				</li><{/section}>
+			</ul>
+			<ul class="pay_info comm_ranking comm_record">
+				<li class="ran_name">浏览记录</li> <{section name=web loop=$brower}>
+				<li><a href="<{$brower[web].titlelink}>" target="_blank">&lt;<{$brower[web].title}></a>
+					<span>￥<{$brower[web].price}>起</span></li> <{/section}>
+			</ul>
+		</div>
+	</div>
+	<div class="wrapper">
+		<!--选择金桥-->
+		<ul class="xuan_jq clrfix">
+			<li class="xjq_hd">选择金桥<br />选择无忧
+			</li>
+			<li>
+				<dl class="xjq_d1">
+					<dt>品质保证</dt>
+					<dd>国家4A级旅行社，25年的专业积累，为超过100多万的用户提供过各类出境服务</dd>
+				</dl>
+			</li>
+			<li>
+				<dl class="xjq_d2">
+					<dt>贴心服务</dt>
+					<dd>提供各等级标准服务，并有各地合作公司强有力的支持，让您在境外也可得到全面周到服务</dd>
+				</dl>
+			</li>
+			<li>
+				<dl class="xjq_d3">
+					<dt>专业操作</dt>
+					<dd>根据您的指定需求制订合理，专业的安排，并有客服人员为您提供专业的操作支持</dd>
+				</dl>
+			</li>
+			<li class="xjq_d4">
+				<dl>
+					<dt>全程监督</dt>
+					<dd>从您购买到出行，我公司为您提供全程的服务支持。所有旅游产品都隶属于我公司，保证质量</dd>
+				</dl>
+			</li>
+		</ul>
+	</div>
+	<{include file='./include/footer.html'}>
+	<script type="text/javascript"
+		src="<{$siteurl}>/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript"
+		src="<{$siteurl}>/js/jquery.SuperSlide.2.1.1.js"></script>
+	<script type="text/javascript" src="<{$siteurl}>/js/d_calendar.js"></script>
+	<script type="text/javascript" src="<{$siteurl}>/js/jquery.pin.js"></script>
+	<script type="text/javascript">
+$(function(){
+	var price = <{$info.price2}>;
+	var go_type = <{if $info.go_type neq ''}><{$info.go_type}><{else}>0<{/if}>;
+	var go_time = '<{$info.go_time}>';
+	var obj = {<{foreach name=price from=$prices key=time item=data}>"<{$time}>":<{$data}><{if $smarty.foreach.price.last}><{else}>,<{/if}><{/foreach}>}; 
+	new Calender({id:'cd_date',time:obj});
+	//new Calender({id:'cd_date',isSelect:0,price:price,go_type:go_type,go_time:go_time});
+	$(".jq_price .price_exp").mouseenter(function(){
+		$(this).find("div").show();
+	})
+	$(".jq_price .price_exp").mouseleave(function(){
+		$(this).find("div").hide();
+	})	
+	$(".select_arrow").click(function(){		
+		$(this).toggleClass("se_ar_on");
+		$(".svo_box").slideToggle(200);
+	});	
+	$(".cd_info_title li").click(function(){//商品详情——订单导航
+		//$(this).siblings().removeClass("cd_on");
+	   // $(this).addClass("cd_on");	
+		var cdit_num=$(".cd_info_title li").index(this)+1;
+		var cdit_top=$(".cd_t"+cdit_num).offset().top-60;
+		 $("html, body").animate({ scrollTop: cdit_top},300);		
+	});	
+	$(".trip_left ul li").click(function(){//商品详情——天数导航
+		var cdit_num=$(".trip_left ul li").index(this);
+		var cdit_top=$(".frt_ul").eq(cdit_num).offset().top-50;
+		$("html, body").animate({ scrollTop: cdit_top},300);
+				
+	});
+	$(window).scroll(function(){	
+	var vv=document.documentElement.scrollTop||document.body.scrollTop; //解决谷歌等不识别document.documentElement.scrollT
+	$(".of_info .info_title").each(function(i){
+		var cd_t=$(this).offset().top-80;
+		if(cd_t<vv){
+			$(".cd_info_title li").eq(i).siblings().removeClass("cd_on");
+			$(".cd_info_title li").eq(i).addClass("cd_on");			
+			}		
+		})
+	$(".trip_right .frt_ul").each(function(x){
+		var frtu=$(this).offset().top-80;
+		if(frtu<vv){
+			$(".trip_left ul li").eq(x).siblings().removeClass("trl_on");
+			$(".trip_left ul li").eq(x).addClass("trl_on");		
+			}		
+		})
+	})
+	$(".cd_info_title").pin({		
+    containerSelector: ".cd_info"
+	})
+	$(".trip_left ul").pin({		
+    containerSelector: ".trip_box"
+	})
+	$(".cd_slideBox").slide({mainCell:".bd ul",effect:"fold",autoPlay:true,easing:"easeOutCirc",delayTime:800});	
+	
+});
+</script>
+	<script type="text/javascript" src="<{$siteurl}>/js/index.js"></script>
+</body>
+</html>

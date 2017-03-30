@@ -6,7 +6,7 @@
  * @copyright	Copyright (c) 2003 - 2017, 河洛, Inc. (http://www.be-member.com/)
  * @license	http://opensource.org/licenses/MIT	MIT License
  * @link	http://be-member.com
- * @since	Version 4.2.1
+ * @since	Version 4.3.0
  * @filesource
  */
 //根目录
@@ -23,6 +23,7 @@ $system_path = 'core';
 $source_path = 'resource';
 $view_path = 'view';
 define('BASEPATH', V_ROOT.'/'.$system_path);
+define('FILEPATH', V_ROOT.'/'.$source_path);
 define('VIEWPATH', V_ROOT.'/'.$view_path);
 //设定完毕，开始
 include_once (BASEPATH . '/index.php');
