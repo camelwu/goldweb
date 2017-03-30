@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.20, created on 2017-03-08 17:24:43
+<?php /* Smarty version 2.6.20, created on 2017-03-19 23:22:23
          compiled from D:%5Clocal%5Cgoldweb/view/list_tours.html */ ?>
 <!doctype html>
 <html>
@@ -190,8 +190,7 @@ $this->_sections['web']['last']       = ($this->_sections['web']['iteration'] ==
 					href="/<?php echo $this->_tpl_vars['enname']; ?>
 /<?php echo $this->_tpl_vars['go_start']; ?>
 -<?php echo $this->_tpl_vars['mudikey']; ?>
--<?php echo $this->_tpl_vars['go_end2']; ?>
--<?php echo $this->_tpl_vars['go_days']; ?>
+--<?php echo $this->_tpl_vars['go_days']; ?>
 -<?php echo $this->_tpl_vars['go_starttime']; ?>
 -<?php echo $this->_tpl_vars['go_endtime']; ?>
 -<?php echo $this->_tpl_vars['go_money']; ?>
@@ -205,7 +204,7 @@ $this->_sections['web']['last']       = ($this->_sections['web']['iteration'] ==
 			<ul class="dest_guo_box">
 				<!--目的地-国家-->
 				<li class="clrfix dest_guo_on" id="dest_guo_on"></li>
-				<script language=javascript>
+				<script>
 					loadcontent('<?php echo $this->_tpl_vars['enname']; ?>
 ', '<?php echo $this->_tpl_vars['go_end']; ?>
 ', '<?php echo $this->_tpl_vars['go_end2']; ?>
@@ -226,7 +225,7 @@ $this->_sections['web']['last']       = ($this->_sections['web']['iteration'] ==
 &go_sall=<?php echo $this->_tpl_vars['go_sall']; ?>
 &go_hot=<?php echo $this->_tpl_vars['go_hot']; ?>
 ";
-						$("#dest_guo_on").load(url)
+						$("#dest_guo_on").load(url);
 					}
 				</script>
 			</ul>

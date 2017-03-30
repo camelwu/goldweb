@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.20, created on 2017-03-05 20:14:35
+<?php /* Smarty version 2.6.20, created on 2017-03-12 23:01:46
          compiled from D:%5Clocal%5Cgoldweb/view/common/right.html */ ?>
 <!--热门推荐-->
 <ul class="sidebar_box" style="right: 0px;">

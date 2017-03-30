@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.20, created on 2017-03-06 16:28:05
+<?php /* Smarty version 2.6.20, created on 2017-03-27 11:21:23
          compiled from D:%5Clocal%5Cgoldweb/view/scenic.html */ ?>
 <!doctype html>
 <html>

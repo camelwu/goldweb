@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.20, created on 2016-01-27 09:08:32
+<?php /* Smarty version 2.6.20, created on 2017-03-12 23:15:49
          compiled from ./admins_login.html */ ?>
 <html>
 <head>
@@ -25,11 +25,11 @@ td {font-size:12px;}
 var validate = true;
 function get_code(){
 	if(validate==true){
-		document.getElementById("findcode").src="image.php?"+Math.random();
+		document.getElementById("findcode").src="include/scode.php?"+Math.random();
 		validate = false;
 		return false;
 	}else{
-		document.getElementById("findcode").src="image.php?"+Math.random();
+		document.getElementById("findcode").src="include/scode.php?"+Math.random();
 		validate = true;
 		return false;
 	}

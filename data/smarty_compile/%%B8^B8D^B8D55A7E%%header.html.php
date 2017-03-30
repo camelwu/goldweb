@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.20, created on 2017-03-06 15:06:16
+<?php /* Smarty version 2.6.20, created on 2017-03-25 22:55:09
          compiled from D:%5Clocal%5Cgoldweb/view/common/header.html */ ?>
 
 <div class="top_box">
@@ -38,8 +38,7 @@
 		</div>
 		<div class="search_box">
 			<!--搜索-->
-			<select name="tt" style="border: 0;"><option value="arrvied"
-					classid="1">目的地</option>
+			<select name="tt" style="border: 0;"><option value="arrvied" classid="1">目的地</option>
 				<option value="scenic" classid="3">景点</option>
 				<option value="blog" classid="5">攻略</option>
 				<option value="tour" classid="0">线路</option></select> <input type="text"

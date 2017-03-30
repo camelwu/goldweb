@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.20, created on 2017-03-12 02:47:05
+<?php /* Smarty version 2.6.20, created on 2017-03-12 23:01:46
          compiled from ./view/common/footer.html */ ?>
 <div class="footer_box">
 	<!--公用底部-->
