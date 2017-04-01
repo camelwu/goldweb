@@ -3,15 +3,11 @@
 <head>
 <meta charset="utf-8">
 <title><{$cnname}>_<{$info.title}>_<{$ktitle}>_金桥旅行社</title>
-<link href="<{$siteurl}>/css/global.css" rel="stylesheet"
-	type="text/css">
-<link href="<{$siteurl}>/css/detail.css" rel="stylesheet"
-	type="text/css">
-
-<script type="text/javascript" src="<{$siteurl}>/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript"
-	src="<{$siteurl}>/js/jquery.SuperSlide.2.1.1.js"></script>
-<script type="text/javascript" src="<{$siteurl}>/js/jquery.pin.js"></script>
+<link href="<{$siteurl}>/resources/css/global.css" rel="stylesheet" type="text/css">
+<link href="<{$siteurl}>/resources/css/detail.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="<{$siteurl}>/resources/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="<{$siteurl}>/resources/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="<{$siteurl}>/resources/js/jquery.pin.js"></script>
 <script type="text/javascript">
 	$(function() {
 		$(".jq_price .price_exp").mouseenter(function() {
@@ -26,7 +22,7 @@
 		});
 		$(".cd_info_title li").click(function() {//商品详情——订单导航
 			//$(this).siblings().removeClass("cd_on");
-			// $(this).addClass("cd_on");	
+			// $(this).addClass("cd_on");
 			var cdit_num = $(".cd_info_title li").index(this) + 1;
 			var cdit_top = $(".cd_t" + cdit_num).offset().top - 60;
 			$("html, body").animate({
@@ -82,7 +78,7 @@
 
 	})
 </script>
-<script type="text/javascript" src="<{$siteurl}>/js/index.js"></script>
+<script type="text/javascript" src="<{$siteurl}>/resources/js/index.js"></script>
 </head>
 <body>
 	<{include_php file="./include/header.php"}>

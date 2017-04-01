@@ -31,6 +31,6 @@ if($_SERVER['REQUEST_METHOD']=="POST"&&isset($_POST['email'])){
 	}
 	exit;
 }else{
-	$smarty->display(VIEWPATH.'/login.html',$cache_id);
+	$smarty->display(VIEWPATH.'login.html',$cache_id);
 }
 ?>

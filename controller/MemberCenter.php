@@ -59,5 +59,5 @@ $smarty->assign('contact', $con);
 $smarty->assign('cnname', $cname);
 $smarty->assign('enname', $enname);
 
-$smarty->display(V_ROOT . './templates/MemberCenter.html', $cache_id);
+$smarty->display(VIEWPATH . 'MemberCenter.html', $cache_id);
 ?>

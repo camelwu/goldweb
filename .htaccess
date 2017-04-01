@@ -4,15 +4,16 @@ RewriteBase /
 ##首页
 RewriteRule ^(\/)?$ /index.php
 RewriteRule ^index(\/)?.html$ /index.php
-RewriteRule ^admin(\/)?$ /admin/index.php
 ##搜索
-RewriteRule ^search/([0-9]+)/(.*)?$ /index.php?enname=search&arrvied=$1&id=$2
+##RewriteRule ^search/([0-9a-zA-Z]+)/(.*)?$ /index.php?enname=search&arrvied=$1&keyword=$2&page=$3
+##异步
+RewriteRule ^async/([0-9a-zA-Z]+)/(.*)?$ /index.php?enname=async&action=$1&keyword=$2
 ###详情页
 RewriteRule ^([0-9a-zA-Z]+)+(\/)?([0-9]+)?$ /index.php?enname=$1&id=$3
 ##一级页面
 RewriteRule ^([0-9a-zA-Z]+)+(\/)?([0-9a-zA-Z|\-]+)?(\/)?([0-9a-zA-Z]+)?(\/)?([0-9a-zA-Z]+)?(\/)?([0-9]+)?$ /index.php?enname=$1&match=$3&order=$5&orderby=$7&page=$9
 ##介绍页面
-RewriteRule ^([0-9a-zA-Z]+)+(.html)+$ /index.php?enname=$1&id=$3&page=$4
+##RewriteRule ^([0-9a-zA-Z]+)+(.html)+$ /index.php?enname=$1&id=$3&page=$4
 
 ErrorDocument 401 /error.html
 ErrorDocument 400 /error.html

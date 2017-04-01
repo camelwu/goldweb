@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <title><{$cnname}>_旅行社_<{$ktitle}>_金桥</title>
-<link href="<{$siteurl}>/css/global.css" rel="stylesheet" type="text/css">
-<link href="<{$siteurl}>/css/index.css" rel="stylesheet" type="text/css">
+<link href="<{$siteurl}>/resources/css/global.css" rel="stylesheet" type="text/css">
+<link href="<{$siteurl}>/resources/css/index.css" rel="stylesheet" type="text/css">
 
-<script type="text/javascript" src="<{$siteurl}>/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="<{$siteurl}>/js/jquery.SuperSlide.2.1.1.js"></script>
-<script type="text/javascript" src="<{$siteurl}>/js/index.js"></script>
+<script type="text/javascript" src="<{$siteurl}>/resources/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="<{$siteurl}>/resources/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="<{$siteurl}>/resources/js/index.js"></script>
 <script type="text/javascript">
 function search_visa(){
 	var linkstr = "/visa/"+$("#country").val()+"-"+$("#vtype").val();
@@ -27,7 +27,7 @@ function search_visa(){
 </div>
 
 <div class="wrapper clrfix visa_wapper"><!--出发地目的地筛选-->
-  <div class="visa_left">  	
+  <div class="visa_left">
   	 <{if $templates eq 'index'}><div class="visal_box">
 		<form name="search_frm" method="post" action="/visa"><h6>签证办理查询</h6>
 		<div class="visa_guo">
@@ -71,7 +71,7 @@ function search_visa(){
 			<li class="clrfix dest_guo_on visa_dest">
 				<{section name=i loop=$area[a]}><span<{if $go_start eq $area[a][i].id}> class="sob_on"<{/if}>><a href="/visa/<{$area[a][i].id}>-<{$go_end}>/hid/desc/<{$page}>"><{$area[a][i].title}></a></span><{/section}>
 			</li>
-			
+
         </ul><{/section}>
         <ul class="number_days clrfix"><li>签证类型：</li><li><span<{if $go_end eq ''}> class="sob_on"<{/if}>><a href="/visa/<{$go_start}>-/hid/desc/<{$page}>">全部</a></span></li><{foreach name=vs item=vs key=key from=$vtype}><li><span<{if $go_end eq $key}> class="sob_on"<{/if}>><a href="/visa/<{$go_start}>-<{$key}>/hid/desc/<{$page}>"><{$vs}></a></span></li><{/foreach}></ul>
        </div><{/if}>

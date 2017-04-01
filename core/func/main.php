@@ -2,9 +2,9 @@
 /**
  * @Copyright 2008 be-member Inc
  * 网站前端展示函数
- * 
+ *
  * Creater: Wusongbo
- * Date: 2008-9-10 
+ * Date: 2008-9-10
  */
 //开始session
 function startSession() {
@@ -28,7 +28,7 @@ function destroy_cookie() {
 		setcookie($key, '', time() - 3600 * 24, '/');
 	}
 }
-//随机UID获取 
+//随机UID获取
 function getHiddenUIDfromCookie() {
 	//第一次浏览随机一个用户ID 注册后此ID绑定用户
 	if (!isset ($_COOKIE['uh_token'])) {
@@ -47,7 +47,7 @@ function startHttpCacheHeader($s = 1800) {
 }
 //启动smarty
 function startSmarty($iscached = true) {
-	global $config, $smarty, $siteurl, $picserver, $uploadir, $ktitle, $kname, $keywords, $description;
+	global $config, $smarty, $siteurl, $source_path, $picserver, $uploadir, $ktitle, $kname, $keywords, $description;
 
 	if (empty ($smarty)) {
 		include_once (BASEPATH . '/libraries/Smarty/Smarty.class.php');
@@ -92,8 +92,8 @@ function dbconnect() {
 		$db = ConnectMysqli::getIntance($DB['default']);
 	}
 }
-/**
- 函数功能：生成分页URL地址集合
+/*
+ *函数功能：生成分页URL地址集合
  *@param	num>>记录总数
 			perpage>>每页记录数
 			curpage>>当前记页数
@@ -190,7 +190,6 @@ function pagecute($maxpage, $pagecount, $viewpage = 1, $pageurl, $pp = 6, $class
 	return $pagecute;
 }
 /**
- * @param
  * 初始化常量
  * */
 function init_config() {

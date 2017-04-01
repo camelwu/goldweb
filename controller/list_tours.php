@@ -2,9 +2,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * Created on 2015-4-26
- * 
+ *
  * 出境，国内，周边，自由行
- * 
+ *
 */
 $perpage = 6;
 $start = ($page -1) * $perpage;
@@ -18,5 +18,5 @@ $smarty->assign('multipage', $multipage);
 $smarty->assign('comments', $comments);
 $smarty->assign('totalnum', $totalnum);
 
-$smarty->display(VIEWPATH . '/list_tours.html', $cache_id);
+$smarty->display(VIEWPATH . 'list_tours.html', $cache_id);
 ?>

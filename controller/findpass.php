@@ -23,14 +23,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['email'])) {
 	}
 	exit ;
 } else {
-	$smarty -> display(V_ROOT . './templates/' . $enname . '.html', $cache_id);
+	$smarty -> display(VIEWPATH . $enname . '.html', $cache_id);
 }
 /*
  *发送邮件
  */
 function sendmail($emails = '', $subject = '', $content = '', $tag = 'mail1', $echo = 0) {
-	include_once ("./admin/includes/class.phpmailer.php");
-	$configIni = './admin/data/mail.ini';
+	include_once (BASEPATH . "/libraries/mail/class.phpmailer.php");
+	$configIni = V_ROOT.'/data/mail.ini';
 	$config = parse_ini_file($configIni, true);
 	$mailconfig = $config[$tag];
 	//print_r($mailconfig);

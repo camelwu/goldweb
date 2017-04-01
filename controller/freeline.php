@@ -62,5 +62,5 @@ $smarty->assign('comments', $comments);
 $smarty->assign('totalnum', $totalnum);
 $smarty->assign('cnname', $cname);
 $smarty->assign('enname', $enname);
-$smarty->display(V_ROOT.'./templates/'.$enname.'.html',$cache_id);
+$smarty->display(VIEWPATH . $enname.'.html',$cache_id);
 ?>

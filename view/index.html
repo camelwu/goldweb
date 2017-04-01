@@ -5,10 +5,10 @@
 		<title><{$ktitle}></title>
 		<meta name="Keywords" content="<{$keywords}>" />
 		<meta name="Description" content="<{$description}>" />
-		<link href="<{$siteurl}>/css/global.css" rel="stylesheet" type="text/css">
-		<link href="<{$siteurl}>/css/index.css" rel="stylesheet" type="text/css">
+		<link href="<{$siteurl}>/resources/css/global.css" rel="stylesheet" type="text/css">
+		<link href="<{$siteurl}>/resources/css/index.css" rel="stylesheet" type="text/css">
 	</head>
-	<body>
+	<body data-no-img="<{$siteurl}>/resources/images/nopic.png">
 		<{include_php file="./view/common/header.php"}>
 		<div class="slideBox">
 			<!--焦点图-->
@@ -382,7 +382,7 @@
 			</div>
 			<div id="cv_tours" class="div_option">
 				<!--游轮签证1-->
-				<span> <a href="#" class="city_box fl"><img src="images/city_box1.jpg" width="230" height="394" /></a>
+				<span> <a href="#" class="city_box fl"><img src="<{$siteurl}>/resources/images/city_box1.jpg" width="230" height="394" /></a>
 					<ul class="scenic_area fl">
 						<ul class="cvh_title clrfix">
 							<div class="fl">
@@ -414,7 +414,7 @@
 					</ul> </span>
 				<!--游轮签证2-->
 				<span style="display: none"> <a href="#" class="city_box fl"><img
-					src="images/city_box2.jpg" width="230" height="394" /></a>
+					src="<{$siteurl}>/resources/images/city_box2.jpg" width="230" height="394" /></a>
 					<ul class="scenic_area fl">
 						<ul class="cvh_title clrfix">
 							<div class="fl">
@@ -782,53 +782,8 @@
 		<{include file='./view/common/footer.html'}>
 		<{include_php file="./view/common/right.php"}>
 	</body>
-	
-	<script>
-		$(function() {
-			$(".scenic_area>li").mouseenter(function() {
-				$(this).find(".sa_mask").stop(false).animate({
-					bottom : 0
-				}, 300);
-			});
-			$(".scenic_area>li").mouseleave(function() {
-				$(this).find(".sa_mask").stop(false).animate({
-					bottom : -138
-				}, 200);
-			});
-			$(".index_option li").click(function() {//热门跟团游title单击事件
-				$(this).siblings().removeClass("index_option_on");
-				$(this).addClass("index_option_on");
-				var al_num = $(".index_option li").index(this);
-				var al_dom = "#" + $(this).parent().parent().next().attr("id");
-				if (al_num == 4 || al_num == 3) {
-					al_num = al_num - 3;
-				} else if (al_num == 5 || al_num == 6) {
-					al_num = al_num - 5;
-				}
-				$(al_dom).children("span").hide();
-				//alert($(al_dom+" span").eq(1).html());
-				$(al_dom).children("span").eq(al_num).show(0);
-			});
-			$(".sa_title li").click(function() {//热门跟团游二级title单击事件
-				$(this).siblings().removeClass("sa_title_on");
-				$(this).addClass("sa_title_on");
-			});
-			$(".recom_box ul li").click(function() {//推荐旅游导航单击事件
-				$(this).siblings().removeClass("recom_on");
-				$(this).addClass("recom_on");
-			});
-			$(".city_box li").click(function() {//热门跟团游左侧景区
-				$(this).siblings().removeClass("city_li_on");
-				$(this).addClass("city_li_on");
-			});
-			$(".slideBox").slide({
-				mainCell : ".bd ul",
-				effect : "fold",
-				autoPlay : true,
-				easing : "easeOutCirc",
-				delayTime : 800
-			});
-		});
-	</script>
-</html>
 
+	<!-- <script src="<{$siteurl}>/resources/js/plugin/throttle.js"></script>
+	<script src="<{$siteurl}>/resources/js/plugin/lazyLoad.js"></script> -->
+	<script src="<{$siteurl}>/resources/js/index/index.js"></script>
+</html>

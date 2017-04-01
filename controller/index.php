@@ -1,61 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-//.htaccess querystring变量
-$module = $_GET['enname'];
-$id = $_GET['id'];
-$match = $_GET['match'];
-$match = (empty($match)) ? '------' : $match;
-$page = intval($_GET['page']);
-$page = (empty($page)) ? 1 : $page;
-//静态
-$shtm = array("aboutus", "contactus", "advise", "advertising", "qualifications", "duty", "partner", "sitemap", "insurance", "help", "instructions", "statement", "agreement", "company");
-//导航菜单与产品组合：custom，visa，无法组合
-$snav = array("visa", "abroad", "domestic", "around", "package", //freetour
-"cruises", "custom", "scenic");
-//产品
-$spro = array("destination", "scenic", "guide", "tours", "visa");
-/*
- * 域名处理部分
- * */
-//分站地址区分(机构)
-$myurl = $_SERVER['HTTP_HOST'];
-if (!isset($_COOKIE["myurl"])) {
-	save_cookie('myurl', $myurl);
-}
-if (!isset($_COOKIE["bid"]) || $_COOKIE["myurl"] != $myurl) {
-	$query = $db -> query("select * from cg_branch where myurl='$myurl'");
-	$bidinfo = $db -> fetch_array($query);
-	$bid = (empty($bidinfo)) ? 0 : $bidinfo['id'];
-	//机构ID
-	save_cookie('bid', $bid);
-} else {
-	$bid = $_COOKIE["bid"];
-	$query = $db -> query("select * from cg_branch where id=$bid");
-	$bidinfo = $db -> fetch_array($query);
-}
-//常量初始化
-init_config();
 
-//网站模板
-$template = $bidinfo['templates'];
-$template = (empty($template)) ? "index" : $template;
-//smarty
-startSmarty(FALSE);
-//定位IP区域
+
+
+//定位&区域
 $smarty -> assign('ipfrom', $province);
-$smarty -> assign('sp', $sp);
-//所在地查询（机构）
-if ('branch' == $template) {
-	$sqlarea = "SELECT title FROM cg_area where id=" . $bidinfo['aid'];
-	$mycountry = $db -> result($db -> query($sqlarea), 0);
-	if (!empty($mycountry))
-		$smarty -> assign('mycountry', $mycountry);
-	else
-		$smarty -> assign('mycountry', '金桥分站');
-}
+$smarty -> assign('mycountry', $mycountry);
 
 if (empty($module)) {
-	include_once ('homepage.php');
+	include_once ('homepage.php');exit;
 } else {
 	if (in_array($module, $shtm)) {//静态页面
 		switch ($module) {
@@ -83,23 +36,7 @@ if (empty($module)) {
 		} else {
 			include_once ("static.php");
 		}
-	/*} elseif (in_array($module, $snav)) {//导航
-		switch ($module) {
-			case 'list' :
-				include_once 'list.php';
-				break;
-			case 'add' :
-				include_once 'add.php';
-				break;
-			case 'del' :
-				include_once 'del.php';
-				break;
-			default :
-				include_once 'list.php';
-				break;
-		}
-		include_once (V_ROOT . "/view/$module.php");
-	*/} else {//排序
+	} else {//排序
 $orderarr = array (
 	'hits', //推进
 	'hid', //最新

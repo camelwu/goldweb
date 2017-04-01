@@ -11,8 +11,8 @@
  */
 //根目录
 define('V_ROOT', dirname(__FILE__));
-//合法应用config文件
-define('B_ENG', '1');
+// 使用缓存
+define('B_ENG', false);
 //debug模式
 define('B_BUG', '1');
 B_BUG ? error_reporting(E_ALL & ~E_NOTICE) : error_reporting(0);
@@ -20,8 +20,8 @@ B_BUG ? error_reporting(E_ALL & ~E_NOTICE) : error_reporting(0);
 define('B_TEMP', '1');
 //路径设置
 $system_path = 'core';
-$source_path = 'resource';
-$view_path = 'view';
+$source_path = 'resources/';
+$view_path = 'view/';
 define('BASEPATH', V_ROOT.'/'.$system_path);
 define('FILEPATH', V_ROOT.'/'.$source_path);
 define('VIEWPATH', V_ROOT.'/'.$view_path);

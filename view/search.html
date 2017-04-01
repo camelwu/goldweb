@@ -3,43 +3,48 @@
 <head>
 <meta charset="utf-8">
 <title><{$cnname}>_旅行社_<{$ktitle}>_金桥</title>
-<link href="<{$siteurl}>/css/global.css" rel="stylesheet" type="text/css">
-<link href="<{$siteurl}>/css/index.css" rel="stylesheet" type="text/css">
-
-<script type="text/javascript" src="<{$siteurl}>/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="<{$siteurl}>/js/jquery.SuperSlide.2.1.1.js"></script>
-<script type="text/javascript" src="<{$siteurl}>/js/index.js"></script>
+<link href="<{$siteurl}>/resources/css/global.css" rel="stylesheet" type="text/css">
+<link href="<{$siteurl}>/resources/css/index.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
 	<{include_php file="./view/common/header.php"}>
-
 	<div class="wrapper now_position">
 		<!--当前位置-->
-		<a href="/">首页</a>&gt;<a href="/<{$enname}>/"><{$cnname}></a>
+		<a href="/">首页</a>&gt;搜索
 	</div>
 	<!--根据不同列表做变化-->
 	<div class="wrapper">
 		<!--top-img-->
-		<a href="#" class="overseas_top"><img src="images/domestic_top.jpg" width="1200" height="160" /></a>
+		<a href="#" class="overseas_top"><img src="<{$siteurl}>/resources/images/domestic_top.jpg" width="1200" height="160" /></a>
 	</div>
-
 	<div class="wrapper">
-		<!--出发地目的地筛选-->
-	
-
-
+		<!--说明搜索-->
+		<div class="address_select clrfix">
+			<ul class="set_out_box"><li><{if $totalnum eq 0}>没有<{/if}>与“<span style="font-weight:bold;color:green"><{$cnname}></span>” 相关的<{$arrviedhtml}></li></ul>
+		</div>
 		<!--内容区-->
 		<div class="dm_box">
 			<ul class="domestic_main clrfix">
-				<{foreach item=tour name=tour from=$comments}>
-				<li><a class="dm_img" href="/<{$enname}>/<{$tour.hid}>"><img
-						src="<{$tour.url}>" width="374" height="230" /></a>
+				<{if $links eq 'tours'}>
+				<{foreach item=tour name=tour from=$comments}><li>
+					<a class="dm_img" href="<{$links}>/<{$tour.hid}>"><img src="<{$tour.url}>" width="374" height="230" /></a>
 					<div class="dm_bd">
-						<a href="/<{$enname}>/<{$tour.hid}>"><{$tour.name}></a><{$tour.title}>
-					</div> <a href="/<{$enname}>/<{$tour.hid}>" class="dm_more">更多团期</a> <!--根据栏目改变样式-->
-					<div class="dm_price">
-						￥<span><{$tour.price_2}></span>
-					</div></li><{/foreach}>
+						<a href="<{$links}>/<{$tour.hid}>"><{$tour.name}></a><{$tour.feature}>
+					</div>
+					<a href="<{$links}>/<{$tour.hid}>" class="dm_more">更多团期</a>
+					<div class="dm_price">￥<span><{$tour.price_2}></span></div>
+				</li><{/foreach}>
+				<{else}>
+				<{foreach item=tour name=tour from=$comments}><li>
+					<a class="dm_img" href="<{$links}>/<{$tour.hid}>"><img src="<{$tour.url}>" width="374" height="230" /></a>
+					<div class="dm_bd">
+						<a href="<{$links}>/<{$tour.hid}>">[<{$tour.title}>]<{$tour.keyword}></a><{$tour.word}>
+					</div>
+					<a href="<{$links}>/<{$tour.hid}>" class="dm_more"><{$tour.addtime}></a>
+					<div class="dm_price"><{if $tour.types neq '5'}>￥<span><{$tour.price_2}></span><{else}><span></span><{/if}></div>
+				</li><{/foreach}>
+				<{/if}>
 			</ul>
 		</div>
 		<!--内容区-->
@@ -49,13 +54,10 @@
 		<ul class="page_box clrfix"><{$multipage}>
 		</ul>
 	</div>
-
 	<{include file="./view/common/footer.html"}>
-	<!--除邮轮、私人定制都需要加上广告-->
 	<{include_php file="./view/common/right.php"}>
 </body>
 </html>
-<script type="text/javascript" src="<{$siteurl}>/js/Calendar.js"></script>
 <script type="text/javascript">
 
 </script>

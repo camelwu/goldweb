@@ -709,17 +709,16 @@ function str_replace_once($needle, $replace, $haystack) {
  */
 function getCity($str) {
 	static $json;
-	/*if ($ip == '' || $ip == '::1' || $ip == '127.0.0.1' || !preg_match("^(10|172\.16|192\.168)\.", $ip)) {
-		return;
+	if ($str == '' || $str == '::1' || $str == '127.0.0.1' ) {
 		$json = json_decode(file_get_contents("http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json"), true);
 		$data = $json;
-	} else {*/
+	} else {
 		$json = json_decode(file_get_contents("http://ip.taobao.com/service/getIpInfo.php?ip=" . $str), true);
 		if ((string)$json['code'] == '1') {
 			return false;
 		}
 		$data = (array)$json['data'];
-	//}
+	}
 	return $data;
 }
 

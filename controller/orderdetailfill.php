@@ -1,24 +1,22 @@
 <?php
-
-
 //用户中心，验证登录
 if (!isset ($_COOKIE["uid"])) {
 	vheader("/login");
 }
 $uid = $_COOKIE["uid"];
 $userinfo = login_user($uid);
-$orderNum = getOrderNum();
-/*线路明细查询*/
+$action = $_POST['action'];
 $peoplenum = $_POST['peoplenum'];
 $id = $_POST['id'];
+/*线路明细查询*/
+$sqlstr = "select * from cg_scenic where id=" . $id;
+$info = $db->getOneInfo($sqlstr);
 $smarty->assign('peoplenum', $peoplenum);
-
-$info = cg_scenic($id);
 $smarty->assign('info', $info);
 $smarty->assign('price', $peoplenum * $info['price1']);
-$action = $_POST['action'];
+
 if (!empty ($action)) {
-	$data['orderNo'] = getOrderNum();
+	$data['orderNo'] = md5(time() . rand(1, 1000));
 	$data['types'] = 3;
 	$data['uid'] = $uid;
 	$data['username'] = $userinfo['username'];
@@ -34,9 +32,8 @@ if (!empty ($action)) {
 	$data['info'] = (empty ($_POST['info'])) ? "无" : $_POST['info'];
 	$db->inserttable("cg_product_order", $data);
 	$smarty->assign('msg', '订单提交成功');
-	$smarty->display(V_ROOT . './templates/msg.html', $cache_id);
-
+	$smarty->display(VIEWPATH . 'msg.html', $cache_id);
 } else {
-	$smarty->display(V_ROOT . './templates/orderdetailfill.html', $cache_id);
+	$smarty->display(VIEWPATH . 'orderdetailfill.html', $cache_id);
 }
 ?>

@@ -1,18 +1,4 @@
 <?PHP
-/**
- * @Copyright 2008 be-member Inc
- * 查询、展示本站点的独有函数文件
- *
- * @Author:WuSongBo
- * Date 2008-9-10
- */
-/**
- *
- * 获取订单号***
- */
-function getOrderNum() {
-	return md5(time() . rand(1, 1000));
-}
 /****浏览记录录入****/
 function cg_brower($data = array ()) {
 	global $db, $uh_token;
@@ -323,13 +309,13 @@ function sel_product($count, $type = "1", $types = 0, $ctype = 0, $ctype1 = 0) {
 		$orderbysql = ' order by id desc';
 	if ($count)
 		$limitsql = ' limit 0,' . $count;
-	
+
 	if ($types == 2) {
 		$sql = "select aid,id,title,info_id,cid,url,price1,price2,word,info,keyword,bid from cg_scenic" . $sqlwhere . " group by aid" . $limitsql;
 	}else{
 		$sql = "select id,title,info_id,url,price1,price2,word,info,keyword,bid from cg_scenic" . $sqlwhere . $orderbysql . $limitsql;
 	}
-	
+
 	$query = $db->query($sql);
 	while ($row = $db->fetch_array($query)) {
 		if($row['aid']&&$types == 2){//签证，并且有国家
@@ -355,7 +341,7 @@ function sel_product($count, $type = "1", $types = 0, $ctype = 0, $ctype1 = 0) {
  * go_time 出游时间
  * go_time1 出游结束时间
  * go_money 花费 (,隔开)
- * 
+ *
  **/
 function selectRoleSale($classid, $count = false, $start = 0, $perpage = 1, $city1, $city2, $go_day, $go_time, $go_time1, $go_money, $title, $order = 'id', $orderby = 'desc') {
 	global $db, $picserver, $siteurl, $bid;
@@ -446,6 +432,7 @@ function selectRoleSale($classid, $count = false, $start = 0, $perpage = 1, $cit
 			if (!empty ($price)) {
 				$value['price2'] = (int) $value['price2'] - (int) $price['price'];
 			}
+			$value['hid'] = $value['id'];
 			$re[] = $value;
 		}
 	}
@@ -476,6 +463,7 @@ function selectScenic($types = 0, $title = "", $count = false, $start = 0, $perp
 			}
 			$value['price_2'] = $value['price2'];
 			$value['hid'] = $value['id'];
+			$value['word'] = cut_utf8(str_replace("&nbsp;", "", strip_tags($value['word'])), 55, '...');
 			$re[] = $value;
 		}
 	}
@@ -491,23 +479,11 @@ function cg_tour_price($id) {
 		return $db->result($query,0);
 	}
 }
-/*线路明细查询*/
-function cg_product($hid) {
-	global $db;
-	$sqlstr = "select * from cg_product_route_sale t,cg_product_route p where t.id=p.id and t.hid=" . $hid;
-	return $db->getOneInfo($sqlstr);
-}
 
 /*查询 地区名称*/
 function cg_area_tit($id) {
 	global $db;
 	$res = $db->getOneInfo("select title from cg_area where id=" . $id);
 	return $res['title'];
-}
-/*线路明细查询*/
-function cg_scenic($id) {
-	global $db;
-	$sqlstr = "select * from cg_scenic where id=" . $id;
-	return $db->getOneInfo($sqlstr);
 }
 ?>

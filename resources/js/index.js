@@ -1,109 +1,5 @@
-﻿function responsive() {//页面宽度响应式
-	var zw = $(window).width();
-	if (zw < 1150) {
-		$(".sidebar_box").animate({
-			right : -100
-		}, 200);
-		$(".hui_top").animate({
-			right : -100
-		}, 200);
-	}
-	if (zw > 1150) {
-		$(".sidebar_box").animate({
-			right : 0
-		}, 200);
-		$(".hui_top").animate({
-			right : 1
-		}, 200);
-	}
-	if (zw < 1200) {
-		$(".menu_box3").stop(false).animate({
-			width : 730
-		}, 200);
-		$(".wrapper").stop(false).animate({
-			width : 980
-		}, 200);
-		$(".commitment_box ul li").css("margin-right", "0.3%");
-		$(".rbd_l_bg").css("width", "170px");
-		$(".comm_login li").stop(false).animate({
-			marginRight : "1.2%"
-		}, 200);
-		$(".comm_bdL .calendar dd a").css("width", "14.03%");
-		$(".cd_info_title").width(770);
-		$(".comm_ctR .gaiyao dd").width(300);
-		$(".number_days .visa_dest").width(690);
-		$(".number_days .visad_box").width(663);
-		$(".popup").css("margin-left", "-490px");
-		$(".mask_banner .slideBox .bd ul li img").width(605)
-	} else {
-		$(".menu_box3").stop(false).animate({
-			width : 950
-		}, 200)
-		$(".wrapper").stop(false).animate({
-			width : 1200
-		}, 200);
-		$(".commitment_box ul li").css("margin-right", "3%");
-		$(".rbd_l_bg").css("width", "220px");
-		$(".comm_login li").stop(false).animate({
-			marginRight : "4.6%"
-		}, 200);
-		$(".comm_login .comm_pf").stop(false).animate({
-			marginRight : 0
-		}, 200);
-		$(".comm_bdL .calendar dd a").css("width", "14.058%");
-		$(".cd_info_title").width(943);
-		$(".comm_ctR .gaiyao dd").width(390);
-		$(".number_days").css("width", "100%");
-		$(".number_days .visad_box").width(835);
-		$(".popup").css("margin-left", "-600px");
-		$(".mask_banner .slideBox .bd ul li img").width(740)
-	};
-}
 
 function index_click() {//导航和侧栏
-	$(".this_area").mouseenter(function() {//出发地
-		$(".this_area span").addClass("this_area_on");
-		$(".area_box1").addClass("area_box1_on");
-		$(".area_box1").show(function() {
-			$(".area_box1 a").click(function() {
-				$(".this_area span").html($(this).html() + "站");
-				$(".this_area span").removeClass("this_area_on");
-				$(".area_box1").stop(false).hide(100);
-			});
-		});
-	});
-	$(".this_area").mouseleave(function() {//出发地
-		$(".area_box1").stop(false).hide(300);
-		$(".this_area span").removeClass("this_area_on");
-		$(".area_box1").removeClass("area_box1_on");
-	});
-	$(".menu_box").mouseenter(function() {//目的地
-		$(this).find(".menu_box2").stop(false).fadeIn(300, function() {
-			$(".menu_box .menu_box2").mouseenter(function() {
-				$(this).find(".menu_box3").show();
-				$(this).siblings(".menu_box3").hide();
-			});
-		});
-	});
-	$(".menu_box").mouseleave(function() {//目的地
-		$(this).find(".menu_box2").stop(false).fadeOut(300, function() {
-			$(".menu_box .menu_box2").mouseleave(function() {
-				$(".menu_box3").hide();
-			});
-		});
-	});
-	$(".sidebar_box>li").mouseenter(function() {//侧栏
-		$(this).find("ul").stop(false).fadeIn(300);
-	});
-	$(".sidebar_box>li").mouseleave(function() {
-		$(this).find("ul").stop(false).fadeOut(100);
-	});
-	$(".hui_top").click(function() {//回顶部
-		$("html, body").animate({
-			scrollTop : 0
-		}, 300)
-	});
-
 	/*
 	 $(".reg_title li").click(function(){//注册
 	 var regtl_num=$(".reg_title li").index(this)+1;
@@ -220,16 +116,63 @@ function index_click() {//导航和侧栏
 	 })
 	 */
 }
-
-
-$(window).resize(function() {//窗口大小改变
-	responsive();
-});
-
-$(function() {//加载
-	responsive();
-	index_click();
+$(function() {
 	$(document).ready(function() {
+		$(".this_area").hover(function() {//出发地
+			$(".this_area span").addClass("this_area_on");
+			$(".area_box1").addClass("area_box1_on");
+			$(".area_box1").show(function() {
+				$(".area_box1 a").click(function() {
+					$(".this_area span").html($(this).html() + "站");
+					$(".this_area span").removeClass("this_area_on");
+					$(".area_box1").stop(false).hide(100);
+				});
+			});
+		},function() {//出发地
+			$(".area_box1").stop(false).hide(300);
+			$(".this_area span").removeClass("this_area_on");
+			$(".area_box1").removeClass("area_box1_on");
+		});
+		$(".menu_box").hover(function() {//目的地
+			$(this).find(".menu_box2").stop(false).fadeIn(300, function() {
+				$(".menu_box .menu_box2").mouseenter(function() {
+					$(this).find(".menu_box3").show();
+					$(this).siblings(".menu_box3").hide();
+				});
+			});
+		},function() {//目的地
+			$(this).find(".menu_box2").stop(false).fadeOut(300, function() {
+				$(".menu_box .menu_box2").mouseleave(function() {
+					$(".menu_box3").hide();
+				});
+			});
+		});
+		$(".sidebar_box>li").hover(function() {//侧栏
+			$(this).find("ul").stop(false).fadeIn(300);
+		},function() {
+			$(this).find("ul").stop(false).fadeOut(100);
+		});
+		$(".hui_top").click(function() {//回顶部
+			$("html, body").animate({
+				scrollTop : 0
+			}, 300)
+		});
+		/*header*/
+		$(".search_box").click(function(event) {
+			var type = $(this).find("option:selected").val(), keyvalue = $(this).find("input").val();
+			if (event.target.nodeName === "A") {
+				if(keyvalue!=""){
+					window.location.href = "/search/" + type + "/" + encodeURI(keyvalue);
+				}
+			}
+		});
+		function logout() {
+			var url = "/getajax.php?action=logout";
+			$.getJSON(url, function(json) {
+				window.location.reload()
+			});
+		}
+		/*banner*/
 		$("#banner_search").click(function(event) {
 			var inp = $(this).find('input');
 			if (event.target.nodeName === "A") {

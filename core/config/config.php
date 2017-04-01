@@ -2,7 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 $config['base_url'] = '';
-//http://127.0.0.1/resources
 $config['resources_url'] = 'http://'.$_SERVER['HTTP_HOST'];
 $config['index_page'] = '';
 $config['uri_protocol']	= 'PATH_INFO';

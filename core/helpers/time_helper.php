@@ -5,14 +5,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 date_default_timezone_set("PRC");//中华人民共和国时间
 // ------------------------------------------------------------------------
-if ( ! function_exists('get_gmtime')) {
+if (!function_exists('get_gmtime')) {
 //当前时间转换格林威治时间戳
   function get_gmtime()
   {
     return (time() - date('Z'));
   }
 }
-// ------------------------------------------------------------------------
+
 //将时间戳转换成日期类型
 if ( ! function_exists('formate_date')) {
   function formate_date($utc_time, $format = 'Y-m-d H:i:s',$diffday=0)
@@ -38,7 +38,7 @@ if ( ! function_exists('formate_date')) {
   {
     $day_time = date('y-m-d h:i:s',time());
     $creat_date=str_replace('T',' ',$remain_date);
-    $rem_date = 30*1000*60;//30分钟后超市
+    $rem_date = 30*1000*60;//30分钟
     $nimute =floor($day_time-( $creat_date+$rem_date)%86400/60);//分钟
     $second =floor($day_time-( $creat_date+$rem_date)%86400%60);//秒
     if (empty ($remain_date)) {
@@ -52,9 +52,6 @@ if ( ! function_exists('formate_date')) {
       }
       }
   }
-
-
-
 
   //计算时间差
   function diff_date($formdate, $todate,$format="hm")
@@ -96,7 +93,6 @@ if ( ! function_exists('formate_date')) {
   }
 }
 
-// ------------------------------------------------------------------------
 //将时间戳转换成日期类型
 if ( ! function_exists('to_timespan')) {
 //将任何时间类型转换为时间戳
@@ -110,8 +106,6 @@ if ( ! function_exists('to_timespan')) {
   }
 }
 
-
-// ------------------------------------------------------------------------
 //获得指定日期的周几
 if ( ! function_exists('get_week')) {
   function get_week($date)
