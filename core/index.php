@@ -85,10 +85,11 @@ if ($module==='async') {
 		$query = $db -> query("select * from cg_branch where id=$bid");
 		$bidinfo = $db -> fetch_array($query);
 	}
-	//常量初始化
+	//根据域名,常量初始化
 	init_config();
 	//ip定位
-	$ip = getIP();save_cookie("ip", $ip);
+	$ip = getIP();
+	save_cookie("ip", $ip);
 	if (!isset($_COOKIE['province'])) {
 		$addr = getCity($ip);
 		if(empty($addr['city'])){
@@ -96,9 +97,7 @@ if ($module==='async') {
 		}else{
 			$province = str_replace('市', '', $addr['city']);
 		}
-		$sp = $addr['area'] ? $addr['area'] : '';
 		//cookie
-		save_cookie("sp", $sp);
 		save_cookie("province", $province);
 		//首次访问跳转本地机构，查询并跳转，当前屏蔽
 		/*$sql = "SELECT myurl FROM cg_area a,cg_branch t where a.id=t.city and a.title like '%" . $province . "%' limit 1";
@@ -107,7 +106,6 @@ if ($module==='async') {
 			vheader('http://' .$myurl);
 		}*/
 	} else {
-		$sp = $_COOKIE["sp"];
 		$province = $_COOKIE["province"];
 	}
 	//网站模板&所经营地区
