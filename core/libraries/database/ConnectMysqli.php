@@ -4,7 +4,7 @@
   * MYSQLI数据操作类
   *
   * @Author Wusongbo
-  * Date: 2016-10-10 
+  * Date: 2016-10-10
   */
 class ConnectMysqli {
 	//私有的属性
@@ -115,7 +115,7 @@ class ConnectMysqli {
 	public function getAll($sql) {
 		$query = $this -> query($sql);
 		$list = array();
-		while ($r = $this -> getFormSource($query)) {
+		while ($r = $this -> fetch_array($query)) {
 			$list[] = $r;
 		}
 		return $list;
