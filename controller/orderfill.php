@@ -12,5 +12,5 @@ $info = $db->getOneInfo($sqlstr);
 
 $smarty->assign('info', $info);
 
-$smarty->display(VIEWPATH.'/OrderForm_fill.html',$cache_id);
+$smarty->display(VIEWPATH.'OrderForm_fill.html',$cache_id);
 ?>
