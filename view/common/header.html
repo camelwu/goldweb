@@ -8,12 +8,12 @@
 			<div class="this_area">
 				<span><{$ktitle}></span>
 				<ul class="area_box1">
-					<li class="area_name">热门城市</li>
+					<li class="area_name">热门分站</li>
 					<li class="area_bd"><{foreach item=hitareasitem key=hitareaskey from=$hitareas}>
 						<{if $cg_branch[$hitareaskey] ne ''}><a href="http://<{$cg_branch[$hitareaskey]}>"><{/if}><{$hitareasitem}><{if
 							$cg_branch[$hitareaskey] ne ''}></a><{/if}>
 							<{/foreach}>
-					</li>
+					</li><!-- 境内 境外 -->
 					<{foreach from=$dataarea item=dataareaitem}><li class="clrfix area_bd_box">
 						<div class="fl area_bd_left"><{$dataareaitem.title}></div>
 						<div class="fl area_bd_right">
