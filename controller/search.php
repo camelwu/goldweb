@@ -18,7 +18,7 @@ $arrvied = $key[2];
 $title = urldecode($key[3]);
 $page = intval($key[4]);
 $page = ($page < 1) ? 1 : $page;
-$perpage = 3;
+$perpage = 6;
 $start = ($page -1) * $perpage;
 $links = '/detail';
 $views = 'search.html';
@@ -79,8 +79,30 @@ switch ($arrvied) {
 		}
 		break;
 	case 'scenic':
-		$totalnum = selectScenic(3, $title, false, 0, 1);
-		$comments = selectScenic(3, $title, true, $start, $perpage);
+		$num = $db->result($db->query("select count(*) from cg_area where title='".$title."'"),0);
+		if(intval($num)<1){
+			$totalnum = selectScenic(3, $title, false, 0, 1);
+			$comments = selectScenic(3, $title, true, $start, $perpage);
+		}else{
+			$sql = "select * from cg_area where title='".$title."'";
+			$info = $db->getOneInfo($sql);
+			if($info['classid']==57||$info['classid']==65){
+				$cid = 113;
+			}else{
+				$cid = 112;
+			}
+			$sql = "select *";
+			$sqlfrom = " from cg_scenic where types=3";
+			//景点推荐
+			if($info['pid']==0){//国家,shengs
+				$sqladd = " and aid=".$info['id']."";
+			}else{
+				$sqladd = " and city=".$info['id']."";
+			}
+			$totalnum = $db->result($db->query("select count(*) " . $sqlfrom. $sqladd), 0);
+			$limitsql = " limit $start,$perpage";
+			$comments = $db->getAll("select count(*) " . $sqlfrom. $sqladd. $limitsql);
+		}
 		$arrviedhtml = '景点';
 		break;
 	case 'tour':

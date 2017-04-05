@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$action = $_GET['action'];
+$key = $_GET['key'];
 if ('getend' == $action) {
 	$enname = $_GET['enname'];
 	$end = $_GET['end'];
