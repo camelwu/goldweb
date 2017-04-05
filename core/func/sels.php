@@ -130,18 +130,23 @@ function cg_dest($type = 0) {
 	return $shop;
 }
 /*
- 函数功能：机构数组
+ * 函数功能：机构数组
+ * type为空，同行和金桥内部机构；否则选取对应的参数
  */
-function cg_branch() {
+function cg_branch($types='') {
 	global $db;
-	$sqlwhere = " where city>0 and myurl<>'' ";
-
-	$query = $db->query("select * from cg_branch $sqlwhere  order by id ");
-	$shop = array ();
-	while ($row = $db->fetch_array($query)) {
-		$shop[] = $row;
+	if($types==''){
+		$sql = "select * from cg_branch where (myurl<>'' and myurl<>'http://') and (types=1 or types=4) order by types";
+	}else{
+		$sql = "select * from cg_branch where types=$types order by id";
 	}
-	return $shop;
+	$query = $db->query($sql);
+	$result = array();
+	while ($row = $db->fetch_array($query)) {
+		$row['myurl'] = (stristr($row["myurl"], "http://") == '') ? "http://".$row["myurl"] : $row["myurl"];
+		$result[] = $row;
+	}
+	return $result;
 }
 function cg_hotd() {
 	global $db;

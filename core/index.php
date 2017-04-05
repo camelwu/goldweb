@@ -6,7 +6,7 @@ $shtm = array("aboutus", "contactus", "advise", "advertising", "qualifications",
 $snav = array("visa", "abroad", "domestic", "around", "package", //freetour
 "cruises", "custom", "scenic");
 //产品
-$spro = array("destination", "scenic", "guide", "tours", "visa");
+$spro = array("visa", "tour", "scenic", "guide", "");
 //引入公用文件
 include_once (BASEPATH . '/config/config.php');
 include_once (BASEPATH . '/config/database.php');
@@ -56,18 +56,21 @@ dbconnect();
 $uh_token = getHiddenUIDfromCookie();
 //.htaccess querystring变量作为路由
 $url = (empty($_SERVER['HTTP_X_REWRITE_URL']))?$_SERVER['REQUEST_URI']:$_SERVER['HTTP_X_REWRITE_URL'];
-$key = explode("/", $url);
+//var_dump($_GET);exit($url);
 $module = $_GET['enname'];
+$action = $_GET['action'];
+$key = $_GET['key'];
+
+$page = is_numeric($_GET['key'])?intval($_GET['key']):1;
+
 $id = $_GET['id'];
-$match = $_GET['match'];
-$match = (empty($match)) ? '------' : $match;
-$page = isset($_GET['page'])?intval($_GET['page']):1;
 /**
  * 基础数据获取完毕，开始处理
  * 根据module参数进行路由设置，除异步请求外都需要先获取数据
  **/
 if ($module==='async') {
 	include_once (BASEPATH . '/controllers/async.php');
+	exit;
 }else{
 	//分站地址区分(机构)
 	$myurl = $_SERVER['HTTP_HOST'];
