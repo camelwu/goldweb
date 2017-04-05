@@ -3,7 +3,7 @@
 body,html{ height:100%}
 .about_box{ margin-top:35px;z-index:0;}
 .about_left{width:19%; border:#dfdfdf 1px solid; background:#fdfbfc; color:#333; float:left;}
-.about_left li{ height:60px; line-height:60px; padding-left:15px; font-size:18px; cursor:pointer; overflow:hidden; position:relative}
+.about_left li{ height:60px; line-height:60px; padding-left:15px; font-size:18px;  overflow:hidden; position:relative}
 .about_left li span{ display:block; position:absolute; width:10px; height:10px; top:50%; margin-top:-5px; right:-10px; background:url(../images/index_icon.png) no-repeat 0 -359px}
 .about_left .al_li{ color:#fff; background:#59c895; overflow:visible;}
 .about_left .al_li a{color:#fff;}
@@ -29,4 +29,3 @@ body,html{ height:100%}
 .abr_table_hd td div{ padding:10px;border-bottom:#dfdfdf 1px solid}
 .abr_table_hd td .last_hd{ border-bottom:0}
 .abr_table_hd  .tab_title{border-right:#dfdfdf 1px solid; width:15%; font-size:18px;line-height:65px;}
-
