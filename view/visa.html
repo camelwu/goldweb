@@ -5,17 +5,6 @@
 <title><{$cnname}>_旅行社_<{$ktitle}>_金桥</title>
 <link href="<{$siteurl}>/resources/css/global.css" rel="stylesheet" type="text/css">
 <link href="<{$siteurl}>/resources/css/index.css" rel="stylesheet" type="text/css">
-
-<script type="text/javascript" src="<{$siteurl}>/resources/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="<{$siteurl}>/resources/js/jquery.SuperSlide.2.1.1.js"></script>
-<script type="text/javascript" src="<{$siteurl}>/resources/js/index.js"></script>
-<script type="text/javascript">
-function search_visa(){
-	var linkstr = "/visa/"+$("#country").val()+"-"+$("#vtype").val();
-	//alert(encodeURI(linkstr));
-	window.location = encodeURI(linkstr);
-}
-</script>
 </head>
 <body>
 <{include_php file="./view/common/header.php"}>
@@ -23,7 +12,7 @@ function search_visa(){
     <a href="/">首页</a>&gt;<a href="/visa"><{$cnname}></a>
 </div>
 <div class="wrapper"><!--top-img-->
-    <a href="#" class="overseas_top"><img src="/images/domestic_top.jpg" width="1200" height="160"/></a>
+    <a href="#" class="overseas_top"><img src="/resources/images/domestic_top.jpg" width="1200" height="160"/></a>
 </div>
 
 <div class="wrapper clrfix visa_wapper"><!--出发地目的地筛选-->
@@ -57,23 +46,23 @@ function search_visa(){
       <div class="visal_box">
           <h6>签证办理常见问题</h6>
           <ul class="visa_gg">
-          	<{foreach name=faq item=news from=faqs}><li><a href="/details/<{$news.id}>"><{$news.title}></a></li><{/foreach}>
+          	<{foreach name=faq item=faq from=$faqs}><li><a href="/details/<{$faq.id}>"><{$faq.title}></a></li><{/foreach}>
           </ul>
       </div>
   </div>
   <div class="visa_right">
-  	<{if $templates neq 'branch'}><div class="visar_img"><img src="/images/visa.jpg" width="100%"></div>
+  	<{if $templates neq 'branch'}><div class="visar_img"><img src="/resources/images/visa.jpg" width="100%"></div>
     <div class="visar_box address_select clrfix ">
     	<div class="visar_box_title">签证国家</div>
-			<ul class="number_days clrfix"><li>全部：</li><li class="clrfix dest_guo_on visa_dest"><span<{if $go_start eq ''}> class="sob_on"<{/if}>><a href="/visa/-<{$go_end}>/hid/desc/<{$page}>">全部</a></span></li></ul>
+			<ul class="number_days clrfix"><li>全部：</li><li class="clrfix dest_guo_on visa_dest"><span<{if $go_start eq ''}> class="sob_on"<{/if}>><a href="/visa/-<{$go_end}>/<{$page}>">全部</a></span></li></ul>
         <{section name=a loop=$area}><ul class="number_days clrfix">
 			<li><{$stat[a]}>：</li>
 			<li class="clrfix dest_guo_on visa_dest">
-				<{section name=i loop=$area[a]}><span<{if $go_start eq $area[a][i].id}> class="sob_on"<{/if}>><a href="/visa/<{$area[a][i].id}>-<{$go_end}>/hid/desc/<{$page}>"><{$area[a][i].title}></a></span><{/section}>
+				<{section name=i loop=$area[a]}><span<{if $go_start eq $area[a][i].id}> class="sob_on"<{/if}>><a href="/visa/<{$area[a][i].id}>-<{$go_end}>/<{$page}>"><{$area[a][i].title}></a></span><{/section}>
 			</li>
 
         </ul><{/section}>
-        <ul class="number_days clrfix"><li>签证类型：</li><li><span<{if $go_end eq ''}> class="sob_on"<{/if}>><a href="/visa/<{$go_start}>-/hid/desc/<{$page}>">全部</a></span></li><{foreach name=vs item=vs key=key from=$vtype}><li><span<{if $go_end eq $key}> class="sob_on"<{/if}>><a href="/visa/<{$go_start}>-<{$key}>/hid/desc/<{$page}>"><{$vs}></a></span></li><{/foreach}></ul>
+        <ul class="number_days clrfix"><li>签证类型：</li><li><span<{if $go_end eq ''}> class="sob_on"<{/if}>><a href="/visa/<{$go_start}>-/<{$page}>">全部</a></span></li><{foreach name=vs item=vs key=key from=$vtype}><li><span<{if $go_end eq $key}> class="sob_on"<{/if}>><a href="/visa/<{$go_start}>-<{$key}>/<{$page}>"><{$vs}></a></span></li><{/foreach}></ul>
        </div><{/if}>
        <div class="visar_box address_select clrfix ">
        	<div class="visar_box_title">签证列表</div>
@@ -97,9 +86,8 @@ function search_visa(){
        </div>
     </div>
 </div>
-
 <{include file="./view/common/footer.html"}>
-
 <{include_php file="./view/common/right.php"}>
+<script src="<{$siteurl}>/resources/js/visa/index.js"></script>
 </body>
 </html>

@@ -9,22 +9,18 @@
 				<span><{$ktitle}></span>
 				<ul class="area_box1">
 					<li class="area_name">热门分站</li>
-					<li class="area_bd"><{foreach item=hitareasitem key=hitareaskey from=$hitareas}>
-						<{if $cg_branch[$hitareaskey] ne ''}><a href="http://<{$cg_branch[$hitareaskey]}>"><{/if}><{$hitareasitem}><{if
-							$cg_branch[$hitareaskey] ne ''}></a><{/if}>
-							<{/foreach}>
-					</li><!-- 境内 境外 -->
-					<{foreach from=$dataarea item=dataareaitem}><li class="clrfix area_bd_box">
-						<div class="fl area_bd_left"><{$dataareaitem.title}></div>
+					<li class="area_bd"><{foreach item=branch key=b from=$cg_branch}>
+						<a href="<{$branch.myurl}>" title="<{$branch.title}>"><{if $branch.ktitle eq ''}>分站<{else}><{$branch.ktitle}><{/if}></a>
+					<{/foreach}></li><!-- 境内 境外 -->
+					<!--<li class="clrfix area_bd_box">
+						<div class="fl area_bd_left"></div>
 						<div class="fl area_bd_right">
-							<{foreach item=dataareaitem2 key=dataareakey2 from=$dataareaitem.dataarr}>
-							<{if $cg_branch[$dataareakey2] ne ''}><a href="http://<{$cg_branch[$dataareakey2]}>"><{/if}><{$dataareaitem2}><{if
-								$cg_branch[$dataareakey2] ne ''}></a><{/if}><{/foreach}>
-					</li><{/foreach}>
+
+					</li> -->
 				</ul>
 			</div>
 
-			<div class="top_area_crm">门市地址</div>
+			<div class="top_area_crm"><a href="/branch/shop">门市地址</a></div>
 		</div>
 		<div class="search_box">
 			<!--搜索-->
@@ -40,15 +36,15 @@
 		<{if $uid eq ''}>
 		<div class="log_reg">
 			<!--登录注册-->
-			<a href="<{$siteurl}>/login">登录</a>|<a href="<{$siteurl}>/registered">注册</a>
+			<a href="/member/login">登录</a>|<a href="/member/registered">注册</a>
 		</div>
 		<{else}>
 		<div class="after_login clrfix">
 			<!--登录后-->
 			<div class="log_user">
-				用户：<a href="/MemberCenter"><{$username}></a>
+				用户：<a href="/member/center"><{$username}></a>
 			</div>
-			<a href="/MemberCenter" class="user_news"><div class="news_num">0</div></a>
+			<a href="/member/center" class="user_news"><div class="news_num">0</div></a>
 			<a href="javascript:logout();">退出&nbsp;&nbsp;</a>
 		</div>
 		<{/if}>
@@ -82,7 +78,7 @@
 		<ul class="nav_main clrfix">
 			<li<{if $enname eq ''}> class="nav_on"<{/if}>><a href="<{$siteurl}>">首页</a></li>
 			<li<{if $enname eq 'visa'}> class="nav_on"<{/if}>><a href="<{$siteurl}>/visa">签证</a></li><{foreach from=$layer item=layeritem}>
-			<li<{if $enname eq $layeritem.html}> class="nav_on"<{/if}>><a href="<{$siteurl}>/<{$layeritem.html}>"><{$layeritem.title}></a></li>
+			<li<{if $action eq $layeritem.html}> class="nav_on"<{/if}>><a href="<{$siteurl}>/tour/<{$layeritem.html}>"><{$layeritem.title}></a></li>
 			<{/foreach}>
 			<li <{if $enname eq 'custom'}> class="nav_on"<{/if}>><a href="<{$siteurl}>/custom">私人定制</a></li>
 			<li <{if $enname eq 'scenic'}> class="nav_on"<{/if}>><a href="<{$siteurl}>/scenic">景点门票</a></li>

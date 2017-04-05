@@ -45,7 +45,6 @@
 						<li class="cd_on">交通信息</li>
 						<li>地区介绍</li>
 						<li>可附加服务</li>
-						<li>线路说明</li>
 						<li>注意事项</li>
 						<li>旅游指南</li>
 						<li>线路推荐</li>
@@ -181,7 +180,7 @@
 					<span>旅游指南</span>
 				</div>
 				<div class="cdt_txt"><{if $info.info neq ''}><{$info.info}><{else}>暂无<{/if}></div>
-				<div class="info_title cd_t4">
+				<div class="info_title">
 					<span>线路推荐</span>
 				</div>
 				<ul class="cd_recom clrfix">
@@ -199,8 +198,8 @@
 						</div>
 					</li><{/section}>
 				</ul>
-				<div class="info_title cd_t5">
-					<span>当地服务</span>
+				<div class="info_title">
+					<span>当地景点</span>
 				</div>
 				<ul class="cd_recom clrfix cd_service">
 					<{section name=loc loop=$locate}><li>
@@ -271,55 +270,31 @@
 	<script src="<{$siteurl}>/resources/js/jquery.pin.js"></script>
 	<script>
 $(function(){
-	$(".jq_price .price_exp").mouseenter(function(){
-		$(this).find("div").show();
-	})
-	$(".jq_price .price_exp").mouseleave(function(){
-		$(this).find("div").hide();
-	})
+	$(".cd_slideBox").slide({mainCell:".bd ul",effect:"fold",autoPlay:true,easing:"easeOutCirc",delayTime:800});
 	$(".select_arrow").click(function(){
 		$(this).toggleClass("se_ar_on");
 		$(".svo_box").slideToggle(200);
 	});
-	$(".cd_info_title li").click(function(){//商品详情——订单导航
-		//$(this).siblings().removeClass("cd_on");
-	   // $(this).addClass("cd_on");
-		var cdit_num=$(".cd_info_title li").index(this)+1;
-		var cdit_top=$(".cd_t"+cdit_num).offset().top-60;
+	$(".cd_info_title li").click(function(){//微导航
+		var clist = document.querySelectorAll('.info_title'),
+				cdit_num = $(this).index(),
+				cdit_top = $(clist[cdit_num]).offset().top-60;
 		 $("html, body").animate({ scrollTop: cdit_top},300);
 	});
-	$(".trip_left ul li").click(function(){//商品详情——天数导航
-		var cdit_num=$(".trip_left ul li").index(this);
-		var cdit_top=$(".frt_ul").eq(cdit_num).offset().top-50;
-		$("html, body").animate({ scrollTop: cdit_top},300);
-
-	});
 	$(window).scroll(function(){
-	var vv=document.documentElement.scrollTop||document.body.scrollTop; //解决谷歌等不识别document.documentElement.scrollT
-	$(".of_info .info_title").each(function(i){
-		var cd_t=$(this).offset().top-80;
-		if(cd_t<vv){
-			$(".cd_info_title li").eq(i).siblings().removeClass("cd_on");
-			$(".cd_info_title li").eq(i).addClass("cd_on");
+		var vv=document.documentElement.scrollTop||document.body.scrollTop; //解决谷歌等不识别document.documentElement.scrollT
+		$(".of_info .info_title").each(function(i){
+			var cd_t=$(this).offset().top-80;
+			if(cd_t<vv){
+				$(".cd_info_title li").eq(i).siblings().removeClass("cd_on");
+				$(".cd_info_title li").eq(i).addClass("cd_on");
 			}
-		})
-	$(".trip_right .frt_ul").each(function(x){
-		var frtu=$(this).offset().top-80;
-		if(frtu<vv){
-			$(".trip_left ul li").eq(x).siblings().removeClass("trl_on");
-			$(".trip_left ul li").eq(x).addClass("trl_on");
-			}
-		})
-	})
-	$(".cd_info_title").pin({
-    containerSelector: ".cd_info"
-	})
-	$(".trip_left ul").pin({
-    containerSelector: ".trip_box"
-	})
-	$(".cd_slideBox").slide({mainCell:".bd ul",effect:"fold",autoPlay:true,easing:"easeOutCirc",delayTime:800});
-
-})
+		});
+		$(".cd_info_title").pin({
+	    containerSelector: ".cd_info"
+		});
+	});
+});
 </script>
 </body>
 </html>

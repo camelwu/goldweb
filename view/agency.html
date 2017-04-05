@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><{$cnname}>_<{$ktitle}>_金桥旅行社</title>
+<link href="<{$siteurl}>/resources/css/global.css" rel="stylesheet" type="text/css">
+<link href="<{$siteurl}>/resources/css/detail.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<{include_php file="./view/common/header.php"}>
+	<div class="wrapper now_position">
+		<!--当前位置-->
+		<a href="/">首页</a>&gt;<{$cnname}>
+	</div>
+	<div class="wrapper clrfix">
+		<!--内容-->
+		<div class="fill_left fl">
+			<div class="of_info cd_info">
+				<{foreach item=data name=branch from=$comments}>
+				<div class="info_title">
+				<span><{$data.title}> </span><span class="it_ins"></span>
+				</div>
+				<div class="cdt_txt">
+					门市电话：<{$data.tel}><br/>
+					传真号码：<{$data.fax}><br/>
+					公司地址：<{$data.addr}><!-- <img src="<{$data.url}>" width="374" height="230" align="right" /> -->
+				</div>
+				<{/foreach}>
+			</div>
+
+				<!--页码-->
+				<ul class="page_box clrfix"><{$multipage}></ul>
+
+		</div>
+		<div class="fill_right fr ranking_box">
+			<!--右侧-->
+			<ul class="pay_info comm_ranking">
+				<li class="ran_name">销售排名</li> <{section name=tour loop=$hots}>
+				<li>
+					<div class="ran_img">
+						<img src="<{$hots[tour].url}>" width="84" height="55" />
+					</div>
+					<div class="ran_txt">
+						<a href="/tours/<{$hots[tour].hid}>" target="_blank">&lt;<{$hots[tour].title}>&gt;<{$hots[tour].departure}>往</a>
+						<span>￥<{$hots[tour].price_2}>起</span>
+					</div>
+				</li><{/section}>
+			</ul>
+			<ul class="pay_info comm_ranking comm_record">
+				<li class="ran_name">浏览记录</li> <{section name=web loop=$brower}>
+				<li><a href="<{$brower[web].titlelink}>" target="_blank">&lt;<{$brower[web].title}></a>
+					<!--span>￥<{$brower[web].price}>起</span--></li> <{/section}>
+			</ul>
+		</div>
+	</div>
+	<{include file="./view/common/footer.html"}>
+</body>
+</html>

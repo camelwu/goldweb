@@ -33,6 +33,7 @@ foreach ($layer as $key => $value) {
 
 }
 $smarty->assign('layermax', $layer);
+
 function cg_layer1($id) {
 	global $db;
 	$sql = "SELECT a.id,a.title FROM cg_product_route t ,cg_area a where t.city2=a.id and t.classid=" . $id . ' limit 3';

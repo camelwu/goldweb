@@ -3,8 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>登录</title>
-<link href="<{$siteurl}>/resources/css/global.css" rel="stylesheet"
-	type="text/css">
+<link href="<{$siteurl}>/resources/css/global.css" rel="stylesheet"	type="text/css">
 <link href="<{$siteurl}>/resources/css/login.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -15,11 +14,11 @@
 	</div>
 	<div class="wrapper login_box">
 		<div class="login_img">
-			<img src="images/login_img.jpg" width="100%">
+			<img src="/resources/images/login_img.jpg" width="100%">
 		</div>
 		<div class="login_main">
 			<div class="login_title clrfix">
-				登录账号<a href="#">忘记账号</a>
+				登录账号<a href="/member/registered">注册帐号</a><a href="/member/findpass">忘记密码</a>
 			</div>
 			<form name="log_frm" method="post" action="/login">
 				<div class="login_user">
@@ -67,41 +66,8 @@
 		<li class="comm_pf">先行赔付</li>
 	</ul>
 
+	<script src="<{$siteurl}>/resources/js/lib/jquery-1.10.2.min.js"></script>
+	<script src="<{$siteurl}>/resources/js/index.js"></script>
+	<script src="<{$siteurl}>/resources/js/user/index.js"></script>
 </body>
 </html>
-<script language="javascript">
-	var validate = true;
-	function get_code() {
-		if (validate == true) {
-			document.getElementById("findcode").src = "image.php?"
-					+ Math.random();
-			validate = false;
-			return false;
-		} else {
-			document.getElementById("findcode").src = "image.php?"
-					+ Math.random();
-			validate = true;
-			return false;
-		}
-	}
-
-	function login() {
-		var email = $("input[name='email']");
-		var username = $("input[name='username']");
-		var password = $("input[name='password']");
-		var password2 = $("input[name='password2']");
-		var code = $("input[name='code']");
-		var url = "/getajax.php?action=login&email=" + email.val()
-				+ "&password=" + password.val() + "&code=" + code.val();
-		$.getJSON(url, function(json) {
-			if (json.status == '0') {
-				location.href = "/MemberCenter";
-			} else {
-				alert(json.msg);
-			}
-
-		});
-	}
-</script>
-<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
