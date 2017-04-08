@@ -99,21 +99,6 @@ function cg_area($types = "", $hits = 0, $classid1 = 0, $classid = 0, $pid = 0) 
 	}
 	return $data;
 }
-
-/*
- 函数功能：一级分类数组
- 参    数：$pid>>上级ID
- */
-function cg_class($classtype = 0) {
-	global $db;
-	$sqlwhere = "and classtype=$classtype";
-	$query = $db->query("select * from cg_class where pid=0 $sqlwhere order by hots");
-	$shop = array ();
-	while ($row = $db->fetch_array($query)) {
-		$shop[$row['id']] = $row;
-	}
-	return $shop;
-}
 /**
  * @uses	线路出游目
  * @param	int	$type	0:over,1:inner
@@ -162,11 +147,11 @@ function cg_hotd() {
  * 搜索条件
  * @param $ctype:enname
  * @param $csearch:'0' => '出发地',
-		'1' => '目的地',
-		'2' => '服务类型',
-		'3' => '行程天数',
-		'4' => '预算花费',
-		'5' => '游轮品牌',
+ *		'2' => '服务类型',
+ *		'3' => '行程天数',
+ *		'4' => '预算花费',
+ *		'5' => '游轮品牌',
+ *		'1' => '目的地',
  **/
 function cg_search($ctype, $csearch) {
 	global $db;
@@ -329,13 +314,78 @@ function sel_product($count, $type = "1", $types = 0, $ctype = 0, $ctype1 = 0) {
 		}
 		if (!empty ($row['url'])) {
 			$row['url'] = (stristr($row["url"], "http://") == '') ? $picserver . replaceSeps($row["url"]) : $row["url"];
+		}else{
+			$row['url'] = $picserver . "/attached/nopic.gif";
 		}
 		$row['word'] = cut_utf8(str_replace("&nbsp;", "", strip_tags($row['word'])), 70, '...');
 		$data[] = $row;
 	}
 	return $count == 1 ? $data[0] : $data;
 }
-
+/*
+ * 非线路产品
+ */
+function selectScenic($types = 0, $title = "", $city2 = 0, $count = false, $start = 0, $perpage = 1) {
+	global $db, $picserver, $siteurl, $bid, $bidinfo;
+	$sqlfrom = " from cg_scenic where types=$types ";
+	if (!empty ($bidinfo)) {
+		$sqlfrom .= " and aid=" . $bidinfo["aid"];
+	}
+	//标题
+	if ($title) {
+		$sqlfrom .= " and title like '%" . $title . "%' ";
+	}
+	if ($city2) {
+		if (strpos($city2, ',') === false) {
+			$sqlfrom .= " and (aid=$city2 or city=$city2) ";
+		} else {
+			$sqlfrom .= " and (FIND_IN_SET(aid,'" . $city2 . "') or FIND_IN_SET(city,'" . $city2 . "'))";
+		}
+	}
+	$orderbysql = "  order by id desc,hots desc ";
+	if (!$count) {
+		return $db->result($db->query("select count(*) $sqlfrom "), 0);
+	} else {
+		$limitsql = ' limit ' . $start . ',' . $perpage;
+		$sql = "select * $sqlfrom $orderbysql $limitsql";
+		$query = $db->query($sql);
+		while ($value = $db->fetch_array($query)) {
+			if (!empty ($value['url'])) {
+				$value['url'] = (stristr($value["url"], "http://") == '') ? $picserver . replaceSeps($value["url"]) : $value["url"];
+			}else{
+				$value['url'] = $picserver . "/attached/nopic.gif";
+			}
+			$value['price_2'] = $value['price2'];
+			$value['hid'] = $value['id'];
+			$value['word'] = cut_utf8(str_replace("&nbsp;", "", strip_tags($value['word'])), 55, '...');
+			$re[] = $value;
+		}
+	}
+	return $re;
+}
+function selectProduct($id = 0) {
+	global $db, $picserver, $siteurl, $bid, $bidinfo;
+	if($id==0){
+		return "error";
+	}
+	$res = $db->getOneInfo("select * from cg_scenic where id=$id");
+	if(!empty($res)){
+		if (!empty ($res['url'])){
+			$res['url'] = (stristr($res["url"], "http://") == '') ? $picserver . replaceSeps($res["url"]) : $res["url"];
+		}else{
+			$res['url'] = $picserver . "/attached/nopic.gif";
+		}
+		$vurl = $db->getOneInfo("select url from cg_area where id=".$res['aid']);
+		if (!empty ($vurl['url'])){
+			$vurl['url'] = (stristr($vurl["url"], "http://") == '') ? $picserver . replaceSeps($vurl["url"]) : $vurl["url"];
+		}
+		$res['pic'] = $vurl['url'];
+		$smarty->assign('info', $res);
+		$smarty->display(VIEWPATH.'/VisaDetails.html',$cache_id);
+	}else{
+		return "无此信息";
+	}
+}
 /**
  * 获取线路数据
  * @param
@@ -418,8 +468,6 @@ function selectRoleSale($classid, $count = false, $start = 0, $perpage = 1, $cit
 	}
 	if ($bid) {
 		$sqlfrom .= " and p.bid=$bid";
-	}else{
-		$sqlfrom .= " and 1=1";
 	}
 	$orderbysql = " order by $order $orderby ";
 	if (!$count) {
@@ -427,48 +475,19 @@ function selectRoleSale($classid, $count = false, $start = 0, $perpage = 1, $cit
 	} else {
 		$limitsql = ' limit ' . $start . ',' . $perpage;
 		$sql = "select * $sqlfrom $orderbysql $limitsql";
-		// return $sql;
+		#return $sql;
 		$query = $db->query($sql);
 		while ($value = $db->fetch_array($query)) {
 			if (!empty ($value['url'])) {
 				$value['url'] = (stristr($value["url"], "http://") == '') ? $picserver . replaceSeps($value["url"]) : $value["url"];
+			}else{
+				$value['url'] = $picserver . "/attached/nopic.gif";
 			}
 			$price = $db->getOneInfo("select price from cg_product_route_do where id=" . $value['id'] . " and pass=0 order by price desc limit 0,1");
 			if (!empty ($price)) {
 				$value['price2'] = (int) $value['price2'] - (int) $price['price'];
 			}
 			$value['hid'] = $value['id'];
-			$re[] = $value;
-		}
-	}
-	return $re;
-}
-
-/**景点**/
-function selectScenic($types = 0, $title = "", $count = false, $start = 0, $perpage = 1) {
-	global $db, $picserver, $siteurl, $bid, $bidinfo;
-	$sqlfrom = " from cg_scenic where types=$types ";
-	if (!empty ($bidinfo)) {
-		$sqlfrom .= " and aid=" . $bidinfo["aid"];
-	}
-	//标题
-	if ($title) {
-		$sqlfrom .= " and title like '%" . $title . "%' ";
-	}
-	$orderbysql = "  order by id desc,hots desc ";
-	if (!$count) {
-		return $db->result($db->query("select count(*) $sqlfrom "), 0);
-	} else {
-		$limitsql = ' limit ' . $start . ',' . $perpage;
-		$sql = "select * $sqlfrom $orderbysql $limitsql";
-		$query = $db->query($sql);
-		while ($value = $db->fetch_array($query)) {
-			if (!empty ($value['url'])) {
-				$value['url'] = (stristr($value["url"], "http://") == '') ? $picserver . replaceSeps($value["url"]) : $value["url"];
-			}
-			$value['price_2'] = $value['price2'];
-			$value['hid'] = $value['id'];
-			$value['word'] = cut_utf8(str_replace("&nbsp;", "", strip_tags($value['word'])), 55, '...');
 			$re[] = $value;
 		}
 	}
@@ -490,5 +509,25 @@ function cg_area_tit($id) {
 	global $db;
 	$res = $db->getOneInfo("select title from cg_area where id=" . $id);
 	return $res['title'];
+}
+/*
+ 函数功能：一级分类数组
+ 参    数：$pid>>上级ID
+ */
+function cg_class($classtype = 0,$keyval = '') {
+	global $db;
+	$sqlwhere = "and classtype=$classtype";
+	$query = $db->query("select * from cg_class where pid=0 $sqlwhere order by hots");
+	$res = array ();
+	if(empty($keyval)){
+		while ($row = $db->fetch_array($query)) {
+			$res[$row['id']] = $row;
+		}
+	}else{
+		while ($row = $db->fetch_array($query)) {
+			$res[$row['id']] = $row[$keyval];
+		}
+	}
+	return $res;
 }
 ?>
