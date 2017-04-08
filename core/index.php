@@ -61,9 +61,8 @@ $module = $_GET['enname'];
 $action = $_GET['action'];
 $key = $_GET['key'];
 
-$page = is_numeric($_GET['key'])?intval($_GET['key']):1;
-
-$id = $_GET['id'];
+$page = isset($_GET['page'])?intval($_GET['page']):1;
+$id = isset($_GET['id'])?intval($_GET['id']):'';
 /**
  * 基础数据获取完毕，开始处理
  * 根据module参数进行路由设置，除异步请求外都需要先获取数据
