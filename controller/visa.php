@@ -1,9 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/* 初始化数组参数 */
+/* 初始化参数 */
 $table = "cg_scenic";
 $types = 2;
+$type = '1';
+$perpage = 30;
+
 $faqs = sel_product(6,"",5,96,102);
 #var_dump($faqs);exit;
 $smarty->assign('cnname', '签证');
@@ -11,10 +14,10 @@ $smarty->assign('enname', $module);
 $smarty->assign('templates',$bidinfo['templates']);
 $smarty->assign('news',sel_product(6,"",5,96,103));
 $smarty->assign('faqs',$faqs);
-$smarty->assign('vtype',cg_vtype(2));
+$smarty->assign('vtype',cg_class(2,'title'));
 /*获取具体ID的签证信息*/
 if (!empty($id)) {
-	$res = $db->getOneInfo("select * from $table where types=$types and id=$id");
+	$res = $db->getOneInfo("select * from $table where id=$id");
 	if(!empty($res)){
 		if (!empty ($res['url'])){
 			$res['url'] = (stristr($res["url"], "http://") == '') ? $picserver . replaceSeps($res["url"]) : $res["url"];
@@ -31,20 +34,27 @@ if (!empty($id)) {
 	}
 } else {
 	$match = $_GET['action'];
-	$match = (empty($match)) ? '-' : $match;
 	/*提交查询*/
 	if ($_SERVER['REQUEST_METHOD']=="POST"){
 		$match = $_POST['country'].'-'.$_POST['vtype'];
 		$matchy = explode('-', $match);
 		$go_start = tit2id($_POST['country']);
 		$go_end = $_POST['vtype'];
-		$smarty->assign('go_start', $go_start);
-		$smarty->assign('go_end', $go_end);
+	}else{
+		if (!empty ($match)) {
+			$matchy = explode('-', $match);
+			$go_start = $matchy[0];
+			$go_end = $matchy[1];
+		}else{
+			$match = '-';
+			$go_start = '';
+			$go_end = '';
+		}
 	}
-	if (!empty ($match)) {
-		if($go_start) $sqldataid .= ' and aid=' . (int)$go_start;
-		if($go_end) $sqldataid .= ' and ctype=' . (int)$go_end;
-	}
+	$smarty->assign('go_start', $go_start);
+	$smarty->assign('go_end', $go_end);
+	if($go_start) $sqldataid .= ' and aid=' . (int)$go_start;
+	if($go_end) $sqldataid .= ' and ctype=' . (int)$go_end;
 	$area = array();
 	$query = $db->query("select id,title from cg_class where classtype=5 and pid=0 order by hots limit 8");
 	while ($row = $db->fetch_array($query)) {
@@ -66,10 +76,6 @@ if (!empty($id)) {
 	/*
 	 * 列表查询
 	 */
-
-	$type = '1';
-	$perpage = 30;
-
 	$sqlfrom = "from cg_area p,$table t";
 	$sqladd = " where t.types=$types and t.aid=p.id";
 	if ($bidinfo['templates']=='branch'){
@@ -80,7 +86,7 @@ if (!empty($id)) {
 
 	$orderbysql = " order by t.id desc";
 
-	$totalnum = $db->result($db->query("select count(*) " . $sqlfrom. $sqladd. $sqldataid), 0); //总数;
+	$totalnum = $db->result($db->query("select count(*) " . $sqlfrom. $sqladd. $sqldataid), 0);
 	$pagecount = ceil($totalnum/$perpage);//页数
 	$page = $page>$pagecount?1:$page;
 	$start = ($page -1) * $perpage;
@@ -118,14 +124,4 @@ function tit2id($tit){
 	}
 }
 
-function cg_vtype($classtype = 0) {
-	global $db;
-	$sqlwhere = " and classtype=$classtype ";
-	$query = $db->query("select id,title from cg_class where pid=0 $sqlwhere order by hots");
-	$shop = array ();
-	while ($row = $db->fetch_array($query)) {
-		$shop[$row['id']] = $row['title'];
-	}
-	return $shop;
-}
 ?>
