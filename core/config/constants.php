@@ -1,85 +1,156 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+define('DBFIX', 'cg_');
+define('VER', 'V4.2.2');
+// Poster
+$Config = array (
+	'web' => array (
+		'0' => '跟团游',
+		'1' => '信息',
+		'2' => '签证',
+		'3' => '景点',
+		'4' => '酒店',
+		'5' => '区域',
+		'6' => '主题',
+		'7' => '语种',
+		'8' => '餐厅',
+		'9' => '自助游'
+	),
+	'types' => array (
+		'0' => '国家',
+		'1' => '地区'
+	),
+	'guide' => array (
+		'0' => '导游',
+		'1' => '翻译'
+	),
+	'scenic' => array (
+		'0' => '酒店',
+		'1' => '商品',
+		'2' => '签证',
+		'3' => '景点',
+		'4' => '餐厅',
+		'5' => '信息',
+		'6' => '租车'
+	),
+	'hotel' => array (
+		'0' => '客房',
+		'1' => '图片'
+	),
+	'line' => array (
+		'0' => '线路计划',
+		'1' => '线路行程',
+		'2' => '线路价格',
+		'3' => '线路图片',
+		'4' => '线路调度'
+	),
+	'float' => array (
+		'1' => '上调',
+		'0' => '下降'
+	),
+	'pass' => array (
+		'1' => '正常显示',
+		'0' => '仅计调用'
+	),
+	'net' => array (
+		'0' => '另外计费',
+		'1' => '免费提供',
+		'2' => '暂不提供'
+	),
+	'zao' => array (
+		'0' => '另外计费',
+		'1' => '包含一份',
+		'2' => '包含双份',
+		'3' => '包含三份',
+		'4' => '暂不提供'
+	),
+	'vehicle' => array (
+		'0' => '2~5座',
+		'1' => '6~9座',
+		'2' => '10座以上'
+	),
+	'company' => array (
+		'0' => '车队',
+		'1' => '同行机构',
+		'2' => '游轮公司',
+		'3' => '门市',
+		'4' => '金桥'
+	),
+	'plane' => array (
+		'0' => '单程',
+		'1' => '往返',
+		'2' => '联程'
+	),
+	//广告位
+	'mid' => array (
+		'1' => '首页banner(1920 X 430)',
+		'2' => '首页左侧浮动广告',
+		'3' => '首页右侧浮动广告',
+		'4' => '首页最受欢迎',
+		'overseas' => '出境游banner(1200 X 160)',
+		'domestic' => '国内游banner(365 X 205)',
+		'touraround' => '周边游banner(365 X 205)',
+		'freeline' => '自由行banner(365 X 205)',
+		'cruises' => '游轮banner(1920 X 330)',
+		'scenic' => '景点门票banner(1920 X 330)'
+	),
+	'status' => array (
+		'0' => '未启用',
+		'1' => '启用'
+	),
+	'csearch' => array (
+		'0' => '出发地',
+		'1' => '目的地',
+		'2' => '服务类型',
+		'3' => '行程天数',
+		'4' => '预算花费',
+		'5' => '游轮品牌'
+	),
+	'cselected' => array (
+		'1' => '国家/城市',
+		'2' => '游轮',
 
-/*
-|--------------------------------------------------------------------------
-| Display Debug backtrace
-|--------------------------------------------------------------------------
-|
-| If set to TRUE, a backtrace will be displayed along with php errors. If
-| error_reporting is disabled, the backtrace will not display, regardless
-| of this setting
-|
-*/
-defined('SHOW_DEBUG_BACKTRACE') OR define('SHOW_DEBUG_BACKTRACE', TRUE);
 
-/*
-|--------------------------------------------------------------------------
-| File and Directory Modes
-|--------------------------------------------------------------------------
-|
-| These prefs are used when checking and setting modes when working
-| with the file framework.  The defaults are fine on servers with proper
-| security, but you may wish (or even need) to change the values in
-| certain environments (Apache running a separate process for each
-| user, PHP under CGI with Apache suEXEC, etc.).  Octal values should
-| always be used to set the mode correctly.
-|
-*/
-defined('FILE_READ_MODE')  OR define('FILE_READ_MODE', 0644);
-defined('FILE_WRITE_MODE') OR define('FILE_WRITE_MODE', 0666);
-defined('DIR_READ_MODE')   OR define('DIR_READ_MODE', 0755);
-defined('DIR_WRITE_MODE')  OR define('DIR_WRITE_MODE', 0755);
-
-/*
-|--------------------------------------------------------------------------
-| File Stream Modes
-|--------------------------------------------------------------------------
-|
-| These modes are used when working with fopen()/popen()
-|
-*/
-defined('FOPEN_READ')                           OR define('FOPEN_READ', 'rb');
-defined('FOPEN_READ_WRITE')                     OR define('FOPEN_READ_WRITE', 'r+b');
-defined('FOPEN_WRITE_CREATE_DESTRUCTIVE')       OR define('FOPEN_WRITE_CREATE_DESTRUCTIVE', 'wb'); // truncates existing file data, use with care
-defined('FOPEN_READ_WRITE_CREATE_DESTRUCTIVE')  OR define('FOPEN_READ_WRITE_CREATE_DESTRUCTIVE', 'w+b'); // truncates existing file data, use with care
-defined('FOPEN_WRITE_CREATE')                   OR define('FOPEN_WRITE_CREATE', 'ab');
-defined('FOPEN_READ_WRITE_CREATE')              OR define('FOPEN_READ_WRITE_CREATE', 'a+b');
-defined('FOPEN_WRITE_CREATE_STRICT')            OR define('FOPEN_WRITE_CREATE_STRICT', 'xb');
-defined('FOPEN_READ_WRITE_CREATE_STRICT')       OR define('FOPEN_READ_WRITE_CREATE_STRICT', 'x+b');
-
-/*
-|--------------------------------------------------------------------------
-| Exit Status Codes
-|--------------------------------------------------------------------------
-|
-| Used to indicate the conditions under which the script is exit()ing.
-| While there is no universal standard for error codes, there are some
-| broad conventions.  Three such conventions are mentioned below, for
-| those who wish to make use of them.  The CodeIgniter defaults were
-| chosen for the least overlap with these conventions, while still
-| leaving room for others to be defined in future versions and user
-| applications.
-|
-| The three main conventions used for determining exit status codes
-| are as follows:
-|
-|    Standard C/C++ Library (stdlibc):
-|       http://www.gnu.org/software/libc/manual/html_node/Exit-Status.html
-|       (This link also contains other GNU-specific conventions)
-|    BSD sysexits.h:
-|       http://www.gsp.com/cgi-bin/man.cgi?section=3&topic=sysexits
-|    Bash scripting:
-|       http://tldp.org/LDP/abs/html/exitcodes.html
-|
-*/
-defined('EXIT_SUCCESS')        OR define('EXIT_SUCCESS', 0); // no errors
-defined('EXIT_ERROR')          OR define('EXIT_ERROR', 1); // generic error
-defined('EXIT_CONFIG')         OR define('EXIT_CONFIG', 3); // configuration error
-defined('EXIT_UNKNOWN_FILE')   OR define('EXIT_UNKNOWN_FILE', 4); // file not found
-defined('EXIT_UNKNOWN_CLASS')  OR define('EXIT_UNKNOWN_CLASS', 5); // unknown class
-defined('EXIT_UNKNOWN_METHOD') OR define('EXIT_UNKNOWN_METHOD', 6); // unknown class member
-defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user input
-defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
-defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
-defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+	),
+	'eats' => array (
+		'早' => '早',
+		'中' => '中',
+		'晚' => '晚'
+	),
+	'traffic' => array (
+		'plane' => '飞机',
+		'train' => '火车',
+		'ship' => '轮船',
+		'car' => '汽车'
+	),
+	'orderstatus' => array (
+		'0' => '未支付',
+		'1' => '已支付'
+	),
+	'op_type' => array (
+		'尚未处理',
+		'有效订单',
+		'无效订单',
+		'成交订单',
+		'未成订单'
+	),
+	'templates' => array (
+		'index' => '默认模板',
+		'branch' => '境外分站',
+		'domestic' => '境内分站'
+	),
+);
+//op_types
+$op_types = array (
+	"关闭",
+	"开通",
+	"特色",
+	"推荐",
+	"专题",
+	"销售",
+	"分销"
+);
+//
+$scriptname = explode('/', $_SERVER['SCRIPT_NAME']);
+//得到本页名称
+$filename = end($scriptname);
