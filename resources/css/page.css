@@ -1,0 +1,71 @@
+.page-box {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  float: right;
+  margin: 10px auto 80px auto;
+}
+.page-box a,
+.page-box span {
+  float: left;
+}
+
+.page-box .pg_next,
+.page-box .pg_pre {
+  border: 1px solid #ccc;
+  margin: 0 3px;
+  /*background: url("../../resources/images/icon1.png") no-repeat;*/
+}
+.page-box .pg_pre {
+  display: inline-block;
+  width: 33px;
+  height: 33px;
+  line-height: 33px;
+  text-align: center;
+  color: #999999;
+  margin-right: 4px;
+  border: 1px solid #dedede;
+  background-position: -529px -259px;
+}
+.page-box .pg_next {
+  display: inline-block;
+  width: 33px;
+  height: 33px;
+  line-height: 33px;
+  text-align: center;
+  color: #999999;
+  margin-right: 4px;
+  border: 1px solid #dedede;
+  background-position: -545px -259px;
+}
+.page-box .pg_link {
+  display: inline-block;
+  width: 33px;
+  height: 33px;
+  margin: 0 3px;
+  border: 1px solid #ccc;
+  line-height: 33px;
+  text-align: center;
+}
+.page-box .pg_link:hover,
+.page-box a.pg_next:hover,
+.page-box a.pg_pre:hover {
+  border: 1px solid #8ace00;
+  color: #8ace00;
+}
+.page-box .pg_curr {
+  display: inline-block;
+  margin: 0 3px;
+  color: #ffffff;
+  background: #8ace00;
+  border: 1px solid #fff;
+  width: 33px;
+  height: 33px;
+  line-height: 33px;
+  text-align: center;
+}
+.page-box .pg_select {
+  border: 1px solid #ccc;
+  padding: 2px;
+  margin: 0 5px;
+}
