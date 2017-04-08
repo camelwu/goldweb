@@ -8,7 +8,7 @@
  * @link	http://be-member.com
  * @since	Version 4.2.1
  * @filesource
- */
+*/
 //根目录
 define('V_ROOT', dirname(__FILE__));
 //合法应用config文件
@@ -68,28 +68,62 @@ date_default_timezone_set($timezone);
 $timestamp = time();
 //数据库
 dbconnect();
+init_config();
 $action = $_GET['action'];
-if ('getend' == $action) {
-	$enname = $_GET['enname'];
-	$end = $_GET['end'];
-	$end2 = $_GET['end2'];
-	$go_start = $_GET['go_start'];
-	$go_days = $_GET['go_days'];
-	$go_starttime = $_GET['go_starttime'];
-	$go_endtime = $_GET['go_endtime'];
-	$go_money = $_GET['go_money'];
-	$go_tuijian = $_GET['go_tuijian'];
-	$go_sall = $_GET['go_sall'];
-	$go_hot = $_GET['go_hot'];
+$perpage = 6;
+if ('scenic' == $action) {
+	$json = json_decode(file_get_contents('php://input'));
+
+	$city2 = $json->go_end2;
+	$page = $json->page;
+	$page = empty($page)?1:$page;
+	$start = ($page -1) * $perpage;
+	$go_modle = $json->go_modle;
+	$go_type = $json->go_type;
+	$go_money = $json->go_price;
+	$ob_hit = $json->ob_hit;
+	$ob_sall = $json->ob_sall;
+	$ob_price = $json->ob_price;
+	//$num = selectScenic(3, "", $city2, true, $start, 1);
+	$msg = array(
+		'num' => selectScenic(3, "", $city2, false, 0, 1),
+		'page' => $page,
+		'res' => selectScenic(3, "", $city2, true, $start, 6)
+	);
+	echo json_encode($msg);
+} elseif ('tours' == $action) {
+	$json = json_decode(file_get_contents('php://input'));
+	$end = $json->end;
+	$end2 = $json->end2;
+	$go_start = $json->go_start;
+	$go_days = $json->go_days;
+	$go_starttime = $json->go_starttime;
+	$go_endtime = $json->go_endtime;
+	$go_money = $json->go_money;
+	$go_tuijian = $json->go_tuijian;
+	$go_sall = $json->go_sall;
+	$go_hot = $json->go_hot;
+
+	$city2 = $json->go_end2;
+	$page = $json->page;
+	$page = empty($page)?1:$page;
+	$start = ($page -1) * $perpage;
+	$go_modle = $json->go_modle;
+	$go_type = $json->go_type;
+	$go_money = $json->go_price;
+	$ob_hit = $json->ob_hit;
+	$ob_sall = $json->ob_sall;
+	$ob_price = $json->ob_price;
+
 	$echohtml = $sqlwhere = "";
 	if ('overseas' == $enname) {
 		$sqlwhere .= " and a.classid!=65";
 	}else if('touraround' == $enname||'domestic'==$enname){
 		$sqlwhere .= " and a.classid=65";
 	}else{
-		
+
 	}
-	//从查询库里做中转
+	exit;
 	/*if (!empty ($end)) {
 		$cmin = cg_search_cmin($end);
 		if (!empty ($cmin)) {
