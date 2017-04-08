@@ -89,7 +89,7 @@ class ConnectMysqli {
 	 */
 	public function getOne($sql) {
 		$query = $this -> query($sql);
-		return mysqli_free_result($query);
+		return mysqli_fetch_row($query);
 	}
 
 	//获取一行记录,return array 一维数组
