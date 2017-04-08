@@ -12,31 +12,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 // $id = (postget("id"));
 // $arrvied = (postget("arrvied"));
-$url = (empty($_SERVER['HTTP_X_REWRITE_URL']))?$_SERVER['REQUEST_URI']:$_SERVER['HTTP_X_REWRITE_URL'];
-$key = explode("/", $url);
-$arrvied = $key[2];
-$title = urldecode($key[3]);
-$page = intval($key[4]);
+//$url = (empty($_SERVER['HTTP_X_REWRITE_URL']))?$_SERVER['REQUEST_URI']:$_SERVER['HTTP_X_REWRITE_URL'];
+//$key = explode("/", $url);
+if(strpos($key,"/")){
+	$url = explode("/", $key);
+	$title = urldecode($url[0]);
+	$page = intval($url[1]);
+}else{
+	$title = $key;
+}
+
 $page = ($page < 1) ? 1 : $page;
 $perpage = 6;
 $start = ($page -1) * $perpage;
 $links = '/detail';
 $views = 'search.html';
-switch ($arrvied) {
+
+$num = $db->result($db->query("select count(*) from cg_area where title='".$title."'"),0);
+switch ($action) {
 	case 'blog':/*攻略*/
-		$totalnum = selectScenic(5, $title, false, 0, 1);
-		$comments = selectScenic(5, $title, true, $start, $perpage);
+		$totalnum = selectScenic(5, $title,'', false, 0, 1);
+		$comments = selectScenic(5, $title,'', true, $start, $perpage);
+
 		$arrviedhtml = '攻略';
 		break;
 	case 'guide':/*地区导航*/
-		$totalnum = $db->result($db->query("select count(*) from cg_area where title='".$title."'"),0);
+
 		if(intval($totalnum)<1){
 			$query = $db->query("select * from cg_area where title like '%".$title."%'");
 			$comments = array ();
 			while ($row = $db->fetch_array($query)) {
 				$comments[] = $row;
 			}
-			$arrviedhtml = '目的地';$links = '/guide';
+			$arrviedhtml = '目的地';
+			$links = '/guide';
 		}else{
 			$sql = "select * from cg_area where title='".$title."'";
 			$info = $db->getOneInfo($sql);
@@ -71,22 +80,26 @@ switch ($arrvied) {
 			/***销售排行**/
 			$smarty->assign('hots', get_sale_top());
 			$smarty->assign('info', $info);
-			$smarty->assign('arrvied', $arrvied);
+			$smarty->assign('arrvied', $action);
 			$smarty->assign('arrviedhtml', $arrviedhtml);
 			$smarty->assign('cnname', $title);
 			$smarty->assign('links', $links);
 			$views = 'guide.html';
+
 		}
 		break;
 	case 'scenic':
-		$num = $db->result($db->query("select count(*) from cg_area where title='".$title."'"),0);
+
 		if(intval($num)<1){
-			$totalnum = selectScenic(3, $title, false, 0, 1);
-			$comments = selectScenic(3, $title, true, $start, $perpage);
+			$totalnum = selectScenic(3, $title,'', false, 0, 1);
+			$comments = selectScenic(3, $title,'', true, $start, $perpage);
 		}else{
-			$sql = "select * from cg_area where title='".$title."'";
+			$sql = "select id,pid from cg_area where title='".$title."'";
 			$info = $db->getOneInfo($sql);
-			if($info['classid']==57||$info['classid']==65){
+			$totalnum = selectScenic(3, '',$info['id'], false, 0, 1);
+			$comments = selectScenic(3, '',$info['id'], true, $start, $perpage);
+
+			/*if($info['classid']==57||$info['classid']==65){
 				$cid = 113;
 			}else{
 				$cid = 112;
@@ -99,15 +112,24 @@ switch ($arrvied) {
 			}else{
 				$sqladd = " and city=".$info['id']."";
 			}
-			$totalnum = $db->result($db->query("select count(*) " . $sqlfrom. $sqladd), 0);
+			$totalnum = $db->result($db->query("select count(*)" . $sqlfrom. $sqladd), 0);
 			$limitsql = " limit $start,$perpage";
-			$comments = $db->getAll("select count(*) " . $sqlfrom. $sqladd. $limitsql);
+			$comments = $db->getAll("select *" . $sqlfrom. $sqladd. $limitsql);*/
 		}
 		$arrviedhtml = '景点';
 		break;
 	case 'tour':
-		$totalnum = selectRoleSale($cid['id'], false, 0, 1, $go_start, $go_end, $go_days, $go_starttime, $go_endtime, $go_money, $title, $order, $orderby);
-		$comments = selectRoleSale($cid['id'], true, $start, $perpage, $go_start, $go_end, $go_days, $go_starttime, $go_endtime, $go_money, $title, $order, $orderby);
+		$num = $db->result($db->query("select count(*) from cg_area where title='".$title."'"),0);
+		if(intval($num)<1){
+			$totalnum = selectRoleSale(0, false, 0, 1, $go_start, $go_end, $go_days, $go_starttime, $go_endtime, $go_money, $title);
+			$comments = selectRoleSale(0, true, $start, $perpage, $go_start, $go_end, $go_days, $go_starttime, $go_endtime, $go_money, $title);
+		}else{
+			$sql = "select id,pid from cg_area where title='".$title."'";
+			$info = $db->getOneInfo($sql);
+			$go_end=$info['id'];
+			$totalnum = selectRoleSale(0, false, 0, 1, $go_start, $go_end, $go_days, $go_starttime, $go_endtime, $go_money, '');
+			$comments = selectRoleSale(0, true, $start, $perpage, $go_start, $go_end, $go_days, $go_starttime, $go_endtime, $go_money, '');
+		}
 		$arrviedhtml = '线路';
 		$links = '/tours';
 		break;
@@ -119,11 +141,11 @@ switch ($arrvied) {
 }
 $pagecount = ceil($totalnum / $perpage);
 //$totalnum,$pagecount,$nowpage,$url,pagenum,$css
-$multipage = pagecute($totalnum, $pagecount, $page, '/' . $module . '/' . $arrvied . '/' . $title, $perpage, 'pb_on');
+$multipage = pagecute($totalnum, $pagecount, $page, '/' . $module . '/' . $action . '/' . $title, $perpage, 'pb_on');
 $smarty->assign('multipage', $multipage);
 $smarty->assign('comments', $comments);
 $smarty->assign('totalnum', $totalnum);
-$smarty->assign('arrvied', $arrvied);
+$smarty->assign('arrvied', $action);
 $smarty->assign('arrviedhtml', $arrviedhtml);
 $smarty->assign('cnname', $title);
 $smarty->assign('links', $links);
