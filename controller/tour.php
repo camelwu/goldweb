@@ -45,11 +45,39 @@ $orderbyarr = array (
 	'desc',
 	'asc'
 );
-$match = $_GET['key'];
+$match = $_GET['match'];
+$order = $_GET['order'];
 $match = (empty($match)) ? '------' : $match;
 //list
 if (!isset($_GET['id'])) {
-	$order = $_GET['order'];
+	$cid = $db -> getOneInfo("select id,title from cg_class where html='" . $action . "' and pid=0");
+	if (empty($cid)) {
+		// vheader('/error.html');
+		exit('error');
+	}
+	/*
+	 * 地区列表，出境游必须cid!=65
+	 */
+	$area = array ();$stat = array ();
+	if($action=="overseas"){//出境
+		$sql = "select id,title,hots from cg_class where classtype=5 and pid=0 and id<65 order by hots";
+	}else{//国内
+		$sql = "select id,title,hots from cg_class where classtype=5 id=65";
+	}
+	$query = $db->query($sql);
+	while ($row = $db->fetch_array($query)) {
+		$sql = "select t.aid2 as id,p.title from cg_area p,cg_product_route t where t.classid={$cid['id']} and t.cid2={$row['id']} and t.aid2=p.id group by t.aid2";
+		$res = $db->getAll($sql);
+		// $res = array ();
+		// while ($val = $db->fetch_array($query1)) {
+		// 	$res[] = $val;
+		// }
+		if (count($res)) {
+			$stat[] = $row['title'];
+			$area[] = $res;
+		}
+	}
+	//
 	if (empty ($order) || !in_array($order, $orderarr)) {
 		$order = 'id';
 	}
@@ -62,77 +90,71 @@ if (!isset($_GET['id'])) {
 	$smarty->assign('template',$template);
 	$smarty->assign('enname', $module);
 	$smarty->assign('match', $match);
-	$smarty->assign('id', $id);
 	$smarty->assign('page', $page);
-	if (empty($id)) {
-		if ('route' == $module) {
-			$module = $template == 'branch' ? 'overseas' : $module;
-			$cnname = '线路';
-		}
-		$cid = $db -> getOneInfo("select id,title from cg_class where html='" . $module . "' and pid=0");
-		if (!empty($cid)) {
-			$cnname = $cnname == '线路' ? $cnname : $cid['title'];
-			$smarty -> assign('cnname', $cnname);
-			//出发地
-			$smarty -> assign('chufa', cg_search($cid['id'], 0));
-			//目的
-			$ct = $module == 'overseas' ? 0 : 1;
-			$smarty -> assign('mudi', cg_dest($ct));
-			//行程天数
-			$smarty -> assign('xingcheng', cg_search($cid['id'], 3));
-			//预算花费
-			$smarty -> assign('huafei', cg_search($cid['id'], 4));
-			//banner
-			$num = 1;
-			if ('overseas' == $module || 'cruises' == $module) {
-				$num = 1;
-			} else {
-				$num = 7;
-			}
-			$smarty -> assign("banner", selectdatabanner($module, $num));
-		}
+
+	$smarty->assign('stat', $stat);
+	$smarty->assign('area', $area);
+
+	$cnname = $cnname == '线路' ? $cnname : $cid['title'];
+	$smarty -> assign('cnname', $cnname);
+	//出发地
+	$smarty -> assign('chufa', cg_search($cid['id'], 0));
+	//目的
+	$ct = $action == 'overseas' ? 0 : 1;
+	$smarty -> assign('mudi', cg_dest($ct));
+	//行程天数
+	$smarty -> assign('xingcheng', cg_search($cid['id'], 3));
+	//预算花费
+	$smarty -> assign('huafei', cg_search($cid['id'], 4));
+	//banner
+	if ('overseas' == $action || 'cruises' == $action) {
+		$num = 1;
+	} else {
+		$num = 7;
 	}
+	$smarty -> assign("banner", selectdatabanner($action, $num));
+
 	//匹配一级页面 规则-分割 按照顺序站位
-	if (!empty($match)) {
-		$matchy = explode('-', $match);
-		//出发
-		$go_start = $matchy[0];
-		$smarty -> assign('go_start', $go_start);
-		//目的1
-		$go_end = $matchy[1];
-		$smarty -> assign('go_end', $go_end);
 
-		//目的2
-		$go_end2 = $matchy[2];
-		$smarty -> assign('go_end2', $go_end2);
+	$matchy = explode('-', $match);
+	//出发
+	$go_start = $matchy[0];
+	$smarty -> assign('go_start', $go_start);
+	//目的1
+	$go_end = $matchy[1];
+	$smarty -> assign('go_end', $go_end);
 
-		//行程天数
-		$go_days = $matchy[3];
-		$smarty -> assign('go_days', $go_days);
+	//目的2
+	$go_end2 = $matchy[2];
+	$smarty -> assign('go_end2', $go_end2);
 
-		//出游时间1(格式YYYYMMDD)
-		$go_starttime = $matchy[4];
-		$smarty -> assign('go_starttime', $go_starttime);
+	//行程天数
+	$go_days = $matchy[3];
+	$smarty -> assign('go_days', $go_days);
 
-		//出游时间2(格式YYYYMMDD)
-		$go_endtime = $matchy[5];
-		$smarty -> assign('go_endtime', $go_endtime);
+	//出游时间1(格式YYYYMMDD)
+	$go_starttime = $matchy[4];
+	$smarty -> assign('go_starttime', $go_starttime);
 
-		//预算花费
-		$go_money = $matchy[6];
-		$smarty -> assign('go_money', $go_money);
+	//出游时间2(格式YYYYMMDD)
+	$go_endtime = $matchy[5];
+	$smarty -> assign('go_endtime', $go_endtime);
 
-		//推荐
-		$go_tuijian = $matchy[7];
-		$smarty -> assign('go_tuijian', $go_tuijian);
+	//预算花费
+	$go_money = $matchy[6];
+	$smarty -> assign('go_money', $go_money);
 
-		//销量
-		$go_sall = $matchy[8];
-		$smarty -> assign('go_sall', $go_sall);
-		//热度
-		$go_hot = $matchy[9];
-		$smarty -> assign('go_hot', $go_hot);
-	}
+	//推荐
+	$go_tuijian = $matchy[7];
+	$smarty -> assign('go_tuijian', $go_tuijian);
+
+	//销量
+	$go_sall = $matchy[8];
+	$smarty -> assign('go_sall', $go_sall);
+	//热度
+	$go_hot = $matchy[9];
+	$smarty -> assign('go_hot', $go_hot);
+
 	$perpage = 6;
 	$start = ($page -1) * $perpage;
 
