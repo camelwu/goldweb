@@ -1,7 +1,7 @@
 <!doctype html>
 <head>
 <meta charset="utf-8">
-<title><{$info.name}>_<{$info.title}>_<{$ktitle}>_金桥旅行社</title>
+<title><{$cnname}>_<{$info.title}>_<{$ktitle}>_金桥旅行社</title>
 <link href="<{$siteurl}>/resources/css/global.css" rel="stylesheet"	type="text/css">
 <link href="<{$siteurl}>/resources/css/OrderForm.css" rel="stylesheet" type="text/css">
 </head>
@@ -10,9 +10,9 @@
 	<{include_php file="./view/common/header.php"}>
 	<div class="wrapper now_position">
 		<!--当前位置-->
-		<a href="/">首页</a>&gt;搜索&gt;目的地
+		<a href="/">首页</a>&gt;<{$cnname}>&gt;<{$info.title}>
 	</div>
-	<div class="wrapper">
+	<{if $topimg neq ''}><div class="wrapper">
 		<div class="cd_slideBox">
 			<!--焦点图-->
 			<div class="hd">
@@ -35,7 +35,7 @@
 				</ul>
 			</div>
 		</div>
-	</div>
+	</div><{/if}>
 	<div class="wrapper clrfix">
 		<!--内容-->
 		<div class="fill_left fl">
@@ -187,11 +187,11 @@
 					<{section name=web loop=$tuijianinfo}>
 					<li>
 						<div class="cdr_img">
-							<a href="/tours/<{$tuijianinfo[web].hid}>" target="_blank"><img
+							<a href="/tour/<{$tuijianinfo[web].hid}>" target="_blank"><img
 								src="<{$tuijianinfo[web].url}>" width="218" height="135"></a>
 						</div>
 						<div class="cdr_txt">
-							<a href="/tours/<{$tuijianinfo[web].hid}>" target="_blank"
+							<a href="/tour/<{$tuijianinfo[web].hid}>" target="_blank"
 								class="cdr_txt_hd"><{$tuijianinfo[web].name}></a>
 							<div class="cdr_txt_bd"><{$tuijianinfo[web].title}></div>
 							<div class="cdr_txt_price">￥<{$tuijianinfo[web].price_2}></div>
@@ -223,7 +223,7 @@
 						<img src="<{$hots[tour].url}>" width="84" height="55" />
 					</div>
 					<div class="ran_txt">
-						<a href="/tours/<{$hots[tour].hid}>" target="_blank">&lt;<{$hots[tour].title}>&gt;<{$hots[tour].departure}>往</a>
+						<a href="/tour/<{$hots[tour].hid}>" target="_blank">&lt;<{$hots[tour].title}>&gt;<{$hots[tour].departure}>往</a>
 						<span>￥<{$hots[tour].price_2}>起</span>
 					</div>
 				</li><{/section}>
@@ -268,6 +268,7 @@
 	</div>
 	<{include file='./view/common/footer.html'}>
 	<script src="<{$siteurl}>/resources/js/jquery.pin.js"></script>
+	<script src="<{$siteurl}>/resources/js/jquery.SuperSlide.2.1.1.js"></script>
 	<script>
 $(function(){
 	$(".cd_slideBox").slide({mainCell:".bd ul",effect:"fold",autoPlay:true,easing:"easeOutCirc",delayTime:800});

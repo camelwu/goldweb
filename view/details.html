@@ -175,11 +175,11 @@
 					<{section name=web loop=$tuijianinfo}>
 					<li>
 						<div class="cdr_img">
-							<a href="/tours/<{$tuijianinfo[web].hid}>" target="_blank"><img
+							<a href="/tour/<{$tuijianinfo[web].hid}>" target="_blank"><img
 								src="<{$tuijianinfo[web].url}>" width="218" height="135"></a>
 						</div>
 						<div class="cdr_txt">
-							<a href="/tours/<{$tuijianinfo[web].hid}>" target="_blank"
+							<a href="/tour/<{$tuijianinfo[web].hid}>" target="_blank"
 								class="cdr_txt_hd"><{$tuijianinfo[web].name}></a>
 							<div class="cdr_txt_bd"><{$tuijianinfo[web].title}></div>
 							<div class="cdr_txt_price">￥<{$tuijianinfo[web].price_2}></div>
@@ -243,7 +243,7 @@
 						<img src="<{$hots[tour].url}>" width="84" height="55" />
 					</div>
 					<div class="ran_txt">
-						<a href="/tours/<{$hots[tour].hid}>" target="_blank">&lt;<{$hots[tour].title}>&gt;<{$hots[tour].departure}>往</a>
+						<a href="/tour/<{$hots[tour].hid}>" target="_blank">&lt;<{$hots[tour].title}>&gt;<{$hots[tour].departure}>往</a>
 						<span>￥<{$hots[tour].price_2}>起</span>
 					</div>
 				</li><{/section}>

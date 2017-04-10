@@ -5,10 +5,7 @@
 <title><{$cnname}>_旅行社_<{$ktitle}>_金桥</title>
 <link href="<{$siteurl}>/resources/css/global.css" rel="stylesheet" type="text/css">
 <link href="<{$siteurl}>/resources/css/index.css" rel="stylesheet" type="text/css">
-
-<script type="text/javascript" src="<{$siteurl}>/resources/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="<{$siteurl}>/resources/js/jquery.SuperSlide.2.1.1.js"></script>
-<script type="text/javascript" src="<{$siteurl}>/resources/js/index.js"></script>
+<link href="<{$siteurl}>/resources/css/page.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<{include_php file="./view/common/header.php"}>
@@ -26,7 +23,7 @@
 			src="<{$banner[web].url}>" width="1920" height="330" /></a> <{/section}>
 	</div>
 	<{else}>
-	<div class="wrapper">
+	<{if $banner neq ''}><div class="wrapper">
 		<!--top-img-->
 		<{if $enname eq 'overseas' or $enname eq 'route'}> <{section name=web loop=$banner}> <a href="<{$banner[web].mypath}>" class="overseas_top" target="_blank"><img
 			src="<{$banner[web].url}>" width="1200" height="160" /></a> <{/section}>
@@ -41,7 +38,7 @@
 					height="160"<{/if}> /></a></li> <{/section}>
 		</ul>
 		<{/if}>
-	</div>
+	</div><{/if}>
 	<{/if}>
 	<div class="wrapper">
 		<{if $template neq 'branch'}><!--出发地目的地筛选-->
@@ -49,9 +46,7 @@
 			<ul class="set_out_box clrfix">
 				<!--出发地-->
 				<li>出发地：</li>
-				<li><span<{if $go_start eq ''}> class="sob_on"<{/if}>><a
-						href="/<{$enname}>/-<{$go_end}>-<{$go_end2}>-<{$go_days}>-<{$go_starttime}>-<{$go_endtime}>-<{$go_money}>-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>">全部</a></span></li>
-
+				<li><span<{if $go_start eq ''}> class="sob_on"<{/if}> data-id="">全部</span></li>
 				<{foreach from=$chufa key=key item=chufaitem}>
 				<li><span<{if $go_start eq $key}> class="sob_on"<{/if}>><a
 						href="/<{$enname}>/<{$key}>-<{$go_end}>-<{$go_end2}>-<{$go_days}>-<{$go_starttime}>-<{$go_endtime}>-<{$go_money}>-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>"><{$chufaitem}></a></span></li>
@@ -59,92 +54,70 @@
 			</ul>
 			<ul class="dest_zhou_box clrfix">
 				<!--目的地-洲-->
-				<div class="dest_hd">目的地：</div>
-				<li<{if $go_end eq ''}> class="dest_zhou_on"<{/if}>><a
-					href="/<{$enname}>/<{$go_start}>--<{$go_end2}>-<{$go_days}>-<{$go_starttime}>-<{$go_endtime}>-<{$go_money}>-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>">全部</a></li>
-				<{foreach from=$mudi key=mudikey item=mudiitem}>
-				<li<{if $go_end eq $mudikey}> class="dest_zhou_on"<{/if}>><a
-					href="/<{$enname}>/<{$go_start}>-<{$mudikey}>--<{$go_days}>-<{$go_starttime}>-<{$go_endtime}>-<{$go_money}>-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>"><{$mudiitem.title}></a></li>
-				<{/foreach}>
+				<div class="dest_hd">所在地：</div>
+				<li<{if $go_end eq ''}> class="dest_zhou_on"<{/if}> data-id="">全部</li>
+				<{section name=a loop=$stat}>
+				<li<{if $go_end eq $smarty.section.a.index+1}> class="dest_zhou_on"<{/if}> data-id="<{$smarty.section.a.index+1}>"><{$stat[a]}></li>
+				<{/section}>
 			</ul>
 			<ul class="dest_guo_box">
 				<!--目的地-国家-->
-				<li class="clrfix dest_guo_on" id="dest_guo_on"></li>
-				<script>
-					loadcontent('<{$enname}>', '<{$go_end}>', '<{$go_end2}>');
-					function loadcontent(_enname, _end, _end2) {
-						var url = '/getajax.php?action=getend&end='
-								+ _end
-								+ '&end2='
-								+ _end2
-								+ '&enname='
-								+ _enname
-								+ "&go_start=<{$go_start}>&go_days=<{$go_days}>&go_starttime=<{$go_starttime}>&go_endtime=<{$go_endtime}>&go_money=<{$go_money}>&go_tuijian=<{$go_tuijian}>&go_sall=<{$go_sall}>&go_hot=<{$go_hot}>";
-						$("#dest_guo_on").load(url);
-					}
-				</script>
+				<li class="clrfix<{if $go_end eq ''}> dest_guo_on<{/if}>">
+					<!--全部--><span<{if $go_end2 eq ''}> class="sob_on"<{/if}> data-id="">全部</span>
+					<{section name=i loop=$area}>
+					<{section name=j loop=$area[i]}>
+					<span<{if $go_end2 eq $area[i][j].id}> class="sob_on"<{/if}> data-id="<{$area[i][j].id}>"><{$area[i][j].title}></span>
+					<{/section}>
+					<{/section}>
+				</li><{section name=i loop=$area}>
+				<li class="clrfix<{if $go_end eq $smarty.section.i.index+1}> dest_guo_on<{/if}>">
+					<{section name=j loop=$area[i]}>
+					<span<{if $go_end2 eq $area[i][j].id}> class="sob_on"<{/if}> data-id="<{$area[i][j].id}>">
+					<{$area[i][j].title}>
+				</span><{/section}>
+				</li><{/section}>
 			</ul>
-			<ul class="number_days clrfix">
+			<ul id="number_days" class="sob_box clrfix">
 				<!--行程天数-->
 				<li>行程天数：</li>
-				<li><span<{if $go_days eq ''}> class="sob_on"<{/if}>><a
-						href="/<{$enname}>/<{$go_start}>-<{$go_end}>-<{$go_end2}>--<{$go_starttime}>-<{$go_endtime}>-<{$go_money}>-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>">全部</a></span></li>
-				<{foreach from=$xingcheng key=xingchengkey item=xingchengitem}>
-				<li><span<{if $go_days eq $xingchengkey}>
-						class="sob_on"<{/if}>><a
-						href="/<{$enname}>/<{$go_start}>-<{$go_end}>-<{$go_end2}>-<{$xingchengkey}>-<{$go_starttime}>-<{$go_endtime}>-<{$go_money}>-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>"><{$xingchengitem}></a>
-				</span></li> <{/foreach}>
-
+				<li><span<{if $go_days eq ''}> class="sob_on"<{/if}> data-id="">全部</span></li>
+				<{section name=i loop=$days}><li>
+					<span<{if $go_days eq $days[i].go_day}> class="sob_on"<{/if}> data-id="<{$days[i].go_day}>"><{$days[i].go_day}></span>
+				</li><{/section}>
 			</ul>
 			<ul class="travel_time clrfix">
 				<!--出游时间-->
 				<li class="tt_hd">出游时间：</li>
-				<li class="tt_input"><input type="text" id="j_Date1"
-					placeholder="yyyy-mm-dd" /></li>
-				<li class="tt_input"><input type="text" id="j_Date2"
-					placeholder="yyyy-mm-dd" /></li>
+				<li class="tt_input"><input type="text" id="j_Date1" placeholder="yyyy-mm-dd" /></li>
+				<li class="tt_input"><input type="text" id="j_Date2" placeholder="yyyy-mm-dd" /></li>
 			</ul>
-			<ul class="sob_box clrfix">
+			<ul id="go_money" class="sob_box clrfix">
 				<!--预算花费-->
 				<li>预算花费：</li>
-				<li><span<{if $go_money eq ''}> class="sob_on"<{/if}>><a
-						href="/<{$enname}>/<{$go_start}>-<{$go_end}>-<{$go_end2}>-<{$go_days}>-<{$go_starttime}>-<{$go_endtime}>--<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>">全部</a></span></li>
-				<{foreach from=$huafei key=huafeikey item=huafeiitem}>
-				<li><span<{if $go_money eq $huafeikey}>
-						class="sob_on"<{/if}>><a
-						href="/<{$enname}>/<{$go_start}>-<{$go_end}>-<{$go_end2}>-<{$go_days}>-<{$go_starttime}>-<{$go_endtime}>-<{$huafeikey}>-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>"><{$huafeiitem}></a>
-				</span></li> <{/foreach}>
+				<li><span<{if $go_money eq ''}> class="sob_on"<{/if}> data-id="">全部</span></li>
+				<{foreach from=$huafei key=huafeikey item=huafeiitem}><li>
+					<span<{if $go_money eq $huafeikey}> class="sob_on"<{/if}> data-id="<{$huafeikey}>"><{$huafeiitem}></span>
+				</li><{/foreach}>
 			</ul>
 		</div>
 		<ul class="recom_select clrfix">
-			<!--强力推荐-->
-			<li><a
-				href="/<{$enname}>/<{$match}>/hits/<{if $orderby eq 'asc'}>desc<{else}>asc<{/if}>">强力推荐<{if
-					$order eq 'hits'}>&nbsp;<{if $orderby eq
-					'asc'}>↑<{else}>↓<{/if}><{else}><span class="rs_icon"></span><{/if}>
-			</a></li>
-			<li><a
-				href="/<{$enname}>/<{$match}>/hots/<{if $orderby eq 'asc'}>desc<{else}>asc<{/if}>">销量<{if
-					$order eq 'hots'}>&nbsp;<{if $orderby eq
-					'asc'}>↑<{else}>↓<{/if}><{else}><span class="rs_icon"></span><{/if}>
-			</a></li>
-			<li><a
-				href="/<{$enname}>/<{$match}>/price2/<{if $orderby eq 'asc'}>desc<{else}>asc<{/if}>">价格<{if
-					$order eq 'price2'}>&nbsp;<{if $orderby eq
-					'asc'}>↑<{else}>↓<{/if}><{else}><span class="rs_icon"></span><{/if}>
-			</a></li>
+			<!-- complex -->
+			<li data-id="id"<{if $order eq 'id'}>class="sob_on"<{/if}>>综合</li>
+			<li data-id="recommend"<{if $order eq 'recommend'}>class="sob_on"<{/if}>>推荐</li>
+			<li data-id="sale"<{if $order eq 'hots'}>class="sob_on"<{/if}>>销量</li>
+			<li data-id="price2" id="orderby"<{if $order eq 'price2'}>class="sob_on"<{/if}>>价格<{if $orderby eq 'asc'}>↑<{elseif $orderby eq 'desc'}>↓<{else}><span class="rs_icon"></span><{/if}></li>
 		</ul><{/if}>
 
 		<!--内容区-->
 		<div class="dm_box">
 			<ul class="domestic_main clrfix">
 				<{foreach item=tour name=tour from=$comments}>
-				<li><a class="dm_img" href="/tours/<{$tour.id}>"
+				<li><a class="dm_img" href="/tour/<{$tour.id}>"
 					target="_blank"><img src="<{$tour.url}>" width="374"
 						height="230" /></a>
 					<div class="dm_bd">
-						<a href="/tours/<{$tour.hid}>" target="_blank"><{$tour.name}></a><{$tour.title}>
-					</div> <a href="/tours/<{$tour.hid}>" class="dm_more" target="_blank">更多团期</a>
+						<a href="/tour/<{$tour.hid}>" target="_blank"><{$tour.title}></a><{$tour.biaoti}>
+					</div> <a href="/tour/<{$tour.hid}>" class="dm_more" target="_blank">更多团期</a>
 					<!--根据栏目改变样式-->
 					<div class="dm_price">
 						￥<span><{$tour.price2}></span>
@@ -155,13 +128,113 @@
 	</div>
 	<div class="wrapper clrfix">
 		<!--页码-->
-		<ul class="page_box clrfix"><{$multipage}>
-		</ul>
+		<ul class="page-box clrfix" id="my_page"><{$multipage}></ul>
 	</div>
-
 	<{include file="./view/common/footer.html"}>
 	<!--除邮轮、私人定制都需要加上广告-->
 	<{include_php file="./view/common/right.php"}>
 </body>
 </html>
 <script type="text/javascript" src="<{$siteurl}>/resources/js/Calendar.js"></script>
+<script src="/resources/js/lib/jquery.pagination.js"></script>
+<script>
+	$(".dest_zhou_box li").click(function() {//筛选洲/城市
+		var dz_num = $(this).index(".dest_zhou_box li");
+		$(this).siblings().removeClass("dest_zhou_on");
+		$(this).addClass("dest_zhou_on");
+		$(".dest_guo_box li").siblings().removeClass("dest_guo_on");
+		$(".dest_guo_box li").eq(dz_num).addClass("dest_guo_on");
+		$(".dest_guo_box li span").removeClass("sob_on");
+	});
+	$(".dest_guo_box li span").click(function(){//出发地
+		$(this).siblings().removeClass("sob_on");
+		$(this).addClass("sob_on");async_select(1);
+	});
+	$(".sob_box li span").click(function(){//筛选条件
+		$(this).parent().siblings().find("span").removeClass("sob_on");
+		$(this).addClass("sob_on");async_select(1);
+	});
+	$(".recom_select li").click(function(){
+		$(this).siblings().removeClass("sob_on");
+		$(this).addClass("sob_on");async_select(1);
+	});
+	function async_select(p){
+		var request = {
+			"cid" : <{$cid}>,"cid2" : <{$cid2}>,
+			"go_start" : $(".set_out_box .sob_on").attr("data-id"),
+			"go_end" : $(".dest_zhou_box .dest_zhou_on").attr("data-id"),
+			"go_end2" : $(".dest_guo_box .sob_on").attr("data-id"),
+			"go_days" :$("#number_days .sob_on").attr("data-id"),
+			"go_starttime" :$("#j_Date1").val(),
+			"go_endtime" : $("#j_Date2").val(),
+			"go_money" : $("#go_money .sob_on").attr("data-id"),
+			"order" : $(".recom_select .sob_on").attr("data-id"),
+			"orderby" : $("#orderby").html().indexOf("span")?'':$("#orderby").html().indexOf("↑")?'asc':'desc',
+			"page" : p
+		};
+		$.ajax({
+			type : "POST",
+			url : '/getajax.php?action=tours&rnd=' + Math.random(),
+			timeout : 1000 * 60 * 5,
+			data : JSON.stringify(request),
+			dataType: "json",
+			contentType : 'html;charset=utf-8',
+			success : function(json) {
+				var li = '';pageObj.currentPage = parseInt(json.page) - 1;
+				$.each(json.res, function(i, val) {
+				  var tmpl = ['<li><a class="dm_img" href="/detail/'+val.id+'" target="_blank">',
+					'<img src="'+val.url+'" width="374" height="230" /></a>',
+					'<div class="dm_bd">',
+						'<a href="/detail/'+val.id+'" target="_blank">'+val.title+'</a>',
+						val.biaoti==""||val.biaoti=="null"?"":val.biaoti,
+					'</div>',
+					'<a href="/tour/'+val.hid+'" class="dm_more" target="_blank">更多团期</a>',
+					'<div class="dm_price">',
+						'￥<span>'+val.price2+'</span>',
+					'</div></li>'].join('\n');
+					li += tmpl;
+				});
+				$(".domestic_main").html(li);
+				if(pageObj.totalCount != json.num){
+					pageObj.totalCount = json.num;
+					paginate("my_page", pageObj, {});
+				}
+			},
+			error : function(XMLHttpRequest, textStatus, errorThrown) {
+				if (textStatus == 'timeout') {
+					alert("网络不给力，刷新重试！");
+					// window.location.reload();
+				}
+			}
+		});
+	}
+	var pageObj = {
+		totalCount :<{$totalnum}>,
+		perPageCount :6,
+		callback:function(par){
+			async_select(par.page);
+		},
+		currentPage:0
+	};
+	paginate("my_page", pageObj, {});
+	function paginate(containerId, pageObj, searchObj) {
+			var totalCount = pageObj.totalCount;
+			var perPageCount = pageObj.perPageCount ? pageObj.perPageCount : 6;
+			var callback = pageObj.callback;
+			var currentPage = pageObj.currentPage;
+			$("#" + containerId).pagination(totalCount, {
+				items_per_page : perPageCount,
+				num_display_entries : 6,
+				current_page : currentPage,
+				num_edge_entries : 1,
+				callback : pageselectCallback
+			});
+			function pageselectCallback(page_id, jq) {
+				$.extend(searchObj, {
+					"page" : page_id + 1,
+					"rows" : perPageCount
+				});
+				callback(searchObj, false);
+			}
+		}
+</script>

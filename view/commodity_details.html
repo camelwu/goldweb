@@ -109,11 +109,11 @@
 			<{foreach name=lines item=xl from=$lines}>
 			<li>
 				<div class="cdr_img">
-					<a href="/tours/<{$xl.id}>" target="_blank"><img
+					<a href="/tour/<{$xl.id}>" target="_blank"><img
 						src="<{$xl.url}>" width="218" height="135"></a>
 				</div>
 				<div class="cdr_txt">
-					<a href="/tours/<{$xl.id}>" target="_blank" class="cdr_txt_hd"><{$xl.name}></a>
+					<a href="/tour/<{$xl.id}>" target="_blank" class="cdr_txt_hd"><{$xl.name}></a>
 					<div class="cdr_txt_bd"><{$xl.word}></div>
 					<div class="cdr_txt_price">￥<{$xl.price_2}></div>
 				</div>
@@ -163,7 +163,7 @@
 					<img src="<{$hots[tour].url}>" width="84" height="55" />
 				</div>
 				<div class="ran_txt">
-					<a href="/tours/<{$hots[tour].hid}>" target="_blank">&lt;<{$hots[tour].title}>&gt;<{$hots[tour].departure}>往</a>
+					<a href="/tour/<{$hots[tour].hid}>" target="_blank">&lt;<{$hots[tour].title}>&gt;<{$hots[tour].departure}>往</a>
 					<span>￥<{$hots[tour].price_2}>起</span>
 				</div>
 			</li><{/section}>

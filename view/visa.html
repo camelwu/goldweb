@@ -67,10 +67,11 @@
        <div class="visar_box address_select clrfix ">
        	<div class="visar_box_title">签证列表</div>
         <ul class="visa_bd">
+          <{if $totalnum eq 0}>暂无<{else}>
         	<{foreach item=data name=data from=$comments}><li class="clrfix">
             	<div class="visali_img"><a href="/visa/<{$data.id}>" title="<{$data.title}>"><img src="<{$data.url}>" width="100%" height="62"></a></div>
                 <div class="visali_txt"><span><a href="/visa/<{$data.id}>"><{$data.title}></a></span><span class="orange">￥<{$data.price1}></span></div>
-            </li><{/foreach}>
+            </li><{/foreach}><{/if}>
         </ul>
        </div>
        <div style="position: relative;height: 48px;margin-top: 6px;"><ul class="page_box clrfix"><{$multipage}></ul></div>

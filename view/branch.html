@@ -72,18 +72,18 @@ $(function(){
 			<span>
 				<ul class="scenic_area fl">
 					<{foreach name=gtgn item=xl from=$cjroute}>
-					<li><a href="./tours/<{$xl.id}>" class="sa_img"> <img
+					<li><a href="./tour/<{$xl.id}>" class="sa_img"> <img
 							src="<{$xl.url}>" width="230" height="138" />
 						<div class="sa_price">￥<{$xl.price_2}>起</div>
 							<div class="sa_mask">
 								<span><{$xl.name}><br><{$xl.word}>
 								</span>
 							</div>
-					</a> <a href="./tours/<{$xl.id}>" class="sa_txt"><{$xl.name}></a></li><{/foreach}>
+					</a> <a href="./tour/<{$xl.id}>" class="sa_txt"><{$xl.name}></a></li><{/foreach}>
 				</ul>
 				<div class="scenic_recom fl">
-					<a href="./tours/<{$cjline.id}>"><img src="<{$cjline.url}>" width="230" height="361" /></a>
-					<a href="./tours/<{$cjline.id}>" class="sr_txt"><{$cjline.name}></a>
+					<a href="./tour/<{$cjline.id}>"><img src="<{$cjline.url}>" width="230" height="361" /></a>
+					<a href="./tour/<{$cjline.id}>" class="sr_txt"><{$cjline.name}></a>
 				</div>
 			</span>
 		</div>
@@ -185,4 +185,3 @@ $(function(){
 	<{include file='./view/common/footer.html'}>
 </body>
 </html>
-

@@ -56,7 +56,7 @@
 						</div> -->
 					</div>
 				</li>
-				<!-- 
+				<!--
 				<li class="jq_pref">优惠促销：<span>减<span
 						class="jq_price_num">200</span></span>新用户购买减200
 				</li>-->
@@ -93,7 +93,7 @@
 				<li class="jq_reser"><a href="/orderfill/<{$info.hid}>" target="_target">立即预定</a></li>
 				<!--li class="jq_instr"><a href="#here">报名须知</a></li-->
 			</ul>
-			
+
 		</div>
 	</div>
 
@@ -171,11 +171,11 @@
 					<{section name=web loop=$tuijianinfo}>
 					<li>
 						<div class="cdr_img">
-							<a href="/tours/<{$tuijianinfo[web].hid}>" target="_blank"><img
+							<a href="/tour/<{$tuijianinfo[web].hid}>" target="_blank"><img
 								src="<{$tuijianinfo[web].url}>" width="218" height="135"></a>
 						</div>
 						<div class="cdr_txt">
-							<a href="/tours/<{$tuijianinfo[web].hid}>" target="_blank"
+							<a href="/tour/<{$tuijianinfo[web].hid}>" target="_blank"
 								class="cdr_txt_hd"><{$tuijianinfo[web].name}></a>
 							<div class="cdr_txt_bd"><{$tuijianinfo[web].title}></div>
 							<div class="cdr_txt_price">￥<{$tuijianinfo[web].price_2}></div>
@@ -239,7 +239,7 @@
 						<img src="<{$hots[tour].url}>" width="84" height="55" />
 					</div>
 					<div class="ran_txt">
-						<a href="/tours/<{$hots[tour].hid}>" target="_blank">&lt;<{$hots[tour].title}>&gt;<{$hots[tour].departure}>往</a>
+						<a href="/tour/<{$hots[tour].hid}>" target="_blank">&lt;<{$hots[tour].title}>&gt;<{$hots[tour].departure}>往</a>
 						<span>￥<{$hots[tour].price_2}>起</span>
 					</div>
 				</li><{/section}>
@@ -290,7 +290,7 @@ $(function(){
 	var price = <{$info.price2}>;
 	var go_type = <{if $info.go_type neq ''}><{$info.go_type}><{else}>0<{/if}>;
 	var go_time = '<{$info.go_time}>';
-	var obj = {<{foreach name=price from=$prices key=time item=data}>"<{$time}>":"<{$data}>"<{if $smarty.foreach.price.last}><{else}>,<{/if}><{/foreach}>}; 
+	var obj = {<{foreach name=price from=$prices key=time item=data}>"<{$time}>":"<{$data}>"<{if $smarty.foreach.price.last}><{else}>,<{/if}><{/foreach}>};
 	//new Calender({id:'cd_date',time:obj});
 	//new Calender({id:'cd_date',isSelect:0,price:price,go_type:go_type,go_time:go_time});
 	$(".jq_price .price_exp").mouseenter(function(){
@@ -298,17 +298,17 @@ $(function(){
 	})
 	$(".jq_price .price_exp").mouseleave(function(){
 		$(this).find("div").hide();
-	})	
-	$(".select_arrow").click(function(){		
+	})
+	$(".select_arrow").click(function(){
 		$(this).toggleClass("se_ar_on");
 		$(".svo_box").slideToggle(200);
-	});	
+	});
 	$(".cd_info_title li").click(function(){//商品详情——订单导航
 		//$(this).siblings().removeClass("cd_on");
-	   // $(this).addClass("cd_on");	
+	   // $(this).addClass("cd_on");
 		var cdit_num=$(".cd_info_title li").index(this)+1;
 		var cdit_top=$(".cd_t"+cdit_num).offset().top-60;
-		 $("html, body").animate({ scrollTop: cdit_top},300);		
+		 $("html, body").animate({ scrollTop: cdit_top},300);
 	});
 	$("#stroke a").click(function(){
 		var _num=$("#stroke a").index(this);
@@ -325,24 +325,24 @@ $(function(){
 		var cd_t=$(this).offset().top-80;
 		if(cd_t<vv){
 			$(".cd_info_title li").eq(i).siblings().removeClass("cd_on");
-			$(".cd_info_title li").eq(i).addClass("cd_on");			
-			}		
+			$(".cd_info_title li").eq(i).addClass("cd_on");
+			}
 		})
 	$(".trip_right .frt_ul").each(function(x){
 		var frtu=$(this).offset().top-80;
 		if(frtu<vv){
 			$(".trip_left ul li").eq(x).siblings().removeClass("trl_on");
-			$(".trip_left ul li").eq(x).addClass("trl_on");		
-			}		
+			$(".trip_left ul li").eq(x).addClass("trl_on");
+			}
 		})
 	});
-	$(".cd_info_title").pin({		
+	$(".cd_info_title").pin({
     containerSelector: ".cd_info"
 	});
-	$(".trip_left ul").pin({		
+	$(".trip_left ul").pin({
     containerSelector: ".trip_box"
 	});
-	$(".cd_slideBox").slide({mainCell:".bd ul",effect:"fold",autoPlay:true,easing:"easeOutCirc",delayTime:800});	
+	$(".cd_slideBox").slide({mainCell:".bd ul",effect:"fold",autoPlay:true,easing:"easeOutCirc",delayTime:800});
 	$(".jq_subtract").click(function(){
 		num = $(this).next().val();
 		if(num>0) $(this).next().val(num-1);

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title><{$cnname}>_旅行社_<{$ktitle}>_金桥</title>
+<title><{$arrviedhtml}>_<{$cnname}>_旅行社_<{$ktitle}>_金桥</title>
 <link href="<{$siteurl}>/resources/css/global.css" rel="stylesheet" type="text/css">
 <link href="<{$siteurl}>/resources/css/index.css" rel="stylesheet" type="text/css">
 </head>
@@ -26,14 +26,14 @@
 		<!--内容区-->
 		<div class="dm_box">
 			<ul class="domestic_main clrfix">
-				<{if $links eq 'tours'}>
+				<{if $arrvied eq 'tour'}>
 				<{foreach item=tour name=tour from=$comments}><li>
 					<a class="dm_img" href="<{$links}>/<{$tour.hid}>"><img src="<{$tour.url}>" width="374" height="230" /></a>
 					<div class="dm_bd">
-						<a href="<{$links}>/<{$tour.hid}>"><{$tour.name}></a><{$tour.feature}>
+						<a href="<{$links}>/<{$tour.hid}>"><{$tour.name}><{$tour.title}></a><{$tour.feature}>
 					</div>
 					<a href="<{$links}>/<{$tour.hid}>" class="dm_more">更多团期</a>
-					<div class="dm_price">￥<span><{$tour.price_2}></span></div>
+					<div class="dm_price">￥<span><{$tour.price2}></span></div>
 				</li><{/foreach}>
 				<{else}>
 				<{foreach item=tour name=tour from=$comments}><li>
@@ -41,8 +41,8 @@
 					<div class="dm_bd">
 						<a href="<{$links}>/<{$tour.hid}>">[<{$tour.title}>]<{$tour.keyword}></a><{$tour.word}>
 					</div>
-					<a href="<{$links}>/<{$tour.hid}>" class="dm_more"><{$tour.addtime}></a>
-					<div class="dm_price"><{if $tour.types neq '5'}>￥<span><{$tour.price_2}></span><{else}><span></span><{/if}></div>
+					<{if $tour.types neq 3}><a href="<{$links}>/<{$tour.hid}>" class="dm_more"><{$tour.addtime}></a><{/if}>
+					<div class="dm_price"><!--$tour.material--><{if $tour.types neq '5'}>￥<span><{$tour.price2}></span><{else}><span></span><{/if}></div>
 				</li><{/foreach}>
 				<{/if}>
 			</ul>
