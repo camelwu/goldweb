@@ -312,6 +312,7 @@ a {
 	padding: 0 3%;
 	color: #FFF;
 	cursor: pointer;
+	position: relative;
 }
 
 .nav_main li a {
@@ -321,14 +322,30 @@ a {
 	width: 100%;
 	height: 100%
 }
+.nav_main li div.sec{
+	display: none;
+	position: absolute;
+	left: 0;
+	z-index:999;
+	width: 100%;
+	background: #59c895;
+}
+	div.sec a{
+		height: 46px;
+		line-height: 46px;
+		width: 100%;
+		color: #FFF;
+		border-top: 1px #dfdfdf solid;
+		text-align: center;
+	}
+.nav_main .nav_on, .sec .nav_on, .nav_main li:hover, .sec a:hover {
+	background: #51b67e;
+}
+.nav_main li:hover div.sec{
+	display: block;
 
-.nav_main .nav_on {
-	background: #51b67e
 }
 
-.nav_main li:hover {
-	background: #51b67e
-}
 
 .menu_box {
 	width: 250px;
