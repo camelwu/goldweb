@@ -46,64 +46,34 @@ $orderbyarr = array (
 	'asc'
 );
 $match = $_GET['match'];
-$order = $_GET['order'];
-$match = (empty($match)) ? '------' : $match;
+
+$match = (empty($match)) ? '-------' : $match;
 //list
 if (!isset($_GET['id'])) {
-	$cid = $db -> getOneInfo("select id,title from cg_class where html='" . $action . "' and pid=0");
+	$cid = $db -> getOneInfo("select id,title,pid from cg_class where html='" . $action . "'");
 	if (empty($cid)) {
 		// vheader('/error.html');
 		exit('error');
 	}
+	if($cid['pid']==0){
+		$classid = $cid['id'];
+		$classid2=0;
+	}else{
+		$classid = $cid['pid'];
+		$classid2= $cid['id'];
+	}
 	/*
 	 * 地区列表，出境游必须cid!=65
 	 */
-	$area = array ();$stat = array ();
-	if($action=="overseas"){//出境
-		$sql = "select id,title,hots from cg_class where classtype=5 and pid=0 and id<65 order by hots";
-	}else{//国内
-		$sql = "select id,title,hots from cg_class where classtype=5 id=65";
-	}
-	$query = $db->query($sql);
-	while ($row = $db->fetch_array($query)) {
-		$sql = "select t.aid2 as id,p.title from cg_area p,cg_product_route t where t.classid={$cid['id']} and t.cid2={$row['id']} and t.aid2=p.id group by t.aid2";
-		$res = $db->getAll($sql);
-		// $res = array ();
-		// while ($val = $db->fetch_array($query1)) {
-		// 	$res[] = $val;
-		// }
-		if (count($res)) {
-			$stat[] = $row['title'];
-			$area[] = $res;
-		}
-	}
-	//
-	if (empty ($order) || !in_array($order, $orderarr)) {
-		$order = 'id';
-	}
-	$orderby = $_GET['orderby'];
-	if (empty ($orderby) || !in_array($orderby, $orderbyarr)) {
-		$orderby = 'desc';
-	}
-	$smarty->assign('order', $order);
-	$smarty->assign('orderby', $orderby);
-	$smarty->assign('template',$template);
-	$smarty->assign('enname', $module);
-	$smarty->assign('match', $match);
-	$smarty->assign('page', $page);
-
-	$smarty->assign('stat', $stat);
-	$smarty->assign('area', $area);
-
-	$cnname = $cnname == '线路' ? $cnname : $cid['title'];
-	$smarty -> assign('cnname', $cnname);
+	$type = $action=="overseas"?0:1;
+	$dest = cg_dest($table, $type, $classid);
+	$stat = $dest['stat'];
+	$area = $dest['area'];
+	//var_dump(cg_tour_day($cid['id']));exit;
 	//出发地
-	$smarty -> assign('chufa', cg_search($cid['id'], 0));
-	//目的
-	$ct = $action == 'overseas' ? 0 : 1;
-	$smarty -> assign('mudi', cg_dest($ct));
+	$smarty -> assign('depart', cg_depart());
 	//行程天数
-	$smarty -> assign('xingcheng', cg_search($cid['id'], 3));
+	$smarty -> assign('days', cg_tour_day($cid['id']));
 	//预算花费
 	$smarty -> assign('huafei', cg_search($cid['id'], 4));
 	//banner
@@ -112,61 +82,70 @@ if (!isset($_GET['id'])) {
 	} else {
 		$num = 7;
 	}
-	$smarty -> assign("banner", selectdatabanner($action, $num));
+	$banner=selectdatabanner($action, $num);
 
 	//匹配一级页面 规则-分割 按照顺序站位
-
 	$matchy = explode('-', $match);
 	//出发
 	$go_start = $matchy[0];
-	$smarty -> assign('go_start', $go_start);
 	//目的1
 	$go_end = $matchy[1];
-	$smarty -> assign('go_end', $go_end);
-
 	//目的2
 	$go_end2 = $matchy[2];
-	$smarty -> assign('go_end2', $go_end2);
-
 	//行程天数
 	$go_days = $matchy[3];
-	$smarty -> assign('go_days', $go_days);
-
 	//出游时间1(格式YYYYMMDD)
 	$go_starttime = $matchy[4];
-	$smarty -> assign('go_starttime', $go_starttime);
-
 	//出游时间2(格式YYYYMMDD)
 	$go_endtime = $matchy[5];
-	$smarty -> assign('go_endtime', $go_endtime);
-
 	//预算花费
 	$go_money = $matchy[6];
-	$smarty -> assign('go_money', $go_money);
-
 	//推荐
-	$go_tuijian = $matchy[7];
-	$smarty -> assign('go_tuijian', $go_tuijian);
-
+	$order = $matchy[7];
 	//销量
-	$go_sall = $matchy[8];
-	$smarty -> assign('go_sall', $go_sall);
-	//热度
-	$go_hot = $matchy[9];
-	$smarty -> assign('go_hot', $go_hot);
+	$boderby = $matchy[8];
 
+	if (empty ($order) || !in_array($order, $orderarr)) {
+		$order = 'id';
+	}
+
+	if (empty ($orderby) || !in_array($orderby, $orderbyarr)) {
+		$orderby = 'desc';
+	}
 	$perpage = 6;
 	$start = ($page -1) * $perpage;
-
 	$totalnum = selectRoleSale($cid['id'], false, 0, 1, $go_start, $go_end2, $go_days, $go_starttime, $go_endtime, $go_money, '', $order, $orderby);
 	$comments = selectRoleSale($cid['id'], true, $start, $perpage, $go_start, $go_end2, $go_days, $go_starttime, $go_endtime, $go_money, '', $order, $orderby);
 	$pagecount = ceil($totalnum / $perpage);
 	// var_dump($comments);exit;
-	$multipage = pagecute($totalnum, $pagecount, $page, '/' . $module . '/' . $match . '/' . $order . '/' . $orderby, $perpage, 'pb_on');
-	$smarty->assign('multipage', $multipage);
+	//$multipage = pagecute($totalnum, $pagecount, $page, '/' . $module . '/' . $match . '/' . $order . '/' . $orderby, $perpage, 'pb_on');
+	//$smarty->assign('multipage', $multipage);
 	$smarty->assign('comments', $comments);
 	$smarty->assign('totalnum', $totalnum);
 
+	$smarty -> assign('go_start', $go_start);
+	$smarty -> assign('go_end', $go_end);
+	$smarty -> assign('go_end2', $go_end2);
+	$smarty -> assign('go_days', $go_days);
+	$smarty -> assign('go_starttime', $go_starttime);
+	$smarty -> assign('go_endtime', $go_endtime);
+	$smarty -> assign('go_money', $go_money);
+	$smarty -> assign('go_tuijian', $go_tuijian);
+	$smarty -> assign('go_sall', $go_sall);
+	$smarty -> assign('go_hot', $go_hot);
+	$smarty->assign('order', $order);
+	$smarty->assign('orderby', $orderby);
+	$smarty->assign('template',$template);
+	$smarty->assign('action', $action);
+	$smarty->assign('cnname', $cid['title']);
+	$smarty->assign('enname', $module);
+	$smarty->assign('cid', $classid);
+	$smarty->assign('cid2', $classid2);
+	$smarty->assign('page', $page);
+
+	$smarty->assign('stat', $stat);
+	$smarty->assign('area', $area);
+	$smarty->assign("banner", $banner);
 	$smarty->display(VIEWPATH . 'list_tours.html', $cache_id);
 } else {
 /*线路明细查询*/
@@ -176,6 +155,8 @@ $tuijianinfo = selectRoleSale($info['classid'], true, 0, 4, '', '', '', '', '', 
 $smarty->assign("tuijianinfo", $tuijianinfo);
 
 if (!empty ($info)) {
+	//更新点击量
+	set_hits($table,$id);
 	/***浏览记录**/
 	$smarty->assign("brower", get_cg_brower());
 	/***销售排行**/
