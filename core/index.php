@@ -61,7 +61,7 @@ $module = $_GET['enname'];
 $action = $_GET['action'];
 $key = $_GET['key'];
 
-$page = isset($_GET['page'])?intval($_GET['page']):1;
+$page = isset($_GET['page'])?empty($_GET['page'])?1:intval($_GET['page']):1;
 $id = isset($_GET['id'])?intval($_GET['id']):'';
 /**
  * 基础数据获取完毕，开始处理
