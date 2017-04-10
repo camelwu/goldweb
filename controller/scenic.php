@@ -8,11 +8,11 @@ if (!empty ($bidinfo)) {
 	$sqladd = " and aid=" . $bidinfo["aid"];
 }
 //2017-4-6 重置路由后的参数修改
-if(empty($action)){
+// if(empty($action)){
 	$match = '-----';
-}else {
-	$match = $action;
-}
+// }else {
+	// $match = $action;
+// }
 // if(isset($_GET['order'])){
 // 	$order = $_GET['order'];
 // }else {
@@ -25,7 +25,17 @@ if(empty($action)){
 /*
  * 地区列表
  */
-$oi = 2;//$action=="foreign"?0:1;
+switch ($action) {
+	case 'foreign':
+		$oi = 0;
+		break;
+	case 'china':
+		$oi = 1;
+		break;
+	default:
+		$oi = 2;
+		break;
+}
 $dest = cg_dest($table, $oi, 3);
 $stat = $dest['stat'];
 $area = $dest['area'];
