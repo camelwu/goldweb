@@ -169,6 +169,7 @@
 .travel_time li{ float:left; position:relative}
 .recom_select{ border:#dfdfdf 1px solid; margin-top:15px;}
 .recom_select li{ float:left;height:40px; line-height:40px; font-size:14px; width:100px; cursor:pointer; text-align:center;border-right:#dfdfdf 1px solid; }
+.recom_select li.sob_on{color:#fff;background-color:#4fb77c;}
 .recom_select .rs_icon{ background:url(../images/index_icon.png) no-repeat -575px -171px; display:inline-block; width:9px; height:14px; margin-left:5px; vertical-align:middle; margin-top:-2px;*+margin-top:0px;}
 .dm_box{ width:100%; overflow:hidden}
 .domestic_main{ margin-top:15px; width:103.5%; overflow:hidden}
