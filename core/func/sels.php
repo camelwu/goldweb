@@ -74,7 +74,6 @@ function login_user($uid = '', $email = '', $passwd = '') {
  * @classid 区域分类
  * @param:pid 国家分类
  **/
-
 function cg_area($types = "", $hits = 0, $classid1 = 0, $classid = 0, $pid = 0) {
 	global $db;
 	$sqlwhere = '';
@@ -100,19 +99,131 @@ function cg_area($types = "", $hits = 0, $classid1 = 0, $classid = 0, $pid = 0) 
 	return $data;
 }
 /**
- * @uses	线路出游目
- * @param	int	$type	0:over,1:inner
- * @return	array	TRUE on success or FALSE on failure
+ * @uses	线路出发地
+ * @param	(int)$classid ,	$type	0:over|1:inner
+ * @return	array	TRUE on success or null on failure
  */
-function cg_dest($type = 0) {
+function cg_depart($classid='', $type=0) {
 	global $db;
-	$sqlwhere = $type?"and id=65":"and (id>=57 and id<64)";
-	$query = $db->query("select id,title from cg_class where pid=0 and classtype=5 $sqlwhere order by hots");
-	$shop = array ();
-	while ($row = $db->fetch_array($query)) {
-		$shop[$row['id']] = $row;
+	if (!empty($classid)) {
+		if (strpos($classid, ',') === false) {
+			$arr = explode(',',$classid);
+			if ($arr[0] != 0) {
+				$sql .= "and t.classid=" . $arr[0];
+			}
+			if ($arr[1] != 0) {
+				$sql .= "and t.classid2=" . $arr[1];
+			}
+		}else{
+			$sql .= "and t.classid=" . $classid;
+		}
+	}else{
+		// and p.pid=65
 	}
-	return $shop;
+	if($type==0){
+		$sel = "select t.aid1 as id,p.title from cg_area p,cg_product_route t where t.aid1=p.id {$sql} group by t.aid1";
+	}else{
+		$sel = "select p.id,p.title from cg_area p,cg_product_route_sale t where t.departure=p.id group by t.departure";
+	}
+	$result = array();
+	$query = $db->query($sel);
+	while ($row = $db->fetch_array($query)) {
+		$result[$row['id']] = $row['title'];
+	}
+	return $result;
+}
+/**
+ * @uses	目的地（线路&景点）
+ * @param	int	$type	0:over,1:inner
+ * @return	array	TRUE on success or null on failure
+ */
+function cg_dest($table, $type = 0, $types = 3) {
+	global $db;
+	$stat = array ();
+	$area = array ();
+	if($type==0){//出境
+		$sql = "select id,title,hots from cg_class where classtype=5 and pid=0 and id<65 order by hots";
+	}elseif($type==1){//国内
+		$sql = "select id,title,hots from cg_class where classtype=5 and id=65";
+	}else{
+		$sql = "select id,title,hots from cg_class where classtype=5 and pid=0";
+	}
+	$query = $db->query($sql);
+	while ($row = $db->fetch_array($query)) {
+		if($table=='cg_product_route'){
+			$sel = "select t.aid2 as id,p.title from cg_area p,cg_product_route t where t.classid={$types} and t.cid2={$row['id']} and t.aid2=p.id group by t.aid2";
+		}else{
+			$sel = "select t.aid as id,p.title from cg_area p,cg_scenic t where t.types={$types} and t.cid={$row['id']} and t.aid=p.id group by t.aid ";
+		}
+		$res = $db->getAll($sel);
+
+		if (count($res)) {
+			$stat[] = $row['title'];
+			$area[] = $res;
+		}
+	}
+
+	return array(
+		'stat'=>$stat,
+		'area'=>$area
+	);
+}
+/**
+ * @uses	天数（线路行程）
+ * @param	int
+ * @return	array	TRUE on success or null on failure
+ */
+function cg_tour_day($classid){
+	global $db;
+	$sql = "";
+	if (!empty($classid)) {
+		if (strpos($classid, ',') === false) {
+			$arr = explode(',',$classid);
+			if ($arr[0] != 0) {
+				$sql .= "and classid=" . $arr[0];
+			}
+			if ($arr[1] != 0) {
+				$sql .= "and classid2=" . $arr[1];
+			}
+		}else{
+			$sql .= "and classid=" . $classid;
+		}
+	}else{
+		// and p.pid=65
+	}
+	$sel = "select go_day from cg_product_route where go_day>0 {$sql} group by go_day";
+	$result = $db->getAll($sel);
+
+	return $result;
+}
+
+/**
+ * @uses	钱数（线路行程）
+ * @param	int
+ * @return	array	TRUE on success or null on failure
+ */
+function cg_tour_prices($classid){
+	global $db;
+	$sql = "";
+	if (!empty($classid)) {
+		if (strpos($classid, ',') === false) {
+			$arr = explode(',',$classid);
+			if ($arr[0] != 0) {
+				$sql .= "and classid=" . $arr[0];
+			}
+			if ($arr[1] != 0) {
+				$sql .= "and classid2=" . $arr[1];
+			}
+		}else{
+			$sql .= "and classid=" . $classid;
+		}
+	}else{
+		// and p.pid=65
+	}
+	$sel = "select price2 from cg_product_route where title<>'' {$sql} group by price2";
+	$result = $db->getAll($sel);
+
+	return $result;
 }
 /*
  * 函数功能：机构数组
@@ -126,16 +237,6 @@ function cg_branch($types='') {
 		$sql = "select * from cg_branch where types=$types order by id";
 	}
 	$query = $db->query($sql);
-	$result = array();
-	while ($row = $db->fetch_array($query)) {
-		$row['myurl'] = (stristr($row["myurl"], "http://") == '') ? "http://".$row["myurl"] : $row["myurl"];
-		$result[] = $row;
-	}
-	return $result;
-}
-function cg_hotd() {
-	global $db;
-	$query = $db->query("select a.title,b.myurl from cg_branch b left join cg_area a on(a.id=b.city) where b.city>0 and b.myurl<>'' and LOCATE('cgbt.net',b.myurl) order by b.id");
 	$result = array();
 	while ($row = $db->fetch_array($query)) {
 		$row['myurl'] = (stristr($row["myurl"], "http://") == '') ? "http://".$row["myurl"] : $row["myurl"];
@@ -247,7 +348,7 @@ function selectdataroute($count, $type = '1', $classid = 0, $classid2 = 0) {
 	//return $sql;
 	$query = $db->query($sql);
 	while ($value = $db->fetch_array($query)) {
-		if(is_numeric($value['city1'])) $value['li'] = cg_area_tit($value['city1']);
+		if(is_numeric($value['aid2'])) $value['li'] = cg_area_tit($value['aid2']);
 		if(is_numeric($value['city2'])) $value['di'] = cg_area_tit($value['city2']);
 		if (!empty ($value['url'])) {
 			$value['url'] = (stristr($value["url"], "http://") == '') ? $picserver . replaceSeps($value["url"]) : $value["url"];
@@ -398,32 +499,36 @@ function selectProduct($id = 0) {
  * go_money 花费 (,隔开)
  *
  **/
-function selectRoleSale($classid, $count = false, $start = 0, $perpage = 1, $city1, $city2, $go_day, $go_time, $go_time1, $go_money, $title, $order = 'id', $orderby = 'desc') {
+function selectRoleSale($classid, $count = false, $start = 0, $perpage = 1, $city1, $city2, $go_day, $go_time, $go_time1, $go_money, $title = "", $order = 'id', $orderby = 'desc') {
 	global $db, $picserver, $siteurl, $bid;
 
 	$sqlfrom = " from cg_product_route p where 1=1 ";
 	if ($classid) {
-		$sqlfrom .= " and p.classid=" . $classid;
+		if (strpos($classid, ',') === false) {
+			$arr = explode(',',$classid);
+			if ($arr[0] != 0) {
+				$sqlfrom .= " and p.classid=" . $arr[0];
+			}
+			if ($arr[1] != 0) {
+				$sqlfrom .= " and p.classid2=" . $arr[1];
+			}
+		}else{
+			$sqlfrom .= " and p.classid=" . $classid;
+		}
 	}
 	if ($city1) {
-		$city = cg_search_cmin($city1);
-		//URL映射
-		if ($city) {
-			$city1 = $city;
-		}
 		if (strpos($city1, ',') === false) {
 			$sqlfrom .= " and (p.aid1=$city1 or p.city1=$city1)";
 		} else {
 			$sqlfrom .= " and (FIND_IN_SET(p.aid1,'" . $city1 . "') or FIND_IN_SET(p.city1,'" . $city1 . "'))";
 		}
-
 	}
 	if ($city2) {
-		$city = cg_search_cmin($city2);
-		//URL映射
-		if ($city) {
-			$city2 = $city;
-		}
+		// $city = cg_search_cmin($city2);
+		// //URL映射
+		// if ($city) {
+		// 	$city2 = $city;
+		// }
 		if (strpos($city2, ',') === false) {
 			$sqlfrom .= " and (p.aid2=$city2 or p.city2=$city2) ";
 		} else {
@@ -530,4 +635,14 @@ function cg_class($classtype = 0,$keyval = '') {
 	}
 	return $res;
 }
+
+/*hotd
+$query = $db->query("select a.title,b.myurl from cg_branch b left join cg_area a on(a.id=b.city) where b.city>0 and b.myurl<>'' and LOCATE('cgbt.net',b.myurl) order by b.id");
+$result = array();
+while ($row = $db->fetch_array($query)) {
+	$row['myurl'] = (stristr($row["myurl"], "http://") == '') ? "http://".$row["myurl"] : $row["myurl"];
+	$result[] = $row;
+}
+return $result;
+*/
 ?>
