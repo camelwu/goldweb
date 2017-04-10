@@ -62,6 +62,8 @@ $sqlstr = "select * from $table where id=" . $id;
 $info = $db->getOneInfo($sqlstr);
 
 if (!empty ($info)) {
+	//更新点击量
+	set_hits($table,$id);
 	/***浏览记录**/
 	$smarty->assign("brower", get_cg_brower());
 	/***销售排行**/
