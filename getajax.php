@@ -73,63 +73,64 @@ $action = $_GET['action'];
 $perpage = 6;
 if ('scenic' == $action) {
 	$json = json_decode(file_get_contents('php://input'));
+	if($json){
+		$city2 = $json->go_end2;
+		$go_modle = $json->go_modle;
+		$go_type = $json->go_type;
+		$go_money = $json->go_price;
+		$order = $json->order;
+		$orderby = $json->orderby;
+		$page = $json->page;
+		$page = empty($page)?1:$page;
+		$start = ($page -1) * $perpage;
 
-	$city2 = $json->go_end2;
-	$page = $json->page;
-	$page = empty($page)?1:$page;
-	$start = ($page -1) * $perpage;
-	$go_modle = $json->go_modle;
-	$go_type = $json->go_type;
-	$go_money = $json->go_price;
-	$ob_hit = $json->ob_hit;
-	$ob_sall = $json->ob_sall;
-	$ob_price = $json->ob_price;
-	//$num = selectScenic(3, "", $city2, true, $start, 1);
-	$msg = array(
-		'num' => selectScenic(3, "", $city2, false, 0, 1),
-		'page' => $page,
-		'res' => selectScenic(3, "", $city2, true, $start, 6)
-	);
+		$msg = array(
+			'num' => selectScenic(3, "", $city2, false, 0, 1),
+			'page' => $page,
+			'res' => selectScenic(3, "", $city2, true, $start, 6, $order, $orderby)
+		);
+	}else{
+		$msg = array(
+			'num' => 0,
+			'page' => 1,
+			'res' => array()
+		);
+	}
 	echo json_encode($msg);
 } elseif ('tours' == $action) {
 	$json = json_decode(file_get_contents('php://input'));
-	$end = $json->end;
-	$end2 = $json->end2;
-	$go_start = $json->go_start;
-	$go_days = $json->go_days;
-	$go_starttime = $json->go_starttime;
-	$go_endtime = $json->go_endtime;
-	$go_money = $json->go_money;
-	$go_tuijian = $json->go_tuijian;
-	$go_sall = $json->go_sall;
-	$go_hot = $json->go_hot;
+	if($json){
+		$cid = $json->cid;
+		$cid2 = $json->cid2;
 
-	$city2 = $json->go_end2;
-	$page = $json->page;
-	$page = empty($page)?1:$page;
-	$start = ($page -1) * $perpage;
-	$go_modle = $json->go_modle;
-	$go_type = $json->go_type;
-	$go_money = $json->go_price;
-	$ob_hit = $json->ob_hit;
-	$ob_sall = $json->ob_sall;
-	$ob_price = $json->ob_price;
+		$go_start = $json->go_start;
+		$end = $json->go_end;
+		$go_end2 = $json->go_end2;
+		$go_days = $json->go_days;
+		$go_starttime = $json->go_starttime;
+		$go_endtime = $json->go_endtime;
+		$go_money = $json->go_money;
+		$order = $json->order;
+		$orderby = $json->orderby;
 
-	$echohtml = $sqlwhere = "";
-	if ('overseas' == $enname) {
-		$sqlwhere .= " and a.classid!=65";
-	}else if('touraround' == $enname||'domestic'==$enname){
-		$sqlwhere .= " and a.classid=65";
+		$page = $json->page;
+		$page = empty($page)?1:$page;
+		$start = ($page -1) * $perpage;
+
+		$msg = array(
+			'num' => selectRoleSale($cid, false, 0, 1, $go_start, $go_end2, $go_days, $go_starttime, $go_endtime, $go_money, '', $order, $orderby),
+			'page' => $page,
+			'res' => selectRoleSale($cid, true, $start, $perpage, $go_start, $go_end2, $go_days, $go_starttime, $go_endtime, $go_money, '', $order, $orderby)
+		);
 	}else{
-
+		$msg = array(
+			'num' => 0,
+			'page' => 1,
+			'res' => array()
+		);
 	}
+	echo json_encode($msg);
 	exit;
-	/*if (!empty ($end)) {
-		$cmin = cg_search_cmin($end);
-		if (!empty ($cmin)) {
-			$sqlwhere .= " and FIND_IN_SET(a.id,'{$cmin}') ";
-		}
-	}*/
 	//直接找产品
 	if(empty($end)){
 		$sql = "select aid2 from cg_product_route where aid2!=0 GROUP BY aid2";
