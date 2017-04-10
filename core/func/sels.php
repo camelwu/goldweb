@@ -635,7 +635,13 @@ function cg_class($classtype = 0,$keyval = '') {
 	}
 	return $res;
 }
-
+/*
+*/
+function set_hits($table,$id){
+	global $db;
+	$sql = "update $table set hits=hits+1 where id=".$id;
+	$db->query($sql);
+}
 /*hotd
 $query = $db->query("select a.title,b.myurl from cg_branch b left join cg_area a on(a.id=b.city) where b.city>0 and b.myurl<>'' and LOCATE('cgbt.net',b.myurl) order by b.id");
 $result = array();
