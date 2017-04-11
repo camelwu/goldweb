@@ -152,7 +152,6 @@ if (!isset($_GET['id'])) {
 $info = cg_tour($id);
 //线路推荐
 $tuijianinfo = selectRoleSale($info['classid'], true, 0, 4, '', '', '', '', '', '', '');
-$smarty->assign("tuijianinfo", $tuijianinfo);
 
 if (!empty ($info)) {
 	//更新点击量
@@ -188,6 +187,7 @@ if (!empty ($info)) {
 	}
 
 	$smarty->assign('stroke', $comments);
+	$smarty->assign("tuijianinfo", $tuijianinfo);
 
 	$query = $db->query("select * from " . $table . "_do where id=" . $info['id'] . " order by hid desc");
 	$data = $comments = array ();
@@ -273,11 +273,11 @@ function cg_tour($myid = 0) {
 	if ($myid === 0) {
 		return '';
 	}
-	$area = cg_area();
+
 		$sqlstr = "select * from cg_product_route where id=" . $myid;
 		$info = $db->getOneInfo($sqlstr);
-		$info['city1'] = $area[$info['city1']];
-		$info['city2'] = $area[$info['city2']];
+		$info['city1'] = cg_area_tit($info['city1']);
+		$info['city2'] = cg_area_tit($info['city2']);
 		return $info;
 
 }

@@ -5,25 +5,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $smarty -> assign('ipfrom', $province);
 $smarty -> assign('mycountry', $mycountry);
 if (empty($module)) {
+	//热门地区
+	//$smarty->assign('hitareas', cg_area(1, 1));
 	//首页横幅广告位
 	$smarty -> assign('banner', selectdatabanner(1, 3));
 	/*首页推荐广告位*/
 	$smarty -> assign('hots', selectdatabanner(4, 5));
 	//当季最热
 	$smarty -> assign('received', selectdataroute(5, "2"));
+	//左侧国家城市，定义数量、数组，获取内容
+	$num = 15;
+	$cac = array("cg_product_route","cg_scenic");
+	$gtcity = cg_tour_dest(0);
+	$t_c_o = arr_l($gtcity[112]);
+	$t_c_i = arr_l($gtcity[113]);
+	$t_c_z = arr_l($gtcity[114]);
+	//var_dump($t_c_o);exit;
 	//出境
+	$smarty -> assign('t_c_o', $t_c_o);
 	$smarty -> assign('cjroute', selectdataroute(6, "3", 112));
 	$smarty -> assign('cjline', selectdataroute(1, "2", 112));
 	//国内
+	$smarty -> assign('t_c_i', $t_c_i);
 	$smarty -> assign('gnroute', selectdataroute(6, "3", 113));
 	$smarty -> assign('gnline', selectdataroute(1, "2", 113));
 	//周边
+	$smarty -> assign('t_c_z', $t_c_z);
 	$smarty -> assign('zbroute', selectdataroute(6, "3", 114));
 	$smarty -> assign('zbline', selectdataroute(1, "2", 114));
 	//出境自由行
+	$zycity = cg_tour_dest(9);
+	$z_c_o = arr_l($zycity[148]);
+	$z_c_i = arr_l($zycity[149]);
+	$smarty -> assign('z_c_o', $z_c_o);
 	$smarty -> assign('cjfree', selectdataroute(6, "3", 117, 148));
 	$smarty -> assign('cfree', selectdataroute(1, "2", 117, 148));
 	//国内自由行
+	$smarty -> assign('z_c_i', $z_c_i);
 	$smarty -> assign('gnfree', selectdataroute(6, "3", 117, 149));
 	$smarty -> assign('gfree', selectdataroute(1, "2", 117, 149));
 	//邮轮
@@ -74,4 +92,21 @@ if (empty($module)) {
 		exit('error');
 	}
 }
-?>
+function arr_l($ary,$l = 15){
+	$subset = array();
+	if(empty($ary)){
+		for ($i=0; $i < $l; $i++) {
+			$subset[] = array('id'=>'','title'=>'');
+		}
+		return $subset;
+	}
+	if(count($ary)>$l){
+		$subset = array_slice($ary, $l-1);
+	}else{
+		$subset = $ary;
+		for ($i=count($ary); $i < $l; $i++) {
+			$subset[$i] = array('id'=>'','title'=>'');
+		}
+	}
+	return $subset;
+}
