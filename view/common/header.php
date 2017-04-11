@@ -7,20 +7,6 @@
  */
 global $smarty,$bid,$bidinfo;
 $smarty->assign('cg_branch', cg_branch());
-////热门地区
-$smarty->assign('hitareas', cg_area(1, 1));
-
-////地区
-$area2 = cg_class(6);
-$dataarea = array ();
-foreach ($area2 as $key => $value) {
-	$data['id'] = $value['id'];
-	$data['title'] = $value['title'];
-	$data['dataarr'] = cg_area(1, 0, $value['id']);
-	$dataarea[] = $data;
-}
-$smarty->assign('dataarea', $dataarea);
-
 ////一级菜单
 $layer = cg_class(0);
 $smarty->assign('layer', $layer);

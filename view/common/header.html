@@ -84,6 +84,8 @@
 					<a href="<{$siteurl}>/tour/<{$layeritem.html}>"<{if $action eq $layeritem.html}> class="nav_on"<{/if}>><{$layeritem.title}></a>
 				<{/foreach}></div>
 			</li>
+			<li <{if $enname eq 'cruises'}> class="nav_on"<{/if}>><a href="<{$siteurl}>/cruises">邮轮</a></li>
+			<li <{if $enname eq 'package'}> class="nav_on"<{/if}>><a href="<{$siteurl}>/package">自助游</a></li>
 			<li <{if $enname eq 'custom'}> class="nav_on"<{/if}>><a href="<{$siteurl}>/custom">私人定制</a></li>
 			<li <{if $enname eq 'scenic'}> class="nav_on"<{/if}>>
 				<a href="<{$siteurl}>/scenic">景点门票</a>

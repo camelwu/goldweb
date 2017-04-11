@@ -84,51 +84,9 @@
 			<div id="gt_tours" class="div_option">
 				<span>
 					<ul class="city_box clrfix fl">
-						<li class="city_li_on">
-							<a href="/domestic/--33-------">西安</a>
-						</li>
-						<li>
-							<a href="/domestic/--33-------">云南</a>
-						</li>
-						<li>
-							<a href="/domestic/--33-------">桂林</a>
-						</li>
-						<li>
-							<a href="/domestic/--33-------">厦门</a>
-						</li>
-						<li>
-							<a href="/domestic/--33-------">丽江</a>
-						</li>
-						<li>
-							<a href="/domestic/--33-------">华东</a>
-						</li>
-						<li>
-							<a href="/domestic/--33-------">张家界</a>
-						</li>
-						<li>
-							<a href="/domestic/--33-------">九寨沟</a>
-						</li>
-						<li>
-							<a href="/domestic/--33-------">三亚</a>
-						</li>
-						<li>
-							<a href="/domestic/--33-------">泰山</a>
-						</li>
-						<li>
-							<a href="/domestic/--33-------">西藏</a>
-						</li>
-						<li>
-							<a href="/domestic/--33-------">云台山</a>
-						</li>
-						<li>
-							<a href="/domestic/--33-------">内蒙古</a>
-						</li>
-						<li>
-							<a href="/domestic/--33-------">长白山</a>
-						</li>
-						<li>
-							<a href="/domestic/--33-------">新疆</a>
-						</li>
+							<{foreach name=tci item=city from=$t_c_i}><li class="">
+								<a href="/overseas/--<{$city.id}>-------"><{$city.title}></a>
+							</li><{/foreach}>
 					</ul>
 					<ul class="scenic_area fl">
 						<ul class="sa_title clrfix">
@@ -175,54 +133,12 @@
 						<a href="./tour/<{$gnline.id}>" target="_blank"><div class="cover_bg" style="background-image: url(<{$gnline.url}>)"></div></a>
 						<a href="./tour/<{$gnline.id}>" class="sr_txt"><{$gnline.title}></a>
 					</div> </span>
-				<!--跟团1-->
+				<!--出境跟团-->
 				<span style="display: none">
 					<ul class="city_box clrfix fl">
-						<li class="city_li_on">
-							<a href="/overseas/--33-------">西安</a>
-						</li>
-						<li>
-							<a href="/overseas/--33-------">云南</a>
-						</li>
-						<li>
-							<a href="/overseas/--33-------">桂林</a>
-						</li>
-						<li>
-							<a href="/overseas/--33-------">厦门</a>
-						</li>
-						<li>
-							<a href="/overseas/--33-------">丽江</a>
-						</li>
-						<li>
-							<a href="/overseas/--33-------">华东</a>
-						</li>
-						<li>
-							<a href="/overseas/--33-------">张家界</a>
-						</li>
-						<li>
-							<a href="/overseas/--33-------">九寨沟</a>
-						</li>
-						<li>
-							<a href="/overseas/--33-------">三亚</a>
-						</li>
-						<li>
-							<a href="/overseas/--33-------">泰山</a>
-						</li>
-						<li>
-							<a href="/overseas/--33-------">西藏</a>
-						</li>
-						<li>
-							<a href="/overseas/--33-------">云台山</a>
-						</li>
-						<li>
-							<a href="/overseas/--33-------">内蒙古</a>
-						</li>
-						<li>
-							<a href="/overseas/--33-------">长白山</a>
-						</li>
-						<li>
-							<a href="/overseas/--33-------">新疆</a>
-						</li>
+						<{foreach name=tco item=city from=$t_c_o}><li class="">
+							<a href="/overseas/--<{$city.id}>-------"><{$city.title}></a>
+						</li><{/foreach}>
 					</ul>
 					<ul class="scenic_area fl">
 						<ul class="sa_title clrfix">
@@ -270,51 +186,9 @@
 				<!--跟团2-->
 				<span style="display: none">
 					<ul class="city_box clrfix fl">
-						<li class="city_li_on">
-							<a href="/touraround/--33-------">西安</a>
-						</li>
-						<li>
-							<a href="/touraround/--33-------">云南</a>
-						</li>
-						<li>
-							<a href="/touraround/--33-------">桂林</a>
-						</li>
-						<li>
-							<a href="/touraround/--33-------">厦门</a>
-						</li>
-						<li>
-							<a href="/touraround/--33-------">丽江</a>
-						</li>
-						<li>
-							<a href="/touraround/--33-------">华东</a>
-						</li>
-						<li>
-							<a href="/touraround/--33-------">张家界</a>
-						</li>
-						<li>
-							<a href="/touraround/--33-------">九寨沟</a>
-						</li>
-						<li>
-							<a href="/touraround/--33-------">三亚</a>
-						</li>
-						<li>
-							<a href="/touraround/--33-------">泰山</a>
-						</li>
-						<li>
-							<a href="/touraround/--33-------">西藏</a>
-						</li>
-						<li>
-							<a href="/touraround/--33-------">云台山</a>
-						</li>
-						<li>
-							<a href="/touraround/--33-------">内蒙古</a>
-						</li>
-						<li>
-							<a href="/touraround/--33-------">长白山</a>
-						</li>
-						<li>
-							<a href="/touraround/--33-------">新疆</a>
-						</li>
+						<{foreach name=tcz item=city from=$t_c_z}><li class="">
+							<a href="/overseas/--<{$city.id}>-------"><{$city.title}></a>
+						</li><{/foreach}>
 					</ul>
 					<ul class="scenic_area fl">
 						<ul class="sa_title clrfix">
@@ -513,51 +387,9 @@
 			<div id="zy_tours" class="div_option">
 				<span>
 					<ul class="city_box clrfix fl">
-						<li class="city_li_on">
-							<a href="/freeline/------/hits/desc">香港</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">马尔代夫</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">韩国</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">澳门</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">毛里求斯</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">塞舌尔</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">斯里兰卡</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">长滩岛</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">斐济</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">日本</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">泰国</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">沙巴</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">新加坡</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">清迈</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">普吉岛</a>
-						</li>
+						<{foreach name=zco item=city from=$z_c_o}><li class="">
+							<a href="/overseas/--<{$city.id}>-------"><{$city.title}></a>
+						</li><{/foreach}>
 					</ul>
 					<ul class="scenic_area fl">
 						<ul class="sa_title clrfix">
@@ -610,51 +442,9 @@
 				<!--free1-->
 				<span style="display: none">
 					<ul class="city_box clrfix fl">
-						<li class="city_li_on">
-							<a href="/freeline/------/hits/desc">北京</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">马尔代夫</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">韩国</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">澳门</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">毛里求斯</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">塞舌尔</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">斯里兰卡</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">长滩岛</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">斐济</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">日本</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">泰国</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">沙巴</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">新加坡</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">清迈</a>
-						</li>
-						<li>
-							<a href="/freeline/------/hits/desc">普吉岛</a>
-						</li>
+						<{foreach name=zci item=city from=$z_c_i}><li class="">
+							<a href="/overseas/--<{$city.id}>-------"><{$city.title}></a>
+						</li><{/foreach}>
 					</ul>
 					<ul class="scenic_area fl">
 						<ul class="sa_title clrfix">
