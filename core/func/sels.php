@@ -133,14 +133,74 @@ function cg_depart($classid='', $type=0) {
 	return $result;
 }
 /**
+ * @uses	按栏目整理的目的地（线路）
+ * @param	int	$type	0:over,1:inner
+ * @return	array	TRUE on success or null on failure
+ */
+function cg_tour_dest($classtype = 0, $op_type = '1', $type = 0) {
+	global $db;
+	$area = array ();
+	$sqltour = "classtype = $classtype";
+	$sqladd = '';
+	if (strpos($op_type, ',') === false) {
+		$arr = explode(',',$op_type);
+		foreach ($arr as $key => $val) {
+			$sqladd .= "and FIND_IN_SET('" . $val . "',t.op_type)";
+		}
+	}else{
+		$sqladd .= "and FIND_IN_SET('1',t.op_type) and FIND_IN_SET('" . $op_type . "',t.op_type)";
+	}
+	if($type==0){
+		$sql = "select id,title,hots from cg_class where {$sqltour} and pid=0 order by hots";
+	}else{
+		$sql = "select id,title,hots from cg_class where {$sqltour} order by hots";
+	}
+	$query = $db->query($sql);
+	while ($row = $db->fetch_array($query)) {
+		$sel = "select t.aid2 as id,p.title from cg_area p,cg_product_route t where t.classid={$row['id']} and p.id=t.aid2 {$sqladd} group by t.aid2";
+		$res = $db->getAll($sel);
+		if (count($res)) {
+			$area[$row['id']] = $res;
+		}
+	}
+
+	return $area;
+}
+/**
  * @uses	目的地（线路&景点）
  * @param	int	$type	0:over,1:inner
  * @return	array	TRUE on success or null on failure
  */
-function cg_dest($table, $type = 0, $types = 3) {
+function cg_dest($table, $type = 0, $classid = '', $op_type = '1') {
 	global $db;
 	$stat = array ();
 	$area = array ();
+	$dest = array ();
+	$sqltour = '';$sqladd = '';
+	if (!empty($classid)) {
+		if (strpos($classid, ',') === false) {
+			$arr = explode(',',$classid);
+			if ($arr[0] != 0) {
+				$sqltour .= "and t.classid=" . $arr[0];
+			}
+			if ($arr[1] != 0) {
+				$sqltour .= "and t.classid2=" . $arr[1];
+			}
+		}else{
+			$sqltour .= "and t.classid=" . $classid;
+		}
+		$types=$classid;
+	}else{
+		$types=3;
+	}
+	if (strpos($op_type, ',') === false) {
+		$arr = explode(',',$op_type);
+		foreach ($arr as $key => $val) {
+			$sqladd .= "and FIND_IN_SET('" . $val . "',t.op_type)";
+		}
+	}else{
+		$sqladd .= "and FIND_IN_SET('1',t.op_type) and FIND_IN_SET('" . $op_type . "',t.op_type)";
+	}
 	if($type==0){//出境
 		$sql = "select id,title,hots from cg_class where classtype=5 and pid=0 and id<65 order by hots";
 	}elseif($type==1){//国内
@@ -151,21 +211,23 @@ function cg_dest($table, $type = 0, $types = 3) {
 	$query = $db->query($sql);
 	while ($row = $db->fetch_array($query)) {
 		if($table=='cg_product_route'){
-			$sel = "select t.aid2 as id,p.title from cg_area p,cg_product_route t where t.classid={$types} and t.cid2={$row['id']} and t.aid2=p.id group by t.aid2";
+			$sel = "select t.aid2 as id,p.title from cg_area p,cg_product_route t where t.cid2={$row['id']} and t.aid2=p.id {$sqltour} {$sqladd} group by t.aid2";
 		}else{
-			$sel = "select t.aid as id,p.title from cg_area p,cg_scenic t where t.types={$types} and t.cid={$row['id']} and t.aid=p.id group by t.aid ";
+			$sel = "select t.aid as id,p.title from cg_area p,cg_scenic t where t.types={$types} and t.cid={$row['id']} and t.aid=p.id {$sqladd} group by t.aid ";
 		}
 		$res = $db->getAll($sel);
 
 		if (count($res)) {
 			$stat[] = $row['title'];
 			$area[] = $res;
+			$dest = array_merge($dest, $res);
 		}
 	}
 
 	return array(
 		'stat'=>$stat,
-		'area'=>$area
+		'area'=>$area,
+		'dest'=>$dest
 	);
 }
 /**
