@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <title><{$cnname}>_旅行社_<{$ktitle}>_金桥</title>
+<link href="<{$siteurl}>/resources/css/global.css" rel="stylesheet" type="text/css">
+<link href="<{$siteurl}>/resources/css/index.css" rel="stylesheet" type="text/css">
+<link href="<{$siteurl}>/resources/css/page.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <{include_php file="./view/common/header.php"}>
@@ -10,7 +13,7 @@
     <a href="./">首页</a>&gt;<a href="./<{$enname}>/"><{$cnname}></a>
 </div>
 <div class="cruises_banner"><!--top-img-->
-    <a href="#" class="cruises_top"><img src="images/cruises_banner.jpg" width="1920" height="330"/></a>
+    <a href="#" class="cruises_top"><img src="<{$siteurl}>/resources/images/cruises_banner.jpg" width="1920" height="330"/></a>
 </div>
 
 <div class="wrapper"><!--出发地目的地筛选-->
@@ -83,7 +86,6 @@
 <div class="wrapper clrfix"><!--页码-->
     <ul class="page_box clrfix"><{$multipage}></ul>
 </div>
-
 <{include file="./view/common/footer.html"}>
 </body>
 </html>
