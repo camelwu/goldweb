@@ -5,21 +5,16 @@
 <title><{$cnname}>_旅行社_<{$ktitle}>_金桥</title>
 <link href="<{$siteurl}>/resources/css/global.css" rel="stylesheet" type="text/css">
 <link href="<{$siteurl}>/resources/css/index.css" rel="stylesheet" type="text/css">
-
-<script type="text/javascript" src="<{$siteurl}>/resources/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="<{$siteurl}>/resources/js/jquery.SuperSlide.2.1.1.js"></script>
-<script type="text/javascript" src="<{$siteurl}>/resources/js/index.js"></script>
 </head>
 <body>
 	<{include_php file="./view/common/header.php"}>
 	<div class="wrapper now_position">
 		<!--当前位置-->
-		<a href="index.html">首页</a>&gt;<a href="./<{$enname}>/"><{$cnname}></a>
+		<a href="/">首页</a>&gt;<a href="./<{$enname}>/"><{$cnname}></a>
 	</div>
-	<div class="cruises_banner">
 		<!--top-img-->
-		<a href="#" class="cruises_top"><img
-			src="images/privatecustom.jpg" width="1920" height="330" /></a>
+	<div class="cruises_banner">
+		<div class="cruises_top"><img src="<{$siteurl}>/resources/images/privatecustom.jpg" width="1920" height="330"></div>
 	</div>
 
 	<div class="wrapper">
@@ -35,37 +30,6 @@
 			</div>
 			<div class="pc_hd">需求信息：</div>
 			<ul class="demand_box">
-<script language="javascript">
-var validate = true;
-function get_code(){
-	if(validate==true){
-		document.getElementById("findcode").src="image.php?"+Math.random();
-		validate = false;
-		return false;
-	}else{
-		document.getElementById("findcode").src="image.php?"+Math.random();
-		validate = true;
-		return false;
-	}
-}
-function checkfrm(frm){
- if(document.frm.username.value==""){
-	alert("请输入用户名");
-	document.frm.username.focus();
-	return false;
- }else if(document.frm.password.value==""){
-	alert("请输入密码");
-	document.frm.password.focus();
-	return false;
- }/*else if(document.frm.code.value==""){
-	alert("请输入验证");
-	document.frm.code.focus();
-	return false;
- }*/else{
-	return true;
- }
-}
-</script>
 				<!--需求信息--><form name="order_frm" action="?action=handle" method="post" onSubmit="return checkfrm(this);">
 				<li><span><b>*</b>出游类型：</span> <select name="types">
 						<option>团队旅游</option>
@@ -105,8 +69,38 @@ function checkfrm(frm){
 			</ul>
 		</div>
 	</div>
-
 	<{include file="./view/common/footer.html"}>
-
+	<script type="text/javascript" src="<{$siteurl}>/resources/js/Calendar.js"></script>
+<script language="javascript">
+var validate = true;
+function get_code(){
+if(validate==true){
+document.getElementById("findcode").src="image.php?"+Math.random();
+validate = false;
+return false;
+}else{
+document.getElementById("findcode").src="image.php?"+Math.random();
+validate = true;
+return false;
+}
+}
+function checkfrm(frm){
+if(document.frm.username.value==""){
+alert("请输入用户名");
+document.frm.username.focus();
+return false;
+}else if(document.frm.password.value==""){
+alert("请输入密码");
+document.frm.password.focus();
+return false;
+}/*else if(document.frm.code.value==""){
+alert("请输入验证");
+document.frm.code.focus();
+return false;
+}*/else{
+return true;
+}
+}
+</script>
 </body>
 </html>

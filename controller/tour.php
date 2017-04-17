@@ -46,7 +46,6 @@ $orderbyarr = array (
 	'asc'
 );
 $match = $_GET['match'];
-
 $match = (empty($match)) ? '-------' : $match;
 //list
 if (!isset($_GET['id'])) {
@@ -116,13 +115,13 @@ if (!isset($_GET['id'])) {
 	$start = ($page -1) * $perpage;
 	$totalnum = selectRoleSale($cid['id'], false, 0, 1, $go_start, $go_end2, $go_days, $go_starttime, $go_endtime, $go_money, '', $order, $orderby);
 	$comments = selectRoleSale($cid['id'], true, $start, $perpage, $go_start, $go_end2, $go_days, $go_starttime, $go_endtime, $go_money, '', $order, $orderby);
-	$pagecount = ceil($totalnum / $perpage);
+
+	$link_to = '/' . $module . '/' . $action . '/' . $match . '/';
 	// var_dump($comments);exit;
 	//$multipage = pagecute($totalnum, $pagecount, $page, '/' . $module . '/' . $match . '/' . $order . '/' . $orderby, $perpage, 'pb_on');
-	//$smarty->assign('multipage', $multipage);
+	$smarty->assign('link_to', $link_to);
 	$smarty->assign('comments', $comments);
 	$smarty->assign('totalnum', $totalnum);
-
 	$smarty -> assign('go_start', $go_start);
 	$smarty -> assign('go_end', $go_end);
 	$smarty -> assign('go_end2', $go_end2);
@@ -148,69 +147,69 @@ if (!isset($_GET['id'])) {
 	$smarty->assign("banner", $banner);
 	$smarty->display(VIEWPATH . 'list_tours.html', $cache_id);
 } else {
-/*线路明细查询*/
-$info = cg_tour($id);
-//线路推荐
-$tuijianinfo = selectRoleSale($info['classid'], true, 0, 4, '', '', '', '', '', '', '');
+	/*线路明细查询*/
+	$info = cg_tour($id);
+	//线路推荐
+	$tuijianinfo = selectRoleSale($info['classid'], true, 0, 4, '', '', '', '', '', '', '');
 
-if (!empty ($info)) {
-	//更新点击量
-	set_hits($table,$id);
-	/***浏览记录**/
-	$smarty->assign("brower", get_cg_brower());
-	/***销售排行**/
-	$smarty->assign('hots', get_sale_top());
-	$databrower = array (
-		'id' => $info['id'],
-		'title' => $info['title'],
-		'titlelink' => $_SERVER['REQUEST_URI'],
-		'price' => $info['price2']//计划价格，改为销售需调整
-	);
-	cg_brower($databrower);
+	if (!empty ($info)) {
+		//更新点击量
+		set_hits($table,$id);
+		/***浏览记录**/
+		$smarty->assign("brower", get_cg_brower());
+		/***销售排行**/
+		$smarty->assign('hots', get_sale_top());
+		$databrower = array (
+			'id' => $info['id'],
+			'title' => $info['title'],
+			'titlelink' => $_SERVER['REQUEST_URI'],
+			'price' => $info['price2']//计划价格，改为销售需调整
+		);
+		cg_brower($databrower);
 
-	$info['ro_type'] = strpos($info['ro_type'], ',') ? explode(',', $info['ro_type']) : $info['ro_type'];
-	$info['op_type'] = strpos($info['op_type'], ',') ? explode(',', $info['op_type']) : $info['op_type'];
-	$prices = cg_price($id, $info['price2'], $info['go_type'], $info['go_time'], $info['go_reg']);
-	$smarty->assign('prices', $prices);
-	$query = $db->query("select * from " . $table . "_stroke where routeid=" . $info['id'] . " order by num asc");
-	$data = $comments = array ();
-	while ($data = $db->fetch_array($query)) {
-		if($data["departure"]!=''&&$data["arrived"]!=''){
-			$data["traffic"]=="plane"?$tra="/":"-";
-			$data["dl"]=$data["departure"].$tra.$data["arrived"];
-		}else{
-			$data["dl"]=$data["departure"].$data["arrived"];
+		$info['ro_type'] = strpos($info['ro_type'], ',') ? explode(',', $info['ro_type']) : $info['ro_type'];
+		$info['op_type'] = strpos($info['op_type'], ',') ? explode(',', $info['op_type']) : $info['op_type'];
+		$prices = cg_price($id, $info['price2'], $info['go_type'], $info['go_time'], $info['go_reg']);
+		$smarty->assign('prices', $prices);
+		$query = $db->query("select * from " . $table . "_stroke where routeid=" . $info['id'] . " order by num asc");
+		$data = $comments = array ();
+		while ($data = $db->fetch_array($query)) {
+			if($data["departure"]!=''&&$data["arrived"]!=''){
+				$data["traffic"]=="plane"?$tra="/":"-";
+				$data["dl"]=$data["departure"].$tra.$data["arrived"];
+			}else{
+				$data["dl"]=$data["departure"].$data["arrived"];
+			}
+			$data['eats'] = go_eat($data['eats']);
+			$data['scenics'] = go_sight($data['scenic']);
+			$comments[] = $data;
 		}
-		$data['eats'] = go_eat($data['eats']);
-		$data['scenics'] = go_sight($data['scenic']);
-		$comments[] = $data;
-	}
 
-	$smarty->assign('stroke', $comments);
-	$smarty->assign("tuijianinfo", $tuijianinfo);
+		$smarty->assign('stroke', $comments);
+		$smarty->assign("tuijianinfo", $tuijianinfo);
 
-	$query = $db->query("select * from " . $table . "_do where id=" . $info['id'] . " order by hid desc");
-	$data = $comments = array ();
-	while ($data = $db->fetch_array($query)) {
-		if (!empty ($data['url'])) {
-			$data['url'] = (stristr($data["url"], "http://") == '') ? $picserver . replaceSeps($data["url"]) : $data["url"];
+		$query = $db->query("select * from " . $table . "_do where id=" . $info['id'] . " order by hid desc");
+		$data = $comments = array ();
+		while ($data = $db->fetch_array($query)) {
+			if (!empty ($data['url'])) {
+				$data['url'] = (stristr($data["url"], "http://") == '') ? $picserver . replaceSeps($data["url"]) : $data["url"];
+			}
+			$comments[] = $data;
 		}
-		$comments[] = $data;
+		if (empty ($comments)) {
+			$info['url'] = $picserver . "/" . $info['url'];
+			$comments[] = $info;
+		}
+		$smarty->assign('topimg', $comments);
+	} else {
+		vheader("./");
 	}
-	if (empty ($comments)) {
-		$info['url'] = $picserver . "/" . $info['url'];
-		$comments[] = $info;
-	}
-	$smarty->assign('topimg', $comments);
-} else {
-	vheader("./");
-}
 
-$classinfo = cg_class();
-$smarty->assign('cinfo', $classinfo[$info['classid']]);
-$smarty->assign('traffic', $traffics);
-$smarty->assign('info', $info);
-$smarty->display(VIEWPATH.'/detail_tours.html',$cache_id);
+	$classinfo = cg_class();
+	$smarty->assign('cinfo', $classinfo[$info['classid']]);
+	$smarty->assign('traffic', $traffics);
+	$smarty->assign('info', $info);
+	$smarty->display(VIEWPATH.'/detail_tours.html',$cache_id);
 }
 /*
  *获取每日餐饮

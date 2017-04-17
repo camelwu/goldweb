@@ -1,10 +1,10 @@
 jQuery.fn.pagination = function(maxentries, opts) {
 	opts = jQuery.extend({
-		items_per_page : 10,
-		num_display_entries : 10,
+		items_per_page : 6,
+		num_display_entries : 6,
 		current_page : 0,
 		num_edge_entries : 0,
-		link_to : "#here",
+		link_to : "",
 		prev_text : "&lt;",
 		next_text : "&gt;",
 		ellipse_text : "...",
@@ -78,7 +78,7 @@ jQuery.fn.pagination = function(maxentries, opts) {
 				}, appendopts || {});
 				if (page_id == current_page) {
 					var lnk = $("<span class='pg_curr'>" + (appendopts.text) + "</span>");
-				} else {
+				} else {//console.log(page_id);
 					var lnk = $("<a class='pg_link'>" + (appendopts.text) + "</a>").bind("click", getClickHandler(page_id)).attr('href', opts.link_to.replace(/__id__/, page_id));
 
 				}

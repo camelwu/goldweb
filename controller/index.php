@@ -88,8 +88,7 @@ if (empty($module)) {
 		$smarty -> assign('al_num', array_keys($shtm, $module));
 		$smarty -> display(VIEWPATH . $module . '.html', $cache_id);
 	}else{
-		#include_once ('error.php');
-		exit('error');
+		vheader('/error.html');
 	}
 }
 function arr_l($ary,$l = 15){

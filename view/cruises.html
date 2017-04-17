@@ -12,8 +12,10 @@
 <div class="wrapper now_position"><!--当前位置-->
     <a href="./">首页</a>&gt;<a href="./<{$enname}>/"><{$cnname}></a>
 </div>
-<div class="cruises_banner"><!--top-img-->
-    <a href="#" class="cruises_top"><img src="<{$siteurl}>/resources/images/cruises_banner.jpg" width="1920" height="330"/></a>
+<!--top-img-->
+<div class="cruises_banner"><{if $banner eq ''}>
+    <div class="cruises_top"><img src="<{$siteurl}>/resources/images/cruises_banner.jpg" width="1920" height="330"></div>
+<{else}><a href="<{$banner.mypath}>" class="cruises_top" target="_blank"><img src="<{$banner.url}>" width="1920" height="330"></a><{/if}>
 </div>
 
 <div class="wrapper"><!--出发地目的地筛选-->

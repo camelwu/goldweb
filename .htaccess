@@ -17,7 +17,7 @@ RewriteRule ^([a-zA-Z]+)(\/)?(\d+)(.html)?$ /index.php?enname=$1&id=$3
 ##签证
 RewriteRule ^([a-zA-Z]+)+/([0-9|\-]+)+/(\d+)?$ /index.php?enname=$1&action=$2&page=$3
 ##线路
-RewriteRule ^(\w+)/(\w+)/([0-9a-zA-Z|\-]+)/(\d+)?$ /index.php?enname=$1&action=$2&match=$3&page=$4
+RewriteRule ^(\w+)/(\w+)/([0-9a-zA-Z|\-]+)(\/)?(\d+)?$ /index.php?enname=$1&action=$2&match=$3&page=$5
 ##景点scenic/---/--/2 => scenic/overseas/---/---/2
 RewriteRule ^(\w+)/([0-9|\-]+)/([0-9|\-]?)/(\d+)?$ /index.php?enname=$1&action=$2&order=$3&page=$4
 #搜索页面

@@ -12,21 +12,15 @@
 
 	<div class="wrapper now_position">
 		<!--当前位置-->
-		<a href="/">首页</a>&gt;<a href="/<{$enname}>/"><{$cnname}></a>
+		<a href="/">首页</a>&gt; <{$cnname}>
 	</div>
 	<!--根据不同列表做变化-->
-	<{if $enname eq 'cruises'}>
-	<div class="cruises_banner">
-		<!--top-img-->
-		<{section name=web loop=$banner}> <a href="<{$banner[web].mypath}>"
-			class="cruises_top" target="_blank"><img
-			src="<{$banner[web].url}>" width="1920" height="330" /></a> <{/section}>
-	</div>
-	<{else}>
 	<{if $banner neq ''}><div class="wrapper">
 		<!--top-img-->
-		<{if $enname eq 'overseas' or $enname eq 'route'}> <{section name=web loop=$banner}> <a href="<{$banner[web].mypath}>" class="overseas_top" target="_blank"><img
-			src="<{$banner[web].url}>" width="1200" height="160" /></a> <{/section}>
+		<{if $action eq 'overseas' or $enname eq 'route'}>
+			<{section name=web loop=$banner}>
+			<a href="<{$banner[web].mypath}>" class="overseas_top" target="_blank"><img src="<{$banner[web].url}>" width="1200" height="160" /></a>
+			<{/section}>
 		<{else}>
 		<ul class="domestic_top">
 			<{section name=web loop=$banner}>
@@ -35,10 +29,11 @@
 					src="<{$banner[web].url}>"<{if $smarty.section.web.index+1 eq
 					'4'}> width="240" height="330"<{elseif $smarty.section.web.index+1 eq
 					'7'}> width="444" height="160" <{else}> width="240"
-					height="160"<{/if}> /></a></li> <{/section}>
+					height="160"<{/if}> /></a></li>
+			<{/section}>
 		</ul>
 		<{/if}>
-	</div><{/if}>
+	</div>
 	<{/if}>
 	<div class="wrapper">
 		<{if $template neq 'branch'}><!--出发地目的地筛选-->
@@ -107,36 +102,36 @@
 			<li data-id="sale"<{if $order eq 'hots'}>class="sob_on"<{/if}>>销量</li>
 			<li data-id="price2" id="orderby"<{if $order eq 'price2'}>class="sob_on"<{/if}>>价格<{if $orderby eq 'asc'}>↑<{elseif $orderby eq 'desc'}>↓<{else}><span class="rs_icon"></span><{/if}></li>
 		</ul><{/if}>
-
 		<!--内容区-->
 		<div class="dm_box">
 			<ul class="domestic_main clrfix">
 				<{foreach item=tour name=tour from=$comments}>
-				<li><a class="dm_img" href="/tour/<{$tour.id}>"
-					target="_blank"><img src="<{$tour.url}>" width="374"
-						height="230" /></a>
+				<li>
+					<a class="dm_img" href="/tour/<{$tour.id}>" target="_blank"><img src="<{$tour.url}>" width="374" height="230" /></a>
 					<div class="dm_bd">
 						<a href="/tour/<{$tour.hid}>" target="_blank"><{$tour.title}></a><{$tour.biaoti}>
 					</div> <a href="/tour/<{$tour.hid}>" class="dm_more" target="_blank">更多团期</a>
 					<!--根据栏目改变样式-->
 					<div class="dm_price">
 						￥<span><{$tour.price2}></span>
-					</div></li><{/foreach}>
+					</div></li>
+					<{/foreach}>
 			</ul>
 		</div>
 		<!--内容区-->
 	</div>
 	<div class="wrapper clrfix">
-		<!--页码-->
-		<ul class="page-box clrfix" id="my_page"><{$multipage}></ul>
+		<ul id="out"></ul>
+		<ul class="page-box clrfix" id="my_page"></ul><{$page}>
 	</div>
 	<{include file="./view/common/footer.html"}>
 	<!--除邮轮、私人定制都需要加上广告-->
 	<{include_php file="./view/common/right.php"}>
 </body>
 </html>
-<script type="text/javascript" src="<{$siteurl}>/resources/js/Calendar.js"></script>
-<script src="/resources/js/lib/jquery.pagination.js"></script>
+<script src="<{$siteurl}>/resources/js/Calendar.js"></script>
+<script src="<{$siteurl}>/resources/js/lib/jquery.pagination.js"></script>
+<script src="<{$siteurl}>/resources/js/lib/minrouter.js"></script>
 <script>
 	$(".dest_zhou_box li").click(function() {//筛选洲/城市
 		var dz_num = $(this).index(".dest_zhou_box li");
@@ -172,7 +167,7 @@
 			"orderby" : $("#orderby").html().indexOf("span")?'':$("#orderby").html().indexOf("↑")?'asc':'desc',
 			"page" : p
 		};
-		$.ajax({
+		/*$.ajax({
 			type : "POST",
 			url : '/getajax.php?action=tours&rnd=' + Math.random(),
 			timeout : 1000 * 60 * 5,
@@ -206,7 +201,7 @@
 					// window.location.reload();
 				}
 			}
-		});
+		});*/
 	}
 	var pageObj = {
 		totalCount :<{$totalnum}>,
@@ -214,27 +209,44 @@
 		callback:function(par){
 			async_select(par.page);
 		},
+		PageUrl : '<{$link_to}>__id__',
 		currentPage:0
 	};
 	paginate("my_page", pageObj, {});
 	function paginate(containerId, pageObj, searchObj) {
-			var totalCount = pageObj.totalCount;
-			var perPageCount = pageObj.perPageCount ? pageObj.perPageCount : 6;
-			var callback = pageObj.callback;
-			var currentPage = pageObj.currentPage;
-			$("#" + containerId).pagination(totalCount, {
-				items_per_page : perPageCount,
-				num_display_entries : 6,
-				current_page : currentPage,
-				num_edge_entries : 1,
-				callback : pageselectCallback
+		var totalCount = pageObj.totalCount
+		,perPageCount = pageObj.perPageCount ? pageObj.perPageCount : 6
+		,callback = pageObj.callback
+		,PageUrl = pageObj.PageUrl
+		,currentPage = pageObj.currentPage;
+		$("#" + containerId).pagination(totalCount, {
+			items_per_page : perPageCount,
+			num_display_entries : 6,
+			current_page : currentPage,
+			num_edge_entries : 1,
+			link_to : PageUrl,
+			callback : pageselectCallback
+		});
+		function pageselectCallback(page_id, jq) {
+			$.extend(searchObj, {
+				"page" : page_id + 1,
+				"rows" : perPageCount
 			});
-			function pageselectCallback(page_id, jq) {
-				$.extend(searchObj, {
-					"page" : page_id + 1,
-					"rows" : perPageCount
-				});
-				callback(searchObj, false);
-			}
+			callback(searchObj, false);
 		}
+	}// usage
+	var router = new MinRouter({
+		links: document.getElementById('my_page').querySelectorAll('a[href]'),
+		routes: {
+			'/tour/<{$action}>/*path/:page': 'page',
+			'/go': 'go'
+		},
+		page: function(path,num) {
+			document.getElementById('out').innerHTML = 'You click identifier, Page is <span style="color:red;">' + path + ',' + num + '</span>';
+		},
+		go: function() {
+			router.go('/start/654321');
+		}
+	});
+	router.start();
 </script>
