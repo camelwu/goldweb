@@ -1,29 +1,27 @@
 ﻿RewriteEngine on
 RewriteBase /
-#资源文件
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteCond %{REQUEST_FILENAME} -f
-#RewriteRule . - #直接显示，不重写
+#资源文件直接显示，不重写
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+#
 #首页
 RewriteRule ^(\/)?$ /index.php
-RewriteRule ^index(\/)?.html$ /index.php
+RewriteRule ^index.html$ /index.php
 #频道首页||静态页面
 RewriteRule ^([0-9a-zA-Z]+)(.html)?(\/)?$ /index.php?enname=$1
 #一级页面
 RewriteRule ^([a-zA-Z]+)/([a-zA-Z]+)(\/)?(\d+)?$ /index.php?enname=$1&action=$2&page=$4
 #详情页
 RewriteRule ^([a-zA-Z]+)(\/)?(\d+)(.html)?$ /index.php?enname=$1&id=$3
-#搜索组合页面#
+##搜索组合页面
 ##签证
 RewriteRule ^([a-zA-Z]+)+/([0-9|\-]+)+/(\d+)?$ /index.php?enname=$1&action=$2&page=$3
-##线路
+##景点||线路
 RewriteRule ^(\w+)/(\w+)/([0-9a-zA-Z|\-]+)(\/)?(\d+)?$ /index.php?enname=$1&action=$2&match=$3&page=$5
-##景点scenic/---/--/2 => scenic/overseas/---/---/2
-RewriteRule ^(\w+)/([0-9|\-]+)/([0-9|\-]?)/(\d+)?$ /index.php?enname=$1&action=$2&order=$3&page=$4
 #搜索页面
 RewriteRule ^search/([0-9a-zA-Z]+)/(.*)$ /index.php?enname=search&action=$1&key=$2
 ##异步页面
-RewriteRule ^async/([0-9a-zA-Z]+)/(.*)$ /index.php?enname=async&action=$1&key=$2
+#RewriteRule ^async/([0-9a-zA-Z]+)/(.*)$ /index.php?enname=async&action=$1&key=$2
 
 ErrorDocument 401 /error.html
 ErrorDocument 400 /error.html
