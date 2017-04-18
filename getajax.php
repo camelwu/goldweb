@@ -155,14 +155,12 @@ if ('scenic' == $action) {
 		$echohtml = "<span>暂无此洲的线路</span>";
 	}
 	echo $echohtml;
-}
-elseif ('logout' == $action) {
+} elseif ('logout' == $action) {
 	destroy_cookie();
 	$msg = array ();
 	$msg['status'] = 0;
 	echo json_encode($msg);
-}
-elseif ('login' == $action) {
+} elseif ('login' == $action) {
 	$email = $_GET['email'];
 	$password = $_GET['password'];
 	$code = $_GET['code'];
@@ -181,8 +179,7 @@ elseif ('login' == $action) {
 		$result = false;
 	}
 	echo json_encode($msg);
-}
-elseif ('checkemail' == $action) {
+} elseif ('checkemail' == $action) {
 	$email = $_GET['email'];
 	$username = $_GET['username'];
 	$password = $_GET['password'];
