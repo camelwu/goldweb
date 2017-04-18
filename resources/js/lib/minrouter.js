@@ -1,3 +1,6 @@
+/*
+ * @param 旧参数根据document的a数组进行逐个判断，适合静态dom；现在修改，links参数为代理dom，如参数为空则代理到document上
+*/
 ;(function() {
     if(!window) return;
     var win = window, supportPushState = 'pushState' in history, evt = supportPushState ? 'popstate' : 'hashchange', self = {};
@@ -29,7 +32,7 @@
         this.opts = opts;
         this.routes = opts.routes;
         this.sep = opts.sep || '';
-        this.go(location.pathname, true);
+        this.go(location.pathname,true);
         this.holdLinks(opts.links || []);
         self = this;
     }
@@ -47,7 +50,7 @@
             }
         }
     };
-    Router.prototype.emmit = function(path) {
+    Router.prototype.emit = function(path) {console.log(path);
         if(supportPushState) {
             path = path.state.path;
         }else {
@@ -56,10 +59,10 @@
         self.exec(path);
     }
     Router.prototype.start = function() {
-        win.addEventListener ? win.addEventListener(evt, this.emmit, false) : win.attachEvent('on' + evt, this.emmit)
+        win.addEventListener ? win.addEventListener(evt, this.emit, false) : win.attachEvent('on' + evt, this.emit)
     };
     Router.prototype.stop = function() {
-        win.removeEventListener ? win.removeEventListener(evt, this.emmit, false) : win.detachEvent('on' + evt, this.emmit);
+        win.removeEventListener ? win.removeEventListener(evt, this.emit, false) : win.detachEvent('on' + evt, this.emit);
     };
     Router.prototype.go = function(path, isReplace) {
         if(supportPushState) {
@@ -96,16 +99,25 @@
         }
     };
     Router.prototype.holdLinks = function(links) {
-        for(var i = 0; i < links.length; i++) {
-            links[i].onclick = function(e) {
-                var href;
-                if(!e) {
-                    e = win.event;
-                    href = this.pathname;
-                }
-                self.hold(e, href);
-            }
+      /*links.onclick = function(event) {
+        event = event || win.event;
+        var target = event.target || event.srcElement,
+        src = target.parentNode;
+        if(target.tagName=="A"){
+          var href = target.href;
+          self.hold(event, href);
         }
+      }*/
+      for(var i = 0; i < links.length; i++) {
+          links[i].onclick = function(e) {
+              var href;
+              if(!e) {
+                  e = win.event;
+                  href = this.pathname;
+              }
+              self.hold(e, href);
+          }
+      }
     };
     if(typeof exports === 'object') {
         module.exports = Router;
