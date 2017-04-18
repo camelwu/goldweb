@@ -167,7 +167,7 @@
 			"orderby" : $("#orderby").html().indexOf("span")?'':$("#orderby").html().indexOf("↑")?'asc':'desc',
 			"page" : p
 		};
-		/*$.ajax({
+		$.ajax({
 			type : "POST",
 			url : '/getajax.php?action=tours&rnd=' + Math.random(),
 			timeout : 1000 * 60 * 5,
@@ -201,7 +201,7 @@
 					// window.location.reload();
 				}
 			}
-		});*/
+		});
 	}
 	var pageObj = {
 		totalCount :<{$totalnum}>,
@@ -209,7 +209,7 @@
 		callback:function(par){
 			async_select(par.page);
 		},
-		PageUrl : '<{$link_to}>__id__',
+		// PageUrl : '<{$link_to}>__id__',
 		currentPage:0
 	};
 	paginate("my_page", pageObj, {});
@@ -234,10 +234,12 @@
 			});
 			callback(searchObj, false);
 		}
-	}// usage
+	}
+	// usage
 	var router = new MinRouter({
-		links: document.getElementById('my_page').querySelectorAll('a[href]'),
+		links: document.querySelectorAll('a[href]'),//.getElementById('my_page'),//
 		routes: {
+			'/scenic': 'page',
 			'/tour/<{$action}>/*path/:page': 'page',
 			'/go': 'go'
 		},
