@@ -16,15 +16,15 @@ $(function(){
     $(".popup").fadeOut(300);
   })
   $(".mask_tab").eq(0).show();
-})
+});
 var validate = true;
 function get_code() {
   if (validate == true) {
-    document.getElementById("findcode").src = "image.php?" + Math.random();
+    document.getElementById("findcode").src = "/image.php?" + Math.random();
     validate = false;
     return false;
   } else {
-    document.getElementById("findcode").src = "image.php?" + Math.random();
+    document.getElementById("findcode").src = "/image.php?" + Math.random();
     validate = true;
     return false;
   }

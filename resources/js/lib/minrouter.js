@@ -81,7 +81,7 @@
     Router.prototype.back = function() {
         history.back();
     };
-    Router.prototype.hold = function(e, href) {
+    Router.prototype.hold = function(e, href) {console.log(e+','+href);
         var isReplace = false, path = href !== undefined ? href : e.target.pathname;
         if(!supportPushState) {
             path = '/' + path;
@@ -89,7 +89,7 @@
             if(path === history.state.path) {
                 isReplace = true;
             }
-        }
+        }console.log(path);
         this.go(path, isReplace);
         if(e && e.preventDefault) {
             e.preventDefault();
@@ -98,26 +98,26 @@
             return false;
         }
     };
-    Router.prototype.holdLinks = function(links) {
-      /*links.onclick = function(event) {
+    Router.prototype.holdLinks = function(links) {console.log(links);
+      links.onclick = function(event) {
         event = event || win.event;
         var target = event.target || event.srcElement,
         src = target.parentNode;
         if(target.tagName=="A"){
-          var href = target.href;
+          var href = target.pathname;console.log(href);
           self.hold(event, href);
-        }
-      }*/
-      for(var i = 0; i < links.length; i++) {
+        }console.log(target.tagName);
+      }
+      /*for(var i = 0; i < links.length; i++) {
           links[i].onclick = function(e) {
               var href;
               if(!e) {
                   e = win.event;
-                  href = this.pathname;
-              }
+                  href = this.pathname;console.log(this);
+              }console.log(href);
               self.hold(e, href);
           }
-      }
+      }*/
     };
     if(typeof exports === 'object') {
         module.exports = Router;

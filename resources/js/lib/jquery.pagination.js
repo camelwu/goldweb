@@ -1,10 +1,11 @@
+
 jQuery.fn.pagination = function(maxentries, opts) {
 	opts = jQuery.extend({
 		items_per_page : 6,
 		num_display_entries : 6,
 		current_page : 0,
 		num_edge_entries : 0,
-		link_to : "#here",
+		link_to : "",
 		prev_text : "&lt;",
 		next_text : "&gt;",
 		ellipse_text : "...",
@@ -45,13 +46,13 @@ jQuery.fn.pagination = function(maxentries, opts) {
 			current_page = page_id;
 			drawLinks();
 			var continuePropagation = opts.callback(page_id, panel);
-			if (!continuePropagation) {
+			/*if (!continuePropagation) {
 				if (evt.stopPropagation) {
 					evt.stopPropagation();
 				} else {
 					evt.cancelBubble = true;
 				}
-			}
+			}*/
 			return continuePropagation;
 		}
 
@@ -79,7 +80,7 @@ jQuery.fn.pagination = function(maxentries, opts) {
 				if (page_id == current_page) {
 					var lnk = $("<span class='pg_curr'>" + (appendopts.text) + "</span>");
 				} else {//console.log(page_id);
-					var lnk = $("<a class='pg_link'>" + (appendopts.text) + "</a>").bind("click.mypage", getClickHandler(page_id)).attr('href', opts.link_to.replace(/__id__/, page_id));
+					var lnk = $("<a class='pg_link'>" + (appendopts.text) + "</a>").bind("click", getClickHandler(page_id)).attr('href', opts.link_to.replace(/__id__/, page_id));
 
 				}
 				if (appendopts.classes) {
@@ -106,7 +107,7 @@ jQuery.fn.pagination = function(maxentries, opts) {
 				}
 			}
 			// Generate interval links
-			console.log("op="+interval[0]);for (var i = interval[0]; i < interval[1]; i++) {
+			console.log("op="+interval[1]);for (var i = interval[0]; i < interval[1]; i++) {
 				appendItem(i);
 			}
 			// Generate ending points

@@ -73,12 +73,11 @@ $(function() {
 				scrollTop : 0
 			}, 300)
 		});
-
-		function logout() {
-			var url = "/async/logout";
-			$.getJSON(url, function(json) {
-				window.location.reload();
-			});
-		}
 	});
 });
+function logout() {
+	var url = "/async/logout";
+	$.getJSON(url, function(json) {
+		location.reload();
+	});
+}
