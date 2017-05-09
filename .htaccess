@@ -8,6 +8,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(\/)?$ /index.php
 RewriteRule ^index.html$ /index.php
 #频道首页||静态页面
+RewriteRule ^error.html$ /error.html
 RewriteRule ^([0-9a-zA-Z]+)(.html)?(\/)?$ /index.php?enname=$1
 #一级页面
 RewriteRule ^([a-zA-Z]+)/([a-zA-Z]+)(\/)?(\d+)?$ /index.php?enname=$1&action=$2&page=$4
@@ -21,7 +22,7 @@ RewriteRule ^(\w+)/(\w+)/([0-9a-zA-Z|\-]+)(\/)?(\d+)?$ /index.php?enname=$1&acti
 #搜索页面
 RewriteRule ^search/([0-9a-zA-Z]+)/(.*)$ /index.php?enname=search&action=$1&key=$2
 ##异步页面
-#RewriteRule ^async/([0-9a-zA-Z]+)/(.*)$ /index.php?enname=async&action=$1&key=$2
+RewriteRule ^async/([0-9a-zA-Z]+)/(.*)$ /index.php?enname=async&action=$1&key=$2
 
 ErrorDocument 401 /error.html
 ErrorDocument 400 /error.html
