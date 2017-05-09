@@ -36,7 +36,7 @@
 				人生苦短，多走走没遗憾
 				<ul class="clrfix">
 					<li class="recom_on">
-						<a href="/overseas/------/hits/desc" class="recom_on">当季最热</a>
+						<span class="recom_on">当季最热</span>
 					</li>
 				</ul>
 			</div>
@@ -85,7 +85,7 @@
 				<span>
 					<ul class="city_box clrfix fl">
 							<{foreach name=tci item=city from=$t_c_i}><li class="">
-								<a href="/overseas/--<{$city.id}>-------"><{$city.title}></a>
+								<a href="tour/domestic/--<{$city.id}>-------"><{$city.title}></a>
 							</li><{/foreach}>
 					</ul>
 					<ul class="scenic_area fl">
@@ -93,25 +93,6 @@
 							<div class="fl">
 								热门目的地：
 							</div>
-							<li class="sa_title_on">
-								<a href="/domestic/--33-------">云南</a>
-							</li>
-							<li>
-								<a href="/domestic/--33-------">桂林</a>
-							</li>
-							<li>
-								<a href="/domestic/--33-------">厦门</a>
-							</li>
-							<li>
-								<a href="/domestic/--33-------">华东</a>
-							</li>
-							<li>
-								<a href="/domestic/--33-------">西安</a>
-							</li>
-							<li>
-								<a href="/domestic/--33-------">西藏</a>
-							</li>
-							<a href="/domestic">更多&gt;</a>
 						</ul>
 						<{foreach name=gtgn item=xl from=$gnroute}>
 						<li>
@@ -137,7 +118,7 @@
 				<span style="display: none">
 					<ul class="city_box clrfix fl">
 						<{foreach name=tco item=city from=$t_c_o}><li class="">
-							<a href="/overseas/--<{$city.id}>-------"><{$city.title}></a>
+							<a href="tour/overseas/--<{$city.id}>-------"><{$city.title}></a>
 						</li><{/foreach}>
 					</ul>
 					<ul class="scenic_area fl">
@@ -145,25 +126,6 @@
 							<div class="fl">
 								热门目的地：
 							</div>
-							<li class="sa_title_on">
-								<a href="/overseas/--33-------">云南</a>
-							</li>
-							<li>
-								<a href="/overseas/--33-------">桂林</a>
-							</li>
-							<li>
-								<a href="/overseas/--33-------">厦门</a>
-							</li>
-							<li>
-								<a href="/overseas/--33-------">华东</a>
-							</li>
-							<li>
-								<a href="/overseas/--33-------">西安</a>
-							</li>
-							<li>
-								<a href="/overseas/--33-------">西藏</a>
-							</li>
-							<a href="/overseas">更多&gt;</a>
 						</ul>
 						<{foreach name=gtcj item=xl from=$cjroute}>
 						<li>
@@ -187,7 +149,7 @@
 				<span style="display: none">
 					<ul class="city_box clrfix fl">
 						<{foreach name=tcz item=city from=$t_c_z}><li class="">
-							<a href="/overseas/--<{$city.id}>-------"><{$city.title}></a>
+							<a href="/tour/touraround/--<{$city.id}>-------"><{$city.title}></a>
 						</li><{/foreach}>
 					</ul>
 					<ul class="scenic_area fl">
@@ -195,25 +157,6 @@
 							<div class="fl">
 								热门目的地：
 							</div>
-							<li class="sa_title_on">
-								<a href="/touraround/--33-------">云南</a>
-							</li>
-							<li>
-								<a href="/touraround/--33-------">桂林</a>
-							</li>
-							<li>
-								<a href="/touraround/--33-------">厦门</a>
-							</li>
-							<li>
-								<a href="/touraround/--33-------">华东</a>
-							</li>
-							<li>
-								<a href="/touraround/--33-------">西安</a>
-							</li>
-							<li>
-								<a href="/touraround/--33-------">西藏</a>
-							</li>
-							<a href="/touraround">更多&gt;</a>
 						</ul>
 						<{foreach name=gtzb item=xl from=$zbroute}>
 						<li>
@@ -394,30 +337,8 @@
 					<ul class="scenic_area fl">
 						<ul class="sa_title clrfix">
 							<div class="fl">
-								热门目的地：
+								人气目的地：
 							</div>
-							<li class="sa_title_on">
-								<a href="/freeline/------/hits/desc">马尔代夫</a>
-							</li>
-							<li>
-								<a href="/freeline/------/hits/desc">毛里求斯</a>
-							</li>
-							<li>
-								<a href="/freeline/------/hits/desc">塞舌尔</a>
-							</li>
-							<li>
-								<a href="/freeline/------/hits/desc">泰国</a>
-							</li>
-							<li>
-								<a href="/freeline/------/hits/desc">夏威夷</a>
-							</li>
-							<li>
-								<a href="/freeline/------/hits/desc">日韩</a>
-							</li>
-							<li>
-								<a href="/freeline/------/hits/desc">香港</a>
-							</li>
-							<a href="/freeline/">更多&gt;</a>
 						</ul>
 						<{foreach name=zycj item=zycj from=$cjfree}>
 						<li>
@@ -449,30 +370,8 @@
 					<ul class="scenic_area fl">
 						<ul class="sa_title clrfix">
 							<div class="fl">
-								热门目的地：
+								人气目的地：
 							</div>
-							<li class="sa_title_on">
-								<a href="/freeline/------/hits/desc">西藏</a>
-							</li>
-							<li>
-								<a href="/freeline/------/hits/desc">青海</a>
-							</li>
-							<li>
-								<a href="/freeline/------/hits/desc">卡塔尔</a>
-							</li>
-							<li>
-								<a href="/freeline/------/hits/desc">云南</a>
-							</li>
-							<li>
-								<a href="/freeline/------/hits/desc">杭州</a>
-							</li>
-							<li>
-								<a href="/freeline/------/hits/desc">厦门</a>
-							</li>
-							<li>
-								<a href="/freeline/------/hits/desc">北京</a>
-							</li>
-							<a href="/freeline/">更多&gt;</a>
 						</ul>
 						<{foreach name=zygn item=zyx from=$gnfree}>
 						<li>

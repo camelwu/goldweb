@@ -209,8 +209,9 @@
 		callback:function(par){
 			async_select(par.page);
 		},
-		// PageUrl : '<{$link_to}>__id__',
-		currentPage:0
+		PageUrl : '<{$link_to}>__id__',
+		currentPage: parseInt('<{$page}>')-1
+
 	};
 	paginate("my_page", pageObj, {});
 	function paginate(containerId, pageObj, searchObj) {
@@ -232,12 +233,12 @@
 				"page" : page_id + 1,
 				"rows" : perPageCount
 			});
-			callback(searchObj, false);
+			console.log(searchObj);
 		}
 	}
 	// usage
 	var router = new MinRouter({
-		links: document.querySelectorAll('a[href]'),//.getElementById('my_page'),//
+		links: document.getElementById('my_page'),//
 		routes: {
 			'/scenic': 'page',
 			'/tour/<{$action}>/*path/:page': 'page',

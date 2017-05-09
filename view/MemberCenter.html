@@ -5,11 +5,6 @@
 <title><{$cnname}>_旅行社_<{$ktitle}>_金桥</title>
 <link href="<{$siteurl}>/resources/css/global.css" rel="stylesheet" type="text/css">
 <link href="<{$siteurl}>/resources/css/MemberCenter.css" rel="stylesheet" type="text/css">
-
-<script type="text/javascript" src="<{$siteurl}>/resources/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="<{$siteurl}>/resources/js/jquery.SuperSlide.2.1.1.js"></script>
-<script type="text/javascript" src="<{$siteurl}>/resources/js/Calendar.js"></script>
-<script type="text/javascript" src="<{$siteurl}>/resources/js/index.js"></script>
 </head>
 <body>
 <{include_php file="./view/common/header.php"}>
@@ -42,7 +37,7 @@
                     <td align="center">下单时间</td>
                     <td align="center">操作</td>
                 </tr>
-                <{foreach name=order item=val from=$orders}><tr class="table_bd">               
+                <{foreach name=order item=val from=$orders}><tr class="table_bd">
                     <td align="center"><{$val.orderid}></td>
                     <td align="center"><{$val.info_name}></td>
                     <td align="center"><{$val.go_time}></td>
@@ -50,7 +45,7 @@
                     <td align="center"><{$val.price}>.0</td>
                     <td align="center"><{$val.status}></td>
                     <td align="center"><{$val.ordertime}></td>
-                    <td align="center"><a href="#">订单详情</a></td>                    
+                    <td align="center"><a href="#">订单详情</a></td>
                 </tr><{/foreach}>
             </table>
             </li>
@@ -88,7 +83,7 @@
                     <td align="center">性别</td>
                     <td align="center">操作</td>
                 </tr>
-                <{foreach name=contact item=val from=$contact}><tr class="table_bd">               
+                <{foreach name=contact item=val from=$contact}><tr class="table_bd">
                     <td align="left"><{$val.name}></td>
                     <td align="center"><{$val.adult}></td>
                     <td align="center"><{$val.idtype}></td>
@@ -99,21 +94,20 @@
                         <a href="#">展开</a>|
                         <a href="#">编辑</a>|
                         <a href="#">删除</a>
-                    </td>                    
+                    </td>
                 </tr><{/foreach}>
-            </table>                
+            </table>
 		    </li>
         </ul>
     </div>
 </div>
-
-
 <{include file="./view/common/footer.html"}>
+<script type="text/javascript" src="<{$siteurl}>/resources/js/Calendar.js"></script>
 <script type="text/javascript">
 $(function(){
 	var about_left_h=$(".about_box").height();
 	$(".about_left").height(about_left_h).css("min-height","600px");
-	$(".about_left li").click(function(){//关于我们左侧单击	    
+	$(".about_left li").click(function(){//关于我们左侧单击
 		var al_num=$(".about_left li").index(this);
 		$(this).siblings().removeClass("al_li");
 		$(this).addClass("al_li");
@@ -121,9 +115,8 @@ $(function(){
 		$(".about_right ul").eq(al_num).show(0);
 		var about_left_h=$(".about_box").height()-2;
 		$(".about_left").height(about_left_h).css("min-height","500px");
-	});	
+	});
 })
 </script>
 </body>
 </html>
-
