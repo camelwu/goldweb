@@ -1,34 +1,67 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$key = $_GET['key'];
-if ('getend' == $action) {
-	$enname = $_GET['enname'];
-	$end = $_GET['end'];
-	$end2 = $_GET['end2'];
-	$go_start = $_GET['go_start'];
-	$go_days = $_GET['go_days'];
-	$go_starttime = $_GET['go_starttime'];
-	$go_endtime = $_GET['go_endtime'];
-	$go_money = $_GET['go_money'];
-	$go_tuijian = $_GET['go_tuijian'];
-	$go_sall = $_GET['go_sall'];
-	$go_hot = $_GET['go_hot'];
-	$echohtml = $sqlwhere = "";
-	if ('overseas' == $enname) {
-		$sqlwhere .= " and a.classid!=65";
-	}else if('touraround' == $enname||'domestic'==$enname){
-		$sqlwhere .= " and a.classid=65";
-	}else{
+$perpage = 6;
+if ('scenic' == $action) {
+	$json = json_decode(file_get_contents('php://input'));
+	if($json){
+		$city2 = $json->go_end2;
+		$go_modle = $json->go_modle;
+		$go_type = $json->go_type;
+		$go_money = $json->go_price;
+		$order = $json->order;
+		$orderby = $json->orderby;
+		$page = $json->page;
+		$page = empty($page)?1:$page;
+		$start = ($page -1) * $perpage;
 
+		$msg = array(
+			'num' => selectScenic(3, "", $city2, false, 0, 1),
+			'page' => $page,
+			'res' => selectScenic(3, "", $city2, true, $start, 6, $order, $orderby)
+		);
+	}else{
+		$msg = array(
+			'num' => 0,
+			'page' => 1,
+			'res' => array()
+		);
 	}
-	//从查询库里做中转
-	/*if (!empty ($end)) {
-		$cmin = cg_search_cmin($end);
-		if (!empty ($cmin)) {
-			$sqlwhere .= " and FIND_IN_SET(a.id,'{$cmin}') ";
-		}
-	}*/
+	echo json_encode($msg);
+} elseif ('tours' == $action) {
+	$json = json_decode(file_get_contents('php://input'));
+	if($json){
+		$cid = $json->cid;
+		$cid2 = $json->cid2;
+
+		$go_start = $json->go_start;
+		$end = $json->go_end;
+		$go_end2 = $json->go_end2;
+		$go_days = $json->go_days;
+		$go_starttime = $json->go_starttime;
+		$go_endtime = $json->go_endtime;
+		$go_money = $json->go_money;
+		$order = $json->order;
+		$orderby = $json->orderby;
+
+		$page = $json->page;
+		$page = empty($page)?1:$page;
+		$start = ($page -1) * $perpage;
+
+		$msg = array(
+			'num' => selectRoleSale($cid, false, 0, 1, $go_start, $go_end2, $go_days, $go_starttime, $go_endtime, $go_money, '', $order, $orderby),
+			'page' => $page,
+			'res' => selectRoleSale($cid, true, $start, $perpage, $go_start, $go_end2, $go_days, $go_starttime, $go_endtime, $go_money, '', $order, $orderby)
+		);
+	}else{
+		$msg = array(
+			'num' => 0,
+			'page' => 1,
+			'res' => array()
+		);
+	}
+	echo json_encode($msg);
+	exit;
 	//直接找产品
 	if(empty($end)){
 		$sql = "select aid2 from cg_product_route where aid2!=0 GROUP BY aid2";
@@ -53,14 +86,12 @@ if ('getend' == $action) {
 		$echohtml = "<span>暂无此洲的线路</span>";
 	}
 	echo $echohtml;
-}
-elseif ('logout' == $action) {
+} elseif ('logout' == $action) {
 	destroy_cookie();
 	$msg = array ();
 	$msg['status'] = 0;
 	echo json_encode($msg);
-}
-elseif ('login' == $action) {
+} elseif ('login' == $action) {
 	$email = $_GET['email'];
 	$password = $_GET['password'];
 	$code = $_GET['code'];
@@ -79,8 +110,7 @@ elseif ('login' == $action) {
 		$result = false;
 	}
 	echo json_encode($msg);
-}
-elseif ('checkemail' == $action) {
+} elseif ('checkemail' == $action) {
 	$email = $_GET['email'];
 	$username = $_GET['username'];
 	$password = $_GET['password'];
