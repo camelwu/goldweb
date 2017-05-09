@@ -615,7 +615,7 @@ function selectRoleSale($classid, $count = false, $start = 0, $perpage = 1, $cit
 	if ($go_time1) {
 		$sqlfrom .= " and p.go_type in (0,3)";
 	}
-	//花费
+	//花费，区间或大于
 	if ($go_money) {
 		$city = cg_search_cmin($go_money);
 		//URL映射
@@ -623,9 +623,10 @@ function selectRoleSale($classid, $count = false, $start = 0, $perpage = 1, $cit
 			$city2 = $city;
 		}
 		if (strpos($city2, ',') === false) {
-			$sqlfrom .= " and t.price2 like '%" . $city2 . "%' ";
+			$sqlfrom .= " and t.price2 > {$city2}";
 		} else {
-			$sqlfrom .= " and FIND_IN_SET(p.price2,'" . $city2 . "'";
+			$arr = explode(',', $city2);
+			$sqlfrom .= " and p.price2>=" . $arr[0] . " and p.price2<=" . $arr[1];
 		}
 	}
 
@@ -642,7 +643,7 @@ function selectRoleSale($classid, $count = false, $start = 0, $perpage = 1, $cit
 	} else {
 		$limitsql = ' limit ' . $start . ',' . $perpage;
 		$sql = "select * $sqlfrom $orderbysql $limitsql";
-		#return $sql;
+		// return $sql;
 		$query = $db->query($sql);
 		while ($value = $db->fetch_array($query)) {
 			if (!empty ($value['url'])) {
