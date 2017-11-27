@@ -72,7 +72,7 @@ if ($module==='async') {
 	exit;
 }else{
 	//分站地址区分(机构)
-	$myurl = $_SERVER['HTTP_HOST'];
+	$myurl = strpos($_SERVER['HTTP_HOST'],':') ? substr($_SERVER['HTTP_HOST'],0,strpos($_SERVER['HTTP_HOST'],':')):$_SERVER['HTTP_HOST'];
 	if (!isset($_COOKIE["myurl"])) {
 		save_cookie('myurl', $myurl);
 	}
