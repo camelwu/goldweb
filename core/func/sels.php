@@ -561,7 +561,7 @@ function selectProduct($id = 0) {
  * go_money 花费 (,隔开)
  *
  **/
-function selectRoleSale($classid, $count = false, $start = 0, $perpage = 1, $city1, $city2, $go_day, $go_time, $go_time1, $go_money, $title = "", $order = 'id', $orderby = 'desc') {
+function selectRoleSale($classid, $count = false, $start = 0, $perpage = 1, $city1, $city2, $go_day, $go_time, $go_time1, $go_money, $title = "", $order = 'p.id', $orderby = 'desc') {
 	global $db, $picserver, $siteurl, $bid;
 
 	$sqlfrom = " from cg_product_route p where 1=1 ";

@@ -31,6 +31,7 @@ while ($value = $db->fetch_array($query)) {
 }
 $smarty->assign('hots', $res);
 $smarty->assign('cnname', '团队介绍');
-$smarty->assign('enname', $enname);
-$smarty->display(V_ROOT.'./templates/'.$enname.'.html',$cache_id);
+$smarty->assign('enname', $module);
+$smarty -> display(VIEWPATH . "/about.html", $cache_id);
+#$smarty->display(V_ROOT.'./templates/about.html',$cache_id);
 ?>
