@@ -43,8 +43,8 @@
 				<li>出发地：</li>
 				<li><span<{if $go_start eq ''}> class="sob_on"<{/if}> data-id="">全部</span></li>
 				<{foreach from=$chufa key=key item=chufaitem}>
-				<li><span<{if $go_start eq $key}> class="sob_on"<{/if}>><a
-						href="/<{$enname}>/<{$key}>-<{$go_end}>-<{$go_end2}>-<{$go_days}>-<{$go_starttime}>-<{$go_endtime}>-<{$go_money}>-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>"><{$chufaitem}></a></span></li>
+				<li><span<{if $go_start eq $key}> class="sob_on"<{/if}>>
+					<a ref="/<{$enname}>/<{$key}>-<{$go_end}>-<{$go_end2}>-<{$go_days}>-<{$go_starttime}>-<{$go_endtime}>-<{$go_money}>-<{$go_tuijian}>-<{$go_sall}>-<{$go_hot}>"><{$chufaitem}></a></span></li>
 				<{/foreach}>
 			</ul>
 			<ul class="dest_zhou_box clrfix">
@@ -83,8 +83,8 @@
 			<ul class="travel_time clrfix">
 				<!--出游时间-->
 				<li class="tt_hd">出游时间：</li>
-				<li class="tt_input"><input type="text" id="j_Date1" placeholder="yyyy-mm-dd" /></li>
-				<li class="tt_input"><input type="text" id="j_Date2" placeholder="yyyy-mm-dd" /></li>
+				<li class="tt_input"><input type="text" id="j_Date1" placeholder="¥" /></li>
+				<li class="tt_input"><input type="text" id="j_Date2" placeholder="¥" /></li>
 			</ul>
 			<ul id="go_money" class="sob_box clrfix">
 				<!--预算花费-->

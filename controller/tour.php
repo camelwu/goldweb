@@ -50,14 +50,13 @@ $match = (empty($match)) ? '-------' : $match;
 //list
 if (!isset($_GET['id'])) {
 	$cid = $db -> getOneInfo("select id,title,pid from cg_class where html='" . $action . "'");
-	if (empty($cid)) {
-		// vheader('/error.html');
-		exit('error');
-	}
-	if($cid['pid']==0){
+	if (empty($cid)) {//all
+		$classid = '';
+		$classid2= '';
+	} elseif ($cid['pid']==0) {
 		$classid = $cid['id'];
 		$classid2=0;
-	}else{
+	} else {
 		$classid = $cid['pid'];
 		$classid2= $cid['id'];
 	}
@@ -68,21 +67,21 @@ if (!isset($_GET['id'])) {
 	$dest = cg_dest($table, $type, $classid);
 	$stat = $dest['stat'];
 	$area = $dest['area'];
-	//var_dump(cg_tour_day($cid['id']));exit;
 	//出发地
 	$smarty -> assign('depart', cg_depart());
 	//行程天数
-	$smarty -> assign('days', cg_tour_day($cid['id']));
+	$smarty -> assign('days', cg_tour_day($classid));
 	//预算花费
-	$smarty -> assign('huafei', cg_search($cid['id'], 4));
+	$smarty -> assign('huafei', cg_search($classid, 4));
 	//banner
 	if ('overseas' == $action || 'cruises' == $action) {
 		$num = 1;
 	} else {
 		$num = 7;
 	}
-	$banner=selectdatabanner($action, $num);
-
+	if(!empty($action)){
+		$banner=selectdatabanner($action, $num);
+	}
 	//匹配一级页面 规则-分割 按照顺序站位
 	$matchy = explode('-', $match);
 	//出发
@@ -113,8 +112,8 @@ if (!isset($_GET['id'])) {
 	}
 	$perpage = 6;
 	$start = ($page -1) * $perpage;
-	$totalnum = selectRoleSale($cid['id'], false, 0, 1, $go_start, $go_end2, $go_days, $go_starttime, $go_endtime, $go_money, '', $order, $orderby);
-	$comments = selectRoleSale($cid['id'], true, $start, $perpage, $go_start, $go_end2, $go_days, $go_starttime, $go_endtime, $go_money, '', $order, $orderby);
+	$totalnum = selectRoleSale($classid, false, 0, 1, $go_start, $go_end2, $go_days, $go_starttime, $go_endtime, $go_money, '', $order, $orderby);
+	$comments = selectRoleSale($classid, true, $start, $perpage, $go_start, $go_end2, $go_days, $go_starttime, $go_endtime, $go_money, '', $order, $orderby);
 
 	$link_to = '/' . $module . '/' . $action . '/' . $match . '/';
 	// var_dump($comments);exit;
